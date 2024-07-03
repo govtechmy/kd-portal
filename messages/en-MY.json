@@ -1,0 +1,63 @@
+{
+  "Agency": {
+    "name": "Digital Ministry"
+  },
+  "Masthead": {
+    "official_gov_website": "Official Malaysian Government Website",
+    "how_to_identify": "Here's how you know",
+    "official": "Official government websites end with .gov.my",
+    "not_govmy": "If the link does not end with ",
+    "close_site": ", exit the website immediately even if it looks similar.",
+    "secure": "Secure websites use HTTPS",
+    "find_lock": "Look for a lock (🔒) or ",
+    "precaution": " as an added precaution. Share sensitive information only on official, secure websites."
+  },
+  "Header": {
+    "home": "Home",
+    "corporate_info": "Corporate Info",
+    "announcements": "Announcements",
+    "achievements": "Achievements",
+    "policy": "Policy",
+    "directory": "Directory",
+    "contact_us": "Contact Us"
+  },
+  "Home": {
+    "type": "Type",
+    "search": "to search",
+    "placeholder": "Find keywords: “news”, “policy”, “staff name”",
+    "popular_links": "Popular links"
+  },
+  "Footer": {
+    "follow_us": "Follow Us",
+    "about_us": "About Us",
+    "quick_links": "Quick Links",
+    "open_source": "Open Source",
+    "repo": "Github Repo",
+    "ui_ux": "Figma",
+    "all_rights_reserved": "All Rights Reserved",
+    "disclaimer": "Disclaimer",
+    "privacy": "Privacy Policy",
+    "safety": "Safety Policy",
+    "personal_data": "Personal Data Protection",
+    "last_update": "Last updated"
+  },
+  "Info": {
+    "background": "Background"
+  },
+  "Announcements": {
+    "header": "Digital Ministry Announcements"
+  },
+  "Achievements": {
+    "header": "Our Achievements"
+  },
+  "Policy": {
+    "header": "Policy Documents"
+  },
+  "Directory": {
+    "header": "Staff Directory"
+  },
+  "Contact": {
+    "header": "Contact Us",
+    "office": "Office"
+  }
+}

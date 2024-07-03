@@ -1,0 +1,63 @@
+{
+  "Agency": { 
+    "name": "Kementerian Digital" 
+  },
+  "Masthead": {
+    "official_gov_website": "Portal Rasmi Kerajaan Malaysia",
+    "how_to_identify": "Bagaimana mengenal pasti?",
+    "official": "Pautan portal rasmi berakhir dengan .gov.my",
+    "not_govmy": "Sekiranya anda melihat pautan selain ",
+    "close_site": ", segera tutupkan halaman itu walaupun ia menyerupai portal rasmi!",
+    "secure": "Portal yang selamat menggunakan HTTPS",
+    "find_lock": "Periksa ikon loker (🔒) atau ", 
+    "precaution": " di depan pautan. Sekiranya tiada, jangan kongsikan sebarang maklumat sensitif."
+  },
+  "Header": {
+    "home": "Utama",
+    "corporate_info": "Info Korporat",
+    "announcements": "Siaran",
+    "achievements": "Pencapaian",
+    "policy": "Dokumen Dasar",
+    "directory": "Direktori",
+    "contact_us": "Hubungi Kami"
+  },
+  "Home": {
+    "type": "Tekan",
+    "search": "untuk cari",
+    "placeholder": "Cari kata kunci: “tajuk berita”, “dasar”, “nama staff”",
+    "popular_links": "Pautan popular"
+  },
+  "Footer": {
+    "follow_us": "Ikuti Kami",
+    "about_us": "Tentang Kami",
+    "quick_links": "Capaian Pantas",
+    "open_source": "Sumber Terbuka",
+    "repo": "Repo Github",
+    "ui_ux": "Figma",
+    "all_rights_reserved": "Hak Cipta Pelihara",
+    "disclaimer": "Penafian",
+    "privacy": "Dasar Privasi",
+    "safety": "Dasar Keselamatan",
+    "personal_data": "Perlindungan Data Peribadi",
+    "last_update": "Kemaskini Terakhir"
+  },
+  "Info": {
+    "background": "Latar Belakang"
+  },
+  "Announcements": {
+    "header": "Siaran Kementerian Digital"
+  },
+  "Achievements": {
+    "header": "Pencapaian Kami"
+  },
+  "Policy": {
+    "header": "Dokumen Dasar"
+  },
+  "Directory": {
+    "header": "Direktori Kakitangan"
+  },
+  "Contact": {
+    "header": "Hubungi Kami",
+    "office": "Pejabat"
+  }
+}

@@ -18,13 +18,20 @@
     "@payloadcms/next": "beta",
     "@payloadcms/plugin-cloud": "beta",
     "@payloadcms/richtext-lexical": "beta",
+    "@radix-ui/react-navigation-menu": "^1.2.0",
+    "@radix-ui/react-select": "^2.1.1",
+    "@radix-ui/react-slot": "^1.1.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
     "cross-env": "^7.0.3",
     "graphql": "^16.8.1",
     "next": "15.0.0-rc.0",
+    "next-intl": "^3.15.3",
     "payload": "beta",
     "react": "^19.0.0-rc-f994737d14-20240522",
     "react-dom": "^19.0.0-rc-f994737d14-20240522",
-    "sharp": "0.32.6"
+    "sharp": "0.32.6",
+    "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
     "@types/node": "^20.12.12",
@@ -34,9 +41,11 @@
     "dotenv": "^16.4.5",
     "eslint": "^8",
     "eslint-config-next": "15.0.0-rc.0",
-    "install": "^0.13.0",
     "postcss": "^8.4.39",
+    "prettier": "^3.3.2",
+    "prettier-plugin-tailwindcss": "^0.6.5",
     "tailwindcss": "^3.4.4",
+    "tailwindcss-animate": "^1.0.7",
     "typescript": "5.5.2"
   },
   "engines": {
