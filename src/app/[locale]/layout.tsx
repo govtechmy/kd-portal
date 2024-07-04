@@ -39,12 +39,11 @@ export default async function Layout({
     locale: string;
   };
 }) {
-  unstable_setRequestLocale(locale);
   const messages = await getMessages();
 
   return (
     <html lang={locale}>
-      <body className={cn(inter.className, poppins.variable)}>
+      <body className={cn(inter.className, poppins.variable, "min-w-[320px]")}>
         <NextIntlClientProvider messages={messages}>
           <Masthead />
           <Header locale={locale} />

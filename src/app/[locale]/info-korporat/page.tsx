@@ -3,15 +3,25 @@ import UserGroup from "@/icons/user-group";
 import { routes } from "@/lib/routes";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
+import { unstable_setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Page() {
+export const dynamic = "force-static";
+
+export default function Page({
+  params: { locale },
+}: {
+  params: {
+    locale: string;
+  };
+}) {
+  unstable_setRequestLocale(locale);
   const t = useTranslations();
 
   return (
     <>
-      <section className="flex flex-col gap-16 px-4.5 py-[84px] lg:px-6">
+      <section className="flex flex-col gap-16 px-4.5 py-[84px] md:px-6">
         <div className="mx-auto flex flex-col gap-6 text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-600">
             {t("Info.background")}
