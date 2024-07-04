@@ -75,18 +75,18 @@ export default function Footer() {
 
         <div className="flex flex-col gap-6 text-sm lg:flex-row">
           {(Object.keys(links) as FooterLinks[]).map((category) => (
-            <div className="space-y-2">
-              <p className="font-semibold">
-                {t("Footer." + category)}
-              </p>
-              <div
-                key={category}
-                className="grid grid-cols-2 flex-col gap-y-2 sm:grid-cols-4 sm:gap-x-6 lg:flex lg:w-[200px] lg:gap-2"
-              >
+            <div className="space-y-2" key={category}>
+              <p className="font-semibold">{t(`Footer.${category}`)}</p>
+              <div className="grid grid-cols-2 flex-col gap-y-2 sm:grid-cols-4 sm:gap-x-6 lg:flex lg:w-[200px] lg:gap-2">
                 {links[category].map(({ name, href }) =>
                   category === "about_us" ? (
-                    <Link className={className.link} href={href} scroll={false}>
-                      {t("Header." + name)}
+                    <Link
+                      key={name}
+                      className={className.link}
+                      href={href}
+                      scroll={false}
+                    >
+                      {t(`Header.${name}`)}
                     </Link>
                   ) : (
                     <a
@@ -96,7 +96,7 @@ export default function Footer() {
                       rel="noopenner noreferrer"
                       href={href}
                     >
-                      {category === "quick_links" ? name : t("Footer." + name)}
+                      {category === "quick_links" ? name : t(`Footer.${name}`)}
                     </a>
                   ),
                 )}
@@ -122,7 +122,7 @@ export default function Footer() {
                   rel="noopenner noreferrer"
                   href={link}
                 >
-                  {t("Footer." + link)}
+                  {t(`Footer.${link}`)}
                 </a>
               ),
             )}

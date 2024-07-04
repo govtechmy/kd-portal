@@ -52,7 +52,7 @@ export function Header({ locale }: { locale: string }) {
                     "w-max bg-transparent transition-colors data-[state=open]:bg-washed-100",
                   )}
                 >
-                  {t("Header." + name)}
+                  {t(`Header.${name}`)}
                 </Link>
               </NavigationMenu.Item>
             ))}

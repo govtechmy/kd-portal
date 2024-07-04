@@ -1,14 +1,14 @@
-import { Header } from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
+import { Header } from "@/components/layout/header";
+import Masthead from "@/components/layout/masthead";
 import { locales } from "@/lib/i18n-config";
+import "@/lib/styles/globals.css";
 import { cn } from "@/lib/utils";
 import { Metadata } from "next";
+import { Inter, Poppins } from "next/font/google";
 import { getMessages, unstable_setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
-import { Inter, Poppins } from "next/font/google";
 import { ReactNode } from "react";
-import "@/lib/styles/globals.css";
-import Masthead from "@/components/layout/masthead";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
@@ -26,6 +26,8 @@ export const metadata: Metadata = {
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
+
+export const dynamic = "force-dynamic";
 
 /* Our app sits here to not cause any conflicts with payload's root layout  */
 export default async function Layout({
