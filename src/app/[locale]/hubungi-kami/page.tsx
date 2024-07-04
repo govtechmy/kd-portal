@@ -19,7 +19,7 @@ export default function Page() {
         </h1>
       </div>
 
-      <section className="grid grid-cols-12 py-[84px]">
+      <section className="container grid grid-cols-12 border-x border-washed-100 py-[84px]">
         <div className="col-span-10 col-start-2">
           <div className="flex gap-16">
             <div className="w-1/3 space-y-4.5 py-16">

@@ -11,19 +11,15 @@ export default function Page() {
     <main className="flex flex-col">
       <div className="relative w-full grid-cols-6 gap-6 border-b sm:grid">
         <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden bg-gradient-radial from-[#C2D5FF] from-0% via-[#F1F5FF] via-[27.57%] to-white to-100%">
-          <HeroPattern className="absolute" />
+          <HeroPattern className="animate-flow absolute -top-[23.33%]" />
         </div>
-        <div className="col-span-4 col-start-2 flex w-full flex-col items-center gap-y-9 px-4.5 py-[84px] text-center sm:py-[120px] md:px-6">
+        <div className="col-span-4 col-start-2 flex w-full flex-col items-center gap-y-9 px-4.5 py-[120px] text-center sm:py-[120px] md:px-6">
           <div className="space-y-6">
             <p className="font-bold uppercase tracking-[0.2em] text-brand-700">
               {t("Agency.name")}
             </p>
             <h1 className="text-balance font-poppins text-[32px] font-semibold leading-[40px] sm:text-hmd">
-              Menginovasi Sektor Awam & Memperkasa
-              <span className="text-brand-700">
-                {" "}
-                Negara <i>Digital-First</i>
-              </span>
+              Menerajui Pendigitalan Negara
             </h1>
           </div>
 
@@ -35,7 +31,9 @@ export default function Page() {
               />
               <span className="flex shrink-0 items-center gap-x-1 text-sm text-dim-500">
                 {t("Home.type")}
-                <span className="rounded-md border border-outline-300 px-1.5 py-0.5">/</span>
+                <span className="rounded-md border border-outline-300 px-1.5 py-0.5">
+                  /
+                </span>
                 {t("Home.search")}
               </span>
               <div className="rounded-full bg-gradient-to-b from-[#5288FF] to-brand-600 to-100% p-1.5">
@@ -43,29 +41,32 @@ export default function Page() {
               </div>
             </div>
 
-            <div className="space-y-3 text-black-700">
+            <div className="space-y-3 text-black-700 max-w-[800px]">
               <p className="text-sm">{t("Home.popular_links")}:</p>
               <div className="flex flex-wrap justify-center gap-1.5">
-                {Array(5).fill(null).map((e) => (
-                  <div
-                    key={e}
-                    className="flex w-[calc(50%-3px)] items-center gap-x-1.5 rounded-full border bg-background px-3 py-2 text-xs leading-4 shadow-button sm:w-[250px]"
-                  >
-                    <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-[#E5F4FF]">
-                      <Flag className="text-brand-600" />
+                {Array(5)
+                  .fill(null)
+                  .map((e) => (
+                    <div
+                      key={e}
+                      className="flex w-[calc(50%-3px)] items-center gap-x-1.5 rounded-full border bg-background px-3 py-2 text-xs leading-4 shadow-button sm:w-[250px]"
+                    >
+                      <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-[#E5F4FF]">
+                        <Flag className="text-brand-600" />
+                      </div>
+                      <p className="line-clamp-2 text-left">
+                        Pencapaian dan Aktiviti yang dijalankan selama 3 bulan
+                        pada tahun
+                      </p>
                     </div>
-                    <p className="line-clamp-2 text-left">
-                      Pencapaian dan Aktiviti yang dijalankan selama 3 bulan pada tahun
-                    </p>
-                  </div>
-                ))}
+                  ))}
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <section className="flex min-h-screen w-full"></section>
+      <section className="container flex min-h-screen w-full"></section>
     </main>
   );
-};
+}

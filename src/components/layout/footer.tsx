@@ -39,105 +39,109 @@ export default function Footer() {
   };
 
   return (
-    <div className="divide-y-outline-200 z-10 divide-y border-t bg-background-50 px-0 py-8 lg:px-6 lg:py-16">
-      <div className="flex flex-col gap-6 pb-8 max-lg:px-6 lg:flex-row lg:justify-between">
-        <div className="flex flex-col gap-4 lg:gap-4.5">
-          <div className="flex items-center gap-x-2.5">
-            <Image
-              src="/jata-negara.png"
-              width={28}
-              height={28}
-              alt="Jata Negara"
-            />
-            <div>
-              <p className="whitespace-nowrap font-poppins font-semibold">
-                {t("Agency.name")}
-              </p>
-            </div>
-          </div>
-          <p className="text-sm text-black-700">
-            Aras 13, 14 dan 15, Blok Menara, <br />
-            Menara Usahawan <br />
-            No. 18, Persiaran Perdana, Presint 2, <br />
-            Pusat Pentadbiran Kerajaan Persekutuan, <br />
-            62000 Putrajaya, Malaysia.
-          </p>
-          <div className="space-y-2 lg:space-y-3">
-            <p className="text-sm font-semibold">{t("Footer.follow_us")}</p>
-            <div className="flex gap-3">
-              <Icon.Facebook />
-              <Icon.Instagram />
-              <Icon.X />
-              <Icon.Youtube />
-            </div>
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-6 text-sm lg:flex-row">
-          {(Object.keys(links) as FooterLinks[]).map((category) => (
-            <div className="space-y-2" key={category}>
-              <p className="font-semibold">{t(`Footer.${category}`)}</p>
-              <div className="grid grid-cols-2 flex-col gap-y-2 sm:grid-cols-4 sm:gap-x-6 lg:flex lg:w-[200px] lg:gap-2">
-                {links[category].map(({ name, href }) =>
-                  category === "about_us" ? (
-                    <Link
-                      key={name}
-                      className={className.link}
-                      href={href}
-                      scroll={false}
-                    >
-                      {t(`Header.${name}`)}
-                    </Link>
-                  ) : (
-                    <a
-                      key={name}
-                      className={className.link}
-                      target="_blank"
-                      rel="noopenner noreferrer"
-                      href={href}
-                    >
-                      {category === "quick_links" ? name : t(`Footer.${name}`)}
-                    </a>
-                  ),
-                )}
+    <div className="border-t bg-background-50 py-8 lg:py-16">
+      <div className="divide-y-outline-200 container divide-y">
+        <div className="flex flex-col gap-6 pb-8 lg:flex-row lg:justify-between">
+          <div className="flex flex-col gap-4 lg:gap-4.5">
+            <div className="flex items-center gap-x-2.5">
+              <Image
+                src="/jata-negara.png"
+                width={28}
+                height={28}
+                alt="Jata Negara"
+              />
+              <div>
+                <p className="whitespace-nowrap font-poppins font-semibold">
+                  {t("Agency.name")}
+                </p>
               </div>
             </div>
-          ))}
-        </div>
-      </div>
+            <p className="text-sm text-black-700">
+              Aras 13, 14 dan 15, Blok Menara, <br />
+              Menara Usahawan <br />
+              No. 18, Persiaran Perdana, Presint 2, <br />
+              Pusat Pentadbiran Kerajaan Persekutuan, <br />
+              62000 Putrajaya, Malaysia.
+            </p>
+            <div className="space-y-2 lg:space-y-3">
+              <p className="text-sm font-semibold">{t("Footer.follow_us")}</p>
+              <div className="flex gap-3">
+                <Icon.Facebook />
+                <Icon.Instagram />
+                <Icon.X />
+                <Icon.Youtube />
+              </div>
+            </div>
+          </div>
 
-      <div className="flex flex-col justify-between gap-6 px-6 pt-8 text-sm text-dim-500 lg:flex-row lg:px-0">
-        <div className="flex flex-col gap-2 lg:flex-row lg:items-center">
-          <p>
-            {t("Footer.all_rights_reserved")} © {new Date().getFullYear()}
-          </p>
-          <span className="hidden h-3 w-px bg-outline-300 lg:block"></span>
-          <div className="flex flex-wrap gap-x-3 gap-y-2 text-black-700">
-            {["disclaimer", "privacy", "safety", "personal_data"].map(
-              (link) => (
-                <a
-                  key={link}
-                  className="text-sm text-black-700 [text-underline-position:from-font] hover:text-black-900 hover:underline"
-                  target="_blank"
-                  rel="noopenner noreferrer"
-                  href={link}
-                >
-                  {t(`Footer.${link}`)}
-                </a>
-              ),
-            )}
+          <div className="flex flex-col gap-6 text-sm lg:flex-row">
+            {(Object.keys(links) as FooterLinks[]).map((category) => (
+              <div className="space-y-2" key={category}>
+                <p className="font-semibold">{t(`Footer.${category}`)}</p>
+                <div className="grid grid-cols-2 flex-col gap-y-2 sm:grid-cols-4 sm:gap-x-6 lg:flex lg:w-[200px] lg:gap-2">
+                  {links[category].map(({ name, href }) =>
+                    category === "about_us" ? (
+                      <Link
+                        key={name}
+                        className={className.link}
+                        href={href}
+                        scroll={false}
+                      >
+                        {t(`Header.${name}`)}
+                      </Link>
+                    ) : (
+                      <a
+                        key={name}
+                        className={className.link}
+                        target="_blank"
+                        rel="noopenner noreferrer"
+                        href={href}
+                      >
+                        {category === "quick_links"
+                          ? name
+                          : t(`Footer.${name}`)}
+                      </a>
+                    ),
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        <span>
-          {t("Footer.last_update") +
-            ": " +
-            format.dateTime(new Date(), {
-              year: "numeric",
-              month: "short",
-              day: "numeric",
-            })}
-        </span>
+        <div className="flex flex-col justify-between gap-6 pt-8 text-sm text-dim-500 lg:flex-row">
+          <div className="flex flex-col gap-2 lg:flex-row lg:items-center">
+            <p>
+              {t("Footer.all_rights_reserved")} © {new Date().getFullYear()}
+            </p>
+            <span className="hidden h-3 w-px bg-outline-300 lg:block"></span>
+            <div className="flex flex-wrap gap-x-3 gap-y-2 text-black-700">
+              {["disclaimer", "privacy", "safety", "personal_data"].map(
+                (link) => (
+                  <a
+                    key={link}
+                    className="text-sm text-black-700 [text-underline-position:from-font] hover:text-black-900 hover:underline"
+                    target="_blank"
+                    rel="noopenner noreferrer"
+                    href={link}
+                  >
+                    {t(`Footer.${link}`)}
+                  </a>
+                ),
+              )}
+            </div>
+          </div>
+
+          <span>
+            {t("Footer.last_update") +
+              ": " +
+              format.dateTime(new Date(), {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              })}
+          </span>
+        </div>
       </div>
     </div>
   );
