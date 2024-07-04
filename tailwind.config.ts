@@ -8,10 +8,27 @@ const config: Config = {
   theme: {
     container: {
       center: true,
+      screens: {
+        DEFAULT: "100%",
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+      },
+      padding: {
+        DEFAULT: "18px",
+        sm: "18px",
+        md: "24px",
+        lg: "24px",
+        xl: "24px",
+      },
     },
     extend: {
+      animation: {
+        flow: "flow 10s linear forwards infinite",
+      },
       backgroundImage: {
-        "gradient-radial": 
+        "gradient-radial":
           "radial-gradient(101.65% 92.54% at 50% 0%, var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
@@ -69,11 +86,18 @@ const config: Config = {
         base: ["16px", "24px"],
         lg: ["18px", "26px"],
         xl: ["20px", "30px"],
-        "hxs": ["24px", "32px"],
-        "hsm": ["30px", "38px"],
-        "hmd": ["36px", "44px"],
-        "hlg": ["48px", "60px"],
-        "hxl": ["60px", "72px"],
+        hxs: ["24px", "32px"],
+        hsm: ["30px", "38px"],
+        hmd: ["36px", "44px"],
+        hlg: ["48px", "60px"],
+        hxl: ["60px", "72px"],
+      },
+      keyframes: {
+        flow: {
+          "100%": {
+            "stroke-dashoffset": "-100",
+          },
+        },
       },
       spacing: {
         4.5: "18px",
