@@ -9,7 +9,8 @@
     "not_govmy": "If the link does not end with ",
     "close_site": ", exit the website immediately even if it looks similar.",
     "secure": "Secure websites use HTTPS",
-    "find_lock": "Look for a lock (🔒) or ",
+    "find_lock": "Look for a lock (",
+    "or": ") or ",
     "precaution": " as an added precaution. Share sensitive information only on official, secure websites."
   },
   "Header": {
