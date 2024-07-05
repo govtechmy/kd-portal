@@ -1,6 +1,6 @@
 {
-  "Agency": { 
-    "name": "Kementerian Digital" 
+  "Agency": {
+    "name": "Kementerian Digital"
   },
   "Masthead": {
     "official_gov_website": "Portal Rasmi Kerajaan Malaysia",
@@ -9,8 +9,8 @@
     "not_govmy": "Sekiranya anda melihat pautan selain ",
     "close_site": ", segera tutupkan halaman itu walaupun ia menyerupai portal rasmi!",
     "secure": "Portal yang selamat menggunakan HTTPS",
-    "find_lock": "Periksa ikon loker (", 
-    "or": ") atau ", 
+    "find_lock": "Periksa ikon loker (",
+    "or": ") atau ",
     "precaution": " di depan pautan. Sekiranya tiada, jangan kongsikan sebarang maklumat sensitif."
   },
   "Header": {
@@ -22,9 +22,11 @@
     "directory": "Direktori",
     "contact_us": "Hubungi Kami"
   },
-  "Home": {
+  "Search": {
     "type": "Tekan",
-    "search": "untuk cari",
+    "search": "untuk cari"
+  },
+  "Home": {
     "placeholder": "Cari kata kunci: “tajuk berita”, “dasar”, “nama staff”",
     "popular_links": "Pautan popular"
   },
@@ -46,7 +48,8 @@
     "background": "Latar Belakang"
   },
   "Announcements": {
-    "header": "Siaran Kementerian Digital"
+    "header": "Siaran Kementerian Digital",
+    "placeholder": "Cari kata kunci: “tajuk siaran”, “pengumuman”"
   },
   "Achievements": {
     "header": "Pencapaian Kami"
@@ -60,5 +63,10 @@
   "Contact": {
     "header": "Hubungi Kami",
     "office": "Pejabat"
+  },
+  "Pagination": {
+    "previous": "Sebelum",
+    "page_of": "{{ current }} daripada {{ total }}",
+    "next": "Seterusnya"
   }
 }

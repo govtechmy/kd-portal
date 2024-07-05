@@ -22,9 +22,11 @@
     "directory": "Directory",
     "contact_us": "Contact Us"
   },
-  "Home": {
+  "Search": {
     "type": "Type",
-    "search": "to search",
+    "search": "to search"
+  },
+  "Home": {
     "placeholder": "Find keywords: “news”, “policy”, “staff name”",
     "popular_links": "Popular links"
   },
@@ -46,7 +48,8 @@
     "background": "Background"
   },
   "Announcements": {
-    "header": "Digital Ministry Announcements"
+    "header": "Digital Ministry Announcements",
+    "placeholder": "Find keywords: “statement”, announcement"
   },
   "Achievements": {
     "header": "Our Achievements"
@@ -60,5 +63,10 @@
   "Contact": {
     "header": "Contact Us",
     "office": "Office"
+  },
+  "Pagination": {
+    "previous": "Previous",
+    "page_of": "{{ current }} of {{ total }}",
+    "next": "Next"
   }
 }

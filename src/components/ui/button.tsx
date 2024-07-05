@@ -4,10 +4,11 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { ButtonHTMLAttributes, forwardRef } from "react";
 
 const buttonVariants = cva(
-  "inline-flex select-none items-center justify-center gap-1.5 rounded-md whitespace-nowrap text-start text-sm font-medium focus:outline-none active:translate-y-[0.5px] disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-30",
+  "inline-flex select-none items-center justify-center gap-1.5 rounded-md whitespace-nowrap text-start text-sm font-medium active:translate-y-[0.5px] disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-30",
   {
     variants: {
       variant: {
+        default: "",
         primary:
           "from-blue-600 to-[#3E7AFF] shadow-sm bg-gradient-to-t text-white hover:to-[#5B8EFF]",
         secondary:
@@ -20,6 +21,7 @@ const buttonVariants = cva(
           "hover:bg-brand-50 text-foreground focus:ring focus:ring-offset-0 focus:ring-brand-600/20",
       },
       size: {
+        default: "",
         sm: "px-2.5 py-1.5",
         md: "px-3 py-2",
         lg: "px-3 py-2.5",
@@ -27,8 +29,8 @@ const buttonVariants = cva(
       },
     },
     defaultVariants: {
-      variant: "secondary",
-      size: "sm",
+      variant: "default",
+      size: "default",
     },
   },
 );

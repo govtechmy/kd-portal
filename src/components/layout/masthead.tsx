@@ -1,13 +1,14 @@
 "use client";
 
+import Collapse from "@/components/layout/collapse";
 import Checkmark14PointStar from "@/icons/checkmark-14-point-star";
-import GovMY from "@/icons/govmy";
-import { useTranslations } from "next-intl";
-import { useState } from "react";
 import ChevronDown from "@/icons/chevron-down";
-import { cn } from "@/lib/utils";
+import GovMY from "@/icons/govmy";
 import Lock from "@/icons/lock";
 import SolidLock from "@/icons/solid-lock";
+import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
+import { useState } from "react";
 
 export default function Masthead() {
   const t = useTranslations("Masthead");
@@ -38,7 +39,7 @@ export default function Masthead() {
             />
           </button>
         </div>
-        {open && (
+        <Collapse isOpen={open}>
           <div className="grid grid-cols-1 gap-6 pb-8 pt-6 sm:grid-cols-2">
             <div className="flex gap-3">
               <GovMY className="text-foreground-success shrink-0" />
@@ -64,7 +65,7 @@ export default function Masthead() {
               </div>
             </div>
           </div>
-        )}
+        </Collapse>
       </div>
     </div>
   );

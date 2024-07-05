@@ -23,18 +23,18 @@ export default function Page() {
             </h1>
           </div>
 
-          <div className="space-y-4">
+          {/* <div className="space-y-4">
             <div className="mx-auto flex items-center gap-2.5 rounded-full border bg-background pl-4.5 pr-1.5 shadow-card sm:w-[600px]">
               <input
                 placeholder={t("Home.placeholder")}
                 className="flex h-11 w-full rounded-md bg-background py-3 text-sm outline-none placeholder:text-dim-500 disabled:cursor-not-allowed disabled:opacity-50"
               />
               <span className="flex shrink-0 items-center gap-x-1 text-sm text-dim-500">
-                {t("Home.type")}
+                {t("Search.type")}
                 <span className="rounded-md border border-outline-300 px-1.5 py-0.5">
                   /
                 </span>
-                {t("Home.search")}
+                {t("Search.search")}
               </span>
               <div className="rounded-full bg-gradient-to-b from-[#5288FF] to-brand-600 to-100% p-1.5">
                 <Search className="text-white" />
@@ -62,7 +62,7 @@ export default function Page() {
                   ))}
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 

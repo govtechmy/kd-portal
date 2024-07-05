@@ -63,10 +63,6 @@
     @apply outline-none;
   }
 
-  :focus(:focus-visible) {
-    @apply outline outline-offset-0;
-  }
-
   body {
     @apply bg-background text-black-900;
   }
