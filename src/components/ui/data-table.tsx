@@ -551,7 +551,15 @@ const DropdownSingleFilter: FunctionComponent<DropdownSingleFilter> = ({
       <SelectTrigger asChild>
         <Button variant="secondary">
           <span className="text-sm text-dim-500">{triggerText}</span>
-          <SelectValue>{selectedFilters}</SelectValue>
+          <SelectValue>
+            <ReadMore
+              className="block whitespace-nowrap lg:hidden"
+              max={["char", 30]}
+            >
+              {selectedFilters}
+            </ReadMore>
+            <span className="hidden lg:block">{selectedFilters}</span>
+          </SelectValue>
           <SelectIcon>
             <ChevronDown />
           </SelectIcon>
@@ -560,7 +568,7 @@ const DropdownSingleFilter: FunctionComponent<DropdownSingleFilter> = ({
       <SelectContent
         avoidCollisions={true}
         side="bottom"
-        className="w-full"
+        className="max-h-[250px] w-full py-2"
         align="start"
       >
         <SelectItem
