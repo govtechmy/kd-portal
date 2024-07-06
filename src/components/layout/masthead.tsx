@@ -24,7 +24,7 @@ export default function Masthead() {
       )}
     >
       <div className="container">
-        <div className="flex flex-wrap items-center gap-1.5 py-1 text-sm leading-4 text-brand-700">
+        <div className="flex flex-wrap items-center gap-1.5 py-1.5 text-sm leading-4 text-brand-700">
           <Checkmark14PointStar className="size-4 sm:size-5" />
           <span className="text-black-700">{t("official_gov_website")}</span>
           <button
