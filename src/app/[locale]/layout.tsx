@@ -43,7 +43,7 @@ export default async function Layout({
 
   return (
     <html lang={locale}>
-      <body className={cn(inter.className, poppins.variable, "min-w-[320px]")}>
+      <body className={cn(inter.className, poppins.variable, "min-w-[320px] flex flex-col")}>
         <NextIntlClientProvider messages={messages}>
           <Masthead />
           <Header locale={locale} />
