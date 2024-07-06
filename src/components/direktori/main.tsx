@@ -32,7 +32,9 @@ const DirektoriMain: FC = () => {
         cellClass: "whitespace-nowrap",
       },
       cell: (info: any) =>
-        info.row.original.id === 0 ? (
+        info.row.original.id === -1 ? (
+          `${info.row.original.bhg} - ${info.getValue()}`
+        ) : info.row.original.id === 0 ? (
           <span className="text-red-600">KOSONG</span>
         ) : (
           info.getValue()
@@ -96,9 +98,11 @@ const DirektoriMain: FC = () => {
     return setData(
       array.filter((item) => {
         return (
-          item.nama.toLowerCase().includes(query) ||
-          (item.emel && item.emel.toLowerCase().includes(query)) ||
-          (item.jawatan && item.jawatan.toLowerCase().includes(query))
+          (item.nama.toLowerCase().includes(query) ||
+            (item.emel && item.emel.toLowerCase().includes(query)) ||
+            (item.jawatan && item.jawatan.toLowerCase().includes(query))) &&
+          // Might be hacky but check if nama starts with seksyen, to not return it in search
+          !item.nama.toLowerCase().startsWith("seksyen")
         );
       }),
     );
@@ -131,10 +135,14 @@ const DirektoriMain: FC = () => {
           resizeable={false}
           paginate={{
             pageIndex: 0,
-            pageSize: 20,
+            pageSize: 15,
           }}
           dropdownFilter="bhg"
           dropdownText={t("Directory.table_header.bhg")}
+          isMerged={(row) => {
+            if (row.original.id === -1) return row.getVisibleCells()[0];
+            return false;
+          }}
         />
       </section>
     </main>

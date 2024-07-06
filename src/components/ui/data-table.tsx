@@ -16,6 +16,8 @@ import {
   getSortedRowModel,
   Table as TTable,
   getPaginationRowModel,
+  Row,
+  Cell,
 } from "@tanstack/react-table";
 import { useParams, useRouter } from "next/navigation";
 import {
@@ -37,7 +39,6 @@ import {
   SetStateAction,
   useRef,
 } from "react";
-import { DeepKeys, route, routes } from "@/lib/routes";
 import Ellipsis from "@/icons/ellipsis";
 import { cn, toRM } from "@/lib/utils";
 import {
@@ -73,7 +74,6 @@ interface DataTableProps<TData, TValue> {
   filtering?: boolean;
   visibility?: boolean;
   paginate?: {
-    // route: DeepKeys<typeof routes>;
     pageIndex: number;
     pageSize: number;
   };
@@ -85,6 +85,7 @@ interface DataTableProps<TData, TValue> {
   onRowSelection?: (value: string[]) => void;
   dropdownFilter: string;
   dropdownText?: string;
+  isMerged?: (row: Row<TData>) => Cell<TData, unknown> | false;
 }
 
 const DataTable = <TData, TValue>({
@@ -103,6 +104,7 @@ const DataTable = <TData, TValue>({
   actionIcon = <Ellipsis className="size-4" />,
   dropdownFilter,
   dropdownText,
+  isMerged,
 }: DataTableProps<TData, TValue>) => {
   const [data, setData] = useState<TData[]>(_data);
   const originalDefault = useRef(defaultVisibility);
@@ -222,8 +224,8 @@ const DataTable = <TData, TValue>({
         );
       },
     },
-    debugTable: true,
-    debugHeaders: true,
+    debugTable: false,
+    debugHeaders: false,
   });
 
   const [headerGroups, footerGroup] = [
@@ -236,8 +238,8 @@ const DataTable = <TData, TValue>({
   };
 
   const createMiddlePages = (current: number, max: number) => {
-    const mid_start = Math.max(2, current - 3);
-    const mid_end = Math.min(current + 3, max - 1);
+    const mid_start = Math.max(2, current - 1);
+    const mid_end = Math.min(current + 1, max - 1);
     return createRange(mid_start, mid_end);
   };
 
@@ -369,36 +371,62 @@ const DataTable = <TData, TValue>({
         </TableHeader>
         <TableBody>
           {table?.getRowModel()?.rows?.length > 0 ? (
-            table.getRowModel().rows.map((row) => (
-              <TableRow
-                key={row.id}
-                data-state={row.getIsSelected() && "selected"}
-                className={cn(
-                  "relative",
-                  (row.depth > 0 || row.getIsExpanded()) && "border-b-0",
-                  row.depth === 0 && "border-t",
-                )}
-              >
-                {row.getVisibleCells().map((cell, index) => (
-                  <TableCell
-                    id={cell.id}
-                    key={cell.id}
-                    className={cn(
-                      "py-2.5 text-start",
-                      ["currency", "number"].includes(
-                        cell.column.columnDef.meta?.type!,
-                      ) && "text-right tabular-nums",
-                      cell.column.columnDef.meta?.cellClass,
-                    )}
-                    style={{
-                      width: cell.column.getSize(),
-                    }}
-                  >
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </TableCell>
-                ))}
-              </TableRow>
-            ))
+            table.getRowModel().rows.map((row) => {
+              const mergedRow = isMerged ? isMerged(row) : undefined;
+              return (
+                <TableRow
+                  key={row.id}
+                  data-state={row.getIsSelected() && "selected"}
+                  className={cn(
+                    "relative",
+                    (row.depth > 0 || row.getIsExpanded()) && "border-b-0",
+                    row.depth === 0 && "border-t",
+                  )}
+                >
+                  {mergedRow ? (
+                    <TableCell
+                      id={mergedRow.id}
+                      key={mergedRow.id}
+                      colSpan={6}
+                      className={cn(
+                        "py-2.5 text-center font-bold",
+                        ["currency", "number"].includes(
+                          mergedRow.column.columnDef.meta?.type!,
+                        ) && "text-right tabular-nums",
+                        mergedRow.column.columnDef.meta?.cellClass,
+                      )}
+                    >
+                      {flexRender(
+                        mergedRow.column.columnDef.cell,
+                        mergedRow.getContext(),
+                      )}
+                    </TableCell>
+                  ) : (
+                    row.getVisibleCells().map((cell, index) => (
+                      <TableCell
+                        id={cell.id}
+                        key={cell.id}
+                        className={cn(
+                          "py-2.5 text-start",
+                          ["currency", "number"].includes(
+                            cell.column.columnDef.meta?.type!,
+                          ) && "text-right tabular-nums",
+                          cell.column.columnDef.meta?.cellClass,
+                        )}
+                        style={{
+                          width: cell.column.getSize(),
+                        }}
+                      >
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext(),
+                        )}
+                      </TableCell>
+                    ))
+                  )}
+                </TableRow>
+              );
+            })
           ) : (
             <TableRow>
               <TableCell
