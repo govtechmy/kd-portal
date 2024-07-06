@@ -24,7 +24,8 @@
   },
   "Search": {
     "type": "Type",
-    "search": "to search"
+    "search": "to search",
+    "default_placeholder": "Start typing to search"
   },
   "Home": {
     "placeholder": "Find keywords: “news”, “policy”, “staff name”",
@@ -129,7 +130,6 @@
       "desc5": "",
       "desc6": ""
     }
-  
   },
   "Announcements": {
     "header": "Digital Ministry Announcements",
@@ -142,7 +142,16 @@
     "header": "Policy Documents"
   },
   "Directory": {
-    "header": "Staff Directory"
+    "header": "Staff Directory",
+    "search_placeholder": "Search by keywords: 'name', 'position', 'email'",
+    "table_header": {
+      "nama": "Name",
+      "bhg": "Department",
+      "gred": "Grade",
+      "jawatan": "Position",
+      "telefon": "Phone no",
+      "emel": "Email (@digital.gov.my)"
+    }
   },
   "Contact": {
     "header": "Contact Us",

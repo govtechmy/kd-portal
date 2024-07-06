@@ -24,7 +24,8 @@
   },
   "Search": {
     "type": "Tekan",
-    "search": "untuk cari"
+    "search": "untuk cari",
+    "default_placeholder": "Mula menaip untuk membuat carian"
   },
   "Home": {
     "placeholder": "Cari kata kunci: “tajuk berita”, “dasar”, “nama staff”",
@@ -141,7 +142,16 @@
     "header": "Dokumen Dasar"
   },
   "Directory": {
-    "header": "Direktori Kakitangan"
+    "header": "Direktori Kakitangan",
+    "search_placeholder": "Cari kata kunci: 'nama', 'jawatan', 'emel'",
+    "table_header": {
+      "nama": "Nama",
+      "bhg": "Bahagian",
+      "gred": "Gred",
+      "jawatan": "Jawatan",
+      "telefon": "No telefon",
+      "emel": "Emel (@digital.gov.my)"
+    }
   },
   "Contact": {
     "header": "Hubungi Kami",

@@ -113,14 +113,14 @@ const DataTable = <TData, TValue>({
     [key: string]: boolean;
   }>(defaultVisibility || {});
 
-  useEffect(() => {
-    visibilityCache &&
-      visibilityCache(
-        Object.keys(columnVisibility).filter(
-          (curr) => columnVisibility[curr] === true,
-        ),
-      );
-  }, [columnVisibility]);
+  // useEffect(() => {
+  //   visibilityCache &&
+  //     visibilityCache(
+  //       Object.keys(columnVisibility).filter(
+  //         (curr) => columnVisibility[curr] === true,
+  //       ),
+  //     );
+  // }, [columnVisibility]);
   const { push } = useRouter();
   const params = useParams();
   const [pagination, setPagination] = useState({

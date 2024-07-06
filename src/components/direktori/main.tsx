@@ -24,7 +24,7 @@ const DirektoriMain: FC = () => {
 
   const column = [
     {
-      header: "Nama",
+      header: t("Directory.table_header.nama"),
       accessorKey: "nama",
       meta: {
         type: "text",
@@ -39,7 +39,7 @@ const DirektoriMain: FC = () => {
         ),
     },
     {
-      header: "Gred",
+      header: t("Directory.table_header.gred"),
       accessorKey: "gred",
       meta: {
         type: "text",
@@ -49,7 +49,7 @@ const DirektoriMain: FC = () => {
       },
     },
     {
-      header: "Bahagian",
+      header: t("Directory.table_header.bhg"),
       accessorKey: "bhg",
       meta: {
         type: "text",
@@ -60,7 +60,7 @@ const DirektoriMain: FC = () => {
       },
     },
     {
-      header: "Jawatan",
+      header: t("Directory.table_header.jawatan"),
       accessorKey: "jawatan",
       meta: {
         type: "text",
@@ -70,7 +70,7 @@ const DirektoriMain: FC = () => {
       },
     },
     {
-      header: "No Telefon",
+      header: t("Directory.table_header.telefon"),
       accessorKey: "telefon",
       meta: {
         type: "text",
@@ -79,7 +79,7 @@ const DirektoriMain: FC = () => {
       },
     },
     {
-      header: "Emel (@digital.gov.my)",
+      header: t("Directory.table_header.emel"),
       accessorKey: "emel",
       size: 100,
       meta: {
@@ -117,6 +117,7 @@ const DirektoriMain: FC = () => {
           <Search
             className="w-full px-6 lg:w-[600px] lg:px-3"
             onChange={(query) => searchArray(StaffDirectory, query)}
+            placeholder={t("Directory.search_placeholder")}
           />
         </div>
       </section>
@@ -133,7 +134,7 @@ const DirektoriMain: FC = () => {
             pageSize: 20,
           }}
           dropdownFilter="bhg"
-          dropdownText="Bahagian"
+          dropdownText={t("Directory.table_header.bhg")}
         />
       </section>
     </main>
