@@ -9,8 +9,8 @@ export default function Page() {
   const t = useTranslations();
 
   return (
-    <>
-      <div className="relative -z-10 border-b">
+    <main className="divide-y-washed-100 divide-y">
+      <section className="relative">
         <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden">
           <HeroPattern className="absolute -top-[83.33%]" />
         </div>
@@ -39,7 +39,8 @@ export default function Page() {
             <span>-</span>
           </div>
         </div>
-      </div>
+      </section>
+      
       <section className="flex min-h-screen w-full">
         <Pagination
           curr={0}
@@ -47,6 +48,6 @@ export default function Page() {
           setPage={(page) => `${routes.ANNOUNCEMENTS}?page=${page + 1}`}
         />
       </section>
-    </>
+    </main>
   );
 }

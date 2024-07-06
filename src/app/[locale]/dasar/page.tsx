@@ -6,17 +6,17 @@ export default function Page() {
   const t = useTranslations();
 
   return (
-    <>
-      <div className="relative -z-10 border-b">
+    <main className="divide-y-washed-100 divide-y">
+      <section className="relative">
         <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden">
-          <HeroPattern className="absolute" />
+          <HeroPattern className="absolute -top-[83.33%]" />
         </div>
         <h1 className="py-16 text-center font-poppins text-hmd font-semibold">
           {t("Policy.header")}
         </h1>
-      </div>
+      </section>
 
       <section className="flex min-h-screen w-full"></section>
-    </>
+    </main>
   );
 }
