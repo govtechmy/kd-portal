@@ -55,6 +55,15 @@ import {
 import { FunnelIcon, Cog6ToothIcon } from "@heroicons/react/24/solid";
 import { Button } from "./button";
 import ReadMore from "./read-more";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { SelectIcon } from "@radix-ui/react-select";
+import ChevronDown from "@/icons/chevron-down";
 
 interface DataTableProps<TData, TValue> {
   className?: string;
@@ -74,6 +83,7 @@ interface DataTableProps<TData, TValue> {
   action?: ReactNode;
   actionIcon?: ReactNode;
   onRowSelection?: (value: string[]) => void;
+  dropdownFilter: string;
 }
 
 const DataTable = <TData, TValue>({
@@ -90,6 +100,7 @@ const DataTable = <TData, TValue>({
   onRowSelection,
   action,
   actionIcon = <Ellipsis className="size-4" />,
+  dropdownFilter,
 }: DataTableProps<TData, TValue>) => {
   const [data, setData] = useState<TData[]>(_data);
   const originalDefault = useRef(defaultVisibility);
@@ -244,9 +255,16 @@ const DataTable = <TData, TValue>({
     return [1, "...", ...createMiddlePages(current, max), "...", max];
   };
 
+  const dropdownFilterHeader = headerGroups[0].headers.find(
+    (h) => h.id === dropdownFilter,
+  );
+
   return (
     <div className={cn("flex flex-col rounded-md border", className)}>
       <div className="mb-4 flex items-center gap-2">
+        {dropdownFilterHeader && (
+          <DropdownSingleFilter table={table} header={dropdownFilterHeader} />
+        )}
         <div className="flex-1">
           {typeof title === "string" ? <h5>{title}</h5> : title}
         </div>
@@ -482,5 +500,76 @@ const TableResizer: FunctionComponent<TableResizerProps> = ({ header }) => {
         header.column.getIsResizing() && "bg-outline-400 opacity-100",
       )}
     />
+  );
+};
+
+interface DropdownSingleFilter {
+  table: TTable<any>;
+  header: Header<any, unknown>;
+}
+
+const DropdownSingleFilter: FunctionComponent<DropdownSingleFilter> = ({
+  table,
+  header,
+}) => {
+  const { getFilterValue, setFilterValue } = header.column;
+  const [selectedFilters, setSelectedFilters] = useState<string>(
+    (getFilterValue() as string) || "Semua",
+  );
+
+  const sortedUniqueValues = useMemo(() => {
+    const uniqueValues = Array.from(
+      header.column.getFacetedUniqueValues().keys(),
+    );
+    const filteredValues = uniqueValues.filter((value) => {
+      if (!Boolean(value)) return false;
+      return value;
+    });
+    return filteredValues.sort();
+  }, [header.column.getFacetedUniqueValues()]);
+
+  const handleValueChange = (selected: string) => {
+    setSelectedFilters(selected);
+
+    if (selected === "Semua") {
+      table.resetColumnFilters(true);
+      return;
+    }
+    setFilterValue(selected);
+  };
+
+  return (
+    <Select value={selectedFilters} onValueChange={handleValueChange}>
+      <SelectTrigger asChild>
+        <Button variant="secondary">
+          <SelectValue>{selectedFilters}</SelectValue>
+          <SelectIcon>
+            <ChevronDown />
+          </SelectIcon>
+        </Button>
+      </SelectTrigger>
+      <SelectContent
+        avoidCollisions={true}
+        side="bottom"
+        className="w-full"
+        align="start"
+      >
+        <SelectItem
+          value={"Semua"}
+          className={"Semua" === selectedFilters ? "font-medium" : ""}
+        >
+          Semua
+        </SelectItem>
+        {sortedUniqueValues.map((l) => (
+          <SelectItem
+            key={l}
+            value={l}
+            className={l === selectedFilters ? "font-medium" : ""}
+          >
+            {l}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
   );
 };

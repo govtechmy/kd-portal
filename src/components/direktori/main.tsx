@@ -125,6 +125,7 @@ const DirektoriMain: FC = () => {
             pageIndex: 0,
             pageSize: 20,
           }}
+          dropdownFilter="bhg"
         />
       </section>
     </main>
