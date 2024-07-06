@@ -108,23 +108,20 @@ export default function Page() {
           </div>
         ))}
         {social_media.map(({ icon, name, href }) => (
-          <div
+          <a
             key={name}
-            className="col-span-1 flex flex-none flex-col items-center gap-2 py-6 md:gap-3 lg:w-[100px]"
+            href={href}
+            target="_blank"
+            rel="noopenner noreferrer"
+            className="text-sm text-black-700 [text-underline-position:from-font] hover:text-black-900 hover:underline"
           >
-            <div className="flex size-[42px] items-center justify-center rounded-full bg-brand-50 text-brand-700">
-              {icon}
-            </div>
-
-            <a
-              href={href}
-              target="_blank"
-              rel="noopenner noreferrer"
-              className="text-sm text-black-700 [text-underline-position:from-font] hover:text-black-900 hover:underline"
-            >
+            <div className="col-span-1 flex flex-none flex-col items-center gap-2 py-6 md:gap-3 lg:w-[100px]">
+              <div className="flex size-[42px] items-center justify-center rounded-full bg-brand-50 text-brand-700">
+                {icon}
+              </div>
               {name}
-            </a>
-          </div>
+            </div>
+          </a>
         ))}
       </section>
     </main>
