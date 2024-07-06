@@ -57,9 +57,8 @@ export function Header({ locale }: { locale: string }) {
             className="absolute top-full -z-10 flex flex-col gap-0 rounded-b-xl p-3 lg:hidden"
           >
             {nav_items.map(({ name, href }) => (
-              <SheetClose asChild>
+              <SheetClose asChild key={name}>
                 <Link
-                  key={name}
                   href={href}
                   data-state={active(href) ? "open" : "close"}
                   className={cn(
