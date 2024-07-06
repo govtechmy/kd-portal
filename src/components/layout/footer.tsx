@@ -6,6 +6,35 @@ import Image from "next/image";
 
 type FooterLinks = "about_us" | "quick_links" | "open_source";
 
+export const quick_links = [
+  { name: "SpotMe", href: "https://www.spotme.gov.my/" },
+  { name: "MyGovUC", href: "https://www.mygovuc.gov.my/" },
+  { name: "DDMS", href: "https://portalddms.malaysia.gov.my/" },
+  { name: "MyMesyuarat", href: "https://www.mymesyuarat.gov.my/" },
+  { name: "ePenyata Gaji", href: "https://epenyatagaji-laporan.anm.gov.my/" },
+  { name: "HRMIS", href: "https://hrmis2.eghrmis.gov.my/" },
+  { name: "ePerolehan", href: "https://www.eperolehan.gov.my/" },
+];
+
+export const social_media = [
+  {
+    icon: <Icon.Facebook />,
+    name: "Facebook",
+    href: "https://www.facebook.com/KementerianDigitalMalaysia/",
+  },
+  { icon: <Icon.X />, name: "X", href: "https://x.com/KemDigitalMsia" },
+  {
+    icon: <Icon.Instagram />,
+    name: "Instagram",
+    href: "https://www.instagram.com/kementeriandigitalmalaysia/",
+  },
+  {
+    icon: <Icon.Tiktok />,
+    name: "Tiktok",
+    href: "https://www.tiktok.com/@kementeriandigital",
+  },
+];
+
 export default function Footer() {
   const t = useTranslations();
   const format = useFormatter();
@@ -19,15 +48,7 @@ export default function Footer() {
       { name: "directory", href: routes.DIRECTORY },
       { name: "contact_us", href: routes.CONTACT_US },
     ],
-    quick_links: [
-      { name: "SpotMe", href: "#" },
-      { name: "MyGovUC", href: "#" },
-      { name: "DDMS", href: "#" },
-      { name: "MyMesyuarat", href: "#" },
-      { name: "ePenyata Gaji", href: "#" },
-      { name: "HRMIS", href: "#" },
-      { name: "ePerolehan", href: "#" },
-    ],
+    quick_links,
     open_source: [
       { name: "repo", href: "https://github.com/" },
       { name: "ui_ux", href: "https://www.figma.com/file/" },
@@ -40,8 +61,8 @@ export default function Footer() {
 
   return (
     <div className="border-t bg-background-50 py-8 lg:py-16">
-      <div className="divide-y-outline-200 container divide-y">
-        <div className="flex flex-col gap-6 pb-8 lg:flex-row lg:justify-between">
+      <div className="divide-y-outline-200 container divide-y max-sm:px-0">
+        <div className="flex flex-col gap-6 pb-8 max-sm:px-4.5 lg:flex-row lg:justify-between">
           <div className="flex flex-col gap-4 lg:gap-4.5">
             <div className="flex items-center gap-x-2.5">
               <Image
@@ -66,10 +87,9 @@ export default function Footer() {
             <div className="space-y-2 lg:space-y-3">
               <p className="text-sm font-semibold">{t("Footer.follow_us")}</p>
               <div className="flex gap-3">
-                <Icon.Facebook />
-                <Icon.Instagram />
-                <Icon.X />
-                <Icon.Youtube />
+                {social_media.map(({ icon, href }) => (
+                  <a href={href}>{icon}</a>
+                ))}
               </div>
             </div>
           </div>
@@ -109,33 +129,29 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col justify-between gap-6 pt-8 text-sm text-dim-500 lg:flex-row">
+        <div className="flex flex-col justify-between gap-6 pt-8 text-sm text-dim-500 max-sm:px-4.5 lg:flex-row">
           <div className="flex flex-col gap-2 lg:flex-row lg:items-center">
             <p>
               {t("Footer.all_rights_reserved")} © {new Date().getFullYear()}
             </p>
             <span className="hidden h-3 w-px bg-outline-300 lg:block"></span>
             <div className="flex flex-wrap gap-x-3 gap-y-2 text-black-700">
-              {["disclaimer", "privacy", "safety", "personal_data"].map(
-                (link) => (
-                  <a
-                    key={link}
-                    className="text-sm text-black-700 [text-underline-position:from-font] hover:text-black-900 hover:underline"
-                    target="_blank"
-                    rel="noopenner noreferrer"
-                    href={link}
-                  >
-                    {t(`Footer.${link}`)}
-                  </a>
-                ),
-              )}
+              {["penafian", "dasar-privasi"].map((link) => (
+                <Link
+                  key={link}
+                  className="text-sm text-black-700 [text-underline-position:from-font] hover:text-black-900 hover:underline"
+                  href={link}
+                >
+                  {t(`Footer.${link}`)}
+                </Link>
+              ))}
             </div>
           </div>
 
           <span>
             {t("Footer.last_update") +
               ": " +
-              format.dateTime(new Date(), {
+              format.dateTime(new Date(process.env.LAST_UPDATED), {
                 year: "numeric",
                 month: "short",
                 day: "numeric",
