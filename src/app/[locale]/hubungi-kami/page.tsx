@@ -79,7 +79,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="container grid grid-cols-2 divide-x divide-y divide-washed-100 px-0 sm:grid-cols-4 lg:flex lg:border-x lg:border-x-washed-100">
+      <section className="container grid grid-cols-2 divide-x divide-y divide-outline-200 px-0 sm:grid-cols-4 lg:flex lg:border-x lg:border-x-washed-100">
         {[
           {
             icon: <Phone className="size-6" />,
