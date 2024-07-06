@@ -31,6 +31,12 @@ const DirektoriMain: FC = () => {
         editable: false,
         cellClass: "whitespace-nowrap",
       },
+      cell: (info: any) =>
+        info.row.original.id === 0 ? (
+          <span className="text-red-600">KOSONG</span>
+        ) : (
+          info.getValue()
+        ),
     },
     {
       header: "Gred",
@@ -59,7 +65,8 @@ const DirektoriMain: FC = () => {
       meta: {
         type: "text",
         editable: false,
-        cellClass: "whitespace-nowrap",
+        enableReadMore: true,
+        maxChar: 60,
       },
     },
     {
@@ -108,7 +115,7 @@ const DirektoriMain: FC = () => {
             {t("Directory.header")}
           </h1>
           <Search
-            className="w-[600px]"
+            className="w-full px-6 lg:w-[600px] lg:px-3"
             onChange={(query) => searchArray(StaffDirectory, query)}
           />
         </div>
@@ -126,6 +133,7 @@ const DirektoriMain: FC = () => {
             pageSize: 20,
           }}
           dropdownFilter="bhg"
+          dropdownText="Bahagian"
         />
       </section>
     </main>

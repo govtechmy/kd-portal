@@ -44,7 +44,7 @@ const Search: FunctionComponent<SearchProps> = ({
       ref={searchRef}
       suffix={
         <div className="flex items-center gap-2.5 text-sm text-dim-500">
-          <span>
+          <span className="hidden lg:block">
             Tekan{" "}
             <span className="rounded-md border border-outline-300 bg-white px-1.5 py-0.5">
               /

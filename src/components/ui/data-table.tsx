@@ -84,6 +84,7 @@ interface DataTableProps<TData, TValue> {
   actionIcon?: ReactNode;
   onRowSelection?: (value: string[]) => void;
   dropdownFilter: string;
+  dropdownText?: string;
 }
 
 const DataTable = <TData, TValue>({
@@ -101,6 +102,7 @@ const DataTable = <TData, TValue>({
   action,
   actionIcon = <Ellipsis className="size-4" />,
   dropdownFilter,
+  dropdownText,
 }: DataTableProps<TData, TValue>) => {
   const [data, setData] = useState<TData[]>(_data);
   const originalDefault = useRef(defaultVisibility);
@@ -263,7 +265,11 @@ const DataTable = <TData, TValue>({
     <div className={cn("flex flex-col rounded-md border", className)}>
       <div className="mb-4 flex items-center gap-2">
         {dropdownFilterHeader && (
-          <DropdownSingleFilter table={table} header={dropdownFilterHeader} />
+          <DropdownSingleFilter
+            table={table}
+            header={dropdownFilterHeader}
+            triggerText={dropdownText}
+          />
         )}
         <div className="flex-1">
           {typeof title === "string" ? <h5>{title}</h5> : title}
@@ -506,11 +512,13 @@ const TableResizer: FunctionComponent<TableResizerProps> = ({ header }) => {
 interface DropdownSingleFilter {
   table: TTable<any>;
   header: Header<any, unknown>;
+  triggerText?: string;
 }
 
 const DropdownSingleFilter: FunctionComponent<DropdownSingleFilter> = ({
   table,
   header,
+  triggerText,
 }) => {
   const { getFilterValue, setFilterValue } = header.column;
   const [selectedFilters, setSelectedFilters] = useState<string>(
@@ -542,6 +550,7 @@ const DropdownSingleFilter: FunctionComponent<DropdownSingleFilter> = ({
     <Select value={selectedFilters} onValueChange={handleValueChange}>
       <SelectTrigger asChild>
         <Button variant="secondary">
+          <span className="text-sm text-dim-500">{triggerText}</span>
           <SelectValue>{selectedFilters}</SelectValue>
           <SelectIcon>
             <ChevronDown />
