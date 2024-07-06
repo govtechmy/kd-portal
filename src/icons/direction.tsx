@@ -11,7 +11,7 @@ export default function Direction({ ...props }) {
       <path
         d="M15 3L3 11.4H9.46154L12.2308 17L15 3Z"
         stroke="currentColor"
-        strokeWidth="1.5"
+        strokeWidth="inherit"
         strokeLinejoin="round"
       />
     </svg>

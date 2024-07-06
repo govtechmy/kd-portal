@@ -11,7 +11,7 @@ export default function ArrowForward({ ...props }) {
       <path
         d="M11.75 4.75L17.25 10L11.75 15.25M17 10H2.75"
         stroke="currentColor"
-        strokeWidth="1.5"
+        strokeWidth="inherit"
         strokeLinecap="round"
         strokeLinejoin="round"
       />

@@ -1,24 +1,35 @@
+import Carousel from "@/components/home/carousel";
+import Quicklinks from "@/components/home/quicklinks";
+import Timeline from "@/components/home/timeline";
 import HeroPattern from "@/components/layout/hero-pattern";
 import Flag from "@/icons/flag";
 import Search from "@/icons/search";
 import { useTranslations } from "next-intl";
+import { unstable_setRequestLocale } from "next-intl/server";
 import React from "react";
 
-export default function Page() {
+export default function Page({
+  params: { locale },
+}: {
+  params: {
+    locale: string;
+  };
+}) {
+  unstable_setRequestLocale(locale);
   const t = useTranslations();
 
   return (
-    <main className="flex flex-col">
-      <div className="relative w-full grid-cols-6 gap-6 border-b sm:grid">
+    <main className="divide-y-washed-100 divide-y">
+      <section className="relative w-full gap-6 sm:grid sm:grid-cols-6">
         <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden bg-gradient-radial from-[#C2D5FF] from-0% via-[#F1F5FF] via-[27.57%] to-white to-100%">
-          <HeroPattern className="animate-flow absolute -top-[23.33%]" />
+          <HeroPattern className="absolute -top-[23.33%] animate-flow" />
         </div>
         <div className="col-span-4 col-start-2 flex w-full flex-col items-center gap-y-9 px-4.5 py-[120px] text-center sm:py-[120px] md:px-6">
           <div className="space-y-6">
             <p className="font-bold uppercase tracking-[0.2em] text-brand-700">
               {t("Agency.name")}
             </p>
-            <h1 className="text-balance font-poppins text-[32px] font-semibold leading-[40px] sm:text-hmd">
+            <h1 className="text-balance font-poppins text-[32px]/10 font-semibold sm:text-hmd">
               Menerajui Pendigitalan Negara
             </h1>
           </div>
@@ -64,9 +75,11 @@ export default function Page() {
             </div>
           </div> */}
         </div>
-      </div>
+      </section>
 
-      <section className="container flex min-h-screen w-full"></section>
+      <Carousel />
+      <Timeline />
+      <Quicklinks />
     </main>
   );
 }

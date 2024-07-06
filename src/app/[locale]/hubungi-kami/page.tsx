@@ -1,6 +1,9 @@
+import { social_media } from "@/components/layout/footer";
 import HeroPattern from "@/components/layout/hero-pattern";
 import { buttonVariants } from "@/components/ui/button";
 import Direction from "@/icons/direction";
+import Envelope from "@/icons/envelope";
+import Phone from "@/icons/phone";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 import React from "react";
@@ -9,8 +12,8 @@ export default function Page() {
   const t = useTranslations();
 
   return (
-    <>
-      <div className="relative -z-10 border-b">
+    <main className="divide-y-washed-100 divide-y">
+      <div className="relative">
         <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden">
           <HeroPattern className="absolute -top-[83.33%]" />
         </div>
@@ -19,10 +22,10 @@ export default function Page() {
         </h1>
       </div>
 
-      <section className="container grid grid-cols-12 border-x border-washed-100 py-[84px]">
-        <div className="col-span-10 col-start-2">
-          <div className="flex gap-16">
-            <div className="w-1/3 space-y-4.5 py-16">
+      <section className="container border-x border-washed-100 py-12 lg:py-[84px] xl:grid xl:grid-cols-12">
+        <div className="divide-y-washed-100 col-span-10 col-start-2 divide-y">
+          <div className="flex flex-col gap-12 sm:flex-row">
+            <div className="space-y-4.5 sm:w-1/3 lg:py-16">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-foreground">
                 {t("Contact.office")}
               </p>
@@ -66,8 +69,7 @@ export default function Page() {
               </div>
             </div>
             <iframe
-              className="w-2/3 rounded-[32px] border shadow-[0_30px_100px_-10px_#4C53614D]"
-              height="450"
+              className="rounded-[32px] border shadow-[0_30px_100px_-10px_#4C53614D] max-sm:aspect-square sm:w-2/3"
               loading="lazy"
               allowFullScreen
               referrerPolicy="no-referrer-when-downgrade"
@@ -76,6 +78,52 @@ export default function Page() {
           </div>
         </div>
       </section>
-    </>
+
+      <section className="container grid grid-cols-2 divide-x divide-y divide-outline-200 px-0 sm:grid-cols-4 lg:flex lg:border-x lg:border-x-washed-100">
+        {[
+          {
+            icon: <Phone className="size-6" />,
+            title: "Contact.telephone",
+            desc: "Contact.telephone_number",
+          },
+          {
+            icon: <Envelope className="size-6" />,
+            title: "Contact.email",
+            desc: "Contact.email_address",
+          },
+        ].map(({ icon, title, desc }) => (
+          <div
+            key={title}
+            className="col-span-2 flex flex-auto gap-4.5 px-6 py-8 md:py-[34px]"
+          >
+            <div className="size-[42px] rounded-full bg-brand-50 p-[9px] text-brand-700">
+              {icon}
+            </div>
+            <div className="space-y-1 font-semibold">
+              <p className="text-sm uppercase tracking-[0.2em] text-brand-600">
+                {t(title)}
+              </p>
+              <p className="text-lg text-black-900">{t(desc)}</p>
+            </div>
+          </div>
+        ))}
+        {social_media.map(({ icon, name, href }) => (
+          <a
+            key={name}
+            href={href}
+            target="_blank"
+            rel="noopenner noreferrer"
+            className="text-sm text-black-700 [text-underline-position:from-font] hover:text-black-900 hover:underline"
+          >
+            <div className="col-span-1 flex flex-none flex-col items-center gap-2 py-6 md:gap-3 lg:w-[100px]">
+              <div className="flex size-[42px] items-center justify-center rounded-full bg-brand-50 text-brand-700">
+                {icon}
+              </div>
+              {name}
+            </div>
+          </a>
+        ))}
+      </section>
+    </main>
   );
 }

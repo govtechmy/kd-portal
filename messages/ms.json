@@ -28,7 +28,56 @@
   },
   "Home": {
     "placeholder": "Cari kata kunci: “tajuk berita”, “dasar”, “nama staff”",
-    "popular_links": "Pautan popular"
+    "popular_links": "Pautan popular",
+    "Activity": {
+      "overline": "Aktiviti Terkini",
+      "title1": "Pertemuan Menteri Digital bersama Duta Jepun ke Malaysia",
+      "title2": "Hubungan Dua Hala Malaysia-India",
+      "title3": "Mesyuarat MED4IRN Bil 1 2024",
+      "title4": "Kunjungan Hormat Menteri Industri & Teknologi Informasi, Republik Rakyat China",
+      "title5": "World Digital Economy Technology (WDET) 2024",
+      "desc1": "Sesi pertemuan ini bertujuan memperkukuhkan hubungan dua hala Malaysia-Jepun dalam memperkasakan potensi kerjasama dalam bidang ekonomi digital, 5G, keselamatan siber serta bidang lain yang mempunyai kepentingan bersama.",
+      "desc2": "Kunjungan hormat daripada Encik B.N. Reddy, Suruhanjaya Tinggi India bertujuan memperkukuhkan hubungan dua hala Malaysia-India serta membincangkan potensi kerjasama dalam bidang teknologi digital.",
+      "desc3": "Mesyuarat Majlis Ekonomi Digital dan Revolusi Perindustrian Keempat (4IR) Negara (MED4IRN) Bil. 1 2024 dihadiri YB Menteri Digital, Ketua Setiausaha Kementerian Digital dan Timbalan Ketua Setiausaha Kementerian Digital.",
+      "desc4": "Tujuan lawatan ini adalah bagi memperkukuhkan hubungan dua hala Malaysia-China serta membincangkan potensi kerjasama dalam bidang kecerdasan buatan, adaptasi 5G, keselamatan siber, pembangunan modal insan dan ekonomi digital.",
+      "desc5": "YB Datuk Wilson Ugak Kumbong, Timbalan Menteri Digital telah menghadiri World Digital Economy Technology (WDET) 2024 di Jakarta, Indonesia."
+    },
+    "Achievement": {
+      "overline": "Garis Masa",
+      "title": "Pencapaian Terkini",
+      "desc": "Senarai pencapaian dalam timeline.",
+      "date1": "06/07/2024, Sabtu",
+      "date2": "",
+      "date3": "",
+      "date4": "",
+      "date5": "",
+      "date6": "",
+      "date7": "",
+      "title1": "Lorem Ipsum Dolor Sit Amet",
+      "title2": "",
+      "title3": "",
+      "title4": "",
+      "title5": "",
+      "title6": "",
+      "title7": "",
+      "desc1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
+      "desc2": "",
+      "desc3": "",
+      "desc4": "",
+      "desc5": "",
+      "desc6": "",
+      "desc7": ""
+    },
+    "Quicklinks": {
+      "title": "Capaian Pantas",
+      "desc1": "Sistem perakam waktu masuk dan keluar pejabat.",
+      "desc2": "Komunikasi dan Kolaboratif Bersepadu yang diuruskan secara berpusat di JDN.",
+      "desc3": "Pengurusan rekod mengikut kitaran hayat Kerajaan bermula dari pewujudan, penyimpanan, penyenggaraan dan pelupusan rekod secara elektronik.",
+      "desc4": "Sistem pengurusan mesyuarat dan pemantauan keputusan mesyuarat secara dalam talian.",
+      "desc5": "Sistem dalam talian untuk Kakitangan Kerajaan menyemak, mengakses, serta mencetak slip penyata gaji dengan mudah dan pantas",
+      "desc6": "Sistem untuk tangani proses Human Resource (HR) dari mula perlantikan sehingga kepada penamatan perkhidmatan.",
+      "desc7": "Sistem perolehan elektronik yang membolehkan pembekal menawarkan produk dan perkhidmatan kepada Kerajaan melalui Internet."
+    }
   },
   "Footer": {
     "follow_us": "Ikuti Kami",
@@ -38,14 +87,48 @@
     "repo": "Repo Github",
     "ui_ux": "Figma",
     "all_rights_reserved": "Hak Cipta Pelihara",
-    "disclaimer": "Penafian",
-    "privacy": "Dasar Privasi",
+    "penafian": "Penafian",
+    "dasar-privasi": "Dasar Privasi",
     "safety": "Dasar Keselamatan",
     "personal_data": "Perlindungan Data Peribadi",
     "last_update": "Kemaskini Terakhir"
   },
+  "Privacy": {
+    "header": "Dasar Privasi",
+    "your_privacy": "Privasi Anda",
+    "your_privacy_desc": "Halaman ini menerangkan dasar privasi yang merangkumi penggunaan dan perlindungan maklumat yang dikemukakan oleh pengunjung. Sekiranya anda membuat transaksi atau menghantar e-mel yang mengandungi maklumat peribadi, maklumat ini mungkin akan dikongsi bersama dengan agensi awam lain untuk membantu penyediaan perkhidmatan yang lebih berkesan dan efektif. Contohnya seperti di dalam menyelesaikan aduan yang memerlukan maklum balas dari agensi-agensi lain.",
+    "collected_info": "Maklumat Yang Dikumpul",
+    "collected_info_desc": "Tiada maklumat peribadi akan dikumpul semasa anda melayari portal ini kecuali maklumat yang dikemukakan oleh anda melalui e-mel.\n\nApa yang akan berlaku jika saya membuat pautan kepada portal/laman web yang lain?\n\nPortal ini mempunyai pautan ke portal/laman web lain. Dasar privasi ini hanya terpakai untuk laman web ini sahaja. Perlu diingatkan bahawa portal/laman web yang terdapat dalam pautan mungkin mempunyai dasar privasi yang berbeza dan pengunjung dinasihatkan supaya meneliti dan memahami dasar privasi bagi setiap portal/laman web yang dilayari.",
+    "policy_change": "Pindaan Dasar",
+    "policy_change_desc": "Sekiranya dasar privasi ini dipinda, pindaan akan dikemas kini di halaman ini. Dengan sering melayari halaman ini, anda akan dikemas kini dengan maklumat yang dikumpul, cara ia digunakan dan dalam keadaan tertentu, bagaimana maklumat dikongsi bersama pihak yang lain.",
+    "personal_data": "Perlindungan Data Peribadi",
+    "personal_data_act": "Akta Perlindungan Data Peribadi",
+    "personal_data_act_desc": "Jabatan Perlindungan Data Peribadi (JPDP) merupakan agensi di bawah Kementerian Komunikasi dan Multimedia Malaysia (KKMM) yang ditubuhkan pada 16 Mei 2011 selepas Parlimen meluluskan Rang Undang-undang berkaitan Akta Perlindungan Data Peribadi 2010 (APDP) iaitu Akta 709.\n\nTanggungjawab utama Jabatan ini ialah untuk mengawalselia pemprosesan data peribadi individu yang terlibat dalam urus niaga komersial oleh pengguna data supaya tidak disalahguna dan disalahpakai oleh pihak-pihak yang berkepentingan.\n\nKeselamatan data peribadi pengguna perlu dilindungi bagi mencegah sebarang bentuk penyalahgunaan terhadap penyimpanan atau pemprosesan data peribadi individu, awam dan swasta di Malaysia secara transaksi komersial adalah termaktub di bawah APDP ini.\n\nDalam menguatkuasakan APDP, JPDP telah mensyaratkan kepada semua golongan pengguna data peribadi yang terdiri daripada pihak individu mahupun swasta kecuali Kerajaan untuk berdaftar secara rasmi bagi tujuan melindungi hak-hak pengguna dan awam.\n\nJPDP diketuai oleh Ketua Pengarah dengan dibantu oleh seorang Timbalan Ketua Pengarah. Manakala, terdapat tiga bahagian utama di JPDP iaitu Bahagian Pendaftaran dan Operasi, Bahagian Pemantauan dan Bahagian Perundangan.\n\nSila layari laman ini <a>http://www.pdp.gov.my</a>.",
+    "last_updated": "Dikemas kini pada 19.02.2024."
+  },
+  "Disclaimer": {
+    "header": "Penafian",
+    "desc": "Kementerian Digital tidak bertanggungjawab terhadap sebarang kehilangan atau kerosakan yang dialami kerana menggunakan maklumat dalam portal ini."
+  },
   "Info": {
-    "background": "Latar Belakang"
+    "background": "Latar Belakang",
+    "quote": "Penubuhan sebuah kementerian khas iaitu Kementerian Digital adalah untuk memberi penekanan kepada agenda pendigitalan. Tanpa kementerian yang khas ini, Malaysia tidak akan dapat bersaing pantas dengan negara-negara lain dalam bidang digital.",
+    "author": "–– YAB PM, Dato’ Seri Anwar Ibrahim",
+    "desc1": "Semasa mengumumkan rombakan kabinet pada 12 Disember 2023,  YAB Perdana Menteri, Dato’ Seri Anwar Ibrahim telah mencetuskan kewujudan sebuah kementerian yang baru iaitu Kementerian Digital.\n\nAgenda digital negara yang disusun semula membolehkan pelaksanaannya yang lebih berfokus, holistik dan berkesan. Fungsi pendigitalan dalam konteks sektor awam sebelum ini yang diterajui oleh Unit Pemodenan Tadbiran dan Perancangan Pengurusan (MAMPU) turut diperkasakan melalui penstrukturan semula MAMPU yang kini dikenali sebagai Jabatan Digital Negara (JDN).\n\n Selain JDN, pasak kementerian ini dikuatkan lagi dengan kehadiran agensi-agensi yang telah lama bertapak dalam arena digitalisasi seperti  Jabatan Perlindungan Data Peribadi (JPDP), MyDIGITAL Corporation, Malaysia Digital Economy Corporation (MDEC), CyberSecurity Malaysia (CSM), Digital Nasional Berhad (DNB) dan MyNIC.",
+    "desc2": "YB Tuan Gobind Singh Deo telah dilantik sebagai Menteri Digital yang pertama di Malaysia. Beliau dibantu oleh Timbalan Menteri, YB Datuk Wilson Ugak Anak Kumbong. Dari aspek pentadbiran awamnya pula, Y.Bhg Datuk Haji Rodzi Md Saad merupakan Ketua Setiausaha Kementerian Digital yang pertama.\n\nIbu pejabat Kementerian Digital secara rasminya beroperasi di Menara Usahawan, Presint 2, Pusat Pentadbiran Kerajaan Persekutuan, Putrajaya.",
+    "visi": "Visi",
+    "visi_desc": "Malaysia sebagai Negara Digital terkemuka, maju dan inovatif, memacu transformasi digital untuk kesejahteraan rakyat dan kemakmuran negara.",
+    "misi": "Misi",
+    "misi_desc": "Meneraju pendigitalan negara secara holistik dan inklusif. Mewujudkan ekosistem digital negara yang dipercayai dan bertaraf dunia.",
+    "Role": {
+      "title": "Fungsi dan Peranan",
+      "desc1": "<b>Mendigitalkan perkhidmatan kerajaan</b> untuk meningkatkan kecekapan, kebolehcapaian dan penglibatan rakyat.",
+      "desc2": "Melaksanakan inisiatif <b>data terbuka</b> untuk menggalakkan ketelusan, akauntabiliti dan inovasi.",
+      "desc3": "Menyediakan <b>peluang kemahiran</b> yang diperlukan dalam teknologi digital dan memastikan rakyat tidak ketinggalan dalam transformasi digital.",
+      "desc4": "<b>Melindungi prasarana digital, data, dan rakyat</b> daripada ancaman siber serta melaksanakan undang-undang untuk melindungi data peribadi dan privasi.",
+      "desc5": "⁠Memupuk <b>ekonomi digital</b> dengan menyokong keusahawanan inovasi dan syarikat pemula digital.",
+      "desc6": "<b>Mengimbangi ekosistem</b> prasarana dan teknologi digital dalam mewujudkan perniagaan yang berdaya saing."
+    }
   },
   "Announcements": {
     "header": "Siaran Kementerian Digital",
@@ -62,7 +145,11 @@
   },
   "Contact": {
     "header": "Hubungi Kami",
-    "office": "Pejabat"
+    "office": "Pejabat",
+    "telephone": "Telefon",
+    "telephone_number": "",
+    "email": "E-mel",
+    "email_address": "admin@digital.com.my"
   },
   "Pagination": {
     "previous": "Sebelum",

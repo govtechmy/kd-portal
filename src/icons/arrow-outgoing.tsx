@@ -11,7 +11,7 @@ export default function ArrowOutgoing({ ...props }) {
       <path
         d="M5 15L15 5M15 5L15 13.3333M15 5L6.66667 5"
         stroke="currentColor"
-        strokeWidth="1.5"
+        strokeWidth="inherit"
         strokeLinecap="round"
         strokeLinejoin="round"
       />

@@ -28,7 +28,56 @@
   },
   "Home": {
     "placeholder": "Find keywords: “news”, “policy”, “staff name”",
-    "popular_links": "Popular links"
+    "popular_links": "Popular links",
+    "Activity": {
+      "overline": "Latest Aktiviti",
+      "title1": "",
+      "title2": "",
+      "title3": "",
+      "title4": "",
+      "title5": "",
+      "desc1": "",
+      "desc2": "",
+      "desc3": "",
+      "desc4": "",
+      "desc5": ""
+    },
+    "Achievement": {
+      "overline": "Timeline",
+      "title": "Latest Achievements",
+      "desc": "List of achievements in a timeline.",
+      "date1": "",
+      "date2": "",
+      "date3": "",
+      "date4": "",
+      "date5": "",
+      "date6": "",
+      "date7": "",
+      "title1": "",
+      "title2": "",
+      "title3": "",
+      "title4": "",
+      "title5": "",
+      "title6": "",
+      "title7": "",
+      "desc1": "",
+      "desc2": "",
+      "desc3": "",
+      "desc4": "",
+      "desc5": "",
+      "desc6": "",
+      "desc7": ""
+    },
+    "Quicklinks": {
+      "title": "Quick Links",
+      "desc1": "",
+      "desc2": "",
+      "desc3": "",
+      "desc4": "",
+      "desc5": "",
+      "desc6": "",
+      "desc7": ""
+    }
   },
   "Footer": {
     "follow_us": "Follow Us",
@@ -38,14 +87,49 @@
     "repo": "Github Repo",
     "ui_ux": "Figma",
     "all_rights_reserved": "All Rights Reserved",
-    "disclaimer": "Disclaimer",
-    "privacy": "Privacy Policy",
+    "penafian": "Disclaimer",
+    "dasar-privasi": "Privacy Policy",
     "safety": "Safety Policy",
     "personal_data": "Personal Data Protection",
     "last_update": "Last updated"
   },
+  "Privacy": {
+    "header": "Privacy Policy",
+    "your_privacy": "Your Privacy",
+    "your_privacy_desc": "",
+    "collected_info": "",
+    "collected_info_desc": "",
+    "policy_change": "Policy Change",
+    "policy_change_desc": "",
+    "personal_data": "Personal Data Protection",
+    "personal_data_act": "Personal Data Protection Act",
+    "personal_data_act_desc": "",
+    "last_updated": ""
+  },
+  "Disclaimer": {
+    "header": "Disclaimer",
+    "desc": ""
+  },
   "Info": {
-    "background": "Background"
+    "background": "Background",
+    "quote": "",
+    "author": "–– YAB PM, Dato’ Seri Anwar Ibrahim",
+    "desc1": "",
+    "desc2": "",
+    "visi": "Vision",
+    "visi_desc": "",
+    "misi": "Mission",
+    "misi_desc": "",
+    "Role": {
+      "title": "Function and Role",
+      "desc1": "",
+      "desc2": "",
+      "desc3": "",
+      "desc4": "",
+      "desc5": "",
+      "desc6": ""
+    }
+  
   },
   "Announcements": {
     "header": "Digital Ministry Announcements",
@@ -62,7 +146,11 @@
   },
   "Contact": {
     "header": "Contact Us",
-    "office": "Office"
+    "office": "Office",
+    "telephone": "Telephone",
+    "telephone_number": "",
+    "email": "E-mail",
+    "email_address": "admin@digital.com.my"
   },
   "Pagination": {
     "previous": "Previous",

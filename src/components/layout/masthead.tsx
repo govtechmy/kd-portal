@@ -16,14 +16,15 @@ export default function Masthead() {
 
   return (
     <div
-      className={
+      className={cn(
+        "z-[99]",
         open
           ? "bg-gradient-to-b from-washed-100 from-[84.74%] to-outline-200 to-100%"
-          : "bg-washed-100"
-      }
+          : "bg-washed-100",
+      )}
     >
       <div className="container">
-        <div className="flex flex-wrap items-center gap-1.5 py-1 text-sm leading-4 text-brand-700">
+        <div className="flex flex-wrap items-center gap-1.5 py-1.5 text-sm leading-4 text-brand-700">
           <Checkmark14PointStar className="size-4 sm:size-5" />
           <span className="text-black-700">{t("official_gov_website")}</span>
           <button
@@ -42,7 +43,7 @@ export default function Masthead() {
         <Collapse isOpen={open}>
           <div className="grid grid-cols-1 gap-6 pb-8 pt-6 sm:grid-cols-2">
             <div className="flex gap-3">
-              <GovMY className="text-foreground-success shrink-0" />
+              <GovMY className="shrink-0 text-foreground-success" />
               <div className="space-y-1.5">
                 <p className="font-medium">{t("official")}</p>
                 <p className="max-w-prose text-balance text-sm text-black-700">
@@ -53,7 +54,7 @@ export default function Masthead() {
               </div>
             </div>
             <div className="flex gap-3">
-              <Lock className="text-foreground-success shrink-0" />
+              <Lock className="shrink-0 text-foreground-success" />
               <div className="space-y-1.5">
                 <p className="font-medium">{t("secure")}</p>
                 <div className="max-w-prose text-balance text-sm text-black-700">

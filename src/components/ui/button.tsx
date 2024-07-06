@@ -10,11 +10,11 @@ const buttonVariants = cva(
       variant: {
         default: "",
         primary:
-          "from-blue-600 to-[#3E7AFF] shadow-sm bg-gradient-to-t text-white hover:to-[#5B8EFF]",
+          "from-blue-600 to-[#3E7AFF] bg-gradient-to-t text-white hover:to-[#5B8EFF] shadow-button",
         secondary:
-          "border border-outline-200 hover:border-outline-300 bg-background focus:border-outline-200 focus:ring focus:ring-offset-0 focus:ring-outline-400/20",
+          "border border-outline-200 hover:border-outline-300 bg-background focus:border-outline-200 focus:ring focus:ring-offset-0 focus:ring-outline-400/20 shadow-button",
         "secondary-colour":
-          "border border-brand-200 hover:border-brand-300 bg-background hover:bg-brand-50 text-foreground focus:border-brand-200 focus:ring focus:ring-offset-0 focus:ring-brand-600/20",
+          "border border-brand-200 hover:border-brand-300 bg-background hover:bg-brand-50 text-foreground focus:border-brand-200 focus:ring focus:ring-offset-0 focus:ring-brand-600/20 shadow-button",
         tertiary:
           "hover:bg-washed-100 focus:ring focus:ring-offset-0 focus:ring-outline-400/20",
         "tertiary-colour":
