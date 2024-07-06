@@ -98,11 +98,9 @@ const DirektoriMain: FC = () => {
     return setData(
       array.filter((item) => {
         return (
-          (item.nama.toLowerCase().includes(query) ||
-            (item.emel && item.emel.toLowerCase().includes(query)) ||
-            (item.jawatan && item.jawatan.toLowerCase().includes(query))) &&
-          // Might be hacky but check if nama starts with seksyen, to not return it in search
-          !item.nama.toLowerCase().startsWith("seksyen")
+          item.nama.toLowerCase().includes(query) ||
+          (item.emel && item.emel.toLowerCase().includes(query)) ||
+          (item.jawatan && item.jawatan.toLowerCase().includes(query))
         );
       }),
     );
