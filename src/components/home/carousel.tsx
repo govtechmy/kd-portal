@@ -33,6 +33,7 @@ export default function Carousel() {
           </div>
           <div className="lg:w-2/3">
             <Image
+              priority
               src={`/images/${images[index - 1]}`}
               width={750}
               height={450}
