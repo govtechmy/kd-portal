@@ -88,7 +88,12 @@ export default function Footer() {
               <p className="text-sm font-semibold">{t("Footer.follow_us")}</p>
               <div className="flex gap-3">
                 {social_media.map(({ icon, name, href }) => (
-                  <a key={name} href={href}>
+                  <a
+                    key={name}
+                    href={href}
+                    target="_blank"
+                    rel="noopenner noreferrer"
+                  >
                     {icon}
                   </a>
                 ))}
