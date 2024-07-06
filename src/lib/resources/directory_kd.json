@@ -1,0 +1,2992 @@
+[
+    {
+        "id_bhg": 1,
+        "bhg": "Pejabat YB Menteri",
+        "id": 1,
+        "nama": "YB GOBIND SINGH DEO ",
+        "gred": "-",
+        "jawatan": "MENTERI",
+        "telefon": "-",
+        "emel": "menteri"
+    },
+    {
+        "id_bhg": 1,
+        "bhg": "Pejabat YB Menteri",
+        "id": 2,
+        "nama": "MAGESWARY A/P RAMACHANDRAN",
+        "gred": "-",
+        "jawatan": "PEMBANTU KHAS KEPADA MENTERI",
+        "telefon": "03-8880 5043",
+        "emel": "mages"
+    },
+    {
+        "id_bhg": 1,
+        "bhg": "Pejabat YB Menteri",
+        "id": 3,
+        "nama": "LIM YOU RANG",
+        "gred": "M54",
+        "jawatan": "SETIAUSAHA SULIT KANAN (SUSK)",
+        "telefon": "-",
+        "emel": "yourang"
+    },
+    {
+        "id_bhg": 1,
+        "bhg": "Pejabat YB Menteri",
+        "id": 4,
+        "nama": "SITI NOR AZURA BINTI MOHD RUKON",
+        "gred": "N32",
+        "jawatan": "SETIAUSAHA PEJABAT KEPADA SUSK (TBK1)",
+        "telefon": "03-8880 5052",
+        "emel": "sitinorazura"
+    },
+    {
+        "id_bhg": 1,
+        "bhg": "Pejabat YB Menteri",
+        "id": 5,
+        "nama": "SURESH SINGH A/L RASHPAL SINGH",
+        "gred": "-",
+        "jawatan": "SETIAUSAHA POLITIK (SUPOL)",
+        "telefon": "-",
+        "emel": "r.suresh"
+    },
+    {
+        "id_bhg": 1,
+        "bhg": "Pejabat YB Menteri",
+        "id": 6,
+        "nama": "NOR SUHANA BINTI A. MUTALIB",
+        "gred": "N22",
+        "jawatan": "SETIAUSAHA PEJABAT KEPADA SUPOL (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "suhanamutalib"
+    },
+    {
+        "id_bhg": 1,
+        "bhg": "Pejabat YB Menteri",
+        "id": 7,
+        "nama": "A. RAFIZ BIN ISMAIL",
+        "gred": "54 TERBUKA",
+        "jawatan": "PEGAWAI TUGAS-TUGAS KHAS (PTTK) ",
+        "telefon": "-",
+        "emel": "a.rafiz"
+    },
+    {
+        "id_bhg": 1,
+        "bhg": "Pejabat YB Menteri",
+        "id": 8,
+        "nama": "NORSHEHA BINTI OMAR ONG ONG",
+        "gred": "52 TERBUKA",
+        "jawatan": "PEGAWAI TUGAS-TUGAS KHAS (PTTK)",
+        "telefon": "-",
+        "emel": "sheha"
+    },
+    {
+        "id_bhg": 1,
+        "bhg": "Pejabat YB Menteri",
+        "id": 9,
+        "nama": "NURUL IZZATI BINTI ZAINAL ABIDIN",
+        "gred": "52 TERBUKA",
+        "jawatan": "PEGAWAI TUGAS-TUGAS KHAS (PTTK) ",
+        "telefon": "-",
+        "emel": "izzati"
+    },
+    {
+        "id_bhg": 1,
+        "bhg": "Pejabat YB Menteri",
+        "id": 10,
+        "nama": "MEDALINE CHANG SHE-YUN",
+        "gred": "S54",
+        "jawatan": "SETIAUSAHA AKHBAR (SUA)",
+        "telefon": "-",
+        "emel": "medaline.chang"
+    },
+    {
+        "id_bhg": 1,
+        "bhg": "Pejabat YB Menteri",
+        "id": 11,
+        "nama": "ARMAS BINTI TUMIRAN",
+        "gred": "M44",
+        "jawatan": "SETIAUSAHA SULIT (SUS)",
+        "telefon": "03-88880 5014",
+        "emel": "armas"
+    },
+    {
+        "id_bhg": 1,
+        "bhg": "Pejabat YB Menteri",
+        "id": 12,
+        "nama": "DIANA BINTI LANIH",
+        "gred": "N22",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK2)",
+        "telefon": "-",
+        "emel": "dianalanih"
+    },
+    {
+        "id_bhg": 1,
+        "bhg": "Pejabat YB Menteri",
+        "id": 13,
+        "nama": "NOOR AIN BINTI BUKHARI",
+        "gred": "N19",
+        "jawatan": "PEGAWAI KHIDMAT PELANGGAN (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "noorain"
+    },
+    {
+        "id_bhg": 1,
+        "bhg": "Pejabat YB Menteri",
+        "id": 14,
+        "nama": "NUR SHUZAWATI BINTI MOHD SHUPLI",
+        "gred": "N19",
+        "jawatan": "PEGAWAI KHIDMAT PELANGGAN (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "shuzawati"
+    },
+    {
+        "id_bhg": 1,
+        "bhg": "Pejabat YB Menteri",
+        "id": 15,
+        "nama": "SJN AHMAD SAZALI BIN MOHAMAD",
+        "gred": "YA6",
+        "jawatan": "SARJAN POLIS ",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 1,
+        "bhg": "Pejabat YB Menteri",
+        "id": 16,
+        "nama": "AMIM BIN ABU BAKAR",
+        "gred": "H11",
+        "jawatan": "PEMANDU KENDERAAN ",
+        "telefon": "-",
+        "emel": "amim"
+    },
+    {
+        "id_bhg": 1,
+        "bhg": "Pejabat YB Menteri",
+        "id": 17,
+        "nama": "MOHD NOREZWAN BIN AZMAN",
+        "gred": "N11",
+        "jawatan": "PEMBANTU OPERASI",
+        "telefon": "-",
+        "emel": "norezwan"
+    },
+    {
+        "id_bhg": 2,
+        "bhg": "Pejabat YB Timbalan Menteri",
+        "id": 1,
+        "nama": "YB DATUK WILSON UGAK ANAK KUMBONG",
+        "gred": "-",
+        "jawatan": "TIMBALAN MENTERI",
+        "telefon": "03-8880 5050",
+        "emel": "izzati"
+    },
+    {
+        "id_bhg": 2,
+        "bhg": "Pejabat YB Timbalan Menteri",
+        "id": 2,
+        "nama": "NOOR SHEERA SHAFIKA BINTI JUNAIDI",
+        "gred": "N19",
+        "jawatan": "PEMBANTU SETIAUSAHA PEJABAT (TBK1/TBK2) ",
+        "telefon": "03-8880 5097",
+        "emel": "izzati"
+    },
+    {
+        "id_bhg": 2,
+        "bhg": "Pejabat YB Timbalan Menteri",
+        "id": 3,
+        "nama": "LUAT ANAK BILONG",
+        "gred": "M48",
+        "jawatan": "SETIAUSAHA SULIT KANAN (SUSK)",
+        "telefon": "03-8880 5001",
+        "emel": "izzati"
+    },
+    {
+        "id_bhg": 2,
+        "bhg": "Pejabat YB Timbalan Menteri",
+        "id": 4,
+        "nama": "RAVICHANDRAN A/L BALASUBRAMANIAM",
+        "gred": "N52",
+        "jawatan": "PEGAWAI TUGAS-TUGAS KHAS (PTTK)",
+        "telefon": "03-8880 5061",
+        "emel": "izzati"
+    },
+    {
+        "id_bhg": 2,
+        "bhg": "Pejabat YB Timbalan Menteri",
+        "id": 5,
+        "nama": "SANGAI KASING",
+        "gred": "N41",
+        "jawatan": "SETIAUSAHA SULIT (SUS)",
+        "telefon": "03-8880 5047",
+        "emel": "izzati"
+    },
+    {
+        "id_bhg": 2,
+        "bhg": "Pejabat YB Timbalan Menteri",
+        "id": 6,
+        "nama": "MOHD KHAIRUL BIN KHIRRUDDIN",
+        "gred": "N19",
+        "jawatan": "PEGAWAI KHIDMAT PELANGGAN (TBK1/TBK2)",
+        "telefon": "03-8880 5016",
+        "emel": "izzati"
+    },
+    {
+        "id_bhg": 2,
+        "bhg": "Pejabat YB Timbalan Menteri",
+        "id": 7,
+        "nama": "L/KPL DARREN SHAUN ANAK MICHEAL",
+        "gred": "YA2",
+        "jawatan": "LANS KOPERAL POLIS",
+        "telefon": "-",
+        "emel": "izzati"
+    },
+    {
+        "id_bhg": 2,
+        "bhg": "Pejabat YB Timbalan Menteri",
+        "id": 8,
+        "nama": "ABDUL HALIM BIN AZMI",
+        "gred": "H11",
+        "jawatan": "PEMANDU KENDERAAN",
+        "telefon": "-",
+        "emel": "izzati"
+    },
+    {
+        "id_bhg": 2,
+        "bhg": "Pejabat YB Timbalan Menteri",
+        "id": 9,
+        "nama": "RAMLAH BINTI YAAKOB",
+        "gred": "N14",
+        "jawatan": "PEMBANTU OPERASI",
+        "telefon": "03-8880 5184",
+        "emel": "izzati"
+    },
+    {
+        "id_bhg": 3,
+        "bhg": "Pejabat Ketua Setiausaha",
+        "id": 1,
+        "nama": "FABIAN BIGAR",
+        "gred": "JUSA B",
+        "jawatan": "KETUA SETIAUSAHA",
+        "telefon": "-",
+        "emel": "ksu"
+    },
+    {
+        "id_bhg": 3,
+        "bhg": "Pejabat Ketua Setiausaha",
+        "id": 2,
+        "nama": "NORHAYA BINTI MD ZIN",
+        "gred": "N36(M)",
+        "jawatan": "SETIAUSAHA PEJABAT",
+        "telefon": "03-8880 5802",
+        "emel": "norhayazin"
+    },
+    {
+        "id_bhg": 3,
+        "bhg": "Pejabat Ketua Setiausaha",
+        "id": 3,
+        "nama": "NURAIN BINTI KHAIRI",
+        "gred": "M44",
+        "jawatan": "PEGAWAI KHAS I",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 3,
+        "bhg": "Pejabat Ketua Setiausaha",
+        "id": 0,
+        "nama": "-",
+        "gred": "M44/48/52",
+        "jawatan": "PEGAWAI KHAS II",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 3,
+        "bhg": "Pejabat Ketua Setiausaha",
+        "id": 5,
+        "nama": "ROSLINA BINTI ROSLI",
+        "gred": "N22 TBK",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "03-8880 5998",
+        "emel": "roslinarosli"
+    },
+    {
+        "id_bhg": 3,
+        "bhg": "Pejabat Ketua Setiausaha",
+        "id": 6,
+        "nama": "AZMI BIN HUSSAIN",
+        "gred": "H14",
+        "jawatan": "PEMANDU KENDERAAN",
+        "telefon": "03-8880 5998",
+        "emel": "azmi"
+    },
+    {
+        "id_bhg": 3,
+        "bhg": "Pejabat Ketua Setiausaha",
+        "id": 7,
+        "nama": "KHAIRUL ANUAR BIN MOHD RODZI",
+        "gred": "N11",
+        "jawatan": "PEMBANTU OPERASI",
+        "telefon": "03-8880 5998",
+        "emel": "khairulanuar"
+    },
+    {
+        "id_bhg": 4,
+        "bhg": "Pejabat Timbalan Ketua Setiausaha (Strategik & Pengurusan)",
+        "id": 1,
+        "nama": "SHAKIB BIN AHMAD SHAKIR",
+        "gred": "JUSA B",
+        "jawatan": "TIMBALAN KETUA SETIAUSAHA (STRATEGIK & PENGURUSAN)",
+        "telefon": "03-8880 5992",
+        "emel": "shakib"
+    },
+    {
+        "id_bhg": 4,
+        "bhg": "Pejabat Timbalan Ketua Setiausaha (Strategik & Pengurusan)",
+        "id": 2,
+        "nama": "NUR AZIEMAH BINTI ISMAIL",
+        "gred": "N29",
+        "jawatan": "SETIAUSAHA PEJABAT",
+        "telefon": "03-8880 5943",
+        "emel": "aziemah"
+    },
+    {
+        "id_bhg": 5,
+        "bhg": "Pejabat Timbalan Ketua Setiausaha (Pembangunan Digital)",
+        "id": 1,
+        "nama": "MA. SIVANESAN A/L MARIMUTHU @ MUTHIAH",
+        "gred": "JUSA B",
+        "jawatan": "TIMBALAN KETUA SETIAUSAHA                                (PEMBANGUNAN DIGITAL)",
+        "telefon": "03-8880 5944",
+        "emel": "siva"
+    },
+    {
+        "id_bhg": 5,
+        "bhg": "Pejabat Timbalan Ketua Setiausaha (Pembangunan Digital)",
+        "id": 2,
+        "nama": "NIK NOOR AZLIZAN BINTI ZAKARIA",
+        "gred": "N32 TBK",
+        "jawatan": "SETIAUSAHA PEJABAT (TBK2)",
+        "telefon": "03-8880 5945",
+        "emel": "nikazlizan"
+    },
+    {
+        "id_bhg": 6,
+        "bhg": "Bahagian Akaun (BA)",
+        "id": 1,
+        "nama": "NADZEMAH BINTI MOHD SOM",
+        "gred": "WA54",
+        "jawatan": "SETIAUSAHA BAHAGIAN",
+        "telefon": "03-8880 5954",
+        "emel": "nadzemah"
+    },
+    {
+        "id_bhg": 6,
+        "bhg": "Bahagian Akaun (BA)",
+        "id": 0,
+        "nama": "-",
+        "gred": "N19/N22",
+        "jawatan": "SETIAUSAHA PEJABAT, GRED N19/N22 (TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 6,
+        "bhg": "Bahagian Akaun (BA)",
+        "id": 3,
+        "nama": "NAZLINA BINTI SABUDIN",
+        "gred": "WA48(M)",
+        "jawatan": "AKAUNTAN",
+        "telefon": "03-8880 5901",
+        "emel": "nazlina"
+    },
+    {
+        "id_bhg": 6,
+        "bhg": "Bahagian Akaun (BA)",
+        "id": 4,
+        "nama": "SURIDA BINTI SHAHARUDDIN",
+        "gred": "WA48(M)",
+        "jawatan": "AKAUNTAN",
+        "telefon": "03-8880 5901",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 6,
+        "bhg": "Bahagian Akaun (BA)",
+        "id": 5,
+        "nama": "SHAHIRA NOOR BINTI GHAZALI",
+        "gred": "WA48(M)",
+        "jawatan": "AKAUNTAN",
+        "telefon": "03-8880 5987",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 6,
+        "bhg": "Bahagian Akaun (BA)",
+        "id": 6,
+        "nama": "MAHFUZAH BINTI MANSUR",
+        "gred": "WA41",
+        "jawatan": "AKAUNTAN",
+        "telefon": "03-8880 5987",
+        "emel": "mahfuzah.mansur"
+    },
+    {
+        "id_bhg": 6,
+        "bhg": "Bahagian Akaun (BA)",
+        "id": 7,
+        "nama": "NOOR ZURAIMIE BIN RAIMAN",
+        "gred": "WA41",
+        "jawatan": "AKAUNTAN",
+        "telefon": "03-8880 5905",
+        "emel": "zuraimie.raiman"
+    },
+    {
+        "id_bhg": 6,
+        "bhg": "Bahagian Akaun (BA)",
+        "id": 0,
+        "nama": "-",
+        "gred": "WA41/WA44",
+        "jawatan": "AKAUNTAN",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 6,
+        "bhg": "Bahagian Akaun (BA)",
+        "id": 0,
+        "nama": "-",
+        "gred": "WA41/WA44",
+        "jawatan": "AKAUNTAN",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 6,
+        "bhg": "Bahagian Akaun (BA)",
+        "id": 0,
+        "nama": "-",
+        "gred": "WA41/WA44",
+        "jawatan": "AKAUNTAN",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 6,
+        "bhg": "Bahagian Akaun (BA)",
+        "id": 11,
+        "nama": "DORALIANI BINTI ALIAS",
+        "gred": "W32",
+        "jawatan": "PENOLONG AKAUNTAN (TBK2)",
+        "telefon": "-",
+        "emel": "doraliani"
+    },
+    {
+        "id_bhg": 6,
+        "bhg": "Bahagian Akaun (BA)",
+        "id": 12,
+        "nama": "YUSLAWATI BINTI YUNUS",
+        "gred": "W32",
+        "jawatan": "PENOLONG AKAUNTAN (TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 6,
+        "bhg": "Bahagian Akaun (BA)",
+        "id": 13,
+        "nama": "AFZAINIZAM BIN ABDULLAH",
+        "gred": "W32",
+        "jawatan": "PENOLONG AKAUNTAN (TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 6,
+        "bhg": "Bahagian Akaun (BA)",
+        "id": 14,
+        "nama": "MOHD IKHWANBIN HASSAN",
+        "gred": "W29",
+        "jawatan": "PENOLONG AKAUNTAN (TBK1/TBK2)",
+        "telefon": "03-8880 5867",
+        "emel": "mohdikhwan"
+    },
+    {
+        "id_bhg": 6,
+        "bhg": "Bahagian Akaun (BA)",
+        "id": 15,
+        "nama": "MOHD FAZRIZAL BIN MOHD ROPI",
+        "gred": "W29",
+        "jawatan": "PENOLONG AKAUNTAN (TBK1/TBK2)",
+        "telefon": "03-8880 5863",
+        "emel": "fazrizal.ropi"
+    },
+    {
+        "id_bhg": 6,
+        "bhg": "Bahagian Akaun (BA)",
+        "id": 16,
+        "nama": "ROZYANA BINTI JIMAT",
+        "gred": "W29",
+        "jawatan": "PENOLONG AKAUNTAN (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 6,
+        "bhg": "Bahagian Akaun (BA)",
+        "id": 17,
+        "nama": "AHMAD SAIDI BIN YUSUF",
+        "gred": "W29",
+        "jawatan": "PENOLONG AKAUNTAN (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 6,
+        "bhg": "Bahagian Akaun (BA)",
+        "id": 0,
+        "nama": "-",
+        "gred": "W29",
+        "jawatan": "PENOLONG AKAUNTAN (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 6,
+        "bhg": "Bahagian Akaun (BA)",
+        "id": 19,
+        "nama": "NOR MADIHAH BINTI WAHAB @ ABDUL WAHAB",
+        "gred": "W29(KUP)",
+        "jawatan": "PEMBANTU TADBIR (KEW) (TBK1/TBK2)",
+        "telefon": "03-8880 5867",
+        "emel": "normadihah"
+    },
+    {
+        "id_bhg": 6,
+        "bhg": "Bahagian Akaun (BA)",
+        "id": 20,
+        "nama": "SHAMILA BINTI ISMAIL @ BESAR",
+        "gred": "W29(KUP)",
+        "jawatan": "PEMBANTU TADBIR (KEW) (TBK1/TBK2)",
+        "telefon": "03-8880 5867",
+        "emel": "shamila"
+    },
+    {
+        "id_bhg": 6,
+        "bhg": "Bahagian Akaun (BA)",
+        "id": 21,
+        "nama": "NORLIZA BINTI MD NOR",
+        "gred": "N22",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK2)",
+        "telefon": "03-8880 5863",
+        "emel": "norliza"
+    },
+    {
+        "id_bhg": 6,
+        "bhg": "Bahagian Akaun (BA)",
+        "id": 0,
+        "nama": "-",
+        "gred": "N11",
+        "jawatan": "PEMBANTU OPERASI (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 7,
+        "bhg": "Pejabat Penasihat Undang-Undang (PUU)",
+        "id": 0,
+        "nama": "-",
+        "gred": "JUSA C",
+        "jawatan": "PEGAWAI UNDANG-UNDANG",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 7,
+        "bhg": "Pejabat Penasihat Undang-Undang (PUU)",
+        "id": 2,
+        "nama": "SITI SABENA BINTI BDUL HAMID",
+        "gred": "N32 TBK",
+        "jawatan": "SETIAUSAHA PEJABAT (TBK1)",
+        "telefon": "-",
+        "emel": "sitisabena"
+    },
+    {
+        "id_bhg": 7,
+        "bhg": "Pejabat Penasihat Undang-Undang (PUU)",
+        "id": 3,
+        "nama": "DATIN NURFITRA BINTI MOHAMED ALIAS",
+        "gred": "L52",
+        "jawatan": "PEGAWAI UNDANG-UNDANG",
+        "telefon": "03-8880 5930",
+        "emel": "nurfitra"
+    },
+    {
+        "id_bhg": 7,
+        "bhg": "Pejabat Penasihat Undang-Undang (PUU)",
+        "id": 4,
+        "nama": "MUHAMMAD ZAKI BIN ABDUL RAZAK",
+        "gred": "L44(M)",
+        "jawatan": "PEGAWAI UNDANG-UNDANG",
+        "telefon": "03-8880 5875",
+        "emel": "zaki.razak"
+    },
+    {
+        "id_bhg": 7,
+        "bhg": "Pejabat Penasihat Undang-Undang (PUU)",
+        "id": 5,
+        "nama": "NORFRANLISA BINTI HASSAN SANI",
+        "gred": "N19",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "03-8880 5863",
+        "emel": "franlisa.sani"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 0,
+        "nama": "-",
+        "gred": "54",
+        "jawatan": "KETUA UNIT",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 0,
+        "nama": "-",
+        "gred": "N19",
+        "jawatan": "SETIAUSAHA PEJABAT (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 3,
+        "nama": "MUHAMMAD RIZAL BIN REDZUAN",
+        "gred": "S52(M)",
+        "jawatan": "PEGAWAI PENERANGAN",
+        "telefon": "03-8880 5916",
+        "emel": "muhdrizal"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 4,
+        "nama": "NURUL LATIFATULLALLIZA BINTI ANUAR",
+        "gred": "S48(M)",
+        "jawatan": "PEGAWAI PENERANGAN",
+        "telefon": "-",
+        "emel": "latifa"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 0,
+        "nama": "-",
+        "gred": "S44",
+        "jawatan": "PEGAWAI PENERANGAN",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 0,
+        "nama": "-",
+        "gred": "S44",
+        "jawatan": "PEGAWAI PENERANGAN",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 0,
+        "nama": "-",
+        "gred": "S41/S44",
+        "jawatan": "PEGAWAI PENERANGAN",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 8,
+        "nama": "MUHAMMAD FARIDUDDIN BIN MUSTAFAR",
+        "gred": "S41",
+        "jawatan": "PEGAWAI PENERANGAN",
+        "telefon": "-",
+        "emel": "faridmustafar"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 9,
+        "nama": "FARAH ADILA BINTI MOHAMAD IZANI",
+        "gred": "M41",
+        "jawatan": "PENOLONG SETIAUSAHA",
+        "telefon": "03-8880 5984",
+        "emel": "farahadila"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 10,
+        "nama": "REZA SHERRYZA ADZWIN BINTI REDZAWAN",
+        "gred": "M41",
+        "jawatan": "PENOLONG SETIAUSAHA",
+        "telefon": "03-8880 5859",
+        "emel": "rezasherryza"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 11,
+        "nama": "DR. SITI RUHLIAH LIZAROSE BINTI SAMION",
+        "gred": "M41",
+        "jawatan": "PENOLONG SETIAUSAHA",
+        "telefon": "03-8880 5854",
+        "emel": "lializarose"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 12,
+        "nama": "ZULIERA ZARIZ BINTI AZMAN AZIZ",
+        "gred": "M41",
+        "jawatan": "PENOLONG SETIAUSAHA",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 13,
+        "nama": "AHMAD HIZBULLAH BIN OTHMAN",
+        "gred": "B32",
+        "jawatan": "PENERBIT RANCANGAN (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 0,
+        "nama": "-",
+        "gred": "B29/B30",
+        "jawatan": "PEREKA (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 0,
+        "nama": "-",
+        "gred": "S29",
+        "jawatan": "PENOLONG PEGAWAI PENERANGAN (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 16,
+        "nama": "MOHD RAFIUDDIN DASUKI BIN SHAARI",
+        "gred": "B22 TBK",
+        "jawatan": "PEREKA (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "rafiuddin"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 17,
+        "nama": "NORMALRIZWAN BIN KAMARUDDIN",
+        "gred": "B22",
+        "jawatan": "JURUFOTOGRAFI",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 18,
+        "nama": "HAFIZAH BINTI IBRAHIM",
+        "gred": "B19",
+        "jawatan": "PEREKA (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "hafizahibrahim"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 19,
+        "nama": "AHMAD FIRDAUS BIN MOHD ARIFIN",
+        "gred": "N19",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "firdaus.arifin"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 1,
+        "nama": "ROZAINI BINTI OTHMAN",
+        "gred": "F54(M)",
+        "jawatan": "SETIAUSAHA BAHAGIAN",
+        "telefon": "03-8880 5965",
+        "emel": "rozaini"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 0,
+        "nama": "-",
+        "gred": "N19",
+        "jawatan": "SETIAUSAHA PEJABAT (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 3,
+        "nama": "MUHAMMAD FAKHRI ZAKI ABADI BIN AHMAD ZAIRI",
+        "gred": "F44",
+        "jawatan": "PENOLONG SETIAUSAHA KANAN",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 4,
+        "nama": "AZMIL BIN ABDUL RAHMAN",
+        "gred": "F41",
+        "jawatan": "PENOLONG SETIAUSAHA ",
+        "telefon": "03-8880 5897",
+        "emel": "azmil"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 0,
+        "nama": "-",
+        "gred": "F41/44",
+        "jawatan": "PEGAWAI TEKNOLOGI MAKLUMAT",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 6,
+        "nama": "JAIRULNIZAM BIN JAMALUDIN",
+        "gred": "FA29",
+        "jawatan": "PENOLONG PEGAWAI TEKNOLOGI MAKLUMAT",
+        "telefon": "03-8880 5933",
+        "emel": "jairulnizam"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 7,
+        "nama": "ZUL HALIMI BIN MAT SAMAN",
+        "gred": "FA29",
+        "jawatan": "PENOLONG PEGAWAI TEKNOLOGI MAKLUMAT",
+        "telefon": "03-8880 5887",
+        "emel": "zulhalimi"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 8,
+        "nama": "MOHD SHAFRIL HISHAM BIN REJAB",
+        "gred": "FA29",
+        "jawatan": "PENOLONG PEGAWAI TEKNOLOGI MAKLUMAT",
+        "telefon": "03-8880 5834",
+        "emel": "shafril"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 0,
+        "nama": "-",
+        "gred": "FT19",
+        "jawatan": "JURUTEKNIK KOMPUTER (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 0,
+        "nama": "-",
+        "gred": "FT19",
+        "jawatan": "JURUTEKNIK KOMPUTER (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 0,
+        "nama": "-",
+        "gred": "FT19",
+        "jawatan": "JURUTEKNIK KOMPUTER (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 0,
+        "nama": "-",
+        "gred": "FT19",
+        "jawatan": "JURUTEKNIK KOMPUTER (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 0,
+        "nama": "-",
+        "gred": "FT19",
+        "jawatan": "JURUTEKNIK KOMPUTER (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 8,
+        "bhg": "Unit Komunikasi Korporat (UKK)",
+        "id": 0,
+        "nama": "-",
+        "gred": "N19",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 9,
+        "bhg": "Bahagian Inkubator Digital (BID)",
+        "id": 0,
+        "nama": "-",
+        "gred": "F54",
+        "jawatan": "SETIAUSAHA BAHAGIAN",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 9,
+        "bhg": "Bahagian Inkubator Digital (BID)",
+        "id": 0,
+        "nama": "-",
+        "gred": "N19/22",
+        "jawatan": "SETIAUSAHA PEJABAT (TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 9,
+        "bhg": "Bahagian Inkubator Digital (BID)",
+        "id": 0,
+        "nama": "-",
+        "gred": "F52",
+        "jawatan": "PEGAWAI TEKNOLOGI MAKLUMAT",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 9,
+        "bhg": "Bahagian Inkubator Digital (BID)",
+        "id": 4,
+        "nama": "TS. DR. MOHAMED HAIRUL BIN OTHMAN",
+        "gred": "F48",
+        "jawatan": "KETUA PENOLONG SETIAUSAHA",
+        "telefon": "-",
+        "emel": "hairul"
+    },
+    {
+        "id_bhg": 9,
+        "bhg": "Bahagian Inkubator Digital (BID)",
+        "id": 5,
+        "nama": "TS. FARID IQBAL BIN IBRAHIM",
+        "gred": "F44",
+        "jawatan": "PENOLONG SETIAUSAHA KANAN",
+        "telefon": "-",
+        "emel": "faridiqbal"
+    },
+    {
+        "id_bhg": 9,
+        "bhg": "Bahagian Inkubator Digital (BID)",
+        "id": 0,
+        "nama": "-",
+        "gred": "F41/44",
+        "jawatan": "PEGAWAI TEKNOLOGI MAKLUMAT",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 9,
+        "bhg": "Bahagian Inkubator Digital (BID)",
+        "id": 0,
+        "nama": "-",
+        "gred": "F41/44",
+        "jawatan": "PEGAWAI TEKNOLOGI MAKLUMAT",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 9,
+        "bhg": "Bahagian Inkubator Digital (BID)",
+        "id": 0,
+        "nama": "-",
+        "gred": "F41/44",
+        "jawatan": "PEGAWAI TEKNOLOGI MAKLUMAT",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 9,
+        "bhg": "Bahagian Inkubator Digital (BID)",
+        "id": 0,
+        "nama": "-",
+        "gred": "N22",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 9,
+        "bhg": "Bahagian Inkubator Digital (BID)",
+        "id": 0,
+        "nama": "-",
+        "gred": "N19/N22",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 9,
+        "bhg": "Bahagian Inkubator Digital (BID)",
+        "id": 11,
+        "nama": "SITI SUHANA BINTI MOHD ALI",
+        "gred": "N19",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "sitisuhana"
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
+        "id": 1,
+        "nama": "SURAYATI BINTI IBRAHIM",
+        "gred": "JUSA C",
+        "jawatan": "SETIAUSAHA BAHAGIAN",
+        "telefon": "-",
+        "emel": "surayati"
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
+        "id": 2,
+        "nama": "AHMAD IZZUDDIN BIN MOHD HAMIM",
+        "gred": "N32",
+        "jawatan": "SETIAUSAHA PEJABAT ",
+        "telefon": "-",
+        "emel": "izzuddin"
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
+        "id": 3,
+        "nama": "KOLONY ANAK GUNTING",
+        "gred": "M54",
+        "jawatan": "TIMBALAN SETIAUSAHA BAHAGIAN",
+        "telefon": "-",
+        "emel": "kolony"
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
+        "id": 4,
+        "nama": "DR. RAFIDAH BINTI MOHAMED HASHIM",
+        "gred": "M54",
+        "jawatan": "TIMBALAN SETIAUSAHA BAHAGIAN",
+        "telefon": "03-8880 5951",
+        "emel": "rafidahmh"
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
+        "id": 5,
+        "nama": "MOHD SABRI BIN ZAKARIA",
+        "gred": "M52(M)",
+        "jawatan": "KETUA PENOLONG SETIAUSAHA KANAN",
+        "telefon": "03-8880 5892",
+        "emel": "sabri.zakaria"
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
+        "id": 0,
+        "nama": "-",
+        "gred": "M52",
+        "jawatan": "KETUA PENOLONG SETIAUSAHA KANAN",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
+        "id": 7,
+        "nama": "MOHAMMED NAZIR BIN ABDUL RAHIM",
+        "gred": "M48",
+        "jawatan": "KETUA PENOLONG SETIAUSAHA ",
+        "telefon": "03-8880 5891",
+        "emel": "nazir"
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
+        "id": 8,
+        "nama": "ADZMIR BIN ABDUL LATIB",
+        "gred": "M48",
+        "jawatan": "KETUA PENOLONG SETIAUSAHA ",
+        "telefon": "03-8880 5884",
+        "emel": "adzmir"
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
+        "id": 9,
+        "nama": "AIDA MARHAINI BINTI HASSAN",
+        "gred": "M48",
+        "jawatan": "KETUA PENOLONG SETIAUSAHA ",
+        "telefon": "03-8880 5960",
+        "emel": "aidamarhaini"
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
+        "id": 0,
+        "nama": "-",
+        "gred": "M48",
+        "jawatan": "KETUA PENOLONG SETIAUSAHA ",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
+        "id": 11,
+        "nama": "AZFA LIA BINTI FARDES",
+        "gred": "M48(KUP)",
+        "jawatan": "KETUA PENOLONG SETIAUSAHA ",
+        "telefon": "03-8880 5831",
+        "emel": "azfalia"
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
+        "id": 12,
+        "nama": "SITI NURZALIANA BINTI MOHD SAFARI",
+        "gred": "M44",
+        "jawatan": "PENOLONG SETIAUSAHA KANAN",
+        "telefon": "03-8880 5991",
+        "emel": "nurzaliana"
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
+        "id": 13,
+        "nama": "SUHAIZAM SHAHRUL AFFENDY BIN SUHAIMI",
+        "gred": "M44",
+        "jawatan": "PENOLONG SETIAUSAHA KANAN",
+        "telefon": "03-8880 5931",
+        "emel": "suhaizam"
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
+        "id": 14,
+        "nama": "NURUL ATIKHAH BINTI ABU BAKAR",
+        "gred": "M44(M)",
+        "jawatan": "PENOLONG SETIAUSAHA KANAN",
+        "telefon": "03-8880 5990",
+        "emel": "nurulatikhah"
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
+        "id": 15,
+        "nama": "FARHANA BINTI HARIS",
+        "gred": "M44(M)",
+        "jawatan": "PENOLONG SETIAUSAHA KANAN",
+        "telefon": "03-8880 5991",
+        "emel": "farhanaharis"
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
+        "id": 16,
+        "nama": "ANNA CARMILA ANAK BILLY",
+        "gred": "M41",
+        "jawatan": "PENOLONG SETIAUSAHA",
+        "telefon": "03-8880 5912",
+        "emel": "annacarmila"
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
+        "id": 17,
+        "nama": "ERNITA EVA SUNSEARRY BINTI POTIRIK",
+        "gred": "M41",
+        "jawatan": "PENOLONG SETIAUSAHA",
+        "telefon": "03-8880 5913",
+        "emel": "evasunsearry"
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
+        "id": 18,
+        "nama": "NOOR ZAKIYAH BINTI ISA",
+        "gred": "M41",
+        "jawatan": "PENOLONG SETIAUSAHA",
+        "telefon": "03-8880 5586",
+        "emel": "zakiyah"
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
+        "id": 0,
+        "nama": "-",
+        "gred": "E41/E44",
+        "jawatan": "PERANGKAWAN",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
+        "id": 0,
+        "nama": "-",
+        "gred": "N22",
+        "jawatan": "PEMBANTU TADBIR (P/O) TBK2",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
+        "id": 21,
+        "nama": "MUHAMMAD FIRDAUS ASYRAF BIN KAMARUDDIN",
+        "gred": "N19",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "03-8880 5864",
+        "emel": "mfasyraf"
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
+        "id": 22,
+        "nama": "HILMI SAFWAN BIN MOHD YUSOF",
+        "gred": "N19",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "03-8880 5864",
+        "emel": "hilmisafwan"
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
+        "id": 0,
+        "nama": "-",
+        "gred": "H11",
+        "jawatan": "PEMANDU KENDERAAN",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
+        "id": 24,
+        "nama": "MOHD FAIZ BIN OMAR",
+        "gred": "N11",
+        "jawatan": "PEMBANTU OPERASI",
+        "telefon": "03-8880 5864",
+        "emel": "mohdfaiz"
+    },
+    {
+        "id_bhg": 11,
+        "bhg": "Bahagian Antarabangsa (BAb)",
+        "id": 1,
+        "nama": "DR. TAN FEE CHENG",
+        "gred": "M54",
+        "jawatan": "SETIAUSAHA BAHAGIAN",
+        "telefon": "03-8880 5899",
+        "emel": "tanfeecheng"
+    },
+    {
+        "id_bhg": 11,
+        "bhg": "Bahagian Antarabangsa (BAb)",
+        "id": 0,
+        "nama": "-",
+        "gred": "N19/N22",
+        "jawatan": "SETIAUSAHA PEJABAT (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 11,
+        "bhg": "Bahagian Antarabangsa (BAb)",
+        "id": 3,
+        "nama": "PRABAGARAN A/L GANAPATHY",
+        "gred": "M52",
+        "jawatan": "TIMBALAN SETIAUSAHA BAHAGIAN",
+        "telefon": "-",
+        "emel": "prabagaran"
+    },
+    {
+        "id_bhg": 11,
+        "bhg": "Bahagian Antarabangsa (BAb)",
+        "id": 0,
+        "nama": "-",
+        "gred": "M52",
+        "jawatan": "TIMBALAN SETIAUSAHA BAHAGIAN",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 11,
+        "bhg": "Bahagian Antarabangsa (BAb)",
+        "id": 5,
+        "nama": "SITI SYAFIAH NORYANA BINTI MOHD NOR",
+        "gred": "M48",
+        "jawatan": "KETUA PENOLONG SETIAUSAHA",
+        "telefon": "03-8880 5961",
+        "emel": "ryanamohdnor"
+    },
+    {
+        "id_bhg": 11,
+        "bhg": "Bahagian Antarabangsa (BAb)",
+        "id": 6,
+        "nama": "SUHAIDA BINTI SUTIM",
+        "gred": "M48(KUP)",
+        "jawatan": "KETUA PENOLONG SETIAUSAHA",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 11,
+        "bhg": "Bahagian Antarabangsa (BAb)",
+        "id": 7,
+        "nama": "SHARMILAA/P P. SINNASAMY",
+        "gred": "M44",
+        "jawatan": "PENOLONG SETIAUSAHA KANAN",
+        "telefon": "-",
+        "emel": "sharmila"
+    },
+    {
+        "id_bhg": 11,
+        "bhg": "Bahagian Antarabangsa (BAb)",
+        "id": 8,
+        "nama": "SHERRINA BINTI KUSHAIRI KUSHNA",
+        "gred": "M44",
+        "jawatan": "PENOLONG SETIAUSAHA KANAN",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 11,
+        "bhg": "Bahagian Antarabangsa (BAb)",
+        "id": 9,
+        "nama": "DR. DHURGA DEVI A/P RAJARATANAM",
+        "gred": "M41",
+        "jawatan": "PENOLONG SETIAUSAHA",
+        "telefon": "-",
+        "emel": "dhurga"
+    },
+    {
+        "id_bhg": 11,
+        "bhg": "Bahagian Antarabangsa (BAb)",
+        "id": 10,
+        "nama": "SAFUAN BIN RAJALI",
+        "gred": "N22 TBK",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "safuan.rajali"
+    },
+    {
+        "id_bhg": 11,
+        "bhg": "Bahagian Antarabangsa (BAb)",
+        "id": 11,
+        "nama": "SAIFUL RIZAL BIN MOHD NOR",
+        "gred": "N22 TBK",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "saifulrizal"
+    },
+    {
+        "id_bhg": 11,
+        "bhg": "Bahagian Antarabangsa (BAb)",
+        "id": 0,
+        "nama": "-",
+        "gred": "H11",
+        "jawatan": "PEMANDU KENDERAAN",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 11,
+        "bhg": "Bahagian Antarabangsa (BAb)",
+        "id": 13,
+        "nama": "HASLINA BINTI HASSAN",
+        "gred": "N11",
+        "jawatan": "PEMBANTU OPERASI",
+        "telefon": "-",
+        "emel": "lina"
+    },
+    {
+        "id_bhg": 11,
+        "bhg": "Bahagian Antarabangsa (BAb)",
+        "id": 0,
+        "nama": "-",
+        "gred": "N11",
+        "jawatan": "PEMBANTU OPERASI",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 12,
+        "bhg": "Bahagian Pengupayaan Digital (BUD)",
+        "id": 1,
+        "nama": "HARISON BINTI AHMAD",
+        "gred": "F54(M)",
+        "jawatan": "SETIUASAHA BAHAGIAN",
+        "telefon": "03-8880 5819",
+        "emel": "harison"
+    },
+    {
+        "id_bhg": 12,
+        "bhg": "Bahagian Pengupayaan Digital (BUD)",
+        "id": 0,
+        "nama": "-",
+        "gred": "N19/N22",
+        "jawatan": "SETIAUSAHA PEJABAT (TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 12,
+        "bhg": "Bahagian Pengupayaan Digital (BUD)",
+        "id": 0,
+        "nama": "-",
+        "gred": "F52",
+        "jawatan": "PEGAWAI TEKNOLOGI MAKLUMAT",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 12,
+        "bhg": "Bahagian Pengupayaan Digital (BUD)",
+        "id": 0,
+        "nama": "-",
+        "gred": "F48",
+        "jawatan": "PEGAWAI TEKNOLOGI MAKLUMAT",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 12,
+        "bhg": "Bahagian Pengupayaan Digital (BUD)",
+        "id": 5,
+        "nama": "TS. DR. SHEILA A/P MAHALINGAM",
+        "gred": "F44",
+        "jawatan": "PEGAWAI TEKNOLOGI MAKLUMAT",
+        "telefon": "03-8880 5919",
+        "emel": "msheila"
+    },
+    {
+        "id_bhg": 12,
+        "bhg": "Bahagian Pengupayaan Digital (BUD)",
+        "id": 6,
+        "nama": "NURHANIZA BINTI BAKRI",
+        "gred": "F44",
+        "jawatan": "PEGAWAI TEKNOLOGI MAKLUMAT",
+        "telefon": "03-8880 5980",
+        "emel": "nurhaniza"
+    },
+    {
+        "id_bhg": 12,
+        "bhg": "Bahagian Pengupayaan Digital (BUD)",
+        "id": 0,
+        "nama": "-",
+        "gred": "F41/44",
+        "jawatan": "PEGAWAI TEKNOLOGI MAKLUMAT",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 12,
+        "bhg": "Bahagian Pengupayaan Digital (BUD)",
+        "id": 0,
+        "nama": "-",
+        "gred": "F41/44",
+        "jawatan": "PEGAWAI TEKNOLOGI MAKLUMAT",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 12,
+        "bhg": "Bahagian Pengupayaan Digital (BUD)",
+        "id": 0,
+        "nama": "-",
+        "gred": "N22",
+        "jawatan": "PEMBANTU TADBIR (P/O) TBK2",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 12,
+        "bhg": "Bahagian Pengupayaan Digital (BUD)",
+        "id": 10,
+        "nama": "KHAIRUSSAKINAH BINTI MD SANI",
+        "gred": "N22 TBK",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "khairussakinah"
+    },
+    {
+        "id_bhg": 12,
+        "bhg": "Bahagian Perniagaan Digital (BND)",
+        "id": 1,
+        "nama": "NAFIZAH BINTI NAYAN",
+        "gred": "M54",
+        "jawatan": "SETIAUSAHA BAHAGIAN",
+        "telefon": "03-8885 8048",
+        "emel": "nafizah"
+    },
+    {
+        "id_bhg": 12,
+        "bhg": "Bahagian Perniagaan Digital (BND)",
+        "id": 0,
+        "nama": "-",
+        "gred": "N19/22",
+        "jawatan": "SETIAUSAHA PEJABAT (TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 12,
+        "bhg": "Bahagian Perniagaan Digital (BND)",
+        "id": 3,
+        "nama": "MOHAMMAD HARITH SHAHRIZAN BIN SHAHRAIN",
+        "gred": "M52",
+        "jawatan": "TIMBALAN SETIAUSAHA BAHAGIAN",
+        "telefon": "-",
+        "emel": "mharith"
+    },
+    {
+        "id_bhg": 12,
+        "bhg": "Bahagian Perniagaan Digital (BND)",
+        "id": 0,
+        "nama": "-",
+        "gred": "M52",
+        "jawatan": "TIMBALAN SETIAUSAHA BAHAGIAN",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 12,
+        "bhg": "Bahagian Perniagaan Digital (BND)",
+        "id": 5,
+        "nama": "ROSLINAYATI BINTI YAACOB",
+        "gred": "M52(KUP)",
+        "jawatan": "KETUA PENOLONG SETIAUSAHA KANAN",
+        "telefon": "03-8880 5818",
+        "emel": "roslinayati"
+    },
+    {
+        "id_bhg": 12,
+        "bhg": "Bahagian Perniagaan Digital (BND)",
+        "id": 6,
+        "nama": "SHAHANIM BINTI MOHD SAID",
+        "gred": "M48(KUP)",
+        "jawatan": "KETUA PENOLONG SETIAUSAHA",
+        "telefon": "-",
+        "emel": "shahanim"
+    },
+    {
+        "id_bhg": 12,
+        "bhg": "Bahagian Perniagaan Digital (BND)",
+        "id": 7,
+        "nama": "NUR AFIFAH ARIFAH BINTI MASAHOR",
+        "gred": "M44(M)",
+        "jawatan": "PENOLONG SETIAUSAHA KANAN",
+        "telefon": "03-8880 5894",
+        "emel": "nurafifah"
+    },
+    {
+        "id_bhg": 12,
+        "bhg": "Bahagian Perniagaan Digital (BND)",
+        "id": 0,
+        "nama": "-",
+        "gred": "F44",
+        "jawatan": "PEGAWAI TEKNOLOGI MAKLUMAT",
+        "telefon": "-",
+        "emel": "_"
+    },
+    {
+        "id_bhg": 12,
+        "bhg": "Bahagian Perniagaan Digital (BND)",
+        "id": 0,
+        "nama": "-",
+        "gred": "44(T)",
+        "jawatan": "JAWATAN TERBUKA/PENGURUSAN & PROFESIONAL",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 12,
+        "bhg": "Bahagian Perniagaan Digital (BND)",
+        "id": 10,
+        "nama": "NUR NAJIHA-ZAHEIRA BINTI ZAINUDDIN",
+        "gred": "M41",
+        "jawatan": "PENOLONG SETIAUSAHA",
+        "telefon": "-",
+        "emel": "nurnajiha"
+    },
+    {
+        "id_bhg": 12,
+        "bhg": "Bahagian Perniagaan Digital (BND)",
+        "id": 11,
+        "nama": "NORHAYATI BINTI MAT NAWI",
+        "gred": "N29",
+        "jawatan": "PENOLONG PEGAWAI TADBIR (TBK1/TBK2)",
+        "telefon": "03-8880 5860 ",
+        "emel": "hayatinawi"
+    },
+    {
+        "id_bhg": 12,
+        "bhg": "Bahagian Perniagaan Digital (BND)",
+        "id": 0,
+        "nama": "-",
+        "gred": "N22",
+        "jawatan": "PEMBANTU TADBIR (P/O) TBK2",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 12,
+        "bhg": "Bahagian Perniagaan Digital (BND)",
+        "id": 13,
+        "nama": "HAZLIKA BINTI HASSAN",
+        "gred": "N19",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "hazlika"
+    },
+    {
+        "id_bhg": 13,
+        "bhg": "Bahagian Akulturasi Digital (BAk)",
+        "id": 1,
+        "nama": "BAZARUL MAZNI BIN BAHARUDDIN",
+        "gred": "M54",
+        "jawatan": "SETIAUSAHA BAHAGIAN",
+        "telefon": "03-8880 5819",
+        "emel": "bazarul"
+    },
+    {
+        "id_bhg": 13,
+        "bhg": "Bahagian Akulturasi Digital (BAk)",
+        "id": 0,
+        "nama": "-",
+        "gred": "N19/N22",
+        "jawatan": "SETIAUSAHA PEJABAT (TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 13,
+        "bhg": "Bahagian Akulturasi Digital (BAk)",
+        "id": 3,
+        "nama": "CONWAY ANAK BEDDIE",
+        "gred": "M52",
+        "jawatan": "TIMBALAN SETIAUSAHA BAHAGIAN",
+        "telefon": "-",
+        "emel": "conway"
+    },
+    {
+        "id_bhg": 13,
+        "bhg": "Bahagian Akulturasi Digital (BAk)",
+        "id": 0,
+        "nama": "-",
+        "gred": "F52",
+        "jawatan": "PEGAWAI TEKNOLOGI MAKLUMAT",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 13,
+        "bhg": "Bahagian Akulturasi Digital (BAk)",
+        "id": 5,
+        "nama": "ROSLINAWATI BINTI ABDUL RAHMAN",
+        "gred": "M48",
+        "jawatan": "KETUA PENOLONG SETIAUSAHA",
+        "telefon": "-",
+        "emel": "roslina"
+    },
+    {
+        "id_bhg": 13,
+        "bhg": "Bahagian Akulturasi Digital (BAk)",
+        "id": 6,
+        "nama": "NORAINIL HAWA BINTI BAHRIN",
+        "gred": "M44(M)",
+        "jawatan": "PENOLONG SETIAUSAHA KANAN ",
+        "telefon": "-",
+        "emel": "norainilhawa"
+    },
+    {
+        "id_bhg": 13,
+        "bhg": "Bahagian Akulturasi Digital (BAk)",
+        "id": 7,
+        "nama": "SITTI SURAIDAH BINTI ANAS",
+        "gred": "M44(M)",
+        "jawatan": "PENOLONG SETIAUSAHA KANAN ",
+        "telefon": "-",
+        "emel": "suraidah"
+    },
+    {
+        "id_bhg": 13,
+        "bhg": "Bahagian Akulturasi Digital (BAk)",
+        "id": 8,
+        "nama": "SITI RUHAIZA BINTI ZAKARIA",
+        "gred": "M44",
+        "jawatan": "PENOLONG SETIAUSAHA",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 13,
+        "bhg": "Bahagian Akulturasi Digital (BAk)",
+        "id": 0,
+        "nama": "-",
+        "gred": "F44",
+        "jawatan": "PEGAWAI TEKNOLOGI MAKLUMAT",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 13,
+        "bhg": "Bahagian Akulturasi Digital (BAk)",
+        "id": 0,
+        "nama": "-",
+        "gred": "F44",
+        "jawatan": "PEGAWAI TEKNOLOGI MAKLUMAT",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 13,
+        "bhg": "Bahagian Akulturasi Digital (BAk)",
+        "id": 0,
+        "nama": "-",
+        "gred": "N22",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 13,
+        "bhg": "Bahagian Akulturasi Digital (BAk)",
+        "id": 12,
+        "nama": "HASNAH BINTI SIDEK",
+        "gred": "N22 TBK",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "03-8880 5055",
+        "emel": "hasnahs"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 1,
+        "nama": "MOHAMAD BIN MAT JUSOH",
+        "gred": "M54",
+        "jawatan": "SETIAUSAHA BAHAGIAN",
+        "telefon": "-",
+        "emel": "mohamad"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 2,
+        "nama": "NOR WAHIDA BINTI AHMAD NAZARI",
+        "gred": "N19",
+        "jawatan": "PEMBANTU SETIAUSAHA PEJABAT (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "norwahida"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": -1,
+        "nama": "Seksyen Kewangan",
+        "gred": null,
+        "jawatan": null,
+        "telefon": null,
+        "emel": null
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 3,
+        "nama": "TANTIE SHAWAMAZURA BINTI JOHARI",
+        "gred": "M52",
+        "jawatan": "TIMBALAN SETIAUSAHA BAHAGIAN",
+        "telefon": "03-8880 5839",
+        "emel": "tantie"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 4,
+        "nama": "SITI FAIRUZA BINTI IDRIS",
+        "gred": "WA48(M)",
+        "jawatan": "AKAUNTAN",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 5,
+        "nama": "NAJIHAH BINTI ABDULLAH @ AZAHARI",
+        "gred": "M48(KUP)",
+        "jawatan": "KETUA PENOLONG SETIAUSAHA",
+        "telefon": "03-8880 5862",
+        "emel": "najihah"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 6,
+        "nama": "MOHD NADZEEF BIN AB MALEK",
+        "gred": "M48(KUP)",
+        "jawatan": "KETUA PENOLONG SETIAUSAHA",
+        "telefon": "-",
+        "emel": "nadzeef"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 7,
+        "nama": "SOFIA BINTI MOHD SOPEE",
+        "gred": "WA41",
+        "jawatan": "AKAUNTAN",
+        "telefon": "03-8880 5170",
+        "emel": "sofia"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 0,
+        "nama": "-",
+        "gred": "WA41/W44",
+        "jawatan": "AKAUNTAN",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 9,
+        "nama": "MOHAMAD HAFIZAL BIN HAMZAH",
+        "gred": "N29",
+        "jawatan": "PENOLONG PEGAWAI TADBIR",
+        "telefon": "-",
+        "emel": "hafizal"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 0,
+        "nama": "-",
+        "gred": "W29/W32",
+        "jawatan": "PENOLONG AKAUNTAN",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 11,
+        "nama": "MAZINAH BINTI SUDARMAN",
+        "gred": "W29",
+        "jawatan": "PENOLONG AKAUNTAN ",
+        "telefon": "03-8880 5865",
+        "emel": "mazinah"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 12,
+        "nama": "MOHD FAUZI BIN OTHMAN",
+        "gred": "W29",
+        "jawatan": "PENOLONG AKAUNTAN ",
+        "telefon": "03-8880 5917",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 13,
+        "nama": "RUSLAN BIN MOHD JA'FAR",
+        "gred": "W26",
+        "jawatan": "PEMBANTU AKAUNTAN",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 0,
+        "nama": "-",
+        "gred": "N19/N22",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 15,
+        "nama": "NURAIN BINTI MOHD NORDIN",
+        "gred": "N19",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "03-8880 5869",
+        "emel": "nurain"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 16,
+        "nama": "MUHAMMAD KHAIRANI BIN GHAZALI",
+        "gred": "W19",
+        "jawatan": "PEMBANTU TADBIR (KEW) (TBK1/TBK2)",
+        "telefon": "03-8880 5883",
+        "emel": "m.khairanighazali"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 17,
+        "nama": "NURUL NADIHA BINTI MOHAMAD SUHAIMI",
+        "gred": "W19",
+        "jawatan": "PEMBANTU TADBIR (KEW) (TBK1/TBK2)",
+        "telefon": "03-8880 5883",
+        "emel": "nadihasuhaimi"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 18,
+        "nama": "NUR NISA DAYANA BINTI ZALFAIZAL",
+        "gred": "W19",
+        "jawatan": "PEMBANTU TADBIR (KEW) (TBK1/TBK2)",
+        "telefon": "03-8880 5037",
+        "emel": "nurnisadayana"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 19,
+        "nama": "NOOR AIDA BINTI NAZIR",
+        "gred": "W19",
+        "jawatan": "PEMBANTU TADBIR (KEW) (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "nooraida"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 20,
+        "nama": "NURAIN BINTI MAHAYUDIN",
+        "gred": "W19",
+        "jawatan": "PEMBANTU TADBIR (KEW) (TBK1/TBK2)",
+        "telefon": "03-8880 5865",
+        "emel": "ainmahayudin"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 21,
+        "nama": "NORHANANI BINTI ISMAIL",
+        "gred": "W19",
+        "jawatan": "PEMBANTU TADBIR (KEW) (TBK1/TBK2)",
+        "telefon": "03-8880 5091",
+        "emel": "norhanani"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": -1,
+        "nama": "Seksyen Pembangunan",
+        "gred": null,
+        "jawatan": null,
+        "telefon": null,
+        "emel": null
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 0,
+        "nama": "-",
+        "gred": "M52",
+        "jawatan": "TIMBALAN SETIAUSAHA BAHAGIAN",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 0,
+        "nama": "-",
+        "gred": "J48",
+        "jawatan": "JURUTERA",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 24,
+        "nama": "SUHAIR HAWA ANADALE BINTI SUARNO",
+        "gred": "M44(M)",
+        "jawatan": "PENOLONG SETIAUSAHA KANAN",
+        "telefon": "03-8880 5997",
+        "emel": "anadale"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 0,
+        "nama": "-",
+        "gred": "F41/F44",
+        "jawatan": "PEGAWAI TEKNOLOGI MAKLUMAT",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 26,
+        "nama": "MASLIZA BINTI ZAKARIA",
+        "gred": "N22 TBK",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "masliza"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 27,
+        "nama": "AIMA NUR LIYANA BINTI MOKHTAR",
+        "gred": "N19",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "03-8880 5845",
+        "emel": "aima"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 28,
+        "nama": "NUR RASHIDAH BINTI MOHAMAD",
+        "gred": "W19",
+        "jawatan": "PEMBANTU TADBIR (KEW) (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": -1,
+        "nama": "Seksyen Perolehan",
+        "gred": null,
+        "jawatan": null,
+        "telefon": null,
+        "emel": null
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 29,
+        "nama": "MAHUSSIN BIN JUSOH",
+        "gred": "M48",
+        "jawatan": "KETUA PENOLONG SETIAUSAHA",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 30,
+        "nama": "NUR AINA ASYAHA BINTI MANAN",
+        "gred": "M48(KUP)",
+        "jawatan": "KETUA PENOLONG SETIAUSAHA",
+        "telefon": "03-8880 5893",
+        "emel": "nuraina"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 31,
+        "nama": "JULIANA SAMBAI ANAK SIBAT",
+        "gred": "M41",
+        "jawatan": "PENOLONG SETIAUSAHA",
+        "telefon": "03-8880 5853",
+        "emel": "sjuliana"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 0,
+        "nama": "-",
+        "gred": "N22",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 33,
+        "nama": "NORHASLIZA BINTI MAT SOOD",
+        "gred": "N22 TBK",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "03-8880 5987",
+        "emel": "norhasliza"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 34,
+        "nama": "MASTURA BINTI MOHD TANZIZI",
+        "gred": "W19",
+        "jawatan": "PEMBANTU TADBIR (KEW) (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "mastura.mohdtanzizi"
+    },
+    {
+        "id_bhg": 14,
+        "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
+        "id": 35,
+        "nama": "NUR FATIHIN BINTI JAAFAR",
+        "gred": "W19",
+        "jawatan": "PEMBANTU TADBIR (KEW) (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "nrfatihin"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 1,
+        "nama": "HAZURA BINTI HAMZAH",
+        "gred": "M54",
+        "jawatan": "SETIAUSAHA BAHAGIAN",
+        "telefon": "03-8880 5920",
+        "emel": "hazura"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 2,
+        "nama": "NORHIKMAH BINTI TAUHID",
+        "gred": " N32",
+        "jawatan": "SETIAUSAHA PEJABAT (TBK1/TBK2)",
+        "telefon": "03-8880 5806",
+        "emel": "norhikmah"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": -1,
+        "nama": "Seksyen Penyelarasan Program, Inovasi Dan Kualiti",
+        "gred": null,
+        "jawatan": null,
+        "telefon": null,
+        "emel": null
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 3,
+        "nama": "NORZAIMEE BIN GHAZALI",
+        "gred": "M48",
+        "jawatan": "KETUA PENOLONG SETIAUSAHA",
+        "telefon": "03-8880 5871",
+        "emel": "norzaimee"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 4,
+        "nama": "AUDREY ANAK LEMBAT",
+        "gred": "M44(M)",
+        "jawatan": "PENOLONG SETIAUSAHA KANAN",
+        "telefon": "03-8880 5986",
+        "emel": "audrey"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 5,
+        "nama": "MUHAMMAD NAZIRUL SAFWAN BIN ZULKEFLI",
+        "gred": "M41",
+        "jawatan": "PENOLONG SETIAUSAHA",
+        "telefon": "03-8880 5962",
+        "emel": "nazirul"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 6,
+        "nama": "MOHD IZANI BIN CHE JAAFAR",
+        "gred": "S44",
+        "jawatan": "PUSTAKAWAN",
+        "telefon": "-",
+        "emel": "izani"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 0,
+        "nama": "-",
+        "gred": "N36",
+        "jawatan": "PENOLONG PEGAWAI TADBIR",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 8,
+        "nama": "NORAZILAH BINTI ABD MANAB",
+        "gred": "S29",
+        "jawatan": "PENOLONG PUSTAKAWAN (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "norazilah"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 9,
+        "nama": "AFIDAH BINTI ALIAS",
+        "gred": "N26",
+        "jawatan": "PEMBANTU TADBIR (P/O)",
+        "telefon": "03-8880 5964",
+        "emel": "afidah"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 10,
+        "nama": "ALLISON @ STEVE ADDISON ANAK FELTCHER",
+        "gred": "N22 TBK",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "03-8880 5808",
+        "emel": "ellys"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 11,
+        "nama": "NORFATZAITULSHIMA BINTI ZULKIFLI",
+        "gred": "N22 TBK",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "fatzaitulshima"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 12,
+        "nama": "AZIE AMIRA BINTI JOHARI",
+        "gred": "N22 TBK",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "03-8880 5973",
+        "emel": "azieamira"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 13,
+        "nama": "MUHAMMAD ZUL AFNAN BIN MOHD HASNI",
+        "gred": "N19",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "03-8880 5873",
+        "emel": "zulafnan"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 14,
+        "nama": "SITI NOR AIN BINTI AB. SATAR",
+        "gred": "S19",
+        "jawatan": "PEMBANTU PUSTAKAWAN (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "ain"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 15,
+        "nama": "MUHAMMAD SYAHMI FIQRI BIN KHALID",
+        "gred": "H11(K)",
+        "jawatan": "PEMANDU KENDERAAN (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "syahmifiqri"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 16,
+        "nama": "ABDUL RAHMAN BIN MOHD YUSOF",
+        "gred": "H11(K)",
+        "jawatan": "PEMANDU KENDERAAN (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "abdulrahman"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 17,
+        "nama": "ABDULLAH BIN SAMSUDIN",
+        "gred": "H11 ",
+        "jawatan": "PEMANDU KENDERAAN (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "abdullah"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 18,
+        "nama": "MOHD FAIZUL BIN MOHAMED FARID",
+        "gred": "H11 ",
+        "jawatan": "PEMANDU KENDERAAN (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "faizul"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 19,
+        "nama": "MOHD SAYUTI BIN ZAINUN",
+        "gred": "H11 ",
+        "jawatan": "PEMANDU KENDERAAN (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "sayuti"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 20,
+        "nama": "MOHD ZAHIRUDDIN BIN MOHD ZIN",
+        "gred": "H11 ",
+        "jawatan": "PEMANDU KENDERAAN ",
+        "telefon": "-",
+        "emel": "zahiruddin"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 21,
+        "nama": "MOHD KAMSUL BIN FAUZAN",
+        "gred": "H11",
+        "jawatan": "PEMANDU KENDERAAN ",
+        "telefon": "-",
+        "emel": "mohdkamsul"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 22,
+        "nama": "YUSNI BIN ALIAS",
+        "gred": "H11",
+        "jawatan": "PEMANDU KENDERAAN ",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 23,
+        "nama": "FAROLNIZAM BIN MOHD FUAD",
+        "gred": "H11",
+        "jawatan": "PEMANDU KENDERAAN ",
+        "telefon": "-",
+        "emel": "farolnizam"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 0,
+        "nama": "-",
+        "gred": "H11",
+        "jawatan": "PEMANDU KENDERAAN ",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 25,
+        "nama": "HATIN BIN AHMAD",
+        "gred": "N14",
+        "jawatan": "PEMBANTU OPERASI ",
+        "telefon": "03-8880 5817",
+        "emel": "hatin"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 26,
+        "nama": "SHAHRULNIZAM BIN KAMARUDDIN",
+        "gred": "N11",
+        "jawatan": "PEMBANTU OPERASI ",
+        "telefon": "-",
+        "emel": "shahrulnizam"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 0,
+        "nama": "-",
+        "gred": "N11",
+        "jawatan": "PEMBANTU OPERASI",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": -1,
+        "nama": "Seksyen Aset, Fasiliti & Keselamatan",
+        "gred": null,
+        "jawatan": null,
+        "telefon": null,
+        "emel": null
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 28,
+        "nama": "MOHD HASLAN BIN HUSSAIN",
+        "gred": "M52",
+        "jawatan": "TIMBALAN SETIAUSAHA BAHAGIAN",
+        "telefon": "03-8880 5902",
+        "emel": "haslan"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 29,
+        "nama": "NUR FARHANA BINTI AHMAD HASRI",
+        "gred": "M44(M)",
+        "jawatan": "PENOLONG SETIAUSAHA KANAN",
+        "telefon": "-",
+        "emel": "nfarhana"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 30,
+        "nama": "RAZIN AFIQ BIN NORAZLAN",
+        "gred": "M41",
+        "jawatan": "PENOLONG SETIAUSAHA",
+        "telefon": "03-8880 5985",
+        "emel": "razin"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 0,
+        "nama": "-",
+        "gred": "N32",
+        "jawatan": "PENOLONG PEGAWAI TADBIR (TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 32,
+        "nama": "MOHD ZULKEFLI BIN JOHARI",
+        "gred": "N32 TBK",
+        "jawatan": "PENOLONG PEGAWAI TADBIR (TBK1/TBK2)",
+        "telefon": "03-8880 5978",
+        "emel": "zulkeflijohari"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 0,
+        "nama": "-",
+        "gred": "N22",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 34,
+        "nama": "MUHAMMAD SYARIHAN BIN ZOLKEFALI",
+        "gred": "N22 TBK",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "02-8880 5978",
+        "emel": "syarihan"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 35,
+        "nama": "NORHAZLIANA BINTI MAD TAHAR",
+        "gred": "N22 TBK",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "03-8880 5866",
+        "emel": "norhazliana"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 36,
+        "nama": "NAZRUL BIN CHE NOH",
+        "gred": "N19",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "03-8880 5978",
+        "emel": "nazrul"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 37,
+        "nama": "AZHAR BIN MOHAMAD",
+        "gred": "KP14",
+        "jawatan": "PENGAWAL KESELAMATAN ",
+        "telefon": "-",
+        "emel": "azhar"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 38,
+        "nama": "SYAZWAN BIN SOBRI",
+        "gred": "KP11",
+        "jawatan": "PENGAWAL KESELAMATAN",
+        "telefon": "-",
+        "emel": "syazwan"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": -1,
+        "nama": "Seksyen Rekod & Registri",
+        "gred": null,
+        "jawatan": null,
+        "telefon": null,
+        "emel": null
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 39,
+        "nama": "FADZLETTE AZRA BINTI FESAL",
+        "gred": "S44",
+        "jawatan": "PEGAWAI ARKIB",
+        "telefon": "03-8880 5850",
+        "emel": "fadzlette"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 40,
+        "nama": "HAFIZAH BINTI MAT ISA",
+        "gred": "S32",
+        "jawatan": "PENOLONG PEGAWAI ARKIB (TBK2)",
+        "telefon": "03-8880 5850",
+        "emel": "hafizahm"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 41,
+        "nama": "ATIKAH BINTI CHE EMBI @ AZMI",
+        "gred": "S29",
+        "jawatan": "PENOLONG PEGAWAI ARKIB ",
+        "telefon": "03-8880 5825",
+        "emel": "atikahazmi"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 0,
+        "nama": "-",
+        "gred": "N19",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 43,
+        "nama": "DIANA AMIRA BINTI MUSTAPA",
+        "gred": "N19",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "03-8880 5825",
+        "emel": "dianaamira"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 44,
+        "nama": "NOOR HAFIZIE BIN MOHD NASIR",
+        "gred": "N11",
+        "jawatan": "PEMBANTU OPERASI",
+        "telefon": "03-8880 5825",
+        "emel": "noorhafizie"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": -1,
+        "nama": "Seksyen Latihan, Kerjaya & Prestasi",
+        "gred": null,
+        "jawatan": null,
+        "telefon": null,
+        "emel": null
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 45,
+        "nama": "WAN ALWANI BINTI WAN MAHMUD",
+        "gred": "M52(KUP)",
+        "jawatan": "TIMBALAN SETIAUSAHA BAHAGIAN",
+        "telefon": "03-8880 5941",
+        "emel": "alwani"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 46,
+        "nama": "SYAMRIZAL BIN J NULAWADIN",
+        "gred": "M44",
+        "jawatan": "PENOLONG SETIAUSAHA KANAN",
+        "telefon": "03-8880 5812",
+        "emel": "syamrizal"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 47,
+        "nama": "NUR AINA AFRINA BINTI ABDUL RAZAK",
+        "gred": "M41",
+        "jawatan": "PENOLONG SETIAUSAHA",
+        "telefon": "03-8880 5813",
+        "emel": "afrina"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 0,
+        "nama": "-",
+        "gred": "S41/S44",
+        "jawatan": "PEGAWAI HAL EHWAL ISLAM",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 49,
+        "nama": "RUZIHA BINTI AZIZAN",
+        "gred": "N32",
+        "jawatan": "PENOLONG PEGAWAI TADBIR (TBK2)",
+        "telefon": "-",
+        "emel": "ruziha.azizan"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 50,
+        "nama": "MOHAMMED AMRIL NAQQIUDDIN BIN MOHAMED ZUBRI",
+        "gred": "N22 TBK",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "03-8880 5824",
+        "emel": "amril"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 51,
+        "nama": "NUR HAZIRAH BINTI DAHALAN",
+        "gred": "N19",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2) ",
+        "telefon": "-",
+        "emel": "hazirah"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": -1,
+        "nama": "Seksyen Perkhidmatan & Perjawatan",
+        "gred": null,
+        "jawatan": null,
+        "telefon": null,
+        "emel": null
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 52,
+        "nama": "DZULHILMI BIN DZULKARNAIN",
+        "gred": "M52 ",
+        "jawatan": "TIMBALAN SETIAUSAHA BAHAGIAN",
+        "telefon": "-",
+        "emel": "dzulhilmi"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 53,
+        "nama": "SAFURA BINTI SHAARUDDIN",
+        "gred": "M44(M)",
+        "jawatan": "PENOLONG SETIAUSAHA KANAN",
+        "telefon": "-",
+        "emel": "safura"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 54,
+        "nama": "NUR IZZATI BINTI IDRIS",
+        "gred": "M44(M)",
+        "jawatan": "PENOLONG SETIAUSAHA KANAN",
+        "telefon": "03-8880 5828",
+        "emel": "n.izzati"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 55,
+        "nama": "HAZWATHUL NADIA BINTI ABU MARSHAH",
+        "gred": "N29",
+        "jawatan": "PENOLONG PEGAWAI TADBIR ",
+        "telefon": "-",
+        "emel": "nadia.am"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 56,
+        "nama": "SHAFINAS BINTI SHAMSUDIN",
+        "gred": "FA29",
+        "jawatan": "PENOLONG PEGAWAI TEKNOLOGI MAKLUMAT",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 57,
+        "nama": "SHALWATI BINTI AMAN SHAH",
+        "gred": "N26",
+        "jawatan": "PEMBANTU TADBIR (P/O)",
+        "telefon": "03-8880 5841",
+        "emel": "shalwati"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 58,
+        "nama": "KAMRUN BIBI BINTI MOHAMED MUSA",
+        "gred": "N22 TBK",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "kamrun"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 59,
+        "nama": "NOOR SALIZA BINTI ABDUL MANAP",
+        "gred": "N22 TBK",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "saliza"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 60,
+        "nama": "PUTRI NORHAIZAD BINTI ZAINAL ABIDIN",
+        "gred": "N22 TBK",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "putri"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 61,
+        "nama": "NURUL AINI BINTI MOHAMAD",
+        "gred": "N22 TBK",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "03-8880 5918",
+        "emel": "aini"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 62,
+        "nama": "MUHAMMAD NA'IM BIN MD JAHORI",
+        "gred": "N19",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2) ",
+        "telefon": "-",
+        "emel": "naim"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": -1,
+        "nama": "Unit Pengurusan Psikologi",
+        "gred": null,
+        "jawatan": null,
+        "telefon": null,
+        "emel": null
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 63,
+        "nama": "WAN ZURINA BINTI WAN ABDULLAH",
+        "gred": "S44",
+        "jawatan": "PEGAWAI PSIKOLOGI",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 15,
+        "bhg": "Bahagian Khidmat Pengurusan (BKP)",
+        "id": 0,
+        "nama": "-",
+        "gred": "N19/N22",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 16,
+        "bhg": "Unit Audit Dalam",
+        "id": 1,
+        "nama": "RASDI BIN MOHAMED RAZALI",
+        "gred": "W48",
+        "jawatan": "KETUA UNIT",
+        "telefon": "03-88805942",
+        "emel": "rasdi"
+    },
+    {
+        "id_bhg": 16,
+        "bhg": "Unit Audit Dalam",
+        "id": 2,
+        "nama": "GEETHA A/P RAJA SEGARAN",
+        "gred": "W44(M)",
+        "jawatan": "JURUAUDIT",
+        "telefon": "03-8880 5876",
+        "emel": "geetha"
+    },
+    {
+        "id_bhg": 16,
+        "bhg": "Unit Audit Dalam",
+        "id": 0,
+        "nama": "-",
+        "gred": "W41/W44",
+        "jawatan": "JURUAUDIT",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 16,
+        "bhg": "Unit Audit Dalam",
+        "id": 0,
+        "nama": "-",
+        "gred": "W29",
+        "jawatan": "PENOLONG JURUAUDIT (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 16,
+        "bhg": "Unit Audit Dalam",
+        "id": 0,
+        "nama": "-",
+        "gred": "W29",
+        "jawatan": "PENOLONG JURUAUDIT (TBK1/TBK2)",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 16,
+        "bhg": "Unit Audit Dalam",
+        "id": 6,
+        "nama": "SUNIZA BINTI SUBRI",
+        "gred": "N22 TBK",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "03-8880 5926",
+        "emel": "suniza"
+    },
+    {
+        "id_bhg": 17,
+        "bhg": "Unit Integriti",
+        "id": 0,
+        "nama": "-",
+        "gred": "M48",
+        "jawatan": "KETUA UNIT",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 17,
+        "bhg": "Unit Integriti",
+        "id": 0,
+        "nama": "-",
+        "gred": "P44",
+        "jawatan": "PENOLONG PEGAWAI SIASATAN",
+        "telefon": "-",
+        "emel": "-"
+    },
+    {
+        "id_bhg": 17,
+        "bhg": "Unit Integriti",
+        "id": 3,
+        "nama": "ADILAH BINTI AZIZAN",
+        "gred": "M44(M)",
+        "jawatan": "PENOLONG SETIAUSAHA KANAN",
+        "telefon": "03-8880 5822",
+        "emel": "adilah.azizan"
+    },
+    {
+        "id_bhg": 17,
+        "bhg": "Unit Integriti",
+        "id": 4,
+        "nama": "HAMIMATUL ATIQAH BINTI MOHAMAD ROSLI",
+        "gred": "N19",
+        "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
+        "telefon": "03-8880 5807",
+        "emel": "hamimatul"
+    }
+]
