@@ -11,7 +11,7 @@ export default function ChevronLeft({ ...props }) {
       <path
         d="M11 5L6 10L11 15"
         stroke="currentColor"
-        strokeWidth="1.5"
+        strokeWidth="inherit"
         strokeLinecap="round"
         strokeLinejoin="round"
       />

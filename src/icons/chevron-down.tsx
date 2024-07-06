@@ -11,7 +11,7 @@ export default function ChevronDown({ ...props }) {
       <path
         d="M5 8L10 13L15 8"
         stroke="currentColor"
-        strokeWidth="1.5"
+        strokeWidth="inherit"
         strokeLinecap="round"
         strokeLinejoin="round"
       />

@@ -11,7 +11,7 @@ export default function ArrowBack({ ...props }) {
       <path
         d="M8.25 4.75L2.75 10L8.25 15.25M17.25 10H3"
         stroke="currentColor"
-        strokeWidth="1.5"
+        strokeWidth="inherit"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
