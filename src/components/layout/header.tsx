@@ -4,6 +4,7 @@ import Locale from "@/components/layout/locale";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetOverlay,
   SheetPortal,
@@ -35,8 +36,8 @@ export function Header({ locale }: { locale: string }) {
   const [showMenu, setMenu] = useState<boolean>(false);
 
   return (
-    <header className="sticky top-0 z-50 lg:border-b bg-background lg:bg-background/80 lg:backdrop-blur-[30px]">
-      <div className="container flex w-full items-center justify-between gap-3 bg-background lg:bg-transparent max-lg:border-b py-3 lg:gap-4">
+    <header className="sticky top-0 z-50 bg-background lg:border-b lg:bg-background/80 lg:backdrop-blur-[30px]">
+      <div className="container flex w-full items-center justify-between gap-3 bg-background py-3 max-lg:border-b lg:gap-4 lg:bg-transparent">
         <Link href="/" className="flex h-full flex-none items-center gap-2.5">
           <Image
             src="/jata-negara.png"
@@ -49,24 +50,26 @@ export function Header({ locale }: { locale: string }) {
             {t("Agency.name")}
           </span>
         </Link>
-        
+
         <Sheet open={showMenu} onOpenChange={setMenu}>
           <SheetContent
             side="top"
             className="absolute top-full -z-10 flex flex-col gap-0 rounded-b-xl p-3 lg:hidden"
           >
             {nav_items.map(({ name, href }) => (
-              <Link
-                key={name}
-                href={href}
-                data-state={active(href) ? "open" : "close"}
-                className={cn(
-                  buttonVariants({ variant: "tertiary", size: "md" }),
-                  "w-full justify-start data-[state=open]:bg-washed-100",
-                )}
-              >
-                {t(`Header.${name}`)}
-              </Link>
+              <SheetClose asChild>
+                <Link
+                  key={name}
+                  href={href}
+                  data-state={active(href) ? "open" : "close"}
+                  className={cn(
+                    buttonVariants({ variant: "tertiary", size: "md" }),
+                    "w-full justify-start data-[state=open]:bg-washed-100",
+                  )}
+                >
+                  {t(`Header.${name}`)}
+                </Link>
+              </SheetClose>
             ))}
           </SheetContent>
           <SheetPortal>
