@@ -87,8 +87,10 @@ export default function Footer() {
             <div className="space-y-2 lg:space-y-3">
               <p className="text-sm font-semibold">{t("Footer.follow_us")}</p>
               <div className="flex gap-3">
-                {social_media.map(({ icon, href }) => (
-                  <a href={href}>{icon}</a>
+                {social_media.map(({ icon, name, href }) => (
+                  <a key={name} href={href}>
+                    {icon}
+                  </a>
                 ))}
               </div>
             </div>

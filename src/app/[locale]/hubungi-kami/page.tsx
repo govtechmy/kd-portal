@@ -79,7 +79,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="container grid grid-cols-2 divide-y divide-washed-100 px-0 sm:grid-cols-4 lg:flex divide-x lg:border-x lg:border-x-washed-100">
+      <section className="container grid grid-cols-2 divide-x divide-y divide-washed-100 px-0 sm:grid-cols-4 lg:flex lg:border-x lg:border-x-washed-100">
         {[
           {
             icon: <Phone className="size-6" />,
@@ -92,7 +92,10 @@ export default function Page() {
             desc: "Contact.email_address",
           },
         ].map(({ icon, title, desc }) => (
-          <div className="col-span-2 flex flex-auto gap-4.5 px-6 py-8 md:py-[34px]">
+          <div
+            key={title}
+            className="col-span-2 flex flex-auto gap-4.5 px-6 py-8 md:py-[34px]"
+          >
             <div className="size-[42px] rounded-full bg-brand-50 p-[9px] text-brand-700">
               {icon}
             </div>
@@ -105,7 +108,10 @@ export default function Page() {
           </div>
         ))}
         {social_media.map(({ icon, name, href }) => (
-          <div className="col-span-1 flex flex-none flex-col items-center gap-2 py-6 md:gap-3 lg:w-[100px]">
+          <div
+            key={name}
+            className="col-span-1 flex flex-none flex-col items-center gap-2 py-6 md:gap-3 lg:w-[100px]"
+          >
             <div className="flex size-[42px] items-center justify-center rounded-full bg-brand-50 text-brand-700">
               {icon}
             </div>

@@ -93,7 +93,10 @@ export default function Page({
             desc: "Info.misi_desc",
           },
         ].map(({ icon, title, desc }) => (
-          <div className="flex gap-6 p-12 md:gap-8 md:px-16 md:py-[84px]">
+          <div
+            key={title}
+            className="flex gap-6 p-12 md:gap-8 md:px-16 md:py-[84px]"
+          >
             <div className="size-[54px] rounded-full bg-brand-50 p-[11px] text-brand-700">
               {icon}
             </div>
@@ -114,14 +117,14 @@ export default function Page({
           </h2>
           <div className="grid grid-cols-1 gap-y-8 sm:gap-x-12 sm:gap-y-[72px] md:grid-cols-2 lg:grid-cols-3">
             {[
-              <Gov className="size-8" />,
-              <Globe className="size-8" />,
-              <Bolt className="size-8" />,
-              <CheckmarkShield className="size-8" />,
-              <Money className="size-8" />,
-              <Trophy className="size-8" />,
-            ].map((icon, i) => (
-              <div className="flex flex-row gap-4.5 md:flex-col">
+              { icon: <Gov className="size-8" /> },
+              { icon: <Globe className="size-8" /> },
+              { icon: <Bolt className="size-8" /> },
+              { icon: <CheckmarkShield className="size-8" /> },
+              { icon: <Money className="size-8" /> },
+              { icon: <Trophy className="size-8" /> },
+            ].map(({ icon }, i) => (
+              <div key={i} className="flex flex-row gap-4.5 md:flex-col">
                 <div className="size-[54px] rounded-xl bg-brand-50 p-[11px] text-brand-700">
                   {icon}
                 </div>
