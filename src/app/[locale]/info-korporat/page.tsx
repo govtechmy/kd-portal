@@ -95,7 +95,7 @@ export default function Page({
         ].map(({ icon, title, desc }) => (
           <div
             key={title}
-            className="flex gap-6 p-12 md:gap-8 md:px-16 md:py-[84px]"
+            className="flex gap-6 py-12 md:gap-8 md:px-16 md:py-[84px]"
           >
             <div className="size-[54px] rounded-full bg-brand-50 p-[11px] text-brand-700">
               {icon}
@@ -110,7 +110,7 @@ export default function Page({
         ))}
       </section>
 
-      <section className="container p-12 md:py-[84px] lg:border-x lg:border-washed-100 xl:grid xl:grid-cols-12">
+      <section className="container py-12 md:py-[84px] lg:border-x lg:border-washed-100 xl:grid xl:grid-cols-12">
         <div className="col-span-10 col-start-2 space-y-12 md:space-y-[74px]">
           <h2 className="text-center font-poppins text-hsm font-semibold">
             {t("Info.Role.title")}
