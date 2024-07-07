@@ -35,7 +35,7 @@ export default function Quicklinks() {
               rel="noopenner noreferrer"
               className={cn(
                 buttonVariants({ variant: "secondary", size: "default" }),
-                "group relative flex justify-start gap-4 whitespace-normal p-4",
+                "group relative flex justify-start gap-4 whitespace-normal p-4 font-normal rounded-xl",
               )}
             >
               <Image
