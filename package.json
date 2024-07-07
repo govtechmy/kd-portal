@@ -27,6 +27,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "cross-env": "^7.0.3",
+    "embla-carousel-react": "^8.1.6",
     "graphql": "^16.8.1",
     "next": "15.0.0-rc.0",
     "next-intl": "^3.15.3",
