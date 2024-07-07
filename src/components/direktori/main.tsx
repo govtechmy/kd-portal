@@ -6,6 +6,8 @@ import Search from "@/components/ui/search";
 import StaffDirectory from "@/lib/resources/directory_kd.json";
 import HeroPattern from "@/components/layout/hero-pattern";
 import { useTranslations } from "next-intl";
+import { Cell } from "@tanstack/react-table";
+import ReadMore from "../ui/read-more";
 
 interface StaffDirectory {
   id_bhg: number;
@@ -92,6 +94,43 @@ const DirektoriMain: FC = () => {
     },
   ];
 
+  const mobileColumn = [
+    {
+      header: "",
+      accessorKey: "bhg",
+      cell: (info: any) => {
+        const _info = info as Cell<StaffDirectory, unknown>;
+        const { row, getValue } = _info;
+        return (
+          <div className="space-y-1 px-3">
+            <ReadMore className="whitespace-nowrap" max={["char", 30]}>
+              {row.original.bhg}
+            </ReadMore>
+            <div className="space-y-px">
+              <p className="font-bold">
+                {row.original.id === 0 ? (
+                  <span className="text-red-600">KOSONG</span>
+                ) : (
+                  row.original.nama
+                )}
+              </p>
+              <p className="text-xs">
+                {row.original.jawatan}{" "}
+                {row.original.gred !== "-" ? `(${row.original.gred})` : null}
+              </p>
+            </div>
+            <p className="text-xs">
+              {row.original.telefon === "-" ? "" : `${row.original.telefon} |`}{" "}
+              {row.original.emel === "-"
+                ? ""
+                : `${row.original.emel}@digital.gov.my`}
+            </p>
+          </div>
+        );
+      },
+    },
+  ];
+
   function searchArray(array: typeof data, searchQuery: string) {
     const query = searchQuery.toLowerCase();
 
@@ -124,7 +163,7 @@ const DirektoriMain: FC = () => {
         </div>
       </section>
 
-      <section className="container flex min-h-screen w-full border-x border-x-washed-100 px-6 py-12">
+      <section className="container hidden min-h-screen w-full border-x border-x-washed-100 px-6 py-12 sm:flex">
         <DataTable
           key={JSON.stringify(data)}
           className="w-full border-0"
@@ -141,6 +180,22 @@ const DirektoriMain: FC = () => {
             if (row.original.id === -1) return row.getVisibleCells()[0];
             return false;
           }}
+        />
+      </section>
+
+      <section className="container flex min-h-screen w-full flex-col border-x border-x-washed-100 px-6 py-12 sm:hidden">
+        <DataTable
+          key={JSON.stringify(data)}
+          className="w-full border-0"
+          columns={mobileColumn}
+          data={data}
+          resizeable={false}
+          paginate={{
+            pageIndex: 0,
+            pageSize: 15,
+          }}
+          dropdownFilter="bhg"
+          dropdownText={t("Directory.table_header.bhg")}
         />
       </section>
     </main>
