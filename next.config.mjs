@@ -1,8 +1,13 @@
-import { withPayload } from '@payloadcms/next/withPayload'
+import { withPayload } from "@payloadcms/next/withPayload";
+import createNextIntlPlugin from "next-intl/plugin";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Your Next.js config here
-}
+  env: {
+    LAST_UPDATED: new Date().toISOString(),
+  },
+};
 
-export default withPayload(nextConfig)
+const withNextIntl = createNextIntlPlugin("./src/lib/i18n.ts");
+
+export default withNextIntl(withPayload(nextConfig));
