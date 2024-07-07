@@ -53,7 +53,7 @@ const Search: FunctionComponent<SearchProps> = ({
         )}
         onChange={(event) => onSearch(event.target.value)}
       />
-      <span className="flex shrink-0 items-center gap-x-1 text-sm text-dim-500">
+      <span className="hidden lg:flex shrink-0 items-center gap-x-1 text-sm text-dim-500">
         {t("Search.type")}
         <span className="rounded-md border border-outline-300 px-1.5 py-0.5">
           /

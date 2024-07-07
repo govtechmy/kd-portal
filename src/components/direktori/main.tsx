@@ -157,7 +157,7 @@ const DirektoriMain: FC = () => {
             {t("Directory.header")}
           </h1>
 
-          <div className="mx-auto flex items-center gap-2.5 rounded-full border bg-background pl-4.5 pr-1.5 shadow-card sm:w-[600px]">
+          <div className="mx-auto flex w-full items-center gap-2.5 rounded-full border bg-background pl-4.5 pr-1.5 shadow-card sm:w-[600px]">
             <Search
               onChange={(query) => searchArray(StaffDirectory, query)}
               placeholder={t("Directory.search_placeholder")}
