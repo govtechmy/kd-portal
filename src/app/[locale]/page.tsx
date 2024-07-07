@@ -30,7 +30,7 @@ export default function Page({
               {t("Agency.name")}
             </p>
             <h1 className="text-balance font-poppins text-[32px]/10 font-semibold sm:text-hmd">
-              Menerajui Pendigitalan Negara
+              {t("Home.title")}
             </h1>
           </div>
 
