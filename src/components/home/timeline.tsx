@@ -52,7 +52,7 @@ export default function Timeline() {
                   <p className="font-medium text-black-900">
                     {t(`title${i + 1}`)}
                   </p>
-                  <p className="line-clamp-3 text-sm text-black-700">
+                  <p className="text-sm text-black-700">
                     {t(`desc${i + 1}`)}
                   </p>
                   <div
