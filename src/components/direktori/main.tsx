@@ -152,7 +152,7 @@ const DirektoriMain: FC = () => {
         <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden">
           <HeroPattern className="absolute -top-[83.33%]" />
         </div>
-        <div className="flex flex-col items-center gap-6 py-16">
+        <div className="container flex flex-col items-center gap-6 py-16">
           <h1 className="text-center font-poppins text-hmd font-semibold">
             {t("Directory.header")}
           </h1>
