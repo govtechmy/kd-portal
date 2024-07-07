@@ -156,11 +156,13 @@ const DirektoriMain: FC = () => {
           <h1 className="text-center font-poppins text-hmd font-semibold">
             {t("Directory.header")}
           </h1>
-          <Search
-            className="w-full px-6 lg:w-[600px] lg:px-3"
-            onChange={(query) => searchArray(StaffDirectory, query)}
-            placeholder={t("Directory.search_placeholder")}
-          />
+
+          <div className="mx-auto flex items-center gap-2.5 rounded-full border bg-background pl-4.5 pr-1.5 shadow-card sm:w-[600px]">
+            <Search
+              onChange={(query) => searchArray(StaffDirectory, query)}
+              placeholder={t("Directory.search_placeholder")}
+            />
+          </div>
         </div>
       </section>
 

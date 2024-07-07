@@ -1,8 +1,8 @@
 "use client";
+
 import { FunctionComponent, useEffect, useRef, useState } from "react";
-import Input from "./input";
 import { cn } from "@/lib/utils";
-import { MagnifyingGlassCircleIcon } from "@heroicons/react/24/solid";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { useTranslations } from "next-intl";
 
 interface SearchProps {
@@ -42,25 +42,28 @@ const Search: FunctionComponent<SearchProps> = ({
   }, []);
 
   return (
-    <Input
-      ref={searchRef}
-      suffix={
-        <div className="flex items-center gap-2.5 text-sm text-dim-500">
-          <span className="hidden lg:block">
-            {t("Search.type")}{" "}
-            <span className="rounded-md border border-outline-300 bg-white px-1.5 py-0.5">
-              /
-            </span>{" "}
-            {t("Search.search")}
-          </span>
-          <MagnifyingGlassCircleIcon className="h-8 w-8 text-brand-600" />
-        </div>
-      }
-      value={value}
-      placeholder={placeholder || t("Search.default_placeholder")}
-      className={cn("min-w-[300px] rounded-full py-2.5", className)}
-      onChange={onSearch}
-    />
+    <>
+      <input
+        ref={searchRef}
+        value={value}
+        placeholder={placeholder || t("Search.default_placeholder")}
+        className={cn(
+          "flex h-11 w-full rounded-md bg-background py-2.5 text-sm outline-none placeholder:text-dim-500 disabled:cursor-not-allowed disabled:opacity-50",
+          className,
+        )}
+        onChange={(event) => onSearch(event.target.value)}
+      />
+      <span className="flex shrink-0 items-center gap-x-1 text-sm text-dim-500">
+        {t("Search.type")}
+        <span className="rounded-md border border-outline-300 px-1.5 py-0.5">
+          /
+        </span>
+        {t("Search.search")}
+      </span>
+      <div className="size-8 rounded-full bg-gradient-to-b from-[#5288FF] to-brand-600 to-100% p-1.5">
+        <MagnifyingGlassIcon className="size-5 text-white" />
+      </div>
+    </>
   );
 };
 
