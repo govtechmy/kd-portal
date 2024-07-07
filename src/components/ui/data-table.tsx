@@ -20,6 +20,7 @@ import {
   Cell,
 } from "@tanstack/react-table";
 import { useParams, useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import {
   Table,
   TableBody,
@@ -549,8 +550,9 @@ const DropdownSingleFilter: FunctionComponent<DropdownSingleFilter> = ({
   triggerText,
 }) => {
   const { getFilterValue, setFilterValue } = header.column;
+  const t = useTranslations();
   const [selectedFilters, setSelectedFilters] = useState<string>(
-    (getFilterValue() as string) || "Semua",
+    (getFilterValue() as string) || t("Directory.table_header.semua"),
   );
 
   const sortedUniqueValues = useMemo(() => {
@@ -567,7 +569,7 @@ const DropdownSingleFilter: FunctionComponent<DropdownSingleFilter> = ({
   const handleValueChange = (selected: string) => {
     setSelectedFilters(selected);
 
-    if (selected === "Semua") {
+    if (selected === t("Directory.table_header.semua")) {
       table.resetColumnFilters(true);
       return;
     }
@@ -578,7 +580,7 @@ const DropdownSingleFilter: FunctionComponent<DropdownSingleFilter> = ({
     <Select value={selectedFilters} onValueChange={handleValueChange}>
       <SelectTrigger asChild>
         <Button variant="secondary">
-          {selectedFilters !== "Semua" ? null : (
+          {selectedFilters !== t("Directory.table_header.semua") ? null : (
             <span className="text-sm text-dim-500">{triggerText}</span>
           )}
           <SelectValue>
@@ -602,10 +604,14 @@ const DropdownSingleFilter: FunctionComponent<DropdownSingleFilter> = ({
         align="start"
       >
         <SelectItem
-          value={"Semua"}
-          className={"Semua" === selectedFilters ? "font-medium" : ""}
+          value={t("Directory.table_header.semua")}
+          className={
+            t("Directory.table_header.semua") === selectedFilters
+              ? "font-medium"
+              : ""
+          }
         >
-          Semua
+          {t("Directory.table_header.semua")}
         </SelectItem>
         {sortedUniqueValues.map((l) => (
           <SelectItem

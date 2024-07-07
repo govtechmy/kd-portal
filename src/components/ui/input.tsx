@@ -72,7 +72,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             ref={ref}
             type={type === "currency" ? "text" : type}
             className={cn(
-              "focus-visible:ring-ring flex w-full rounded-md border bg-white px-3 py-1 text-base font-normal shadow-sm transition-colors placeholder:text-dim-500 focus-visible:outline-none focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50",
+              "focus-visible:ring-ring flex w-full rounded-md border bg-white px-3 py-1 text-base font-normal shadow-sm transition-colors placeholder:max-w-[150px] placeholder:text-dim-500 focus-visible:outline-none focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50 md:placeholder:max-w-[initial]",
               prefix && "pl-10",
               suffix && "pr-10",
               className,
@@ -82,7 +82,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             {...props}
           />
           {suffix && (
-            <div className="absolute right-3 top-1/2 -translate-y-1/2">
+            <div className="absolute right-3 top-1/2 z-10 -translate-y-1/2">
               {typeof suffix === "string" ? (
                 <span className="text-dim text-sm">{suffix}</span>
               ) : (

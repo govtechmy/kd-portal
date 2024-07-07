@@ -51,7 +51,10 @@ export default function Footer() {
     quick_links,
     open_source: [
       { name: "repo", href: "https://github.com/govtechmy/kd-portal" },
-      { name: "ui_ux", href: "https://www.figma.com/design/qfLxnLhraputrVraVOKD6n" },
+      {
+        name: "ui_ux",
+        href: "https://www.figma.com/design/qfLxnLhraputrVraVOKD6n",
+      },
     ],
   };
 
@@ -162,6 +165,9 @@ export default function Footer() {
                 year: "numeric",
                 month: "short",
                 day: "numeric",
+                hour12: true,
+                hour: "2-digit",
+                minute: "2-digit",
               })}
           </span>
         </div>

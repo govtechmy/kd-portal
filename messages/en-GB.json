@@ -55,30 +55,30 @@
       "date5": "5 Jun 2024",
       "date6": "27 Mar 2024",
       "date7": "12 Dec 2023",
-      "title1": "Cabinet approves PDPA amendments",
-      "title2": "MED4IRN No. 1/2024",
-      "title3": "DE Rantau Digital Nomad Pass expanded",
+      "title1": "PDPA amendments approved by Cabinet",
+      "title2": "MED4IRN Meeting No. 1/2024",
+      "title3": "Digital Nomad Pass expanded",
       "title4": "Digital First strategy launched",
       "title5": "1 million citizens complete 'AI For Citizens'",
-      "title6": "Cybersecurity Bill passed",
+      "title6": "Cybersecurity Bill passed in Parliament",
       "title7": "Digital Ministy formed",
-      "desc1": "The Cabinet Meeting chaired by YAB Prime Minister approved the suggested amendments to the Personal Data Protection Act 2010. The amendments will be tabled during the Second Meeting of the 15th Parliament.",
-      "desc2": "A meeting of the National Digital Economy and Fourth Industrial Revolution Council was held for the first time since the formation of the Digital Ministry. Several strategic initiatives were approved, including the Digital Economy Blueprint.",
-      "desc3": "Given the success of MDEC's DE Rantau program since 2022, eligibility for the DE Rantau Nomad Pass was expanded to include professionals or talents in areas other than IT or digital, such as tax accountancy, legal, and technical writing.",
-      "desc4": "Launch of the Digital First Strategy Shift, which will become the foundation for accelerating digital services across the whole of government. The Digital First strategic document outlines 6 pillars which will be led by Jabatan Digital Negara.",
-      "desc5": "1 million completions within just 5 months, faster than the announced target of 1 year. 'AI for Citizens' is a collaborative effort led by MyDIGITAL Corporation, supported by their strategic partner, Intel Corporation.",
-      "desc6": "The Cyber Security Bill 2024 was passed in the House of Representatives. This Bill will enhance our nation\u2019s cybersecurity though compliance with specific measures, standards and processes in managing cybersecurity threats.",
-      "desc7": "The establishment of the Digital Ministry as its own portfolio signalled Malaysia's commitment to its digitalization agenda. Without this dedicated ministry, Malaysia would not be able to compete with other countries in the digital field."
+      "desc1": "Suggested amendments to the Personal Data Protection Act 2010 to be tabled in Parliament.",
+      "desc2": "Several strategic initiatives were approved by the Council, including the Digital Economy Blueprint.",
+      "desc3": "Eligibility expanded to include professionals or talents in areas other than IT or digital, given high demand.",
+      "desc4": "Foundation for accelerating digital services across the whole of government, led by Jabatan Digital Negara.",
+      "desc5": "1 million completions within just 5 months, faster than the announced target of 1 year.",
+      "desc6": "This Bill will enhance cybersecurity though compliance with specific measures, standards and processes.",
+      "desc7": "The first ever standalone Digital portfolio, signalling Malaysia's commitment to its digitalisation agenda."
     },
     "Quicklinks": {
       "title": "Quick Links",
-      "desc1": "System for recording the time of entry and exit to offices.",
-      "desc2": "Integrated communication and collaboration managed centrally at JDN.",
-      "desc3": "Records management following the Government's life cycle of creation, storage, maintenance, and disposal of records electronically.",
-      "desc4": "Online meeting management and monitoring system.",
-      "desc5": "Online system for Government Employees to check, access, and print payslips easily and quickly.",
-      "desc6": "System to handle Human Resource (HR) processes from initial appointment to service termination.",
-      "desc7": "Electronic procurement system that allows suppliers to offer products and services to the Government via the Internet."
+      "desc1": "Record your time of entry and exit at the office.",
+      "desc2": "Communicate and collaborate seamless across Government.",
+      "desc3": "Manage records electronically in compliance with Government procedures.",
+      "desc4": "Monitor and manage your online meetings.",
+      "desc5": "Access, check, and print your payslips.",
+      "desc6": "Manage human resources from appointment to termination.",
+      "desc7": "Procure products and services electronically for your Agency."
     }
   },
   "Footer": {
@@ -115,15 +115,15 @@
   "Info": {
     "background": "Background",
     "quote": "The establishment of a special ministry, namely the Digital Ministry, shows Malaysia's commitment to its digitalization agenda. Without this dedicated ministry, Malaysia will not be able to compete with other countries in the digital field.",
-    "author": "\u2013\u2013 YAB PM, Dato\u2019 Seri Anwar Ibrahim",
-    "desc1": "When announcing the cabinet reshuffle on December 12, 2023, the Right Honorable Prime Minister, Dato\u2019 Seri Anwar Ibrahim, initiated the creation of a new ministry, the Ministry of Digital.\n\nThe restructured national digital agenda allows for more focused, holistic, and effective implementation. The function of digitalization within the context of the public sector, previously led by the Administrative Modernization and Management Planning Unit (MAMPU), has also been strengthened through the restructuring of MAMPU, which is now known as the National Digital Department (JDN).\n\nIn addition to JDN, the foundation of this ministry is further strengthened by the presence of long-established agencies in the field of digitalization such as the Department of Personal Data Protection (JPDP), MyDIGITAL Corporation, Malaysia Digital Economy Corporation (MDEC), CyberSecurity Malaysia (CSM), Digital Nasional Berhad (DNB), and MyNIC.",
-    "desc2": "The Honorable Mr. Gobind Singh Deo has been appointed as Malaysia's first Minister of Digital. He is assisted by Deputy Minister, the Honorable Datuk Wilson Ugak Anak Kumbong. From the aspect of public administration, YBhg Datuk Haji Rodzi Md Saad was the first Secretary-General of the Ministry of Digital.",
+    "author": "\u2013\u2013 The Right Honourable Prime Minister, Dato\u2019 Seri Anwar Ibrahim",
+    "desc1": "When announcing the cabinet reshuffle on December 12, 2023, the Right Honourable Prime Minister, Dato\u2019 Seri Anwar Ibrahim, initiated the creation of a new ministry, the Ministry of Digital.\n\nThe restructured national digital agenda allows for more focused, holistic, and effective implementation. The function of digitalization within the context of the public sector, previously led by the Administrative Modernization and Management Planning Unit (MAMPU), has also been strengthened through the restructuring of MAMPU, which is now known as the National Digital Department (JDN).\n\nIn addition to JDN, the foundation of this ministry is further strengthened by the presence of long-established agencies in the field of digitalization such as the Department of Personal Data Protection (JPDP), MyDIGITAL Corporation, Malaysia Digital Economy Corporation (MDEC), CyberSecurity Malaysia (CSM), Digital Nasional Berhad (DNB), and MyNIC.",
+    "desc2": "The Honourable Mr. Gobind Singh Deo has been appointed as Malaysia's first Minister of Digital. He is assisted by Deputy Minister, the Honourable Datuk Wilson Ugak Anak Kumbong. From the aspect of public administration, the Honourable Datuk Haji Rodzi Md Saad was the first Secretary-General of the Ministry of Digital.",
     "visi": "Vision",
     "visi_desc": "Malaysia as a leading, advanced, and innovative Digital Nation, driving digital transformation for the well-being of the people and the prosperity of the country.",
     "misi": "Mission",
     "misi_desc": "To lead the nation's digitalization holistically and inclusively. To create a trusted and world-class national digital ecosystem.",
     "Role": {
-      "title": "Functions and Role",
+      "title": "Functions and Roles",
       "desc1": "<b>Digitizing government services</b> to enhance efficiency, accessibility, and citizen engagement.",
       "desc2": "Implementing <b>open data</b> initiatives to promote transparency, accountability, and innovation.",
       "desc3": "Providing necessary <b>skills opportunities</b> in digital technology and ensuring citizens are not left behind in the digital transformation.",
@@ -151,14 +151,15 @@
       "gred": "Grade",
       "jawatan": "Position",
       "telefon": "Phone No.",
-      "emel": "Email (@digital.gov.my)"
+      "emel": "Email (@digital.gov.my)",
+      "semua": "All Divisions"
     }
   },
   "Contact": {
     "header": "Contact Us",
     "office": "Office",
     "telephone": "Telephone",
-    "telephone_number": "+603-8880 5934",
+    "telephone_number": "+603-8880 5977",
     "email": "E-mail",
     "email_address": "admin@digital.com.my"
   },

@@ -4,7 +4,7 @@
   },
   "Masthead": {
     "official_gov_website": "Portal Rasmi Kerajaan Malaysia",
-    "how_to_identify": "Bagaimana mengenal pasti?",
+    "how_to_identify": "Kenal pasti begini",
     "official": "Pautan portal rasmi berakhir dengan .gov.my",
     "not_govmy": "Sekiranya anda melihat pautan selain ",
     "close_site": ", segera tutupkan halaman itu walaupun ia menyerupai portal rasmi!",
@@ -55,30 +55,30 @@
       "date5": "5 Jun 2024",
       "date6": "27 Mac 2024",
       "date7": "12 Dis 2023",
-      "title1": "Kabinet meluluskan pindaan PDPA",
-      "title2": "MED4IRN Bil. 1/2024",
-      "title3": "Pas Nomad Digital DE Rantau diluaskan",
+      "title1": "Pindaan PDPA dilluluskan oleh Kabinet",
+      "title2": "Mesyuarat MED4IRN Bil. 1/2024",
+      "title3": "Pas Nomad Digital diperluas",
       "title4": "Peluncuran strategi Digital First",
       "title5": "1 juta rakyat lengkapkan AI Untuk Rakyat",
-      "title6": "RUU Keselamatan Siber diluluskan",
+      "title6": "RUU Keselamatan Siber diluluskan di Parlimen",
       "title7": "Kementerian Digital ditubuhkan",
-      "desc1": "Mesyuarat Jemaah Menteri yang dipengerusikan oleh YAB Perdana Menteri telah meluluskan cadangan pindaan kepada Akta Perlindungan Data Peribadi 2010. Pindaan tersebut akan dibentangkan semasa Mesyuarat Kedua Parlimen ke-15.\n",
-      "desc2": "Mesyuarat Majlis Ekonomi Digital dan Revolusi Perindustrian Keempat (4IR) Negara (MED4IRN) telah diadakan bagi pertama kali sejak penubuhan Kementerian Digital. Beberapa inisiatif penting telah diluluskan, termasuk Digital Economy Blueprint.",
-      "desc3": "Memandangkan program DE Rantau oleh MDEC begitu hangat disambut sejak 2022, kriteria kelayakan bagi Pas Nomad diluaskan untuk merangkumi pekerja di luar bidang IT dan digital, seperti cukai, undang-undang, dan penulisan technical.",
-      "desc4": "Pelucuran Anjakan Strategi Digital First (ASDF), yang bakal menjadi cerucuk untuk memacu urustadbir digital merentasi seluruh Kerajaan. Dokumen strategik ASDF menggariskan 6 teras utama yang akan dipacu oleh Jabatan Digital Negara.",
-      "desc5": "1 juta pendfataran lengkap dicapai dalam masa 5 bulan, iaitu lebih pantas daripada sasaran 1 tahun yang diumumkan. \u2018AI untuk Rakyat\u2019 adalah usaha kolaboratif yang dipacu oleh MyDIGITAL Corporation dan rakan teknologi, Intel Corporation.",
-      "desc6": "RUU Keselamatan Siber 2024 diluluskan di Dewan Rakyat. RUU tersebut akan meningkatkan keselamatan siber negara menerusi pematuhan langkah, standard dan proses tertentu dalam pengurusan ancaman keselamatan siber.",
-      "desc7": "Penubuhan Kementerian Digital sebagai portfolio sendiri menunjukkan komitmen Malaysia kepada agenda pendigitalan. Tanpa kementerian yang khas ini, Malaysia tidak akan dapat bersaing pantas dengan negara-negara lain dalam bidang digital."
+      "desc1": "Cadangan pindaan kepada Akta Perlindungan Data Peribadi 2010 akan dibentangkan di Parlimen.\n",
+      "desc2": "Beberapa inisiatif penting telah diluluskan oleh Majlis, termasuk Rangka Tindakan Ekonomi Digital.",
+      "desc3": "Kelayakan diperluas untuk merangkumi pekerja di luar bidang IT dan digital, susulan permintaan tinggi.",
+      "desc4": "Cerucuk untuk memacu urustadbir digital merentasi seluruh Kerajaan, dipacu oleh Jabatan Digital Negara.",
+      "desc5": "1 juta pendfataran lengkap dicapai dalam masa 5 bulan, lebih pantas daripada sasaran 1 tahun yang diumumkan.",
+      "desc6": "RUU tersebut akan meningkatkan keselamatan siber negara menerusi pematuhan langkah, standard dan proses tertentu.",
+      "desc7": "Portfolio digital khas buat pertama kali, menunjukkan komitmen Malaysia kepada agenda pendigitalan."
     },
     "Quicklinks": {
       "title": "Capaian Pantas",
-      "desc1": "Sistem perakam waktu masuk dan keluar pejabat.",
-      "desc2": "Komunikasi dan kolaborasi bersepadu yang diuruskan secara berpusat di JDN.",
-      "desc3": "Pengurusan rekod mengikut kitaran hayat Kerajaan bermula dari pewujudan, penyimpanan, penyenggaraan dan pelupusan rekod secara elektronik.",
-      "desc4": "Sistem pengurusan mesyuarat dan pemantauan keputusan mesyuarat secara dalam talian.",
-      "desc5": "Sistem dalam talian untuk Kakitangan Kerajaan menyemak, mengakses, serta mencetak slip penyata gaji dengan mudah dan pantas",
-      "desc6": "Sistem untuk tangani proses Human Resource (HR) dari mula perlantikan sehingga kepada penamatan perkhidmatan.",
-      "desc7": "Sistem perolehan elektronik yang membolehkan pembekal menawarkan produk dan perkhidmatan kepada Kerajaan melalui Internet."
+      "desc1": "Rakamkan waktu masuk dan keluar pejabat.",
+      "desc2": "Komunikasi dan kolaborasi mudah merentas Kerajaan.",
+      "desc3": "Uruskan rekod secara elektronik dengan pematuhan kepada tadbir urus Kerajaan.",
+      "desc4": "Uruskan dan pantau mesyuarat dalam talian anda.",
+      "desc5": "Akses, semak, dan cetak slip penyata gaji anda.",
+      "desc6": "Uruskan sumber manusia dari pelantikan hingga penamatan.",
+      "desc7": "Perolehkan produk dan perkhidmatan secara elektronik untuk Agensi anda."
     }
   },
   "Footer": {
@@ -115,7 +115,7 @@
   "Info": {
     "background": "Latar Belakang",
     "quote": "Penubuhan sebuah kementerian khas iaitu Kementerian Digital adalah untuk memberi penekanan kepada agenda pendigitalan. Tanpa kementerian yang khas ini, Malaysia tidak akan dapat bersaing pantas dengan negara-negara lain dalam bidang digital.",
-    "author": "\u2013\u2013 YAB PM, Dato\u2019 Seri Anwar Ibrahim",
+    "author": "\u2013\u2013 YAB Perdana Menteri, Dato\u2019 Seri Anwar Ibrahim",
     "desc1": "Semasa mengumumkan rombakan kabinet pada 12 Disember 2023,\u00a0 YAB Perdana Menteri, Dato\u2019 Seri Anwar Ibrahim telah mencetuskan kewujudan sebuah kementerian yang baru iaitu Kementerian Digital.\n\nAgenda digital negara yang disusun semula membolehkan pelaksanaannya yang lebih berfokus, holistik dan berkesan. Fungsi pendigitalan dalam konteks sektor awam sebelum ini yang diterajui oleh Unit Pemodenan Tadbiran dan Perancangan Pengurusan (MAMPU) turut diperkasakan melalui penstrukturan semula MAMPU yang kini dikenali sebagai Jabatan Digital Negara (JDN).\n\n Selain JDN, pasak kementerian ini dikuatkan lagi dengan kehadiran agensi-agensi yang telah lama bertapak dalam arena digitalisasi seperti\u00a0 Jabatan Perlindungan Data Peribadi (JPDP), MyDIGITAL Corporation, Malaysia Digital Economy Corporation (MDEC), CyberSecurity Malaysia (CSM), Digital Nasional Berhad (DNB) dan MyNIC.",
     "desc2": "YB Tuan Gobind Singh Deo telah dilantik sebagai Menteri Digital yang pertama di Malaysia. Beliau dibantu oleh Timbalan Menteri, YB Datuk Wilson Ugak Anak Kumbong. Dari aspek pentadbiran awamnya pula, YBhg Datuk Haji Rodzi Md Saad merupakan Ketua Setiausaha Kementerian Digital yang pertama.",
     "visi": "Visi",
@@ -151,14 +151,15 @@
       "gred": "Gred",
       "jawatan": "Jawatan",
       "telefon": "No. Telefon",
-      "emel": "Emel (@digital.gov.my)"
+      "emel": "Emel (@digital.gov.my)",
+      "semua": "Semua Bahagian"
     }
   },
   "Contact": {
     "header": "Hubungi Kami",
     "office": "Pejabat",
     "telephone": "Telefon",
-    "telephone_number": "+603-8880 5934",
+    "telephone_number": "+603-8880 5977",
     "email": "E-mel",
     "email_address": "admin@digital.com.my"
   },

@@ -139,6 +139,7 @@ const DirektoriMain: FC = () => {
         return (
           item.nama.toLowerCase().includes(query) ||
           (item.emel && item.emel.toLowerCase().includes(query)) ||
+          (item.gred && item.gred.toLowerCase().includes(query)) ||
           (item.jawatan && item.jawatan.toLowerCase().includes(query))
         );
       }),
