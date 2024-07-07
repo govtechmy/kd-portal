@@ -50,8 +50,8 @@ export default function Footer() {
     ],
     quick_links,
     open_source: [
-      { name: "repo", href: "https://github.com/" },
-      { name: "ui_ux", href: "https://www.figma.com/file/" },
+      { name: "repo", href: "https://github.com/govtechmy/kd-portal" },
+      { name: "ui_ux", href: "https://www.figma.com/design/qfLxnLhraputrVraVOKD6n" },
     ],
   };
 
