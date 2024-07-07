@@ -27,7 +27,7 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-export const dynamic = "force-dynamic";
+export const dynamic = "force-static";
 
 /* Our app sits here to not cause any conflicts with payload's root layout  */
 export default async function Layout({
@@ -39,6 +39,7 @@ export default async function Layout({
     locale: string;
   };
 }) {
+  unstable_setRequestLocale(locale);
   const messages = await getMessages();
 
   return (

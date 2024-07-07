@@ -6,9 +6,17 @@ import Envelope from "@/icons/envelope";
 import Phone from "@/icons/phone";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
+import { unstable_setRequestLocale } from "next-intl/server";
 import React from "react";
 
-export default function Page() {
+export default function Page({
+  params: { locale },
+}: {
+  params: {
+    locale: string;
+  };
+}) {
+  unstable_setRequestLocale(locale);
   const t = useTranslations();
 
   return (
