@@ -22,7 +22,7 @@ export default function Page({
     <main className="divide-y-washed-100 divide-y">
       <section className="relative w-full gap-6 sm:grid sm:grid-cols-6">
         <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden bg-gradient-radial from-[#C2D5FF] from-0% via-[#F1F5FF] via-[27.57%] to-white to-100%">
-          <HeroPattern className="absolute -top-[23.33%] animate-flow" />
+          <HeroPattern className="absolute -top-[23.33%] animate-flow motion-reduce:animate-none" />
         </div>
         <div className="col-span-4 col-start-2 flex w-full flex-col items-center gap-y-9 px-4.5 py-[120px] text-center sm:py-[120px] md:px-6">
           <div className="space-y-6">

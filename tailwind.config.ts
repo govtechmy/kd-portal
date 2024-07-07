@@ -21,7 +21,7 @@ const config: Config = {
     },
     extend: {
       animation: {
-        flow: "flow 10s linear forwards infinite",
+        flow: "flow 10s reverse linear forwards infinite",
       },
       backgroundImage: {
         "gradient-radial":
@@ -91,7 +91,7 @@ const config: Config = {
       keyframes: {
         flow: {
           "100%": {
-            "stroke-dashoffset": "-100",
+            "stroke-dashoffset": "100",
           },
         },
       },
