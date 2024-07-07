@@ -28,8 +28,8 @@
     "default_placeholder": "Mula menaip untuk membuat carian"
   },
   "Home": {
-    "placeholder": "Cari kata kunci: \u201ctajuk berita\u201d, \u201cdasar\u201d, \u201cnama staff\u201d",
     "title": "Menerajui Pendigitalan Negara",
+    "placeholder": "Cari kata kunci: \u201ctajuk berita\u201d, \u201cdasar\u201d, \u201cnama staff\u201d",
     "popular_links": "Pautan Popular",
     "Activity": {
       "overline": "Aktiviti Terkini",
@@ -62,13 +62,13 @@
       "title5": "1 juta rakyat lengkapkan AI Untuk Rakyat",
       "title6": "RUU Keselamatan Siber diluluskan",
       "title7": "Kementerian Digital ditubuhkan",
-      "desc1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
-      "desc2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
-      "desc3": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
-      "desc4": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
-      "desc5": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
-      "desc6": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
-      "desc7": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud"
+      "desc1": "Mesyuarat Jemaah Menteri yang dipengerusikan oleh YAB Perdana Menteri telah meluluskan cadangan pindaan kepada Akta Perlindungan Data Peribadi 2010. Pindaan tersebut akan dibentangkan semasa Mesyuarat Kedua Parlimen ke-15.\n",
+      "desc2": "Mesyuarat Majlis Ekonomi Digital dan Revolusi Perindustrian Keempat (4IR) Negara (MED4IRN) telah diadakan bagi pertama kali sejak penubuhan Kementerian Digital. Beberapa inisiatif penting telah diluluskan, termasuk Digital Economy Blueprint.",
+      "desc3": "Memandangkan program DE Rantau oleh MDEC begitu hangat disambut sejak 2022, kriteria kelayakan bagi Pas Nomad diluaskan untuk merangkumi pekerja di luar bidang IT dan digital, seperti cukai, undang-undang, dan penulisan technical.",
+      "desc4": "Pelucuran Anjakan Strategi Digital First (ASDF), yang bakal menjadi cerucuk untuk memacu urustadbir digital merentasi seluruh Kerajaan. Dokumen strategik ASDF menggariskan 6 teras utama yang akan dipacu oleh Jabatan Digital Negara.",
+      "desc5": "1 juta pendfataran lengkap dicapai dalam masa 5 bulan, iaitu lebih pantas daripada sasaran 1 tahun yang diumumkan. \u2018AI untuk Rakyat\u2019 adalah usaha kolaboratif yang dipacu oleh MyDIGITAL Corporation dan rakan teknologi, Intel Corporation.",
+      "desc6": "RUU Keselamatan Siber 2024 diluluskan di Dewan Rakyat. RUU tersebut akan meningkatkan keselamatan siber negara menerusi pematuhan langkah, standard dan proses tertentu dalam pengurusan ancaman keselamatan siber.",
+      "desc7": "Penubuhan Kementerian Digital sebagai portfolio sendiri menunjukkan komitmen Malaysia kepada agenda pendigitalan. Tanpa kementerian yang khas ini, Malaysia tidak akan dapat bersaing pantas dengan negara-negara lain dalam bidang digital."
     },
     "Quicklinks": {
       "title": "Capaian Pantas",
@@ -86,7 +86,7 @@
     "about_us": "Tentang Kami",
     "quick_links": "Capaian Pantas",
     "open_source": "Sumber Terbuka",
-    "repo": "Repo Github",
+    "repo": "Repo GitHub",
     "ui_ux": "Figma",
     "all_rights_reserved": "Hak Cipta Pelihara",
     "penafian": "Penafian",
@@ -150,7 +150,7 @@
       "bhg": "Bahagian",
       "gred": "Gred",
       "jawatan": "Jawatan",
-      "telefon": "No telefon",
+      "telefon": "No. Telefon",
       "emel": "Emel (@digital.gov.my)"
     }
   },
@@ -158,7 +158,7 @@
     "header": "Hubungi Kami",
     "office": "Pejabat",
     "telephone": "Telefon",
-    "telephone_number": "03-8880 5934",
+    "telephone_number": "+603-8880 5934",
     "email": "E-mel",
     "email_address": "admin@digital.com.my"
   },

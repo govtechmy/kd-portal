@@ -28,8 +28,8 @@
     "default_placeholder": "Start typing to search"
   },
   "Home": {
-    "placeholder": "Find keywords: \u201cnews\u201d, \u201cpolicy\u201d, \u201cstaff name\u201d",
     "title": "Driving Digitalisation of the Nation",
+    "placeholder": "Find keywords: \u201cnews\u201d, \u201cpolicy\u201d, \u201cstaff name\u201d",
     "popular_links": "Popular Links",
     "Activity": {
       "overline": "Latest Activities",
@@ -62,13 +62,13 @@
       "title5": "1 million citizens complete 'AI For Citizens'",
       "title6": "Cybersecurity Bill passed",
       "title7": "Digital Ministy formed",
-      "desc1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
-      "desc2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
-      "desc3": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
-      "desc4": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
-      "desc5": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
-      "desc6": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
-      "desc7": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud"
+      "desc1": "The Cabinet Meeting chaired by YAB Prime Minister approved the suggested amendments to the Personal Data Protection Act 2010. The amendments will be tabled during the Second Meeting of the 15th Parliament.",
+      "desc2": "A meeting of the National Digital Economy and Fourth Industrial Revolution Council was held for the first time since the formation of the Digital Ministry. Several strategic initiatives were approved, including the Digital Economy Blueprint.",
+      "desc3": "Given the success of MDEC's DE Rantau program since 2022, eligibility for the DE Rantau Nomad Pass was expanded to include professionals or talents in areas other than IT or digital, such as tax accountancy, legal, and technical writing.",
+      "desc4": "Launch of the Digital First Strategy Shift, which will become the foundation for accelerating digital services across the whole of government. The Digital First strategic document outlines 6 pillars which will be led by Jabatan Digital Negara.",
+      "desc5": "1 million completions within just 5 months, faster than the announced target of 1 year. 'AI for Citizens' is a collaborative effort led by MyDIGITAL Corporation, supported by their strategic partner, Intel Corporation.",
+      "desc6": "The Cyber Security Bill 2024 was passed in the House of Representatives. This Bill will enhance our nation\u2019s cybersecurity though compliance with specific measures, standards and processes in managing cybersecurity threats.",
+      "desc7": "The establishment of the Digital Ministry as its own portfolio signalled Malaysia's commitment to its digitalization agenda. Without this dedicated ministry, Malaysia would not be able to compete with other countries in the digital field."
     },
     "Quicklinks": {
       "title": "Quick Links",
@@ -86,7 +86,7 @@
     "about_us": "About Us",
     "quick_links": "Quick Links",
     "open_source": "Open Source",
-    "repo": "Github Repo",
+    "repo": "GitHub Repo",
     "ui_ux": "Figma",
     "all_rights_reserved": "All Rights Reserved",
     "penafian": "Disclaimer",
@@ -150,7 +150,7 @@
       "bhg": "Department",
       "gred": "Grade",
       "jawatan": "Position",
-      "telefon": "Phone no",
+      "telefon": "Phone No.",
       "emel": "Email (@digital.gov.my)"
     }
   },
@@ -158,7 +158,7 @@
     "header": "Contact Us",
     "office": "Office",
     "telephone": "Telephone",
-    "telephone_number": "03-8880 5934",
+    "telephone_number": "+603-8880 5934",
     "email": "E-mail",
     "email_address": "admin@digital.com.my"
   },
