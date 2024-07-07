@@ -1,9 +1,11 @@
 import HeroPattern from "@/components/layout/hero-pattern";
 import { useTranslations } from "next-intl";
+import { notFound } from "next/navigation";
 import React from "react";
 
 export default function Page() {
   const t = useTranslations();
+  notFound();
 
   return (
     <main className="divide-y-washed-100 divide-y">

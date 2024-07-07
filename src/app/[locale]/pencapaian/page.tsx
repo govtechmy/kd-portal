@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { useFormatter, useTranslations } from "next-intl";
+import { notFound } from "next/navigation";
 import React from "react";
 
 export default function Page() {
@@ -7,6 +8,8 @@ export default function Page() {
   const format = useFormatter();
 
   const pencapaian = Array(9).fill(null);
+
+  notFound();
 
   return (
     <main>
@@ -40,7 +43,7 @@ export default function Page() {
                 key={i}
                 className={cn(
                   "relative flex h-[136px] flex-col gap-1 rounded-xl border border-outline-200 px-4 py-3",
-                  "hover:border-brand-300 group hover:border-[1.5px] even:sm:translate-y-[76px]",
+                  "group hover:border-[1.5px] hover:border-brand-300 even:sm:translate-y-[76px]",
                 )}
               >
                 <p className="line-clamp-1 text-xs font-medium uppercase tracking-widest text-dim-500">
@@ -61,23 +64,21 @@ export default function Page() {
                 </p>
                 <div
                   className={cn(
-                    i % 2 === 0
-                      ? "max-sm:-left-7 sm:-right-7"
-                      : "-left-7",
-                      // : "right-full",
+                    i % 2 === 0 ? "max-sm:-left-7 sm:-right-7" : "-left-7",
+                    // : "right-full",
                     "absolute top-1/2 h-px w-[26px] -translate-y-1/2 transform border border-dashed border-outline-400",
-                    "group-hover:border-brand-300 group-hover:border-y-2",
+                    "group-hover:border-y-2 group-hover:border-brand-300",
                   )}
                 >
                   <div
                     className={cn(
                       i % 2 === 0
-                      ? "max-sm:-left-1.5 sm:-right-1.5 group-hover:-right-[6.5px] group-hover:max-sm:-left-[6.5px]"
-                      : "-left-1.5 group-hover:-left-[6.5px]",
-                        // ? "max-sm:right-full sm:left-full"
-                        // : "right-full",
+                        ? "group-hover:-right-[6.5px] max-sm:-left-1.5 group-hover:max-sm:-left-[6.5px] sm:-right-1.5"
+                        : "-left-1.5 group-hover:-left-[6.5px]",
+                      // ? "max-sm:right-full sm:left-full"
+                      // : "right-full",
                       "absolute top-1/2 size-2 -translate-y-1/2 transform rounded-full bg-brand-600",
-                      "ring-brand-300 group-hover:ring ring-offset-[3px]",
+                      "ring-brand-300 ring-offset-[3px] group-hover:ring",
                     )}
                   >
                     <div

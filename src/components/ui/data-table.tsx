@@ -561,7 +561,7 @@ const DropdownSingleFilter: FunctionComponent<DropdownSingleFilter> = ({
       if (!Boolean(value)) return false;
       return value;
     });
-    return filteredValues.sort();
+    return filteredValues.sort((a, b) => b.bhg - a.bhg);
   }, [header.column.getFacetedUniqueValues()]);
 
   const handleValueChange = (selected: string) => {
@@ -578,7 +578,9 @@ const DropdownSingleFilter: FunctionComponent<DropdownSingleFilter> = ({
     <Select value={selectedFilters} onValueChange={handleValueChange}>
       <SelectTrigger asChild>
         <Button variant="secondary">
-          <span className="text-sm text-dim-500">{triggerText}</span>
+          {selectedFilters !== "Semua" ? null : (
+            <span className="text-sm text-dim-500">{triggerText}</span>
+          )}
           <SelectValue>
             <ReadMore
               className="block whitespace-nowrap lg:hidden"

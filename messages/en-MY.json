@@ -165,5 +165,10 @@
     "previous": "Previous",
     "page_of": "{{ current }} of {{ total }}",
     "next": "Next"
+  },
+  "404": {
+    "not_found": "Not Found",
+    "cant_find": "Could not find requested resource",
+    "back": "Return Home"
   }
 }

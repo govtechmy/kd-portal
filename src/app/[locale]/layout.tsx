@@ -43,12 +43,20 @@ export default async function Layout({
 
   return (
     <html lang={locale}>
-      <body className={cn(inter.className, poppins.variable, "min-w-[320px] flex flex-col")}>
+      <body
+        className={cn(
+          inter.className,
+          poppins.variable,
+          "flex min-w-[320px] flex-col",
+        )}
+      >
         <NextIntlClientProvider messages={messages}>
-          <Masthead />
-          <Header locale={locale} />
-          {children}
-          <Footer />
+          <div className="flex min-h-screen flex-col">
+            <Masthead />
+            <Header locale={locale} />
+            <div className="flex-1">{children}</div>
+            <Footer />
+          </div>
         </NextIntlClientProvider>
       </body>
     </html>

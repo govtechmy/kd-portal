@@ -3,10 +3,12 @@ import Pagination from "@/components/ui/pagination";
 import Search from "@/icons/search";
 import { routes } from "@/lib/routes";
 import { useTranslations } from "next-intl";
+import { notFound } from "next/navigation";
 import React from "react";
 
 export default function Page() {
   const t = useTranslations();
+  notFound();
 
   return (
     <main className="divide-y-washed-100 divide-y">
@@ -40,7 +42,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      
+
       <section className="flex min-h-screen w-full">
         <Pagination
           curr={0}

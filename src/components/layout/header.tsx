@@ -26,9 +26,9 @@ export function Header({ locale }: { locale: string }) {
   const nav_items = [
     { name: "home", href: "/" },
     { name: "corporate_info", href: routes.CORPORATE_INFO },
-    { name: "announcements", href: routes.ANNOUNCEMENTS },
-    { name: "achievements", href: routes.ACHIEVEMENTS },
-    { name: "policy", href: routes.POLICY },
+    // { name: "announcements", href: routes.ANNOUNCEMENTS },
+    // { name: "achievements", href: routes.ACHIEVEMENTS },
+    // { name: "policy", href: routes.POLICY },
     { name: "directory", href: routes.DIRECTORY },
     { name: "contact_us", href: routes.CONTACT_US },
   ];

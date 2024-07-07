@@ -165,5 +165,10 @@
     "previous": "Sebelum",
     "page_of": "{{ current }} daripada {{ total }}",
     "next": "Seterusnya"
+  },
+  "404": {
+    "not_found": "Tidak Dijumpai",
+    "cant_find": "Pautan tidak dijumpai",
+    "back": "Kembali Ke Laman Utama"
   }
 }
