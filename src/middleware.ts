@@ -12,8 +12,10 @@ export default async function middleware(request: NextRequest) {
 
   const response = handleI18nRouting(request);
 
-  // Development
-  if (process.env.APP_ENV === "development") {
+  if (
+    process.env.APP_ENV === "development" ||
+    process.env.APP_ENV === "production"
+  ) {
     return response;
   }
 
