@@ -354,9 +354,9 @@ const DataTable = <TData, TValue>({
                             desc: <BarsArrowDownIcon className="h-3 w-3" />,
                             asc: <BarsArrowUpIcon className="h-3 w-3" />,
                           }[header.column.getIsSorted() as string] ?? null}
-                          {header.column.getIsFiltered() ? (
+                          {/* {header.column.getIsFiltered() ? (
                             <FunnelIcon className="h-3 w-3" />
-                          ) : null}
+                          ) : null} */}
                           {/* {filtering && header.column.getCanFilter() ? (
                             <TableFilterSort table={table} header={header} />
                           ) : null} */}
