@@ -32,8 +32,8 @@ export default function Timeline() {
                 <div
                   key={i}
                   className={cn(
-                    "relative flex h-[136px] flex-col gap-1 rounded-xl border border-outline-200 px-4 py-3 even:sm:translate-y-[76px]",
-                    // "hover:border-brand-300 group hover:border-[1.5px]",
+                    "relative flex h-[136px] flex-col gap-1 rounded-xl border border-outline-200 px-4 py-3",
+                    "group hover:border-[1.5px] hover:border-brand-300 even:sm:translate-y-[76px]",
                   )}
                 >
                   <p className="line-clamp-1 text-xs font-medium uppercase tracking-widest text-dim-500">
@@ -49,7 +49,7 @@ export default function Timeline() {
                     className={cn(
                       i % 2 === 0 ? "max-sm:-left-7 sm:-right-7" : "-left-7",
                       "absolute top-1/2 h-px w-[26px] -translate-y-1/2 transform border border-dashed border-outline-400",
-                      // "group-hover:border-brand-300 group-hover:border-y-2",
+                      "group-hover:border-y-2 group-hover:border-brand-300",
                     )}
                   >
                     <div
@@ -61,7 +61,15 @@ export default function Timeline() {
                         // "ring-brand-300 ring-offset-[3px] group-hover:ring",
                       )}
                     >
-                      <div className="absolute left-[3px] top-2 h-[60px] w-0.5 bg-gradient-to-b from-brand-600 from-0% to-transparent to-100%" />
+                      <div
+                        className={cn(
+                          // i % 2 === 0
+                          //   ? "max-sm:right-full sm:left-full"
+                          //   : "right-full",
+                          "left-[3px] top-2",
+                          "absolute h-[60px] w-0.5 bg-gradient-to-b from-brand-600 from-0% to-transparent to-100%",
+                        )}
+                      />
                     </div>
                   </div>
                 </div>

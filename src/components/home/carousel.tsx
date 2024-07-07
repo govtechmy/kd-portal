@@ -11,11 +11,11 @@ export default function Carousel() {
   const t = useTranslations("Home.Activity");
   const [index, setIndex] = useState(1);
   const images = [
-    "japan.jpg",
-    "india.png",
-    "med4irn.png",
-    "china.jpg",
-    "wdet.jpg",
+    "japan.webp",
+    "india.webp",
+    "med4irn.webp",
+    "china.webp",
+    "wdet.webp",
   ];
 
   return (
