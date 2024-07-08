@@ -99,14 +99,13 @@ const DirektoriMain: FC = () => {
       header: "",
       accessorKey: "bhg",
       cell: (info: any) => {
-        const _info = info as Cell<StaffDirectory, unknown>;
-        const { row, getValue } = _info;
+        const { row } = info as Cell<StaffDirectory, unknown>;
 
         if (info.row.original.id === -1)
           return (
             <div className="space-y-1 px-3 text-center">
               <p className="font-semibold">
-                {_info.row.original.bhg} - {getValue() as ReactNode}
+                {row.original.bhg} - {row.original.nama}
               </p>
             </div>
           );
