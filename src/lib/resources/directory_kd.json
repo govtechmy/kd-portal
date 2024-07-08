@@ -1,7 +1,6 @@
 [
     {
         "id_bhg": 1,
-        "Unnamed: 1": null,
         "bhg": "Pejabat YB Menteri",
         "id": 1,
         "nama": "YB GOBIND SINGH DEO ",
@@ -12,7 +11,6 @@
     },
     {
         "id_bhg": 1,
-        "Unnamed: 1": null,
         "bhg": "Pejabat YB Menteri",
         "id": 2,
         "nama": "MAGESWARY A/P RAMACHANDRAN",
@@ -23,7 +21,6 @@
     },
     {
         "id_bhg": 1,
-        "Unnamed: 1": null,
         "bhg": "Pejabat YB Menteri",
         "id": 3,
         "nama": "LIM YOU RANG",
@@ -34,7 +31,6 @@
     },
     {
         "id_bhg": 1,
-        "Unnamed: 1": null,
         "bhg": "Pejabat YB Menteri",
         "id": 4,
         "nama": "SITI NOR AZURA BINTI MOHD RUKON",
@@ -45,7 +41,6 @@
     },
     {
         "id_bhg": 1,
-        "Unnamed: 1": null,
         "bhg": "Pejabat YB Menteri",
         "id": 5,
         "nama": "SURESH SINGH A/L RASHPAL SINGH",
@@ -56,7 +51,6 @@
     },
     {
         "id_bhg": 1,
-        "Unnamed: 1": null,
         "bhg": "Pejabat YB Menteri",
         "id": 6,
         "nama": "NOR SUHANA BINTI A. MUTALIB",
@@ -67,9 +61,18 @@
     },
     {
         "id_bhg": 1,
-        "Unnamed: 1": null,
         "bhg": "Pejabat YB Menteri",
         "id": 7,
+        "nama": "MANDEEP SINGH A/L KARPALL SINGH",
+        "gred": "-",
+        "jawatan": "PEGAWAI KHAS",
+        "telefon": "-",
+        "emel": "mandeep"
+    },
+    {
+        "id_bhg": 1,
+        "bhg": "Pejabat YB Menteri",
+        "id": 8,
         "nama": "A. RAFIZ BIN ISMAIL",
         "gred": "54 TERBUKA",
         "jawatan": "PEGAWAI TUGAS-TUGAS KHAS (PTTK) ",
@@ -78,9 +81,8 @@
     },
     {
         "id_bhg": 1,
-        "Unnamed: 1": null,
         "bhg": "Pejabat YB Menteri",
-        "id": 8,
+        "id": 9,
         "nama": "NORSHEHA BINTI OMAR ONN ONG",
         "gred": "52 TERBUKA",
         "jawatan": "PEGAWAI TUGAS-TUGAS KHAS (PTTK)",
@@ -89,9 +91,8 @@
     },
     {
         "id_bhg": 1,
-        "Unnamed: 1": null,
         "bhg": "Pejabat YB Menteri",
-        "id": 9,
+        "id": 10,
         "nama": "NURUL IZZATI BINTI ZAINAL ABIDIN",
         "gred": "52 TERBUKA",
         "jawatan": "PEGAWAI TUGAS-TUGAS KHAS (PTTK) ",
@@ -100,9 +101,8 @@
     },
     {
         "id_bhg": 1,
-        "Unnamed: 1": null,
         "bhg": "Pejabat YB Menteri",
-        "id": 10,
+        "id": 11,
         "nama": "MEDALINE CHANG SHE-YUN",
         "gred": "S54",
         "jawatan": "SETIAUSAHA AKHBAR (SUA)",
@@ -111,9 +111,8 @@
     },
     {
         "id_bhg": 1,
-        "Unnamed: 1": null,
         "bhg": "Pejabat YB Menteri",
-        "id": 11,
+        "id": 12,
         "nama": "ARMAS BINTI TUMIRAN",
         "gred": "M44",
         "jawatan": "SETIAUSAHA SULIT (SUS)",
@@ -122,9 +121,8 @@
     },
     {
         "id_bhg": 1,
-        "Unnamed: 1": null,
         "bhg": "Pejabat YB Menteri",
-        "id": 12,
+        "id": 13,
         "nama": "DIANA BINTI LANIH",
         "gred": "N22",
         "jawatan": "PEMBANTU TADBIR (P/O) (TBK2)",
@@ -133,9 +131,8 @@
     },
     {
         "id_bhg": 1,
-        "Unnamed: 1": null,
         "bhg": "Pejabat YB Menteri",
-        "id": 13,
+        "id": 14,
         "nama": "NOOR AIN BINTI BUKHARI",
         "gred": "N19",
         "jawatan": "PEGAWAI KHIDMAT PELANGGAN (TBK1/TBK2)",
@@ -144,9 +141,8 @@
     },
     {
         "id_bhg": 1,
-        "Unnamed: 1": null,
         "bhg": "Pejabat YB Menteri",
-        "id": 14,
+        "id": 15,
         "nama": "NUR SHUZAWATI BINTI MOHD SHUPLI",
         "gred": "N19",
         "jawatan": "PEGAWAI KHIDMAT PELANGGAN (TBK1/TBK2)",
@@ -155,9 +151,8 @@
     },
     {
         "id_bhg": 1,
-        "Unnamed: 1": null,
         "bhg": "Pejabat YB Menteri",
-        "id": 15,
+        "id": 16,
         "nama": "SJN AHMAD SAZALI BIN MOHAMAD",
         "gred": "YA6",
         "jawatan": "SARJAN POLIS ",
@@ -166,9 +161,8 @@
     },
     {
         "id_bhg": 1,
-        "Unnamed: 1": null,
         "bhg": "Pejabat YB Menteri",
-        "id": 16,
+        "id": 17,
         "nama": "AMIM BIN ABU BAKAR",
         "gred": "H11",
         "jawatan": "PEMANDU KENDERAAN ",
@@ -177,9 +171,8 @@
     },
     {
         "id_bhg": 1,
-        "Unnamed: 1": null,
         "bhg": "Pejabat YB Menteri",
-        "id": 17,
+        "id": 18,
         "nama": "MOHD NOREZWAN BIN AZMAN",
         "gred": "N11",
         "jawatan": "PEMBANTU OPERASI",
@@ -188,7 +181,6 @@
     },
     {
         "id_bhg": 2,
-        "Unnamed: 1": null,
         "bhg": "Pejabat YB Timbalan Menteri",
         "id": 1,
         "nama": "YB DATUK WILSON UGAK ANAK KUMBONG",
@@ -199,7 +191,6 @@
     },
     {
         "id_bhg": 2,
-        "Unnamed: 1": null,
         "bhg": "Pejabat YB Timbalan Menteri",
         "id": 2,
         "nama": "NOOR SHEERA SHAFIKA BINTI JUNAIDI",
@@ -210,7 +201,6 @@
     },
     {
         "id_bhg": 2,
-        "Unnamed: 1": null,
         "bhg": "Pejabat YB Timbalan Menteri",
         "id": 3,
         "nama": "LUAT ANAK BILONG",
@@ -221,7 +211,6 @@
     },
     {
         "id_bhg": 2,
-        "Unnamed: 1": null,
         "bhg": "Pejabat YB Timbalan Menteri",
         "id": 4,
         "nama": "RAVICHANDRAN A/L BALASUBRAMANIAM",
@@ -232,7 +221,6 @@
     },
     {
         "id_bhg": 2,
-        "Unnamed: 1": null,
         "bhg": "Pejabat YB Timbalan Menteri",
         "id": 5,
         "nama": "SANGAI KASING",
@@ -243,7 +231,6 @@
     },
     {
         "id_bhg": 2,
-        "Unnamed: 1": null,
         "bhg": "Pejabat YB Timbalan Menteri",
         "id": 6,
         "nama": "MOHD KHAIRUL BIN KHIRRUDDIN",
@@ -254,7 +241,6 @@
     },
     {
         "id_bhg": 2,
-        "Unnamed: 1": null,
         "bhg": "Pejabat YB Timbalan Menteri",
         "id": 7,
         "nama": "L/KPL DARREN SHAUN ANAK MICHEAL",
@@ -265,7 +251,6 @@
     },
     {
         "id_bhg": 2,
-        "Unnamed: 1": null,
         "bhg": "Pejabat YB Timbalan Menteri",
         "id": 8,
         "nama": "ABDUL HALIM BIN AZMI",
@@ -276,7 +261,6 @@
     },
     {
         "id_bhg": 2,
-        "Unnamed: 1": null,
         "bhg": "Pejabat YB Timbalan Menteri",
         "id": 9,
         "nama": "RAMLAH BINTI YAAKOB",
@@ -287,7 +271,6 @@
     },
     {
         "id_bhg": 3,
-        "Unnamed: 1": null,
         "bhg": "Pejabat Ketua Setiausaha",
         "id": 1,
         "nama": "FABIAN BIGAR",
@@ -298,7 +281,6 @@
     },
     {
         "id_bhg": 3,
-        "Unnamed: 1": null,
         "bhg": "Pejabat Ketua Setiausaha",
         "id": 2,
         "nama": "NORHAYA BINTI MD ZIN",
@@ -309,7 +291,6 @@
     },
     {
         "id_bhg": 3,
-        "Unnamed: 1": null,
         "bhg": "Pejabat Ketua Setiausaha",
         "id": 3,
         "nama": "NURAIN BINTI KHAIRI",
@@ -320,7 +301,6 @@
     },
     {
         "id_bhg": 3,
-        "Unnamed: 1": null,
         "bhg": "Pejabat Ketua Setiausaha",
         "id": 0,
         "nama": "-",
@@ -331,7 +311,6 @@
     },
     {
         "id_bhg": 3,
-        "Unnamed: 1": null,
         "bhg": "Pejabat Ketua Setiausaha",
         "id": 5,
         "nama": "ROSLINA BINTI ROSLI",
@@ -342,7 +321,6 @@
     },
     {
         "id_bhg": 3,
-        "Unnamed: 1": null,
         "bhg": "Pejabat Ketua Setiausaha",
         "id": 6,
         "nama": "AZMI BIN HUSSAIN",
@@ -353,7 +331,6 @@
     },
     {
         "id_bhg": 3,
-        "Unnamed: 1": null,
         "bhg": "Pejabat Ketua Setiausaha",
         "id": 7,
         "nama": "KHAIRUL ANUAR BIN MOHD RODZI",
@@ -364,7 +341,6 @@
     },
     {
         "id_bhg": 4,
-        "Unnamed: 1": null,
         "bhg": "Pejabat Timbalan Ketua Setiausaha (Strategik & Pengurusan)",
         "id": 1,
         "nama": "SHAKIB BIN AHMAD SHAKIR",
@@ -375,7 +351,6 @@
     },
     {
         "id_bhg": 4,
-        "Unnamed: 1": null,
         "bhg": "Pejabat Timbalan Ketua Setiausaha (Strategik & Pengurusan)",
         "id": 2,
         "nama": "NUR AZIEMAH BINTI ISMAIL",
@@ -386,7 +361,6 @@
     },
     {
         "id_bhg": 5,
-        "Unnamed: 1": null,
         "bhg": "Pejabat Timbalan Ketua Setiausaha (Pembangunan Digital)",
         "id": 1,
         "nama": "MA. SIVANESAN A/L MARIMUTHU @ MUTHIAH",
@@ -397,7 +371,6 @@
     },
     {
         "id_bhg": 5,
-        "Unnamed: 1": null,
         "bhg": "Pejabat Timbalan Ketua Setiausaha (Pembangunan Digital)",
         "id": 2,
         "nama": "NIK NOOR AZLIZAN BINTI ZAKARIA",
@@ -408,7 +381,6 @@
     },
     {
         "id_bhg": 6,
-        "Unnamed: 1": null,
         "bhg": "Bahagian Akaun (BA)",
         "id": 1,
         "nama": "NADZEMAH BINTI MOHD SOM",
@@ -419,7 +391,6 @@
     },
     {
         "id_bhg": 6,
-        "Unnamed: 1": null,
         "bhg": "Bahagian Akaun (BA)",
         "id": 0,
         "nama": "-",
@@ -430,7 +401,6 @@
     },
     {
         "id_bhg": 6,
-        "Unnamed: 1": null,
         "bhg": "Bahagian Akaun (BA)",
         "id": 3,
         "nama": "NAZLINA BINTI SABUDIN",
@@ -441,7 +411,6 @@
     },
     {
         "id_bhg": 6,
-        "Unnamed: 1": null,
         "bhg": "Bahagian Akaun (BA)",
         "id": 4,
         "nama": "SURIDA BINTI SHAHARUDDIN",
@@ -452,7 +421,6 @@
     },
     {
         "id_bhg": 6,
-        "Unnamed: 1": null,
         "bhg": "Bahagian Akaun (BA)",
         "id": 5,
         "nama": "SHAHIRA NOOR BINTI GHAZALI",
@@ -463,7 +431,6 @@
     },
     {
         "id_bhg": 6,
-        "Unnamed: 1": null,
         "bhg": "Bahagian Akaun (BA)",
         "id": 6,
         "nama": "MAHFUZAH BINTI MANSUR",
@@ -474,7 +441,6 @@
     },
     {
         "id_bhg": 6,
-        "Unnamed: 1": null,
         "bhg": "Bahagian Akaun (BA)",
         "id": 7,
         "nama": "NOOR ZURAIMIE BIN RAIMAN",
@@ -485,7 +451,6 @@
     },
     {
         "id_bhg": 6,
-        "Unnamed: 1": null,
         "bhg": "Bahagian Akaun (BA)",
         "id": 0,
         "nama": "-",
@@ -496,7 +461,6 @@
     },
     {
         "id_bhg": 6,
-        "Unnamed: 1": null,
         "bhg": "Bahagian Akaun (BA)",
         "id": 0,
         "nama": "-",
@@ -507,7 +471,6 @@
     },
     {
         "id_bhg": 6,
-        "Unnamed: 1": null,
         "bhg": "Bahagian Akaun (BA)",
         "id": 0,
         "nama": "-",
@@ -518,7 +481,6 @@
     },
     {
         "id_bhg": 6,
-        "Unnamed: 1": null,
         "bhg": "Bahagian Akaun (BA)",
         "id": 11,
         "nama": "DORALIANI BINTI ALIAS",
@@ -529,7 +491,6 @@
     },
     {
         "id_bhg": 6,
-        "Unnamed: 1": null,
         "bhg": "Bahagian Akaun (BA)",
         "id": 12,
         "nama": "YUSLAWATI BINTI YUNUS",
@@ -540,7 +501,6 @@
     },
     {
         "id_bhg": 6,
-        "Unnamed: 1": null,
         "bhg": "Bahagian Akaun (BA)",
         "id": 13,
         "nama": "AFZAINIZAM BIN ABDULLAH",
@@ -551,7 +511,6 @@
     },
     {
         "id_bhg": 6,
-        "Unnamed: 1": null,
         "bhg": "Bahagian Akaun (BA)",
         "id": 14,
         "nama": "MOHD IKHWANBIN HASSAN",
@@ -562,7 +521,6 @@
     },
     {
         "id_bhg": 6,
-        "Unnamed: 1": null,
         "bhg": "Bahagian Akaun (BA)",
         "id": 15,
         "nama": "MOHD FAZRIZAL BIN MOHD ROPI",
@@ -573,7 +531,6 @@
     },
     {
         "id_bhg": 6,
-        "Unnamed: 1": null,
         "bhg": "Bahagian Akaun (BA)",
         "id": 16,
         "nama": "ROZYANA BINTI JIMAT",
@@ -584,7 +541,6 @@
     },
     {
         "id_bhg": 6,
-        "Unnamed: 1": null,
         "bhg": "Bahagian Akaun (BA)",
         "id": 17,
         "nama": "AHMAD SAIDI BIN YUSUF",
@@ -595,7 +551,6 @@
     },
     {
         "id_bhg": 6,
-        "Unnamed: 1": null,
         "bhg": "Bahagian Akaun (BA)",
         "id": 0,
         "nama": "-",
@@ -606,7 +561,6 @@
     },
     {
         "id_bhg": 6,
-        "Unnamed: 1": null,
         "bhg": "Bahagian Akaun (BA)",
         "id": 19,
         "nama": "NOR MADIHAH BINTI WAHAB @ ABDUL WAHAB",
@@ -617,7 +571,6 @@
     },
     {
         "id_bhg": 6,
-        "Unnamed: 1": null,
         "bhg": "Bahagian Akaun (BA)",
         "id": 20,
         "nama": "SHAMILA BINTI ISMAIL @ BESAR",
@@ -628,7 +581,6 @@
     },
     {
         "id_bhg": 6,
-        "Unnamed: 1": null,
         "bhg": "Bahagian Akaun (BA)",
         "id": 21,
         "nama": "NORLIZA BINTI MD NOR",
@@ -639,7 +591,6 @@
     },
     {
         "id_bhg": 6,
-        "Unnamed: 1": null,
         "bhg": "Bahagian Akaun (BA)",
         "id": 0,
         "nama": "-",
@@ -650,7 +601,6 @@
     },
     {
         "id_bhg": 7,
-        "Unnamed: 1": null,
         "bhg": "Pejabat Penasihat Undang-Undang (PUU)",
         "id": 0,
         "nama": "-",
@@ -661,7 +611,6 @@
     },
     {
         "id_bhg": 7,
-        "Unnamed: 1": null,
         "bhg": "Pejabat Penasihat Undang-Undang (PUU)",
         "id": 2,
         "nama": "SITI SABENA BINTI BDUL HAMID",
@@ -672,7 +621,6 @@
     },
     {
         "id_bhg": 7,
-        "Unnamed: 1": null,
         "bhg": "Pejabat Penasihat Undang-Undang (PUU)",
         "id": 3,
         "nama": "DATIN NURFITRA BINTI MOHAMED ALIAS",
@@ -683,7 +631,6 @@
     },
     {
         "id_bhg": 7,
-        "Unnamed: 1": null,
         "bhg": "Pejabat Penasihat Undang-Undang (PUU)",
         "id": 4,
         "nama": "MUHAMMAD ZAKI BIN ABDUL RAZAK",
@@ -694,7 +641,6 @@
     },
     {
         "id_bhg": 7,
-        "Unnamed: 1": null,
         "bhg": "Pejabat Penasihat Undang-Undang (PUU)",
         "id": 5,
         "nama": "NORFRANLISA BINTI HASSAN SANI",
@@ -705,7 +651,6 @@
     },
     {
         "id_bhg": 8,
-        "Unnamed: 1": null,
         "bhg": "Unit Komunikasi Korporat (UKK)",
         "id": 0,
         "nama": "-",
@@ -716,7 +661,6 @@
     },
     {
         "id_bhg": 8,
-        "Unnamed: 1": null,
         "bhg": "Unit Komunikasi Korporat (UKK)",
         "id": 0,
         "nama": "-",
@@ -727,7 +671,6 @@
     },
     {
         "id_bhg": 8,
-        "Unnamed: 1": null,
         "bhg": "Unit Komunikasi Korporat (UKK)",
         "id": 3,
         "nama": "MUHAMMAD RIZAL BIN REDZUAN",
@@ -738,7 +681,6 @@
     },
     {
         "id_bhg": 8,
-        "Unnamed: 1": null,
         "bhg": "Unit Komunikasi Korporat (UKK)",
         "id": 4,
         "nama": "NURUL LATIFATULLALLIZA BINTI ANUAR",
@@ -749,7 +691,6 @@
     },
     {
         "id_bhg": 8,
-        "Unnamed: 1": null,
         "bhg": "Unit Komunikasi Korporat (UKK)",
         "id": 0,
         "nama": "-",
@@ -760,7 +701,6 @@
     },
     {
         "id_bhg": 8,
-        "Unnamed: 1": null,
         "bhg": "Unit Komunikasi Korporat (UKK)",
         "id": 0,
         "nama": "-",
@@ -771,7 +711,6 @@
     },
     {
         "id_bhg": 8,
-        "Unnamed: 1": null,
         "bhg": "Unit Komunikasi Korporat (UKK)",
         "id": 0,
         "nama": "-",
@@ -782,7 +721,6 @@
     },
     {
         "id_bhg": 8,
-        "Unnamed: 1": null,
         "bhg": "Unit Komunikasi Korporat (UKK)",
         "id": 8,
         "nama": "MUHAMMAD FARIDUDDIN BIN MUSTAFAR",
@@ -793,7 +731,6 @@
     },
     {
         "id_bhg": 8,
-        "Unnamed: 1": null,
         "bhg": "Unit Komunikasi Korporat (UKK)",
         "id": 9,
         "nama": "FARAH ADILA BINTI MOHAMAD IZANI",
@@ -804,7 +741,6 @@
     },
     {
         "id_bhg": 8,
-        "Unnamed: 1": null,
         "bhg": "Unit Komunikasi Korporat (UKK)",
         "id": 10,
         "nama": "REZA SHERRYZA ADZWIN BINTI REDZAWAN",
@@ -815,7 +751,6 @@
     },
     {
         "id_bhg": 8,
-        "Unnamed: 1": null,
         "bhg": "Unit Komunikasi Korporat (UKK)",
         "id": 11,
         "nama": "DR. SITI RUHLIAH LIZAROSE BINTI SAMION",
@@ -826,7 +761,6 @@
     },
     {
         "id_bhg": 8,
-        "Unnamed: 1": null,
         "bhg": "Unit Komunikasi Korporat (UKK)",
         "id": 12,
         "nama": "ZULIERA ZARIZ BINTI AZMAN AZIZ",
@@ -837,7 +771,6 @@
     },
     {
         "id_bhg": 8,
-        "Unnamed: 1": null,
         "bhg": "Unit Komunikasi Korporat (UKK)",
         "id": 13,
         "nama": "AHMAD HIZBULLAH BIN OTHMAN",
@@ -848,7 +781,6 @@
     },
     {
         "id_bhg": 8,
-        "Unnamed: 1": null,
         "bhg": "Unit Komunikasi Korporat (UKK)",
         "id": 0,
         "nama": "-",
@@ -859,7 +791,6 @@
     },
     {
         "id_bhg": 8,
-        "Unnamed: 1": null,
         "bhg": "Unit Komunikasi Korporat (UKK)",
         "id": 0,
         "nama": "-",
@@ -870,7 +801,6 @@
     },
     {
         "id_bhg": 8,
-        "Unnamed: 1": null,
         "bhg": "Unit Komunikasi Korporat (UKK)",
         "id": 16,
         "nama": "MOHD RAFIUDDIN DASUKI BIN SHAARI",
@@ -881,7 +811,6 @@
     },
     {
         "id_bhg": 8,
-        "Unnamed: 1": null,
         "bhg": "Unit Komunikasi Korporat (UKK)",
         "id": 17,
         "nama": "NORMALRIZWAN BIN KAMARUDDIN",
@@ -892,7 +821,6 @@
     },
     {
         "id_bhg": 8,
-        "Unnamed: 1": null,
         "bhg": "Unit Komunikasi Korporat (UKK)",
         "id": 18,
         "nama": "HAFIZAH BINTI IBRAHIM",
@@ -903,7 +831,6 @@
     },
     {
         "id_bhg": 8,
-        "Unnamed: 1": null,
         "bhg": "Unit Komunikasi Korporat (UKK)",
         "id": 19,
         "nama": "AHMAD FIRDAUS BIN MOHD ARIFIN",
@@ -914,7 +841,6 @@
     },
     {
         "id_bhg": 9,
-        "Unnamed: 1": 10,
         "bhg": "Bahagian Pengurusan Maklumat (BPM)",
         "id": 1,
         "nama": "ROZAINI BINTI OTHMAN",
@@ -925,7 +851,6 @@
     },
     {
         "id_bhg": 9,
-        "Unnamed: 1": 10,
         "bhg": "Bahagian Pengurusan Maklumat (BPM)",
         "id": 0,
         "nama": "-",
@@ -936,7 +861,6 @@
     },
     {
         "id_bhg": 9,
-        "Unnamed: 1": 10,
         "bhg": "Bahagian Pengurusan Maklumat (BPM)",
         "id": 3,
         "nama": "MUHAMMAD FAKHRI ZAKI ABADI BIN AHMAD ZAIRI",
@@ -947,7 +871,6 @@
     },
     {
         "id_bhg": 9,
-        "Unnamed: 1": 10,
         "bhg": "Bahagian Pengurusan Maklumat (BPM)",
         "id": 4,
         "nama": "AZMIL BIN ABDUL RAHMAN",
@@ -958,7 +881,6 @@
     },
     {
         "id_bhg": 9,
-        "Unnamed: 1": 10,
         "bhg": "Bahagian Pengurusan Maklumat (BPM)",
         "id": 0,
         "nama": "-",
@@ -969,7 +891,6 @@
     },
     {
         "id_bhg": 9,
-        "Unnamed: 1": 10,
         "bhg": "Bahagian Pengurusan Maklumat (BPM)",
         "id": 6,
         "nama": "JAIRULNIZAM BIN JAMALUDIN",
@@ -980,7 +901,6 @@
     },
     {
         "id_bhg": 9,
-        "Unnamed: 1": 10,
         "bhg": "Bahagian Pengurusan Maklumat (BPM)",
         "id": 7,
         "nama": "ZUL HALIMI BIN MAT SAMAN",
@@ -991,7 +911,6 @@
     },
     {
         "id_bhg": 9,
-        "Unnamed: 1": 10,
         "bhg": "Bahagian Pengurusan Maklumat (BPM)",
         "id": 8,
         "nama": "MOHD SHAFRIL HISHAM BIN REJAB",
@@ -1002,7 +921,6 @@
     },
     {
         "id_bhg": 9,
-        "Unnamed: 1": 10,
         "bhg": "Bahagian Pengurusan Maklumat (BPM)",
         "id": 0,
         "nama": "-",
@@ -1013,7 +931,6 @@
     },
     {
         "id_bhg": 9,
-        "Unnamed: 1": 10,
         "bhg": "Bahagian Pengurusan Maklumat (BPM)",
         "id": 0,
         "nama": "-",
@@ -1024,7 +941,6 @@
     },
     {
         "id_bhg": 9,
-        "Unnamed: 1": 10,
         "bhg": "Bahagian Pengurusan Maklumat (BPM)",
         "id": 0,
         "nama": "-",
@@ -1035,7 +951,6 @@
     },
     {
         "id_bhg": 9,
-        "Unnamed: 1": 10,
         "bhg": "Bahagian Pengurusan Maklumat (BPM)",
         "id": 0,
         "nama": "-",
@@ -1046,7 +961,6 @@
     },
     {
         "id_bhg": 9,
-        "Unnamed: 1": 10,
         "bhg": "Bahagian Pengurusan Maklumat (BPM)",
         "id": 0,
         "nama": "-",
@@ -1057,7 +971,6 @@
     },
     {
         "id_bhg": 9,
-        "Unnamed: 1": 10,
         "bhg": "Bahagian Pengurusan Maklumat (BPM)",
         "id": 0,
         "nama": "-",
@@ -1068,7 +981,6 @@
     },
     {
         "id_bhg": 10,
-        "Unnamed: 1": 11,
         "bhg": "Bahagian Inkubator Digital (BID)",
         "id": 0,
         "nama": "-",
@@ -1079,7 +991,6 @@
     },
     {
         "id_bhg": 10,
-        "Unnamed: 1": 11,
         "bhg": "Bahagian Inkubator Digital (BID)",
         "id": 0,
         "nama": "-",
@@ -1090,7 +1001,6 @@
     },
     {
         "id_bhg": 10,
-        "Unnamed: 1": 11,
         "bhg": "Bahagian Inkubator Digital (BID)",
         "id": 0,
         "nama": "-",
@@ -1101,7 +1011,6 @@
     },
     {
         "id_bhg": 10,
-        "Unnamed: 1": 11,
         "bhg": "Bahagian Inkubator Digital (BID)",
         "id": 4,
         "nama": "TS. DR. MOHAMED HAIRUL BIN OTHMAN",
@@ -1112,7 +1021,6 @@
     },
     {
         "id_bhg": 10,
-        "Unnamed: 1": 11,
         "bhg": "Bahagian Inkubator Digital (BID)",
         "id": 5,
         "nama": "TS. FARID IQBAL BIN IBRAHIM",
@@ -1123,7 +1031,6 @@
     },
     {
         "id_bhg": 10,
-        "Unnamed: 1": 11,
         "bhg": "Bahagian Inkubator Digital (BID)",
         "id": 0,
         "nama": "-",
@@ -1134,7 +1041,6 @@
     },
     {
         "id_bhg": 10,
-        "Unnamed: 1": 11,
         "bhg": "Bahagian Inkubator Digital (BID)",
         "id": 0,
         "nama": "-",
@@ -1145,7 +1051,6 @@
     },
     {
         "id_bhg": 10,
-        "Unnamed: 1": 11,
         "bhg": "Bahagian Inkubator Digital (BID)",
         "id": 0,
         "nama": "-",
@@ -1156,7 +1061,6 @@
     },
     {
         "id_bhg": 10,
-        "Unnamed: 1": 11,
         "bhg": "Bahagian Inkubator Digital (BID)",
         "id": 0,
         "nama": "-",
@@ -1167,7 +1071,6 @@
     },
     {
         "id_bhg": 10,
-        "Unnamed: 1": 11,
         "bhg": "Bahagian Inkubator Digital (BID)",
         "id": 0,
         "nama": "-",
@@ -1178,7 +1081,6 @@
     },
     {
         "id_bhg": 10,
-        "Unnamed: 1": 11,
         "bhg": "Bahagian Inkubator Digital (BID)",
         "id": 11,
         "nama": "SITI SUHANA BINTI MOHD ALI",
@@ -1189,7 +1091,6 @@
     },
     {
         "id_bhg": 11,
-        "Unnamed: 1": 12,
         "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
         "id": 1,
         "nama": "SURAYATI BINTI IBRAHIM",
@@ -1200,7 +1101,6 @@
     },
     {
         "id_bhg": 11,
-        "Unnamed: 1": 12,
         "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
         "id": 2,
         "nama": "AHMAD IZZUDDIN BIN MOHD HAMIM",
@@ -1211,7 +1111,6 @@
     },
     {
         "id_bhg": 11,
-        "Unnamed: 1": 12,
         "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
         "id": 3,
         "nama": "KOLONY ANAK GUNTING",
@@ -1222,7 +1121,6 @@
     },
     {
         "id_bhg": 11,
-        "Unnamed: 1": 12,
         "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
         "id": 4,
         "nama": "DR. RAFIDAH BINTI MOHAMED HASHIM",
@@ -1233,7 +1131,6 @@
     },
     {
         "id_bhg": 11,
-        "Unnamed: 1": 12,
         "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
         "id": 5,
         "nama": "MOHD SABRI BIN ZAKARIA",
@@ -1244,7 +1141,6 @@
     },
     {
         "id_bhg": 11,
-        "Unnamed: 1": 12,
         "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
         "id": 0,
         "nama": "-",
@@ -1255,7 +1151,6 @@
     },
     {
         "id_bhg": 11,
-        "Unnamed: 1": 12,
         "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
         "id": 7,
         "nama": "MOHAMMED NAZIR BIN ABDUL RAHIM",
@@ -1266,7 +1161,6 @@
     },
     {
         "id_bhg": 11,
-        "Unnamed: 1": 12,
         "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
         "id": 8,
         "nama": "ADZMIR BIN ABDUL LATIB",
@@ -1277,7 +1171,6 @@
     },
     {
         "id_bhg": 11,
-        "Unnamed: 1": 12,
         "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
         "id": 9,
         "nama": "AIDA MARHAINI BINTI HASSAN",
@@ -1288,7 +1181,6 @@
     },
     {
         "id_bhg": 11,
-        "Unnamed: 1": 12,
         "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
         "id": 0,
         "nama": "-",
@@ -1299,7 +1191,6 @@
     },
     {
         "id_bhg": 11,
-        "Unnamed: 1": 12,
         "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
         "id": 11,
         "nama": "AZFA LIA BINTI FARDES",
@@ -1310,7 +1201,6 @@
     },
     {
         "id_bhg": 11,
-        "Unnamed: 1": 12,
         "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
         "id": 12,
         "nama": "SITI NURZALIANA BINTI MOHD SAFARI",
@@ -1321,7 +1211,6 @@
     },
     {
         "id_bhg": 11,
-        "Unnamed: 1": 12,
         "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
         "id": 13,
         "nama": "SUHAIZAM SHAHRUL AFFENDY BIN SUHAIMI",
@@ -1332,7 +1221,6 @@
     },
     {
         "id_bhg": 11,
-        "Unnamed: 1": 12,
         "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
         "id": 14,
         "nama": "NURUL ATIKHAH BINTI ABU BAKAR",
@@ -1343,7 +1231,6 @@
     },
     {
         "id_bhg": 11,
-        "Unnamed: 1": 12,
         "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
         "id": 15,
         "nama": "FARHANA BINTI HARIS",
@@ -1354,7 +1241,6 @@
     },
     {
         "id_bhg": 11,
-        "Unnamed: 1": 12,
         "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
         "id": 16,
         "nama": "ANNA CARMILA ANAK BILLY",
@@ -1365,7 +1251,6 @@
     },
     {
         "id_bhg": 11,
-        "Unnamed: 1": 12,
         "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
         "id": 17,
         "nama": "ERNITA EVA SUNSEARRY BINTI POTIRIK",
@@ -1376,7 +1261,6 @@
     },
     {
         "id_bhg": 11,
-        "Unnamed: 1": 12,
         "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
         "id": 18,
         "nama": "NOOR ZAKIYAH BINTI ISA",
@@ -1387,7 +1271,6 @@
     },
     {
         "id_bhg": 11,
-        "Unnamed: 1": 12,
         "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
         "id": 0,
         "nama": "-",
@@ -1398,7 +1281,6 @@
     },
     {
         "id_bhg": 11,
-        "Unnamed: 1": 12,
         "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
         "id": 0,
         "nama": "-",
@@ -1409,7 +1291,6 @@
     },
     {
         "id_bhg": 11,
-        "Unnamed: 1": 12,
         "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
         "id": 21,
         "nama": "MUHAMMAD FIRDAUS ASYRAF BIN KAMARUDDIN",
@@ -1420,7 +1301,6 @@
     },
     {
         "id_bhg": 11,
-        "Unnamed: 1": 12,
         "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
         "id": 22,
         "nama": "HILMI SAFWAN BIN MOHD YUSOF",
@@ -1431,7 +1311,6 @@
     },
     {
         "id_bhg": 11,
-        "Unnamed: 1": 12,
         "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
         "id": 0,
         "nama": "-",
@@ -1442,7 +1321,6 @@
     },
     {
         "id_bhg": 11,
-        "Unnamed: 1": 12,
         "bhg": "Bahagian Dasar, Strategik & Pematuhan (BDSP)",
         "id": 24,
         "nama": "MOHD FAIZ BIN OMAR",
@@ -1453,7 +1331,6 @@
     },
     {
         "id_bhg": 12,
-        "Unnamed: 1": 13,
         "bhg": "Bahagian Antarabangsa (BAb)",
         "id": 1,
         "nama": "DR. TAN FEE CHENG",
@@ -1464,7 +1341,6 @@
     },
     {
         "id_bhg": 12,
-        "Unnamed: 1": 13,
         "bhg": "Bahagian Antarabangsa (BAb)",
         "id": 0,
         "nama": "-",
@@ -1475,7 +1351,6 @@
     },
     {
         "id_bhg": 12,
-        "Unnamed: 1": 13,
         "bhg": "Bahagian Antarabangsa (BAb)",
         "id": 3,
         "nama": "PRABAGARAN A/L GANAPATHY",
@@ -1486,7 +1361,6 @@
     },
     {
         "id_bhg": 12,
-        "Unnamed: 1": 13,
         "bhg": "Bahagian Antarabangsa (BAb)",
         "id": 0,
         "nama": "-",
@@ -1497,7 +1371,6 @@
     },
     {
         "id_bhg": 12,
-        "Unnamed: 1": 13,
         "bhg": "Bahagian Antarabangsa (BAb)",
         "id": 5,
         "nama": "SITI SYAFIAH NORYANA BINTI MOHD NOR",
@@ -1508,7 +1381,6 @@
     },
     {
         "id_bhg": 12,
-        "Unnamed: 1": 13,
         "bhg": "Bahagian Antarabangsa (BAb)",
         "id": 6,
         "nama": "SUHAIDA BINTI SUTIM",
@@ -1519,7 +1391,6 @@
     },
     {
         "id_bhg": 12,
-        "Unnamed: 1": 13,
         "bhg": "Bahagian Antarabangsa (BAb)",
         "id": 7,
         "nama": "SHARMILAA/P P. SINNASAMY",
@@ -1530,7 +1401,6 @@
     },
     {
         "id_bhg": 12,
-        "Unnamed: 1": 13,
         "bhg": "Bahagian Antarabangsa (BAb)",
         "id": 8,
         "nama": "SHERRINA BINTI KUSHAIRI KUSHNA",
@@ -1541,7 +1411,6 @@
     },
     {
         "id_bhg": 12,
-        "Unnamed: 1": 13,
         "bhg": "Bahagian Antarabangsa (BAb)",
         "id": 9,
         "nama": "DR. DHURGA DEVI A/P RAJARATANAM",
@@ -1552,7 +1421,6 @@
     },
     {
         "id_bhg": 12,
-        "Unnamed: 1": 13,
         "bhg": "Bahagian Antarabangsa (BAb)",
         "id": 10,
         "nama": "SAFUAN BIN RAJALI",
@@ -1563,7 +1431,6 @@
     },
     {
         "id_bhg": 12,
-        "Unnamed: 1": 13,
         "bhg": "Bahagian Antarabangsa (BAb)",
         "id": 11,
         "nama": "SAIFUL RIZAL BIN MOHD NOR",
@@ -1574,7 +1441,6 @@
     },
     {
         "id_bhg": 12,
-        "Unnamed: 1": 13,
         "bhg": "Bahagian Antarabangsa (BAb)",
         "id": 0,
         "nama": "-",
@@ -1585,7 +1451,6 @@
     },
     {
         "id_bhg": 12,
-        "Unnamed: 1": 13,
         "bhg": "Bahagian Antarabangsa (BAb)",
         "id": 13,
         "nama": "HASLINA BINTI HASSAN",
@@ -1596,7 +1461,6 @@
     },
     {
         "id_bhg": 12,
-        "Unnamed: 1": 13,
         "bhg": "Bahagian Antarabangsa (BAb)",
         "id": 0,
         "nama": "-",
@@ -1607,7 +1471,6 @@
     },
     {
         "id_bhg": 13,
-        "Unnamed: 1": 14,
         "bhg": "Bahagian Pengupayaan Digital (BUD)",
         "id": 1,
         "nama": "HARISON BINTI AHMAD",
@@ -1618,7 +1481,6 @@
     },
     {
         "id_bhg": 13,
-        "Unnamed: 1": 14,
         "bhg": "Bahagian Pengupayaan Digital (BUD)",
         "id": 0,
         "nama": "-",
@@ -1629,7 +1491,6 @@
     },
     {
         "id_bhg": 13,
-        "Unnamed: 1": 14,
         "bhg": "Bahagian Pengupayaan Digital (BUD)",
         "id": 0,
         "nama": "-",
@@ -1640,7 +1501,6 @@
     },
     {
         "id_bhg": 13,
-        "Unnamed: 1": 14,
         "bhg": "Bahagian Pengupayaan Digital (BUD)",
         "id": 0,
         "nama": "-",
@@ -1651,7 +1511,6 @@
     },
     {
         "id_bhg": 13,
-        "Unnamed: 1": 14,
         "bhg": "Bahagian Pengupayaan Digital (BUD)",
         "id": 5,
         "nama": "TS. DR. SHEILA A/P MAHALINGAM",
@@ -1662,7 +1521,6 @@
     },
     {
         "id_bhg": 13,
-        "Unnamed: 1": 14,
         "bhg": "Bahagian Pengupayaan Digital (BUD)",
         "id": 6,
         "nama": "NURHANIZA BINTI BAKRI",
@@ -1673,7 +1531,6 @@
     },
     {
         "id_bhg": 13,
-        "Unnamed: 1": 14,
         "bhg": "Bahagian Pengupayaan Digital (BUD)",
         "id": 0,
         "nama": "-",
@@ -1684,7 +1541,6 @@
     },
     {
         "id_bhg": 13,
-        "Unnamed: 1": 14,
         "bhg": "Bahagian Pengupayaan Digital (BUD)",
         "id": 0,
         "nama": "-",
@@ -1695,7 +1551,6 @@
     },
     {
         "id_bhg": 13,
-        "Unnamed: 1": 14,
         "bhg": "Bahagian Pengupayaan Digital (BUD)",
         "id": 0,
         "nama": "-",
@@ -1706,7 +1561,6 @@
     },
     {
         "id_bhg": 13,
-        "Unnamed: 1": 14,
         "bhg": "Bahagian Pengupayaan Digital (BUD)",
         "id": 10,
         "nama": "KHAIRUSSAKINAH BINTI MD SANI",
@@ -1717,7 +1571,6 @@
     },
     {
         "id_bhg": 13,
-        "Unnamed: 1": 14,
         "bhg": "Bahagian Perniagaan Digital (BND)",
         "id": 1,
         "nama": "NAFIZAH BINTI NAYAN",
@@ -1728,7 +1581,6 @@
     },
     {
         "id_bhg": 13,
-        "Unnamed: 1": 14,
         "bhg": "Bahagian Perniagaan Digital (BND)",
         "id": 0,
         "nama": "-",
@@ -1739,7 +1591,6 @@
     },
     {
         "id_bhg": 13,
-        "Unnamed: 1": 14,
         "bhg": "Bahagian Perniagaan Digital (BND)",
         "id": 3,
         "nama": "MOHAMMAD HARITH SHAHRIZAN BIN SHAHRAIN",
@@ -1750,7 +1601,6 @@
     },
     {
         "id_bhg": 13,
-        "Unnamed: 1": 14,
         "bhg": "Bahagian Perniagaan Digital (BND)",
         "id": 0,
         "nama": "-",
@@ -1761,7 +1611,6 @@
     },
     {
         "id_bhg": 13,
-        "Unnamed: 1": 14,
         "bhg": "Bahagian Perniagaan Digital (BND)",
         "id": 5,
         "nama": "ROSLINAYATI BINTI YAACOB",
@@ -1772,7 +1621,6 @@
     },
     {
         "id_bhg": 13,
-        "Unnamed: 1": 14,
         "bhg": "Bahagian Perniagaan Digital (BND)",
         "id": 6,
         "nama": "SHAHANIM BINTI MOHD SAID",
@@ -1783,7 +1631,6 @@
     },
     {
         "id_bhg": 13,
-        "Unnamed: 1": 14,
         "bhg": "Bahagian Perniagaan Digital (BND)",
         "id": 7,
         "nama": "NUR AFIFAH ARIFAH BINTI MASAHOR",
@@ -1794,7 +1641,6 @@
     },
     {
         "id_bhg": 13,
-        "Unnamed: 1": 14,
         "bhg": "Bahagian Perniagaan Digital (BND)",
         "id": 0,
         "nama": "-",
@@ -1805,7 +1651,6 @@
     },
     {
         "id_bhg": 13,
-        "Unnamed: 1": 14,
         "bhg": "Bahagian Perniagaan Digital (BND)",
         "id": 0,
         "nama": "-",
@@ -1816,7 +1661,6 @@
     },
     {
         "id_bhg": 13,
-        "Unnamed: 1": 14,
         "bhg": "Bahagian Perniagaan Digital (BND)",
         "id": 10,
         "nama": "NUR NAJIHA-ZAHEIRA BINTI ZAINUDDIN",
@@ -1827,7 +1671,6 @@
     },
     {
         "id_bhg": 13,
-        "Unnamed: 1": 14,
         "bhg": "Bahagian Perniagaan Digital (BND)",
         "id": 11,
         "nama": "NORHAYATI BINTI MAT NAWI",
@@ -1838,7 +1681,6 @@
     },
     {
         "id_bhg": 13,
-        "Unnamed: 1": 14,
         "bhg": "Bahagian Perniagaan Digital (BND)",
         "id": 0,
         "nama": "-",
@@ -1849,7 +1691,6 @@
     },
     {
         "id_bhg": 13,
-        "Unnamed: 1": 14,
         "bhg": "Bahagian Perniagaan Digital (BND)",
         "id": 13,
         "nama": "HAZLIKA BINTI HASSAN",
@@ -1860,7 +1701,6 @@
     },
     {
         "id_bhg": 14,
-        "Unnamed: 1": 15,
         "bhg": "Bahagian Akulturasi Digital (BAk)",
         "id": 1,
         "nama": "BAZARUL MAZNI BIN BAHARUDDIN",
@@ -1871,7 +1711,6 @@
     },
     {
         "id_bhg": 14,
-        "Unnamed: 1": 15,
         "bhg": "Bahagian Akulturasi Digital (BAk)",
         "id": 0,
         "nama": "-",
@@ -1882,7 +1721,6 @@
     },
     {
         "id_bhg": 14,
-        "Unnamed: 1": 15,
         "bhg": "Bahagian Akulturasi Digital (BAk)",
         "id": 3,
         "nama": "CONWAY ANAK BEDDIE",
@@ -1893,7 +1731,6 @@
     },
     {
         "id_bhg": 14,
-        "Unnamed: 1": 15,
         "bhg": "Bahagian Akulturasi Digital (BAk)",
         "id": 0,
         "nama": "-",
@@ -1904,7 +1741,6 @@
     },
     {
         "id_bhg": 14,
-        "Unnamed: 1": 15,
         "bhg": "Bahagian Akulturasi Digital (BAk)",
         "id": 5,
         "nama": "ROSLINAWATI BINTI ABDUL RAHMAN",
@@ -1915,7 +1751,6 @@
     },
     {
         "id_bhg": 14,
-        "Unnamed: 1": 15,
         "bhg": "Bahagian Akulturasi Digital (BAk)",
         "id": 6,
         "nama": "NORAINIL HAWA BINTI BAHRIN",
@@ -1926,7 +1761,6 @@
     },
     {
         "id_bhg": 14,
-        "Unnamed: 1": 15,
         "bhg": "Bahagian Akulturasi Digital (BAk)",
         "id": 7,
         "nama": "SITTI SURAIDAH BINTI ANAS",
@@ -1937,7 +1771,6 @@
     },
     {
         "id_bhg": 14,
-        "Unnamed: 1": 15,
         "bhg": "Bahagian Akulturasi Digital (BAk)",
         "id": 8,
         "nama": "SITI RUHAIZA BINTI ZAKARIA",
@@ -1948,7 +1781,6 @@
     },
     {
         "id_bhg": 14,
-        "Unnamed: 1": 15,
         "bhg": "Bahagian Akulturasi Digital (BAk)",
         "id": 0,
         "nama": "-",
@@ -1959,7 +1791,6 @@
     },
     {
         "id_bhg": 14,
-        "Unnamed: 1": 15,
         "bhg": "Bahagian Akulturasi Digital (BAk)",
         "id": 0,
         "nama": "-",
@@ -1970,7 +1801,6 @@
     },
     {
         "id_bhg": 14,
-        "Unnamed: 1": 15,
         "bhg": "Bahagian Akulturasi Digital (BAk)",
         "id": 0,
         "nama": "-",
@@ -1981,7 +1811,6 @@
     },
     {
         "id_bhg": 14,
-        "Unnamed: 1": 15,
         "bhg": "Bahagian Akulturasi Digital (BAk)",
         "id": 12,
         "nama": "HASNAH BINTI SIDEK",
@@ -1992,7 +1821,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 1,
         "nama": "MOHAMAD BIN MAT JUSOH",
@@ -2003,7 +1831,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 2,
         "nama": "NOR WAHIDA BINTI AHMAD NAZARI",
@@ -2014,7 +1841,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": -1,
         "nama": "Seksyen Kewangan",
@@ -2025,7 +1851,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 3,
         "nama": "TANTIE SHAWAMAZURA BINTI JOHARI",
@@ -2036,7 +1861,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 4,
         "nama": "SITI FAIRUZA BINTI IDRIS",
@@ -2047,7 +1871,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 5,
         "nama": "NAJIHAH BINTI ABDULLAH @ AZAHARI",
@@ -2058,7 +1881,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 6,
         "nama": "MOHD NADZEEF BIN AB MALEK",
@@ -2069,7 +1891,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 7,
         "nama": "SOFIA BINTI MOHD SOPEE",
@@ -2080,7 +1901,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 0,
         "nama": "-",
@@ -2091,7 +1911,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 9,
         "nama": "MOHAMAD HAFIZAL BIN HAMZAH",
@@ -2102,7 +1921,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 0,
         "nama": "-",
@@ -2113,7 +1931,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 11,
         "nama": "MAZINAH BINTI SUDARMAN",
@@ -2124,7 +1941,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 12,
         "nama": "MOHD FAUZI BIN OTHMAN",
@@ -2135,7 +1951,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 13,
         "nama": "RUSLAN BIN MOHD JA'FAR",
@@ -2146,7 +1961,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 0,
         "nama": "-",
@@ -2157,7 +1971,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 15,
         "nama": "NURAIN BINTI MOHD NORDIN",
@@ -2168,7 +1981,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 16,
         "nama": "MUHAMMAD KHAIRANI BIN GHAZALI",
@@ -2179,7 +1991,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 17,
         "nama": "NURUL NADIHA BINTI MOHAMAD SUHAIMI",
@@ -2190,7 +2001,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 18,
         "nama": "NUR NISA DAYANA BINTI ZALFAIZAL",
@@ -2201,7 +2011,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 19,
         "nama": "NOOR AIDA BINTI NAZIR",
@@ -2212,7 +2021,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 20,
         "nama": "NURAIN BINTI MAHAYUDIN",
@@ -2223,7 +2031,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 21,
         "nama": "NORHANANI BINTI ISMAIL",
@@ -2234,7 +2041,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": -1,
         "nama": "Seksyen Pembangunan",
@@ -2245,7 +2051,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 0,
         "nama": "-",
@@ -2256,7 +2061,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 0,
         "nama": "-",
@@ -2267,7 +2071,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 24,
         "nama": "SUHAIR HAWA ANADALE BINTI SUARNO",
@@ -2278,7 +2081,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 0,
         "nama": "-",
@@ -2289,7 +2091,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 26,
         "nama": "MASLIZA BINTI ZAKARIA",
@@ -2300,7 +2101,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 27,
         "nama": "AIMA NUR LIYANA BINTI MOKHTAR",
@@ -2311,7 +2111,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 28,
         "nama": "NUR RASHIDAH BINTI MOHAMAD",
@@ -2322,7 +2121,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": -1,
         "nama": "Seksyen Perolehan",
@@ -2333,7 +2131,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 29,
         "nama": "MAHUSSIN BIN JUSOH",
@@ -2344,7 +2141,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 30,
         "nama": "NUR AINA ASYAHA BINTI MANAN",
@@ -2355,7 +2151,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 31,
         "nama": "JULIANA SAMBAI ANAK SIBAT",
@@ -2366,7 +2161,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 0,
         "nama": "-",
@@ -2377,7 +2171,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 33,
         "nama": "NORHASLIZA BINTI MAT SOOD",
@@ -2388,7 +2181,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 34,
         "nama": "MASTURA BINTI MOHD TANZIZI",
@@ -2399,7 +2191,6 @@
     },
     {
         "id_bhg": 15,
-        "Unnamed: 1": 16,
         "bhg": "Bahagian Kewangan & Pembangunan (BKEW)",
         "id": 35,
         "nama": "NUR FATIHIN BINTI JAAFAR",
@@ -2410,7 +2201,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 1,
         "nama": "HAZURA BINTI HAMZAH",
@@ -2421,7 +2211,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 2,
         "nama": "NORHIKMAH BINTI TAUHID",
@@ -2432,7 +2221,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": -1,
         "nama": "Seksyen Penyelarasan Program, Inovasi Dan Kualiti",
@@ -2443,7 +2231,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 3,
         "nama": "NORZAIMEE BIN GHAZALI",
@@ -2454,7 +2241,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 4,
         "nama": "AUDREY ANAK LEMBAT",
@@ -2465,7 +2251,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 5,
         "nama": "MUHAMMAD NAZIRUL SAFWAN BIN ZULKEFLI",
@@ -2476,7 +2261,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 6,
         "nama": "MOHD IZANI BIN CHE JAAFAR",
@@ -2487,7 +2271,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 0,
         "nama": "-",
@@ -2498,7 +2281,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 8,
         "nama": "NORAZILAH BINTI ABD MANAB",
@@ -2509,7 +2291,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 9,
         "nama": "AFIDAH BINTI ALIAS",
@@ -2520,7 +2301,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 10,
         "nama": "ALLISON @ STEVE ADDISON ANAK FELTCHER",
@@ -2531,7 +2311,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 11,
         "nama": "NORFATZAITULSHIMA BINTI ZULKIFLI",
@@ -2542,7 +2321,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 12,
         "nama": "AZIE AMIRA BINTI JOHARI",
@@ -2553,7 +2331,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 13,
         "nama": "MUHAMMAD ZUL AFNAN BIN MOHD HASNI",
@@ -2564,7 +2341,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 14,
         "nama": "SITI NOR AIN BINTI AB. SATAR",
@@ -2575,7 +2351,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 15,
         "nama": "MUHAMMAD SYAHMI FIQRI BIN KHALID",
@@ -2586,7 +2361,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 16,
         "nama": "ABDUL RAHMAN BIN MOHD YUSOF",
@@ -2597,7 +2371,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 17,
         "nama": "ABDULLAH BIN SAMSUDIN",
@@ -2608,7 +2381,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 18,
         "nama": "MOHD FAIZUL BIN MOHAMED FARID",
@@ -2619,7 +2391,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 19,
         "nama": "MOHD SAYUTI BIN ZAINUN",
@@ -2630,7 +2401,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 20,
         "nama": "MOHD ZAHIRUDDIN BIN MOHD ZIN",
@@ -2641,7 +2411,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 21,
         "nama": "MOHD KAMSUL BIN FAUZAN",
@@ -2652,7 +2421,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 22,
         "nama": "YUSNI BIN ALIAS",
@@ -2663,7 +2431,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 23,
         "nama": "FAROLNIZAM BIN MOHD FUAD",
@@ -2674,7 +2441,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 0,
         "nama": "-",
@@ -2685,7 +2451,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 25,
         "nama": "HATIN BIN AHMAD",
@@ -2696,7 +2461,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 26,
         "nama": "SHAHRULNIZAM BIN KAMARUDDIN",
@@ -2707,7 +2471,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 0,
         "nama": "-",
@@ -2718,7 +2481,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": -1,
         "nama": "Seksyen Aset, Fasiliti & Keselamatan",
@@ -2729,7 +2491,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 28,
         "nama": "MOHD HASLAN BIN HUSSAIN",
@@ -2740,7 +2501,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 29,
         "nama": "NUR FARHANA BINTI AHMAD HASRI",
@@ -2751,7 +2511,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 30,
         "nama": "RAZIN AFIQ BIN NORAZLAN",
@@ -2762,7 +2521,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 0,
         "nama": "-",
@@ -2773,7 +2531,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 32,
         "nama": "MOHD ZULKEFLI BIN JOHARI",
@@ -2784,7 +2541,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 0,
         "nama": "-",
@@ -2795,7 +2551,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 34,
         "nama": "MUHAMMAD SYARIHAN BIN ZOLKEFALI",
@@ -2806,7 +2561,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 35,
         "nama": "NORHAZLIANA BINTI MAD TAHAR",
@@ -2817,7 +2571,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 36,
         "nama": "NAZRUL BIN CHE NOH",
@@ -2828,7 +2581,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 37,
         "nama": "AZHAR BIN MOHAMAD",
@@ -2839,7 +2591,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 38,
         "nama": "SYAZWAN BIN SOBRI",
@@ -2850,7 +2601,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": -1,
         "nama": "Seksyen Rekod & Registri",
@@ -2861,7 +2611,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 39,
         "nama": "FADZLETTE AZRA BINTI FESAL",
@@ -2872,7 +2621,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 40,
         "nama": "HAFIZAH BINTI MAT ISA",
@@ -2883,7 +2631,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 41,
         "nama": "ATIKAH BINTI CHE EMBI @ AZMI",
@@ -2894,7 +2641,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 0,
         "nama": "-",
@@ -2905,7 +2651,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 43,
         "nama": "DIANA AMIRA BINTI MUSTAPA",
@@ -2916,7 +2661,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 44,
         "nama": "NOOR HAFIZIE BIN MOHD NASIR",
@@ -2927,7 +2671,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": -1,
         "nama": "Seksyen Latihan, Kerjaya & Prestasi",
@@ -2938,7 +2681,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 45,
         "nama": "WAN ALWANI BINTI WAN MAHMUD",
@@ -2949,7 +2691,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 46,
         "nama": "SYAMRIZAL BIN J NULAWADIN",
@@ -2960,7 +2701,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 47,
         "nama": "NUR AINA AFRINA BINTI ABDUL RAZAK",
@@ -2971,7 +2711,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 0,
         "nama": "-",
@@ -2982,7 +2721,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 49,
         "nama": "RUZIHA BINTI AZIZAN",
@@ -2993,7 +2731,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 50,
         "nama": "MOHAMMED AMRIL NAQQIUDDIN BIN MOHAMED ZUBRI",
@@ -3004,7 +2741,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 51,
         "nama": "NUR HAZIRAH BINTI DAHALAN",
@@ -3015,7 +2751,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": -1,
         "nama": "Seksyen Perkhidmatan & Perjawatan",
@@ -3026,7 +2761,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 52,
         "nama": "DZULHILMI BIN DZULKARNAIN",
@@ -3037,7 +2771,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 53,
         "nama": "SAFURA BINTI SHAARUDDIN",
@@ -3048,7 +2781,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 54,
         "nama": "NUR IZZATI BINTI IDRIS",
@@ -3059,7 +2791,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 55,
         "nama": "HAZWATHUL NADIA BINTI ABU MARSHAH",
@@ -3070,7 +2801,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 56,
         "nama": "SHAFINAS BINTI SHAMSUDIN",
@@ -3081,7 +2811,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 57,
         "nama": "SHALWATI BINTI AMAN SHAH",
@@ -3092,7 +2821,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 58,
         "nama": "KAMRUN BIBI BINTI MOHAMED MUSA",
@@ -3103,7 +2831,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 59,
         "nama": "NOOR SALIZA BINTI ABDUL MANAP",
@@ -3114,7 +2841,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 60,
         "nama": "PUTRI NORHAIZAD BINTI ZAINAL ABIDIN",
@@ -3125,7 +2851,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 61,
         "nama": "NURUL AINI BINTI MOHAMAD",
@@ -3136,7 +2861,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 62,
         "nama": "MUHAMMAD NA'IM BIN MD JAHORI",
@@ -3147,7 +2871,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": -1,
         "nama": "Unit Pengurusan Psikologi",
@@ -3158,7 +2881,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 63,
         "nama": "WAN ZURINA BINTI WAN ABDULLAH",
@@ -3169,7 +2891,6 @@
     },
     {
         "id_bhg": 16,
-        "Unnamed: 1": 17,
         "bhg": "Bahagian Khidmat Pengurusan (BKP)",
         "id": 0,
         "nama": "-",
@@ -3180,7 +2901,6 @@
     },
     {
         "id_bhg": 17,
-        "Unnamed: 1": 18,
         "bhg": "Unit Audit Dalam",
         "id": 1,
         "nama": "RASDI BIN MOHAMED RAZALI",
@@ -3191,7 +2911,6 @@
     },
     {
         "id_bhg": 17,
-        "Unnamed: 1": 18,
         "bhg": "Unit Audit Dalam",
         "id": 2,
         "nama": "GEETHA A/P RAJA SEGARAN",
@@ -3202,7 +2921,6 @@
     },
     {
         "id_bhg": 17,
-        "Unnamed: 1": 18,
         "bhg": "Unit Audit Dalam",
         "id": 0,
         "nama": "-",
@@ -3213,7 +2931,6 @@
     },
     {
         "id_bhg": 17,
-        "Unnamed: 1": 18,
         "bhg": "Unit Audit Dalam",
         "id": 0,
         "nama": "-",
@@ -3224,7 +2941,6 @@
     },
     {
         "id_bhg": 17,
-        "Unnamed: 1": 18,
         "bhg": "Unit Audit Dalam",
         "id": 0,
         "nama": "-",
@@ -3235,7 +2951,6 @@
     },
     {
         "id_bhg": 17,
-        "Unnamed: 1": 18,
         "bhg": "Unit Audit Dalam",
         "id": 6,
         "nama": "SUNIZA BINTI SUBRI",
@@ -3246,7 +2961,6 @@
     },
     {
         "id_bhg": 18,
-        "Unnamed: 1": 19,
         "bhg": "Unit Integriti",
         "id": 0,
         "nama": "-",
@@ -3257,7 +2971,6 @@
     },
     {
         "id_bhg": 18,
-        "Unnamed: 1": 19,
         "bhg": "Unit Integriti",
         "id": 0,
         "nama": "-",
@@ -3268,7 +2981,6 @@
     },
     {
         "id_bhg": 18,
-        "Unnamed: 1": 19,
         "bhg": "Unit Integriti",
         "id": 3,
         "nama": "ADILAH BINTI AZIZAN",
@@ -3279,7 +2991,6 @@
     },
     {
         "id_bhg": 18,
-        "Unnamed: 1": 19,
         "bhg": "Unit Integriti",
         "id": 4,
         "nama": "HAMIMATUL ATIQAH BINTI MOHAMAD ROSLI",
