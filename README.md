@@ -1,42 +1,67 @@
-# Payload Blank Template
+# kd-portal
 
-A blank template for [Payload](https://github.com/payloadcms/payload) to help you get up and running quickly. This repo may have been created by running `npx create-payload-app@latest` and selecting the "blank" template or by cloning this template on [Payload Cloud](https://payloadcms.com/new/clone/blank).
+Welcome to the repository for the website of the Digital Ministry of Malaysia (Kementrian Digital Malaysia).
 
-See the official [Examples Directory](https://github.com/payloadcms/payload/tree/main/examples) for details on how to use Payload in a variety of different ways.
+## Tech Stack
 
-## Development
+- [Next.js](https://nextjs.org/)
+- [Payload CMS](https://github.com/payloadcms/payload)
 
-To spin up the project locally, follow these steps:
+## Design System
 
-1. First clone the repo
-1. Then `cd YOUR_PROJECT_REPO && cp .env.example .env`
-1. Next `yarn && yarn dev` (or `docker-compose up`, see [Docker](#docker))
-1. Now `open http://localhost:3000/admin` to access the admin panel
-1. Create your first admin user using the form on the page
+`kd-portal` is built with MyDS - the Malaysian Government Design System that aims to modernise, revamp and uplift the design language and usability of all Malaysian government sites.
+- [kd-portal Figma](https://www.figma.com/design/qfLxnLhraputrVraVOKD6n)
+- MyDS Figma (Stay tuned)
 
-That's it! Changes made in `./src` will be reflected in your app.
+## Installation
 
-### Docker
+We recommend using `pnpm` to manage the project's dependencies.
 
-Alternatively, you can use [Docker](https://www.docker.com) to spin up this project locally. To do so, follow these steps:
+```sh
+git clone git@github.com:govtechmy/kd-portal.git
 
-1. Follow [steps 1 and 2 from above](#development), the docker-compose file will automatically use the `.env` file in your project root
-1. Next run `docker-compose up`
-1. Follow [steps 4 and 5 from above](#development) to login and create your first admin user
+# pnpm
+pnpm i
 
-That's it! The Docker instance will help you get up and running quickly while also standardizing the development environment across your teams.
+cp .env.example .env
+```
 
-## Production
+## Commands to Know
 
-To run Payload in production, you need to build and serve the Admin panel. To do so, follow these steps:
+```bash
+# Start development servers
+pnpm dev
 
-1. First invoke the `payload build` script by running `yarn build` or `npm run build` in your project root. This creates a `./build` directory with a production-ready admin bundle.
-1. Then run `yarn serve` or `npm run serve` to run Node in production and serve Payload from the `./build` directory.
+# With docker compose
+docker-compose up
+```
 
-### Deployment
+## Development Workflow
 
-The easiest way to deploy your project is to use [Payload Cloud](https://payloadcms.com/new/import), a one-click hosting solution to deploy production-ready instances of your Payload apps directly from your GitHub repo. You can also deploy your app manually, check out the [deployment documentation](https://payloadcms.com/docs/production/deployment) for full details.
+1. Branch out from `staging` & give the new branch a descriptive name eg: `feat/new-feature`, `fix/dropdown-bug` etc.
+2. After you're done developing, `git fetch && git merge origin/staging` to synchronize any new changes & resolve conflicts, if there is any.
+3. Push the branch to remote and create a PR to `staging`. Briefly describe the changes introduced in the PR.
+4. Assign a core developer to review and wait for it to be approved.
+5. That's all. Happy developing!
 
-## Questions
+## Contributing
 
-If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).
+Thank you for your willingness to contribute to this free and open source project by the Malaysian public sector! When contributing, consider first discussing your desired change with the core team via GitHub issues or discussions!
+
+### Issues
+
+Issues are very valuable to this project and we appreciate the time you take with the repository.
+
+If you have anything specific and project-related to this repository, feel free to create an issue ticket.
+
+- Ideas are a valuable source of contributions others can make
+- Problems show where this project is lacking
+- A question can help show how we might improve the user experience
+
+Thank you for creating them.
+
+## License
+
+kd-portal is licensed under [MIT](./LICENSE.md)
+
+Copyright © 2023 Government of Malaysia
