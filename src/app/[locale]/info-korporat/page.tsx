@@ -72,7 +72,7 @@ export default function Page({
                   )}
                 >
                   <UserGroup />
-                  Direktori Kakitangan
+                  {t("Info.staff_directory")}
                 </Link>
               </div>
             </div>

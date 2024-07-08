@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC, ReactNode, useState } from "react";
 import DataTable from "@/components/ui/data-table";
 import Search from "@/components/ui/search";
 import StaffDirectory from "@/lib/resources/directory_kd.json";
@@ -101,6 +101,16 @@ const DirektoriMain: FC = () => {
       cell: (info: any) => {
         const _info = info as Cell<StaffDirectory, unknown>;
         const { row, getValue } = _info;
+
+        if (info.row.original.id === -1)
+          return (
+            <div className="space-y-1 px-3 text-center">
+              <p className="font-semibold">
+                {_info.row.original.bhg} - {getValue() as ReactNode}
+              </p>
+            </div>
+          );
+
         return (
           <div className="space-y-1 px-3">
             <ReadMore className="whitespace-nowrap" max={["char", 30]}>

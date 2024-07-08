@@ -46,7 +46,8 @@ export function Header({ locale }: { locale: string }) {
             className="w-9 sm:w-12"
             alt="Jata Negara"
           />
-          <span className="font-poppins text-lg font-semibold max-sm:line-clamp-2 max-sm:w-min max-sm:text-xs max-sm:leading-[14px] sm:whitespace-nowrap">
+
+          <span className="line-clamp-2 max-w-[50%] font-poppins text-xs font-semibold leading-[14px] sm:line-clamp-none sm:whitespace-nowrap sm:text-lg sm:leading-normal">
             {t("Agency.name")}
           </span>
         </Link>
