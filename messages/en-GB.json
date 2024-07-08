@@ -1,176 +1,176 @@
 {
-  "Agency": {
-    "name": "Digital Ministry"
-  },
-  "Masthead": {
-    "official_gov_website": "An official Malaysian Government Website",
-    "how_to_identify": "Here's how you know",
-    "official": "Official government websites end with .gov.my",
-    "not_govmy": "If the link does not end with ",
-    "close_site": ", exit the website immediately even if it looks similar.",
-    "secure": "Secure websites use HTTPS",
-    "find_lock": "Look for a lock (",
-    "or": ") or ",
-    "precaution": " as an added precaution. If not present, do not share any sensitive information."
-  },
-  "Header": {
-    "home": "Home",
-    "corporate_info": "Corporate Info",
-    "announcements": "Announcements",
-    "achievements": "Achievements",
-    "policy": "Policy",
-    "directory": "Directory",
-    "contact_us": "Contact Us"
-  },
-  "Search": {
-    "type": "Type",
-    "search": "to search",
-    "default_placeholder": "Start typing to search"
-  },
-  "Home": {
-    "title": "Driving Digitalisation of the Nation",
-    "placeholder": "Find keywords: \u201cnews\u201d, \u201cpolicy\u201d, \u201cstaff name\u201d",
-    "popular_links": "Popular Links",
-    "Activity": {
-      "overline": "Latest Activities",
-      "title1": "Meeting between Digital Minister and the Japanese Ambassador to Malaysia",
-      "title2": "Malaysia-India Bilateral Meeting",
-      "title3": "MED4IRN Meeting No. 1/2024",
-      "title4": "Courtesy Visit from the Chinese Minister for Industry & Information Technology",
-      "title5": "World Digital Economy Technology (WDET) 2024",
-      "desc1": "This meeting aimed to strengthen bilateral relations between Malaysia and Japan in empowering potential cooperation in the fields of the digital economy, 5G, cybersecurity, and other areas of mutual interest.",
-      "desc2": "A courtesy visit from Mr. B.N. Reddy, High Commissioner of India, aimed to strengthen bilateral relations between Malaysia and India and discuss potential cooperation in the field of digital technology.",
-      "desc3": "The 1st 2024 meeting of the National Digital Economy and Fourth Industrial Revolution (4IR) Council (MED4IRN) was attended by the Digital Ministry, the Secretary General of the Digital Ministry, and the Deputy Secretary General of the Digital Ministry.",
-      "desc4": "The purpose of this visit is to strengthen bilateral relations between Malaysia and China and discuss potential cooperation in the fields of artificial intelligence, 5G adaptation, cybersecurity, human capital development, and the digital economy.",
-      "desc5": "Deputy Digital Minister, Datuk Wilson Ugak Kumbong, attended the World Digital Economy Technology (WDET) 2024 in Jakarta, Indonesia."
+    "Agency": {
+        "name": "Ministry of Digital"
     },
-    "Achievement": {
-      "overline": "Timeline",
-      "title": "Latest Achievements",
-      "desc": "Our ministry continually works to deliver real impact for the nation.",
-      "date1": "7 Jul 2024",
-      "date2": "24 Jun 2024",
-      "date3": "7 Jun 2024",
-      "date4": "6 Jun 2024",
-      "date5": "5 Jun 2024",
-      "date6": "27 Mar 2024",
-      "date7": "12 Dec 2023",
-      "title1": "PDPA amendments approved by Cabinet",
-      "title2": "MED4IRN Meeting No. 1/2024",
-      "title3": "Digital Nomad Pass expanded",
-      "title4": "Digital First strategy launched",
-      "title5": "1 million citizens complete 'AI For Citizens'",
-      "title6": "Cybersecurity Bill passed in Parliament",
-      "title7": "Digital Ministry formed",
-      "desc1": "Suggested amendments to the Personal Data Protection Act 2010 to be tabled in Parliament.",
-      "desc2": "Several strategic initiatives were approved by the Council, including the Digital Economy Blueprint.",
-      "desc3": "Eligibility expanded to include professionals or talents in areas other than IT or digital, given high demand.",
-      "desc4": "Foundation for accelerating digital services across the whole of government, led by Jabatan Digital Negara.",
-      "desc5": "1 million completions within just 5 months, faster than the announced target of 1 year.",
-      "desc6": "This Bill will enhance cybersecurity though compliance with specific measures, standards and processes.",
-      "desc7": "The first ever standalone Digital portfolio, signalling Malaysia's commitment to its digitalisation agenda."
+    "Masthead": {
+        "official_gov_website": "An official Malaysian Government Website",
+        "how_to_identify": "Here's how you know",
+        "official": "Official government websites end with .gov.my",
+        "not_govmy": "If the link does not end with ",
+        "close_site": ", exit the website immediately even if it looks similar.",
+        "secure": "Secure websites use HTTPS",
+        "find_lock": "Look for a lock (",
+        "or": ") or ",
+        "precaution": " as an added precaution. If not present, do not share any sensitive information."
     },
-    "Quicklinks": {
-      "title": "Quick Links",
-      "desc1": "Record your time of entry and exit at the office.",
-      "desc2": "Communicate and collaborate seamless across Government.",
-      "desc3": "Manage records electronically in compliance with Government procedures.",
-      "desc4": "Monitor and manage your online meetings.",
-      "desc5": "Access, check, and print your payslips.",
-      "desc6": "Manage human resources from appointment to termination.",
-      "desc7": "Procure products and services electronically for your Agency."
+    "Header": {
+        "home": "Home",
+        "corporate_info": "Corporate Info",
+        "announcements": "Announcements",
+        "achievements": "Achievements",
+        "policy": "Policy",
+        "directory": "Directory",
+        "contact_us": "Contact Us"
+    },
+    "Search": {
+        "type": "Type",
+        "search": "to search",
+        "default_placeholder": "Start typing to search"
+    },
+    "Home": {
+        "title": "Driving Digitalisation of the Nation",
+        "placeholder": "Find keywords: \u201cnews\u201d, \u201cpolicy\u201d, \u201cstaff name\u201d",
+        "popular_links": "Popular Links",
+        "Activity": {
+            "overline": "Latest Activities",
+            "title1": "Meeting between Digital Minister and the Japanese Ambassador to Malaysia",
+            "title2": "Malaysia-India Bilateral Meeting",
+            "title3": "MED4IRN Meeting No. 1/2024",
+            "title4": "Courtesy Visit from the Chinese Minister for Industry & Information Technology",
+            "title5": "World Digital Economy Technology (WDET) 2024",
+            "desc1": "This meeting aimed to strengthen bilateral relations between Malaysia and Japan in empowering potential cooperation in the fields of the digital economy, 5G, cybersecurity, and other areas of mutual interest.",
+            "desc2": "A courtesy visit from Mr. B.N. Reddy, High Commissioner of India, aimed to strengthen bilateral relations between Malaysia and India and discuss potential cooperation in the field of digital technology.",
+            "desc3": "The 1st 2024 meeting of the National Digital Economy and Fourth Industrial Revolution (4IR) Council (MED4IRN) was attended by the Ministry of Digital, the Secretary General of the Ministry of Digital, and the Deputy Secretary General of the Ministry of Digital.",
+            "desc4": "The purpose of this visit is to strengthen bilateral relations between Malaysia and China and discuss potential cooperation in the fields of artificial intelligence, 5G adaptation, cybersecurity, human capital development, and the digital economy.",
+            "desc5": "Deputy Digital Minister, Datuk Wilson Ugak Kumbong, attended the World Digital Economy Technology (WDET) 2024 in Jakarta, Indonesia."
+        },
+        "Achievement": {
+            "overline": "Timeline",
+            "title": "Latest Achievements",
+            "desc": "Our ministry continually works to deliver real impact for the nation.",
+            "date1": "7 Jul 2024",
+            "date2": "17 Jun 2024",
+            "date3": "7 Jun 2024",
+            "date4": "6 Jun 2024",
+            "date5": "5 Jun 2024",
+            "date6": "27 Mar 2024",
+            "date7": "12 Dec 2023",
+            "title1": "PDPA amendments approved by Cabinet",
+            "title2": "MED4IRN Meeting No. 1/2024",
+            "title3": "Digital Nomad Pass expanded",
+            "title4": "Digital First strategy launched",
+            "title5": "1 million citizens complete 'AI For Citizens'",
+            "title6": "Cybersecurity Bill passed in Parliament",
+            "title7": "Ministry of Digital formed",
+            "desc1": "Suggested amendments to the Personal Data Protection Act 2010 to be tabled in Parliament.",
+            "desc2": "Several strategic initiatives were approved by the Council, including the Digital Economy Blueprint.",
+            "desc3": "Eligibility expanded to include professionals or talents in areas other than IT or digital, given high demand.",
+            "desc4": "Foundation for accelerating digital services across the whole of government, led by Jabatan Digital Negara.",
+            "desc5": "1 million completions within just 5 months, faster than the announced target of 1 year.",
+            "desc6": "This Bill will enhance cybersecurity though compliance with specific measures, standards and processes.",
+            "desc7": "The first ever standalone Digital portfolio, signalling Malaysia's commitment to its digitalisation agenda."
+        },
+        "Quicklinks": {
+            "title": "Quick Links",
+            "desc1": "Record your time of entry and exit at the office.",
+            "desc2": "Communicate and collaborate seamless across Government.",
+            "desc3": "Manage records electronically in compliance with Government procedures.",
+            "desc4": "Monitor and manage your online meetings.",
+            "desc5": "Access, check, and print your payslips.",
+            "desc6": "Manage human resources from appointment to termination.",
+            "desc7": "Procure products and services electronically for your Agency."
+        }
+    },
+    "Footer": {
+        "follow_us": "Follow Us",
+        "about_us": "About Us",
+        "quick_links": "Quick Links",
+        "open_source": "Open Source",
+        "repo": "GitHub Repo",
+        "ui_ux": "Figma",
+        "all_rights_reserved": "All Rights Reserved",
+        "penafian": "Disclaimer",
+        "dasar-privasi": "Privacy Policy",
+        "safety": "Safety Policy",
+        "personal_data": "Personal Data Protection",
+        "last_update": "Last Updated"
+    },
+    "Privacy": {
+        "header": "Privacy Policy",
+        "your_privacy": "Your Privacy",
+        "your_privacy_desc": "This page explains the privacy policy that encompasses the use and protection of information submitted by visitors. If you make a transaction or send an email containing personal information, this information may be shared with other public agencies to assist in providing more effective and efficient services, for example in resolving complaints that require feedback from other agencies.",
+        "collected_info": "Information Collected",
+        "collected_info_desc": "No personal information will be collected while you are browsing this portal except for information submitted by you via email.\n\nWhat happens if I link to other portals/websites?\n\nThis portal contains links to other portals/websites. This privacy policy applies only to this website. It should be noted that the portals/websites linked may have different privacy policies, and visitors are advised to review and understand the privacy policies for each portal/website they visit.",
+        "policy_change": "Policy Change",
+        "policy_change_desc": "If this privacy policy is amended, the amendments will be updated on this page. By frequently browsing this page, you will be updated on the information collected, how it is used, and under certain conditions, how the information is shared with other parties.",
+        "personal_data": "Personal Data Protection",
+        "personal_data_act": "Personal Data Protection Act",
+        "personal_data_act_desc": "Jabatan Perlindungan Data Peribadi (JPDP) is an agency under the Ministry of Digital established on May 16, 2011, after Parliament passed the relevant Bill on the Personal Data Protection Act 2010 (APDP), Act 709.\n\nThe main responsibility of this department is to supervise the processing of individuals' personal data involved in commercial transactions by data users to prevent misuse and misappropriation by interested parties.\n\nThe security of users' personal data must be protected to prevent any form of misuse regarding the storage or processing of individuals' personal data. The public and private sectors in Malaysia are subject to commercial transactions under this APDP.\n\nIn enforcing the APDP, JPDP has mandated that all categories of personal data users, whether individual or private entities, except for the Government, must officially register to protect the rights of users and the public.\n\nJPDP is headed by a Director-General, assisted by a Deputy Director-General. There are three main divisions in JPDP, namely the Registration and Operations Division, the Monitoring Division, and the Legal Division.\n\nFor further information, please go to <a>http://www.pdp.gov.my</a>.",
+        "last_updated": "Last updated on 19th February 2024"
+    },
+    "Disclaimer": {
+        "header": "Disclaimer",
+        "desc": "The Ministry of Digital is not responsible for any loss or damage incurred from using the information on this portal."
+    },
+    "Info": {
+        "background": "Background",
+        "quote": "The establishment of a special ministry, namely the Ministry of Digital, shows Malaysia's commitment to its digitalisation agenda. Without this dedicated ministry, Malaysia will not be able to compete with other countries in the digital field.",
+        "author": "\u2013\u2013 The Right Honourable Prime Minister, Dato\u2019 Seri Anwar Ibrahim",
+        "desc1": "When announcing the cabinet reshuffle on December 12, 2023, the Right Honourable Prime Minister, Dato\u2019 Seri Anwar Ibrahim, initiated the creation of a new ministry, the Ministry of Digital.\n\nFollowing this, the Ministry of Digital was established to lead the nation's digital transformation efforts. This ministry was formed from the existing Ministry of Communications and Digital, with a realignment of digital functions to enable more focused, holistic, and effective implementation.\n\nFurthermore, the digitalisation functions within the public sector, which were previously led by the Administration Modernisation and Management Planning Unit (MAMPU), have also been enhanced through the restructuring of MAMPU into the National Digital Department (JDN), a department under the Ministry of Digital.",
+        "desc2": "The ministry was officially established on December 12, 2023, to drive the national digitalisation agenda through two main sectors, namely the Strategic Policy Sector and the Management Sector, with a total of seven divisions. To support the implementation of digital functions, two departments and five agencies were placed under the ministry's management, namely JDN, the Department of Personal Data Protection (JPDP), the Malaysia Digital Economy Corporation (MDEC), MyDIGITAL, CyberSecurity Malaysia (CSM), Digital Nasional Berhad (DNB), and MyNIC.",
+        "visi": "Vision",
+        "visi_desc": "Malaysia, a Digital Nation",
+        "misi": "Mission",
+        "misi_desc": "To lead the nation's digitalisation holistically and inclusively, and create a trusted and world-class national digital ecosystem.",
+        "Role": {
+            "title": "Functions and Roles",
+            "desc1": "<b>Digitalising government services</b> to enhance efficiency, accessibility, and citizen engagement.",
+            "desc2": "Implementing <b>open data</b> initiatives to promote transparency, accountability, and innovation.",
+            "desc3": "Providing necessary <b>skills opportunities</b> in digital technology and ensuring citizens are not left behind in the digital transformation.",
+            "desc4": "<b>Protecting digital infrastructure, data, and citizens</b> from cyber threats and enforcing laws to protect personal data and privacy.",
+            "desc5": "Fostering the <b>digital economy</b> by supporting innovative entrepreneurship and digital startups.",
+            "desc6": "<b>Fostering the ecosystem</b> of digital infrastructure and technology to create competitive businesses."
+        }
+    },
+    "Announcements": {
+        "header": "Ministry of Digital Announcements",
+        "placeholder": "Find keywords: \u201cstatement\u201d, \"announcement\""
+    },
+    "Achievements": {
+        "header": "Our Achievements"
+    },
+    "Policy": {
+        "header": "Policy Documents"
+    },
+    "Directory": {
+        "header": "Staff Directory",
+        "search_placeholder": "Search for keyword (e.g. name, position, email)",
+        "table_header": {
+            "nama": "Name",
+            "bhg": "Division",
+            "gred": "Grade",
+            "jawatan": "Position",
+            "telefon": "Phone No.",
+            "emel": "Email (@digital.gov.my)",
+            "semua": "All Divisions"
+        }
+    },
+    "Contact": {
+        "header": "Contact Us",
+        "office": "Office",
+        "telephone": "Telephone",
+        "telephone_number": "+603-8880 5977",
+        "email": "E-mail",
+        "email_address": "admin@digital.com.my"
+    },
+    "Pagination": {
+        "previous": "Previous",
+        "page_of": "{{ current }} of {{ total }}",
+        "next": "Next"
+    },
+    "404": {
+        "not_found": "Not Found",
+        "cant_find": "Could not find requested resource",
+        "back": "Return Home"
     }
-  },
-  "Footer": {
-    "follow_us": "Follow Us",
-    "about_us": "About Us",
-    "quick_links": "Quick Links",
-    "open_source": "Open Source",
-    "repo": "GitHub Repo",
-    "ui_ux": "Figma",
-    "all_rights_reserved": "All Rights Reserved",
-    "penafian": "Disclaimer",
-    "dasar-privasi": "Privacy Policy",
-    "safety": "Safety Policy",
-    "personal_data": "Personal Data Protection",
-    "last_update": "Last Updated"
-  },
-  "Privacy": {
-    "header": "Privacy Policy",
-    "your_privacy": "Your Privacy",
-    "your_privacy_desc": "This page explains the privacy policy that encompasses the use and protection of information submitted by visitors. If you make a transaction or send an email containing personal information, this information may be shared with other public agencies to assist in providing more effective and efficient services, for example in resolving complaints that require feedback from other agencies.",
-    "collected_info": "Information Collected",
-    "collected_info_desc": "No personal information will be collected while you are browsing this portal except for information submitted by you via email.\n\nWhat happens if I link to other portals/websites?\n\nThis portal contains links to other portals/websites. This privacy policy applies only to this website. It should be noted that the portals/websites linked may have different privacy policies, and visitors are advised to review and understand the privacy policies for each portal/website they visit.",
-    "policy_change": "Policy Change",
-    "policy_change_desc": "If this privacy policy is amended, the amendments will be updated on this page. By frequently browsing this page, you will be updated on the information collected, how it is used, and under certain conditions, how the information is shared with other parties.",
-    "personal_data": "Personal Data Protection",
-    "personal_data_act": "Personal Data Protection Act",
-    "personal_data_act_desc": "Jabatan Perlindungan Data Peribadi (JPDP) is an agency under the Digital Ministry established on May 16, 2011, after Parliament passed the relevant Bill on the Personal Data Protection Act 2010 (APDP), Act 709.\n\nThe main responsibility of this department is to supervise the processing of individuals' personal data involved in commercial transactions by data users to prevent misuse and misappropriation by interested parties.\n\nThe security of users' personal data must be protected to prevent any form of misuse regarding the storage or processing of individuals' personal data. The public and private sectors in Malaysia are subject to commercial transactions under this APDP.\n\nIn enforcing the APDP, JPDP has mandated that all categories of personal data users, whether individual or private entities, except for the Government, must officially register to protect the rights of users and the public.\n\nJPDP is headed by a Director-General, assisted by a Deputy Director-General. There are three main divisions in JPDP, namely the Registration and Operations Division, the Monitoring Division, and the Legal Division.\n\nFor further information, please go to <a>http://www.pdp.gov.my</a>.",
-    "last_updated": "Last updated on 19th February 2024"
-  },
-  "Disclaimer": {
-    "header": "Disclaimer",
-    "desc": "The Digital Ministry is not responsible for any loss or damage incurred from using the information on this portal."
-  },
-  "Info": {
-    "background": "Background",
-    "quote": "The establishment of a special ministry, namely the Digital Ministry, shows Malaysia's commitment to its digitalization agenda. Without this dedicated ministry, Malaysia will not be able to compete with other countries in the digital field.",
-    "author": "\u2013\u2013 The Right Honourable Prime Minister, Dato\u2019 Seri Anwar Ibrahim",
-    "desc1": "When announcing the cabinet reshuffle on December 12, 2023, the Right Honourable Prime Minister, Dato\u2019 Seri Anwar Ibrahim, initiated the creation of a new ministry, the Ministry of Digital.\n\nThe restructured national digital agenda allows for more focused, holistic, and effective implementation. The function of digitalization within the context of the public sector, previously led by the Administrative Modernization and Management Planning Unit (MAMPU), has also been strengthened through the restructuring of MAMPU, which is now known as the National Digital Department (JDN).\n\nIn addition to JDN, the foundation of this ministry is further strengthened by the presence of long-established agencies in the field of digitalization such as the Department of Personal Data Protection (JPDP), MyDIGITAL Corporation, Malaysia Digital Economy Corporation (MDEC), CyberSecurity Malaysia (CSM), Digital Nasional Berhad (DNB), and MyNIC.",
-    "desc2": "The Honourable Mr. Gobind Singh Deo has been appointed as Malaysia's first Minister of Digital. He is assisted by Deputy Minister, the Honourable Datuk Wilson Ugak Anak Kumbong. From the aspect of public administration, the Honourable Datuk Haji Rodzi Md Saad was the first Secretary-General of the Ministry of Digital.",
-    "visi": "Vision",
-    "visi_desc": "Malaysia as a leading, advanced, and innovative Digital Nation, driving digital transformation for the well-being of the people and the prosperity of the country.",
-    "misi": "Mission",
-    "misi_desc": "To lead the nation's digitalization holistically and inclusively. To create a trusted and world-class national digital ecosystem.",
-    "Role": {
-      "title": "Functions and Roles",
-      "desc1": "<b>Digitizing government services</b> to enhance efficiency, accessibility, and citizen engagement.",
-      "desc2": "Implementing <b>open data</b> initiatives to promote transparency, accountability, and innovation.",
-      "desc3": "Providing necessary <b>skills opportunities</b> in digital technology and ensuring citizens are not left behind in the digital transformation.",
-      "desc4": "<b>Protecting digital infrastructure, data, and citizens</b> from cyber threats and enforcing laws to protect personal data and privacy.",
-      "desc5": "Fostering the <b>digital economy</b> by supporting innovative entrepreneurship and digital startups.",
-      "desc6": "<b>Fostering the ecosystem</b> of digital infrastructure and technology to create competitive businesses."
-    }
-  },
-  "Announcements": {
-    "header": "Digital Ministry Announcements",
-    "placeholder": "Find keywords: \u201cstatement\u201d, \"announcement\""
-  },
-  "Achievements": {
-    "header": "Our Achievements"
-  },
-  "Policy": {
-    "header": "Policy Documents"
-  },
-  "Directory": {
-    "header": "Staff Directory",
-    "search_placeholder": "Search for keyword (e.g. name, position, email)",
-    "table_header": {
-      "nama": "Name",
-      "bhg": "Department",
-      "gred": "Grade",
-      "jawatan": "Position",
-      "telefon": "Phone No.",
-      "emel": "Email (@digital.gov.my)",
-      "semua": "All Divisions"
-    }
-  },
-  "Contact": {
-    "header": "Contact Us",
-    "office": "Office",
-    "telephone": "Telephone",
-    "telephone_number": "+603-8880 5977",
-    "email": "E-mail",
-    "email_address": "admin@digital.com.my"
-  },
-  "Pagination": {
-    "previous": "Previous",
-    "page_of": "{{ current }} of {{ total }}",
-    "next": "Next"
-  },
-  "404": {
-    "not_found": "Not Found",
-    "cant_find": "Could not find requested resource",
-    "back": "Return Home"
-  }
 }
