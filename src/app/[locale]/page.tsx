@@ -19,7 +19,7 @@ export default function Page({
   const t = useTranslations();
 
   return (
-    <main className="divide-washed-100 divide-y">
+    <main>
       <section className="relative w-full gap-6 sm:grid sm:grid-cols-6 border-b">
         <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden bg-gradient-radial from-brand-200 from-0% via-[#F1F5FF] via-[27.57%] to-white to-100%">
           <HeroPattern className="absolute -top-[23.33%] animate-flow motion-reduce:animate-none" />

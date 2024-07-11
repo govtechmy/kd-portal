@@ -42,8 +42,11 @@ export function Header({ locale }: { locale: string }) {
           <Link href="/" className="flex h-full w-full items-center gap-2.5">
             <Image
               src="/jata-negara.png"
-              width={48}
+              width={40}
               height={32}
+              style={{
+                width: "auto",
+              }}
               className="h-8 w-fit"
               alt="Jata Negara"
             />

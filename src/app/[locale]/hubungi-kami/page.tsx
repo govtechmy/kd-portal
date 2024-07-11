@@ -20,17 +20,17 @@ export default function Page({
   const t = useTranslations();
 
   return (
-    <main className="divide-y divide-washed-100">
-      <div className="relative">
+    <main>
+      <section className="relative border-b border-outline-200">
         <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden">
           <HeroPattern className="absolute -top-[83.33%]" />
         </div>
         <h1 className="py-16 text-center font-poppins text-hmd font-semibold">
           {t("Contact.header")}
         </h1>
-      </div>
+      </section>
 
-      <section className="container border-x border-washed-100 py-12 lg:py-[84px] xl:grid xl:grid-cols-12">
+      <section className="container border-x border-b border-washed-100 py-12 lg:py-[84px] xl:grid xl:grid-cols-12">
         <div className="col-span-10 col-start-2">
           <div className="flex flex-col gap-12 sm:flex-row">
             <div className="space-y-4.5 sm:w-1/3 lg:py-16">
@@ -87,7 +87,7 @@ export default function Page({
         </div>
       </section>
 
-      <section className="container grid border-collapse grid-cols-2 px-0 sm:grid-cols-4 lg:flex lg:border-x lg:border-x-washed-100">
+      <section className="container grid divide-x max-lg:divide-y lg:divide-x lg:divide-washed-100 grid-cols-2 px-0 sm:grid-cols-4 lg:flex lg:border-x lg:border-x-washed-100">
         {[
           {
             icon: <Phone className="size-6" />,
@@ -103,7 +103,7 @@ export default function Page({
           <a
             key={title}
             href={`${title === "email" ? "mailto" : "tel"}:${t(desc)}`}
-            className="group col-span-2 flex flex-auto gap-4.5 border border-washed-100 px-6 py-8 md:py-[34px]"
+            className="group col-span-2 flex flex-auto gap-4.5  border-washed-100 px-6 py-8 md:py-[34px]"
           >
             <div className="size-[42px] rounded-full bg-brand-50 p-[9px] text-brand-700">
               {icon}
@@ -124,7 +124,7 @@ export default function Page({
             href={href}
             target="_blank"
             rel="noopenner noreferrer"
-            className="border border-washed-100 text-sm text-black-700 [text-underline-position:from-font] hover:text-black-900 hover:underline"
+            className="text-sm text-black-700 [text-underline-position:from-font] hover:text-black-900 hover:underline"
           >
             <div className="col-span-1 flex flex-none flex-col items-center gap-2 py-6 md:gap-3 lg:w-[100px]">
               <div className="flex size-[42px] items-center justify-center rounded-full bg-brand-50 text-brand-700">

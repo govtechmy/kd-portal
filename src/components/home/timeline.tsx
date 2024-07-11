@@ -8,7 +8,7 @@ export default function Timeline() {
   const t = useTranslations("Home.Achievement");
 
   return (
-    <section className="container lg:grid lg:grid-cols-12 lg:border-x lg:border-washed-100">
+    <section className="container border border-washed-100 lg:grid lg:grid-cols-12 lg:border-x">
       <div className="col-span-10 col-start-2 flex flex-col gap-6 max-lg:pt-12 lg:flex-row">
         <div className="space-y-4.5 lg:w-1/3 lg:py-[84px]">
           <div className="flex gap-x-3 text-foreground">
@@ -52,9 +52,7 @@ export default function Timeline() {
                   <p className="font-medium text-black-900">
                     {t(`title${i + 1}`)}
                   </p>
-                  <p className="text-sm text-black-700">
-                    {t(`desc${i + 1}`)}
-                  </p>
+                  <p className="text-sm text-black-700">{t(`desc${i + 1}`)}</p>
                   <div
                     className={cn(
                       i % 2 === 0 ? "max-sm:-left-7 sm:-right-7" : "-left-7",
