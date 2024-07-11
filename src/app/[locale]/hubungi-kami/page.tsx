@@ -20,7 +20,7 @@ export default function Page({
   const t = useTranslations();
 
   return (
-    <main className="divide-y-washed-100 divide-y">
+    <main className="divide-y divide-washed-100">
       <div className="relative">
         <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden">
           <HeroPattern className="absolute -top-[83.33%]" />
@@ -31,7 +31,7 @@ export default function Page({
       </div>
 
       <section className="container border-x border-washed-100 py-12 lg:py-[84px] xl:grid xl:grid-cols-12">
-        <div className="divide-y-washed-100 col-span-10 col-start-2 divide-y">
+        <div className="col-span-10 col-start-2">
           <div className="flex flex-col gap-12 sm:flex-row">
             <div className="space-y-4.5 sm:w-1/3 lg:py-16">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-foreground">
@@ -77,7 +77,7 @@ export default function Page({
               </div>
             </div>
             <iframe
-              className="rounded-[32px] border shadow-[0_30px_100px_-10px_#4C53614D] max-sm:aspect-square sm:w-2/3"
+              className="rounded-[32px] border border-outline-200 shadow-[0_30px_100px_-10px_#4C53614D] max-sm:aspect-square sm:w-2/3"
               loading="lazy"
               allowFullScreen
               referrerPolicy="no-referrer-when-downgrade"
@@ -87,33 +87,36 @@ export default function Page({
         </div>
       </section>
 
-      <section className="container grid grid-cols-2 divide-x divide-y divide-outline-200 px-0 sm:grid-cols-4 lg:flex lg:border-x lg:border-x-washed-100">
+      <section className="container grid border-collapse grid-cols-2 px-0 sm:grid-cols-4 lg:flex lg:border-x lg:border-x-washed-100">
         {[
           {
             icon: <Phone className="size-6" />,
-            title: "Contact.telephone",
+            title: "telephone",
             desc: "Contact.telephone_number",
           },
           {
             icon: <Envelope className="size-6" />,
-            title: "Contact.email",
+            title: "email",
             desc: "Contact.email_address",
           },
         ].map(({ icon, title, desc }) => (
-          <div
+          <a
             key={title}
-            className="col-span-2 flex flex-auto gap-4.5 px-6 py-8 md:py-[34px]"
+            href={`${title === "email" ? "mailto" : "tel"}:${t(desc)}`}
+            className="group col-span-2 flex flex-auto gap-4.5 border border-washed-100 px-6 py-8 md:py-[34px]"
           >
             <div className="size-[42px] rounded-full bg-brand-50 p-[9px] text-brand-700">
               {icon}
             </div>
             <div className="space-y-1 font-semibold">
               <p className="text-sm uppercase tracking-[0.2em] text-brand-600">
-                {t(title)}
+                {t(`Contact.${title}`)}
               </p>
-              <p className="text-lg text-black-900">{t(desc)}</p>
+              <p className="text-lg text-black-900 [text-underline-position:from-font] group-hover:underline">
+                {t(desc)}
+              </p>
             </div>
-          </div>
+          </a>
         ))}
         {social_media.map(({ icon, name, href }) => (
           <a
@@ -121,7 +124,7 @@ export default function Page({
             href={href}
             target="_blank"
             rel="noopenner noreferrer"
-            className="text-sm text-black-700 [text-underline-position:from-font] hover:text-black-900 hover:underline"
+            className="border border-washed-100 text-sm text-black-700 [text-underline-position:from-font] hover:text-black-900 hover:underline"
           >
             <div className="col-span-1 flex flex-none flex-col items-center gap-2 py-6 md:gap-3 lg:w-[100px]">
               <div className="flex size-[42px] items-center justify-center rounded-full bg-brand-50 text-brand-700">
