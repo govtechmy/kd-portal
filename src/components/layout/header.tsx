@@ -36,66 +36,67 @@ export function Header({ locale }: { locale: string }) {
   const [showMenu, setMenu] = useState<boolean>(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-background lg:border-b lg:bg-background/80 lg:backdrop-blur-[30px]">
-      <div className="container flex w-full items-center justify-between gap-3 bg-background py-3 max-lg:border-b lg:gap-4 lg:bg-transparent">
-        <Link href="/" className="flex h-full flex-none items-center gap-2.5">
-          <Image
-            src="/jata-negara.png"
-            width={48}
-            height={36}
-            className="w-9 sm:w-12"
-            alt="Jata Negara"
-          />
+    <header className="sticky top-0 z-50 border-outline-200 bg-background lg:border-b lg:bg-background/80 lg:backdrop-blur-[30px]">
+      <div className="container flex w-full items-center justify-between gap-3 border-outline-200 bg-background py-3 max-lg:border-b lg:gap-4 lg:bg-transparent">
+        <div className="flex items-center justify-between gap-3 lg:gap-4">
+          <Link href="/" className="flex h-full w-full items-center gap-2.5">
+            <Image
+              src="/jata-negara.png"
+              width={48}
+              height={32}
+              className="h-8 w-fit"
+              alt="Jata Negara"
+            />
 
-          <span className="line-clamp-2 max-w-[50%] font-poppins text-xs font-semibold leading-[14px] sm:line-clamp-none sm:whitespace-nowrap sm:text-lg sm:leading-normal">
-            {t("Agency.name")}
-          </span>
-        </Link>
+            <span className="line-clamp-2 max-w-[50%] font-poppins text-xs font-semibold leading-[14px] sm:line-clamp-none sm:whitespace-nowrap sm:text-lg sm:leading-normal">
+              {t("Agency.name")}
+            </span>
+          </Link>
 
-        <Sheet open={showMenu} onOpenChange={setMenu}>
-          <SheetContent
-            side="top"
-            className="absolute top-full -z-10 flex flex-col gap-0 rounded-b-xl p-3 lg:hidden"
-          >
-            {nav_items.map(({ name, href }) => (
-              <SheetClose asChild key={name}>
-                <Link
-                  href={href}
-                  data-state={active(href) ? "open" : "close"}
-                  className={cn(
-                    buttonVariants({ variant: "tertiary", size: "md" }),
-                    "w-full justify-start data-[state=open]:bg-washed-100",
-                  )}
-                >
-                  {t(`Header.${name}`)}
-                </Link>
-              </SheetClose>
-            ))}
-          </SheetContent>
-          <SheetPortal>
-            <SheetOverlay className="z-40" />
-          </SheetPortal>
-        </Sheet>
+          <Sheet open={showMenu} onOpenChange={setMenu}>
+            <SheetContent
+              side="top"
+              className="absolute top-full -z-10 flex flex-col gap-0 rounded-b-xl p-3 lg:hidden"
+            >
+              {nav_items.map(({ name, href }) => (
+                <SheetClose asChild key={name}>
+                  <Link
+                    href={href}
+                    data-state={active(href) ? "open" : "close"}
+                    className={cn(
+                      buttonVariants({ variant: "tertiary", size: "md" }),
+                      "w-full justify-start text-base data-[state=open]:bg-washed-100",
+                    )}
+                  >
+                    {t(`Header.${name}`)}
+                  </Link>
+                </SheetClose>
+              ))}
+            </SheetContent>
+            <SheetPortal>
+              <SheetOverlay className="z-40" />
+            </SheetPortal>
+          </Sheet>
 
-        <NavigationMenu.Root className="z-10 hidden w-full items-center lg:flex">
-          <NavigationMenu.List className="group flex list-none items-center justify-center space-x-1">
-            {nav_items.map(({ name, href }) => (
-              <NavigationMenu.Item key={name}>
-                <Link
-                  href={href}
-                  data-state={active(href) ? "open" : "close"}
-                  className={cn(
-                    buttonVariants({ variant: "tertiary" }),
-                    "w-max bg-transparent transition-colors data-[state=open]:bg-washed-100",
-                  )}
-                >
-                  {t(`Header.${name}`)}
-                </Link>
-              </NavigationMenu.Item>
-            ))}
-          </NavigationMenu.List>
-        </NavigationMenu.Root>
-
+          <NavigationMenu.Root className="z-10 hidden w-full items-center lg:flex">
+            <NavigationMenu.List className="group flex list-none items-center justify-center space-x-1">
+              {nav_items.map(({ name, href }) => (
+                <NavigationMenu.Item key={name}>
+                  <Link
+                    href={href}
+                    data-state={active(href) ? "open" : "close"}
+                    className={cn(
+                      buttonVariants({ variant: "tertiary" }),
+                      "w-max bg-transparent transition-colors data-[state=open]:bg-washed-100",
+                    )}
+                  >
+                    {t(`Header.${name}`)}
+                  </Link>
+                </NavigationMenu.Item>
+              ))}
+            </NavigationMenu.List>
+          </NavigationMenu.Root>
+        </div>
         <div className="flex items-center gap-2">
           <Suspense>
             <Locale locale={locale} />
