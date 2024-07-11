@@ -11,7 +11,7 @@ export default function CrossX({ ...props }) {
       <path
         d="M15.25 4.75L4.75 15.25M4.75 4.75L15.25 15.25"
         stroke="currentColor"
-        strokeWidth="inherit"
+        strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />

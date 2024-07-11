@@ -11,7 +11,7 @@ export default function HamburgerMenu({ ...props }) {
       <path
         d="M2.75 3.75H17.25M2.75 16.25H17.25M2.75 10H17.25"
         stroke="currentColor"
-        strokeWidth="inherit"
+        strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
