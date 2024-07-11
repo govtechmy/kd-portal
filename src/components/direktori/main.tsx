@@ -1,13 +1,14 @@
 "use client";
 
-import { FC, ReactNode, useState } from "react";
+import { FC, useState } from "react";
 import DataTable from "@/components/ui/data-table";
 import Search from "@/components/ui/search";
 import StaffDirectory from "@/lib/resources/directory_kd.json";
 import HeroPattern from "@/components/layout/hero-pattern";
 import { useTranslations } from "next-intl";
 import { Cell } from "@tanstack/react-table";
-import ReadMore from "../ui/read-more";
+import Phone from "@/icons/phone";
+import Envelope from "@/icons/envelope";
 
 interface StaffDirectory {
   id_bhg: number;
@@ -99,41 +100,63 @@ const DirektoriMain: FC = () => {
       header: "",
       accessorKey: "bhg",
       cell: (info: any) => {
-        const { row } = info as Cell<StaffDirectory, unknown>;
+        const { bhg, emel, gred, id, jawatan, nama, telefon } = (
+          info as Cell<StaffDirectory, unknown>
+        ).row.original;
 
-        if (info.row.original.id === -1)
+        if (id === -1)
           return (
-            <div className="space-y-1 px-3 text-center">
-              <p className="font-semibold">
-                {row.original.bhg} - {row.original.nama}
-              </p>
-            </div>
+            <p className="text-center font-semibold">
+              {bhg} - {nama}
+            </p>
           );
 
         return (
-          <div className="space-y-1 px-3">
-            <ReadMore className="whitespace-nowrap" max={["char", 30]}>
-              {row.original.bhg}
-            </ReadMore>
-            <div className="space-y-px">
-              <p className="font-bold">
-                {row.original.id === 0 ? (
-                  <span className="text-red-600">KOSONG</span>
+          <div className="space-y-2 font-medium text-dim-500 contrast-more:text-black-900">
+            <p className="text-balance text-xs font-semibold">{bhg}</p>
+            <div className="space-y-1">
+              <div className="flex flex-wrap items-center gap-x-1.5">
+                <span className="text-base font-semibold text-black-900">
+                  {id === 0 ? (
+                    <span className="text-red-600">KOSONG</span>
+                  ) : (
+                    nama
+                  )}
+                </span>
+                {gred !== "-" ? (
+                  <span className="rounded-md bg-outline-200 px-1 text-black-700">
+                    {gred}
+                  </span>
                 ) : (
-                  row.original.nama
+                  <></>
                 )}
-              </p>
-              <p className="text-xs">
-                {row.original.jawatan}{" "}
-                {row.original.gred !== "-" ? `(${row.original.gred})` : null}
-              </p>
+              </div>
+              <p className="text-black-700">{jawatan}</p>
             </div>
-            <p className="text-xs">
-              {row.original.telefon === "-" ? "" : `${row.original.telefon} |`}{" "}
-              {row.original.emel === "-"
-                ? ""
-                : `${row.original.emel}@digital.gov.my`}
-            </p>
+
+            {telefon !== "-" || emel !== "-" ? (
+              <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1">
+                {telefon !== "-" ? (
+                  <>
+                    <Phone className="text-outline-400" />
+                    <span>{telefon}</span>
+                  </>
+                ) : (
+                  <></>
+                )}
+                {telefon !== "-" && emel !== "-" ? "|" : ""}
+                {emel !== "-" ? (
+                  <div className="flex items-center gap-x-1.5">
+                    <Envelope className="text-outline-400" />
+                    <span>{`${emel}@digital.gov.my`}</span>
+                  </div>
+                ) : (
+                  <></>
+                )}
+              </div>
+            ) : (
+              <></>
+            )}
           </div>
         );
       },
@@ -166,19 +189,16 @@ const DirektoriMain: FC = () => {
             {t("Directory.header")}
           </h1>
 
-          <div className="mx-auto flex w-full items-center gap-2.5 rounded-full border bg-background pl-4.5 pr-1.5 shadow-card sm:w-[600px]">
-            <Search
-              onChange={(query) => searchArray(StaffDirectory, query)}
-              placeholder={t("Directory.search_placeholder")}
-            />
-          </div>
+          <Search
+            onChange={(query) => searchArray(StaffDirectory, query)}
+            placeholder={t("Directory.search_placeholder")}
+          />
         </div>
       </section>
 
       <section className="container hidden min-h-screen w-full border-x border-x-washed-100 px-6 py-12 sm:flex">
         <DataTable
           key={JSON.stringify(data)}
-          className="w-full border-0"
           columns={column}
           data={data}
           resizeable={false}
@@ -195,10 +215,10 @@ const DirektoriMain: FC = () => {
         />
       </section>
 
-      <section className="container flex min-h-screen w-full flex-col border-x border-x-washed-100 px-6 py-12 sm:hidden">
+      {/* Mobile */}
+      <section className="container flex min-h-screen w-full flex-col border-x border-x-washed-100 px-4.5 py-12 sm:hidden">
         <DataTable
           key={JSON.stringify(data)}
-          className="w-full border-0"
           columns={mobileColumn}
           data={data}
           resizeable={false}
