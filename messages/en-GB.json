@@ -122,6 +122,19 @@
         "visi_desc": "Malaysia, a Digital Nation",
         "misi": "Mission",
         "misi_desc": "To lead the nation's digitalisation holistically and inclusively, and create a trusted and world-class national digital ecosystem.",
+        "Org": {
+          "title": "Ministry Leadership",
+          "menteri_name": "YB Gobind Singh Deo",
+          "menteri": "Digital Minister",
+          "timbalan_name": "YB Datuk Wilson Ugak Anak Kumbong",
+          "timbalan": "Deputy Digital Minister",
+          "ksu_name": "YBrs. Encik Fabian Bigar",
+          "ksu":  "Secretary General",
+          "tksu1_name": "YBrs. Encik Shakib Bin Ahmad Shakir",
+          "tksu1": "Deputy Secretary General (Strategy & Management)",
+          "tksu2_name": "YBrs. Encik Ma. Sivanesan",
+          "tksu2": "Deputy Secretary General (Digital Development)"
+        },
         "Role": {
             "title": "Functions and Roles",
             "desc1": "<b>Digitalising government services</b> to enhance efficiency, accessibility, and citizen engagement.",
@@ -162,7 +175,7 @@
         "telephone": "Telephone",
         "telephone_number": "+603-8000 8000",
         "email": "E-mail",
-        "email_address": "admin@digital.com.my"
+        "email_address": "webmaster@digital.com.my"
     },
     "Pagination": {
         "previous": "Previous",
