@@ -10,11 +10,14 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
+    broadcast: Broadcast;
+    'kd-department': KdDepartment;
+    'staff-directory': StaffDirectory;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
   globals: {};
-  locale: null;
+  locale: 'ms-MY' | 'en-GB';
   user: User & {
     collection: 'users';
   };
@@ -43,6 +46,7 @@ export interface User {
 export interface Media {
   id: string;
   alt: string;
+  caption?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -54,6 +58,63 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "broadcast".
+ */
+export interface Broadcast {
+  id: string;
+  title: string;
+  type: 'announcement' | 'media_broadcast';
+  date: string;
+  description: string;
+  broadcast_text: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  isPin?: boolean | null;
+  broadcast_file?: string | Media | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "kd-department".
+ */
+export interface KdDepartment {
+  id: string;
+  id_bhg: number;
+  bhg: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "staff-directory".
+ */
+export interface StaffDirectory {
+  id: string;
+  id_bhg: string | KdDepartment;
+  staff_id: number;
+  nama?: string | null;
+  gred?: string | null;
+  jawatan?: string | null;
+  telefon?: string | null;
+  emel?: string | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

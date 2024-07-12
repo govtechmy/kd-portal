@@ -5,17 +5,34 @@ import path from "path";
 import { buildConfig } from "payload";
 import { fileURLToPath } from "url";
 import sharp from "sharp";
+import { en } from "payload/i18n/en";
 
-import { Users } from "./collections/Users";
-import { Media } from "./collections/Media";
+import PayloadCollections, { Users } from "./collections";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
 export default buildConfig({
-  collections: [Users, Media],
+  collections: PayloadCollections,
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
+  i18n: {
+    supportedLanguages: { en },
+  },
+  localization: {
+    locales: [
+      {
+        label: "Bahasa Melayu",
+        code: "ms-MY",
+      },
+      {
+        label: "English",
+        code: "en-GB",
+      },
+    ],
+    defaultLocale: "ms-MY",
+    fallback: true,
+  },
   typescript: {
     outputFile: path.resolve(dirname, "payload-types.ts"),
   },
