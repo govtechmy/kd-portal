@@ -43,16 +43,16 @@ const DirektoriMain: FC = () => {
           info.getValue()
         ),
     },
-    {
-      header: t("Directory.table_header.gred"),
-      accessorKey: "gred",
-      meta: {
-        type: "text",
-        editable: false,
-        enableReadMore: true,
-        maxChar: 10,
-      },
-    },
+    // {
+    //   header: t("Directory.table_header.gred"),
+    //   accessorKey: "gred",
+    //   meta: {
+    //     type: "text",
+    //     editable: false,
+    //     enableReadMore: true,
+    //     maxChar: 10,
+    //   },
+    // },
     {
       header: t("Directory.table_header.bhg"),
       accessorKey: "bhg",
@@ -112,7 +112,7 @@ const DirektoriMain: FC = () => {
           );
 
         return (
-          <div className="space-y-2 font-medium text-dim-500 contrast-more:text-black-900">
+          <div className="space-y-2 font-medium text-dim-500">
             <p className="text-balance text-xs font-semibold">{bhg}</p>
             <div className="space-y-1">
               <div className="flex flex-wrap items-center gap-x-1.5">
@@ -123,13 +123,13 @@ const DirektoriMain: FC = () => {
                     nama
                   )}
                 </span>
-                {gred !== "-" ? (
+                {/* {gred !== "-" ? (
                   <span className="rounded-md bg-outline-200 px-1 text-black-700">
                     {gred}
                   </span>
                 ) : (
                   <></>
-                )}
+                )} */}
               </div>
               <p className="text-black-700">{jawatan}</p>
             </div>
@@ -171,7 +171,7 @@ const DirektoriMain: FC = () => {
         return (
           item.nama.toLowerCase().includes(query) ||
           (item.emel && item.emel.toLowerCase().includes(query)) ||
-          (item.gred && item.gred.toLowerCase().includes(query)) ||
+          // (item.gred && item.gred.toLowerCase().includes(query)) ||
           (item.jawatan && item.jawatan.toLowerCase().includes(query))
         );
       }),
