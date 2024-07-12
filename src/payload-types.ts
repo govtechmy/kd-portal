@@ -13,10 +13,16 @@ export interface Config {
     broadcast: Broadcast;
     'kd-department': KdDepartment;
     'staff-directory': StaffDirectory;
+    'quick-link': QuickLink;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
-  globals: {};
+  globals: {
+    'site-info': SiteInfo;
+    header: Header;
+    footer: Footer;
+    'info-korporat': InfoKorporat;
+  };
   locale: 'ms-MY' | 'en-GB';
   user: User & {
     collection: 'users';
@@ -118,6 +124,29 @@ export interface StaffDirectory {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "quick-link".
+ */
+export interface QuickLink {
+  id: string;
+  name: string;
+  type?: ('social' | 'quick_links') | null;
+  href: {
+    link?: {
+      type?: ('reference' | 'custom') | null;
+      newTab?: boolean | null;
+      reference?:
+        | ('/' | '/pencapaian' | '/siaran' | '/hubungi-kami' | '/info-korporat' | '/direktori' | '/dasar')
+        | null;
+      url?: string | null;
+    };
+    id?: string | null;
+  }[];
+  image?: string | Media | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-preferences".
  */
 export interface PayloadPreference {
@@ -149,6 +178,124 @@ export interface PayloadMigration {
   batch?: number | null;
   updatedAt: string;
   createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-info".
+ */
+export interface SiteInfo {
+  id: string;
+  site_name: string;
+  address: string;
+  no_tel: string;
+  email: string;
+  social_media?:
+    | {
+        social: 'Facebook' | 'X' | 'Instagram' | 'Tiktok';
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ('/' | '/pencapaian' | '/siaran' | '/hubungi-kami' | '/info-korporat' | '/direktori' | '/dasar')
+            | null;
+          url?: string | null;
+          label: string;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "header".
+ */
+export interface Header {
+  id: string;
+  headerItems?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ('/' | '/pencapaian' | '/siaran' | '/hubungi-kami' | '/info-korporat' | '/direktori' | '/dasar')
+            | null;
+          url?: string | null;
+          label: string;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "footer".
+ */
+export interface Footer {
+  id: string;
+  'about-us'?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ('/' | '/pencapaian' | '/siaran' | '/hubungi-kami' | '/info-korporat' | '/direktori' | '/dasar')
+            | null;
+          url?: string | null;
+          label: string;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  'quick-links'?:
+    | {
+        'quick-links'?: (string | null) | QuickLink;
+        id?: string | null;
+      }[]
+    | null;
+  'open-source'?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ('/' | '/pencapaian' | '/siaran' | '/hubungi-kami' | '/info-korporat' | '/direktori' | '/dasar')
+            | null;
+          url?: string | null;
+          label: string;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "info-korporat".
+ */
+export interface InfoKorporat {
+  id: string;
+  'latar-belakang': {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
 }
 
 

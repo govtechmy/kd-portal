@@ -8,12 +8,14 @@ import sharp from "sharp";
 import { en } from "payload/i18n/en";
 
 import PayloadCollections, { Users } from "./collections";
+import GlobalCollections from "./globals";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
 export default buildConfig({
   collections: PayloadCollections,
+  globals: GlobalCollections,
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   i18n: {
