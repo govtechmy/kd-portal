@@ -1,8 +1,5 @@
 "use client";
 
-import { useTranslations } from "next-intl";
-import Image from "next/image";
-import { useEffect, useState } from "react";
 import {
   Carousel,
   CarouselApi,
@@ -11,6 +8,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 
 export default function ActivityCarousel() {
   const t = useTranslations("Home.Activity");
@@ -37,34 +38,33 @@ export default function ActivityCarousel() {
   return (
     <section className="container py-12 lg:border-x lg:border-washed-100 lg:py-[84px] xl:grid xl:grid-cols-12">
       <Carousel setApi={setApi} className="col-span-10 col-start-2 space-y-6">
-        <div className="flex flex-col gap-12 lg:flex-row">
-          <div className="space-y-4.5 lg:w-1/3">
+        <div className="flex flex-col-reverse gap-8 lg:flex-row lg:gap-12">
+          <div className="space-y-3 sm:space-y-4.5 lg:w-1/3">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-foreground">
               {t("overline")}
             </p>
-            <h2 className="text-balance font-poppins text-hsm font-semibold">
+            <h2 className="text-balance font-poppins text-2xl lg:text-hsm font-semibold">
               {t(`title${current + 1}`)}
             </h2>
             <p className="text-pretty text-black-700">
               {t(`desc${current + 1}`)}
             </p>
           </div>
-          <div className="lg:w-2/3">
-            <CarouselContent>
-              {images.map((src, index) => (
-                <CarouselItem key={index}>
-                    <Image
-                      priority
-                      src={`/images/${src}`}
-                      width={750}
-                      height={450}
-                      alt={t(`title${index + 1}`)}
-                      className="h-[300px] w-full rounded-[32px] border border-outline-200 object-cover sm:h-[450px]"
-                    />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </div>
+
+          <CarouselContent className="rounded-[32px] border border-outline-200 bg-outline-200 shadow-card sm:shadow-[0_30px_100px_-10px_#4C53614D] lg:w-2/3">
+            {images.map((src, index) => (
+              <CarouselItem key={index}>
+                <Image
+                  priority
+                  src={`/images/${src}`}
+                  width={750}
+                  height={450}
+                  alt={t(`title${index + 1}`)}
+                  className="h-[300px] w-full select-none object-cover sm:h-[450px]"
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
         </div>
 
         <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:justify-between">
@@ -80,11 +80,12 @@ export default function ActivityCarousel() {
                 <svg
                   key={i}
                   viewBox={i === current ? "0 0 15 8" : "0 0 8 8"}
-                  className={
+                  className={cn(
+                    "transition-[colors,_width] duration-300 ease-in-out",
                     i === current
                       ? "h-2 w-[15px] text-brand-700"
-                      : "size-2 text-outline-300"
-                  }
+                      : "size-2 text-outline-300",
+                  )}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <rect
