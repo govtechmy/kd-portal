@@ -37,15 +37,12 @@ export default function Masthead() {
                 {t("how_to_identify")}
               </span>
               <ChevronDown
-                className={cn(
-                  "size-4 transition",
-                  open ? "rotate-180" : "",
-                )}
+                className={cn("size-4 transition", open ? "rotate-180" : "")}
               />
             </div>
           </div>
         </button>
-        <Collapse isOpen={open} openDuration={200} closeDuration={200}>
+        <Collapse isOpen={open}>
           <div className="grid grid-cols-1 gap-4.5 pb-6 pt-4.5 sm:grid-cols-2 sm:gap-6 sm:pb-8 sm:pt-6">
             <span className="static text-sm text-brand-700 sm:hidden">
               {t("how_to_identify")}

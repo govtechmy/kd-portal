@@ -7,8 +7,8 @@ export default function Collapse({
   className,
   isOpen,
   horizontal = false,
-  openDuration = 300,
-  closeDuration = 500,
+  openDuration = 200,
+  closeDuration = 300,
 }: {
   children: ReactNode;
   className?: string;
@@ -72,7 +72,7 @@ export default function Collapse({
       <div
         ref={innerRef}
         className={cn(
-          "transition-opacity duration-500 ease-in-out motion-reduce:transition-none",
+          "transition-opacity duration-300 ease-in-out motion-reduce:transition-none",
           isOpen ? "opacity-100" : "opacity-0",
           className
         )}
