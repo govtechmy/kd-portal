@@ -7,11 +7,15 @@ export default function Collapse({
   className,
   isOpen,
   horizontal = false,
+  openDuration = 200,
+  closeDuration = 300,
 }: {
   children: ReactNode;
   className?: string;
   isOpen: boolean;
   horizontal?: boolean;
+  openDuration?: number;
+  closeDuration?: number;
 }): ReactElement {
   const containerRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
@@ -28,8 +32,8 @@ export default function Collapse({
     }
     if (initialRender.current || !container || !inner) return;
 
-    container.classList.toggle("duration-500", !isOpen);
-    container.classList.toggle("duration-300", isOpen);
+    container.classList.toggle(`duration-${closeDuration}`, !isOpen);
+    container.classList.toggle(`duration-${openDuration}`, isOpen);
 
     if (horizontal) {
       // save initial width to avoid word wrapping when container width will be changed
@@ -68,7 +72,7 @@ export default function Collapse({
       <div
         ref={innerRef}
         className={cn(
-          "py-1 transition-opacity duration-500 ease-in-out motion-reduce:transition-none",
+          "transition-opacity duration-300 ease-in-out motion-reduce:transition-none",
           isOpen ? "opacity-100" : "opacity-0",
           className
         )}

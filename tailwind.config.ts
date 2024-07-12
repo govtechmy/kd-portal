@@ -90,7 +90,7 @@ const config: Config = {
       },
       keyframes: {
         flow: {
-          "100%": {
+          to: {
             "stroke-dashoffset": "100",
           },
         },

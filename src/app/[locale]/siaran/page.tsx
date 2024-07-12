@@ -11,7 +11,7 @@ export default function Page() {
   notFound();
 
   return (
-    <main className="divide-y-washed-100 divide-y">
+    <main className="divide-washed-100 divide-y">
       <section className="relative">
         <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden">
           <HeroPattern className="absolute -top-[83.33%]" />

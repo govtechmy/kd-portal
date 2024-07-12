@@ -14,7 +14,9 @@ export const routes = {
   CONTACT_US: "/hubungi-kami",
   CORPORATE_INFO: "/info-korporat",
   DIRECTORY: "/direktori",
+  DISCLAIMER: "/penafian",
   POLICY: "/dasar",
+  PRIVACY: "/dasar-privasi",
 };
 
 const parse = (

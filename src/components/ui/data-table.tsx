@@ -265,7 +265,7 @@ const DataTable = <TData, TValue>({
   );
 
   return (
-    <div className={cn("flex flex-col rounded-md border", className)}>
+    <div className={cn("flex w-full flex-col rounded-md", className)}>
       <div className="mb-4 flex items-center gap-2">
         {dropdownFilterHeader && (
           <DropdownSingleFilter
@@ -390,7 +390,7 @@ const DataTable = <TData, TValue>({
                       key={mergedRow.id}
                       colSpan={6}
                       className={cn(
-                        "py-2.5 text-center font-bold",
+                        "text-center font-bold",
                         ["currency", "number"].includes(
                           mergedRow.column.columnDef.meta?.type!,
                         ) && "text-right tabular-nums",
@@ -408,7 +408,7 @@ const DataTable = <TData, TValue>({
                         id={cell.id}
                         key={cell.id}
                         className={cn(
-                          "py-2.5 text-start",
+                          "text-start",
                           ["currency", "number"].includes(
                             cell.column.columnDef.meta?.type!,
                           ) && "text-right tabular-nums",

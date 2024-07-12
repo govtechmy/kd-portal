@@ -28,7 +28,7 @@ export default function Page({
   const t = useTranslations();
 
   return (
-    <main className="divide-y-washed-100 divide-y">
+    <main className="divide-y divide-washed-100">
       <section className="container flex flex-col gap-16 py-[84px] lg:border-x lg:border-x-washed-100">
         <div className="space-y-16">
           <div className="flex flex-col items-center gap-6">
@@ -49,7 +49,7 @@ export default function Page({
           <div className="gap-[42px] lg:grid lg:grid-cols-4">
             <div className="col-span-2 col-start-2">
               <div className="mx-auto flex max-w-prose flex-col gap-[42px]">
-                <div>
+                <blockquote>
                   <p className="font-poppins text-[46px] leading-none text-brand-600">
                     “
                   </p>
@@ -59,7 +59,7 @@ export default function Page({
                     </p>
                     <p className="text-dim-500">{t("Info.author")}</p>
                   </div>
-                </div>
+                </blockquote>
 
                 <p className="whitespace-pre-line">{t("Info.desc1")}</p>
                 <p className="whitespace-pre-line">{t("Info.desc2")}</p>
@@ -80,7 +80,8 @@ export default function Page({
         </div>
       </section>
 
-      <section className="container grid grid-cols-1 divide-y divide-washed-100 md:grid-cols-2 md:divide-x lg:border-x lg:border-x-washed-100">
+      {/* Visi & Misi */}
+      <section className="container grid grid-cols-1 divide-washed-100 max-md:divide-y md:grid-cols-2 md:divide-x lg:border-x lg:border-x-washed-100">
         {[
           {
             icon: <EyeShow className="size-8" />,
@@ -110,36 +111,32 @@ export default function Page({
         ))}
       </section>
 
+      {/* Fungsi & Peranan */}
       <section className="container py-12 md:py-[84px] lg:border-x lg:border-washed-100 xl:grid xl:grid-cols-12">
         <div className="col-span-10 col-start-2 space-y-12 md:space-y-[74px]">
           <h2 className="text-center font-poppins text-hsm font-semibold">
             {t("Info.Role.title")}
           </h2>
           <div className="grid grid-cols-1 gap-y-8 sm:gap-x-12 sm:gap-y-[72px] md:grid-cols-2 lg:grid-cols-3">
-            {[
-              { icon: <Gov className="size-8" /> },
-              { icon: <Globe className="size-8" /> },
-              { icon: <Bolt className="size-8" /> },
-              { icon: <CheckmarkShield className="size-8" /> },
-              { icon: <Money className="size-8" /> },
-              { icon: <Trophy className="size-8" /> },
-            ].map(({ icon }, i) => (
-              <div key={i} className="flex flex-row gap-4.5 md:flex-col">
-                <div className="size-[54px] rounded-xl bg-brand-50 p-[11px] text-brand-700">
-                  {icon}
-                </div>
+            {[Gov, Globe, Bolt, CheckmarkShield, Money, Trophy].map(
+              (Icon, i) => (
+                <div key={i} className="flex flex-row gap-4.5 md:flex-col">
+                  <div className="size-[54px] rounded-xl bg-brand-50 p-[11px] text-brand-700">
+                    <Icon className="stroke-1.5 size-8" />
+                  </div>
 
-                <p className="text-black-700">
-                  {t.rich(`Info.Role.desc${i + 1}`, {
-                    b: (chunks) => (
-                      <span className="font-semibold text-foreground">
-                        {chunks}
-                      </span>
-                    ),
-                  })}
-                </p>
-              </div>
-            ))}
+                  <p className="text-black-700">
+                    {t.rich(`Info.Role.desc${i + 1}`, {
+                      b: (chunks) => (
+                        <span className="font-semibold text-foreground">
+                          {chunks}
+                        </span>
+                      ),
+                    })}
+                  </p>
+                </div>
+              ),
+            )}
           </div>
         </div>
       </section>

@@ -122,6 +122,19 @@
         "visi_desc": "Malaysia Negara Digital",
         "misi": "Misi",
         "misi_desc": "Meneraju pendigitalan negara secara holistik dan inklusif, serta mewujudkan ekosistem digital negara yang dipercayai dan bertaraf dunia.",
+        "Org": {
+          "title": "Kepimpinan Kementerian",
+          "menteri_name": "YB Gobind Singh Deo",
+          "menteri": "Menteri Digital",
+          "timbalan_name": "YB Datuk Wilson Ugak Anak Kumbong",
+          "timbalan": "Timbalan Menteri Digital",
+          "ksu_name": "YBrs. Encik Fabian Bigar",
+          "ksu": "Ketua Setiausaha",
+          "tksu1_name": "YBrs. Encik Shakib Bin Ahmad Shakir",
+          "tksu1": "Timbalan Ketua Setiausaha (Strategik & Pengurusan)",
+          "tksu2_name": "YBrs. Encik Ma. Sivanesan",
+          "tksu2": "Timbalan Ketua Setiausaha (Pembangunan Digital)"
+        },
         "Role": {
             "title": "Fungsi dan Peranan",
             "desc1": "<b>Mendigitalkan perkhidmatan kerajaan</b> untuk meningkatkan kecekapan, kebolehcapaian dan penglibatan rakyat.",
@@ -162,7 +175,7 @@
         "telephone": "Telefon",
         "telephone_number": "+603-8000 8000",
         "email": "E-mel",
-        "email_address": "admin@digital.com.my"
+        "email_address": "webmaster@digital.com.my"
     },
     "Pagination": {
         "previous": "Sebelum",

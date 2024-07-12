@@ -63,8 +63,8 @@ export default function Footer() {
   };
 
   return (
-    <div className="border-t bg-background-50 py-8 lg:py-16">
-      <div className="divide-y-outline-200 container divide-y max-sm:px-0">
+    <div className="border-t border-outline-200 bg-background-50 py-8 lg:py-16">
+      <div className="container divide-y divide-outline-200 max-sm:px-0">
         <div className="flex flex-col gap-6 pb-8 max-sm:px-4.5 lg:flex-row lg:justify-between">
           <div className="flex flex-col gap-4 lg:gap-4.5">
             <div className="flex items-center gap-x-2.5">
@@ -158,7 +158,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <span>
+          <time dateTime={process.env.LAST_UPDATED}>
             {t("Footer.last_update") +
               ": " +
               format.dateTime(new Date(process.env.LAST_UPDATED), {
@@ -168,9 +168,9 @@ export default function Footer() {
                 hour12: true,
                 hour: "2-digit",
                 minute: "2-digit",
-                timeZone: "Asia/Singapore",
+                timeZone: "Asia/Kuala_Lumpur",
               })}
-          </span>
+          </time>
         </div>
       </div>
     </div>
