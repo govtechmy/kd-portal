@@ -6,7 +6,6 @@ import Flag from "@/icons/flag";
 import Globe from "@/icons/globe";
 import Gov from "@/icons/gov";
 import Money from "@/icons/money";
-import { Icon } from "@/icons/social-media";
 import Trophy from "@/icons/trophy";
 import UserGroup from "@/icons/user-group";
 import { routes } from "@/lib/routes";
@@ -28,25 +27,6 @@ export default function Page({
   unstable_setRequestLocale(locale);
   const t = useTranslations();
 
-  const getIcon = (type: string) => {
-    switch (type) {
-      case "facebook":
-        return Icon.Facebook;
-      case "x":
-        return Icon.X;
-      case "tiktok":
-        return Icon.Tiktok;
-      case "instagram":
-        return Icon.Instagram;
-      case "t":
-        return Icon.Telegram;
-      case "linkedin":
-        return Icon.LinkedIn;
-
-      default:
-        return () => <></>;
-    }
-  };
   return (
     <main className="divide-y divide-washed-100">
       <section className="container flex flex-col gap-16 py-[84px] lg:border-x lg:border-x-washed-100">
@@ -100,83 +80,7 @@ export default function Page({
         </div>
       </section>
 
-      <section className="container py-12 md:py-[84px] lg:border-x lg:border-washed-100 xl:grid xl:grid-cols-12">
-        <div className="col-span-10 col-start-2 space-y-12 md:space-y-[74px]">
-          <h2 className="text-center font-poppins text-hsm font-semibold">
-            {t("Info.Org.title")}
-          </h2>
-          <div className="mx-auto grid w-full grid-cols-1 gap-y-8 md:w-fit md:grid-cols-6 md:gap-x-6 md:gap-y-[42px]">
-            {[
-              {
-                pos: "menteri",
-                links: [
-                  "facebook.com/gobindsinghdeo",
-                  "x.com/gobindsinghdeo",
-                  "tiktok.com/@gobindsinghdeo",
-                  "instagram.com/gobindsinghdeo",
-                  "t.me/gobindsinghdeo",
-                  "linkedin.com/in/gobindsinghdeo",
-                ],
-              },
-              { pos: "timbalan", links: [] },
-              { pos: "ksu", links: [] },
-              { pos: "tksu1", links: [] },
-              { pos: "tksu2", links: [] },
-            ].map(({ pos, links }, i) => (
-              <div
-                key={i}
-                className={cn(
-                  i === 0
-                    ? "md:col-start-2"
-                    : i === 1
-                      ? "md:col-start-4 md:mt-[42px]"
-                      : i > 2
-                        ? "md:mt-[42px]"
-                        : "",
-                  "flex w-full flex-row items-center gap-x-3 md:col-span-2 md:w-[250px] md:flex-col md:gap-y-5",
-                )}
-              >
-                <Image
-                  src={`/org/${pos}.webp`}
-                  width={120}
-                  height={120}
-                  alt={t(`Info.Org.${pos}`)}
-                  className="aspect-square size-[84px] rounded-xl border-2 border-background shadow-card md:size-[120px]"
-                />
-                <div className="space-y-3 md:space-y-5">
-                  <div className="space-y-1.5 text-balance md:text-center">
-                    <p className="text-lg font-semibold text-black-900">
-                      {t(`Info.Org.${pos}_name`)}
-                    </p>
-                    <p className="text-sm text-black-700">
-                      {t(`Info.Org.${pos}`)}
-                    </p>
-                  </div>
-                  {links.length > 0 ? (
-                    <div className="flex flex-wrap gap-2.5 text-brand-600 md:justify-center">
-                      {links.map((href) => {
-                        const Icon = getIcon(href.split(".")[0]);
-                        return (
-                          <a
-                            href={"https://" + href}
-                            target="_blank"
-                            rel="noopenner noreferrer"
-                          >
-                            <Icon className="size-4" />
-                          </a>
-                        );
-                      })}
-                    </div>
-                  ) : (
-                    <></>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      {/* Visi & Misi */}
       <section className="container grid grid-cols-1 divide-washed-100 max-md:divide-y md:grid-cols-2 md:divide-x lg:border-x lg:border-x-washed-100">
         {[
           {
@@ -207,6 +111,7 @@ export default function Page({
         ))}
       </section>
 
+      {/* Fungsi & Peranan */}
       <section className="container py-12 md:py-[84px] lg:border-x lg:border-washed-100 xl:grid xl:grid-cols-12">
         <div className="col-span-10 col-start-2 space-y-12 md:space-y-[74px]">
           <h2 className="text-center font-poppins text-hsm font-semibold">
