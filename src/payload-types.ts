@@ -10,9 +10,12 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
+    file: File;
     broadcast: Broadcast;
+    achievement: Achievement;
     'kd-department': KdDepartment;
     'staff-directory': StaffDirectory;
+    policy: Policy;
     'quick-link': QuickLink;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -67,6 +70,24 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "file".
+ */
+export interface File {
+  id: string;
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename: string;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "broadcast".
  */
 export interface Broadcast {
@@ -97,6 +118,36 @@ export interface Broadcast {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "achievement".
+ */
+export interface Achievement {
+  id: string;
+  title: string;
+  type: 'announcement' | 'media_broadcast';
+  date: string;
+  description: string;
+  broadcast_text: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  isFlagged?: boolean | null;
+  achievement_file?: string | Media | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "kd-department".
  */
 export interface KdDepartment {
@@ -119,6 +170,36 @@ export interface StaffDirectory {
   jawatan?: string | null;
   telefon?: string | null;
   emel?: string | null;
+  image?: string | Media | null;
+  social_media?:
+    | {
+        social: 'Facebook' | 'X' | 'Instagram' | 'Tiktok';
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | ('/' | '/pencapaian' | '/siaran' | '/hubungi-kami' | '/info-korporat' | '/direktori' | '/dasar')
+            | null;
+          url?: string | null;
+          label: string;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "policy".
+ */
+export interface Policy {
+  id: string;
+  doc_name: string;
+  doc_type: 'social' | 'quick_links';
+  doc_description?: string | null;
+  doc_date?: string | null;
+  file?: string | File | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -187,23 +268,23 @@ export interface SiteInfo {
   id: string;
   site_name: string;
   address: string;
+  map_address: string;
+  encoded_address?: string | null;
   no_tel: string;
   email: string;
-  social_media?:
-    | {
-        social: 'Facebook' | 'X' | 'Instagram' | 'Tiktok';
-        link: {
-          type?: ('reference' | 'custom') | null;
-          newTab?: boolean | null;
-          reference?:
-            | ('/' | '/pencapaian' | '/siaran' | '/hubungi-kami' | '/info-korporat' | '/direktori' | '/dasar')
-            | null;
-          url?: string | null;
-          label: string;
-        };
-        id?: string | null;
-      }[]
-    | null;
+  social_media: {
+    social: 'Facebook' | 'X' | 'Instagram' | 'Tiktok';
+    link: {
+      type?: ('reference' | 'custom') | null;
+      newTab?: boolean | null;
+      reference?:
+        | ('/' | '/pencapaian' | '/siaran' | '/hubungi-kami' | '/info-korporat' | '/direktori' | '/dasar')
+        | null;
+      url?: string | null;
+      label: string;
+    };
+    id?: string | null;
+  }[];
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -279,6 +360,20 @@ export interface Footer {
  */
 export interface InfoKorporat {
   id: string;
+  vision: {
+    statement: string;
+  };
+  mission: {
+    statement: string;
+  };
+  functions_and_role: {
+    statement: string;
+    id?: string | null;
+  }[];
+  leaders: {
+    staff: string | StaffDirectory;
+    id?: string | null;
+  }[];
   'latar-belakang': {
     root: {
       type: string;

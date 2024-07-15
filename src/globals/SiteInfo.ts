@@ -20,11 +20,30 @@ export const SiteInfo: GlobalConfig = {
     },
     {
       name: "address",
+      label: "Full Address",
       type: "textarea",
       required: true,
       admin: {
         rows: 5,
         width: "50%",
+      },
+    },
+    {
+      name: "map_address",
+      label: "Map Address",
+      type: "text",
+      required: true,
+      admin: {
+        description:
+          "Add the address to use for using with Google Maps or Waze, ie, Menara Usahawan",
+      },
+    },
+    {
+      name: "encoded_address",
+      type: "text",
+      admin: {
+        readOnly: true,
+        hidden: true,
       },
     },
     {
@@ -52,6 +71,7 @@ export const SiteInfo: GlobalConfig = {
     {
       name: "social_media",
       label: "Social Media",
+      required: true,
       fields: [
         {
           name: "social",
@@ -68,4 +88,14 @@ export const SiteInfo: GlobalConfig = {
       type: "array",
     },
   ],
+  hooks: {
+    beforeValidate: [
+      ({ data }) => {
+        if (data && data.map_address) {
+          data.encoded_address = encodeURIComponent(data.map_address);
+        }
+        return data;
+      },
+    ],
+  },
 };

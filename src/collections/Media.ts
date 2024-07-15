@@ -5,7 +5,9 @@ export const Media: CollectionConfig = {
   access: {
     read: () => true,
   },
-
+  admin: {
+    useAsTitle: "filename",
+  },
   fields: [
     {
       name: "alt",
@@ -20,6 +22,7 @@ export const Media: CollectionConfig = {
   ],
   upload: {
     staticDir: "media",
+    mimeTypes: ["image/jpeg", "image/png", "image/gif", "image/webp"],
     formatOptions: {
       format: "webp",
       options: {

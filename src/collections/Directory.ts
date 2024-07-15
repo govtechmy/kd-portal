@@ -1,3 +1,5 @@
+import { socialMediaOptions } from "@/lib/constants/links";
+import link from "@/lib/fields/link";
 import { CollectionConfig } from "payload";
 
 export const KDDepartment: CollectionConfig = {
@@ -123,6 +125,29 @@ export const KDDirectory: CollectionConfig = {
         }
         return true;
       },
+    },
+    {
+      name: "image",
+      type: "upload",
+      relationTo: "media",
+    },
+    {
+      name: "social_media",
+      label: "Social Media",
+      type: "array",
+      maxRows: 4,
+      fields: [
+        {
+          name: "social",
+          type: "select",
+          required: true,
+          admin: {
+            width: "50%",
+          },
+          options: socialMediaOptions,
+        },
+        link({ forceCustomUrl: true }),
+      ],
     },
   ],
 };
