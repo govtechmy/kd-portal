@@ -1,7 +1,35 @@
 {
   "Agency": {
     "name": "Kementerian Digital",
-    "description": "Portal Rasmi Kementerian Digital Malaysia"
+    "description": "Portal Rasmi Kementerian Digital Malaysia",
+    "JDN": {
+      "name": "Jabatan Digital Negara",
+      "abbr": "JDN"
+    },
+    "JPDP": {
+      "name": "Jabatan Perlindungan Data Peribadi",
+      "abbr": "JPDP"
+    },
+    "MDEC": {
+      "name": "Malaysia Digital Economy Corporation",
+      "abbr": "MDEC"
+    },
+    "MyDigital": {
+      "name": "MyDIGITAL Corporation",
+      "abbr": ""
+    },
+    "CSM": {
+      "name": "CyberSecurity Malaysia",
+      "abbr": "CSM"
+    },
+    "DNB": {
+      "name": "Digital Nasional Berhad",
+      "abbr": "DNB"
+    },
+    "MyNIC": {
+      "name": "MyNIC",
+      "abbr": ""
+    }
   },
   "Masthead": {
     "official_gov_website": "Portal Rasmi Kerajaan Malaysia",
@@ -21,7 +49,8 @@
     "achievements": "Pencapaian",
     "policy": "Dokumen Dasar",
     "directory": "Direktori",
-    "contact_us": "Hubungi Kami"
+    "contact_us": "Hubungi Kami",
+    "dept_agency": "Jabatan & Agensi"
   },
   "Search": {
     "type": "Tekan",
