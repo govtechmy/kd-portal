@@ -41,7 +41,7 @@ export default function Footer() {
 
   const links: Record<FooterLinks, Array<{ name: string; href: string }>> = {
     about_us: [
-      { name: "corporate_info", href: routes.CORPORATE_INFO },
+      { name: "ministry_profile", href: routes.MINISTRY_PROFILE },
       // { name: "announcements", href: routes.ANNOUNCEMENTS },
       // { name: "achievements", href: routes.ACHIEVEMENTS },
       // { name: "policy", href: routes.POLICY },

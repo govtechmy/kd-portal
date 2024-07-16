@@ -25,7 +25,7 @@ export function Header({ locale }: { locale: string }) {
   const active = (href: string) => pathname.startsWith(href) && href !== "/";
   const nav_items = [
     { name: "home", href: "/" },
-    { name: "corporate_info", href: routes.CORPORATE_INFO },
+    { name: "ministry_profile", href: routes.MINISTRY_PROFILE },
     // { name: "announcements", href: routes.ANNOUNCEMENTS },
     // { name: "achievements", href: routes.ACHIEVEMENTS },
     // { name: "policy", href: routes.POLICY },

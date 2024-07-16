@@ -1,190 +1,190 @@
 {
-    "Agency": {
-        "name": "Kementerian Digital"
+  "Agency": {
+    "name": "Kementerian Digital"
+  },
+  "Masthead": {
+    "official_gov_website": "Portal Rasmi Kerajaan Malaysia",
+    "how_to_identify": "Kenal pasti begini",
+    "official": "Pautan portal rasmi berakhir dengan .gov.my",
+    "not_govmy": "Sekiranya anda melihat pautan selain ",
+    "close_site": ", segera tutupkan halaman itu walaupun ia menyerupai portal rasmi!",
+    "secure": "Portal yang selamat menggunakan HTTPS",
+    "find_lock": "Periksa ikon loker (",
+    "or": ") atau ",
+    "precaution": " di depan pautan. Sekiranya tiada, jangan kongsikan sebarang maklumat sensitif."
+  },
+  "Header": {
+    "home": "Utama",
+    "ministry_profile": "Profil Kementerian",
+    "announcements": "Siaran",
+    "achievements": "Pencapaian",
+    "policy": "Dokumen Dasar",
+    "directory": "Direktori",
+    "contact_us": "Hubungi Kami"
+  },
+  "Search": {
+    "type": "Tekan",
+    "search": "untuk cari",
+    "default_placeholder": "Mula menaip untuk membuat carian"
+  },
+  "Home": {
+    "title": "Menerajui Pendigitalan Negara",
+    "placeholder": "Cari kata kunci: \u201ctajuk berita\u201d, \u201cdasar\u201d, \u201cnama staff\u201d",
+    "popular_links": "Pautan Popular",
+    "Activity": {
+      "overline": "Aktiviti Terkini",
+      "title1": "Pertemuan Menteri Digital bersama Duta Jepun ke Malaysia",
+      "title2": "Mesyuarat Dua Hala Malaysia-India",
+      "title3": "Mesyuarat MED4IRN Bil. 1/2024",
+      "title4": "Kunjungan Hormat Menteri Industri & Teknologi Informasi, Republik Rakyat China",
+      "title5": "World Digital Economy Technology (WDET) 2024",
+      "desc1": "Sesi pertemuan ini bertujuan memperkukuhkan hubungan dua hala Malaysia-Jepun dalam memperkasakan potensi kerjasama dalam bidang ekonomi digital, 5G, keselamatan siber serta bidang lain yang mempunyai kepentingan bersama.",
+      "desc2": "Kunjungan hormat daripada Encik B.N. Reddy, Pesuruhjaya Tinggi India bertujuan memperkukuhkan hubungan dua hala Malaysia-India serta membincangkan potensi kerjasama dalam bidang teknologi digital.",
+      "desc3": "Mesyuarat Majlis Ekonomi Digital dan Revolusi Perindustrian Keempat (4IR) Negara (MED4IRN) Bil. 1 2024 dihadiri YB Menteri Digital, Ketua Setiausaha Kementerian Digital dan Timbalan Ketua Setiausaha Kementerian Digital.",
+      "desc4": "Tujuan lawatan ini adalah bagi memperkukuhkan hubungan dua hala Malaysia-China serta membincangkan potensi kerjasama dalam bidang kecerdasan buatan, adaptasi 5G, keselamatan siber, pembangunan modal insan dan ekonomi digital.",
+      "desc5": "YB Datuk Wilson Ugak Kumbong, Timbalan Menteri Digital telah menghadiri World Digital Economy Technology (WDET) 2024 di Jakarta, Indonesia."
     },
-    "Masthead": {
-        "official_gov_website": "Portal Rasmi Kerajaan Malaysia",
-        "how_to_identify": "Kenal pasti begini",
-        "official": "Pautan portal rasmi berakhir dengan .gov.my",
-        "not_govmy": "Sekiranya anda melihat pautan selain ",
-        "close_site": ", segera tutupkan halaman itu walaupun ia menyerupai portal rasmi!",
-        "secure": "Portal yang selamat menggunakan HTTPS",
-        "find_lock": "Periksa ikon loker (",
-        "or": ") atau ",
-        "precaution": " di depan pautan. Sekiranya tiada, jangan kongsikan sebarang maklumat sensitif."
+    "Achievement": {
+      "overline": "Garis Masa",
+      "title": "Pencapaian Terkini",
+      "desc": "Kementerian ini berusaha membuahkan hasil berimpak tinggi untuk negara.",
+      "date1": "7 Jul 2024",
+      "date2": "17 Jun 2024",
+      "date3": "7 Jun 2024",
+      "date4": "6 Jun 2024",
+      "date5": "5 Jun 2024",
+      "date6": "27 Mac 2024",
+      "date7": "12 Dis 2023",
+      "title1": "Kabinet luluskan pindaan PDPA",
+      "title2": "Mesyuarat MED4IRN Bil. 1/2024",
+      "title3": "Pas Nomad Digital diperluas",
+      "title4": "Peluncuran strategi Digital First",
+      "title5": "1 juta lengkapkan 'AI untuk Rakyat'",
+      "title6": "RUU Keselamatan Siber diluluskan",
+      "title7": "Kementerian Digital ditubuhkan",
+      "desc1": "Cadangan pindaan kepada Akta Perlindungan Data Peribadi 2010 akan dibentangkan di Parlimen.\n",
+      "desc2": "Beberapa inisiatif penting telah diluluskan oleh Majlis, termasuk Rangka Tindakan Ekonomi Digital.",
+      "desc3": "Kelayakan diperluas untuk merangkumi pekerja di luar bidang IT dan digital, susulan permintaan tinggi.",
+      "desc4": "Cerucuk untuk memacu urustadbir digital merentasi seluruh Kerajaan.",
+      "desc5": "1 juta penyertaan rakyat dalam masa hanya 5 bulan, lebih pantas daripada sasaran 1 tahun yang diumumkan.",
+      "desc6": "RUU tersebut akan meningkatkan keselamatan siber negara menerusi pematuhan langkah, standard dan proses tertentu.",
+      "desc7": "Portfolio digital khas buat pertama kali, menunjukkan komitmen Malaysia kepada agenda pendigitalan."
     },
-    "Header": {
-        "home": "Utama",
-        "corporate_info": "Info Korporat",
-        "announcements": "Siaran",
-        "achievements": "Pencapaian",
-        "policy": "Dokumen Dasar",
-        "directory": "Direktori",
-        "contact_us": "Hubungi Kami"
-    },
-    "Search": {
-        "type": "Tekan",
-        "search": "untuk cari",
-        "default_placeholder": "Mula menaip untuk membuat carian"
-    },
-    "Home": {
-        "title": "Menerajui Pendigitalan Negara",
-        "placeholder": "Cari kata kunci: \u201ctajuk berita\u201d, \u201cdasar\u201d, \u201cnama staff\u201d",
-        "popular_links": "Pautan Popular",
-        "Activity": {
-            "overline": "Aktiviti Terkini",
-            "title1": "Pertemuan Menteri Digital bersama Duta Jepun ke Malaysia",
-            "title2": "Mesyuarat Dua Hala Malaysia-India",
-            "title3": "Mesyuarat MED4IRN Bil. 1/2024",
-            "title4": "Kunjungan Hormat Menteri Industri & Teknologi Informasi, Republik Rakyat China",
-            "title5": "World Digital Economy Technology (WDET) 2024",
-            "desc1": "Sesi pertemuan ini bertujuan memperkukuhkan hubungan dua hala Malaysia-Jepun dalam memperkasakan potensi kerjasama dalam bidang ekonomi digital, 5G, keselamatan siber serta bidang lain yang mempunyai kepentingan bersama.",
-            "desc2": "Kunjungan hormat daripada Encik B.N. Reddy, Pesuruhjaya Tinggi India bertujuan memperkukuhkan hubungan dua hala Malaysia-India serta membincangkan potensi kerjasama dalam bidang teknologi digital.",
-            "desc3": "Mesyuarat Majlis Ekonomi Digital dan Revolusi Perindustrian Keempat (4IR) Negara (MED4IRN) Bil. 1 2024 dihadiri YB Menteri Digital, Ketua Setiausaha Kementerian Digital dan Timbalan Ketua Setiausaha Kementerian Digital.",
-            "desc4": "Tujuan lawatan ini adalah bagi memperkukuhkan hubungan dua hala Malaysia-China serta membincangkan potensi kerjasama dalam bidang kecerdasan buatan, adaptasi 5G, keselamatan siber, pembangunan modal insan dan ekonomi digital.",
-            "desc5": "YB Datuk Wilson Ugak Kumbong, Timbalan Menteri Digital telah menghadiri World Digital Economy Technology (WDET) 2024 di Jakarta, Indonesia."
-        },
-        "Achievement": {
-            "overline": "Garis Masa",
-            "title": "Pencapaian Terkini",
-            "desc": "Kementerian ini berusaha membuahkan hasil berimpak tinggi untuk negara.",
-            "date1": "7 Jul 2024",
-            "date2": "17 Jun 2024",
-            "date3": "7 Jun 2024",
-            "date4": "6 Jun 2024",
-            "date5": "5 Jun 2024",
-            "date6": "27 Mac 2024",
-            "date7": "12 Dis 2023",
-            "title1": "Kabinet luluskan pindaan PDPA",
-            "title2": "Mesyuarat MED4IRN Bil. 1/2024",
-            "title3": "Pas Nomad Digital diperluas",
-            "title4": "Peluncuran strategi Digital First",
-            "title5": "1 juta lengkapkan 'AI untuk Rakyat'",
-            "title6": "RUU Keselamatan Siber diluluskan",
-            "title7": "Kementerian Digital ditubuhkan",
-            "desc1": "Cadangan pindaan kepada Akta Perlindungan Data Peribadi 2010 akan dibentangkan di Parlimen.\n",
-            "desc2": "Beberapa inisiatif penting telah diluluskan oleh Majlis, termasuk Rangka Tindakan Ekonomi Digital.",
-            "desc3": "Kelayakan diperluas untuk merangkumi pekerja di luar bidang IT dan digital, susulan permintaan tinggi.",
-            "desc4": "Cerucuk untuk memacu urustadbir digital merentasi seluruh Kerajaan.",
-            "desc5": "1 juta penyertaan rakyat dalam masa hanya 5 bulan, lebih pantas daripada sasaran 1 tahun yang diumumkan.",
-            "desc6": "RUU tersebut akan meningkatkan keselamatan siber negara menerusi pematuhan langkah, standard dan proses tertentu.",
-            "desc7": "Portfolio digital khas buat pertama kali, menunjukkan komitmen Malaysia kepada agenda pendigitalan."
-        },
-        "Quicklinks": {
-            "title": "Capaian Pantas",
-            "desc1": "Rakamkan waktu masuk dan keluar pejabat.",
-            "desc2": "Komunikasi dan kolaborasi mudah merentas Kerajaan.",
-            "desc3": "Uruskan rekod secara elektronik dengan pematuhan kepada tadbir urus.",
-            "desc4": "Uruskan dan pantau mesyuarat dalam talian anda.",
-            "desc5": "Akses, semak, dan cetak slip penyata gaji anda.",
-            "desc6": "Uruskan sumber manusia dari pelantikan hingga penamatan.",
-            "desc7": "Perolehkan produk dan perkhidmatan secara elektronik."
-        }
-    },
-    "Footer": {
-        "follow_us": "Ikuti Kami",
-        "about_us": "Tentang Kami",
-        "quick_links": "Capaian Pantas",
-        "open_source": "Sumber Terbuka",
-        "repo": "Repo GitHub",
-        "ui_ux": "Figma",
-        "all_rights_reserved": "Hak Cipta Terpelihara",
-        "penafian": "Penafian",
-        "dasar-privasi": "Dasar Privasi",
-        "safety": "Dasar Keselamatan",
-        "personal_data": "Perlindungan Data Peribadi",
-        "last_update": "Kemaskini Terakhir"
-    },
-    "Privacy": {
-        "header": "Dasar Privasi",
-        "your_privacy": "Privasi Anda",
-        "your_privacy_desc": "Halaman ini menerangkan dasar privasi yang merangkumi penggunaan dan perlindungan maklumat yang dikemukakan oleh pengunjung. Sekiranya anda membuat transaksi atau menghantar e-mel yang mengandungi maklumat peribadi, maklumat ini mungkin akan dikongsi bersama dengan agensi awam lain untuk membantu penyediaan perkhidmatan yang lebih berkesan dan efektif. Contohnya seperti di dalam menyelesaikan aduan yang memerlukan maklum balas dari agensi-agensi lain.",
-        "collected_info": "Maklumat Yang Dikumpul",
-        "collected_info_desc": "Tiada maklumat peribadi akan dikumpul semasa anda melayari portal ini kecuali maklumat yang dikemukakan oleh anda melalui e-mel.\n\nApa yang akan berlaku jika saya membuat pautan kepada portal/laman web yang lain?\n\nPortal ini mempunyai pautan ke portal/laman web lain. Dasar privasi ini hanya terpakai untuk laman web ini sahaja. Perlu diingatkan bahawa portal/laman web yang terdapat dalam pautan mungkin mempunyai dasar privasi yang berbeza dan pengunjung dinasihatkan supaya meneliti dan memahami dasar privasi bagi setiap portal/laman web yang dilayari.",
-        "policy_change": "Pindaan Dasar",
-        "policy_change_desc": "Sekiranya dasar privasi ini dipinda, pindaan akan dikemas kini di halaman ini. Dengan sering melayari halaman ini, anda akan dikemaskini tentang maklumat yang dikumpul, cara ia digunakan dan dalam keadaan tertentu, serta bagaimana maklumat dikongsi bersama pihak yang lain.",
-        "personal_data": "Perlindungan Data Peribadi",
-        "personal_data_act": "Akta Perlindungan Data Peribadi",
-        "personal_data_act_desc": "Jabatan Perlindungan Data Peribadi (JPDP) merupakan agensi di bawah Kementerian Digital yang ditubuhkan pada 16 Mei 2011 selepas Parlimen meluluskan Rang Undang-undang berkaitan Akta Perlindungan Data Peribadi 2010 (APDP) iaitu Akta 709.\n\nTanggungjawab utama Jabatan ini ialah untuk mengawalselia pemprosesan data peribadi individu yang terlibat dalam urus niaga komersial oleh pengguna data supaya tidak disalahguna dan disalahpakai oleh pihak-pihak yang berkepentingan.\n\nKeselamatan data peribadi pengguna perlu dilindungi bagi mencegah sebarang bentuk penyalahgunaan terhadap penyimpanan atau pemprosesan data peribadi individu, awam dan swasta di Malaysia secara transaksi komersial adalah termaktub di bawah APDP ini.\n\nDalam menguatkuasakan APDP, JPDP telah mensyaratkan kepada semua golongan pengguna data peribadi yang terdiri daripada pihak individu mahupun swasta kecuali Kerajaan untuk berdaftar secara rasmi bagi tujuan melindungi hak-hak pengguna dan awam.\n\nJPDP diketuai oleh Ketua Pengarah dengan dibantu oleh seorang Timbalan Ketua Pengarah. Manakala, terdapat tiga bahagian utama di JPDP iaitu Bahagian Pendaftaran dan Operasi, Bahagian Pemantauan dan Bahagian Perundangan.\n\nUntuk maklumat tambahan, sila layari <a>http://www.pdp.gov.my</a>.",
-        "last_updated": "Kemaskini terakhir pada 19 Februari 2024"
-    },
-    "Disclaimer": {
-        "header": "Penafian",
-        "desc": "Kementerian Digital tidak bertanggungjawab terhadap sebarang kehilangan atau kerosakan yang dialami kerana menggunakan maklumat dalam portal ini."
-    },
-    "Info": {
-        "background": "Latar Belakang",
-        "quote": "Penubuhan sebuah kementerian khas iaitu Kementerian Digital adalah untuk memberi penekanan kepada agenda pendigitalan. Tanpa kementerian yang khas ini, Malaysia tidak akan dapat bersaing pantas dengan negara-negara lain dalam bidang digital.",
-        "author": "\u2013\u2013 YAB Perdana Menteri, Dato\u2019 Seri Anwar Ibrahim",
-        "desc1": "Semasa mengumumkan rombakan kabinet pada 12 Disember 2023,\u00a0 YAB Perdana Menteri, Dato\u2019 Seri Anwar Ibrahim telah mencetuskan kewujudan sebuah kementerian yang baru iaitu Kementerian Digital.\n\nSusulan itu, Kementerian Digital telah ditubuhkan bagi menerajui usaha transformasi digital negara. Kementerian ini dibentuk daripada kementerian sedia ada, iaitu Kementerian Komunikasi dan Digital dengan penjajaran semula fungsi digital bagi membolehkan pelaksanaan yang lebih berfokus, holistik dan berkesan. \n\nSelanjutnya, fungsi pendigitalan dalam konteks sektor awam yang sebelum ini diterajui oleh Unit Pemodenan Tadbiran dan Perancangan Pengurusan (MAMPU) turut diperkasakan melalui penstrukturan semula MAMPU sebagai Jabatan Digital Negara (JDN), iaitu sebuah jabatan di bawah Kementerian Digital. ",
-        "desc2": "Kementerian ini telah diwujudkan secara rasmi pada 12 Disember 2023 bagi memacu agenda pendigitalan negara melalui 2 sektor utama, iaitu Sektor Dasar Strategik dan Sektor Pengurusan dengan keseluruhan sebanyak 7 bahagian. Bagi menyokong pelaksanaan fungsi digital, 2 jabatan dan 5 agensi diletakkan di bawah pengurusan kementerian, iaitu JDN, Jabatan Perlindungan Data Peribadi (JPDP), Malaysia Digital Economy Corporation (MDEC), MyDIGITAL, CyberSecurity Malaysia (CSM), Digital Nasional Berhad (DNB) dan MyNIC.",
-        "visi": "Visi",
-        "visi_desc": "Malaysia Negara Digital",
-        "misi": "Misi",
-        "misi_desc": "Meneraju pendigitalan negara secara holistik dan inklusif, serta mewujudkan ekosistem digital negara yang dipercayai dan bertaraf dunia.",
-        "Org": {
-          "title": "Kepimpinan Kementerian",
-          "menteri_name": "YB Gobind Singh Deo",
-          "menteri": "Menteri Digital",
-          "timbalan_name": "YB Datuk Wilson Ugak Anak Kumbong",
-          "timbalan": "Timbalan Menteri Digital",
-          "ksu_name": "YBrs. Encik Fabian Bigar",
-          "ksu": "Ketua Setiausaha",
-          "tksu1_name": "YBrs. Encik Shakib Bin Ahmad Shakir",
-          "tksu1": "Timbalan Ketua Setiausaha (Strategik & Pengurusan)",
-          "tksu2_name": "YBrs. Encik Ma. Sivanesan",
-          "tksu2": "Timbalan Ketua Setiausaha (Pembangunan Digital)"
-        },
-        "Role": {
-            "title": "Fungsi dan Peranan",
-            "desc1": "<b>Mendigitalkan perkhidmatan kerajaan</b> untuk meningkatkan kecekapan, kebolehcapaian dan penglibatan rakyat.",
-            "desc2": "Melaksanakan inisiatif <b>data terbuka</b> untuk menggalakkan ketelusan, akauntabiliti dan inovasi.",
-            "desc3": "Menyediakan <b>peluang kemahiran</b> yang diperlukan dalam teknologi digital dan memastikan rakyat tidak ketinggalan dalam transformasi digital.",
-            "desc4": "<b>Melindungi prasarana digital, data, dan rakyat</b> daripada ancaman siber serta melaksanakan undang-undang untuk melindungi data peribadi dan privasi.",
-            "desc5": "\u2060Memupuk <b>ekonomi digital</b> dengan menyokong keusahawanan inovasi dan syarikat pemula digital.",
-            "desc6": "<b>Mengimbangi ekosistem</b> prasarana dan teknologi digital dalam mewujudkan perniagaan yang berdaya saing."
-        },
-        "staff_directory": "Direktori Kakitangan"
-    },
-    "Announcements": {
-        "header": "Siaran Kementerian Digital",
-        "placeholder": "Cari kata kunci: \u201ctajuk siaran\u201d, \u201cpengumuman\u201d"
-    },
-    "Achievements": {
-        "header": "Pencapaian Kami"
-    },
-    "Policy": {
-        "header": "Dokumen Dasar"
-    },
-    "Directory": {
-        "header": "Direktori Kakitangan",
-        "search_placeholder": "Cari kata kunci (nama, jawatan, emel, dsb)",
-        "table_header": {
-            "nama": "Nama",
-            "bhg": "Bahagian",
-            "gred": "Gred",
-            "jawatan": "Jawatan",
-            "telefon": "No. Telefon",
-            "emel": "Emel (@digital.gov.my)",
-            "semua": "Semua Bahagian"
-        }
-    },
-    "Contact": {
-        "header": "Hubungi Kami",
-        "office": "Pejabat",
-        "telephone": "Telefon",
-        "telephone_number": "+603-8000 8000",
-        "email": "E-mel",
-        "email_address": "webmaster@digital.com.my"
-    },
-    "Pagination": {
-        "previous": "Sebelum",
-        "page_of": "{{ current }} daripada {{ total }}",
-        "next": "Seterusnya"
-    },
-    "404": {
-        "not_found": "Tidak Dijumpai",
-        "cant_find": "Pautan tidak dijumpai",
-        "back": "Kembali Ke Laman Utama"
+    "Quicklinks": {
+      "title": "Capaian Pantas",
+      "desc1": "Rakamkan waktu masuk dan keluar pejabat.",
+      "desc2": "Komunikasi dan kolaborasi mudah merentas Kerajaan.",
+      "desc3": "Uruskan rekod secara elektronik dengan pematuhan kepada tadbir urus.",
+      "desc4": "Uruskan dan pantau mesyuarat dalam talian anda.",
+      "desc5": "Akses, semak, dan cetak slip penyata gaji anda.",
+      "desc6": "Uruskan sumber manusia dari pelantikan hingga penamatan.",
+      "desc7": "Perolehkan produk dan perkhidmatan secara elektronik."
     }
+  },
+  "Footer": {
+    "follow_us": "Ikuti Kami",
+    "about_us": "Tentang Kami",
+    "quick_links": "Capaian Pantas",
+    "open_source": "Sumber Terbuka",
+    "repo": "Repo GitHub",
+    "ui_ux": "Figma",
+    "all_rights_reserved": "Hak Cipta Terpelihara",
+    "penafian": "Penafian",
+    "dasar-privasi": "Dasar Privasi",
+    "safety": "Dasar Keselamatan",
+    "personal_data": "Perlindungan Data Peribadi",
+    "last_update": "Kemaskini Terakhir"
+  },
+  "Privacy": {
+    "header": "Dasar Privasi",
+    "your_privacy": "Privasi Anda",
+    "your_privacy_desc": "Halaman ini menerangkan dasar privasi yang merangkumi penggunaan dan perlindungan maklumat yang dikemukakan oleh pengunjung. Sekiranya anda membuat transaksi atau menghantar e-mel yang mengandungi maklumat peribadi, maklumat ini mungkin akan dikongsi bersama dengan agensi awam lain untuk membantu penyediaan perkhidmatan yang lebih berkesan dan efektif. Contohnya seperti di dalam menyelesaikan aduan yang memerlukan maklum balas dari agensi-agensi lain.",
+    "collected_info": "Maklumat Yang Dikumpul",
+    "collected_info_desc": "Tiada maklumat peribadi akan dikumpul semasa anda melayari portal ini kecuali maklumat yang dikemukakan oleh anda melalui e-mel.\n\nApa yang akan berlaku jika saya membuat pautan kepada portal/laman web yang lain?\n\nPortal ini mempunyai pautan ke portal/laman web lain. Dasar privasi ini hanya terpakai untuk laman web ini sahaja. Perlu diingatkan bahawa portal/laman web yang terdapat dalam pautan mungkin mempunyai dasar privasi yang berbeza dan pengunjung dinasihatkan supaya meneliti dan memahami dasar privasi bagi setiap portal/laman web yang dilayari.",
+    "policy_change": "Pindaan Dasar",
+    "policy_change_desc": "Sekiranya dasar privasi ini dipinda, pindaan akan dikemas kini di halaman ini. Dengan sering melayari halaman ini, anda akan dikemaskini tentang maklumat yang dikumpul, cara ia digunakan dan dalam keadaan tertentu, serta bagaimana maklumat dikongsi bersama pihak yang lain.",
+    "personal_data": "Perlindungan Data Peribadi",
+    "personal_data_act": "Akta Perlindungan Data Peribadi",
+    "personal_data_act_desc": "Jabatan Perlindungan Data Peribadi (JPDP) merupakan agensi di bawah Kementerian Digital yang ditubuhkan pada 16 Mei 2011 selepas Parlimen meluluskan Rang Undang-undang berkaitan Akta Perlindungan Data Peribadi 2010 (APDP) iaitu Akta 709.\n\nTanggungjawab utama Jabatan ini ialah untuk mengawalselia pemprosesan data peribadi individu yang terlibat dalam urus niaga komersial oleh pengguna data supaya tidak disalahguna dan disalahpakai oleh pihak-pihak yang berkepentingan.\n\nKeselamatan data peribadi pengguna perlu dilindungi bagi mencegah sebarang bentuk penyalahgunaan terhadap penyimpanan atau pemprosesan data peribadi individu, awam dan swasta di Malaysia secara transaksi komersial adalah termaktub di bawah APDP ini.\n\nDalam menguatkuasakan APDP, JPDP telah mensyaratkan kepada semua golongan pengguna data peribadi yang terdiri daripada pihak individu mahupun swasta kecuali Kerajaan untuk berdaftar secara rasmi bagi tujuan melindungi hak-hak pengguna dan awam.\n\nJPDP diketuai oleh Ketua Pengarah dengan dibantu oleh seorang Timbalan Ketua Pengarah. Manakala, terdapat tiga bahagian utama di JPDP iaitu Bahagian Pendaftaran dan Operasi, Bahagian Pemantauan dan Bahagian Perundangan.\n\nUntuk maklumat tambahan, sila layari <a>http://www.pdp.gov.my</a>.",
+    "last_updated": "Kemaskini terakhir pada 19 Februari 2024"
+  },
+  "Disclaimer": {
+    "header": "Penafian",
+    "desc": "Kementerian Digital tidak bertanggungjawab terhadap sebarang kehilangan atau kerosakan yang dialami kerana menggunakan maklumat dalam portal ini."
+  },
+  "Info": {
+    "background": "Latar Belakang",
+    "quote": "Penubuhan sebuah kementerian khas iaitu Kementerian Digital adalah untuk memberi penekanan kepada agenda pendigitalan. Tanpa kementerian yang khas ini, Malaysia tidak akan dapat bersaing pantas dengan negara-negara lain dalam bidang digital.",
+    "author": "\u2013\u2013 YAB Perdana Menteri, Dato\u2019 Seri Anwar Ibrahim",
+    "desc1": "Semasa mengumumkan rombakan kabinet pada 12 Disember 2023,\u00a0 YAB Perdana Menteri, Dato\u2019 Seri Anwar Ibrahim telah mencetuskan kewujudan sebuah kementerian yang baru iaitu Kementerian Digital.\n\nSusulan itu, Kementerian Digital telah ditubuhkan bagi menerajui usaha transformasi digital negara. Kementerian ini dibentuk daripada kementerian sedia ada, iaitu Kementerian Komunikasi dan Digital dengan penjajaran semula fungsi digital bagi membolehkan pelaksanaan yang lebih berfokus, holistik dan berkesan. \n\nSelanjutnya, fungsi pendigitalan dalam konteks sektor awam yang sebelum ini diterajui oleh Unit Pemodenan Tadbiran dan Perancangan Pengurusan (MAMPU) turut diperkasakan melalui penstrukturan semula MAMPU sebagai Jabatan Digital Negara (JDN), iaitu sebuah jabatan di bawah Kementerian Digital. ",
+    "desc2": "Kementerian ini telah diwujudkan secara rasmi pada 12 Disember 2023 bagi memacu agenda pendigitalan negara melalui 2 sektor utama, iaitu Sektor Dasar Strategik dan Sektor Pengurusan dengan keseluruhan sebanyak 7 bahagian. Bagi menyokong pelaksanaan fungsi digital, 2 jabatan dan 5 agensi diletakkan di bawah pengurusan kementerian, iaitu JDN, Jabatan Perlindungan Data Peribadi (JPDP), Malaysia Digital Economy Corporation (MDEC), MyDIGITAL, CyberSecurity Malaysia (CSM), Digital Nasional Berhad (DNB) dan MyNIC.",
+    "visi": "Visi",
+    "visi_desc": "Malaysia Negara Digital",
+    "misi": "Misi",
+    "misi_desc": "Meneraju pendigitalan negara secara holistik dan inklusif, serta mewujudkan ekosistem digital negara yang dipercayai dan bertaraf dunia.",
+    "Org": {
+      "title": "Kepimpinan Kementerian",
+      "menteri_name": "YB Gobind Singh Deo",
+      "menteri": "Menteri Digital",
+      "timbalan_name": "YB Datuk Wilson Ugak Anak Kumbong",
+      "timbalan": "Timbalan Menteri Digital",
+      "ksu_name": "YBrs. Encik Fabian Bigar",
+      "ksu": "Ketua Setiausaha",
+      "tksu1_name": "YBrs. Encik Shakib Bin Ahmad Shakir",
+      "tksu1": "Timbalan Ketua Setiausaha (Strategik & Pengurusan)",
+      "tksu2_name": "YBrs. Encik Ma. Sivanesan",
+      "tksu2": "Timbalan Ketua Setiausaha (Pembangunan Digital)"
+    },
+    "Role": {
+      "title": "Fungsi dan Peranan",
+      "desc1": "<b>Mendigitalkan perkhidmatan kerajaan</b> untuk meningkatkan kecekapan, kebolehcapaian dan penglibatan rakyat.",
+      "desc2": "Melaksanakan inisiatif <b>data terbuka</b> untuk menggalakkan ketelusan, akauntabiliti dan inovasi.",
+      "desc3": "Menyediakan <b>peluang kemahiran</b> yang diperlukan dalam teknologi digital dan memastikan rakyat tidak ketinggalan dalam transformasi digital.",
+      "desc4": "<b>Melindungi prasarana digital, data, dan rakyat</b> daripada ancaman siber serta melaksanakan undang-undang untuk melindungi data peribadi dan privasi.",
+      "desc5": "\u2060Memupuk <b>ekonomi digital</b> dengan menyokong keusahawanan inovasi dan syarikat pemula digital.",
+      "desc6": "<b>Mengimbangi ekosistem</b> prasarana dan teknologi digital dalam mewujudkan perniagaan yang berdaya saing."
+    },
+    "staff_directory": "Direktori Kakitangan"
+  },
+  "Announcements": {
+    "header": "Siaran Kementerian Digital",
+    "placeholder": "Cari kata kunci: \u201ctajuk siaran\u201d, \u201cpengumuman\u201d"
+  },
+  "Achievements": {
+    "header": "Pencapaian Kami"
+  },
+  "Policy": {
+    "header": "Dokumen Dasar"
+  },
+  "Directory": {
+    "header": "Direktori Kakitangan",
+    "search_placeholder": "Cari kata kunci (nama, jawatan, emel, dsb)",
+    "table_header": {
+      "nama": "Nama",
+      "bhg": "Bahagian",
+      "gred": "Gred",
+      "jawatan": "Jawatan",
+      "telefon": "No. Telefon",
+      "emel": "Emel (@digital.gov.my)",
+      "semua": "Semua Bahagian"
+    }
+  },
+  "Contact": {
+    "header": "Hubungi Kami",
+    "office": "Pejabat",
+    "telephone": "Telefon",
+    "telephone_number": "+603-8000 8000",
+    "email": "E-mel",
+    "email_address": "webmaster@digital.com.my"
+  },
+  "Pagination": {
+    "previous": "Sebelum",
+    "page_of": "{{ current }} daripada {{ total }}",
+    "next": "Seterusnya"
+  },
+  "404": {
+    "not_found": "Tidak Dijumpai",
+    "cant_find": "Pautan tidak dijumpai",
+    "back": "Kembali Ke Laman Utama"
+  }
 }
