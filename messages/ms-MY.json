@@ -1,6 +1,7 @@
 {
   "Agency": {
-    "name": "Kementerian Digital"
+    "name": "Kementerian Digital",
+    "description": "Portal Rasmi Kementerian Digital Malaysia"
   },
   "Masthead": {
     "official_gov_website": "Portal Rasmi Kerajaan Malaysia",

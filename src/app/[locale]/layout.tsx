@@ -4,9 +4,12 @@ import Masthead from "@/components/layout/masthead";
 import { locales } from "@/lib/i18n-config";
 import "@/lib/styles/globals.css";
 import { cn } from "@/lib/utils";
-import { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
-import { getMessages, unstable_setRequestLocale } from "next-intl/server";
+import {
+  getMessages,
+  getTranslations,
+  unstable_setRequestLocale,
+} from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { ReactNode } from "react";
 
@@ -18,19 +21,29 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
-export const metadata: Metadata = {
-  title: {
-    template: "%s | Kementerian Digital",
-    default: "Kementerian Digital",
-  },
-  description: "Portal Rasmi Kementerian Digital Malaysia",
-  alternates: {
-    canonical: `${process.env.APP_URL}`,
-    languages: {
-      "en-GB": `${process.env.APP_URL}/en-GB`,
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: {
+    locale: string;
+  };
+}) {
+  const t = await getTranslations({ locale, namespace: "Agency" });
+
+  return {
+    title: {
+      template: `%s | ${t("name")}`,
+      default: t("name"),
     },
-  },
-};
+    description: t("description"),
+    alternates: {
+      canonical: `${process.env.APP_URL}`,
+      languages: {
+        "en-GB": `${process.env.APP_URL}/en-GB`,
+      },
+    },
+  };
+}
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));

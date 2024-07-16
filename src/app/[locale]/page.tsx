@@ -4,14 +4,23 @@ import Timeline from "@/components/home/timeline";
 import HeroPattern from "@/components/layout/hero-pattern";
 import Flag from "@/icons/flag";
 import Search from "@/icons/search";
-import { Metadata } from "next";
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import React from "react";
 
-export const metadata: Metadata = {
-  title: "Kementerian Digital",
-};
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: {
+    locale: string;
+  };
+}) {
+  const t = await getTranslations({ locale, namespace: "Agency" });
+
+  return {
+    title: t("name"),
+  };
+}
 
 export default function Page({
   params: { locale },

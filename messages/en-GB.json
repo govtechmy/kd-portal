@@ -1,6 +1,7 @@
 {
   "Agency": {
-    "name": "Ministry of Digital"
+    "name": "Ministry of Digital",
+    "description": "Official Portal of the Ministry of Digital Malaysia"
   },
   "Masthead": {
     "official_gov_website": "Official Malaysia Government Website",
