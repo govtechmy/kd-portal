@@ -12,7 +12,7 @@ export const routes = {
   ACHIEVEMENTS: "/pencapaian",
   ANNOUNCEMENTS: "/siaran",
   CONTACT_US: "/hubungi-kami",
-  CORPORATE_INFO: "/info-korporat",
+  MINISTRY_PROFILE: "/profil-kementerian",
   DIRECTORY: "/direktori",
   DISCLAIMER: "/penafian",
   POLICY: "/dasar",
@@ -21,7 +21,7 @@ export const routes = {
 
 const parse = (
   obj: typeof routes,
-  deepKey: DeepKeys<typeof routes>
+  deepKey: DeepKeys<typeof routes>,
 ): string => {
   const keys = deepKey.split(".");
 
@@ -40,7 +40,7 @@ const parse = (
 const serializeQuery = (data: Record<string, any>) => {
   return Object.entries(data).reduce((prev, [key, value], index) => {
     return prev.concat(
-      ...[key, "=", value, Object.keys(data).length - 1 === index ? "" : "&"]
+      ...[key, "=", value, Object.keys(data).length - 1 === index ? "" : "&"],
     );
   }, "?");
 };
@@ -48,7 +48,7 @@ const serializeQuery = (data: Record<string, any>) => {
 const route = (
   namespace: DeepKeys<typeof routes>,
   params: Record<string, any> | undefined | null,
-  query?: Record<string, any>
+  query?: Record<string, any>,
 ) => {
   let template = parse(routes, namespace);
   if (!params && !query) return template;
@@ -62,7 +62,12 @@ const route = (
   if (query) {
     template = Object.entries(query).reduce((prev, [key, value], index) => {
       return prev.concat(
-        ...[key, "=", value, Object.keys(query).length - 1 === index ? "" : "&"]
+        ...[
+          key,
+          "=",
+          value,
+          Object.keys(query).length - 1 === index ? "" : "&",
+        ],
       );
     }, template + "?");
   }

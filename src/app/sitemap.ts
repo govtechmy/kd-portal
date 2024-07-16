@@ -35,12 +35,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     },
     {
-      url: `${APP_URL}${routes.CORPORATE_INFO}`,
+      url: `${APP_URL}${routes.MINISTRY_PROFILE}`,
       lastModified: new Date(),
       alternates: {
         languages: {
-          "en-GB": `${APP_URL}/en-GB${routes.CORPORATE_INFO}`,
-          "ms-MY": `${APP_URL}${routes.CORPORATE_INFO}`,
+          "en-GB": `${APP_URL}/en-GB${routes.MINISTRY_PROFILE}`,
+          "ms-MY": `${APP_URL}${routes.MINISTRY_PROFILE}`,
         },
       },
     },

@@ -9,6 +9,7 @@ import {
   SheetOverlay,
   SheetPortal,
 } from "@/components/ui/sheet";
+import ChevronDown from "@/icons/chevron-down";
 import CrossX from "@/icons/cross-x";
 import HamburgerMenu from "@/icons/hamburger-menu";
 import { Link, usePathname } from "@/lib/i18n";
@@ -18,6 +19,12 @@ import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Suspense, useState } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
 
 export function Header({ locale }: { locale: string }) {
   const t = useTranslations();
@@ -25,12 +32,45 @@ export function Header({ locale }: { locale: string }) {
   const active = (href: string) => pathname.startsWith(href) && href !== "/";
   const nav_items = [
     { name: "home", href: "/" },
-    { name: "corporate_info", href: routes.CORPORATE_INFO },
+    { name: "ministry_profile", href: routes.MINISTRY_PROFILE },
     // { name: "announcements", href: routes.ANNOUNCEMENTS },
     // { name: "achievements", href: routes.ACHIEVEMENTS },
     // { name: "policy", href: routes.POLICY },
     { name: "directory", href: routes.DIRECTORY },
     { name: "contact_us", href: routes.CONTACT_US },
+    {
+      name: "dept_agency",
+      href: [
+        {
+          name: "JDN",
+          href: "https://www.jdn.gov.my/",
+        },
+        {
+          name: "JPDP",
+          href: "https://www.pdp.gov.my/jpdpv2/",
+        },
+        {
+          name: "MDEC",
+          href: "https://mdec.my/",
+        },
+        {
+          name: "MyDigital",
+          href: "https://www.mydigital.gov.my/",
+        },
+        {
+          name: "CSM",
+          href: "https://www.cybersecurity.my/en/index.html",
+        },
+        {
+          name: "DNB",
+          href: "https://www.digital-nasional.com.my/",
+        },
+        {
+          name: "MyNIC",
+          href: "https://mynic.my/",
+        },
+      ],
+    },
   ];
 
   const [showMenu, setMenu] = useState<boolean>(false);
@@ -59,22 +99,62 @@ export function Header({ locale }: { locale: string }) {
           <Sheet open={showMenu} onOpenChange={setMenu}>
             <SheetContent
               side="top"
-              className="absolute top-full -z-10 flex flex-col gap-0 rounded-b-xl p-3 lg:hidden"
+              className="absolute top-full -z-10 flex flex-col gap-1 rounded-b-xl p-3 lg:hidden"
             >
-              {nav_items.map(({ name, href }) => (
-                <SheetClose asChild key={name}>
-                  <Link
-                    href={href}
-                    data-state={active(href) ? "open" : "close"}
-                    className={cn(
-                      buttonVariants({ variant: "tertiary", size: "md" }),
-                      "w-full justify-start text-base data-[state=open]:bg-washed-100",
-                    )}
+              {nav_items.map(({ name, href }) =>
+                Array.isArray(href) ? (
+                  <Accordion
+                    className="bg-white"
+                    type="single"
+                    defaultValue="item-1"
+                    collapsible
                   >
-                    {t(`Header.${name}`)}
-                  </Link>
-                </SheetClose>
-              ))}
+                    <AccordionItem value="item-1">
+                      <AccordionTrigger
+                        className={cn(
+                          buttonVariants({ variant: "tertiary", size: "md" }),
+                          "justify-start bg-white text-base hover:bg-none focus:ring-0",
+                        )}
+                      >
+                        {t(`Header.${name}`)}{" "}
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        {href.map((item) => (
+                          <SheetClose asChild key={name}>
+                            <Link
+                              href={item.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={cn(
+                                buttonVariants({
+                                  variant: "tertiary",
+                                  size: "md",
+                                }),
+                                "w-full justify-start text-sm data-[state=open]:bg-washed-100",
+                              )}
+                            >
+                              {`${t(`Agency.${item.name}.name`)}${t(`Agency.${item.name}.abbr`) ? ` (${t(`Agency.${item.name}.abbr`)})` : ""} `}
+                            </Link>
+                          </SheetClose>
+                        ))}
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                ) : (
+                  <SheetClose asChild key={name}>
+                    <Link
+                      href={href}
+                      data-state={active(href) ? "open" : "close"}
+                      className={cn(
+                        buttonVariants({ variant: "tertiary", size: "md" }),
+                        "w-full justify-start text-base data-[state=open]:bg-washed-100",
+                      )}
+                    >
+                      {t(`Header.${name}`)}
+                    </Link>
+                  </SheetClose>
+                ),
+              )}
             </SheetContent>
             <SheetPortal>
               <SheetOverlay className="z-40" />
@@ -83,21 +163,60 @@ export function Header({ locale }: { locale: string }) {
 
           <NavigationMenu.Root className="z-10 hidden w-full items-center lg:flex">
             <NavigationMenu.List className="group flex list-none items-center justify-center space-x-1">
-              {nav_items.map(({ name, href }) => (
-                <NavigationMenu.Item key={name}>
-                  <Link
-                    href={href}
-                    data-state={active(href) ? "open" : "close"}
-                    className={cn(
-                      buttonVariants({ variant: "tertiary" }),
-                      "w-max bg-transparent transition-colors data-[state=open]:bg-washed-100",
-                    )}
-                  >
-                    {t(`Header.${name}`)}
-                  </Link>
-                </NavigationMenu.Item>
-              ))}
+              {nav_items.map(({ name, href }) =>
+                Array.isArray(href) ? (
+                  <NavigationMenu.Item key={name}>
+                    <NavigationMenu.Trigger
+                      className={cn(
+                        buttonVariants({ variant: "tertiary" }),
+                        "w-max bg-transparent",
+                        "group flex select-none items-center",
+                      )}
+                    >
+                      {t(`Header.${name}`)}{" "}
+                      <ChevronDown
+                        className="duration-[150] relative transition-transform ease-in group-data-[state=open]:-rotate-180"
+                        aria-hidden
+                      />
+                    </NavigationMenu.Trigger>
+
+                    <NavigationMenu.Content className="absolute left-0 top-0">
+                      <ul className="m-0 grid list-none bg-background p-3 sm:w-[400px] sm:grid-flow-col sm:grid-rows-12">
+                        {href.map((item) => (
+                          <Link
+                            href={item.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={cn(
+                              buttonVariants({ variant: "tertiary" }),
+                              "w-full justify-start bg-transparent transition-colors data-[state=open]:bg-washed-100",
+                            )}
+                          >
+                            {`${t(`Agency.${item.name}.name`)}${t(`Agency.${item.name}.abbr`) ? ` (${t(`Agency.${item.name}.abbr`)})` : ""} `}
+                          </Link>
+                        ))}
+                      </ul>
+                    </NavigationMenu.Content>
+                  </NavigationMenu.Item>
+                ) : (
+                  <NavigationMenu.Item key={name}>
+                    <Link
+                      href={href}
+                      data-state={active(href) ? "open" : "close"}
+                      className={cn(
+                        buttonVariants({ variant: "tertiary" }),
+                        "w-max bg-transparent transition-colors data-[state=open]:bg-washed-100",
+                      )}
+                    >
+                      {t(`Header.${name}`)}
+                    </Link>
+                  </NavigationMenu.Item>
+                ),
+              )}
             </NavigationMenu.List>
+            <div className="perspective-[2000px] absolute left-0 top-full flex w-full justify-center">
+              <NavigationMenu.Viewport className="data-[state=open]:animate-scaleIn data-[state=closed]:animate-scaleOut relative mt-2 h-[250px] w-full origin-[top_center] overflow-hidden rounded-[6px] transition-[width,_height] duration-300 sm:w-[var(--radix-navigation-menu-viewport-width)]" />
+            </div>
           </NavigationMenu.Root>
         </div>
         <div className="flex items-center gap-2">

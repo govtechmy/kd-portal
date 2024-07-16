@@ -1,6 +1,7 @@
 import { Config } from "tailwindcss";
 import colors from "tailwindcss/colors";
 import tailwindcssAnimate from "tailwindcss-animate";
+const plugin = require("tailwindcss/plugin");
 
 const config: Config = {
   content: ["./src/**/*.{ts,tsx}"],
@@ -22,6 +23,14 @@ const config: Config = {
     extend: {
       animation: {
         flow: "flow 10s reverse linear forwards infinite",
+        scaleIn: "scaleIn 200ms ease",
+        scaleOut: "scaleOut 200ms ease",
+        fadeIn: "fadeIn 200ms ease",
+        fadeOut: "fadeOut 200ms ease",
+        enterFromLeft: "enterFromLeft 250ms ease",
+        enterFromRight: "enterFromRight 250ms ease",
+        exitToLeft: "exitToLeft 250ms ease",
+        exitToRight: "exitToRight 250ms ease",
       },
       backgroundImage: {
         "gradient-radial":
@@ -94,12 +103,53 @@ const config: Config = {
             "stroke-dashoffset": "100",
           },
         },
+        enterFromRight: {
+          from: { opacity: "0", transform: "translateX(200px)" },
+          to: { opacity: "1", transform: "translateX(0)" },
+        },
+        enterFromLeft: {
+          from: { opacity: "0", transform: "translateX(-200px)" },
+          to: { opacity: "1", transform: "translateX(0)" },
+        },
+        exitToRight: {
+          from: { opacity: "1", transform: "translateX(0)" },
+          to: { opacity: "0", transform: "translateX(200px)" },
+        },
+        exitToLeft: {
+          from: { opacity: "1", transform: "translateX(0)" },
+          to: { opacity: "0", transform: "translateX(-200px)" },
+        },
+        scaleIn: {
+          from: { opacity: "0", transform: "rotateX(-10deg) scale(0.9)" },
+          to: { opacity: "1", transform: "rotateX(0deg) scale(1)" },
+        },
+        scaleOut: {
+          from: { opacity: "1", transform: "rotateX(0deg) scale(1)" },
+          to: { opacity: "0", transform: "rotateX(-10deg) scale(0.95)" },
+        },
+        fadeIn: {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        fadeOut: {
+          from: { opacity: "1" },
+          to: { opacity: "0" },
+        },
       },
       spacing: {
         4.5: "18px",
       },
     },
   },
-  plugins: [tailwindcssAnimate],
+  plugins: [
+    plugin(({ matchUtilities }: any) => {
+      matchUtilities({
+        perspective: (value: any) => ({
+          perspective: value,
+        }),
+      });
+    }),
+    tailwindcssAnimate,
+  ],
 };
 export default config;

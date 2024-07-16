@@ -1,7 +1,21 @@
 import HeroPattern from "@/components/layout/hero-pattern";
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import React from "react";
+
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: {
+    locale: string;
+  };
+}) {
+  const t = await getTranslations({ locale, namespace: "Privacy" });
+
+  return {
+    title: t("header"),
+  };
+}
 
 export default function Page({
   params: { locale },
@@ -14,7 +28,7 @@ export default function Page({
   const t = useTranslations("Privacy");
 
   return (
-    <main className="divide-washed-100 divide-y">
+    <main className="divide-y divide-washed-100">
       <section className="relative">
         <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden">
           <HeroPattern className="absolute -top-[83.33%]" />
@@ -25,14 +39,14 @@ export default function Page({
       </section>
 
       <section className="container border-x border-washed-100 py-12 lg:py-[84px] xl:grid xl:grid-cols-12">
-        <div className="col-span-10 col-start-2 space-y-6 text-pretty text-sm text-black-700 whitespace-pre-line">
+        <div className="col-span-10 col-start-2 space-y-6 whitespace-pre-line text-pretty text-sm text-black-700">
           <p className="text-base font-semibold">{t("your_privacy")}</p>
           <p>{t("your_privacy_desc")}</p>
           <p className="text-base font-semibold">{t("collected_info")}</p>
           <p>{t("collected_info_desc")}</p>
           <p className="text-base font-semibold">{t("policy_change")}</p>
           <p>{t("policy_change_desc")}</p>
-          <p className="text-lg font-bold pt-6">{t("personal_data")}</p>
+          <p className="pt-6 text-lg font-bold">{t("personal_data")}</p>
           <p className="text-base font-semibold">{t("personal_data_act")}</p>
           <p>
             {t.rich("personal_data_act_desc", {

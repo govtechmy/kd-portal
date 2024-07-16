@@ -11,11 +11,25 @@ import UserGroup from "@/icons/user-group";
 import { routes } from "@/lib/routes";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 
 export const dynamic = "force-static";
+
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: {
+    locale: string;
+  };
+}) {
+  const t = await getTranslations({ locale, namespace: "Header" });
+
+  return {
+    title: t("ministry_profile"),
+  };
+}
 
 export default function Page({
   params: { locale },

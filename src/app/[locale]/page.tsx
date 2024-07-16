@@ -5,8 +5,22 @@ import HeroPattern from "@/components/layout/hero-pattern";
 import Flag from "@/icons/flag";
 import Search from "@/icons/search";
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import React from "react";
+
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: {
+    locale: string;
+  };
+}) {
+  const t = await getTranslations({ locale, namespace: "Agency" });
+
+  return {
+    title: t("name"),
+  };
+}
 
 export default function Page({
   params: { locale },
@@ -20,7 +34,7 @@ export default function Page({
 
   return (
     <main>
-      <section className="relative w-full gap-6 sm:grid sm:grid-cols-6 border-b">
+      <section className="relative w-full gap-6 border-b sm:grid sm:grid-cols-6">
         <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden bg-gradient-radial from-brand-200 from-0% via-[#F1F5FF] via-[27.57%] to-white to-100%">
           <HeroPattern className="absolute -top-[23.33%] animate-flow motion-reduce:animate-none" />
         </div>
