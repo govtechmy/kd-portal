@@ -24,7 +24,7 @@ export default async function Image({
   const t = await getTranslations({ locale, namespace: "Agency" });
 
   const imageData = await fetch(
-    new URL(`../../../public/og/${locale}.png`, import.meta.url),
+    new URL(`${process.env.APP_URL}/og/${locale}.png`, import.meta.url),
   ).then((res) => res.arrayBuffer());
 
   return new ImageResponse(
@@ -35,7 +35,6 @@ export default async function Image({
         }}
         className="relative bg-white"
       >
-        <p>hello</p>
         <img
           src={imageData}
           alt={t("name")}
