@@ -25,7 +25,7 @@ const AccordionTrigger = React.forwardRef<
   <AccordionPrimitives.Header className="flex">
     <AccordionPrimitives.Trigger
       className={cn(
-        "group flex h-[45px] flex-1 cursor-pointer items-center justify-between bg-white px-5 leading-none",
+        "group flex h-[45px] flex-1 cursor-pointer items-center justify-between bg-white px-5 leading-none outline-none",
         className,
       )}
       {...props}
