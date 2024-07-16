@@ -36,6 +36,7 @@ export async function generateMetadata({
       default: t("name"),
     },
     description: t("description"),
+    metadataBase: new URL(process.env.APP_URL),
     alternates: {
       canonical: `${process.env.APP_URL}`,
       languages: {
