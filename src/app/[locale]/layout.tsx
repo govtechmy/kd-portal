@@ -30,6 +30,21 @@ export async function generateMetadata({
 }) {
   const t = await getTranslations({ locale, namespace: "Agency" });
 
+  let ogImages = [];
+  if (locale === "ms-MY") {
+    ogImages.push({
+      url: `${process.env.APP_URL}/og/ms-MY.png`,
+      width: 1200,
+      height: 600,
+    });
+  } else {
+    ogImages.push({
+      url: `${process.env.APP_URL}/og/en-GB.png`,
+      width: 1200,
+      height: 600,
+    });
+  }
+
   return {
     title: {
       template: `%s | ${t("name")}`,
@@ -37,6 +52,9 @@ export async function generateMetadata({
     },
     description: t("description"),
     metadataBase: new URL(process.env.APP_URL),
+    openGraph: {
+      images: ogImages,
+    },
     alternates: {
       canonical: `${process.env.APP_URL}`,
       languages: {
