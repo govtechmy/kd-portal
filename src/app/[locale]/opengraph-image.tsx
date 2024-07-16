@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ImageResponse } from "next/og";
 import { getTranslations } from "next-intl/server";
 
+export const runtime = "edge";
 export const size = {
   width: 1200,
   height: 630,
@@ -24,7 +25,7 @@ export default async function OpenGraphImage({
         src={`/og/${locale}`}
         {...size}
         alt={t("name")}
-        // className="h-[300px] w-full select-none object-cover sm:h-[450px]"
+        className="h-[1200px] w-[630px] select-none object-cover"
       />
     ),
     {

@@ -181,7 +181,7 @@ export function Header({ locale }: { locale: string }) {
                     </NavigationMenu.Trigger>
 
                     <NavigationMenu.Content className="absolute left-0 top-0">
-                      <ul className="m-0 grid list-none bg-background p-3 sm:w-[400px] sm:grid-flow-col sm:grid-rows-12">
+                      <ul className="m-0 grid h-fit list-none rounded-sm border bg-background p-3 shadow-lg sm:w-[400px] sm:grid-flow-col sm:grid-rows-12">
                         {href.map((item) => (
                           <Link
                             href={item.href}
