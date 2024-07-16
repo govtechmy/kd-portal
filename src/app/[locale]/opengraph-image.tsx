@@ -13,7 +13,7 @@ export const size = {
 export const contentType = "image/png";
 
 // Image generation
-export default async function OGImage({
+export default async function Image({
   params: { locale },
 }: {
   params: {
