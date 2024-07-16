@@ -1,3 +1,4 @@
+import IconListOptions from "@/icons";
 import { GlobalConfig } from "payload";
 
 export const InfoKorporat: GlobalConfig = {
@@ -15,9 +16,6 @@ export const InfoKorporat: GlobalConfig = {
       fields: [
         {
           type: "row",
-          admin: {
-            className: "w-1/2",
-          },
           fields: [
             {
               name: "statement",
@@ -25,6 +23,24 @@ export const InfoKorporat: GlobalConfig = {
               type: "textarea",
               localized: true,
               required: true,
+              admin: {
+                className: "w-1/2",
+              },
+            },
+            {
+              type: "row",
+              fields: [
+                {
+                  name: "icon",
+                  label: "Icon",
+                  type: "select",
+                  required: true,
+                  options: IconListOptions,
+                  admin: {
+                    className: "w-1/2",
+                  },
+                },
+              ],
             },
           ],
         },
@@ -39,9 +55,6 @@ export const InfoKorporat: GlobalConfig = {
       fields: [
         {
           type: "row",
-          admin: {
-            className: "w-1/2",
-          },
           fields: [
             {
               name: "statement",
@@ -49,6 +62,24 @@ export const InfoKorporat: GlobalConfig = {
               type: "textarea",
               localized: true,
               required: true,
+              admin: {
+                className: "w-1/2",
+              },
+            },
+            {
+              type: "row",
+              fields: [
+                {
+                  name: "icon",
+                  label: "Icon",
+                  type: "select",
+                  required: true,
+                  options: IconListOptions,
+                  admin: {
+                    className: "w-1/2",
+                  },
+                },
+              ],
             },
           ],
         },
@@ -63,16 +94,31 @@ export const InfoKorporat: GlobalConfig = {
       fields: [
         {
           type: "row",
-          admin: {
-            className: "w-1/2",
-          },
           fields: [
             {
               name: "statement",
               label: "Statement",
-              type: "textarea",
+              type: "richText",
               localized: true,
               required: true,
+              admin: {
+                className: "w-1/2",
+              },
+            },
+            {
+              type: "row",
+              fields: [
+                {
+                  name: "icon",
+                  label: "Icon",
+                  type: "select",
+                  required: true,
+                  options: IconListOptions,
+                  admin: {
+                    className: "w-1/2",
+                  },
+                },
+              ],
             },
           ],
         },
@@ -82,7 +128,7 @@ export const InfoKorporat: GlobalConfig = {
       name: "leaders",
       type: "array",
       maxRows: 5,
-      required: true,
+      // required: true,
       fields: [
         {
           name: "staff",
@@ -95,7 +141,7 @@ export const InfoKorporat: GlobalConfig = {
     {
       name: "latar-belakang",
       type: "richText",
-      required: true,
+      // required: true,
       localized: true,
     },
   ],

@@ -362,19 +362,128 @@ export interface InfoKorporat {
   id: string;
   vision: {
     statement: string;
+    icon:
+      | 'arrow-back'
+      | 'arrow-forward'
+      | 'arrow-outgoing'
+      | 'bolt'
+      | 'check-circle'
+      | 'checkmark-14-point-star'
+      | 'checkmark-shield'
+      | 'chevron-down'
+      | 'chevron-left'
+      | 'chevron-right'
+      | 'chevron-up'
+      | 'cross-x'
+      | 'direction'
+      | 'ellipsis'
+      | 'envelope'
+      | 'eye-show'
+      | 'file-document-paper'
+      | 'flag'
+      | 'globe'
+      | 'gov'
+      | 'hamburger-menu'
+      | 'lock'
+      | 'map'
+      | 'money'
+      | 'phone'
+      | 'search'
+      | 'solid-lock'
+      | 'star'
+      | 'trophy'
+      | 'user-group';
   };
   mission: {
     statement: string;
+    icon:
+      | 'arrow-back'
+      | 'arrow-forward'
+      | 'arrow-outgoing'
+      | 'bolt'
+      | 'check-circle'
+      | 'checkmark-14-point-star'
+      | 'checkmark-shield'
+      | 'chevron-down'
+      | 'chevron-left'
+      | 'chevron-right'
+      | 'chevron-up'
+      | 'cross-x'
+      | 'direction'
+      | 'ellipsis'
+      | 'envelope'
+      | 'eye-show'
+      | 'file-document-paper'
+      | 'flag'
+      | 'globe'
+      | 'gov'
+      | 'hamburger-menu'
+      | 'lock'
+      | 'map'
+      | 'money'
+      | 'phone'
+      | 'search'
+      | 'solid-lock'
+      | 'star'
+      | 'trophy'
+      | 'user-group';
   };
   functions_and_role: {
-    statement: string;
+    statement: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    icon:
+      | 'arrow-back'
+      | 'arrow-forward'
+      | 'arrow-outgoing'
+      | 'bolt'
+      | 'check-circle'
+      | 'checkmark-14-point-star'
+      | 'checkmark-shield'
+      | 'chevron-down'
+      | 'chevron-left'
+      | 'chevron-right'
+      | 'chevron-up'
+      | 'cross-x'
+      | 'direction'
+      | 'ellipsis'
+      | 'envelope'
+      | 'eye-show'
+      | 'file-document-paper'
+      | 'flag'
+      | 'globe'
+      | 'gov'
+      | 'hamburger-menu'
+      | 'lock'
+      | 'map'
+      | 'money'
+      | 'phone'
+      | 'search'
+      | 'solid-lock'
+      | 'star'
+      | 'trophy'
+      | 'user-group';
     id?: string | null;
   }[];
-  leaders: {
-    staff: string | StaffDirectory;
-    id?: string | null;
-  }[];
-  'latar-belakang': {
+  leaders?:
+    | {
+        staff: string | StaffDirectory;
+        id?: string | null;
+      }[]
+    | null;
+  'latar-belakang'?: {
     root: {
       type: string;
       children: {
@@ -388,7 +497,7 @@ export interface InfoKorporat {
       version: number;
     };
     [k: string]: unknown;
-  };
+  } | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
