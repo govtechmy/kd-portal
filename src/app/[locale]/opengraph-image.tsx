@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ImageResponse } from "next/og";
 import { getTranslations } from "next-intl/server";
 
@@ -31,7 +30,7 @@ export default async function OGImage({
         className="relative bg-white"
       >
         <p>hello</p>
-        <Image
+        <img
           src={`/og/${locale}`}
           alt={t("name")}
           className="absolute"
