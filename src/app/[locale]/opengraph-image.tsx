@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ImageResponse } from "next/og";
 import { getTranslations } from "next-intl/server";
 
@@ -21,6 +22,11 @@ export default async function Image({
   };
 }) {
   const t = await getTranslations({ locale, namespace: "Agency" });
+
+  const imageData = await fetch(
+    new URL(`../../../public/og/${locale}.png`, import.meta.url),
+  ).then((res) => res.arrayBuffer());
+
   return new ImageResponse(
     (
       <div
@@ -31,7 +37,7 @@ export default async function Image({
       >
         <p>hello</p>
         <img
-          src={`/og/${locale}`}
+          src={imageData}
           alt={t("name")}
           className="absolute"
           width={1200}
