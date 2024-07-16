@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 import { getTranslations } from "next-intl/server";
 
 // Route segment config
-export const dynamic = "force-static";
+export const runtime = "edge";
 
 // Image metadata
 export const size = {
@@ -28,8 +28,9 @@ export default async function OGImage({
         style={{
           ...size,
         }}
-        className="relative"
+        className="relative bg-white"
       >
+        <p>hello</p>
         <Image
           src={`/og/${locale}`}
           alt={t("name")}

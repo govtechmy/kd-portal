@@ -14,7 +14,8 @@ export default async function middleware(request: NextRequest) {
 
   if (
     process.env.APP_ENV === "development" ||
-    process.env.APP_ENV === "production"
+    process.env.APP_ENV === "production" ||
+    process.env.APP_ENV === "staging"
   ) {
     return response;
   }
