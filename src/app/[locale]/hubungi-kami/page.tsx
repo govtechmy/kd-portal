@@ -6,8 +6,22 @@ import Envelope from "@/icons/envelope";
 import Phone from "@/icons/phone";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import React from "react";
+
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: {
+    locale: string;
+  };
+}) {
+  const t = await getTranslations({ locale, namespace: "Header" });
+
+  return {
+    title: t("contact_us"),
+  };
+}
 
 export default function Page({
   params: { locale },
@@ -87,7 +101,7 @@ export default function Page({
         </div>
       </section>
 
-      <section className="container grid divide-x max-lg:divide-y lg:divide-x lg:divide-washed-100 grid-cols-2 px-0 sm:grid-cols-4 lg:flex lg:border-x lg:border-x-washed-100">
+      <section className="container grid grid-cols-2 divide-x px-0 max-lg:divide-y sm:grid-cols-4 lg:flex lg:divide-x lg:divide-washed-100 lg:border-x lg:border-x-washed-100">
         {[
           {
             icon: <Phone className="size-6" />,
@@ -103,7 +117,7 @@ export default function Page({
           <a
             key={title}
             href={`${title === "email" ? "mailto" : "tel"}:${t(desc)}`}
-            className="group col-span-2 flex flex-auto gap-4.5  border-washed-100 px-6 py-8 md:py-[34px]"
+            className="group col-span-2 flex flex-auto gap-4.5 border-washed-100 px-6 py-8 md:py-[34px]"
           >
             <div className="size-[42px] rounded-full bg-brand-50 p-[9px] text-brand-700">
               {icon}

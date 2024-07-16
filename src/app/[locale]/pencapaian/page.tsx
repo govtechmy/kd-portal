@@ -1,7 +1,22 @@
 import { cn } from "@/lib/utils";
 import { useFormatter, useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import React from "react";
+
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: {
+    locale: string;
+  };
+}) {
+  const t = await getTranslations({ locale, namespace: "Header" });
+
+  return {
+    title: t("achievements"),
+  };
+}
 
 export default function Page() {
   const t = useTranslations();

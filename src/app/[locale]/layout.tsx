@@ -19,8 +19,17 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Kementerian Digital",
-  description: "",
+  title: {
+    template: "%s | Kementerian Digital",
+    default: "Kementerian Digital",
+  },
+  description: "Portal Rasmi Kementerian Digital Malaysia",
+  alternates: {
+    canonical: `${process.env.APP_URL}`,
+    languages: {
+      "en-GB": `${process.env.APP_URL}/en-GB`,
+    },
+  },
 };
 
 export function generateStaticParams() {
