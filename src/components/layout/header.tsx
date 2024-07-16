@@ -19,6 +19,12 @@ import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Suspense, useState } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
 
 export function Header({ locale }: { locale: string }) {
   const t = useTranslations();
@@ -90,30 +96,70 @@ export function Header({ locale }: { locale: string }) {
             </span>
           </Link>
 
-          {/* <Sheet open={showMenu} onOpenChange={setMenu}>
+          <Sheet open={showMenu} onOpenChange={setMenu}>
             <SheetContent
               side="top"
-              className="absolute top-full -z-10 flex flex-col gap-0 rounded-b-xl p-3 lg:hidden"
+              className="absolute top-full -z-10 flex flex-col gap-1 rounded-b-xl p-3 lg:hidden"
             >
-              {nav_items.map(({ name, href }) => (
-                <SheetClose asChild key={name}>
-                  <Link
-                    href={href}
-                    data-state={active(href) ? "open" : "close"}
-                    className={cn(
-                      buttonVariants({ variant: "tertiary", size: "md" }),
-                      "w-full justify-start text-base data-[state=open]:bg-washed-100",
-                    )}
+              {nav_items.map(({ name, href }) =>
+                Array.isArray(href) ? (
+                  <Accordion
+                    className="bg-white"
+                    type="single"
+                    defaultValue="item-1"
+                    collapsible
                   >
-                    {t(`Header.${name}`)}
-                  </Link>
-                </SheetClose>
-              ))}
+                    <AccordionItem value="item-1">
+                      <AccordionTrigger
+                        className={cn(
+                          buttonVariants({ variant: "tertiary", size: "md" }),
+                          "justify-start bg-white text-base hover:bg-none focus:ring-0",
+                        )}
+                      >
+                        {t(`Header.${name}`)}{" "}
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        {href.map((item) => (
+                          <SheetClose asChild key={name}>
+                            <Link
+                              href={item.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={cn(
+                                buttonVariants({
+                                  variant: "tertiary",
+                                  size: "md",
+                                }),
+                                "w-full justify-start text-sm data-[state=open]:bg-washed-100",
+                              )}
+                            >
+                              {`${t(`Agency.${item.name}.name`)}${t(`Agency.${item.name}.abbr`) ? ` (${t(`Agency.${item.name}.abbr`)})` : ""} `}
+                            </Link>
+                          </SheetClose>
+                        ))}
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                ) : (
+                  <SheetClose asChild key={name}>
+                    <Link
+                      href={href}
+                      data-state={active(href) ? "open" : "close"}
+                      className={cn(
+                        buttonVariants({ variant: "tertiary", size: "md" }),
+                        "w-full justify-start text-base data-[state=open]:bg-washed-100",
+                      )}
+                    >
+                      {t(`Header.${name}`)}
+                    </Link>
+                  </SheetClose>
+                ),
+              )}
             </SheetContent>
             <SheetPortal>
               <SheetOverlay className="z-40" />
             </SheetPortal>
-          </Sheet> */}
+          </Sheet>
 
           <NavigationMenu.Root className="z-10 hidden w-full items-center lg:flex">
             <NavigationMenu.List className="group flex list-none items-center justify-center space-x-1">
