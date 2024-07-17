@@ -1012,27 +1012,27 @@
     {
         "id_bhg": 10,
         "bhg": "Bahagian Inkubator Digital (BID)",
-        "id": 0,
-        "nama": "-",
-        "gred": "F52",
-        "jawatan": "PEGAWAI TEKNOLOGI MAKLUMAT",
-        "telefon": "-",
-        "emel": "-"
+        "id": -1,
+        "nama": "Seksyen Penyelidikan & Ekosistem Digital",
+        "gred": null,
+        "jawatan": null,
+        "telefon": null,
+        "emel": null
     },
     {
         "id_bhg": 10,
         "bhg": "Bahagian Inkubator Digital (BID)",
-        "id": 4,
+        "id": 3,
         "nama": "TS. DR. MOHAMED HAIRUL BIN OTHMAN",
         "gred": "F48",
-        "jawatan": "KETUA PENOLONG SETIAUSAHA",
+        "jawatan": "TIMBALAN SETIAUSAHA BAHAGIAN",
         "telefon": "-",
         "emel": "hairul"
     },
     {
         "id_bhg": 10,
         "bhg": "Bahagian Inkubator Digital (BID)",
-        "id": 5,
+        "id": 4,
         "nama": "TS. FARID IQBAL BIN IBRAHIM",
         "gred": "F44",
         "jawatan": "PENOLONG SETIAUSAHA KANAN",
@@ -1045,7 +1045,7 @@
         "id": 0,
         "nama": "-",
         "gred": "F41/44",
-        "jawatan": "PEGAWAI TEKNOLOGI MAKLUMAT",
+        "jawatan": "PENOLONG SETIAUSAHA",
         "telefon": "-",
         "emel": "-"
     },
@@ -1053,11 +1053,41 @@
         "id_bhg": 10,
         "bhg": "Bahagian Inkubator Digital (BID)",
         "id": 0,
+        "nama": "REZA SHERRYZA ADZWIN BINTI REDZAWAN",
+        "gred": "F41",
+        "jawatan": "PENOLONG SETIAUSAHA",
+        "telefon": "03-8880 5859",
+        "emel": "rezasherryza"
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Inkubator Digital (BID)",
+        "id": -1,
+        "nama": "Seksyen Penerbitan & Pembangunan Bakat",
+        "gred": null,
+        "jawatan": null,
+        "telefon": null,
+        "emel": null
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Inkubator Digital (BID)",
+        "id": 0,
         "nama": "-",
-        "gred": "F41/44",
-        "jawatan": "PEGAWAI TEKNOLOGI MAKLUMAT",
+        "gred": "F48",
+        "jawatan": "TIMBALAN SETIAUSAHA BAHAGIAN",
         "telefon": "-",
         "emel": "-"
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Inkubator Digital (BID)",
+        "id": 8,
+        "nama": "MOHD FIRDAUS BIN MOHAMED KHAIRI",
+        "gred": "F44",
+        "jawatan": "PENOLONG SETIAUSAHA KANAN",
+        "telefon": "-",
+        "emel": "firdauskhairi"
     },
     {
         "id_bhg": 10,
@@ -1065,9 +1095,19 @@
         "id": 0,
         "nama": "-",
         "gred": "F41/44",
-        "jawatan": "PEGAWAI TEKNOLOGI MAKLUMAT",
+        "jawatan": "PENOLONG SETIAUSAHA",
         "telefon": "-",
         "emel": "-"
+    },
+    {
+        "id_bhg": 10,
+        "bhg": "Bahagian Inkubator Digital (BID)",
+        "id": -1,
+        "nama": "Unit Pentadbiran & Sokongan",
+        "gred": null,
+        "jawatan": null,
+        "telefon": null,
+        "emel": null
     },
     {
         "id_bhg": 10,
@@ -1092,7 +1132,7 @@
     {
         "id_bhg": 10,
         "bhg": "Bahagian Inkubator Digital (BID)",
-        "id": 11,
+        "id": 12,
         "nama": "SITI SUHANA BINTI MOHD ALI",
         "gred": "N19",
         "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
