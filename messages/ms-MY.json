@@ -178,13 +178,24 @@
   },
   "Announcements": {
     "header": "Siaran Kementerian Digital",
-    "placeholder": "Cari kata kunci: \u201ctajuk siaran\u201d, \u201cpengumuman\u201d"
+    "placeholder": "Cari kata kunci: \u201ctajuk siaran\u201d, \u201cpengumuman\u201d",
+    "print": "Cetak"
   },
   "Achievements": {
-    "header": "Pencapaian Kami"
+    "header": "Pencapaian Kami",
+    "placeholder": "Cari kata kunci: \"tajuk pencapaian\"",
+    "past_achievements": "Pencapaian yang lalu"
   },
   "Policy": {
-    "header": "Dokumen Dasar"
+    "header": "Dokumen Dasar",
+    "table_header": {
+      "title": "Tajuk",
+      "type": "Jenis",
+      "description": "Keterangan",
+      "date": "Tarikh",
+      "download": "Muat turun",
+      "all": "Semua"
+    }
   },
   "Directory": {
     "header": "Direktori Kakitangan",
@@ -207,9 +218,16 @@
     "email": "E-mel",
     "email_address": "webmaster@digital.com.my"
   },
+  "Datepicker": {
+    "from": "Dari",
+    "to": "Hingga"
+  },
+  "Table": {
+    "no_data": "Carian anda tidak dijumpai."
+  },
   "Pagination": {
     "previous": "Sebelum",
-    "page_of": "{{ current }} daripada {{ total }}",
+    "page_of": "{ current } daripada { total }",
     "next": "Seterusnya"
   },
   "404": {

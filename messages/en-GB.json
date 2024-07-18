@@ -178,13 +178,24 @@
   },
   "Announcements": {
     "header": "Ministry of Digital Announcements",
-    "placeholder": "Find keywords: \u201cstatement\u201d, \"announcement\""
+    "placeholder": "Find keywords: \u201cstatement\u201d, \"announcement\"",
+    "print": "Print"
   },
   "Achievements": {
-    "header": "Our Achievements"
+    "header": "Our Achievements",
+    "placeholder": "Find keywords: \"launch\"",
+    "past_achievements": "Past achievements"
   },
   "Policy": {
-    "header": "Policy Documents"
+    "header": "Policy Documents",
+    "table_header": {
+      "title": "Title",
+      "type": "Type",
+      "description": "Description",
+      "date": "Date",
+      "download": "Download",
+      "all": "All"
+    }
   },
   "Directory": {
     "header": "Staff Directory",
@@ -207,10 +218,17 @@
     "email": "E-mail",
     "email_address": "webmaster@digital.com.my"
   },
+  "Datepicker": {
+    "from": "From",
+    "to": "To"
+  },
   "Pagination": {
     "previous": "Previous",
-    "page_of": "{{ current }} of {{ total }}",
+    "page_of": "{ current } of { total }",
     "next": "Next"
+  },
+  "Table": {
+    "no_data": "No results matched your query."
   },
   "404": {
     "not_found": "Not Found",
