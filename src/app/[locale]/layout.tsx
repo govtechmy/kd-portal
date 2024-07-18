@@ -31,6 +31,7 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "Agency" });
 
   return {
+    metadataBase: new URL(process.env.APP_URL),
     title: {
       template: `%s | ${t("name")}`,
       default: t("name"),
@@ -61,7 +62,7 @@ export default async function Layout({
     locale: string;
   };
 }) {
-  unstable_setRequestLocale(locale);
+  unstable_setRequestLocale(locale); // TODO: remove once pages are dynamic
   const messages = await getMessages();
 
   return (
