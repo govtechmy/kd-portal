@@ -2,6 +2,7 @@ import { Button, ButtonProps, buttonVariants } from "@/components/ui/button";
 import ChevronLeft from "@/icons/chevron-left";
 import ChevronRight from "@/icons/chevron-right";
 import Ellipsis from "@/icons/ellipsis";
+import { useRouter } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
@@ -37,7 +38,7 @@ PaginationItem.displayName = "PaginationItem";
 
 type PaginationLinkProps = {
   isActive?: boolean;
-} & Pick<ButtonProps, "size" | "disabled"> &
+} & Pick<ButtonProps, "size" | "variant" | "disabled"> &
   ComponentProps<typeof Link>;
 
 const PaginationLink = ({
@@ -45,16 +46,18 @@ const PaginationLink = ({
   disabled,
   isActive,
   size,
+  variant,
   ...props
 }: PaginationLinkProps) => (
   <Link
     aria-current={isActive ? "page" : undefined}
     className={cn(
       buttonVariants({
-        variant: "secondary",
+        variant,
         size,
       }),
-      isActive ? "bg-washed-100" : "",
+      isActive ? "bg-brand-50" : "",
+      "lg:size-10",
       className,
     )}
     aria-disabled={disabled}
@@ -83,16 +86,19 @@ export default function _Pagination({
   curr,
   disable_next,
   disable_prev,
+  href,
   setPage,
   totalPages,
 }: {
   curr: number;
   disable_next?: boolean;
   disable_prev?: boolean;
-  setPage: (page: number) => void;
+  href?: string;
+  setPage?: (page: number) => void;
   totalPages: number;
 }) {
-  const t = useTranslations();
+  const t = useTranslations("Pagination");
+  const { push } = useRouter();
 
   const range = (start: number, end: number) => {
     const length = end - start + 1;
@@ -140,26 +146,38 @@ export default function _Pagination({
         <PaginationItem>
           <Button
             variant="secondary"
-            className="mr-1.5 gap-1 max-sm:p-2 sm:pl-2.5"
+            size="default"
+            className="p-2 lg:p-2.5"
             disabled={disable_prev || curr <= 0}
-            onClick={() => setPage(curr - 1)}
+            onClick={() =>
+              setPage ? setPage(curr - 1) : push(href + `${curr}`)
+            }
           >
             <ChevronLeft className="size-4" />
-            <span className="max-sm:hidden">{t("previous")}</span>
             <span className="sr-only">{t("previous")}</span>
           </Button>
         </PaginationItem>
 
         {pageRange?.map((page, i) => {
           return typeof page === "number" ? (
-            <PaginationItem
-              className="hidden min-[360px]:flex"
-              key={i}
-              onClick={() => setPage(page - 1)}
-            >
-              <PaginationLink href="" isActive={curr === i}>
-                {page}
-              </PaginationLink>
+            <PaginationItem className="hidden min-[360px]:flex" key={i}>
+              {href ? (
+                <PaginationLink
+                  href={href + page}
+                  variant={curr === page - 1 ? "tertiary-colour" : "tertiary"}
+                  isActive={curr === page - 1}
+                >
+                  {page}
+                </PaginationLink>
+              ) : (
+                <Button
+                  onClick={() => (setPage ? setPage(page - 1) : null)}
+                  variant={curr === page - 1 ? "tertiary-colour" : "tertiary"}
+                  className={curr === page - 1 ? "bg-brand-50" : ""}
+                >
+                  {page}
+                </Button>
+              )}
             </PaginationItem>
           ) : (
             <PaginationItem className="hidden min-[360px]:flex" key={i}>
@@ -177,11 +195,13 @@ export default function _Pagination({
           <Button
             aria-label={t("next")}
             variant="secondary"
-            className="ml-1.5 gap-1 max-sm:p-2 sm:pr-2.5"
+            size="default"
+            className="p-2 lg:p-2.5"
             disabled={disable_next || curr >= totalPages - 1}
-            onClick={() => setPage(curr + 1)}
+            onClick={() =>
+              setPage ? setPage(curr + 1) : push(href + `${curr + 2}`)
+            }
           >
-            <span className="max-sm:hidden">{t("next")}</span>
             <span className="sr-only">{t("next")}</span>
             <ChevronRight className="size-4" />
           </Button>

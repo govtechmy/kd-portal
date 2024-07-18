@@ -72,7 +72,7 @@ const Search: FunctionComponent<SearchProps> = ({
           className="group rounded-full"
           onClick={() => onSearch("")}
         >
-          <CrossX className="size-4.5 text-dim-500 group-hover:text-black-900" />
+          <CrossX className="size-4.5 text-dim-500 group-hover:text-foreground" />
         </Button>
       ) : (
         <span
