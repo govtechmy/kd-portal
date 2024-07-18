@@ -1,7 +1,9 @@
-import HeroPattern from "@/components/layout/hero-pattern";
+import DasarTable from "@/components/dasar/table";
+import Hero from "@/components/layout/hero";
+import DaterangePicker from "@/components/ui/daterange-picker";
+import Search from "@/components/ui/search";
 import { useTranslations } from "next-intl";
-import { getTranslations } from "next-intl/server";
-import { notFound } from "next/navigation";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import React from "react";
 
 export async function generateMetadata({
@@ -18,22 +20,33 @@ export async function generateMetadata({
   };
 }
 
-export default function Page() {
+export default function Page({
+  params: { locale },
+}: {
+  params: {
+    locale: string;
+  };
+}) {
+  unstable_setRequestLocale(locale);
   const t = useTranslations();
-  notFound();
 
   return (
-    <main className="divide-y divide-washed-100">
-      <section className="relative">
-        <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden">
-          <HeroPattern className="absolute -top-[83.33%]" />
-        </div>
-        <h1 className="py-16 text-center font-poppins text-hmd font-semibold">
-          {t("Policy.header")}
-        </h1>
-      </section>
-
-      <section className="flex min-h-screen w-full"></section>
-    </main>
+    <>
+      <Hero
+        title={t("Policy.header")}
+        search={
+          <div className="space-y-4">
+            <Search
+              // onChange={}
+              placeholder={t("Directory.search_placeholder")}
+            />
+            <DaterangePicker />
+          </div>
+        }
+      />
+      <main>
+        <DasarTable />
+      </main>
+    </>
   );
 }

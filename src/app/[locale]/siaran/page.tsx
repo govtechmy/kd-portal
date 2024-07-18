@@ -1,10 +1,17 @@
-import HeroPattern from "@/components/layout/hero-pattern";
-import Pagination from "@/components/ui/pagination";
-import Search from "@/icons/search";
+import Hero from "@/components/layout/hero";
+import Section from "@/components/layout/section";
+import Paginate from "@/components/siaran/paginate";
+import DaterangePicker from "@/components/ui/daterange-picker";
+import Search from "@/components/ui/search";
+import ArrowOutgoing from "@/icons/arrow-outgoing";
+import ArrowUp from "@/icons/arrow-up";
+import Clock from "@/icons/clock";
+import { Link } from "@/lib/i18n";
 import { routes } from "@/lib/routes";
+import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
-import { getTranslations } from "next-intl/server";
-import { notFound } from "next/navigation";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import Image from "next/image";
 import React from "react";
 
 export async function generateMetadata({
@@ -21,50 +28,110 @@ export async function generateMetadata({
   };
 }
 
-export default function Page() {
+export default function Page({
+  params: { locale },
+}: {
+  params: {
+    locale: string;
+  };
+}) {
+  unstable_setRequestLocale(locale);
   const t = useTranslations();
-  notFound();
 
   return (
-    <main className="divide-y divide-washed-100">
-      <section className="relative">
-        <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden">
-          <HeroPattern className="absolute -top-[83.33%]" />
-        </div>
-        <h1 className="py-16 text-center font-poppins text-hmd font-semibold">
-          {t("Announcements.header")}
-        </h1>
-        <div className="space-y-4">
-          <div className="mx-auto flex items-center gap-2.5 rounded-full border bg-background pl-4.5 pr-1.5 shadow-card sm:w-[600px]">
-            <input
-              placeholder={t("Announcements.placeholder")}
-              className="flex h-11 w-full rounded-md bg-background py-3 text-sm outline-none placeholder:text-dim-500 disabled:cursor-not-allowed disabled:opacity-50"
+    <>
+      <Hero
+        title={t("Announcements.header")}
+        search={
+          <div className="space-y-4">
+            <Search
+              // onChange={}
+              placeholder={t("Directory.search_placeholder")}
             />
-            <span className="flex shrink-0 items-center gap-x-1 text-sm text-dim-500">
-              {t("Search.type")}
-              <span className="rounded-md border border-outline-300 px-1.5 py-0.5">
-                /
-              </span>
-              {t("Search.search")}
-            </span>
-            <div className="rounded-full bg-gradient-to-b from-[#5288FF] to-brand-600 to-100% p-1.5">
-              <Search className="text-white" />
+            <DaterangePicker />
+          </div>
+        }
+      />
+
+      <main>
+        <Section>
+          <div className="flex flex-col gap-8 border-washed-100 py-12 lg:border-x lg:px-0">
+            <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+              {Array.from({ length: 12 }).map((_, i) => (
+                <Link
+                  href={routes.ANNOUNCEMENTS + `/${i}`}
+                  className="group relative flex flex-col gap-4 rounded-xl border border-outline-200 p-6 hover:border-brand-200"
+                >
+                  <div
+                    className={cn(
+                      i === 0
+                        ? "absolute right-6 top-5 flex items-center justify-center rounded-full border border-[#DD420A]/10 bg-[#DD420A]/5 px-2 py-0.5"
+                        : "hidden",
+                    )}
+                  >
+                    <ArrowUp className="size-3.5 stroke-2 text-[#DD420A]" />
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <p
+                      className={cn(
+                        "font-semibold",
+                        i % 2 === 0
+                          ? "text-foreground-success"
+                          : "text-foreground-danger",
+                      )}
+                    >
+                      {i % 2 === 0 ? "Siaran Media" : "Pengumuman"}
+                    </p>
+                    <div className="invisible flex items-center gap-2 group-hover:visible">
+                      <div className="h-3 w-px bg-outline-300" />
+                      <div className="flex items-center gap-1 text-dim-500">
+                        <Clock className="size-4" />
+                        Bacaan 5 min
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex flex-auto flex-col gap-y-5">
+                    <div className="flex grow gap-x-4.5">
+                      <div className="flex flex-col gap-y-2">
+                        <p className="font-semibold -tracking-[0.01em] text-foreground group-hover:text-foreground-primary">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do
+                        </p>
+                        <p className="line-clamp-3 text-sm text-black-700">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua. Ut enim ad minim veniam, quis
+                          nostrud exercitation ullamco laboris nisi ut aliquip
+                          ex ea commodo consequat.
+                        </p>
+                      </div>
+                      <Image
+                        src="/jata-negara.png"
+                        height={80}
+                        width={80}
+                        className="size-20 select-none rounded-lg border-4 border-white object-contain shadow-card"
+                        alt=""
+                      />
+                    </div>
+
+                    <div className="flex items-center justify-between text-sm">
+                      <time className="text-dim-500">11 Feb 2024</time>
+                      <div className="invisible flex items-center gap-1 text-foreground-primary group-hover:visible">
+                        <span className="font-semibold">Baca</span>
+                        <ArrowOutgoing className="size-4 stroke-[1.5]" />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              ))}
             </div>
+            <Paginate
+              totalPages={10}
+              href={routes.ANNOUNCEMENTS + "?page="}
+            />
           </div>
-
-          <div className="flex items-center gap-1">
-            <span>-</span>
-          </div>
-        </div>
-      </section>
-
-      <section className="flex min-h-screen w-full">
-        <Pagination
-          curr={0}
-          totalPages={10}
-          setPage={(page) => `${routes.ANNOUNCEMENTS}?page=${page + 1}`}
-        />
-      </section>
-    </main>
+        </Section>
+      </main>
+    </>
   );
 }
