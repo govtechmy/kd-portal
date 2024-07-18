@@ -40,7 +40,7 @@ export default function Page({
       <Hero title={t("Contact.header")} />
       <main className="divide-y divide-washed-100">
         <Section>
-          <div className="gap-6 border-x border-washed-100 py-12 lg:py-[84px] xl:grid xl:grid-cols-12">
+          <div className="gap-6 border-washed-100 py-12 lg:py-[84px] xl:grid xl:grid-cols-12 xl:border-x">
             <div className="col-span-10 col-start-2">
               <div className="flex flex-col gap-12 sm:flex-row">
                 <div className="space-y-4.5 sm:w-1/3 lg:py-16">
@@ -96,52 +96,57 @@ export default function Page({
           </div>
         </Section>
 
-        <Section>
-          <div className="grid grid-cols-2 divide-x px-0 max-lg:divide-y sm:grid-cols-4 lg:flex lg:divide-x lg:divide-washed-100 lg:border-x lg:border-x-washed-100">
-            {[
-              {
-                icon: <Phone className="size-6" />,
-                title: "telephone",
-                desc: "Contact.telephone_number",
-              },
-              {
-                icon: <Envelope className="size-6" />,
-                title: "email",
-                desc: "Contact.email_address",
-              },
-            ].map(({ icon, title, desc }) => (
-              <a
-                key={title}
-                href={`${title === "email" ? "mailto" : "tel"}:${t(desc)}`}
-                className="group col-span-2 flex flex-auto gap-4.5 border-washed-100 px-6 py-8 md:py-[34px]"
-              >
-                <div className="size-[42px] rounded-full bg-brand-50 p-[9px] text-foreground-primary">
-                  {icon}
-                </div>
-                <div className="space-y-1 font-semibold">
-                  <Overline>{t(`Contact.${title}`)}</Overline>
-                  <p className="underline-font text-lg text-foreground group-hover:underline">
-                    {t(desc)}
-                  </p>
-                </div>
-              </a>
-            ))}
-            {social_media.map(({ icon, name, href }) => (
-              <a
-                key={name}
-                href={href}
-                target="_blank"
-                rel="noopenner noreferrer"
-                className="underline-font text-sm text-black-700 hover:text-foreground hover:underline"
-              >
-                <div className="col-span-1 flex flex-none flex-col items-center gap-2 py-6 md:gap-3 lg:w-[100px]">
-                  <div className="flex size-[42px] items-center justify-center rounded-full bg-brand-50 text-foreground-primary">
+        <Section className="xl:container">
+          <div className="flex w-full flex-col divide-washed-100 border-washed-100 max-xl:divide-y xl:flex-row xl:divide-x xl:border-x">
+            <div className="grid w-full flex-auto grid-cols-2 divide-washed-100 px-0 max-md:divide-y md:divide-x">
+              {[
+                {
+                  icon: <Phone className="size-6" />,
+                  title: "telephone",
+                  desc: "Contact.telephone_number",
+                },
+                {
+                  icon: <Envelope className="size-6" />,
+                  title: "email",
+                  desc: "Contact.email_address",
+                },
+              ].map(({ icon, title, desc }) => (
+                <a
+                  key={title}
+                  href={`${title === "email" ? "mailto" : "tel"}:${t(desc)}`}
+                  className="group flex gap-4.5 border-washed-100 px-6 py-8 max-md:col-span-2 md:py-[34px]"
+                >
+                  <div className="size-[42px] rounded-full bg-brand-50 p-[9px] text-foreground-primary">
                     {icon}
                   </div>
-                  {name}
-                </div>
-              </a>
-            ))}
+                  <div className="space-y-1 font-semibold">
+                    <Overline>{t(`Contact.${title}`)}</Overline>
+                    <p className="underline-font text-lg text-foreground group-hover:underline">
+                      {t(desc)}
+                    </p>
+                  </div>
+                </a>
+              ))}
+            </div>
+
+            <div className="grid flex-none grid-cols-4 divide-x divide-washed-100 px-0 max-md:divide-y">
+              {social_media.map(({ icon, name, href }) => (
+                <a
+                  key={name}
+                  href={href}
+                  target="_blank"
+                  rel="noopenner noreferrer"
+                  className="underline-font text-sm text-black-700 hover:text-foreground hover:underline max-md:col-span-2"
+                >
+                  <div className="col-span-1 flex flex-none flex-col items-center gap-2 py-6 md:gap-3 xl:w-[100px]">
+                    <div className="flex size-[42px] items-center justify-center rounded-full bg-brand-50 text-foreground-primary">
+                      {icon}
+                    </div>
+                    {name}
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
         </Section>
       </main>

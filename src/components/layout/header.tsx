@@ -77,7 +77,12 @@ export function Header({ locale }: { locale: string }) {
 
   return (
     <header className="sticky top-0 z-50 border-outline-200 bg-background lg:border-b lg:bg-background/80 lg:backdrop-blur-[30px]">
-      <div className="container flex h-16 items-center justify-between gap-3 border-outline-200 bg-background py-3 max-lg:border-b lg:gap-4 lg:bg-transparent max-xl:pr-3">
+      <div
+        className={cn(
+          "container flex h-16 items-center justify-between gap-3 border-outline-200 bg-background py-3 max-xl:pr-3 max-lg:border-b lg:gap-4",
+          showMenu ? "" : "xl:bg-transparent",
+        )}
+      >
         <div className="flex min-w-[56%] items-center justify-between gap-3 lg:gap-4">
           <Link href="/" className="flex h-full w-full items-center gap-2.5">
             <Image
@@ -162,27 +167,26 @@ export function Header({ locale }: { locale: string }) {
             </SheetPortal>
           </Sheet>
 
-          <NavigationMenu.Root className="z-10 hidden w-full items-center xl:flex">
-            <NavigationMenu.List className="group flex list-none items-center justify-center space-x-1">
+          <NavigationMenu.Root className="relative z-10 hidden w-max justify-center xl:flex">
+            <NavigationMenu.List className="group flex list-none justify-center space-x-1">
               {nav_items.map(({ name, href }) =>
                 Array.isArray(href) ? (
                   <NavigationMenu.Item key={name}>
                     <NavigationMenu.Trigger
                       className={cn(
                         buttonVariants({ variant: "tertiary" }),
-                        "w-max bg-transparent",
-                        "group flex select-none items-center",
+                        "group w-max select-none bg-transparent transition-colors data-[state=open]:bg-washed-100",
                       )}
                     >
                       {t(`Header.${name}`)}{" "}
                       <ChevronDown
-                        className="duration-150 relative transition-transform ease-in group-data-[state=open]:-rotate-180"
-                        aria-hidden
+                        className="relative top-px ml-1 transition duration-200 group-data-[state=open]:rotate-180"
+                        aria-hidden="true"
                       />
                     </NavigationMenu.Trigger>
 
-                    <NavigationMenu.Content className="absolute left-0 top-0">
-                      <ul className="m-0 grid h-fit list-none rounded-sm border bg-background p-3 shadow-lg sm:w-[400px] sm:grid-flow-col sm:grid-rows-12">
+                    <NavigationMenu.Content className="left-0 top-0 w-full data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 md:absolute md:w-auto">
+                      <ul className="rounded-lg border bg-background p-3 shadow-card sm:w-[400px]">
                         {href.map((item) => (
                           <Link
                             key={item.name}
@@ -216,8 +220,8 @@ export function Header({ locale }: { locale: string }) {
                 ),
               )}
             </NavigationMenu.List>
-            <div className="perspective-[2000px] absolute left-0 top-full flex w-full justify-center">
-              <NavigationMenu.Viewport className="data-[state=open]:animate-scaleIn data-[state=closed]:animate-scaleOut relative mt-2 h-[250px] w-full origin-[top_center] overflow-hidden rounded-[6px] transition-[width,_height] duration-300 sm:w-[var(--radix-navigation-menu-viewport-width)]" />
+            <div className="absolute right-0 top-full">
+              <NavigationMenu.Viewport className="origin-top-center relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-lg shadow-card data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)]" />
             </div>
           </NavigationMenu.Root>
         </div>
@@ -228,7 +232,7 @@ export function Header({ locale }: { locale: string }) {
 
           <Button
             variant="tertiary"
-            className={cn("block xl:hidden p-2.5", showMenu && "bg-washed-100")}
+            className={cn("block p-2.5 xl:hidden", showMenu && "bg-washed-100")}
             onClick={() => setMenu(!showMenu)}
           >
             {showMenu ? <CrossX /> : <HamburgerMenu />}

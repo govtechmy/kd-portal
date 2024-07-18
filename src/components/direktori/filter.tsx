@@ -29,8 +29,7 @@ export const DirektoriFilter: FC<DirektoriFilter> = ({
   subtitle,
 }) => {
   const t = useTranslations("Directory.table_header");
-  console.log(headers);
-
+  
   const header = headers.find((h) => h.id === column)!;
   const { getFacetedUniqueValues, getFilterValue, setFilterValue } =
     header.column;
