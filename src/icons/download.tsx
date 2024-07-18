@@ -1,4 +1,4 @@
-export default function FileDocumentPaper({ ...props }) {
+export default function Download({ ...props }) {
   return (
     <svg
       width="20"
@@ -9,7 +9,7 @@ export default function FileDocumentPaper({ ...props }) {
       {...props}
     >
       <path
-        d="M16 7.25H11.75V3M7 13.5H11M7 10.5L13 10.5M5.75 17.25H14.25C15.3546 17.25 16.25 16.3546 16.25 15.25V7L12 2.75H5.75C4.64543 2.75 3.75 3.64543 3.75 4.75V15.25C3.75 16.3546 4.64543 17.25 5.75 17.25Z"
+        d="M2.75 12.75V14.25C2.75 15.9069 4.09315 17.25 5.75 17.25H14.25C15.9069 17.25 17.25 15.9069 17.25 14.25V12.75M10 12.25V2.75M10 12.25L6.75 8.75M10 12.25L13.25 8.75"
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"

@@ -1,4 +1,4 @@
-export default function FileDocumentPaper({ ...props }) {
+export default function ArrowUp({ ...props }) {
   return (
     <svg
       width="20"
@@ -9,9 +9,9 @@ export default function FileDocumentPaper({ ...props }) {
       {...props}
     >
       <path
-        d="M16 7.25H11.75V3M7 13.5H11M7 10.5L13 10.5M5.75 17.25H14.25C15.3546 17.25 16.25 16.3546 16.25 15.25V7L12 2.75H5.75C4.64543 2.75 3.75 3.64543 3.75 4.75V15.25C3.75 16.3546 4.64543 17.25 5.75 17.25Z"
+        d="M15.25 8.25L10 2.75L4.75 8.25M10 17.25V3.75"
         stroke="currentColor"
-        strokeWidth="1.5"
+        strokeWidth="inherit"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
