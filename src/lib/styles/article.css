@@ -1,0 +1,41 @@
+.article {
+  p {
+    @apply text-black-700;
+  }
+
+  h1 {
+    @apply text-hsm font-bold;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold;
+  }
+
+  h3 {
+    @apply text-xl font-medium;
+  }
+
+  h4 {
+    @apply text-lg;
+  }
+
+  h5 {
+    @apply text-base;
+  }
+
+  h6 {
+    @apply text-sm;
+  }
+
+  ul {
+    @apply list-outside list-disc;
+  }
+
+  ol {
+    @apply list-outside list-decimal;
+  }
+
+  a {
+    @apply text-foreground-primary [text-underline-position:from-font] hover:underline;
+  }
+}

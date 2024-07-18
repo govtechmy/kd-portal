@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "@/lib/styles/article.css";
+
 @layer base {
   :root {
     --black-900: 21.03% 0.006 285.89; /* #18181B Zinc 900 */
@@ -64,6 +66,12 @@
   }
 
   body {
-    @apply bg-background text-black-900;
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .underline-font {
+    text-underline-position: from-font;
   }
 }
