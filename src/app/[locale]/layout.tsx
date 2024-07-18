@@ -46,7 +46,6 @@ export async function generateMetadata({
   }
 
   return {
-    metadataBase: new URL(process.env.APP_URL),
     title: {
       template: `%s | ${t("name")}`,
       default: t("name"),
