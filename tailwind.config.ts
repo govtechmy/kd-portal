@@ -10,7 +10,7 @@ const config: Config = {
     container: {
       center: true,
       screens: {
-        xl: "1280px",
+        xl: "1328px",
       },
       padding: {
         DEFAULT: "18px",
@@ -51,8 +51,10 @@ const config: Config = {
           700: colors.blue[700],
         },
         foreground: {
-          DEFAULT: "oklch(var(--brand-700) / <alpha-value>)",
+          DEFAULT: "oklch(var(--black-900) / <alpha-value>)",
+          primary: "oklch(var(--brand-700) / <alpha-value>)",
           success: colors.green[700],
+          danger: colors.red[600],
         },
         background: {
           DEFAULT: "oklch(var(--base-white) / <alpha-value>)",
