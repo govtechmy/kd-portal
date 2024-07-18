@@ -18,6 +18,9 @@ export const Achievement: CollectionConfig = {
     singular: "Achievement",
     plural: "Achievements",
   },
+  admin: {
+    listSearchableFields: ["title", "description", "type"],
+  },
   fields: [
     {
       name: "title",

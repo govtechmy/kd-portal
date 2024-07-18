@@ -19,6 +19,9 @@ export const KDPolicy: CollectionConfig = {
   },
   defaultSort: "doc_date",
   timestamps: true,
+  admin: {
+    listSearchableFields: ["doc_name", "doc_type", "doc_description"],
+  },
   fields: [
     {
       name: "doc_name",

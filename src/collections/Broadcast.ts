@@ -17,6 +17,9 @@ export const Broadcast: CollectionConfig = {
     singular: "Broadcast",
     plural: "Broadcasts",
   },
+  admin: {
+    listSearchableFields: ["title", "description", "type"],
+  },
   fields: [
     {
       name: "title",

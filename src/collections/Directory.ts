@@ -10,6 +10,7 @@ export const KDDepartment: CollectionConfig = {
   },
   admin: {
     useAsTitle: "bhg",
+    listSearchableFields: ["bhg"],
   },
   fields: [
     {
@@ -36,6 +37,7 @@ export const KDDirectory: CollectionConfig = {
   },
   admin: {
     defaultColumns: ["id_bhg", "staff_id", "nama", "gred", "jawatan"],
+    listSearchableFields: ["nama", "jawatan", "emel"],
   },
   defaultSort: "id_bhg",
   timestamps: true,
