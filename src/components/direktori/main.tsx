@@ -1,14 +1,16 @@
 "use client";
 
-import { FC, useState } from "react";
+import Hero from "@/components/layout/hero";
+import Section from "@/components/layout/section";
 import DataTable from "@/components/ui/data-table";
 import Search from "@/components/ui/search";
-import StaffDirectory from "@/lib/resources/directory_kd.json";
-import HeroPattern from "@/components/layout/hero-pattern";
-import { useTranslations } from "next-intl";
-import { Cell } from "@tanstack/react-table";
 import Phone from "@/icons/phone";
 import Envelope from "@/icons/envelope";
+import StaffDirectory from "@/lib/resources/directory_kd.json";
+import { Cell } from "@tanstack/react-table";
+import { useTranslations } from "next-intl";
+import { FC, useState } from "react";
+import { DirektoriFilter } from "./filter";
 
 interface StaffDirectory {
   id_bhg: number;
@@ -116,7 +118,7 @@ const DirektoriMain: FC = () => {
             <p className="text-balance text-xs font-semibold">{bhg}</p>
             <div className="space-y-1">
               <div className="flex flex-wrap items-center gap-x-1.5">
-                <span className="text-base font-semibold text-black-900">
+                <span className="text-base font-semibold text-foreground">
                   {id === 0 ? (
                     <span className="text-red-600">KOSONG</span>
                   ) : (
@@ -179,57 +181,67 @@ const DirektoriMain: FC = () => {
   }
 
   return (
-    <main className="">
-      <section className="relative border-b border-outline-200">
-        <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden">
-          <HeroPattern className="absolute -top-[83.33%]" />
-        </div>
-        <div className="container flex flex-col items-center gap-6 py-16">
-          <h1 className="text-center font-poppins text-hmd font-semibold">
-            {t("Directory.header")}
-          </h1>
-
+    <main>
+      <Hero
+        title={t("Directory.header")}
+        search={
           <Search
             onChange={(query) => searchArray(StaffDirectory, query)}
             placeholder={t("Directory.search_placeholder")}
           />
-        </div>
-      </section>
+        }
+      />
 
-      <section className="container hidden min-h-screen w-full border-x border-x-washed-100 px-6 py-12 sm:flex">
-        <DataTable
-          key={JSON.stringify(data)}
-          columns={column}
-          data={data}
-          resizeable={false}
-          paginate={{
-            pageIndex: 0,
-            pageSize: 15,
-          }}
-          dropdownFilter="bhg"
-          dropdownText={t("Directory.table_header.bhg")}
-          isMerged={(row) => {
-            if (row.original.id === -1) return row.getVisibleCells()[0];
-            return false;
-          }}
-        />
-      </section>
+      <Section>
+        <div className="hidden min-h-screen w-full border-x border-x-washed-100 px-6 py-12 sm:flex">
+          <DataTable
+            key={JSON.stringify(data)}
+            columns={column}
+            data={data}
+            resizeable={false}
+            paginate={{
+              pageIndex: 0,
+              pageSize: 15,
+            }}
+            filter={(table, headers) => (
+              <DirektoriFilter
+                table={table}
+                headers={headers}
+                column="bhg"
+                subtitle={t("Directory.table_header.bhg")}
+              />
+            )}
+            isMerged={(row) => {
+              if (row.original.id === -1) return row.getVisibleCells()[0];
+              return false;
+            }}
+          />
+        </div>
+      </Section>
 
       {/* Mobile */}
-      <section className="container flex min-h-screen w-full flex-col border-x border-x-washed-100 px-4.5 py-12 sm:hidden">
-        <DataTable
-          key={JSON.stringify(data)}
-          columns={mobileColumn}
-          data={data}
-          resizeable={false}
-          paginate={{
-            pageIndex: 0,
-            pageSize: 15,
-          }}
-          dropdownFilter="bhg"
-          dropdownText={t("Directory.table_header.bhg")}
-        />
-      </section>
+      <Section>
+        <div className="flex min-h-screen w-full flex-col border-x border-x-washed-100 px-4.5 py-12 sm:hidden">
+          <DataTable
+            key={JSON.stringify(data)}
+            columns={mobileColumn}
+            data={data}
+            resizeable={false}
+            paginate={{
+              pageIndex: 0,
+              pageSize: 15,
+            }}
+            filter={(table, headers) => (
+              <DirektoriFilter
+                table={table}
+                headers={headers}
+                column="bhg"
+                subtitle={t("Directory.table_header.bhg")}
+              />
+            )}
+          />
+        </div>
+      </Section>
     </main>
   );
 };
