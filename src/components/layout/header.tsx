@@ -33,9 +33,9 @@ export function Header({ locale }: { locale: string }) {
   const nav_items = [
     { name: "home", href: "/" },
     { name: "ministry_profile", href: routes.MINISTRY_PROFILE },
-    // { name: "announcements", href: routes.ANNOUNCEMENTS },
-    // { name: "achievements", href: routes.ACHIEVEMENTS },
-    // { name: "policy", href: routes.POLICY },
+    { name: "announcements", href: routes.ANNOUNCEMENTS },
+    { name: "achievements", href: routes.ACHIEVEMENTS },
+    { name: "policy", href: routes.POLICY },
     { name: "directory", href: routes.DIRECTORY },
     { name: "contact_us", href: routes.CONTACT_US },
     {
@@ -77,8 +77,8 @@ export function Header({ locale }: { locale: string }) {
 
   return (
     <header className="sticky top-0 z-50 border-outline-200 bg-background lg:border-b lg:bg-background/80 lg:backdrop-blur-[30px]">
-      <div className="container flex w-full items-center justify-between gap-3 border-outline-200 bg-background py-3 max-lg:border-b lg:gap-4 lg:bg-transparent">
-        <div className="flex items-center justify-between gap-3 lg:gap-4">
+      <div className="container flex h-16 items-center justify-between gap-3 border-outline-200 bg-background py-3 max-lg:border-b lg:gap-4 lg:bg-transparent max-xl:pr-3">
+        <div className="flex min-w-[56%] items-center justify-between gap-3 lg:gap-4">
           <Link href="/" className="flex h-full w-full items-center gap-2.5">
             <Image
               src="/jata-negara.png"
@@ -87,7 +87,7 @@ export function Header({ locale }: { locale: string }) {
               style={{
                 width: "auto",
               }}
-              className="h-8 w-fit"
+              className="h-8 w-fit select-none"
               alt="Jata Negara"
             />
 
@@ -99,12 +99,13 @@ export function Header({ locale }: { locale: string }) {
           <Sheet open={showMenu} onOpenChange={setMenu}>
             <SheetContent
               side="top"
-              className="absolute top-full -z-10 flex flex-col gap-1 rounded-b-xl p-3 lg:hidden"
+              className="absolute top-full -z-10 flex flex-col gap-1 rounded-b-xl p-3 xl:hidden"
             >
               {nav_items.map(({ name, href }) =>
                 Array.isArray(href) ? (
                   <Accordion
-                    className="bg-white"
+                    key={name}
+                    className="bg-background"
                     type="single"
                     defaultValue="item-1"
                     collapsible
@@ -113,7 +114,7 @@ export function Header({ locale }: { locale: string }) {
                       <AccordionTrigger
                         className={cn(
                           buttonVariants({ variant: "tertiary", size: "md" }),
-                          "justify-start bg-white text-base hover:bg-none focus:ring-0",
+                          "justify-start bg-background text-base hover:bg-none focus:ring-0",
                         )}
                       >
                         {t(`Header.${name}`)}{" "}
@@ -161,7 +162,7 @@ export function Header({ locale }: { locale: string }) {
             </SheetPortal>
           </Sheet>
 
-          <NavigationMenu.Root className="z-10 hidden w-full items-center lg:flex">
+          <NavigationMenu.Root className="z-10 hidden w-full items-center xl:flex">
             <NavigationMenu.List className="group flex list-none items-center justify-center space-x-1">
               {nav_items.map(({ name, href }) =>
                 Array.isArray(href) ? (
@@ -175,7 +176,7 @@ export function Header({ locale }: { locale: string }) {
                     >
                       {t(`Header.${name}`)}{" "}
                       <ChevronDown
-                        className="duration-[150] relative transition-transform ease-in group-data-[state=open]:-rotate-180"
+                        className="duration-150 relative transition-transform ease-in group-data-[state=open]:-rotate-180"
                         aria-hidden
                       />
                     </NavigationMenu.Trigger>
@@ -184,6 +185,7 @@ export function Header({ locale }: { locale: string }) {
                       <ul className="m-0 grid h-fit list-none rounded-sm border bg-background p-3 shadow-lg sm:w-[400px] sm:grid-flow-col sm:grid-rows-12">
                         {href.map((item) => (
                           <Link
+                            key={item.name}
                             href={item.href}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -226,8 +228,7 @@ export function Header({ locale }: { locale: string }) {
 
           <Button
             variant="tertiary"
-            size="icon"
-            className={cn("block lg:hidden", showMenu && "bg-washed-100")}
+            className={cn("block xl:hidden p-2.5", showMenu && "bg-washed-100")}
             onClick={() => setMenu(!showMenu)}
           >
             {showMenu ? <CrossX /> : <HamburgerMenu />}

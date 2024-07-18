@@ -42,9 +42,9 @@ export default function Footer() {
   const links: Record<FooterLinks, Array<{ name: string; href: string }>> = {
     about_us: [
       { name: "ministry_profile", href: routes.MINISTRY_PROFILE },
-      // { name: "announcements", href: routes.ANNOUNCEMENTS },
-      // { name: "achievements", href: routes.ACHIEVEMENTS },
-      // { name: "policy", href: routes.POLICY },
+      { name: "announcements", href: routes.ANNOUNCEMENTS },
+      { name: "achievements", href: routes.ACHIEVEMENTS },
+      { name: "policy", href: routes.POLICY },
       { name: "directory", href: routes.DIRECTORY },
       { name: "contact_us", href: routes.CONTACT_US },
     ],
@@ -59,7 +59,7 @@ export default function Footer() {
   };
 
   const className = {
-    link: "text-sm text-black-700 [text-underline-position:from-font] hover:text-black-900 hover:underline",
+    link: "text-sm text-black-700 underline-font hover:text-foreground hover:underline",
   };
 
   return (
@@ -73,6 +73,7 @@ export default function Footer() {
                 width={28}
                 height={28}
                 alt="Jata Negara"
+                className="select-none"
               />
               <div>
                 <p className="whitespace-nowrap font-poppins font-semibold">
@@ -149,7 +150,7 @@ export default function Footer() {
               {["penafian", "dasar-privasi"].map((link) => (
                 <Link
                   key={link}
-                  className="text-sm text-black-700 [text-underline-position:from-font] hover:text-black-900 hover:underline"
+                  className="text-sm text-black-700 underline-font hover:text-foreground hover:underline"
                   href={link}
                 >
                   {t(`Footer.${link}`)}
