@@ -116,7 +116,7 @@ export default function Footer() {
                         key={name}
                         className={className.link}
                         href={href}
-                        scroll={false}
+                        scroll={true}
                       >
                         {t(`Header.${name}`)}
                       </Link>
