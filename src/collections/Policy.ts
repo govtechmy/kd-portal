@@ -47,7 +47,7 @@ export const KDPolicy: CollectionConfig = {
       type: "date",
     },
     {
-      name: "file",
+      name: "file_upload",
       label: "File",
       type: "upload",
       relationTo: "file",

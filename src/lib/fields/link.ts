@@ -5,6 +5,7 @@ import { routes } from "../routes";
 type LinkType = (options?: {
   linkOption?: Option[];
   disableLabel?: boolean;
+  labelPlaceholder?: string;
   overrides?: Record<string, unknown>;
   forceCustomUrl?: boolean;
 }) => Field;
@@ -20,6 +21,7 @@ const defaultOptions: Option[] = Object.entries(routes).map(([key, value]) => {
 const link: LinkType = ({
   linkOption = defaultOptions,
   disableLabel = false,
+  labelPlaceholder,
   overrides = {},
   forceCustomUrl = false,
 } = {}) => {
@@ -108,6 +110,9 @@ const link: LinkType = ({
           label: "Label",
           required: true,
           type: "text",
+          admin: {
+            placeholder: labelPlaceholder || "",
+          },
         },
       ],
       type: "row",

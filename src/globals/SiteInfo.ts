@@ -82,7 +82,7 @@ export const SiteInfo: GlobalConfig = {
           },
           options: socialMediaOptions,
         },
-        link({ forceCustomUrl: true }),
+        link({ forceCustomUrl: true, labelPlaceholder: "KemDigitalMsia" }),
       ],
       maxRows: 4,
       type: "array",

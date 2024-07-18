@@ -20,6 +20,7 @@ export interface Config {
     'staff-directory': StaffDirectory;
     policy: Policy;
     'quick-link': QuickLink;
+    search: Search;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
@@ -215,7 +216,7 @@ export interface Policy {
   doc_type: 'social' | 'quick_links';
   doc_description?: string | null;
   doc_date?: string | null;
-  file?: string | File | null;
+  file_upload?: string | File | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -239,6 +240,34 @@ export interface QuickLink {
     id?: string | null;
   }[];
   image?: string | Media | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "search".
+ */
+export interface Search {
+  id: string;
+  title?: string | null;
+  priority?: number | null;
+  doc:
+    | {
+        relationTo: 'achievement';
+        value: string | Achievement;
+      }
+    | {
+        relationTo: 'broadcast';
+        value: string | Broadcast;
+      }
+    | {
+        relationTo: 'staff-directory';
+        value: string | StaffDirectory;
+      }
+    | {
+        relationTo: 'policy';
+        value: string | Policy;
+      };
   updatedAt: string;
   createdAt: string;
 }

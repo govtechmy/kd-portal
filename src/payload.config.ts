@@ -1,14 +1,19 @@
 // storage-adapter-import-placeholder
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
+import { searchPlugin } from "@payloadcms/plugin-search";
 import path from "path";
 import { buildConfig } from "payload";
 import { fileURLToPath } from "url";
 import sharp from "sharp";
 import { en } from "payload/i18n/en";
 
-import PayloadCollections, { Users } from "./collections";
+import PayloadCollections, { Users, SearchOverride } from "./collections";
 import GlobalCollections from "./globals";
+import {
+  includedSearchCollection,
+  SearchBeforeSync,
+} from "./collections/Search-Overrides";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -67,6 +72,16 @@ export default buildConfig({
   },
   sharp,
   plugins: [
-    // storage-adapter-placeholder
+    searchPlugin({
+      collections: includedSearchCollection,
+      searchOverrides: SearchOverride,
+      defaultPriorities: {
+        achievement: 10,
+        broadcast: 20,
+        "staff-directory": 30,
+        policy: 40,
+      },
+      beforeSync: SearchBeforeSync,
+    }),
   ],
 });

@@ -7,6 +7,7 @@ import { QuickLink } from "./QuickLink";
 import { File } from "./File";
 import { KDPolicy } from "./Policy";
 import { Achievement } from "./Achievement";
+import { SearchOverride } from "./Search-Overrides";
 
 const PayloadCollections: CollectionConfig[] = [
   Users,
@@ -30,5 +31,6 @@ export {
   KDDirectory,
   KDPolicy,
   QuickLink,
+  SearchOverride,
 };
 export default PayloadCollections;
