@@ -8,28 +8,60 @@ export const Footer: GlobalConfig = {
   },
   fields: [
     {
-      name: "about-us",
-      fields: [link()],
-      type: "array",
-    },
-    {
-      name: "quick-links",
+      name: "footer_items",
+      label: "",
+      type: "group",
+      admin: {
+        hideGutter: true,
+      },
       fields: [
         {
+          name: "about-us",
+          fields: [link()],
+          type: "array",
+        },
+        {
           name: "quick-links",
-          type: "relationship",
-          relationTo: "quick-link",
-          filterOptions: () => {
-            return { type: { equals: "social" } };
-          },
+          fields: [
+            {
+              name: "quick-links",
+              type: "relationship",
+              relationTo: "quick-link",
+              filterOptions: () => {
+                return { type: { equals: "social" } };
+              },
+            },
+          ],
+          type: "array",
+        },
+        {
+          name: "open-source",
+          fields: [link()],
+          type: "array",
         },
       ],
-      type: "array",
     },
     {
-      name: "open-source",
-      fields: [link()],
-      type: "array",
+      name: "disclaimer_section",
+      label: "Disclaimer",
+      type: "group",
+      fields: [
+        {
+          name: "statement",
+          type: "richText",
+        },
+      ],
+    },
+    {
+      name: "privacy-policy_section",
+      label: "Privacy-policy",
+      type: "group",
+      fields: [
+        {
+          name: "statement",
+          type: "richText",
+        },
+      ],
     },
   ],
 };

@@ -18,7 +18,5 @@ export default async function Page({
     depth: 3,
   });
 
-  console.log(data.functions_and_role[0].statement.root);
-
   return <InfoKorporatComponent data={data} locale={locale} />;
 }

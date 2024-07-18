@@ -105,7 +105,7 @@ const InfoKorporatComponent: FC<InfoKorporatProps> = ({ data, locale }) => {
               <p className="text-hsm font-semibold text-brand-600">
                 {t(title)}
               </p>
-              <p className="text-black-700">{t(desc)}</p>
+              <p className="text-black-700">{desc}</p>
             </div>
           </div>
         ))}
@@ -128,13 +128,13 @@ const InfoKorporatComponent: FC<InfoKorporatProps> = ({ data, locale }) => {
                   // dangerouslySetInnerHTML={{ __html: statement.root }}
                 >
                   {/* {statement} */}
-                  {/* {t.rich(`Info.Role.desc${i + 1}`, {
+                  {t.rich(`Info.Role.desc${i + 1}`, {
                     b: (chunks) => (
                       <span className="font-semibold text-foreground">
                         {chunks}
                       </span>
                     ),
-                  })} */}
+                  })}
                 </p>
               </div>
             ))}

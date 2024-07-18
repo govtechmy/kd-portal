@@ -7,6 +7,9 @@
  */
 
 export interface Config {
+  auth: {
+    users: UserAuthOperations;
+  };
   collections: {
     users: User;
     media: Media;
@@ -29,6 +32,19 @@ export interface Config {
   locale: 'ms-MY' | 'en-GB';
   user: User & {
     collection: 'users';
+  };
+}
+export interface UserAuthOperations {
+  forgotPassword: {
+    email: string;
+  };
+  login: {
+    password: string;
+    email: string;
+  };
+  registerFirstUser: {
+    email: string;
+    password: string;
   };
 }
 /**
@@ -317,40 +333,76 @@ export interface Header {
  */
 export interface Footer {
   id: string;
-  'about-us'?:
-    | {
-        link: {
-          type?: ('reference' | 'custom') | null;
-          newTab?: boolean | null;
-          reference?:
-            | ('/' | '/pencapaian' | '/siaran' | '/hubungi-kami' | '/info-korporat' | '/direktori' | '/dasar')
-            | null;
-          url?: string | null;
-          label: string;
-        };
-        id?: string | null;
-      }[]
-    | null;
-  'quick-links'?:
-    | {
-        'quick-links'?: (string | null) | QuickLink;
-        id?: string | null;
-      }[]
-    | null;
-  'open-source'?:
-    | {
-        link: {
-          type?: ('reference' | 'custom') | null;
-          newTab?: boolean | null;
-          reference?:
-            | ('/' | '/pencapaian' | '/siaran' | '/hubungi-kami' | '/info-korporat' | '/direktori' | '/dasar')
-            | null;
-          url?: string | null;
-          label: string;
-        };
-        id?: string | null;
-      }[]
-    | null;
+  footer_items?: {
+    'about-us'?:
+      | {
+          link: {
+            type?: ('reference' | 'custom') | null;
+            newTab?: boolean | null;
+            reference?:
+              | ('/' | '/pencapaian' | '/siaran' | '/hubungi-kami' | '/info-korporat' | '/direktori' | '/dasar')
+              | null;
+            url?: string | null;
+            label: string;
+          };
+          id?: string | null;
+        }[]
+      | null;
+    'quick-links'?:
+      | {
+          'quick-links'?: (string | null) | QuickLink;
+          id?: string | null;
+        }[]
+      | null;
+    'open-source'?:
+      | {
+          link: {
+            type?: ('reference' | 'custom') | null;
+            newTab?: boolean | null;
+            reference?:
+              | ('/' | '/pencapaian' | '/siaran' | '/hubungi-kami' | '/info-korporat' | '/direktori' | '/dasar')
+              | null;
+            url?: string | null;
+            label: string;
+          };
+          id?: string | null;
+        }[]
+      | null;
+  };
+  disclaimer_section?: {
+    statement?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+  };
+  'privacy-policy_section'?: {
+    statement?: {
+      root: {
+        type: string;
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
+  };
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -500,6 +552,13 @@ export interface InfoKorporat {
   } | null;
   updatedAt?: string | null;
   createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "auth".
+ */
+export interface Auth {
+  [k: string]: unknown;
 }
 
 
