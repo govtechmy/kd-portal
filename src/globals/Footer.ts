@@ -8,38 +8,29 @@ export const Footer: GlobalConfig = {
   },
   fields: [
     {
-      name: "footer_items",
-      label: "",
-      type: "group",
-      admin: {
-        hideGutter: true,
-      },
+      name: "about_us",
+      label: "About Us",
+      type: "array",
+      fields: [link({ labelPlaceholder: "Hubungi Kami" })],
+    },
+    {
+      name: "quick-links",
       fields: [
         {
-          name: "about-us",
-          fields: [link()],
-          type: "array",
-        },
-        {
           name: "quick-links",
-          fields: [
-            {
-              name: "quick-links",
-              type: "relationship",
-              relationTo: "quick-link",
-              filterOptions: () => {
-                return { type: { equals: "social" } };
-              },
-            },
-          ],
-          type: "array",
-        },
-        {
-          name: "open-source",
-          fields: [link()],
-          type: "array",
+          type: "relationship",
+          relationTo: "quick-link",
+          filterOptions: () => {
+            return { type: { equals: "social" } };
+          },
         },
       ],
+      type: "array",
+    },
+    {
+      name: "open-source",
+      fields: [link({ labelPlaceholder: "Repo GitHub" })],
+      type: "array",
     },
     {
       name: "disclaimer_section",
@@ -54,7 +45,7 @@ export const Footer: GlobalConfig = {
     },
     {
       name: "privacy-policy_section",
-      label: "Privacy-policy",
+      label: "Privacy Policy",
       type: "group",
       fields: [
         {

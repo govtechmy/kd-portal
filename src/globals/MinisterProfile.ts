@@ -1,8 +1,8 @@
 import IconListOptions from "@/icons";
 import { GlobalConfig } from "payload";
 
-export const InfoKorporat: GlobalConfig = {
-  slug: "info-korporat",
+export const MinisterProfile: GlobalConfig = {
+  slug: "profil-kementerian",
   access: {
     read: () => true,
   },

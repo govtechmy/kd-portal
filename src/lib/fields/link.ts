@@ -21,7 +21,7 @@ const defaultOptions: Option[] = Object.entries(routes).map(([key, value]) => {
 const link: LinkType = ({
   linkOption = defaultOptions,
   disableLabel = false,
-  labelPlaceholder,
+  labelPlaceholder = "",
   overrides = {},
   forceCustomUrl = false,
 } = {}) => {
@@ -111,7 +111,7 @@ const link: LinkType = ({
           required: true,
           type: "text",
           admin: {
-            placeholder: labelPlaceholder || "",
+            placeholder: labelPlaceholder,
           },
         },
       ],

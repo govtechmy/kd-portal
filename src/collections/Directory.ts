@@ -148,7 +148,7 @@ export const KDDirectory: CollectionConfig = {
           },
           options: socialMediaOptions,
         },
-        link({ forceCustomUrl: true }),
+        link({ forceCustomUrl: true, labelPlaceholder: "KemDigitalMsia" }),
       ],
     },
   ],

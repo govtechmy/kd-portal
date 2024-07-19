@@ -6,7 +6,7 @@ import DataTable from "@/components/ui/data-table";
 import Search from "@/components/ui/search";
 import Phone from "@/icons/phone";
 import Envelope from "@/icons/envelope";
-import StaffDirectory from "@/lib/resources/directory_kd.json";
+import StaffDirectory from "@/lib/resources/directory_kd.json" assert { type: "json" };
 import { Cell } from "@tanstack/react-table";
 import { useTranslations } from "next-intl";
 import { FC, useState } from "react";

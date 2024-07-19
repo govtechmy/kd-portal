@@ -16,23 +16,26 @@ export interface Config {
     file: File;
     broadcast: Broadcast;
     achievement: Achievement;
-    "kd-department": KdDepartment;
-    "staff-directory": StaffDirectory;
+    'kd-department': KdDepartment;
+    'staff-directory': StaffDirectory;
     policy: Policy;
-    "quick-link": QuickLink;
+    'quick-link': QuickLink;
     search: Search;
-    "payload-preferences": PayloadPreference;
-    "payload-migrations": PayloadMigration;
+    'payload-preferences': PayloadPreference;
+    'payload-migrations': PayloadMigration;
+  };
+  db: {
+    defaultIDType: string;
   };
   globals: {
-    "site-info": SiteInfo;
+    'site-info': SiteInfo;
     header: Header;
     footer: Footer;
-    "info-korporat": InfoKorporat;
+    'profil-kementerian': ProfilKementerian;
   };
-  locale: "ms-MY" | "en-GB";
+  locale: 'ms-MY' | 'en-GB';
   user: User & {
-    collection: "users";
+    collection: 'users';
   };
 }
 export interface UserAuthOperations {
@@ -40,12 +43,15 @@ export interface UserAuthOperations {
     email: string;
   };
   login: {
-    password: string;
     email: string;
+    password: string;
   };
   registerFirstUser: {
     email: string;
     password: string;
+  };
+  unlock: {
+    email: string;
   };
 }
 /**
@@ -110,7 +116,7 @@ export interface File {
 export interface Broadcast {
   id: string;
   title: string;
-  type: "announcement" | "media_broadcast";
+  type: 'announcement' | 'media_broadcast';
   date: string;
   description: string;
   broadcast_text: {
@@ -121,8 +127,8 @@ export interface Broadcast {
         version: number;
         [k: string]: unknown;
       }[];
-      direction: ("ltr" | "rtl") | null;
-      format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
       indent: number;
       version: number;
     };
@@ -140,7 +146,7 @@ export interface Broadcast {
 export interface Achievement {
   id: string;
   title: string;
-  type: "announcement" | "media_broadcast";
+  type: 'announcement' | 'media_broadcast';
   date: string;
   description: string;
   broadcast_text: {
@@ -151,8 +157,8 @@ export interface Achievement {
         version: number;
         [k: string]: unknown;
       }[];
-      direction: ("ltr" | "rtl") | null;
-      format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
       indent: number;
       version: number;
     };
@@ -188,29 +194,6 @@ export interface StaffDirectory {
   telefon?: string | null;
   emel?: string | null;
   image?: string | Media | null;
-  social_media?:
-    | {
-        social: "Facebook" | "X" | "Instagram" | "Tiktok";
-        link: {
-          type?: ("reference" | "custom") | null;
-          newTab?: boolean | null;
-          reference?:
-            | (
-                | "/"
-                | "/pencapaian"
-                | "/siaran"
-                | "/hubungi-kami"
-                | "/info-korporat"
-                | "/direktori"
-                | "/dasar"
-              )
-            | null;
-          url?: string | null;
-          label: string;
-        };
-        id?: string | null;
-      }[]
-    | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -221,7 +204,7 @@ export interface StaffDirectory {
 export interface Policy {
   id: string;
   doc_name: string;
-  doc_type: "social" | "quick_links";
+  doc_type: 'social' | 'quick_links';
   doc_description?: string | null;
   doc_date?: string | null;
   file_upload?: string | File | null;
@@ -235,20 +218,22 @@ export interface Policy {
 export interface QuickLink {
   id: string;
   name: string;
-  type?: ("social" | "quick_links") | null;
+  type?: ('social' | 'quick_links') | null;
   href: {
     link?: {
-      type?: ("reference" | "custom") | null;
+      type?: ('reference' | 'custom') | null;
       newTab?: boolean | null;
       reference?:
         | (
-            | "/"
-            | "/pencapaian"
-            | "/siaran"
-            | "/hubungi-kami"
-            | "/info-korporat"
-            | "/direktori"
-            | "/dasar"
+            | '/'
+            | '/pencapaian'
+            | '/siaran'
+            | '/hubungi-kami'
+            | '/profil-kementerian'
+            | '/direktori'
+            | '/penafian'
+            | '/dasar'
+            | '/dasar-privasi'
           )
         | null;
       url?: string | null;
@@ -269,19 +254,19 @@ export interface Search {
   priority?: number | null;
   doc:
     | {
-        relationTo: "achievement";
+        relationTo: 'achievement';
         value: string | Achievement;
       }
     | {
-        relationTo: "broadcast";
+        relationTo: 'broadcast';
         value: string | Broadcast;
       }
     | {
-        relationTo: "staff-directory";
+        relationTo: 'staff-directory';
         value: string | StaffDirectory;
       }
     | {
-        relationTo: "policy";
+        relationTo: 'policy';
         value: string | Policy;
       };
   updatedAt: string;
@@ -294,7 +279,7 @@ export interface Search {
 export interface PayloadPreference {
   id: string;
   user: {
-    relationTo: "users";
+    relationTo: 'users';
     value: string | User;
   };
   key?: string | null;
@@ -334,19 +319,21 @@ export interface SiteInfo {
   no_tel: string;
   email: string;
   social_media: {
-    social: "Facebook" | "X" | "Instagram" | "Tiktok";
+    social: 'Facebook' | 'X' | 'Instagram' | 'Tiktok';
     link: {
-      type?: ("reference" | "custom") | null;
+      type?: ('reference' | 'custom') | null;
       newTab?: boolean | null;
       reference?:
         | (
-            | "/"
-            | "/pencapaian"
-            | "/siaran"
-            | "/hubungi-kami"
-            | "/info-korporat"
-            | "/direktori"
-            | "/dasar"
+            | '/'
+            | '/pencapaian'
+            | '/siaran'
+            | '/hubungi-kami'
+            | '/profil-kementerian'
+            | '/direktori'
+            | '/penafian'
+            | '/dasar'
+            | '/dasar-privasi'
           )
         | null;
       url?: string | null;
@@ -363,28 +350,6 @@ export interface SiteInfo {
  */
 export interface Header {
   id: string;
-  headerItems?:
-    | {
-        link: {
-          type?: ("reference" | "custom") | null;
-          newTab?: boolean | null;
-          reference?:
-            | (
-                | "/"
-                | "/pencapaian"
-                | "/siaran"
-                | "/hubungi-kami"
-                | "/info-korporat"
-                | "/direktori"
-                | "/dasar"
-              )
-            | null;
-          url?: string | null;
-          label: string;
-        };
-        id?: string | null;
-      }[]
-    | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -394,58 +359,6 @@ export interface Header {
  */
 export interface Footer {
   id: string;
-  footer_items?: {
-    "about-us"?:
-      | {
-          link: {
-            type?: ("reference" | "custom") | null;
-            newTab?: boolean | null;
-            reference?:
-              | (
-                  | "/"
-                  | "/pencapaian"
-                  | "/siaran"
-                  | "/hubungi-kami"
-                  | "/info-korporat"
-                  | "/direktori"
-                  | "/dasar"
-                )
-              | null;
-            url?: string | null;
-            label: string;
-          };
-          id?: string | null;
-        }[]
-      | null;
-    "quick-links"?:
-      | {
-          "quick-links"?: (string | null) | QuickLink;
-          id?: string | null;
-        }[]
-      | null;
-    "open-source"?:
-      | {
-          link: {
-            type?: ("reference" | "custom") | null;
-            newTab?: boolean | null;
-            reference?:
-              | (
-                  | "/"
-                  | "/pencapaian"
-                  | "/siaran"
-                  | "/hubungi-kami"
-                  | "/info-korporat"
-                  | "/direktori"
-                  | "/dasar"
-                )
-              | null;
-            url?: string | null;
-            label: string;
-          };
-          id?: string | null;
-        }[]
-      | null;
-  };
   disclaimer_section?: {
     statement?: {
       root: {
@@ -455,15 +368,15 @@ export interface Footer {
           version: number;
           [k: string]: unknown;
         }[];
-        direction: ("ltr" | "rtl") | null;
-        format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
         indent: number;
         version: number;
       };
       [k: string]: unknown;
     } | null;
   };
-  "privacy-policy_section"?: {
+  'privacy-policy_section'?: {
     statement?: {
       root: {
         type: string;
@@ -472,8 +385,8 @@ export interface Footer {
           version: number;
           [k: string]: unknown;
         }[];
-        direction: ("ltr" | "rtl") | null;
-        format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
         indent: number;
         version: number;
       };
@@ -485,77 +398,77 @@ export interface Footer {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "info-korporat".
+ * via the `definition` "profil-kementerian".
  */
-export interface InfoKorporat {
+export interface ProfilKementerian {
   id: string;
   vision: {
     statement: string;
     icon:
-      | "arrow-back"
-      | "arrow-forward"
-      | "arrow-outgoing"
-      | "bolt"
-      | "check-circle"
-      | "checkmark-14-point-star"
-      | "checkmark-shield"
-      | "chevron-down"
-      | "chevron-left"
-      | "chevron-right"
-      | "chevron-up"
-      | "cross-x"
-      | "direction"
-      | "ellipsis"
-      | "envelope"
-      | "eye-show"
-      | "file-document-paper"
-      | "flag"
-      | "globe"
-      | "gov"
-      | "hamburger-menu"
-      | "lock"
-      | "map"
-      | "money"
-      | "phone"
-      | "search"
-      | "solid-lock"
-      | "star"
-      | "trophy"
-      | "user-group";
+      | 'arrow-back'
+      | 'arrow-forward'
+      | 'arrow-outgoing'
+      | 'bolt'
+      | 'check-circle'
+      | 'checkmark-14-point-star'
+      | 'checkmark-shield'
+      | 'chevron-down'
+      | 'chevron-left'
+      | 'chevron-right'
+      | 'chevron-up'
+      | 'cross-x'
+      | 'direction'
+      | 'ellipsis'
+      | 'envelope'
+      | 'eye-show'
+      | 'file-document-paper'
+      | 'flag'
+      | 'globe'
+      | 'gov'
+      | 'hamburger-menu'
+      | 'lock'
+      | 'map'
+      | 'money'
+      | 'phone'
+      | 'search'
+      | 'solid-lock'
+      | 'star'
+      | 'trophy'
+      | 'user-group';
   };
   mission: {
     statement: string;
     icon:
-      | "arrow-back"
-      | "arrow-forward"
-      | "arrow-outgoing"
-      | "bolt"
-      | "check-circle"
-      | "checkmark-14-point-star"
-      | "checkmark-shield"
-      | "chevron-down"
-      | "chevron-left"
-      | "chevron-right"
-      | "chevron-up"
-      | "cross-x"
-      | "direction"
-      | "ellipsis"
-      | "envelope"
-      | "eye-show"
-      | "file-document-paper"
-      | "flag"
-      | "globe"
-      | "gov"
-      | "hamburger-menu"
-      | "lock"
-      | "map"
-      | "money"
-      | "phone"
-      | "search"
-      | "solid-lock"
-      | "star"
-      | "trophy"
-      | "user-group";
+      | 'arrow-back'
+      | 'arrow-forward'
+      | 'arrow-outgoing'
+      | 'bolt'
+      | 'check-circle'
+      | 'checkmark-14-point-star'
+      | 'checkmark-shield'
+      | 'chevron-down'
+      | 'chevron-left'
+      | 'chevron-right'
+      | 'chevron-up'
+      | 'cross-x'
+      | 'direction'
+      | 'ellipsis'
+      | 'envelope'
+      | 'eye-show'
+      | 'file-document-paper'
+      | 'flag'
+      | 'globe'
+      | 'gov'
+      | 'hamburger-menu'
+      | 'lock'
+      | 'map'
+      | 'money'
+      | 'phone'
+      | 'search'
+      | 'solid-lock'
+      | 'star'
+      | 'trophy'
+      | 'user-group';
   };
   functions_and_role: {
     statement: {
@@ -566,44 +479,44 @@ export interface InfoKorporat {
           version: number;
           [k: string]: unknown;
         }[];
-        direction: ("ltr" | "rtl") | null;
-        format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
         indent: number;
         version: number;
       };
       [k: string]: unknown;
     };
     icon:
-      | "arrow-back"
-      | "arrow-forward"
-      | "arrow-outgoing"
-      | "bolt"
-      | "check-circle"
-      | "checkmark-14-point-star"
-      | "checkmark-shield"
-      | "chevron-down"
-      | "chevron-left"
-      | "chevron-right"
-      | "chevron-up"
-      | "cross-x"
-      | "direction"
-      | "ellipsis"
-      | "envelope"
-      | "eye-show"
-      | "file-document-paper"
-      | "flag"
-      | "globe"
-      | "gov"
-      | "hamburger-menu"
-      | "lock"
-      | "map"
-      | "money"
-      | "phone"
-      | "search"
-      | "solid-lock"
-      | "star"
-      | "trophy"
-      | "user-group";
+      | 'arrow-back'
+      | 'arrow-forward'
+      | 'arrow-outgoing'
+      | 'bolt'
+      | 'check-circle'
+      | 'checkmark-14-point-star'
+      | 'checkmark-shield'
+      | 'chevron-down'
+      | 'chevron-left'
+      | 'chevron-right'
+      | 'chevron-up'
+      | 'cross-x'
+      | 'direction'
+      | 'ellipsis'
+      | 'envelope'
+      | 'eye-show'
+      | 'file-document-paper'
+      | 'flag'
+      | 'globe'
+      | 'gov'
+      | 'hamburger-menu'
+      | 'lock'
+      | 'map'
+      | 'money'
+      | 'phone'
+      | 'search'
+      | 'solid-lock'
+      | 'star'
+      | 'trophy'
+      | 'user-group';
     id?: string | null;
   }[];
   leaders?:
@@ -612,7 +525,7 @@ export interface InfoKorporat {
         id?: string | null;
       }[]
     | null;
-  "latar-belakang"?: {
+  'latar-belakang'?: {
     root: {
       type: string;
       children: {
@@ -620,8 +533,8 @@ export interface InfoKorporat {
         version: number;
         [k: string]: unknown;
       }[];
-      direction: ("ltr" | "rtl") | null;
-      format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
       indent: number;
       version: number;
     };
@@ -638,6 +551,7 @@ export interface Auth {
   [k: string]: unknown;
 }
 
-declare module "payload" {
+
+declare module 'payload' {
   export interface GeneratedTypes extends Config {}
 }

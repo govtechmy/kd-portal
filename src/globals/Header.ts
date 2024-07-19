@@ -7,10 +7,11 @@ export const Header: GlobalConfig = {
   },
   fields: [
     {
-      name: "headerItems",
-      fields: [link()],
+      name: "items",
+      label: "Header Items",
+      required: true,
+      fields: [link({ labelPlaceholder: "Home" })],
       maxRows: 6,
-      localized: true,
       type: "array",
     },
   ],
