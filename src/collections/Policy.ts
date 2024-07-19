@@ -1,5 +1,6 @@
 import { CollectionConfig, Option } from "payload";
 
+// TODO: Update the doc_type to the actual type if any
 const QuickLinkOptions: Option[] = [
   {
     label: "Social Media",
@@ -40,6 +41,7 @@ export const KDPolicy: CollectionConfig = {
       name: "doc_description",
       label: "Document Description",
       type: "textarea",
+      required: true,
       admin: {
         rows: 3,
       },
@@ -48,12 +50,14 @@ export const KDPolicy: CollectionConfig = {
       name: "doc_date",
       label: "Document Date",
       type: "date",
+      required: true,
     },
     {
       name: "file_upload",
       label: "File",
       type: "upload",
       relationTo: "file",
+      required: true,
     },
   ],
 };

@@ -7,22 +7,19 @@ import Download from "@/icons/download";
 import FileDocumentPaper from "@/icons/file-document-paper";
 import { createColumnHelper } from "@tanstack/react-table";
 import { useTranslations } from "next-intl";
-import { dummy } from "./dummy";
 import { DasarFilter } from "./filter";
-
-interface Dasar {
-  title: string;
-  type: string;
-  description: string;
-  date: string;
+import { Policy } from "@/payload-types";
+import { DateTime } from "luxon";
+interface DasarTableProps {
+  data: Policy[];
 }
 
-export default function DasarTable() {
+export default function DasarTable({ data }: DasarTableProps) {
   const t = useTranslations("Policy.table_header");
-  const { accessor } = createColumnHelper<Dasar>();
+  const { accessor } = createColumnHelper<Policy>();
 
   const desktopColumns = [
-    accessor("title", {
+    accessor("doc_name", {
       header: t("title"),
       cell: (info) => (
         <div className="flex gap-x-2 whitespace-nowrap">
@@ -33,26 +30,33 @@ export default function DasarTable() {
         </div>
       ),
     }),
-    accessor("type", {
+    accessor("doc_type", {
       header: t("type"),
       cell: (info) => info.getValue(),
       meta: {
         cellClass: "whitespace-nowrap",
       },
     }),
-    accessor("description", {
+    accessor("doc_description", {
       header: t("description"),
       cell: (info) => (
         <ReadMore className="whitespace-nowrap" max={["char", 35]}>
-          {info.getValue()}
+          {info.getValue() || ""}
         </ReadMore>
       ),
     }),
-    accessor("date", {
+    accessor("doc_date", {
       header: t("date"),
-      cell: (info) => info.getValue(),
+      cell: (info) => {
+        const date = info.getValue();
+        if (date) {
+          return DateTime.fromISO(date).toFormat("dd/M/yyyy");
+        } else {
+          return "";
+        }
+      },
     }),
-    accessor("type", {
+    accessor("doc_type", {
       header: "",
       id: "actions",
       cell: () => (
@@ -72,9 +76,11 @@ export default function DasarTable() {
   ];
 
   const mobileColumn = [
-    accessor("type", {
+    accessor("doc_type", {
+      header: t("type"),
       cell: (info) => {
-        const { title, type, description, date } = info.row.original;
+        const { doc_name, doc_type, doc_description, doc_date } =
+          info.row.original;
 
         return (
           <div className="flex items-start gap-x-3 pr-3">
@@ -83,13 +89,13 @@ export default function DasarTable() {
             </div>
             <div className="flex-1 space-y-2">
               <div className="space-y-1">
-                <p className="font-semibold">{title}</p>
+                <p className="font-semibold">{doc_name}</p>
                 <p className="line-clamp-3 text-sm text-black-700">
-                  {description}
+                  {doc_description}
                 </p>
               </div>
               <div className="flex gap-x-1.5 text-sm text-dim-500">
-                <span>{date}</span>|<span>{type}</span>
+                <span>{doc_date}</span>|<span>{doc_type}</span>
               </div>
             </div>
             <Button
@@ -108,14 +114,15 @@ export default function DasarTable() {
   return (
     <section className="container flex w-full border-x border-x-washed-100 py-12">
       <DataTable
+        key={JSON.stringify(data) + "-desktop"}
         className="sm:hidden"
         columns={mobileColumn}
-        data={dummy as Dasar[]}
+        data={data}
         filter={(table, headers) => (
           <DasarFilter
             table={table}
             headers={headers}
-            column="type"
+            column="doc_type"
             subtitle={t("type")}
           />
         )}
@@ -125,14 +132,15 @@ export default function DasarTable() {
         }}
       />
       <DataTable
+        key={JSON.stringify(data) + "-mobile"}
         className="hidden sm:flex"
         columns={desktopColumns}
-        data={dummy as Dasar[]}
+        data={data}
         filter={(table, headers) => (
           <DasarFilter
             table={table}
             headers={headers}
-            column="type"
+            column="doc_type"
             subtitle={t("type")}
           />
         )}

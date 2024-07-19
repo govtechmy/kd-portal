@@ -188,6 +188,7 @@
   },
   "Policy": {
     "header": "Dokumen Dasar",
+    "search_placeholder": "Cari kata kunci (tajuk, keterangan)",
     "table_header": {
       "title": "Tajuk",
       "type": "Jenis",

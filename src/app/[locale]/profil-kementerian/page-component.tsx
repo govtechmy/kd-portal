@@ -182,7 +182,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
                 <p className="text-hsm font-semibold text-brand-600">
                   {t(title)}
                 </p>
-                <p className="text-black-700">{t(desc)}</p>
+                <p className="text-black-700">{desc}</p>
               </div>
             </div>
           ))}

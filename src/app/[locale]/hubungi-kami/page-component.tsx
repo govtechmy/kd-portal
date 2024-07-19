@@ -18,6 +18,7 @@ interface ContactUsProps {
   locale: (typeof locales)[number];
 }
 
+// TODO: Fix Waze navigation direction link
 const ContactUs: FC<ContactUsProps> = ({ data, locale }) => {
   unstable_setRequestLocale(locale);
   const t = useTranslations();

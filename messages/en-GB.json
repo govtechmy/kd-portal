@@ -188,6 +188,7 @@
   },
   "Policy": {
     "header": "Policy Documents",
+    "search_placeholder": "Search for keyword (e.g. title, description)",
     "table_header": {
       "title": "Title",
       "type": "Type",

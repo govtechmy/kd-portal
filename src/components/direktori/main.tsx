@@ -6,25 +6,21 @@ import DataTable from "@/components/ui/data-table";
 import Search from "@/components/ui/search";
 import Phone from "@/icons/phone";
 import Envelope from "@/icons/envelope";
-import StaffDirectory from "@/lib/resources/directory_kd.json" assert { type: "json" };
 import { Cell } from "@tanstack/react-table";
 import { useTranslations } from "next-intl";
 import { FC, useState } from "react";
 import { DirektoriFilter } from "./filter";
+import { StaffDirectory } from "@/payload-types";
+import { locales } from "@/lib/i18n-config";
 
-interface StaffDirectory {
-  id_bhg: number;
-  bhg: string;
-  id: number;
-  nama: string;
-  gred: string | null;
-  jawatan: string | null;
-  telefon: string | null;
-  emel: string | null;
+interface DirektoriMainProps {
+  list: StaffDirectory[];
+  locale: (typeof locales)[number];
 }
 
-const DirektoriMain: FC = () => {
-  const [data, setData] = useState(StaffDirectory);
+// TODO: Fix the order of the upload of directory
+const DirektoriMain: FC<DirektoriMainProps> = ({ list, locale }) => {
+  const [data, setData] = useState(list);
   const t = useTranslations();
 
   const column = [
@@ -58,6 +54,8 @@ const DirektoriMain: FC = () => {
     {
       header: t("Directory.table_header.bhg"),
       accessorKey: "bhg",
+      accessorFn: (item: StaffDirectory) =>
+        typeof item.id_bhg !== "string" && item.id_bhg.bhg,
       meta: {
         type: "text",
         editable: false,
@@ -102,24 +100,26 @@ const DirektoriMain: FC = () => {
       header: "",
       accessorKey: "bhg",
       cell: (info: any) => {
-        const { bhg, emel, gred, id, jawatan, nama, telefon } = (
+        const { id_bhg, emel, gred, staff_id, jawatan, nama, telefon } = (
           info as Cell<StaffDirectory, unknown>
         ).row.original;
 
-        if (id === -1)
+        if (staff_id === -1)
           return (
             <p className="text-center font-semibold">
-              {bhg} - {nama}
+              {typeof id_bhg !== "string" && id_bhg.bhg} - {nama}
             </p>
           );
 
         return (
           <div className="space-y-2 font-medium text-dim-500">
-            <p className="text-balance text-xs font-semibold">{bhg}</p>
+            <p className="text-balance text-xs font-semibold">
+              {typeof id_bhg !== "string" && id_bhg.bhg}
+            </p>
             <div className="space-y-1">
               <div className="flex flex-wrap items-center gap-x-1.5">
                 <span className="text-base font-semibold text-foreground">
-                  {id === 0 ? (
+                  {staff_id === 0 ? (
                     <span className="text-red-600">KOSONG</span>
                   ) : (
                     nama
@@ -171,7 +171,7 @@ const DirektoriMain: FC = () => {
     return setData(
       array.filter((item) => {
         return (
-          item.nama.toLowerCase().includes(query) ||
+          (item.nama && item.nama.toLowerCase().includes(query)) ||
           (item.emel && item.emel.toLowerCase().includes(query)) ||
           // (item.gred && item.gred.toLowerCase().includes(query)) ||
           (item.jawatan && item.jawatan.toLowerCase().includes(query))
@@ -186,7 +186,7 @@ const DirektoriMain: FC = () => {
         title={t("Directory.header")}
         search={
           <Search
-            onChange={(query) => searchArray(StaffDirectory, query)}
+            onChange={(query) => searchArray(list, query)}
             placeholder={t("Directory.search_placeholder")}
           />
         }
@@ -212,7 +212,7 @@ const DirektoriMain: FC = () => {
               />
             )}
             isMerged={(row) => {
-              if (row.original.id === -1) return row.getVisibleCells()[0];
+              if (row.original.staff_id === -1) return row.getVisibleCells()[0];
               return false;
             }}
           />
