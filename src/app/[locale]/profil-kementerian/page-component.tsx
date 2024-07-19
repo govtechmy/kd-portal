@@ -176,7 +176,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
               className="flex gap-6 py-12 md:gap-8 md:px-16 md:py-[84px]"
             >
               <div className="size-[54px] rounded-full bg-brand-50 p-[11px] text-foreground-primary">
-                {icon}
+                {icon ? icon : null}
               </div>
               <div className="space-y-3 lg:space-y-4.5">
                 <p className="text-hsm font-semibold text-brand-600">
