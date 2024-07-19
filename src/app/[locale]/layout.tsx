@@ -61,7 +61,9 @@ export async function generateMetadata({
         "en-GB": `${process.env.APP_URL}/en-GB`,
       },
     },
-    verification: "T9cIaXr6zYwwHAizh9qhGq1BRrdtfLXLGdoTLsgehi0",
+    verification: {
+      google: "T9cIaXr6zYwwHAizh9qhGq1BRrdtfLXLGdoTLsgehi0",
+    },
   };
 }
 
