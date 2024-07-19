@@ -12,7 +12,7 @@ export default function Timeline() {
     <Section>
       <div className="grid-cols-12 gap-6 border-washed-100 px-4.5 lg:px-6 xl:grid xl:border-x">
         <div className="col-span-10 col-start-2 flex flex-col gap-6 max-lg:pt-12 lg:flex-row">
-          <div className="sticky top-16 h-fit space-y-4.5 lg:w-1/3 lg:py-[84px]">
+          <div className="lg:sticky top-16 h-fit space-y-4.5 lg:w-1/3 lg:py-[84px]">
             <div className="flex gap-x-3">
               <Flag className="text-foreground-primary" />
               <Overline>{t("overline")}</Overline>

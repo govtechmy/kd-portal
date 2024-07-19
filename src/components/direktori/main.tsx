@@ -193,7 +193,7 @@ const DirektoriMain: FC = () => {
       />
 
       <Section>
-        <div className="hidden min-h-screen w-full border-x border-x-washed-100 px-6 py-12 sm:flex">
+        <div className="hidden w-full border-x border-x-washed-100 px-6 py-12 sm:flex">
           <DataTable
             key={JSON.stringify(data)}
             columns={column}
@@ -221,7 +221,7 @@ const DirektoriMain: FC = () => {
 
       {/* Mobile */}
       <Section>
-        <div className="flex min-h-screen w-full flex-col border-x border-x-washed-100 px-4.5 py-12 sm:hidden">
+        <div className="flex w-full flex-col border-x border-x-washed-100 px-4.5 py-12 sm:hidden">
           <DataTable
             key={JSON.stringify(data)}
             columns={mobileColumn}

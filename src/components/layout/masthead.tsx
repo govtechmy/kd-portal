@@ -12,7 +12,7 @@ export default function Masthead() {
 
   return (
     <div className="z-[60] bg-gradient-to-b from-washed-100 from-[84.74%] to-outline-200 to-100%">
-      <details className="peer max-w-full overflow-hidden bg-washed-100">
+      <details className="group peer max-w-full overflow-hidden bg-washed-100">
         <summary className="block cursor-pointer list-none py-2.5 outline-none sm:py-1">
           <div className="mx-auto flex max-w-[1280px] items-center gap-1.5 px-4.5 text-sm/4 text-foreground-primary max-sm:justify-between md:px-6">
             <div className="flex select-none items-center gap-1.5">
@@ -25,7 +25,7 @@ export default function Masthead() {
               <span className="hidden select-none tracking-[-0.01em] sm:block">
                 {t("how_to_identify")}
               </span>
-              <ChevronDown className="size-4 transition peer-open:rotate-180" />
+              <ChevronDown className="size-4 transition group-open:rotate-180" />
             </div>
           </div>
         </summary>

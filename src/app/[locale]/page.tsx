@@ -3,8 +3,10 @@ import Quicklinks from "@/components/home/quicklinks";
 import Timeline from "@/components/home/timeline";
 import HeroPattern from "@/components/layout/hero-pattern";
 import Overline from "@/components/typography/overline";
+import { buttonVariants } from "@/components/ui/button";
 import Search from "@/components/ui/search";
 import Flag from "@/icons/flag";
+import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import React from "react";
@@ -60,12 +62,15 @@ export default function Page({
                   .map((e) => (
                     <div
                       key={e}
-                      className="flex w-[calc(50%-3px)] items-center gap-x-1.5 rounded-full border bg-background px-3 py-2 text-xs leading-4 shadow-button sm:w-[250px]"
+                      className={cn(
+                        buttonVariants({ size: "md" }),
+                        "w-[calc(50%-3px)] whitespace-normal rounded-full text-xs/4 sm:w-[250px]",
+                      )}
                     >
                       <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-[#E5F4FF]">
                         <Flag className="text-brand-600" />
                       </div>
-                      <p className="line-clamp-2 text-left">
+                      <p className="line-clamp-2">
                         Pencapaian dan Aktiviti yang dijalankan selama 3 bulan
                         pada tahun
                       </p>

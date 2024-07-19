@@ -106,7 +106,7 @@ export default function DasarTable() {
   ];
 
   return (
-    <section className="container flex min-h-screen w-full border-x border-x-washed-100 py-12">
+    <section className="container flex w-full border-x border-x-washed-100 py-12">
       <DataTable
         className="sm:hidden"
         columns={mobileColumn}
