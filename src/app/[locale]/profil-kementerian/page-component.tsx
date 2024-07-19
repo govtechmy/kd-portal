@@ -182,7 +182,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
                 <p className="text-hsm font-semibold text-brand-600">
                   {t(title)}
                 </p>
-                <p className="text-black-700">{desc}</p>
+                <p className="text-black-700">{desc || ""}</p>
               </div>
             </div>
           ))}
@@ -200,7 +200,9 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
               {data.functions_and_role.map(({ icon, statement }, i) => (
                 <div key={i} className="flex flex-row gap-4.5 md:flex-col">
                   <div className="size-[54px] rounded-xl bg-brand-50 p-[11px] text-brand-700">
-                    {IconList[icon]({ className: "size-8 font-bold" })}
+                    {icon
+                      ? IconList[icon]({ className: "size-8 font-bold" })
+                      : ""}
                   </div>
 
                   {/* TODO: Add the rich text here */}

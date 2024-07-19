@@ -119,25 +119,27 @@ const ContactUs: FC<ContactUsProps> = ({ data, locale }) => {
             </div>
 
             <div className="grid flex-none grid-flow-row grid-cols-4 divide-x divide-washed-100 px-0 max-md:divide-y">
-              {data.social_media.map(
-                ({ social, link, id }) =>
-                  link.url && (
-                    <a
-                      key={id}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopenner noreferrer"
-                      className="underline-font text-sm text-black-700 hover:text-foreground hover:underline max-md:col-span-2"
-                    >
-                      <div className="col-span-1 flex flex-none flex-col items-center gap-2 py-6 md:gap-3 xl:w-[100px]">
-                        <div className="flex size-[42px] items-center justify-center rounded-full bg-brand-50 text-foreground-primary">
-                          {_social_media[social].icon}
-                        </div>
-                        {social}
-                      </div>
-                    </a>
-                  ),
-              )}
+              {Boolean(data.social_media.length)
+                ? data.social_media.map(
+                    ({ social, link, id }) =>
+                      link.url && (
+                        <a
+                          key={id}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopenner noreferrer"
+                          className="underline-font text-sm text-black-700 hover:text-foreground hover:underline max-md:col-span-2"
+                        >
+                          <div className="col-span-1 flex flex-none flex-col items-center gap-2 py-6 md:gap-3 xl:w-[100px]">
+                            <div className="flex size-[42px] items-center justify-center rounded-full bg-brand-50 text-foreground-primary">
+                              {_social_media[social].icon}
+                            </div>
+                            {social}
+                          </div>
+                        </a>
+                      ),
+                  )
+                : null}
             </div>
           </div>
         </Section>
