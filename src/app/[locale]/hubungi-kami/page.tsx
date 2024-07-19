@@ -116,7 +116,7 @@ export default function Page({
                   href={`${title === "email" ? "mailto" : "tel"}:${t(desc)}`}
                   className="group flex gap-4.5 border-washed-100 px-6 py-8 max-md:col-span-2 md:py-[34px]"
                 >
-                  <div className="size-[42px] rounded-full bg-brand-50 p-[9px] text-foreground-primary">
+                  <div className="text-foreground-primary size-[42px] rounded-full bg-brand-50 p-[9px]">
                     {icon}
                   </div>
                   <div className="space-y-1 font-semibold">
@@ -139,7 +139,7 @@ export default function Page({
                   className="underline-font text-sm text-black-700 hover:text-foreground hover:underline max-md:col-span-2"
                 >
                   <div className="col-span-1 flex flex-none flex-col items-center gap-2 py-6 md:gap-3 xl:w-[100px]">
-                    <div className="flex size-[42px] items-center justify-center rounded-full bg-brand-50 text-foreground-primary">
+                    <div className="text-foreground-primary flex size-[42px] items-center justify-center rounded-full bg-brand-50">
                       {icon}
                     </div>
                     {name}
