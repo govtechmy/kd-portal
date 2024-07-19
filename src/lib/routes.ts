@@ -9,6 +9,7 @@ export type DeepKeys<T> = T extends object
   : "";
 
 export const routes = {
+  HOME: "/",
   ACHIEVEMENTS: "/pencapaian",
   ANNOUNCEMENTS: "/siaran",
   CONTACT_US: "/hubungi-kami",
