@@ -33,7 +33,11 @@ export default function PencapaianTimeline({ data, locale }: Props) {
                 star: item.isFlagged || false,
               }))}
               startRight={
-                i === 0 ? false : data[i - 1]?.length % 2 === 0 ? true : false
+                i === 0
+                  ? false
+                  : (data[i - 1]?.length - 1) % 2 === 0
+                    ? false
+                    : true
               }
             />
             <div className="my-3 w-fit rounded-full bg-brand-50 px-2 py-0.5 text-xs font-medium tracking-widest text-foreground-primary max-sm:my-[26px] max-sm:ml-8">

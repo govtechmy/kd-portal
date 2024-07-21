@@ -6,6 +6,7 @@ type LinkType = (options?: {
   linkOption?: Option[];
   disableLabel?: boolean;
   labelPlaceholder?: string;
+  localizedLabel?: boolean;
   overrides?: Record<string, unknown>;
   forceCustomUrl?: boolean;
 }) => Field;
@@ -22,6 +23,7 @@ const link: LinkType = ({
   linkOption = defaultOptions,
   disableLabel = false,
   labelPlaceholder = "",
+  localizedLabel,
   overrides = {},
   forceCustomUrl = false,
 } = {}) => {
@@ -110,6 +112,7 @@ const link: LinkType = ({
           label: "Label",
           required: true,
           type: "text",
+          localized: localizedLabel,
           admin: {
             placeholder: labelPlaceholder,
           },

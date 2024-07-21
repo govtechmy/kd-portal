@@ -11,7 +11,9 @@ export const Footer: GlobalConfig = {
       name: "about_us",
       label: "About Us",
       type: "array",
-      fields: [link({ labelPlaceholder: "Hubungi Kami" })],
+      fields: [
+        link({ labelPlaceholder: "Hubungi Kami", localizedLabel: true }),
+      ],
     },
     {
       name: "quick-links",
@@ -20,16 +22,16 @@ export const Footer: GlobalConfig = {
           name: "quick-links",
           type: "relationship",
           relationTo: "quick-link",
-          filterOptions: () => {
-            return { type: { equals: "social" } };
-          },
+          // filterOptions: () => {
+          //   return { type: { equals: "quick_links" } };
+          // },
         },
       ],
       type: "array",
     },
     {
       name: "open-source",
-      fields: [link({ labelPlaceholder: "Repo GitHub" })],
+      fields: [link({ labelPlaceholder: "Repo GitHub", localizedLabel: true })],
       type: "array",
     },
     {

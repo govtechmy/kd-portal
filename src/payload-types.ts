@@ -149,7 +149,7 @@ export interface Achievement {
   type: 'announcement' | 'media_broadcast';
   date: string;
   description: string;
-  broadcast_text: {
+  content_text: {
     root: {
       type: string;
       children: {
@@ -194,6 +194,31 @@ export interface StaffDirectory {
   telefon?: string | null;
   emel?: string | null;
   image?: string | Media | null;
+  social_media?:
+    | {
+        social: 'Facebook' | 'X' | 'Instagram' | 'Tiktok';
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | (
+                | '/'
+                | '/pencapaian'
+                | '/siaran'
+                | '/hubungi-kami'
+                | '/profil-kementerian'
+                | '/direktori'
+                | '/penafian'
+                | '/dasar'
+                | '/dasar-privasi'
+              )
+            | null;
+          url?: string | null;
+          label: string;
+        };
+        id?: string | null;
+      }[]
+    | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -205,9 +230,9 @@ export interface Policy {
   id: string;
   doc_name: string;
   doc_type: 'social' | 'quick_links';
-  doc_description?: string | null;
-  doc_date?: string | null;
-  file_upload?: string | File | null;
+  doc_description: string;
+  doc_date: string;
+  file_upload: string | File;
   updatedAt: string;
   createdAt: string;
 }
@@ -350,6 +375,28 @@ export interface SiteInfo {
  */
 export interface Header {
   id: string;
+  items: {
+    link: {
+      type?: ('reference' | 'custom') | null;
+      newTab?: boolean | null;
+      reference?:
+        | (
+            | '/'
+            | '/pencapaian'
+            | '/siaran'
+            | '/hubungi-kami'
+            | '/profil-kementerian'
+            | '/direktori'
+            | '/penafian'
+            | '/dasar'
+            | '/dasar-privasi'
+          )
+        | null;
+      url?: string | null;
+      label: string;
+    };
+    id?: string | null;
+  }[];
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -359,6 +406,60 @@ export interface Header {
  */
 export interface Footer {
   id: string;
+  about_us?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | (
+                | '/'
+                | '/pencapaian'
+                | '/siaran'
+                | '/hubungi-kami'
+                | '/profil-kementerian'
+                | '/direktori'
+                | '/penafian'
+                | '/dasar'
+                | '/dasar-privasi'
+              )
+            | null;
+          url?: string | null;
+          label: string;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  'quick-links'?:
+    | {
+        'quick-links'?: (string | null) | QuickLink;
+        id?: string | null;
+      }[]
+    | null;
+  'open-source'?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?:
+            | (
+                | '/'
+                | '/pencapaian'
+                | '/siaran'
+                | '/hubungi-kami'
+                | '/profil-kementerian'
+                | '/direktori'
+                | '/penafian'
+                | '/dasar'
+                | '/dasar-privasi'
+              )
+            | null;
+          url?: string | null;
+          label: string;
+        };
+        id?: string | null;
+      }[]
+    | null;
   disclaimer_section?: {
     statement?: {
       root: {

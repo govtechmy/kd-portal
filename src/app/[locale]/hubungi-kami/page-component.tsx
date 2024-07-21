@@ -35,7 +35,7 @@ const ContactUs: FC<ContactUsProps> = ({ data, locale }) => {
                   <Overline>{t("Contact.office")}</Overline>
 
                   <div className="space-y-2">
-                    <p className="text-xl font-semibold">{t("Agency.name")}</p>
+                    <p className="text-xl font-semibold">{data.site_name}</p>
                     <p className="text-sm text-black-700">
                       {data && data.address
                         ? data.address.split("\n").map((line, index) => (

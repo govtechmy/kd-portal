@@ -1,8 +1,11 @@
 import { Icon } from "@/icons/social-media";
+import { _social_media } from "@/lib/constants/links";
 import { Link } from "@/lib/i18n";
 import { routes } from "@/lib/routes";
+import { SiteInfo } from "@/payload-types";
 import { useFormatter, useTranslations } from "next-intl";
 import Image from "next/image";
+import React from "react";
 
 type FooterLinks = "about_us" | "quick_links" | "open_source";
 
@@ -35,28 +38,15 @@ export const social_media = [
   },
 ];
 
-export default function Footer() {
+export default function Footer({
+  links,
+  siteInfo,
+}: {
+  links: Record<FooterLinks, Array<{ name: string; href: string }>>;
+  siteInfo: SiteInfo;
+}) {
   const t = useTranslations();
   const format = useFormatter();
-
-  const links: Record<FooterLinks, Array<{ name: string; href: string }>> = {
-    about_us: [
-      { name: "ministry_profile", href: routes.MINISTRY_PROFILE },
-      { name: "announcements", href: routes.ANNOUNCEMENTS },
-      { name: "achievements", href: routes.ACHIEVEMENTS },
-      { name: "policy", href: routes.POLICY },
-      { name: "directory", href: routes.DIRECTORY },
-      { name: "contact_us", href: routes.CONTACT_US },
-    ],
-    quick_links,
-    open_source: [
-      { name: "repo", href: "https://github.com/govtechmy/kd-portal" },
-      {
-        name: "ui_ux",
-        href: "https://www.figma.com/design/qfLxnLhraputrVraVOKD6n",
-      },
-    ],
-  };
 
   const className = {
     link: "text-sm text-black-700 underline-font hover:text-foreground hover:underline",
@@ -77,30 +67,38 @@ export default function Footer() {
               />
               <div>
                 <p className="whitespace-nowrap font-poppins font-semibold">
-                  {t("Agency.name")}
+                  {siteInfo.site_name}
                 </p>
               </div>
             </div>
             <p className="text-sm text-black-700">
-              Aras 13, 14 dan 15, Blok Menara, <br />
-              Menara Usahawan <br />
-              No. 18, Persiaran Perdana, Presint 2, <br />
-              Pusat Pentadbiran Kerajaan Persekutuan, <br />
-              62000 Putrajaya, Malaysia.
+              {siteInfo && siteInfo.address
+                ? siteInfo.address.split("\n").map((line, index) => (
+                    <React.Fragment key={index}>
+                      {line}
+                      <br />
+                    </React.Fragment>
+                  ))
+                : ""}
             </p>
             <div className="space-y-2 lg:space-y-3">
               <p className="text-sm font-semibold">{t("Footer.follow_us")}</p>
               <div className="flex gap-3">
-                {social_media.map(({ icon, name, href }) => (
-                  <a
-                    key={name}
-                    href={href}
-                    target="_blank"
-                    rel="noopenner noreferrer"
-                  >
-                    {icon}
-                  </a>
-                ))}
+                {Boolean(siteInfo.social_media.length)
+                  ? siteInfo.social_media.map(
+                      ({ social, link, id }) =>
+                        link.url && (
+                          <a
+                            key={id}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopenner noreferrer"
+                          >
+                            {_social_media[social].icon}
+                          </a>
+                        ),
+                    )
+                  : null}
               </div>
             </div>
           </div>
@@ -118,7 +116,7 @@ export default function Footer() {
                         href={href}
                         scroll={true}
                       >
-                        {t(`Header.${name}`)}
+                        {name}
                       </Link>
                     ) : (
                       <a
@@ -128,9 +126,7 @@ export default function Footer() {
                         rel="noopenner noreferrer"
                         href={href}
                       >
-                        {category === "quick_links"
-                          ? name
-                          : t(`Footer.${name}`)}
+                        {name}
                       </a>
                     ),
                   )}
@@ -150,7 +146,7 @@ export default function Footer() {
               {["penafian", "dasar-privasi"].map((link) => (
                 <Link
                   key={link}
-                  className="text-sm text-black-700 underline-font hover:text-foreground hover:underline"
+                  className="underline-font text-sm text-black-700 hover:text-foreground hover:underline"
                   href={link}
                 >
                   {t(`Footer.${link}`)}

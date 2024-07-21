@@ -1,7 +1,6 @@
 import Footer from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import Masthead from "@/components/layout/masthead";
-import { locales } from "@/lib/i18n-config";
 import "@/lib/styles/globals.css";
 import { cn } from "@/lib/utils";
 import { Inter, Poppins } from "next/font/google";
@@ -12,6 +11,8 @@ import {
 } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { ReactNode } from "react";
+import { getPayloadHMR } from "@payloadcms/next/utilities";
+import config from "@payload-config";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
@@ -70,6 +71,8 @@ export async function generateMetadata({
 
 // export const dynamic = "force-static";
 
+const payload = await getPayloadHMR({ config });
+
 /* Our app sits here to not cause any conflicts with payload's root layout  */
 export default async function Layout({
   children,
@@ -77,11 +80,29 @@ export default async function Layout({
 }: {
   children: ReactNode;
   params: {
-    locale: string;
+    locale: "ms-MY" | "en-GB";
   };
 }) {
   // unstable_setRequestLocale(locale); // TODO: remove once pages are dynamic
   const messages = await getMessages();
+
+  const headerData = await payload.findGlobal({
+    slug: "header",
+    locale: locale,
+    depth: 3,
+  });
+
+  const footerData = await payload.findGlobal({
+    slug: "footer",
+    locale: locale,
+    depth: 3,
+  });
+
+  const siteInfo = await payload.findGlobal({
+    slug: "site-info",
+    locale: locale,
+    depth: 3,
+  });
 
   return (
     <html lang={locale}>
@@ -95,9 +116,45 @@ export default async function Layout({
         <NextIntlClientProvider messages={messages}>
           <div className="flex min-h-screen flex-col">
             <Masthead />
-            <Header locale={locale} />
+            <Header
+              locale={locale}
+              nav_items={headerData.items.map((item) => ({
+                name: item.link.label,
+                href: item.link.reference || "",
+              }))}
+            />
             <div className="flex-1">{children}</div>
-            <Footer />
+            <Footer
+              siteInfo={siteInfo}
+              links={{
+                about_us: footerData.about_us?.length
+                  ? footerData.about_us.map((item) => ({
+                      name: item.link.label,
+                      href: item.link.reference || "",
+                    }))
+                  : [],
+                quick_links: footerData["quick-links"]?.length
+                  ? footerData["quick-links"].map((item) => ({
+                      name:
+                        (item["quick-links"] &&
+                          typeof item["quick-links"] !== "string" &&
+                          item["quick-links"].name) ||
+                        "",
+                      href:
+                        ((item["quick-links"] &&
+                          typeof item["quick-links"] !== "string" &&
+                          item["quick-links"].href[0].link?.url) as string) ||
+                        "",
+                    }))
+                  : [],
+                open_source: footerData["open-source"]?.length
+                  ? footerData["open-source"].map((item) => ({
+                      name: item.link.label,
+                      href: item.link.reference || "",
+                    }))
+                  : [],
+              }}
+            />
           </div>
         </NextIntlClientProvider>
       </body>

@@ -26,52 +26,58 @@ import {
   AccordionTrigger,
 } from "../ui/accordion";
 
-export function Header({ locale }: { locale: string }) {
+export function Header({
+  locale,
+  nav_items,
+}: {
+  locale: string;
+  nav_items: { name: string; href: string }[];
+}) {
   const t = useTranslations();
   const pathname = usePathname();
   const active = (href: string) => pathname.startsWith(href) && href !== "/";
-  const nav_items = [
-    { name: "home", href: "/" },
-    { name: "ministry_profile", href: routes.MINISTRY_PROFILE },
-    { name: "announcements", href: routes.ANNOUNCEMENTS },
-    { name: "achievements", href: routes.ACHIEVEMENTS },
-    { name: "policy", href: routes.POLICY },
-    { name: "directory", href: routes.DIRECTORY },
-    { name: "contact_us", href: routes.CONTACT_US },
-    {
-      name: "dept_agency",
-      href: [
-        {
-          name: "JDN",
-          href: "https://www.jdn.gov.my/",
-        },
-        {
-          name: "JPDP",
-          href: "https://www.pdp.gov.my/jpdpv2/",
-        },
-        {
-          name: "MDEC",
-          href: "https://mdec.my/",
-        },
-        {
-          name: "MyDigital",
-          href: "https://www.mydigital.gov.my/",
-        },
-        {
-          name: "CSM",
-          href: "https://www.cybersecurity.my/en/index.html",
-        },
-        {
-          name: "DNB",
-          href: "https://www.digital-nasional.com.my/",
-        },
-        {
-          name: "MyNIC",
-          href: "https://mynic.my/",
-        },
-      ],
-    },
-  ];
+  // const nav_items = [
+  //   { name: "home", href: "/" },
+  //   { name: "ministry_profile", href: routes.MINISTRY_PROFILE },
+  //   { name: "announcements", href: routes.ANNOUNCEMENTS },
+  //   { name: "achievements", href: routes.ACHIEVEMENTS },
+  //   { name: "policy", href: routes.POLICY },
+  //   { name: "directory", href: routes.DIRECTORY },
+  //   { name: "contact_us", href: routes.CONTACT_US },
+  //   {
+  //     name: "dept_agency",
+  //     href: [
+  //       {
+  //         name: "JDN",
+  //         href: "https://www.jdn.gov.my/",
+  //       },
+  //       {
+  //         name: "JPDP",
+  //         href: "https://www.pdp.gov.my/jpdpv2/",
+  //       },
+  //       {
+  //         name: "MDEC",
+  //         href: "https://mdec.my/",
+  //       },
+  //       {
+  //         name: "MyDigital",
+  //         href: "https://www.mydigital.gov.my/",
+  //       },
+  //       {
+  //         name: "CSM",
+  //         href: "https://www.cybersecurity.my/en/index.html",
+  //       },
+  //       {
+  //         name: "DNB",
+  //         href: "https://www.digital-nasional.com.my/",
+  //       },
+  //       {
+  //         name: "MyNIC",
+  //         href: "https://mynic.my/",
+  //       },
+  //     ],
+  //   },
+  // ];
 
   const [showMenu, setMenu] = useState<boolean>(false);
 
@@ -122,7 +128,7 @@ export function Header({ locale }: { locale: string }) {
                           "justify-start bg-background text-base hover:bg-none focus:ring-0",
                         )}
                       >
-                        {t(`Header.${name}`)}{" "}
+                        {name}
                       </AccordionTrigger>
                       <AccordionContent>
                         {href.map((item) => (
@@ -156,7 +162,7 @@ export function Header({ locale }: { locale: string }) {
                         "w-full justify-start text-base data-[state=open]:bg-washed-100",
                       )}
                     >
-                      {t(`Header.${name}`)}
+                      {name}
                     </Link>
                   </SheetClose>
                 ),
@@ -178,7 +184,7 @@ export function Header({ locale }: { locale: string }) {
                         "group w-max select-none bg-transparent transition-colors data-[state=open]:bg-washed-100",
                       )}
                     >
-                      {t(`Header.${name}`)}{" "}
+                      {name}
                       <ChevronDown
                         className="relative top-px ml-1 transition duration-200 group-data-[state=open]:rotate-180"
                         aria-hidden="true"
@@ -214,7 +220,7 @@ export function Header({ locale }: { locale: string }) {
                         "w-max bg-transparent transition-colors data-[state=open]:bg-washed-100",
                       )}
                     >
-                      {t(`Header.${name}`)}
+                      {name}
                     </Link>
                   </NavigationMenu.Item>
                 ),
