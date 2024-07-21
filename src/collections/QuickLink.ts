@@ -32,6 +32,10 @@ export const QuickLink: CollectionConfig = {
       options: QuickLinkOptions,
     },
     {
+      name: "description",
+      type: "text",
+    },
+    {
       name: "href",
       fields: [link({ forceCustomUrl: true, disableLabel: true })],
       maxRows: 1,

@@ -1,6 +1,6 @@
 .article {
   p {
-    @apply text-black-700;
+    @apply text-black-700 text-base;
   }
 
   h1 {

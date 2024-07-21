@@ -1,8 +1,8 @@
-import Hero from "@/components/layout/hero";
-import Section from "@/components/layout/section";
-import { useTranslations } from "next-intl";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import React from "react";
+import { getPayloadHMR } from "@payloadcms/next/utilities";
+import config from "@payload-config";
+import PenafianComponent from "./page-component";
 
 export async function generateMetadata({
   params: { locale },
@@ -18,27 +18,20 @@ export async function generateMetadata({
   };
 }
 
-export default function Page({
+const payload = await getPayloadHMR({ config });
+
+export default async function Page({
   params: { locale },
 }: {
   params: {
-    locale: string;
+    locale: "ms-MY" | "en-GB";
   };
 }) {
-  unstable_setRequestLocale(locale);
-  const t = useTranslations("Disclaimer");
+  const data = await payload.findGlobal({
+    slug: "footer",
+    locale: locale,
+    depth: 3,
+  });
 
-  return (
-    <main className="divide-y divide-washed-100">
-      <Hero title={t("header")} />
-
-      <Section>
-        <div className="gap-6 border-x border-washed-100 py-12 lg:py-[84px] xl:grid xl:grid-cols-12">
-          <div className="col-span-10 col-start-2 space-y-6 whitespace-pre-line text-pretty text-sm text-black-700">
-            <p>{t("desc")}</p>
-          </div>
-        </div>
-      </Section>
-    </main>
-  );
+  return <PenafianComponent locale={locale} data={data} />;
 }

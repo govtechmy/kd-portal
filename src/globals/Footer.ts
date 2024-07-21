@@ -42,6 +42,7 @@ export const Footer: GlobalConfig = {
         {
           name: "statement",
           type: "richText",
+          localized: true,
         },
       ],
     },
@@ -53,6 +54,7 @@ export const Footer: GlobalConfig = {
         {
           name: "statement",
           type: "richText",
+          localized: true,
         },
       ],
     },

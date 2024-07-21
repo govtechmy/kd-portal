@@ -4,6 +4,8 @@ import config from "@payload-config";
 import ContactUs from "./page-component";
 import { getTranslations } from "next-intl/server";
 
+export const dynamic = "force-static";
+
 export async function generateMetadata({
   params: { locale },
 }: {
