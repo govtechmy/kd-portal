@@ -43,6 +43,12 @@ export const Achievement: CollectionConfig = {
       name: "date",
       label: "Achievement Date",
       type: "date",
+      admin: {
+        date: {
+          maxDate: new Date(),
+          displayFormat: "d MMM yyy",
+        },
+      },
       required: true,
     },
     {
@@ -58,8 +64,8 @@ export const Achievement: CollectionConfig = {
       },
     },
     {
-      name: "broadcast_text",
-      label: "Broadcast Content",
+      name: "content_text",
+      label: "Content",
       type: "richText",
       required: true,
       localized: true,
