@@ -179,7 +179,12 @@
   "Announcements": {
     "header": "Siaran Kementerian Digital",
     "placeholder": "Cari kata kunci: \u201ctajuk siaran\u201d, \u201cpengumuman\u201d",
-    "print": "Cetak"
+    "print": "Cetak",
+    "read": "Baca",
+    "type": {
+      "announcement": "Pengumuman",
+      "media_broadcast": "Siaran Media"
+    }
   },
   "Achievements": {
     "header": "Pencapaian Kami",

@@ -5,25 +5,18 @@ import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
 export default function Paginate({
-  href,
   setPage,
   totalPages,
 }: {
-  href: string;
   setPage?: (page: number) => void;
   totalPages: number;
 }) {
   const searchParams = useSearchParams();
-  const page = Number(searchParams.get("page"));
+  const page = Number(searchParams.get("page")) || 1;
 
   return (
     <Suspense>
-      <Pagination
-        curr={page - 1 ?? 0}
-        href={href}
-        setPage={setPage}
-        totalPages={totalPages}
-      />
+      <Pagination curr={page} setPage={setPage} totalPages={totalPages} />
     </Suspense>
   );
 }

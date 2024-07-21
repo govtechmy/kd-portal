@@ -2,10 +2,11 @@ import { Button, ButtonProps, buttonVariants } from "@/components/ui/button";
 import ChevronLeft from "@/icons/chevron-left";
 import ChevronRight from "@/icons/chevron-right";
 import Ellipsis from "@/icons/ellipsis";
-import { useRouter } from "@/lib/i18n";
+import { usePathname, useRouter } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { ComponentProps, forwardRef, useMemo } from "react";
 
 const Pagination = ({ className, ...props }: ComponentProps<"nav">) => (
@@ -86,19 +87,19 @@ export default function _Pagination({
   curr,
   disable_next,
   disable_prev,
-  href,
   setPage,
   totalPages,
 }: {
   curr: number;
   disable_next?: boolean;
   disable_prev?: boolean;
-  href?: string;
   setPage?: (page: number) => void;
   totalPages: number;
 }) {
   const t = useTranslations("Pagination");
-  const { push } = useRouter();
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const { replace } = useRouter();
 
   const range = (start: number, end: number) => {
     const length = end - start + 1;
@@ -140,6 +141,18 @@ export default function _Pagination({
     }
   }, [curr, totalPages]);
 
+  const changePage = (pageNumber: number | string) => {
+    const params = new URLSearchParams(searchParams);
+    params.set("page", pageNumber.toString());
+    replace(`${pathname}?${params.toString()}`, { scroll: false });
+  };
+
+  const getUrl = (pageNumber: number | string) => {
+    const params = new URLSearchParams(searchParams);
+    params.set("page", pageNumber.toString());
+    return `${pathname}?${params.toString()}`;
+  };
+
   return (
     <Pagination>
       <PaginationContent>
@@ -148,10 +161,8 @@ export default function _Pagination({
             variant="secondary"
             size="default"
             className="p-2 lg:p-2.5"
-            disabled={disable_prev || curr <= 0}
-            onClick={() =>
-              setPage ? setPage(curr - 1) : push(href + `${curr}`)
-            }
+            disabled={disable_prev || curr - 1 <= 0}
+            onClick={() => (setPage ? setPage(curr - 1) : changePage(curr - 1))}
           >
             <ChevronLeft className="size-4" />
             <span className="sr-only">{t("previous")}</span>
@@ -161,19 +172,19 @@ export default function _Pagination({
         {pageRange?.map((page, i) => {
           return typeof page === "number" ? (
             <PaginationItem className="hidden min-[360px]:flex" key={i}>
-              {href ? (
+              {pathname ? (
                 <PaginationLink
-                  href={href + page}
-                  variant={curr === page - 1 ? "tertiary-colour" : "tertiary"}
-                  isActive={curr === page - 1}
+                  href={getUrl(page)}
+                  variant={curr === page ? "tertiary-colour" : "tertiary"}
+                  isActive={curr === page}
                 >
                   {page}
                 </PaginationLink>
               ) : (
                 <Button
-                  onClick={() => (setPage ? setPage(page - 1) : null)}
-                  variant={curr === page - 1 ? "tertiary-colour" : "tertiary"}
-                  className={curr === page - 1 ? "bg-brand-50" : ""}
+                  onClick={() => (setPage ? setPage(page) : changePage(page))}
+                  variant={curr === page ? "tertiary-colour" : "tertiary"}
+                  className={curr === page ? "bg-brand-50" : ""}
                 >
                   {page}
                 </Button>
@@ -197,10 +208,8 @@ export default function _Pagination({
             variant="secondary"
             size="default"
             className="p-2 lg:p-2.5"
-            disabled={disable_next || curr >= totalPages - 1}
-            onClick={() =>
-              setPage ? setPage(curr + 1) : push(href + `${curr + 2}`)
-            }
+            disabled={disable_next || curr >= totalPages}
+            onClick={() => (setPage ? setPage(curr + 1) : changePage(curr + 1))}
           >
             <span className="sr-only">{t("next")}</span>
             <ChevronRight className="size-4" />

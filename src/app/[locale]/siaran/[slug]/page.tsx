@@ -71,7 +71,7 @@ export default function Page({
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink href={routes.ANNOUNCEMENTS}>
-                {t("Announcement")}
+                {t("Header.announcements")}
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
@@ -126,7 +126,7 @@ export default function Page({
             </div>
             <Button>
               <Printer className="size-4 text-black-700" />
-              {t("print")}
+              {t("Announcements.print")}
             </Button>
           </div>
           <hr className="w-full bg-outline-200" />

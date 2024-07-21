@@ -17,6 +17,7 @@ export const Broadcast: CollectionConfig = {
     singular: "Broadcast",
     plural: "Broadcasts",
   },
+  defaultSort: "-isPin",
   admin: {
     listSearchableFields: ["title", "description", "type"],
   },

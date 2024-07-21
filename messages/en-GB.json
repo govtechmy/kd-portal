@@ -179,7 +179,12 @@
   "Announcements": {
     "header": "Ministry of Digital Announcements",
     "placeholder": "Find keywords: \u201cstatement\u201d, \"announcement\"",
-    "print": "Print"
+    "print": "Print",
+    "read": "Read",
+    "type": {
+      "announcement": "Announcement",
+      "media_broadcast": "Media Broadcast"
+    }
   },
   "Achievements": {
     "header": "Our Achievements",
