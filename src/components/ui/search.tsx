@@ -38,6 +38,11 @@ const Search: FunctionComponent<SearchProps> = ({
         event.preventDefault();
         searchRef.current?.focus();
       }
+      // Check if 'CMD + K' or 'Ctrl + K' key combination is pressed
+      if ((event.metaKey || event.ctrlKey) && event.key === "k") {
+        event.preventDefault();
+        searchRef.current?.focus();
+      }
     };
 
     document.addEventListener("keydown", handleKeyDown);
