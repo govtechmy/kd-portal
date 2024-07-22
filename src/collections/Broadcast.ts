@@ -78,6 +78,7 @@ export const Broadcast: CollectionConfig = {
       name: "broadcast_file",
       label: "Attachment File",
       type: "upload",
+      required: true,
       relationTo: "media",
       admin: {
         position: "sidebar",

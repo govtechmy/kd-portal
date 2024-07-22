@@ -49,12 +49,12 @@ export const QuickLink: CollectionConfig = {
       admin: {
         position: "sidebar",
       },
-      // validate: async (value, { data }) => {
-      //   if (data.type === "quick_links" && !value) {
-      //     return "Upload image for the quick link";
-      //   }
-      //   return true;
-      // },
+      validate: async (value, { data }) => {
+        if (data.type === "quick_links" && !value) {
+          return "Upload image for the quick link";
+        }
+        return true;
+      },
     },
   ],
 };

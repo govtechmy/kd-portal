@@ -56,19 +56,30 @@ export default function DasarTable({ data }: DasarTableProps) {
         }
       },
     }),
-    accessor("doc_type", {
+    accessor("file_upload.url", {
       header: "",
       id: "actions",
-      cell: () => (
-        <Button
-          variant="secondary"
-          size="icon"
-          className="flex-none rounded-lg"
-        >
-          <Download className="text-dim-500" />
-          {t("download")}
-        </Button>
-      ),
+      cell: (info) => {
+        const downloadFile = () => {
+          const link = document.createElement("a");
+          link.href = info.getValue() || "";
+          link.download = info.row.original.doc_name;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        };
+        return (
+          <Button
+            variant="secondary"
+            size="icon"
+            className="flex-none rounded-lg"
+            onClick={downloadFile}
+          >
+            <Download className="text-dim-500" />
+            {t("download")}
+          </Button>
+        );
+      },
       meta: {
         cellClass: "sm:py-1.5",
       },

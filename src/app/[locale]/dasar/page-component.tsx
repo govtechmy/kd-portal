@@ -14,7 +14,6 @@ interface DasarKementerianProps {
 }
 
 // TODO: Handle the date picker selection and filter the list within the selected date
-// TODO: Handle file upload once S3 is completed
 const DasarKementerian: FC<DasarKementerianProps> = ({ list, locale }) => {
   const [data, setData] = useState(list);
   const t = useTranslations();

@@ -1,7 +1,7 @@
 import React from "react";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import config from "@payload-config";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import DirektoriMain from "@/components/direktori/main";
 
 export const dynamic = "force-static";
@@ -29,6 +29,7 @@ export default async function Page({
     locale: "ms-MY" | "en-GB";
   };
 }) {
+  unstable_setRequestLocale(locale);
   const data = await payload.find({
     collection: "staff-directory",
     locale: locale,

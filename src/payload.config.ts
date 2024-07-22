@@ -9,12 +9,18 @@ import sharp from "sharp";
 import { en } from "payload/i18n/en";
 import StaffDirectory from "@/lib/resources/directory_kd.json";
 import groupBy from "lodash/groupBy";
-import PayloadCollections, { Users, SearchOverride } from "./collections";
+import PayloadCollections, {
+  Users,
+  SearchOverride,
+  Media,
+  File,
+} from "./collections";
 import GlobalCollections from "./globals";
 import {
   includedSearchCollection,
   SearchBeforeSync,
 } from "./collections/Search-Overrides";
+import { s3Storage } from "@payloadcms/storage-s3";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -127,6 +133,20 @@ export default buildConfig({
         policy: 40,
       },
       beforeSync: SearchBeforeSync,
+    }),
+    s3Storage({
+      collections: {
+        ["media"]: true,
+        ["file"]: true,
+      },
+      bucket: process.env.S3_BUCKET,
+      config: {
+        credentials: {
+          accessKeyId: process.env.S3_ACCESS_KEY_ID,
+          secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
+        },
+        region: process.env.S3_REGION,
+      },
     }),
   ],
 });
