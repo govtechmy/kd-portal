@@ -61,7 +61,7 @@ export default function DaterangePicker({
             ? { after: DateTime.fromISO(end_date).toJSDate() }
             : undefined
         }
-        // initialDate={initialDates?.start}
+        date={start_date ? DateTime.fromISO(start_date).toJSDate() : undefined}
       />
       -
       <DatePicker
@@ -75,7 +75,7 @@ export default function DaterangePicker({
               }
             : undefined
         }
-        // initialDate={initialDates?.end}
+        date={end_date ? DateTime.fromISO(end_date).toJSDate() : undefined}
       />
     </div>
   );

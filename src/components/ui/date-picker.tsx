@@ -15,19 +15,19 @@ import { DayPickerBase } from "react-day-picker";
 export default function DatePicker({
   label,
   onChange,
-  initialDate,
+  date,
   disabled,
 }: {
   label?: string;
-  onChange?: (newDate: Date) => void;
-  initialDate?: Date;
+  onChange: (newDate: Date) => void;
+  date: Date | undefined;
   disabled?: DayPickerBase["disabled"];
 }) {
   const format = useFormatter();
-  const [date, setDate] = React.useState<Date | undefined>(initialDate);
+  // const [date, setDate] = React.useState<Date | undefined>(date);
 
   const onSelect = (selectedDay: Date) => {
-    setDate(selectedDay);
+    // setDate(selectedDay);
     if (onChange) onChange(selectedDay);
   };
 

@@ -116,7 +116,7 @@ export interface File {
 export interface Broadcast {
   id: string;
   title: string;
-  type: 'announcement' | 'media_broadcast';
+  type: 'announcement' | 'media_release';
   date: string;
   description: string;
   broadcast_text: {
@@ -135,7 +135,7 @@ export interface Broadcast {
     [k: string]: unknown;
   };
   isPin?: boolean | null;
-  broadcast_file?: string | Media | null;
+  broadcast_file: string | Media;
   updatedAt: string;
   createdAt: string;
 }
@@ -146,7 +146,7 @@ export interface Broadcast {
 export interface Achievement {
   id: string;
   title: string;
-  type: 'announcement' | 'media_broadcast';
+  type: 'product_launch' | 'policy' | 'collaboration' | 'miscellaneous';
   date: string;
   description: string;
   content_text: {
@@ -229,7 +229,7 @@ export interface StaffDirectory {
 export interface Policy {
   id: string;
   doc_name: string;
-  doc_type: 'social' | 'quick_links';
+  doc_type: 'act' | 'document' | 'guideline' | 'circular';
   doc_description: string;
   doc_date: string;
   file_upload: string | File;
@@ -244,6 +244,7 @@ export interface QuickLink {
   id: string;
   name: string;
   type?: ('social' | 'quick_links') | null;
+  description?: string | null;
   href: {
     link?: {
       type?: ('reference' | 'custom') | null;

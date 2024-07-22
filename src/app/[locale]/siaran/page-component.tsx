@@ -87,7 +87,7 @@ const SiaranList: FC<SiaranListProps> = ({ data, locale }) => {
                       <p
                         className={cn(
                           "font-semibold",
-                          doc.type === "media_broadcast"
+                          doc.type === "media_release"
                             ? "text-foreground-success"
                             : "text-foreground-danger",
                         )}

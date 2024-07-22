@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/select";
 import ChevronDown from "@/icons/chevron-down";
 import { SelectIcon } from "@radix-ui/react-select";
+import { PolicyType } from "@/collections/Policy";
 
 interface DasarFilter {
   table: TTable<any>;
@@ -29,6 +30,7 @@ export const DasarFilter: FC<DasarFilter> = ({
   subtitle,
 }) => {
   const t = useTranslations("Policy.table_header");
+  const t2 = useTranslations("Policy");
 
   const header = headers.find((h) => h.id === column)!;
   const { getFacetedUniqueValues, getFilterValue, setFilterValue } =
@@ -39,9 +41,7 @@ export const DasarFilter: FC<DasarFilter> = ({
   );
 
   const sortedUniqueValues = useMemo(() => {
-    const uniqueValues = Array.from(
-      getFacetedUniqueValues().keys(),
-    );
+    const uniqueValues = Array.from(getFacetedUniqueValues().keys());
     const filteredValues = uniqueValues.filter((value) => {
       if (!Boolean(value)) return false;
       return value;
@@ -72,9 +72,16 @@ export const DasarFilter: FC<DasarFilter> = ({
                 className="block whitespace-nowrap lg:hidden"
                 max={["char", 30]}
               >
-                {selectedFilters}
+                {selectedFilters === t("all")
+                  ? selectedFilters
+                  : t2(`type.${selectedFilters}`)}
               </ReadMore>
-              <span className="hidden lg:block">{selectedFilters}</span>
+              <span className="hidden lg:block">
+                {" "}
+                {selectedFilters === t("all")
+                  ? selectedFilters
+                  : t2(`type.${selectedFilters}`)}
+              </span>
             </SelectValue>
             <SelectIcon>
               <ChevronDown />
@@ -93,15 +100,18 @@ export const DasarFilter: FC<DasarFilter> = ({
           >
             {t("all")}
           </SelectItem>
-          {sortedUniqueValues.map((l) => (
-            <SelectItem
-              key={l}
-              value={l}
-              className={l === selectedFilters ? "font-medium" : ""}
-            >
-              {l}
-            </SelectItem>
-          ))}
+          {PolicyType.map(
+            (l) =>
+              typeof l !== "string" && (
+                <SelectItem
+                  key={l.value}
+                  value={l.value}
+                  className={l.value === selectedFilters ? "font-medium" : ""}
+                >
+                  {t2(`type.${l.value}`)}
+                </SelectItem>
+              ),
+          )}
         </SelectContent>
       </Select>
     </div>

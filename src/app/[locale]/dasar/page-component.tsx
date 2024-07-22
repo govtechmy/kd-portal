@@ -35,7 +35,7 @@ const DasarKementerian: FC<DasarKementerianProps> = ({ list, locale }) => {
 
       let matchesDate = true;
       if (start && end) {
-        const itemDate = DateTime.fromISO(item.doc_date);
+        const itemDate = DateTime.fromISO(item.doc_date).startOf("day");
         matchesDate =
           itemDate >= DateTime.fromISO(start) &&
           itemDate <= DateTime.fromISO(end);
