@@ -1,22 +1,51 @@
 "use client";
 
-import Checkmark14PointStar from "@/icons/checkmark-14-point-star";
 import ChevronDown from "@/icons/chevron-down";
 import GovMY from "@/icons/govmy";
 import EncryptedLock from "@/icons/encrypted-lock";
 import SolidLock from "@/icons/solid-lock";
 import { useTranslations } from "next-intl";
+import MalaysiaFlag from "@/icons/malaysia-flag";
+import { useEffect } from "react";
 
 export default function Masthead() {
   const t = useTranslations("Masthead");
 
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      const details = document.getElementById("Masthead") as HTMLDetailsElement;
+      if (
+        event.altKey &&
+        (event.metaKey || event.ctrlKey) &&
+        event.key === "Enter"
+      ) {
+        event.preventDefault();
+        details.open = !details.open;
+      }
+      // Check if 'CMD + K' or 'Ctrl + K' key combination is pressed
+      if ((event.metaKey || event.ctrlKey) && event.key === "k") {
+        event.preventDefault();
+        // searchRef.current?.focus();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
   return (
     <div className="z-[60] bg-gradient-to-b from-washed-100 from-[84.74%] to-outline-200 to-100%">
-      <details className="group peer max-w-full overflow-hidden bg-washed-100">
+      <details
+        id="Masthead"
+        className="group peer max-w-full overflow-hidden bg-washed-100"
+      >
         <summary className="block cursor-pointer list-none py-2.5 outline-none sm:py-1">
           <div className="mx-auto flex max-w-[1280px] items-center gap-1.5 px-4.5 text-sm/4 text-foreground-primary max-sm:justify-between md:px-6">
-            <div className="flex select-none items-center gap-1.5">
-              <Checkmark14PointStar className="size-4 sm:size-5" />
+            <div className="flex select-none items-center gap-2">
+              <MalaysiaFlag />
               <span className="text-black-700">
                 {t("official_gov_website")}
               </span>

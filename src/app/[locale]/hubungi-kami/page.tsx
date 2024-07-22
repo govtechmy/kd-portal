@@ -2,7 +2,7 @@ import React from "react";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import config from "@payload-config";
 import ContactUs from "./page-component";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 export const dynamic = "force-static";
 
@@ -29,6 +29,7 @@ export default async function Page({
     locale: "ms-MY" | "en-GB";
   };
 }) {
+  unstable_setRequestLocale(locale);
   const data = await payload.findGlobal({
     slug: "site-info",
     locale: locale,
