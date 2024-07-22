@@ -183,13 +183,19 @@
     "read": "Read",
     "type": {
       "announcement": "Announcement",
-      "media_broadcast": "Media Broadcast"
+      "media_release": "Media Release"
     }
   },
   "Achievements": {
     "header": "Our Achievements",
     "placeholder": "Find keywords",
-    "past_achievements": "Past achievements"
+    "past_achievements": "Past achievements",
+    "type": {
+      "product_launch": "Product Launch",
+      "policy": "Policy",
+      "collaboration": "Collaboration",
+      "miscellaneous": "Miscellaneous"
+    }
   },
   "Policy": {
     "header": "Policy Documents",
@@ -201,6 +207,12 @@
       "date": "Date",
       "download": "Download",
       "all": "All"
+    },
+    "type": {
+      "act": "Act",
+      "document": "Policy Document",
+      "guideline": "Guideline",
+      "circular": "Circular"
     }
   },
   "Directory": {

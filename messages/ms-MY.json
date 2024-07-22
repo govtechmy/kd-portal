@@ -182,14 +182,20 @@
     "print": "Cetak",
     "read": "Baca",
     "type": {
-      "announcement": "Pengumuman",
-      "media_broadcast": "Siaran Media"
+      "announcement": "Hebahan",
+      "media_release": "Siaran Media"
     }
   },
   "Achievements": {
     "header": "Pencapaian Kami",
     "placeholder": "Cari kata kunci",
-    "past_achievements": "Pencapaian yang lalu"
+    "past_achievements": "Pencapaian yang lalu",
+    "type": {
+      "product_launch": "Pelancaran Produk",
+      "policy": "Dasar",
+      "collaboration": "Usahasama",
+      "miscellaneous": "Pelbagai"
+    }
   },
   "Policy": {
     "header": "Dokumen Dasar",
@@ -201,6 +207,12 @@
       "date": "Tarikh",
       "download": "Muat turun",
       "all": "Semua"
+    },
+    "type": {
+      "act": "Akta",
+      "document": "Dokumen Dasar",
+      "guideline": "Garis Panduan",
+      "circular": "Pekeliling"
     }
   },
   "Directory": {

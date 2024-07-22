@@ -10,10 +10,26 @@ import {
 import { cn } from "@/lib/utils";
 import { useFormatter } from "next-intl";
 import * as React from "react";
+import { DayPickerBase } from "react-day-picker";
 
-export default function DatePicker({ label }: { label?: string }) {
+export default function DatePicker({
+  label,
+  onChange,
+  initialDate,
+  disabled,
+}: {
+  label?: string;
+  onChange?: (newDate: Date) => void;
+  initialDate?: Date;
+  disabled?: DayPickerBase["disabled"];
+}) {
   const format = useFormatter();
-  const [date, setDate] = React.useState<Date>();
+  const [date, setDate] = React.useState<Date | undefined>(initialDate);
+
+  const onSelect = (selectedDay: Date) => {
+    setDate(selectedDay);
+    if (onChange) onChange(selectedDay);
+  };
 
   return (
     <Popover>
@@ -34,9 +50,9 @@ export default function DatePicker({ label }: { label?: string }) {
         <Calendar
           mode="single"
           selected={date}
-          onSelect={setDate}
+          onSelect={(_, selectedDay) => onSelect(selectedDay)}
           initialFocus
-          disabled={{ after: new Date() }}
+          disabled={disabled ? disabled : { after: new Date() }}
         />
       </PopoverContent>
     </Popover>

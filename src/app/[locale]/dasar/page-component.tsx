@@ -1,35 +1,59 @@
 "use client";
 import { locales } from "@/lib/i18n-config";
 import { Policy } from "@/payload-types";
-import { FC, useState } from "react";
+import { FC, useMemo } from "react";
 import { useTranslations } from "next-intl";
 import Hero from "@/components/layout/hero";
 import DasarTable from "@/components/dasar/table";
 import DaterangePicker from "@/components/ui/daterange-picker";
 import Search from "@/components/ui/search";
+import { DateTime } from "luxon";
+import { useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "@/lib/i18n";
 
 interface DasarKementerianProps {
   list: Policy[];
   locale: (typeof locales)[number];
 }
 
-// TODO: Handle the date picker selection and filter the list within the selected date
 const DasarKementerian: FC<DasarKementerianProps> = ({ list, locale }) => {
-  const [data, setData] = useState(list);
   const t = useTranslations();
+  const searchParams = useSearchParams();
+  const { replace } = useRouter();
+  const pathname = usePathname();
+  const start = searchParams.get("start");
+  const end = searchParams.get("end");
+  const searchQuery = searchParams.get("search");
 
-  function searchArray(array: typeof data, searchQuery: string) {
-    const query = searchQuery.toLowerCase();
-    return setData(
-      array.filter((item) => {
-        return (
-          (item.doc_name && item.doc_name.toLowerCase().includes(query)) ||
-          (item.doc_description &&
-            item.doc_description.toLowerCase().includes(query))
-        );
-      }),
-    );
-  }
+  const data = useMemo(() => {
+    const query = searchQuery ? searchQuery.toLowerCase() : "";
+
+    return list.filter((item) => {
+      const matchesQuery =
+        item.doc_name.toLowerCase().includes(query) ||
+        item.doc_description.toLowerCase().includes(query);
+
+      let matchesDate = true;
+      if (start && end) {
+        const itemDate = DateTime.fromISO(item.doc_date);
+        matchesDate =
+          itemDate >= DateTime.fromISO(start) &&
+          itemDate <= DateTime.fromISO(end);
+      }
+
+      return matchesQuery && matchesDate;
+    });
+  }, [list, searchQuery, start, end]);
+
+  const searchArray = (searchQuery: string) => {
+    const params = new URLSearchParams(searchParams);
+    if (searchQuery) {
+      params.set("search", searchQuery.toLowerCase());
+    } else {
+      params.delete("search");
+    }
+    replace(`${pathname}?${params.toString()}`, { scroll: false });
+  };
 
   return (
     <>
@@ -38,7 +62,7 @@ const DasarKementerian: FC<DasarKementerianProps> = ({ list, locale }) => {
         search={
           <div className="space-y-4">
             <Search
-              onChange={(query) => searchArray(list, query)}
+              onChange={searchArray}
               placeholder={t("Policy.search_placeholder")}
             />
             <DaterangePicker />

@@ -16,6 +16,7 @@ interface DasarTableProps {
 
 export default function DasarTable({ data }: DasarTableProps) {
   const t = useTranslations("Policy.table_header");
+  const t2 = useTranslations("Policy");
   const { accessor } = createColumnHelper<Policy>();
 
   const desktopColumns = [
@@ -32,7 +33,7 @@ export default function DasarTable({ data }: DasarTableProps) {
     }),
     accessor("doc_type", {
       header: t("type"),
-      cell: (info) => info.getValue(),
+      cell: (info) => t2(`type.${info.getValue()}`),
       meta: {
         cellClass: "whitespace-nowrap",
       },
@@ -90,7 +91,7 @@ export default function DasarTable({ data }: DasarTableProps) {
     accessor("doc_type", {
       header: t("type"),
       cell: (info) => {
-        const { doc_name, doc_type, doc_description, doc_date } =
+        const { doc_name, doc_type, doc_description, doc_date, file_upload } =
           info.row.original;
 
         return (
@@ -106,7 +107,12 @@ export default function DasarTable({ data }: DasarTableProps) {
                 </p>
               </div>
               <div className="flex gap-x-1.5 text-sm text-dim-500">
-                <span>{doc_date}</span>|<span>{doc_type}</span>
+                <span>
+                  {doc_date
+                    ? DateTime.fromISO(doc_date).toFormat("dd/M/yyyy")
+                    : ""}
+                </span>
+                |<span>{t2(`type.${doc_type}`)}</span>
               </div>
             </div>
             <Button

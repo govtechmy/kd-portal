@@ -1,14 +1,21 @@
 import { CollectionConfig, Option } from "payload";
 
-// TODO: Update this
-const AchievementType: Option[] = [
+export const AchievementType: Option[] = [
   {
-    label: "Announcement",
-    value: "announcement",
+    label: "Product Launch",
+    value: "product_launch",
   },
   {
-    label: "Media Broadcast",
-    value: "media_broadcast",
+    label: "Policy",
+    value: "policy",
+  },
+  {
+    label: "Collaboration",
+    value: "collaboration",
+  },
+  {
+    label: "Miscellaneous",
+    value: "miscellaneous",
   },
 ];
 

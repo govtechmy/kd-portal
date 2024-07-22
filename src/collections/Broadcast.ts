@@ -6,8 +6,8 @@ const BroadcastType: Option[] = [
     value: "announcement",
   },
   {
-    label: "Media Broadcast",
-    value: "media_broadcast",
+    label: "Media Release",
+    value: "media_release",
   },
 ];
 

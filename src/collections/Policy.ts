@@ -1,14 +1,21 @@
 import { CollectionConfig, Option } from "payload";
 
-// TODO: Update the doc_type to the actual type if any
-const QuickLinkOptions: Option[] = [
+export const PolicyType: Option[] = [
   {
-    label: "Social Media",
-    value: "social",
+    label: "Act",
+    value: "act",
   },
   {
-    label: "Quick Links",
-    value: "quick_links",
+    label: "Policy Document",
+    value: "document",
+  },
+  {
+    label: "Guideline",
+    value: "guideline",
+  },
+  {
+    label: "Circular",
+    value: "circular",
   },
 ];
 
@@ -34,7 +41,7 @@ export const KDPolicy: CollectionConfig = {
       name: "doc_type",
       label: "Document Type",
       type: "select",
-      options: QuickLinkOptions,
+      options: PolicyType,
       required: true,
     },
     {
