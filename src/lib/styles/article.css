@@ -1,6 +1,6 @@
 .article {
   p {
-    @apply text-black-700 text-base;
+    @apply text-black-700;
   }
 
   h1 {
@@ -37,5 +37,9 @@
 
   a {
     @apply text-foreground-primary [text-underline-position:from-font] hover:underline;
+  }
+
+  blockquote {
+    @apply text-balance text-xl text-black-700
   }
 }

@@ -1,7 +1,8 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import config from "@payload-config";
 import ProfilKementerianComponent from "./page-component";
+import { locales } from "@/lib/i18n-config";
 
 export const dynamic = "force-static";
 const payload = await getPayloadHMR({ config });
@@ -27,6 +28,7 @@ export default async function Page({
     locale: "ms-MY" | "en-GB";
   };
 }) {
+  unstable_setRequestLocale(locale);
   const data = await payload.findGlobal({
     slug: "profil-kementerian",
     locale: locale,

@@ -1,13 +1,14 @@
 import React from "react";
-
-import { serializeLexical } from "@/components/rich-text/serialize";
+import { serializeLexical, TagMap } from "@/components/rich-text/serialize";
 
 export default function RichText({
   className,
   content,
+  tagMap,
 }: {
   className?: string;
   content: any;
+  tagMap?: TagMap;
 }) {
   if (!content) {
     return null;
@@ -19,7 +20,7 @@ export default function RichText({
         !Array.isArray(content) &&
         typeof content === "object" &&
         "root" in content &&
-        serializeLexical({ nodes: content?.root?.children })}
+        serializeLexical({ nodes: content?.root?.children, tagMap })}
     </div>
   );
 }
