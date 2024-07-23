@@ -16,13 +16,13 @@ import PencapaianTimeline from "@/components/pencapaian/timeline";
 interface AchievementProps {
   data: { year: number; items: Achievement[] }[];
   locale: (typeof locales)[number];
+  totalDocs: number;
 }
-
-// TODO: Handle the date picker selection and filter the list within the selected date (strategy: maybe can set default initial value (?))
-// TODO: The filter related to the type of achievement row.
-// TODO: Sort the collection by year, where latest one is top
-// TODO: Data fetching strategy
-const AchievementComponent: FC<AchievementProps> = ({ data, locale }) => {
+const AchievementComponent: FC<AchievementProps> = ({
+  data,
+  locale,
+  totalDocs,
+}) => {
   const t = useTranslations();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -30,6 +30,7 @@ const AchievementComponent: FC<AchievementProps> = ({ data, locale }) => {
 
   const searchArray = (searchQuery: string) => {
     const params = new URLSearchParams(searchParams);
+    params.set("page", "1");
     if (searchQuery) {
       params.set("search", searchQuery.toLowerCase());
     } else {
@@ -59,7 +60,11 @@ const AchievementComponent: FC<AchievementProps> = ({ data, locale }) => {
               <Filter />
             </div>
           </div>
-          <PencapaianTimeline data={data} locale={locale} />
+          <PencapaianTimeline
+            data={data}
+            locale={locale}
+            totalDocs={totalDocs}
+          />
         </div>
       </Section>
     </main>

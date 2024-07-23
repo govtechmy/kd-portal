@@ -25,7 +25,7 @@ const payload = await getPayloadHMR({ config });
 
 export default async function Page({
   params: { locale },
-  searchParams: { page, search },
+  searchParams: { page, search, start, end, type },
 }: {
   params: {
     locale: "ms-MY" | "en-GB";
@@ -33,21 +33,52 @@ export default async function Page({
   searchParams: {
     page: string;
     search: string;
+    start: string;
+    end: string;
+    type: string;
   };
 }) {
+  const limit = page ? Number(page) * 7 : 7;
+
   const data = await payload.find({
     collection: "achievement",
     locale: locale,
     depth: 3,
     pagination: false,
+    limit: limit,
     where: {
-      or: [
+      and: [
         {
-          title: { like: search },
+          or: [
+            {
+              title: { like: search },
+            },
+            {
+              description: { like: search },
+            },
+          ],
         },
-        {
-          description: { like: search },
-        },
+        ...(start && end
+          ? [
+              {
+                and: [
+                  {
+                    date: { greater_than_equal: start },
+                  },
+                  {
+                    date: { less_than_equal: end },
+                  },
+                ],
+              },
+            ]
+          : []),
+        ...(type !== "all" && type !== undefined
+          ? [
+              {
+                type: { equals: type },
+              },
+            ]
+          : []),
       ],
     },
   });
@@ -65,7 +96,11 @@ export default async function Page({
 
   const sorted = orderBy(groupedArray, ["year"], ["desc"]);
 
-  console.log(sorted);
-
-  return <AchievementComponent data={sorted} locale={locale} />;
+  return (
+    <AchievementComponent
+      data={sorted}
+      locale={locale}
+      totalDocs={data.totalDocs}
+    />
+  );
 }

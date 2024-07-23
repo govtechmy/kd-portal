@@ -25,8 +25,11 @@ export default function DaterangePicker({
   const { push } = useRouter();
   const start_date = searchParams.get("start");
   const end_date = searchParams.get("end");
+  const page = searchParams.get("page") || undefined;
 
   const handleSelection = (type: "start" | "end", date: Date) => {
+    const params = new URLSearchParams(searchParams);
+    if (page) params.set("page", "1");
     const _date = DateTime.fromJSDate(date).toISODate();
     if (type === "start" && _date) {
       if (setStartDate) {
@@ -34,7 +37,6 @@ export default function DaterangePicker({
         return;
       }
 
-      const params = new URLSearchParams(searchParams);
       params.set("start", _date);
       push(`${pathname}?${params.toString()}`, { scroll: false });
     }
@@ -45,7 +47,6 @@ export default function DaterangePicker({
         return;
       }
 
-      const params = new URLSearchParams(searchParams);
       params.set("end", _date);
       push(`${pathname}?${params.toString()}`, { scroll: false });
     }

@@ -32,6 +32,7 @@ const SiaranList: FC<SiaranListProps> = ({ data, locale }) => {
 
   const searchArray = (searchQuery: string) => {
     const params = new URLSearchParams(searchParams);
+    params.set("page", "1");
     if (searchQuery) {
       params.set("search", searchQuery.toLowerCase());
     } else {

@@ -71,10 +71,6 @@ export default async function Page({
         {
           _status: { not_equals: "draft" },
         },
-
-        {
-          _status: { not_equals: "draft" },
-        },
       ],
     },
   });

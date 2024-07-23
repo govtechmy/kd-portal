@@ -21,9 +21,11 @@ export default function Filter() {
   const { push } = useRouter();
   const t = useTranslations("Achievements");
   const selectedType = searchParams.get("type") || "all";
+  const page = searchParams.get("page") || undefined;
 
   const handleValueChange = (value: string) => {
     const params = new URLSearchParams(searchParams);
+    if (page) params.set("page", "1");
     params.set("type", value);
     push(`${pathname}?${params.toString()}`, { scroll: false });
   };

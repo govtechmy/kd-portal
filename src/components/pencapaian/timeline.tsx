@@ -2,20 +2,29 @@
 import Timeline from "@/components/layout/timeline";
 import { Button } from "@/components/ui/button";
 import ArrowDown from "@/icons/arrow-down";
+import { usePathname, useRouter } from "@/lib/i18n";
 import { locales } from "@/lib/i18n-config";
 import { Achievement } from "@/payload-types";
 import { DateTime } from "luxon";
 import { useFormatter, useTranslations } from "next-intl";
+import { useSearchParams } from "next/navigation";
 import React from "react";
+
+export const NUM_PER_PAGE = 7;
 
 interface Props {
   data: { year: number; items: Achievement[] }[];
   locale: (typeof locales)[number];
+  totalDocs: number;
 }
 
-export default function PencapaianTimeline({ data, locale }: Props) {
+export default function PencapaianTimeline({ data, locale, totalDocs }: Props) {
   const t = useTranslations();
   const format = useFormatter();
+  const searchParams = useSearchParams();
+  const page = Number(searchParams.get("page") || 1);
+  const { push } = useRouter();
+  const pathname = usePathname();
 
   return (
     <div className="relative col-span-7 flex h-full flex-col items-start sm:items-center lg:col-start-6">
@@ -46,15 +55,23 @@ export default function PencapaianTimeline({ data, locale }: Props) {
           </div>
         ))}
       </div>
-      <div className="absolute bottom-0 z-10 h-[250px] w-full bg-gradient-to-b from-transparent from-0% to-background to-[69.54%]" />
-      <Button
-        variant="secondary-colour"
-        className="absolute bottom-16 z-20 rounded-full text-foreground-primary"
-        onClick={() => {}}
-      >
-        <ArrowDown className="size-4" />
-        {t("Achievements.past_achievements")}
-      </Button>
+      {page * NUM_PER_PAGE <= totalDocs && (
+        <>
+          <div className="absolute bottom-0 z-10 h-[250px] w-full bg-gradient-to-b from-transparent from-0% to-background to-[69.54%]" />
+          <Button
+            variant="secondary-colour"
+            className="absolute bottom-16 z-20 rounded-full text-foreground-primary"
+            onClick={() => {
+              const params = new URLSearchParams(searchParams);
+              params.set("page", (page + 1).toString());
+              push(`${pathname}?${params.toString()}`, { scroll: false });
+            }}
+          >
+            <ArrowDown className="size-4" />
+            {t("Achievements.past_achievements")}
+          </Button>
+        </>
+      )}
     </div>
   );
 }
