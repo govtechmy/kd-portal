@@ -14,7 +14,7 @@ import ArrowUp from "@/icons/arrow-up";
 import Clock from "@/icons/clock";
 import { Link, usePathname, useRouter } from "@/lib/i18n";
 import { routes } from "@/lib/routes";
-import { cn } from "@/lib/utils";
+import { cn, getReadTimeEstimation } from "@/lib/utils";
 import Image from "next/image";
 import { DateTime } from "luxon";
 import { useSearchParams } from "next/navigation";
@@ -24,14 +24,13 @@ interface SiaranListProps {
   locale: (typeof locales)[number];
 }
 
-// TODO: Handle the date picker selection and filter the list within the selected date (strategy: maybe can set default initial value (?))
 // TODO: Handle the single page (fetching data, rich text and etc)
 // TODO: Read estimated. Ask how to do this.
 const SiaranList: FC<SiaranListProps> = ({ data, locale }) => {
   const t = useTranslations();
-  const pathname = usePathname();
   const searchParams = useSearchParams();
-  const { replace } = useRouter();
+  const { push } = useRouter();
+  const pathname = usePathname();
 
   const searchArray = (searchQuery: string) => {
     const params = new URLSearchParams(searchParams);
@@ -40,7 +39,7 @@ const SiaranList: FC<SiaranListProps> = ({ data, locale }) => {
     } else {
       params.delete("search");
     }
-    replace(`${pathname}?${params.toString()}`, { scroll: false });
+    push(`${pathname}?${params.toString()}`, { scroll: false });
   };
   return (
     <>
@@ -64,9 +63,9 @@ const SiaranList: FC<SiaranListProps> = ({ data, locale }) => {
             <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
               {data.docs.map((doc, i) => {
                 const media =
-                  Boolean(doc.broadcast_file) &&
-                  typeof doc.broadcast_file !== "string"
-                    ? doc.broadcast_file
+                  Boolean(doc.broadcast_image) &&
+                  typeof doc.broadcast_image !== "string"
+                    ? doc.broadcast_image
                     : null;
                 return (
                   <Link
@@ -94,13 +93,19 @@ const SiaranList: FC<SiaranListProps> = ({ data, locale }) => {
                       >
                         {t(`Announcements.type.${doc.type}`)}
                       </p>
-                      <div className="invisible flex items-center gap-2 group-hover:visible">
-                        <div className="h-3 w-px bg-outline-300" />
-                        <div className="flex items-center gap-1 text-dim-500">
-                          <Clock className="size-4" />
-                          Bacaan 5 min
+                      {doc.broadcast_text_html && (
+                        <div className="invisible flex items-center gap-2 group-hover:visible">
+                          <div className="h-3 w-px bg-outline-300" />
+                          <div className="flex items-center gap-1 text-dim-500">
+                            <Clock className="size-4" />
+                            {t("Announcements.estimated_read", {
+                              time: getReadTimeEstimation(
+                                doc.broadcast_text_html,
+                              ),
+                            })}
+                          </div>
                         </div>
-                      </div>
+                      )}
                     </div>
                     <div className="flex flex-auto flex-col gap-y-5">
                       <div className="flex grow gap-x-4.5">

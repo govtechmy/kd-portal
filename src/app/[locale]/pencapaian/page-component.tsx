@@ -26,7 +26,7 @@ const AchievementComponent: FC<AchievementProps> = ({ data, locale }) => {
   const t = useTranslations();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const { replace } = useRouter();
+  const { push } = useRouter();
 
   const searchArray = (searchQuery: string) => {
     const params = new URLSearchParams(searchParams);
@@ -35,7 +35,7 @@ const AchievementComponent: FC<AchievementProps> = ({ data, locale }) => {
     } else {
       params.delete("search");
     }
-    replace(`${pathname}?${params.toString()}`, { scroll: false });
+    push(`${pathname}?${params.toString()}`, { scroll: false });
   };
   return (
     <main>

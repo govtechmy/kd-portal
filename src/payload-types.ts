@@ -134,8 +134,10 @@ export interface Broadcast {
     };
     [k: string]: unknown;
   };
+  broadcast_text_html?: string | null;
   isPin?: boolean | null;
-  broadcast_file: string | Media;
+  broadcast_image?: string | Media | null;
+  broadcast_file?: string | File | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;

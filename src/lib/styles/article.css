@@ -32,7 +32,7 @@
   }
 
   ol {
-    @apply list-outside list-decimal;
+    @apply list-outside list-decimal text-black-700 text-base text-[15px] leading-[27px];
   }
 
   a {

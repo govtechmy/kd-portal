@@ -99,7 +99,7 @@ export default function _Pagination({
   const t = useTranslations("Pagination");
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const { replace } = useRouter();
+  const { push } = useRouter();
 
   const range = (start: number, end: number) => {
     const length = end - start + 1;
@@ -144,7 +144,7 @@ export default function _Pagination({
   const changePage = (pageNumber: number | string) => {
     const params = new URLSearchParams(searchParams);
     params.set("page", pageNumber.toString());
-    replace(`${pathname}?${params.toString()}`, { scroll: false });
+    push(`${pathname}?${params.toString()}`, { scroll: false });
   };
 
   const getUrl = (pageNumber: number | string) => {

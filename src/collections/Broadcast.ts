@@ -1,3 +1,8 @@
+import {
+  HTMLConverterFeature,
+  lexicalEditor,
+  lexicalHTML,
+} from "@payloadcms/richtext-lexical";
 import { CollectionConfig, Option } from "payload";
 
 const BroadcastType: Option[] = [
@@ -65,7 +70,19 @@ export const Broadcast: CollectionConfig = {
       type: "richText",
       required: true,
       localized: true,
+      editor: lexicalEditor({
+        features: ({ defaultFeatures }) => [
+          ...defaultFeatures,
+          // The HTMLConverter Feature is the feature which manages the HTML serializers.
+          // If you do not pass any arguments to it, it will use the default serializers.
+          HTMLConverterFeature({}),
+        ],
+      }),
     },
+    lexicalHTML("broadcast_text", {
+      name: "broadcast_text_html",
+      hidden: true,
+    }),
     // Side-bar
     {
       name: "isPin",
@@ -77,11 +94,19 @@ export const Broadcast: CollectionConfig = {
       defaultValue: false,
     },
     {
+      name: "broadcast_image",
+      label: "Broadcast Image",
+      type: "upload",
+      relationTo: "media",
+      admin: {
+        position: "sidebar",
+      },
+    },
+    {
       name: "broadcast_file",
       label: "Attachment File",
       type: "upload",
-      required: true,
-      relationTo: "media",
+      relationTo: "file",
       admin: {
         position: "sidebar",
       },

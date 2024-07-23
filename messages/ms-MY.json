@@ -181,6 +181,7 @@
     "placeholder": "Cari kata kunci: \u201ctajuk siaran\u201d, \u201cpengumuman\u201d",
     "print": "Cetak",
     "read": "Baca",
+    "estimated_read": "Bacaan { time } minit",
     "type": {
       "announcement": "Hebahan",
       "media_release": "Siaran Media"

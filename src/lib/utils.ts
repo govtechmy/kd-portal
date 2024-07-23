@@ -126,3 +126,14 @@ export const formatSlug =
 
     return value;
   };
+
+/**
+ * Estimate the duration of reading time for given text string.
+ * @param {string} text
+ */
+export const getReadTimeEstimation = (text: string) => {
+  const AVG_WORD_LETTER = 5;
+  const AVG_READING_SPEED = 200; // around 200 words per min
+
+  return Math.ceil(text.length / AVG_WORD_LETTER / AVG_READING_SPEED);
+};

@@ -29,6 +29,7 @@ import {
   IS_UNDERLINE,
 } from "@/components/rich-text/node-format";
 import { escapeHTML } from "@/lib/utils";
+import { List } from "@radix-ui/react-navigation-menu";
 
 export type TagMap = {
   [tag in keyof Partial<JSX.IntrinsicElements>]:
@@ -167,11 +168,21 @@ export function serializeLexical({ nodes, tagMap }: Props): JSX.Element {
 
             type List = Extract<keyof JSX.IntrinsicElements, "ol" | "ul">;
             const Tag = node?.tag as List;
-            return (
-              <Tag className={node?.listType} key={index}>
-                {serializedChildren}
-              </Tag>
-            );
+
+            if (Tag === "ul") {
+              return (
+                <Tag className={node?.listType} key={index} {...tagMap?.[Tag]}>
+                  {serializedChildren}
+                </Tag>
+              );
+            }
+            if (Tag === "ol") {
+              return (
+                <Tag className={node?.listType} key={index} {...tagMap?.[Tag]}>
+                  {serializedChildren}
+                </Tag>
+              );
+            }
           }
           case "listitem": {
             const node = _node as SerializedListItemNode;

@@ -23,7 +23,7 @@ const payload = await getPayloadHMR({ config });
 
 export default async function Page({
   params: { locale },
-  searchParams: { page, search },
+  searchParams: { page, search, start, end },
 }: {
   params: {
     locale: "ms-MY" | "en-GB";
@@ -31,6 +31,8 @@ export default async function Page({
   searchParams: {
     page: string;
     search: string;
+    start: string;
+    end: string;
   };
 }) {
   const data = await payload.find({
@@ -52,6 +54,24 @@ export default async function Page({
             },
           ],
         },
+        ...(start && end
+          ? [
+              {
+                and: [
+                  {
+                    date: { greater_than_equal: start },
+                  },
+                  {
+                    date: { less_than_equal: end },
+                  },
+                ],
+              },
+            ]
+          : []),
+        {
+          _status: { not_equals: "draft" },
+        },
+
         {
           _status: { not_equals: "draft" },
         },
