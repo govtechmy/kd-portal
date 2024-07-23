@@ -24,8 +24,6 @@ interface SiaranListProps {
   locale: (typeof locales)[number];
 }
 
-// TODO: Handle the single page (fetching data, rich text and etc)
-// TODO: Read estimated. Ask how to do this.
 const SiaranList: FC<SiaranListProps> = ({ data, locale }) => {
   const t = useTranslations();
   const searchParams = useSearchParams();

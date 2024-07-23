@@ -8,20 +8,23 @@ import Phone from "@/icons/phone";
 import Envelope from "@/icons/envelope";
 import { Cell } from "@tanstack/react-table";
 import { useTranslations } from "next-intl";
-import { FC, useState } from "react";
+import { FC, useMemo } from "react";
 import { DirektoriFilter } from "./filter";
 import { StaffDirectory } from "@/payload-types";
 import { locales } from "@/lib/i18n-config";
+import { useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "@/lib/i18n";
 
 interface DirektoriMainProps {
   list: StaffDirectory[];
   locale: (typeof locales)[number];
 }
-
-// TODO: Fix the order of the upload of directory
 const DirektoriMain: FC<DirektoriMainProps> = ({ list, locale }) => {
-  const [data, setData] = useState(list);
   const t = useTranslations();
+  const searchParams = useSearchParams();
+  const { push } = useRouter();
+  const pathname = usePathname();
+  const searchQuery = searchParams.get("search");
 
   const column = [
     {
@@ -165,20 +168,29 @@ const DirektoriMain: FC<DirektoriMainProps> = ({ list, locale }) => {
     },
   ];
 
-  function searchArray(array: typeof data, searchQuery: string) {
-    const query = searchQuery.toLowerCase();
+  const data = useMemo(() => {
+    const query = searchQuery ? searchQuery.toLowerCase() : "";
 
-    return setData(
-      array.filter((item) => {
-        return (
-          (item.nama && item.nama.toLowerCase().includes(query)) ||
-          (item.emel && item.emel.toLowerCase().includes(query)) ||
-          // (item.gred && item.gred.toLowerCase().includes(query)) ||
-          (item.jawatan && item.jawatan.toLowerCase().includes(query))
-        );
-      }),
-    );
-  }
+    return list.filter((item) => {
+      const matchesQuery =
+        (item.nama && item.nama.toLowerCase().includes(query)) ||
+        (item.emel && item.emel.toLowerCase().includes(query)) ||
+        // (item.gred && item.gred.toLowerCase().includes(query)) ||
+        (item.jawatan && item.jawatan.toLowerCase().includes(query));
+
+      return matchesQuery;
+    });
+  }, [list, searchQuery]);
+
+  const searchArray = (searchQuery: string) => {
+    const params = new URLSearchParams(searchParams);
+    if (searchQuery) {
+      params.set("search", searchQuery.toLowerCase());
+    } else {
+      params.delete("search");
+    }
+    push(`${pathname}?${params.toString()}`, { scroll: false });
+  };
 
   return (
     <main>
@@ -186,8 +198,9 @@ const DirektoriMain: FC<DirektoriMainProps> = ({ list, locale }) => {
         title={t("Directory.header")}
         search={
           <Search
-            onChange={(query) => searchArray(list, query)}
+            onChange={searchArray}
             placeholder={t("Directory.search_placeholder")}
+            defaultValue={searchQuery || ""}
           />
         }
       />
