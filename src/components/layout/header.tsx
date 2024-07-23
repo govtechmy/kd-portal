@@ -31,53 +31,23 @@ export function Header({
   nav_items,
 }: {
   locale: string;
-  nav_items: { name: string; href: string }[];
+  nav_items: (
+    | {
+        name: string;
+        href: string;
+      }
+    | {
+        name: string;
+        href: {
+          name: string;
+          href: string;
+        }[];
+      }
+  )[];
 }) {
   const t = useTranslations();
   const pathname = usePathname();
   const active = (href: string) => pathname.startsWith(href) && href !== "/";
-  // const nav_items = [
-  //   { name: "home", href: "/" },
-  //   { name: "ministry_profile", href: routes.MINISTRY_PROFILE },
-  //   { name: "announcements", href: routes.ANNOUNCEMENTS },
-  //   { name: "achievements", href: routes.ACHIEVEMENTS },
-  //   { name: "policy", href: routes.POLICY },
-  //   { name: "directory", href: routes.DIRECTORY },
-  //   { name: "contact_us", href: routes.CONTACT_US },
-  //   {
-  //     name: "dept_agency",
-  //     href: [
-  //       {
-  //         name: "JDN",
-  //         href: "https://www.jdn.gov.my/",
-  //       },
-  //       {
-  //         name: "JPDP",
-  //         href: "https://www.pdp.gov.my/jpdpv2/",
-  //       },
-  //       {
-  //         name: "MDEC",
-  //         href: "https://mdec.my/",
-  //       },
-  //       {
-  //         name: "MyDigital",
-  //         href: "https://www.mydigital.gov.my/",
-  //       },
-  //       {
-  //         name: "CSM",
-  //         href: "https://www.cybersecurity.my/en/index.html",
-  //       },
-  //       {
-  //         name: "DNB",
-  //         href: "https://www.digital-nasional.com.my/",
-  //       },
-  //       {
-  //         name: "MyNIC",
-  //         href: "https://mynic.my/",
-  //       },
-  //     ],
-  //   },
-  // ];
 
   const [showMenu, setMenu] = useState<boolean>(false);
 
@@ -145,7 +115,7 @@ export function Header({
                                 "w-full justify-start text-sm data-[state=open]:bg-washed-100",
                               )}
                             >
-                              {`${t(`Agency.${item.name}.name`)}${t(`Agency.${item.name}.abbr`) ? ` (${t(`Agency.${item.name}.abbr`)})` : ""} `}
+                              {item.name}
                             </Link>
                           </SheetClose>
                         ))}
@@ -204,7 +174,7 @@ export function Header({
                               "w-full justify-start bg-transparent transition-colors data-[state=open]:bg-washed-100",
                             )}
                           >
-                            {`${t(`Agency.${item.name}.name`)}${t(`Agency.${item.name}.abbr`) ? ` (${t(`Agency.${item.name}.abbr`)})` : ""} `}
+                            {item.name}
                           </Link>
                         ))}
                       </ul>

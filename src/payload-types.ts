@@ -402,6 +402,33 @@ export interface Header {
     };
     id?: string | null;
   }[];
+  dropdown: {
+    name: string;
+    dept_agency?:
+      | {
+          link: {
+            type?: ('reference' | 'custom') | null;
+            newTab?: boolean | null;
+            reference?:
+              | (
+                  | '/'
+                  | '/pencapaian'
+                  | '/siaran'
+                  | '/hubungi-kami'
+                  | '/profil-kementerian'
+                  | '/direktori'
+                  | '/penafian'
+                  | '/dasar'
+                  | '/dasar-privasi'
+                )
+              | null;
+            url?: string | null;
+            label: string;
+          };
+          id?: string | null;
+        }[]
+      | null;
+  };
   updatedAt?: string | null;
   createdAt?: string | null;
 }

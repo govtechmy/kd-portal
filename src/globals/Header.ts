@@ -11,8 +11,33 @@ export const Header: GlobalConfig = {
       label: "Header Items",
       required: true,
       fields: [link({ labelPlaceholder: "Home", localizedLabel: true })],
-      maxRows: 8,
+      maxRows: 7,
       type: "array",
+    },
+    {
+      name: "dropdown",
+      label: "Header Dropdown",
+      type: "group",
+      fields: [
+        {
+          name: "name",
+          type: "text",
+          localized: true,
+          required: true,
+        },
+        {
+          name: "dept_agency",
+          label: "Departments & Agencies",
+          fields: [
+            link({
+              forceCustomUrl: true,
+              labelPlaceholder: "MyDigital Corporation",
+              localizedLabel: true,
+            }),
+          ],
+          type: "array",
+        },
+      ],
     },
   ],
   slug: "header",

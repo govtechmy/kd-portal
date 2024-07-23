@@ -118,10 +118,23 @@ export default async function Layout({
             <Masthead />
             <Header
               locale={locale}
-              nav_items={headerData.items.map((item) => ({
-                name: item.link.label,
-                href: item.link.reference || "",
-              }))}
+              nav_items={[
+                ...headerData.items.map((item) => ({
+                  name: item.link.label,
+                  href: item.link.reference || "",
+                })),
+                ...(headerData.dropdown.dept_agency?.length
+                  ? [
+                      {
+                        name: headerData.dropdown.name,
+                        href: headerData.dropdown.dept_agency.map((dept) => ({
+                          name: dept.link.label,
+                          href: dept.link.url ? dept.link.url : "",
+                        })),
+                      },
+                    ]
+                  : []),
+              ]}
             />
             <div className="flex-1">{children}</div>
             <Footer
