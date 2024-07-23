@@ -12,11 +12,11 @@ export default function Paginate({
   totalPages: number;
 }) {
   const searchParams = useSearchParams();
-  const page = Number(searchParams.get("page")) || 1;
+  const page = Number(searchParams.get("page") || 1);
 
   return (
     <Suspense>
-      <Pagination curr={page} setPage={setPage} totalPages={totalPages} />
+      <Pagination curr={page - 1} setPage={setPage} totalPages={totalPages} />
     </Suspense>
   );
 }

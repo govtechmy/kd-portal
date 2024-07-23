@@ -5,7 +5,7 @@ import { getTranslations } from "next-intl/server";
 import AchievementComponent from "./page-component";
 import groupBy from "lodash/groupBy";
 import { DateTime } from "luxon";
-import { Achievement } from "@/payload-types";
+import orderBy from "lodash/orderBy";
 
 export async function generateMetadata({
   params: { locale },

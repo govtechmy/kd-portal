@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import config from "@payload-config";
 import SiaranList from "./page-component";
+import orderBy from "lodash/orderBy";
 
 export async function generateMetadata({
   params: { locale },
@@ -40,16 +41,25 @@ export default async function Page({
     page: Number(page) ?? 1,
     limit: 12,
     where: {
-      or: [
+      and: [
         {
-          title: { like: search },
+          or: [
+            {
+              title: { like: search },
+            },
+            {
+              description: { like: search },
+            },
+          ],
         },
         {
-          description: { like: search },
+          _status: { not_equals: "draft" },
         },
       ],
     },
   });
 
-  return <SiaranList data={data} locale={locale} />;
+  const sorted = orderBy(data.docs, ["isPin", "date"], ["desc", "desc"]);
+
+  return <SiaranList data={{ ...data, docs: sorted }} locale={locale} />;
 }

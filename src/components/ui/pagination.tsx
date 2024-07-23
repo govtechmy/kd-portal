@@ -161,8 +161,8 @@ export default function _Pagination({
             variant="secondary"
             size="default"
             className="p-2 lg:p-2.5"
-            disabled={disable_prev || curr - 1 <= 0}
-            onClick={() => (setPage ? setPage(curr - 1) : changePage(curr - 1))}
+            disabled={disable_prev || curr <= 0}
+            onClick={() => (setPage ? setPage(curr - 1) : changePage(curr))}
           >
             <ChevronLeft className="size-4" />
             <span className="sr-only">{t("previous")}</span>
@@ -172,23 +172,23 @@ export default function _Pagination({
         {pageRange?.map((page, i) => {
           return typeof page === "number" ? (
             <PaginationItem className="hidden min-[360px]:flex" key={i}>
-              {pathname ? (
+              {/* {pathname ? (
                 <PaginationLink
                   href={getUrl(page)}
-                  variant={curr === page ? "tertiary-colour" : "tertiary"}
-                  isActive={curr === page}
+                  variant={curr === page - 1 ? "tertiary-colour" : "tertiary"}
+                  isActive={curr === page- 1}
                 >
                   {page}
                 </PaginationLink>
-              ) : (
-                <Button
-                  onClick={() => (setPage ? setPage(page) : changePage(page))}
-                  variant={curr === page ? "tertiary-colour" : "tertiary"}
-                  className={curr === page ? "bg-brand-50" : ""}
-                >
-                  {page}
-                </Button>
-              )}
+              ) : ( */}
+              <Button
+                onClick={() => (setPage ? setPage(page - 1) : changePage(page))}
+                variant={curr === page - 1 ? "tertiary-colour" : "tertiary"}
+                className={curr === page - 1 ? "bg-brand-50" : ""}
+              >
+                {page}
+              </Button>
+              {/* )} */}
             </PaginationItem>
           ) : (
             <PaginationItem className="hidden min-[360px]:flex" key={i}>
@@ -208,8 +208,8 @@ export default function _Pagination({
             variant="secondary"
             size="default"
             className="p-2 lg:p-2.5"
-            disabled={disable_next || curr >= totalPages}
-            onClick={() => (setPage ? setPage(curr + 1) : changePage(curr + 1))}
+            disabled={disable_next || curr >= totalPages - 1}
+            onClick={() => (setPage ? setPage(curr + 1) : changePage(curr + 2))}
           >
             <span className="sr-only">{t("next")}</span>
             <ChevronRight className="size-4" />

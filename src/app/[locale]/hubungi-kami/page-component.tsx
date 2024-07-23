@@ -18,7 +18,6 @@ interface ContactUsProps {
   locale: (typeof locales)[number];
 }
 
-// TODO: Fix Waze navigation direction link
 const ContactUs: FC<ContactUsProps> = ({ data, locale }) => {
   unstable_setRequestLocale(locale);
   const t = useTranslations();
@@ -56,7 +55,8 @@ const ContactUs: FC<ContactUsProps> = ({ data, locale }) => {
                       },
                       {
                         name: "Waze",
-                        href: `https://www.waze.com/live-map/directions/${data.encoded_address}`,
+                        // href: `https://www.waze.com/live-map/directions/${data.encoded_address}`,
+                        href: `https://www.waze.com/en/live-map/directions/menara-usahawan-persiaran-perdana-18-putrajaya?place=w.66650141.666435876.410674`,
                       },
                     ].map(({ name, href }) => (
                       <a

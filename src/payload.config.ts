@@ -104,21 +104,25 @@ export default buildConfig({
         }),
       );
 
-      StaffDirectory.forEach(async (staff) => {
-        const { bhg, id, id_bhg, ...rest } = staff;
-        const selectDept = _kdDept.find((dept) => dept.id_bhg === id_bhg);
+      const createStaffDirectory = async () => {
+        for (const staff of StaffDirectory) {
+          const { bhg, id, id_bhg, ...rest } = staff;
+          const selectDept = _kdDept.find((dept) => dept.id_bhg === id_bhg);
 
-        if (selectDept) {
-          const created = await payload.create({
-            collection: "staff-directory",
-            data: {
-              staff_id: id,
-              id_bhg: selectDept.id,
-              ...rest,
-            },
-          });
+          if (selectDept) {
+            await payload.create({
+              collection: "staff-directory",
+              data: {
+                staff_id: id,
+                id_bhg: selectDept.id,
+                ...rest,
+              },
+            });
+          }
         }
-      });
+      };
+
+      await createStaffDirectory();
     }
   },
   sharp,

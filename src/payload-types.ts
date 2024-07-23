@@ -138,6 +138,7 @@ export interface Broadcast {
   broadcast_file: string | Media;
   updatedAt: string;
   createdAt: string;
+  _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -235,6 +236,7 @@ export interface Policy {
   file_upload: string | File;
   updatedAt: string;
   createdAt: string;
+  _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

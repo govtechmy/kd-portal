@@ -35,6 +35,9 @@ export default async function Page({
     locale: locale,
     pagination: false,
     depth: 3,
+    where: {
+      _status: { not_equals: "draft" },
+    },
   });
 
   return <DasarKementerian locale={locale} list={data.docs} />;
