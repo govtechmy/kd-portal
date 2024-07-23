@@ -9,7 +9,7 @@ import { useFormatter, useTranslations } from "next-intl";
 import React from "react";
 
 interface Props {
-  data: Record<string, Achievement[]>;
+  data: { year: number; items: Achievement[] }[];
   locale: (typeof locales)[number];
 }
 
@@ -21,10 +21,10 @@ export default function PencapaianTimeline({ data, locale }: Props) {
     <div className="relative col-span-7 flex h-full flex-col items-start sm:items-center lg:col-start-6">
       <div className="absolute -z-10 h-full w-px bg-outline-200 max-sm:left-[3.5px]" />
       <div className="py-8 lg:pb-[120px] lg:pt-[84px]">
-        {Object.entries(data).map(([year, list], i) => (
+        {data.map(({ year, items }, i) => (
           <div key={year} className="flex flex-col items-start sm:items-center">
             <Timeline
-              items={list.map((item) => ({
+              items={items.map((item) => ({
                 date: DateTime.fromISO(item.date).toFormat("dd/M/yyyy, EEE", {
                   locale: locale,
                 }),
@@ -35,7 +35,7 @@ export default function PencapaianTimeline({ data, locale }: Props) {
               startRight={
                 i === 0
                   ? false
-                  : (data[i - 1]?.length - 1) % 2 === 0
+                  : data[i - 1].items.length % 2 === 0
                     ? false
                     : true
               }

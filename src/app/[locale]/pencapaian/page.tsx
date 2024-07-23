@@ -56,5 +56,16 @@ export default async function Page({
     DateTime.fromISO(item.date).toFormat("yyyy"),
   );
 
-  return <AchievementComponent data={groupedCollection} locale={locale} />;
+  const groupedArray = Object.entries(groupedCollection).map(
+    ([year, items]) => ({
+      year: parseInt(year, 10),
+      items: items,
+    }),
+  );
+
+  const sorted = orderBy(groupedArray, ["year"], ["desc"]);
+
+  console.log(sorted);
+
+  return <AchievementComponent data={sorted} locale={locale} />;
 }

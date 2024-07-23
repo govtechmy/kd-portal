@@ -191,7 +191,9 @@
     "header": "Our Achievements",
     "placeholder": "Find keywords",
     "past_achievements": "Past achievements",
+    "filter_by": "Filter achievements by date range",
     "type": {
+      "all": "All",
       "product_launch": "Product Launch",
       "policy": "Policy",
       "collaboration": "Collaboration",

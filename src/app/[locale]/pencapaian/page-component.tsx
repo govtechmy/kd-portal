@@ -14,7 +14,7 @@ import Filter from "@/components/pencapaian/filter";
 import PencapaianTimeline from "@/components/pencapaian/timeline";
 
 interface AchievementProps {
-  data: Record<string, Achievement[]>;
+  data: { year: number; items: Achievement[] }[];
   locale: (typeof locales)[number];
 }
 

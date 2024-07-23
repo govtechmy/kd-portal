@@ -191,7 +191,9 @@
     "header": "Pencapaian Kami",
     "placeholder": "Cari kata kunci",
     "past_achievements": "Pencapaian yang lalu",
+    "filter_by": "Tapis pencapaian berdasarkan julat tarikh.",
     "type": {
+      "all": "Semua",
       "product_launch": "Pelancaran Produk",
       "policy": "Dasar",
       "collaboration": "Usahasama",
