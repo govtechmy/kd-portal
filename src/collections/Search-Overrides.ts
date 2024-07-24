@@ -1,3 +1,4 @@
+import { routes } from "@/lib/routes";
 import {
   BeforeSync,
   FieldsOverride,
@@ -41,18 +42,22 @@ export const getGroupData = (slug: string) => {
     case "staff-directory":
       return {
         name: "directory",
+        route: routes.DIRECTORY,
       };
     case "policy":
       return {
         name: "policy",
+        route: routes.POLICY,
       };
     case "achievement":
       return {
         name: "achievements",
+        route: routes.ACHIEVEMENTS,
       };
     case "broadcast":
       return {
         name: "announcements",
+        route: routes.ANNOUNCEMENTS,
       };
 
     default:

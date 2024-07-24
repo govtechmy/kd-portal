@@ -13,7 +13,7 @@ export type SearchType = Array<{
   items: Search[];
 }>;
 
-const HomeSearchBar: FC = () => {
+const HomeSearchBar: FC<{ locale: string }> = ({ locale }) => {
   const [options, setOptions] = useState<SearchType>([]);
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
@@ -22,7 +22,9 @@ const HomeSearchBar: FC = () => {
     debounce(async (searchQuery) => {
       setLoading(true);
       try {
-        const response = await fetch(`/my-route?search=${searchQuery}`);
+        const response = await fetch(
+          `/my-route?search=${searchQuery}&locale=${locale}`,
+        );
 
         if (response.ok) {
           const resp = (await response.json()) as PaginatedDocs<Search>;

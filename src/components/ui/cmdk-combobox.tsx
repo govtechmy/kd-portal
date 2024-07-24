@@ -17,7 +17,6 @@ import { useTranslations } from "next-intl";
 import { SearchType } from "../home/searchbar";
 import ChevronRight from "@/icons/chevron-right";
 import { useRouter } from "@/lib/i18n";
-import { routes } from "@/lib/routes";
 import { useOnClickOutside } from "@/lib/hooks/useOnClickOutside";
 import { getGroupData } from "@/collections/Search-Overrides";
 import FileDocumentPaper from "@/icons/file-document-paper";
@@ -184,7 +183,13 @@ const CommandMenu: FC<CommandMenuProps> = ({
                   key={item.id}
                   value={item.id}
                   className="flex w-full gap-3 px-3 py-2 text-start hover:cursor-pointer hover:bg-background-50"
-                  onSelect={(string) => push(routes.ACHIEVEMENTS)}
+                  onSelect={(string) =>
+                    metadata && metadata.route && relationTo === "broadcast"
+                      ? push(`${metadata.route}/${item.doc.value}`)
+                      : metadata &&
+                        metadata.route &&
+                        push(`${metadata.route}?search=${item.title}`)
+                  }
                 >
                   <div className="line-clamp-1 flex max-w-full flex-1 items-center gap-2">
                     <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#E5F4FF]">

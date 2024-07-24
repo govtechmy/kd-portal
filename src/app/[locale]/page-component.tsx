@@ -48,7 +48,7 @@ const HomePageComponent: FC<Props> = ({
           </div>
 
           <div className="space-y-4">
-            <HomeSearchBar />
+            <HomeSearchBar locale={locale} />
 
             {/* Disable Pautan Popular for now */}
             {/* <div className="max-w-[800px] space-y-3 text-black-700">

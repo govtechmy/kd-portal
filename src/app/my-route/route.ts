@@ -6,6 +6,7 @@ export const GET = async (req: Request) => {
 
   const searchParams = new URLSearchParams(url.searchParams);
   const search = searchParams.get("search");
+  const locale = searchParams.get("locale");
   const payload = await getPayloadHMR({
     config: configPromise,
   });
@@ -13,6 +14,7 @@ export const GET = async (req: Request) => {
   const data = await payload.find({
     collection: "search",
     limit: 15,
+    locale: locale as "ms-MY" | "en-GB",
     where: {
       title: { contains: search || "" },
     },
