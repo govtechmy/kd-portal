@@ -4,7 +4,7 @@ import config from "@payload-config";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import DirektoriMain from "@/components/direktori/main";
 
-export const dynamic = "force-static";
+// export const dynamic = "force-static";
 
 export async function generateMetadata({
   params: { locale },
@@ -29,7 +29,7 @@ export default async function Page({
     locale: "ms-MY" | "en-GB";
   };
 }) {
-  unstable_setRequestLocale(locale);
+  // unstable_setRequestLocale(locale);
   const data = await payload.find({
     collection: "staff-directory",
     locale: locale,

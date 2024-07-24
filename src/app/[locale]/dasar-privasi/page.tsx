@@ -4,7 +4,7 @@ import { getPayloadHMR } from "@payloadcms/next/utilities";
 import config from "@payload-config";
 import PrivacyPolicyComponent from "./page-component";
 
-export const dynamic = "force-static";
+// export const dynamic = "force-static";
 
 export async function generateMetadata({
   params: { locale },
@@ -29,7 +29,7 @@ export default async function Page({
     locale: "ms-MY" | "en-GB";
   };
 }) {
-  unstable_setRequestLocale(locale);
+  // unstable_setRequestLocale(locale);
   const data = await payload.findGlobal({
     slug: "footer",
     locale: locale,

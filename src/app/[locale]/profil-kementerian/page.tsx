@@ -3,7 +3,7 @@ import { getPayloadHMR } from "@payloadcms/next/utilities";
 import config from "@payload-config";
 import ProfilKementerianComponent from "./page-component";
 
-export const dynamic = "force-static";
+// export const dynamic = "force-static";
 const payload = await getPayloadHMR({ config });
 
 export async function generateMetadata({
@@ -27,7 +27,7 @@ export default async function Page({
     locale: "ms-MY" | "en-GB";
   };
 }) {
-  unstable_setRequestLocale(locale);
+  // unstable_setRequestLocale(locale);
   const data = await payload.findGlobal({
     slug: "profil-kementerian",
     locale: locale,
