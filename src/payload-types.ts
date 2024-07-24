@@ -31,6 +31,7 @@ export interface Config {
     'site-info': SiteInfo;
     header: Header;
     footer: Footer;
+    homepage: Homepage;
     'profil-kementerian': ProfilKementerian;
   };
   locale: 'ms-MY' | 'en-GB';
@@ -152,7 +153,7 @@ export interface Achievement {
   type: 'product_launch' | 'policy' | 'collaboration' | 'miscellaneous';
   date: string;
   description: string;
-  content_text: {
+  content_text?: {
     root: {
       type: string;
       children: {
@@ -166,7 +167,7 @@ export interface Achievement {
       version: number;
     };
     [k: string]: unknown;
-  };
+  } | null;
   isFlagged?: boolean | null;
   achievement_file?: string | Media | null;
   updatedAt: string;
@@ -526,6 +527,23 @@ export interface Footer {
       [k: string]: unknown;
     } | null;
   };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "homepage".
+ */
+export interface Homepage {
+  id: string;
+  featured_achievements: {
+    achievements: string | Achievement;
+    id?: string | null;
+  }[];
+  quick_links: {
+    links: string | QuickLink;
+    id?: string | null;
+  }[];
   updatedAt?: string | null;
   createdAt?: string | null;
 }

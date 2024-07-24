@@ -109,6 +109,9 @@
       "desc5": "Access, check, and print your payslips.",
       "desc6": "Manage human resources from appointment to termination.",
       "desc7": "Procure products and services electronically."
+    },
+    "Broadcast": {
+      "title": "Latest Media"
     }
   },
   "Footer": {
@@ -193,6 +196,7 @@
     "past_achievements": "Past achievements",
     "filter_by": "Filter achievements by date range",
     "type": {
+      "type": "Type",
       "all": "All",
       "product_launch": "Product Launch",
       "policy": "Policy",

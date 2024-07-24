@@ -4,11 +4,7 @@ import Masthead from "@/components/layout/masthead";
 import "@/lib/styles/globals.css";
 import { cn } from "@/lib/utils";
 import { Inter, Poppins } from "next/font/google";
-import {
-  getMessages,
-  getTranslations,
-  unstable_setRequestLocale,
-} from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { ReactNode } from "react";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
@@ -83,7 +79,6 @@ export default async function Layout({
     locale: "ms-MY" | "en-GB";
   };
 }) {
-  // unstable_setRequestLocale(locale); // TODO: remove once pages are dynamic
   const messages = await getMessages();
 
   const headerData = await payload.findGlobal({

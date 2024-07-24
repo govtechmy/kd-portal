@@ -2,17 +2,26 @@ import Section from "@/components/layout/section";
 import TimelineLayout from "@/components/layout/timeline";
 import Overline from "@/components/typography/overline";
 import Flag from "@/icons/flag";
+import { locales } from "@/lib/i18n-config";
+import { Achievement } from "@/payload-types";
+import { DateTime } from "luxon";
 import { useFormatter, useTranslations } from "next-intl";
 
-export default function Timeline() {
+export default function Timeline({
+  achievements,
+  locale,
+}: {
+  achievements: Achievement[];
+  locale: (typeof locales)[number];
+}) {
   const format = useFormatter();
   const t = useTranslations("Home.Achievement");
 
   return (
     <Section>
-      <div className="grid-cols-12 gap-6 border-washed-100 px-4.5 lg:px-6 xl:grid xl:border-x">
+      <div className="grid-cols-12 gap-6 border-washed-100 px-4.5 lg:px-0 xl:grid xl:border-x">
         <div className="col-span-10 col-start-2 flex flex-col gap-6 max-lg:pt-12 lg:flex-row">
-          <div className="lg:sticky top-16 h-fit space-y-4.5 lg:w-1/3 lg:py-[84px]">
+          <div className="top-16 h-fit space-y-4.5 lg:sticky lg:w-1/3 lg:py-[84px]">
             <div className="flex gap-x-3">
               <Flag className="text-foreground-primary" />
               <Overline>{t("overline")}</Overline>
@@ -27,22 +36,14 @@ export default function Timeline() {
             <div className="absolute -z-10 h-full w-px bg-outline-200 max-sm:left-[3.5px]" />
             <TimelineLayout
               className="py-8 lg:py-[84px]"
-              items={Array.from({ length: 7 }).map((_, i) => {
-                const date = new Date(t(`date${i + 1}`));
-                return {
-                  date: `${format.dateTime(date, {
-                    year: "numeric",
-                    month: "2-digit",
-                    day: "2-digit",
-                  })}, 
-              ${format.dateTime(date, {
-                weekday: "long",
-              })}`,
-                  title: t(`title${i + 1}`),
-                  desc: t(`desc${i + 1}`),
-                  star: [3, 5].includes(i) ? true : false,
-                };
-              })}
+              items={achievements.map((item) => ({
+                date: DateTime.fromISO(item.date).toFormat("dd/M/yyyy, EEEE", {
+                  locale: locale,
+                }),
+                title: item.title,
+                desc: item.description,
+                star: item.isFlagged || false,
+              }))}
             />
           </div>
         </div>

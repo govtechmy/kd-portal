@@ -34,6 +34,7 @@ export const QuickLink: CollectionConfig = {
     {
       name: "description",
       type: "text",
+      localized: true,
     },
     {
       name: "href",

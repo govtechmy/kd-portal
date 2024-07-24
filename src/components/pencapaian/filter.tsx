@@ -35,6 +35,7 @@ export default function Filter() {
       <Select value={selectedType} onValueChange={handleValueChange}>
         <SelectTrigger asChild>
           <Button variant="secondary">
+            <span className="text-sm text-dim-500">{t("type.type")}:</span>
             <SelectValue>{t(`type.${selectedType}`)}</SelectValue>
           </Button>
         </SelectTrigger>

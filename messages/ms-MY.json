@@ -109,6 +109,9 @@
       "desc5": "Akses, semak, dan cetak slip penyata gaji anda.",
       "desc6": "Uruskan sumber manusia dari pelantikan hingga penamatan.",
       "desc7": "Perolehkan produk dan perkhidmatan secara elektronik."
+    },
+    "Broadcast": {
+      "title": "Siaran Terkini"
     }
   },
   "Footer": {
@@ -193,6 +196,7 @@
     "past_achievements": "Pencapaian yang lalu",
     "filter_by": "Tapis pencapaian berdasarkan julat tarikh.",
     "type": {
+      "type": "Jenis",
       "all": "Semua",
       "product_launch": "Pelancaran Produk",
       "policy": "Dasar",

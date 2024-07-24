@@ -26,6 +26,7 @@ export const Achievement: CollectionConfig = {
     plural: "Achievements",
   },
   admin: {
+    useAsTitle: "title",
     listSearchableFields: ["title", "description", "type"],
   },
   fields: [
@@ -64,17 +65,17 @@ export const Achievement: CollectionConfig = {
       type: "textarea",
       required: true,
       localized: true,
-      maxLength: 140,
+      maxLength: 240,
       admin: {
         placeholder: "Brief description about this achievement",
-        rows: 2,
+        rows: 3,
       },
     },
     {
       name: "content_text",
       label: "Content",
       type: "richText",
-      required: true,
+      // required: true,
       localized: true,
     },
     // Side-bar
