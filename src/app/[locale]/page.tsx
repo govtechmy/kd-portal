@@ -58,8 +58,8 @@ export default async function Page({
     <HomePageComponent
       siteInfo={siteInfo}
       homepage={homepage}
-      achievements={achievement.docs}
-      broadcast={broadcast.docs}
+      achievements={achievement ? achievement.docs : []}
+      broadcast={broadcast ? broadcast.docs : []}
       locale={locale}
     />
   );
