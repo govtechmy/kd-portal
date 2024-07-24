@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import "@/lib/styles/article.css";
+@import "@/lib/styles/cmdk.css";
 
 @layer base {
   :root {

@@ -35,3 +35,27 @@ const getSearchTitle = (slug: string) => {
       return "title";
   }
 };
+
+export const getGroupData = (slug: string) => {
+  switch (slug) {
+    case "staff-directory":
+      return {
+        name: "directory",
+      };
+    case "policy":
+      return {
+        name: "policy",
+      };
+    case "achievement":
+      return {
+        name: "achievements",
+      };
+    case "broadcast":
+      return {
+        name: "announcements",
+      };
+
+    default:
+      undefined;
+  }
+};

@@ -36,6 +36,7 @@
     "@types/luxon": "^3.4.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "cmdk": "^1.0.0",
     "cross-env": "^7.0.3",
     "embla-carousel-react": "^8.1.6",
     "graphql": "^16.8.1",

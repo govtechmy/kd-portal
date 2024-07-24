@@ -1,5 +1,6 @@
 import Carousel from "@/components/home/carousel";
 import Quicklinks from "@/components/home/quicklinks";
+import HomeSearchBar from "@/components/home/searchbar";
 import HomeSiaran from "@/components/home/siaran";
 import Timeline from "@/components/home/timeline";
 import HeroPattern from "@/components/layout/hero-pattern";
@@ -47,9 +48,10 @@ const HomePageComponent: FC<Props> = ({
           </div>
 
           <div className="space-y-4">
-            <Search />
+            <HomeSearchBar />
 
-            <div className="max-w-[800px] space-y-3 text-black-700">
+            {/* Disable Pautan Popular for now */}
+            {/* <div className="max-w-[800px] space-y-3 text-black-700">
               <p className="text-sm">{t("Home.popular_links")}:</p>
               <div className="flex flex-wrap justify-center gap-1.5">
                 {Array(5)
@@ -72,7 +74,7 @@ const HomePageComponent: FC<Props> = ({
                     </div>
                   ))}
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
