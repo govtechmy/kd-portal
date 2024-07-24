@@ -44,6 +44,9 @@ export default async function Page({
     pagination: false,
     sort: "-date",
     limit: 7,
+    where: {
+      type: { not_equals: "not_achievement" },
+    },
   });
   const broadcast = await payload.find({
     collection: "broadcast",

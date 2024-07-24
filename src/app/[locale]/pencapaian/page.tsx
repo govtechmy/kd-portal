@@ -79,6 +79,9 @@ export default async function Page({
               },
             ]
           : []),
+        {
+          type: { not_equals: "not_achievement" },
+        },
       ],
     },
   });

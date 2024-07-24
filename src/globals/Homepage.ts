@@ -18,6 +18,9 @@ export const Homepage: GlobalConfig = {
           type: "relationship",
           relationTo: "achievement",
           required: true,
+          filterOptions: () => {
+            return { type: { equals: "not_achievement" } };
+          },
         },
       ],
     },

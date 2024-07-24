@@ -17,6 +17,10 @@ export const AchievementType: Option[] = [
     label: "Miscellaneous",
     value: "miscellaneous",
   },
+  {
+    label: "Not Achievement",
+    value: "not_achievement",
+  },
 ];
 
 export const Achievement: CollectionConfig = {

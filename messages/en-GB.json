@@ -201,7 +201,8 @@
       "product_launch": "Product Launch",
       "policy": "Policy",
       "collaboration": "Collaboration",
-      "miscellaneous": "Miscellaneous"
+      "miscellaneous": "Miscellaneous",
+      "not_achievement": "Not Achievement"
     }
   },
   "Policy": {

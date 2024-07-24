@@ -50,7 +50,10 @@ export default function Filter() {
           >
             {t(`type.all`)}
           </SelectItem>
-          {AchievementType.map(
+          {AchievementType.filter(
+            (type) =>
+              typeof type !== "string" && type.value !== "not_achievement",
+          ).map(
             (type) =>
               typeof type !== "string" && (
                 <SelectItem
