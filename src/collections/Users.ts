@@ -18,6 +18,12 @@ export const Users: CollectionConfig = {
     {
       name: "role",
       type: "select",
+      access: {
+        update: ({ req: { user } }) => {
+          return user && user.role === "admin" ? true : false;
+        },
+        create: () => false,
+      },
       options: [
         {
           label: "Admin",
