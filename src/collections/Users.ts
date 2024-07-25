@@ -32,7 +32,7 @@ export const Users: CollectionConfig = {
     },
   ],
   access: {
-    read: isAdmin,
+    read: isSelfOrAdmin,
     update: isSelfOrAdmin,
     delete: isAdmin,
     // admin: ({ req: { user } }) =>
