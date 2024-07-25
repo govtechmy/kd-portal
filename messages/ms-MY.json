@@ -55,7 +55,9 @@
   "Search": {
     "type": "Tekan",
     "search": "untuk cari",
-    "default_placeholder": "Mula menaip untuk membuat carian"
+    "default_placeholder": "Mula menaip untuk membuat carian",
+    "not_found": "Tiada keputusan dijumpai",
+    "start_search": "Mula menaip untuk membuat carian"
   },
   "Home": {
     "title": "Menerajui Pendigitalan Negara",

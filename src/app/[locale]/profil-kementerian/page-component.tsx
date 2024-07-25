@@ -162,7 +162,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
                       content={statement}
                       tagMap={{
                         strong: {
-                          className: "text-brand-700",
+                          className: "text-brand-700 font-semibold",
                         },
                       }}
                     />

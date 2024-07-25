@@ -39,12 +39,19 @@ const SiaranPage: FC<SiaranPageProps> = ({ data, locale }) => {
       ? data.broadcast_image
       : null;
 
-  const file =
-    Boolean(data.broadcast_file) && typeof data.broadcast_file !== "string"
-      ? data.broadcast_file
+  const file_bm =
+    Boolean(data.broadcast_file_bm) &&
+    typeof data.broadcast_file_bm !== "string"
+      ? data.broadcast_file_bm
+      : null;
+  const file_en =
+    Boolean(data.broadcast_file_eng) &&
+    typeof data.broadcast_file_eng !== "string"
+      ? data.broadcast_file_eng
       : null;
 
-  const downloadFile = () => {
+  const downloadFile = (lang: "en" | "bm") => {
+    const file = lang === "en" ? file_en : file_bm;
     if (file) {
       const link = document.createElement("a");
       link.href = file?.url || "";
@@ -138,10 +145,10 @@ const SiaranPage: FC<SiaranPageProps> = ({ data, locale }) => {
                 );
               })}
             </div>
-            <Button>
+            {/* <Button>
               <Printer className="size-4 text-black-700" />
               {t("Announcements.print")}
-            </Button>
+            </Button> */}
           </div>
           <hr className="w-full bg-outline-200" />
         </div>
@@ -174,17 +181,33 @@ const SiaranPage: FC<SiaranPageProps> = ({ data, locale }) => {
           </article>
         </div>
         <hr className="w-full bg-outline-200" />
-        {file && file.url && (
+        {file_bm && file_bm.url && (
           <div
-            className="flex max-w-[200px] items-center gap-1.5 rounded-lg border border-outline-200 p-2 hover:cursor-pointer"
-            onClick={downloadFile}
+            className="flex w-fit items-center gap-1.5 rounded-lg border border-outline-200 p-2 hover:cursor-pointer"
+            onClick={() => downloadFile("bm")}
           >
             <FilePDF />
-            <div className="flex flex-col">
-              <p className="line-clamp-1 text-sm">{file?.filename}</p>
+            <div className="flex max-w-[200px] flex-1 flex-col">
+              <p className="truncate text-sm">{file_bm?.filename}</p>
               <p className="text-xs text-dim-500">
-                {file?.filesize
-                  ? `${(file.filesize / 1000000).toFixed(2)}MB`
+                {file_bm?.filesize
+                  ? `${(file_bm.filesize / 1000000).toFixed(2)}MB`
+                  : ""}
+              </p>
+            </div>
+          </div>
+        )}
+        {file_en && file_en.url && (
+          <div
+            className="flex w-fit items-center gap-1.5 rounded-lg border border-outline-200 p-2 hover:cursor-pointer"
+            onClick={() => downloadFile("en")}
+          >
+            <FilePDF />
+            <div className="flex max-w-[200px] flex-1 flex-col">
+              <p className="truncate text-sm">{file_en?.filename}</p>
+              <p className="text-xs text-dim-500">
+                {file_en?.filesize
+                  ? `${(file_en.filesize / 1000000).toFixed(2)}MB`
                   : ""}
               </p>
             </div>

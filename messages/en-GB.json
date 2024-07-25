@@ -55,7 +55,9 @@
   "Search": {
     "type": "Type",
     "search": "to search",
-    "default_placeholder": "Start typing to search"
+    "default_placeholder": "Start typing to search",
+    "not_found": "No results found.",
+    "start_search": "Start typing to search"
   },
   "Home": {
     "title": "Driving Digitalisation of the Nation",

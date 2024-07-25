@@ -117,6 +117,7 @@ export interface File {
 export interface Broadcast {
   id: string;
   title: string;
+  slug: string;
   type: 'announcement' | 'media_release';
   date: string;
   description: string;
@@ -138,7 +139,8 @@ export interface Broadcast {
   broadcast_text_html?: string | null;
   isPin?: boolean | null;
   broadcast_image?: string | Media | null;
-  broadcast_file?: string | File | null;
+  broadcast_file_eng?: string | File | null;
+  broadcast_file_bm?: string | File | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -150,7 +152,7 @@ export interface Broadcast {
 export interface Achievement {
   id: string;
   title: string;
-  type: 'product_launch' | 'policy' | 'collaboration' | 'miscellaneous';
+  type: 'product_launch' | 'policy' | 'collaboration' | 'miscellaneous' | 'not_achievement';
   date: string;
   description: string;
   content_text?: {

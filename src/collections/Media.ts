@@ -13,11 +13,13 @@ export const Media: CollectionConfig = {
       name: "alt",
       type: "text",
       required: true,
+      localized: true,
     },
     {
       name: "caption",
       label: "Image Caption",
       type: "text",
+      localized: true,
     },
   ],
   upload: {

@@ -34,7 +34,7 @@ export default function PencapaianTimeline({ data, locale, totalDocs }: Props) {
           <div key={year} className="flex flex-col items-start sm:items-center">
             <Timeline
               items={items.map((item) => ({
-                date: DateTime.fromISO(item.date).toFormat("dd/M/yyyy, EEEE", {
+                date: DateTime.fromISO(item.date).toFormat("dd/M/yyyy", {
                   locale: locale,
                 }),
                 title: item.title,

@@ -40,6 +40,17 @@ export const Broadcast: CollectionConfig = {
       },
     },
     {
+      name: "slug",
+      label: "Slug",
+      type: "text",
+      required: true,
+      unique: true,
+      admin: {
+        placeholder: "pelancaran-inisiatif-5G-nasional",
+        description: "Use as the URL link for broadcast page",
+      },
+    },
+    {
       name: "type",
       label: "Broadcast Type",
       type: "select",
@@ -103,8 +114,17 @@ export const Broadcast: CollectionConfig = {
       },
     },
     {
-      name: "broadcast_file",
-      label: "Attachment File",
+      name: "broadcast_file_eng",
+      label: "Attachment File (ENG)",
+      type: "upload",
+      relationTo: "file",
+      admin: {
+        position: "sidebar",
+      },
+    },
+    {
+      name: "broadcast_file_bm",
+      label: "Attachment File (BM)",
       type: "upload",
       relationTo: "file",
       admin: {

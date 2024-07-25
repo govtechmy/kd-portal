@@ -54,7 +54,11 @@ const HomeSearchBar: FC<{ locale: string }> = ({ locale }) => {
   );
 
   useEffect(() => {
-    fetchSearchList(query);
+    if (query && query.length > 2) {
+      fetchSearchList(query);
+    } else {
+      setOptions([]);
+    }
   }, [query, fetchSearchList]);
 
   return (

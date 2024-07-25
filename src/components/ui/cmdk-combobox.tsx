@@ -163,7 +163,9 @@ const CommandMenu: FC<CommandMenuProps> = ({
         )}
       >
         <CommandEmpty className="text-sm text-dim-500">
-          No results found.
+          {value && value.length > 2
+            ? t("Search.not_found")
+            : t("Search.start_search")}
         </CommandEmpty>
         {loading && (
           <CommandLoading className="text-sm text-dim-500">
@@ -183,12 +185,17 @@ const CommandMenu: FC<CommandMenuProps> = ({
                   key={item.id}
                   value={item.id}
                   className="flex w-full gap-3 px-3 py-2 text-start hover:cursor-pointer hover:bg-background-50"
+                  // onSelect={(string) =>
+                  //   metadata && metadata.route && relationTo === "broadcast"
+                  //     ? push(`${metadata.route}/${item.doc.value}`)
+                  //     : metadata &&
+                  //       metadata.route &&
+                  //       push(`${metadata.route}?search=${item.title}`)
+                  // }
                   onSelect={(string) =>
-                    metadata && metadata.route && relationTo === "broadcast"
-                      ? push(`${metadata.route}/${item.doc.value}`)
-                      : metadata &&
-                        metadata.route &&
-                        push(`${metadata.route}?search=${item.title}`)
+                    metadata &&
+                    metadata.route &&
+                    push(`${metadata.route}?search=${item.title}`)
                   }
                 >
                   <div className="line-clamp-1 flex max-w-full flex-1 items-center gap-2">

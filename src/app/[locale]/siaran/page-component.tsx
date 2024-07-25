@@ -69,7 +69,7 @@ const SiaranList: FC<SiaranListProps> = ({ data, locale }) => {
                 return (
                   <Link
                     key={doc.id}
-                    href={routes.ANNOUNCEMENTS + `/${doc.id}`}
+                    href={routes.ANNOUNCEMENTS + `/${doc.slug}`}
                     className="group relative flex flex-col gap-4 rounded-xl border border-outline-200 p-6 hover:border-brand-200"
                   >
                     <div
