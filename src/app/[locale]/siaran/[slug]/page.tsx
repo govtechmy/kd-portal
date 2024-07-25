@@ -31,12 +31,15 @@ export default async function Page({
   };
 }) {
   // unstable_setRequestLocale(locale);
-  const data = await payload.findByID({
+  const data = await payload.find({
     collection: "broadcast",
-    id: slug,
     locale: locale,
     depth: 3,
+    where: {
+      slug: { equals: slug },
+    },
+    limit: 1,
   });
 
-  return <SiaranPage data={data} locale={locale} />;
+  return <SiaranPage data={data.docs[0]} locale={locale} />;
 }
