@@ -33,10 +33,9 @@ export const Users: CollectionConfig = {
   ],
   access: {
     read: isAdmin,
-    create: () => true,
     update: isSelfOrAdmin,
     delete: isAdmin,
-    admin: ({ req: { user } }) =>
-      user && user.role === "admin" ? true : false,
+    // admin: ({ req: { user } }) =>
+    //   user && user.role === "admin" ? true : false,
   },
 };
