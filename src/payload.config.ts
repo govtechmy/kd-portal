@@ -55,11 +55,11 @@ export default buildConfig({
   }),
   admin: {
     user: Users.slug,
-    autoLogin: {
-      email: "dev@payloadcms.com",
-      password: "abc123",
-      prefillOnly: true,
-    },
+    // autoLogin: {
+    //   email: "dev@payloadcms.com",
+    //   password: "abc123",
+    //   prefillOnly: true,
+    // },
   },
   async onInit(payload) {
     const existingUsers = await payload.find({
@@ -73,6 +73,7 @@ export default buildConfig({
         data: {
           email: "dev@payloadcms.com",
           password: "abc123",
+          role: "admin",
         },
       });
     }
