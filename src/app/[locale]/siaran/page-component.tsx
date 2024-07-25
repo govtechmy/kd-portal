@@ -59,7 +59,7 @@ const SiaranList: FC<SiaranListProps> = ({ data, locale }) => {
       <main>
         <Section>
           <div className="flex flex-col gap-8 border-washed-100 py-12 lg:border-x lg:px-0">
-            <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-3 px-4.5 md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:px-6">
               {data.docs.map((doc, i) => {
                 const media =
                   Boolean(doc.broadcast_image) &&

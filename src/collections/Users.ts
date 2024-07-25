@@ -1,4 +1,12 @@
-import type { CollectionConfig } from "payload";
+import type { Access, CollectionConfig } from "payload";
+
+export const isAdmin: Access = ({ req: { user } }) => {
+  return user && user.role === "admin" ? true : false;
+};
+
+export const isSelfOrAdmin: Access = ({ req: { user }, id }) => {
+  return user && (user.id === id || user.role === "admin") ? true : false;
+};
 
 export const Users: CollectionConfig = {
   slug: "users",
@@ -24,10 +32,11 @@ export const Users: CollectionConfig = {
     },
   ],
   access: {
-    read: ({ req: { user } }) => (user && user.role === "admin" ? true : false),
-    update: ({ req: { user } }) =>
-      user && user.role === "admin" ? true : false,
-    delete: ({ req: { user } }) =>
+    read: isAdmin,
+    create: () => true,
+    update: isSelfOrAdmin,
+    delete: isAdmin,
+    admin: ({ req: { user } }) =>
       user && user.role === "admin" ? true : false,
   },
 };
