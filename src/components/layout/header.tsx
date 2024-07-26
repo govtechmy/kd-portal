@@ -52,7 +52,7 @@ export function Header({
   const [showMenu, setMenu] = useState<boolean>(false);
 
   return (
-    <header className="sticky top-0 z-50 border-outline-200 bg-background lg:border-b lg:bg-background/80 lg:backdrop-blur-[30px]">
+    <header className="sticky top-0 z-50 border-outline-200 bg-background lg:border-b lg:bg-background/80 lg:backdrop-blur-[30px] print:hidden">
       <div
         className={cn(
           "container flex h-16 items-center justify-between gap-3 border-outline-200 bg-background py-3 max-xl:pr-3 max-lg:border-b lg:gap-4",

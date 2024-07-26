@@ -113,7 +113,8 @@
       "desc7": "Procure products and services electronically."
     },
     "Broadcast": {
-      "title": "Latest Media"
+      "title": "Latest Media",
+      "view_all": "View All"
     }
   },
   "Footer": {

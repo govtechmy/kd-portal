@@ -1,9 +1,10 @@
 "use client";
 
 import Section from "@/components/layout/section";
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import ArrowOutgoing from "@/icons/arrow-outgoing";
 import ArrowUp from "@/icons/arrow-up";
+import ChevronRight from "@/icons/chevron-right";
 import Clock from "@/icons/clock";
 import { Link } from "@/lib/i18n";
 import { locales } from "@/lib/i18n-config";
@@ -41,7 +42,7 @@ export default function HomeSiaran({
               return (
                 <Link
                   key={doc.id}
-                  href={routes.ANNOUNCEMENTS + `/${doc.id}`}
+                  href={routes.ANNOUNCEMENTS + `/${doc.slug}`}
                   className="group relative flex flex-col gap-4 rounded-xl border border-outline-200 p-6 hover:border-brand-200"
                 >
                   <div
@@ -116,6 +117,15 @@ export default function HomeSiaran({
                 </Link>
               );
             })}
+          </div>
+          <div>
+            <Button
+              size="icon"
+              className="rounded-full pl-2.5"
+              variant={"secondary"}
+            >
+              {t("Home.Broadcast.view_all")} <ChevronRight />
+            </Button>
           </div>
         </div>
       </div>

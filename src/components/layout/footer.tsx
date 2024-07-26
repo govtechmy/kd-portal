@@ -53,7 +53,7 @@ export default function Footer({
   };
 
   return (
-    <div className="border-t border-outline-200 bg-background-50 py-8 lg:py-16">
+    <div className="border-t border-outline-200 bg-background-50 py-8 lg:py-16 print:hidden">
       <div className="container divide-y divide-outline-200 max-sm:px-0">
         <div className="flex flex-col gap-6 pb-8 max-sm:px-4.5 lg:flex-row lg:justify-between">
           <div className="flex flex-col gap-4 lg:gap-4.5">

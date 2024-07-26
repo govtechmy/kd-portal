@@ -81,9 +81,9 @@ const SiaranPage: FC<SiaranPageProps> = ({ data, locale }) => {
     { icon: Icon.X, name: "X", href: "https://x.com/KemDigitalMsia" },
   ];
   return (
-    <main className="container grid auto-rows-auto grid-cols-1 py-12 md:grid-cols-12 lg:grid-cols-6 xl:grid-cols-4">
+    <main className="container grid auto-rows-auto grid-cols-1 py-12 md:grid-cols-12 lg:grid-cols-6 xl:grid-cols-4 print:py-0">
       <section className="space-y-6 md:col-span-10 md:col-start-2 lg:col-span-4 lg:col-start-2 xl:col-span-2 xl:col-start-2">
-        <Breadcrumb>
+        <Breadcrumb className="print:hidden">
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink href={routes.ANNOUNCEMENTS}>
@@ -145,16 +145,16 @@ const SiaranPage: FC<SiaranPageProps> = ({ data, locale }) => {
                 );
               })}
             </div>
-            {/* <Button>
+            <Button className="print:hidden" onClick={() => window.print()}>
               <Printer className="size-4 text-black-700" />
               {t("Announcements.print")}
-            </Button> */}
+            </Button>
           </div>
           <hr className="w-full bg-outline-200" />
         </div>
       </section>
       {media && media.url ? (
-        <figure className="col-span-full flex flex-col items-center gap-y-3 py-6">
+        <figure className="col-span-full flex flex-col items-center gap-y-3 pt-6">
           <Image
             priority
             src={media.url}
@@ -174,16 +174,18 @@ const SiaranPage: FC<SiaranPageProps> = ({ data, locale }) => {
           <article className="article max-w-prose">
             <RichText
               content={data.broadcast_text}
-              tagMap={{
-                ol: { className: "space-y-3" },
-              }}
+              tagMap={
+                {
+                  // ol: { className: "space-y-3" },
+                }
+              }
             />
           </article>
         </div>
-        <hr className="w-full bg-outline-200" />
+        <hr className="w-full bg-outline-200 print:hidden" />
         {file_bm && file_bm.url && (
           <div
-            className="flex w-fit items-center gap-1.5 rounded-lg border border-outline-200 p-2 hover:cursor-pointer"
+            className="flex w-fit items-center gap-1.5 rounded-lg border border-outline-200 p-2 hover:cursor-pointer print:hidden"
             onClick={() => downloadFile("bm")}
           >
             <FilePDF />
@@ -199,7 +201,7 @@ const SiaranPage: FC<SiaranPageProps> = ({ data, locale }) => {
         )}
         {file_en && file_en.url && (
           <div
-            className="flex w-fit items-center gap-1.5 rounded-lg border border-outline-200 p-2 hover:cursor-pointer"
+            className="flex w-fit items-center gap-1.5 rounded-lg border border-outline-200 p-2 hover:cursor-pointer print:hidden"
             onClick={() => downloadFile("en")}
           >
             <FilePDF />

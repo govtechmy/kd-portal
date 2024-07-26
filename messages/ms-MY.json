@@ -113,7 +113,8 @@
       "desc7": "Perolehkan produk dan perkhidmatan secara elektronik."
     },
     "Broadcast": {
-      "title": "Siaran Terkini"
+      "title": "Siaran Terkini",
+      "view_all": "Lihat Semua"
     }
   },
   "Footer": {

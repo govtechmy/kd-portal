@@ -37,7 +37,7 @@ export default function Masthead() {
   }, []);
 
   return (
-    <div className="z-[60] bg-gradient-to-b from-washed-100 from-[84.74%] to-outline-200 to-100%">
+    <div className="z-[60] bg-gradient-to-b from-washed-100 from-[84.74%] to-outline-200 to-100% print:hidden">
       <details
         id="Masthead"
         className="group peer max-w-full overflow-hidden bg-washed-100"
