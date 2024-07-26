@@ -30,7 +30,7 @@ export default function Timeline({
           key={i}
           className={cn(
             "relative flex flex-col justify-center sm:row-span-2",
-            startRight && i === 0 ? "col-start-2" : "",
+            startRight && i === 0 ? "sm:col-start-2" : "",
           )}
           style={{ gridRowStart: i + 1 }}
         >
