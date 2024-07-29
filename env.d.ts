@@ -6,8 +6,8 @@ declare namespace NodeJS {
     APP_URL: string;
     AUTH_TOKEN: string;
     APP_ENV: string;
-
     REVALIDATE_TOKEN: string;
+
     GOOGLE_API_KEY: string;
     S3_BUCKET: string;
     S3_ACCESS_KEY_ID: string;

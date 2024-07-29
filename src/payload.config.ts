@@ -9,12 +9,7 @@ import sharp from "sharp";
 import { en } from "payload/i18n/en";
 import StaffDirectory from "@/lib/resources/directory_kd.json";
 import groupBy from "lodash/groupBy";
-import PayloadCollections, {
-  Users,
-  SearchOverride,
-  Media,
-  File,
-} from "./collections";
+import PayloadCollections, { Users, SearchOverride } from "./collections";
 import GlobalCollections from "./globals";
 import {
   includedSearchCollection,
@@ -55,11 +50,13 @@ export default buildConfig({
   }),
   admin: {
     user: Users.slug,
-    // autoLogin: {
-    //   email: "dev@payloadcms.com",
-    //   password: "abc123",
-    //   prefillOnly: true,
-    // },
+    ...(process.env.APP_ENV !== "production" && {
+      autoLogin: {
+        email: "dev@payloadcms.com",
+        password: "abc123",
+        prefillOnly: true,
+      },
+    }),
   },
   async onInit(payload) {
     const existingUsers = await payload.find({

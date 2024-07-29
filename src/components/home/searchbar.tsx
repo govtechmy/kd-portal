@@ -23,7 +23,7 @@ const HomeSearchBar: FC<{ locale: string }> = ({ locale }) => {
       setLoading(true);
       try {
         const response = await fetch(
-          `/my-route?search=${searchQuery}&locale=${locale}`,
+          `/api/search-site?search=${searchQuery}&locale=${locale}`,
         );
 
         if (response.ok) {
