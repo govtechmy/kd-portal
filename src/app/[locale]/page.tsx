@@ -55,6 +55,9 @@ export default async function Page({
     pagination: false,
     sort: "-date",
     limit: 7,
+    where: {
+      _status: { not_equals: "draft" },
+    },
   });
 
   return (

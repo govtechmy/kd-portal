@@ -49,6 +49,15 @@ export const Broadcast: CollectionConfig = {
         placeholder: "pelancaran-inisiatif-5G-nasional",
         description: "Use as the URL link for broadcast page",
       },
+      validate: async (value, { data, ...rest }) => {
+        if (!value) {
+          return "This field is required";
+        }
+        if (value.split(" ").length > 1) {
+          return "Follow this format eg: 'inisiatif-digital-5g' ";
+        }
+        return true;
+      },
     },
     {
       name: "type",

@@ -1,16 +1,16 @@
 "use client";
 
 import Section from "@/components/layout/section";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import ArrowOutgoing from "@/icons/arrow-outgoing";
 import ArrowUp from "@/icons/arrow-up";
 import ChevronRight from "@/icons/chevron-right";
 import Clock from "@/icons/clock";
-import { Link } from "@/lib/i18n";
+import { Link, useRouter } from "@/lib/i18n";
 import { locales } from "@/lib/i18n-config";
 import { routes } from "@/lib/routes";
 import { cn, getReadTimeEstimation } from "@/lib/utils";
-import { Broadcast, Homepage } from "@/payload-types";
+import { Broadcast } from "@/payload-types";
 import { DateTime } from "luxon";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -23,6 +23,7 @@ export default function HomeSiaran({
   locale: (typeof locales)[number];
 }) {
   const t = useTranslations();
+  const { push } = useRouter();
 
   return (
     <Section>
@@ -123,6 +124,7 @@ export default function HomeSiaran({
               size="icon"
               className="rounded-full pl-2.5"
               variant={"secondary"}
+              onClick={() => push(routes.ANNOUNCEMENTS)}
             >
               {t("Home.Broadcast.view_all")} <ChevronRight />
             </Button>
