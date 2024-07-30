@@ -34,11 +34,14 @@ const DasarKementerian: FC<DasarKementerianProps> = ({ list, locale }) => {
         item.doc_description.toLowerCase().includes(query);
 
       let matchesDate = true;
-      if (start && end) {
-        const itemDate = DateTime.fromISO(item.doc_date).startOf("day");
-        matchesDate =
-          itemDate >= DateTime.fromISO(start) &&
-          itemDate <= DateTime.fromISO(end);
+      const itemDate = DateTime.fromISO(item.doc_date).startOf("day");
+
+      if (start) {
+        matchesDate = itemDate >= DateTime.fromISO(start);
+      }
+
+      if (end) {
+        matchesDate = itemDate <= DateTime.fromISO(end);
       }
 
       return matchesQuery && matchesDate;

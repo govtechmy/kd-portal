@@ -54,17 +54,17 @@ export default async function Page({
             },
           ],
         },
-        ...(start && end
+        ...(start
           ? [
               {
-                and: [
-                  {
-                    date: { greater_than_equal: start },
-                  },
-                  {
-                    date: { less_than_equal: end },
-                  },
-                ],
+                date: { greater_than_equal: start },
+              },
+            ]
+          : []),
+        ...(end
+          ? [
+              {
+                date: { less_than_equal: end },
               },
             ]
           : []),

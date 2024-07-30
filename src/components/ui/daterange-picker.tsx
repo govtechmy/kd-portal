@@ -7,6 +7,7 @@ import { DateTime } from "luxon";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { Button } from "./button";
+import CrossX from "@/icons/cross-x";
 
 export default function DaterangePicker({
   className,
@@ -52,6 +53,15 @@ export default function DaterangePicker({
     }
   };
 
+  const handleClear = () => {
+    const params = new URLSearchParams(searchParams);
+
+    if (start_date) params.delete("start");
+    if (end_date) params.delete("end");
+    if (page) params.delete("page");
+    push(`${pathname}?${params.toString()}`, { scroll: false });
+  };
+
   return (
     <div className={cn("flex items-center justify-center gap-1", className)}>
       <DatePicker
@@ -78,6 +88,11 @@ export default function DaterangePicker({
         }
         date={end_date ? DateTime.fromISO(end_date).toJSDate() : undefined}
       />
+      {(start_date || end_date) && (
+        <Button onClick={handleClear} variant={"tertiary"} size={"icon"}>
+          <CrossX className="size-4 text-dim-500" />
+        </Button>
+      )}
     </div>
   );
 }
