@@ -23,7 +23,7 @@ export default function PencapaianTimeline({ data, locale, totalDocs }: Props) {
   const format = useFormatter();
   const searchParams = useSearchParams();
   const page = Number(searchParams.get("page") || 1);
-  const { push } = useRouter();
+  const { replace } = useRouter();
   const pathname = usePathname();
 
   return (
@@ -64,7 +64,7 @@ export default function PencapaianTimeline({ data, locale, totalDocs }: Props) {
             onClick={() => {
               const params = new URLSearchParams(searchParams);
               params.set("page", (page + 1).toString());
-              push(`${pathname}?${params.toString()}`, { scroll: false });
+              replace(`${pathname}?${params.toString()}`, { scroll: false });
             }}
           >
             <ArrowDown className="size-4" />

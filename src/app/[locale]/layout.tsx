@@ -9,7 +9,6 @@ import { NextIntlClientProvider } from "next-intl";
 import { ReactNode } from "react";
 import { getPayloadHMR } from "@payloadcms/next/utilities";
 import config from "@payload-config";
-import Script from "next/script";
 import SiteScript from "./site-script";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -103,6 +102,13 @@ export default async function Layout({
 
   return (
     <html lang={locale}>
+      <head>
+        <script
+          defer
+          src="https://unpkg.com/@tinybirdco/flock.js"
+          data-token={`${process.env.NEXT_PUBLIC_TINYBIRD_TOKEN}`}
+        ></script>
+      </head>
       <SiteScript />
 
       <body

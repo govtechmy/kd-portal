@@ -19,7 +19,7 @@ interface DasarKementerianProps {
 const DasarKementerian: FC<DasarKementerianProps> = ({ list, locale }) => {
   const t = useTranslations();
   const searchParams = useSearchParams();
-  const { push } = useRouter();
+  const { replace } = useRouter();
   const pathname = usePathname();
   const start = searchParams.get("start");
   const end = searchParams.get("end");
@@ -55,7 +55,7 @@ const DasarKementerian: FC<DasarKementerianProps> = ({ list, locale }) => {
     } else {
       params.delete("search");
     }
-    push(`${pathname}?${params.toString()}`, { scroll: false });
+    replace(`${pathname}?${params.toString()}`, { scroll: false });
   };
 
   return (

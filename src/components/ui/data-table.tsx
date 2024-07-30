@@ -74,7 +74,7 @@ const DataTable = <TData, TValue>({
   const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
 
-  const { push } = useRouter();
+  const { replace } = useRouter();
   const params = useParams();
   const [pagination, setPagination] = useState({
     pageIndex: !!paginate ? paginate.pageIndex : 0,

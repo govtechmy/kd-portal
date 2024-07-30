@@ -22,7 +22,7 @@ interface DirektoriMainProps {
 const DirektoriMain: FC<DirektoriMainProps> = ({ list, locale }) => {
   const t = useTranslations();
   const searchParams = useSearchParams();
-  const { push } = useRouter();
+  const { replace } = useRouter();
   const pathname = usePathname();
   const searchQuery = searchParams.get("search");
 
@@ -189,7 +189,7 @@ const DirektoriMain: FC<DirektoriMainProps> = ({ list, locale }) => {
     } else {
       params.delete("search");
     }
-    push(`${pathname}?${params.toString()}`, { scroll: false });
+    replace(`${pathname}?${params.toString()}`, { scroll: false });
   };
 
   return (

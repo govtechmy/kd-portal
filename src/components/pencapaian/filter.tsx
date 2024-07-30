@@ -18,7 +18,7 @@ import { useSearchParams } from "next/navigation";
 export default function Filter() {
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const { push } = useRouter();
+  const { replace } = useRouter();
   const t = useTranslations("Achievements");
   const selectedType = searchParams.get("type") || "all";
   const page = searchParams.get("page") || undefined;
@@ -27,7 +27,7 @@ export default function Filter() {
     const params = new URLSearchParams(searchParams);
     if (page) params.set("page", "1");
     params.set("type", value);
-    push(`${pathname}?${params.toString()}`, { scroll: false });
+    replace(`${pathname}?${params.toString()}`, { scroll: false });
   };
 
   return (

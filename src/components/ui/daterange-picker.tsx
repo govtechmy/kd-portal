@@ -23,7 +23,7 @@ export default function DaterangePicker({
   const t = useTranslations("Datepicker");
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const { push } = useRouter();
+  const { replace } = useRouter();
   const start_date = searchParams.get("start");
   const end_date = searchParams.get("end");
   const page = searchParams.get("page") || undefined;
@@ -39,7 +39,7 @@ export default function DaterangePicker({
       }
 
       params.set("start", _date);
-      push(`${pathname}?${params.toString()}`, { scroll: false });
+      replace(`${pathname}?${params.toString()}`, { scroll: false });
     }
 
     if (type === "end" && _date) {
@@ -49,7 +49,7 @@ export default function DaterangePicker({
       }
 
       params.set("end", _date);
-      push(`${pathname}?${params.toString()}`, { scroll: false });
+      replace(`${pathname}?${params.toString()}`, { scroll: false });
     }
   };
 
@@ -59,7 +59,7 @@ export default function DaterangePicker({
     if (start_date) params.delete("start");
     if (end_date) params.delete("end");
     if (page) params.delete("page");
-    push(`${pathname}?${params.toString()}`, { scroll: false });
+    replace(`${pathname}?${params.toString()}`, { scroll: false });
   };
 
   return (
