@@ -69,7 +69,11 @@ export default function DaterangePicker({
         onChange={(newDate) => handleSelection("start", newDate)}
         disabled={
           end_date
-            ? { after: DateTime.fromISO(end_date, { zone: "utc" }).toJSDate() }
+            ? {
+                after: DateTime.fromISO(end_date, { zone: "utc" })
+                  .minus({ day: 1 })
+                  .toJSDate(),
+              }
             : undefined
         }
         date={
@@ -87,7 +91,9 @@ export default function DaterangePicker({
             ? {
                 before: DateTime.fromISO(start_date, {
                   zone: "utc",
-                }).toJSDate(),
+                })
+                  .plus({ day: 1 })
+                  .toJSDate(),
                 after: new Date(),
               }
             : undefined
