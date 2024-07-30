@@ -62,6 +62,8 @@ export default function DaterangePicker({
     push(`${pathname}?${params.toString()}`, { scroll: false });
   };
 
+  console.log(start_date && DateTime.fromISO(start_date, { zone: "utc" }));
+
   return (
     <div className={cn("flex items-center justify-center gap-1", className)}>
       <DatePicker
@@ -72,7 +74,11 @@ export default function DaterangePicker({
             ? { after: DateTime.fromISO(end_date).toJSDate() }
             : undefined
         }
-        date={start_date ? DateTime.fromISO(start_date).toJSDate() : undefined}
+        date={
+          start_date
+            ? DateTime.fromISO(start_date, { zone: "utc" }).toJSDate()
+            : undefined
+        }
       />
       -
       <DatePicker
@@ -86,7 +92,11 @@ export default function DaterangePicker({
               }
             : undefined
         }
-        date={end_date ? DateTime.fromISO(end_date).toJSDate() : undefined}
+        date={
+          end_date
+            ? DateTime.fromISO(end_date, { zone: "utc" }).toJSDate()
+            : undefined
+        }
       />
       {(start_date || end_date) && (
         <Button onClick={handleClear} variant={"tertiary"} size={"icon"}>
