@@ -55,6 +55,7 @@ const config: Config = {
           primary: "oklch(var(--brand-700) / <alpha-value>)",
           success: colors.green[700],
           danger: colors.red[600],
+          warning: colors.yellow[600],
         },
         background: {
           DEFAULT: "oklch(var(--base-white) / <alpha-value>)",

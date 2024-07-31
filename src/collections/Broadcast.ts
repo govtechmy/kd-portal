@@ -14,6 +14,10 @@ const BroadcastType: Option[] = [
     label: "Media Release",
     value: "media_release",
   },
+  {
+    label: "Speech Collection",
+    value: "speech",
+  },
 ];
 
 export const Broadcast: CollectionConfig = {

@@ -102,7 +102,9 @@ const SiaranPage: FC<SiaranPageProps> = ({ data, locale }) => {
               "font-semibold",
               data.type === "media_release"
                 ? "text-foreground-success"
-                : "text-foreground-danger",
+                : data.type === "announcement"
+                  ? "text-foreground-danger"
+                  : "text-foreground-warning",
             )}
           >
             {t(`Announcements.type.${data.type}`)}

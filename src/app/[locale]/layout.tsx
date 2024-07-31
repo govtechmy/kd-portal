@@ -102,13 +102,15 @@ export default async function Layout({
 
   return (
     <html lang={locale}>
-      <head>
-        <script
-          defer
-          src="https://unpkg.com/@tinybirdco/flock.js"
-          data-token={`${process.env.NEXT_PUBLIC_TINYBIRD_TOKEN}`}
-        ></script>
-      </head>
+      {process.env.APP_ENV === "production" && (
+        <head>
+          <script
+            defer
+            src="https://unpkg.com/@tinybirdco/flock.js"
+            data-token={`${process.env.NEXT_PUBLIC_TINYBIRD_TOKEN}`}
+          ></script>
+        </head>
+      )}
       <SiteScript />
 
       <body

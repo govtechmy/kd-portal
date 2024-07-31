@@ -190,7 +190,8 @@
     "estimated_read": "{ time } minute(s) read",
     "type": {
       "announcement": "Announcement",
-      "media_release": "Media Release"
+      "media_release": "Media Release",
+      "speech": "Speech Collection"
     }
   },
   "Achievements": {

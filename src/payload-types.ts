@@ -119,7 +119,7 @@ export interface Broadcast {
   id: string;
   title: string;
   slug: string;
-  type: 'announcement' | 'media_release';
+  type: 'announcement' | 'media_release' | 'speech';
   date: string;
   description: string;
   broadcast_text: {

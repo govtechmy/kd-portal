@@ -190,7 +190,8 @@
     "estimated_read": "Bacaan { time } minit",
     "type": {
       "announcement": "Hebahan",
-      "media_release": "Siaran Media"
+      "media_release": "Siaran Media",
+      "speech": "Koleksi Ucapan"
     }
   },
   "Achievements": {

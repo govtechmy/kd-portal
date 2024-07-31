@@ -86,22 +86,42 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
             </h2>
             <div className="hidden w-full justify-center md:flex">
               <div className="relative h-[722px] w-[750px]">
-                <Image
-                  src={"/org/org-chart.webp"}
-                  alt="Carta Organisasi KD"
-                  className="absolute"
-                  fill={true}
-                />
+                {locale === "en-GB" && (
+                  <Image
+                    src={"/org/org-chart-en.webp"}
+                    alt="Carta Organisasi KD English"
+                    className="absolute"
+                    fill={true}
+                  />
+                )}
+                {locale === "ms-MY" && (
+                  <Image
+                    src={"/org/org-chart-bm.webp"}
+                    alt="Carta Organisasi KD Melayu"
+                    className="absolute"
+                    fill={true}
+                  />
+                )}
               </div>
             </div>
             <div className="flex w-full justify-center md:hidden">
               <div className="relative h-[510px] w-[394px]">
-                <Image
-                  src={"/org/org-chart-mobile.webp"}
-                  alt="Carta Organisasi KD"
-                  className="absolute"
-                  fill={true}
-                />
+                {locale === "en-GB" && (
+                  <Image
+                    src={"/org/org-chart-mobile-en.webp"}
+                    alt="Carta Organisasi KD Mobile English"
+                    className="absolute"
+                    fill={true}
+                  />
+                )}
+                {locale === "ms-MY" && (
+                  <Image
+                    src={"/org/org-chart-mobile-bm.webp"}
+                    alt="Carta Organisasi KD Mobile Melayu"
+                    className="absolute"
+                    fill={true}
+                  />
+                )}
               </div>
             </div>
           </div>
