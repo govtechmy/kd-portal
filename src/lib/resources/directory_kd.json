@@ -283,11 +283,11 @@
         "id_bhg": 3,
         "bhg": "Pejabat Ketua Setiausaha",
         "id": 2,
-        "nama": "NORHAYA BINTI MD ZIN",
+        "nama": "NORSHAHIRA AZREEN BINTI ROSLI",
         "gred": "N36(M)",
         "jawatan": "SETIAUSAHA PEJABAT",
         "telefon": "03-8880 5802",
-        "emel": "norhayazin"
+        "emel": "pa.ksu"
     },
     {
         "id_bhg": 3,
@@ -296,8 +296,8 @@
         "nama": "NURAIN BINTI KHAIRI",
         "gred": "M44",
         "jawatan": "PEGAWAI KHAS I",
-        "telefon": "-",
-        "emel": "-"
+        "telefon": "03-8880 5993",
+        "emel": "nurain.khairi"
     },
     {
         "id_bhg": 3,
@@ -306,13 +306,13 @@
         "nama": "MOHD FIRDAUS BIN MOHAMED KHAIRI",
         "gred": "F44",
         "jawatan": "PEGAWAI KHAS II",
-        "telefon": "-",
+        "telefon": "03-8880 5922",
         "emel": "firdauskhairi"
     },
     {
         "id_bhg": 3,
         "bhg": "Pejabat Ketua Setiausaha",
-        "id": 6,
+        "id": 5,
         "nama": "ROSLINA BINTI ROSLI",
         "gred": "N22 TBK",
         "jawatan": "PEMBANTU TADBIR (P/O) (TBK1/TBK2)",
@@ -322,22 +322,22 @@
     {
         "id_bhg": 3,
         "bhg": "Pejabat Ketua Setiausaha",
-        "id": 7,
-        "nama": "AZMI BIN HUSSAIN",
-        "gred": "H14",
-        "jawatan": "PEMANDU KENDERAAN",
-        "telefon": "03-8880 5998",
-        "emel": "azmi"
-    },
-    {
-        "id_bhg": 3,
-        "bhg": "Pejabat Ketua Setiausaha",
-        "id": 8,
+        "id": 6,
         "nama": "KHAIRUL ANUAR BIN MOHD RODZI",
         "gred": "N11",
         "jawatan": "PEMBANTU OPERASI",
         "telefon": "03-8880 5998",
         "emel": "khairulanuar"
+    },
+    {
+        "id_bhg": 3,
+        "bhg": "Pejabat Ketua Setiausaha",
+        "id": 7,
+        "nama": "RIDHO SANTANA BIN AMIN",
+        "gred": "H14",
+        "jawatan": "PEMANDU KENDERAAN",
+        "telefon": "03-8880 5998",
+        "emel": ""
     },
     {
         "id_bhg": 4,
