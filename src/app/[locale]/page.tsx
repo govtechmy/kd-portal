@@ -54,7 +54,7 @@ export default async function Page({
     depth: 3,
     pagination: false,
     sort: "-date",
-    limit: 7,
+    limit: 6,
     where: {
       _status: { not_equals: "draft" },
     },
