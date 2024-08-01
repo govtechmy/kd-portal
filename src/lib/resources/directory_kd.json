@@ -283,16 +283,6 @@
         "id_bhg": 3,
         "bhg": "Pejabat Ketua Setiausaha",
         "id": 2,
-        "nama": "MOHD FIRDAUS BIN MOHAMED KHAIRI",
-        "gred": "F44",
-        "jawatan": "PEGAWAI KHAS",
-        "telefon": "-",
-        "emel": "firdauskhairi"
-    },
-    {
-        "id_bhg": 3,
-        "bhg": "Pejabat Ketua Setiausaha",
-        "id": 3,
         "nama": "NORHAYA BINTI MD ZIN",
         "gred": "N36(M)",
         "jawatan": "SETIAUSAHA PEJABAT",
@@ -302,7 +292,7 @@
     {
         "id_bhg": 3,
         "bhg": "Pejabat Ketua Setiausaha",
-        "id": 4,
+        "id": 3,
         "nama": "NURAIN BINTI KHAIRI",
         "gred": "M44",
         "jawatan": "PEGAWAI KHAS I",
@@ -312,12 +302,12 @@
     {
         "id_bhg": 3,
         "bhg": "Pejabat Ketua Setiausaha",
-        "id": 0,
-        "nama": "-",
-        "gred": "M44/48/52",
+        "id": 4,
+        "nama": "MOHD FIRDAUS BIN MOHAMED KHAIRI",
+        "gred": "F44",
         "jawatan": "PEGAWAI KHAS II",
         "telefon": "-",
-        "emel": "-"
+        "emel": "firdauskhairi"
     },
     {
         "id_bhg": 3,
