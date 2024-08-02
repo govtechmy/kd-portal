@@ -33,6 +33,7 @@ export const Achievement: CollectionConfig = {
     useAsTitle: "title",
     listSearchableFields: ["title", "description", "type"],
   },
+  defaultSort: "-date",
   fields: [
     {
       name: "title",
