@@ -102,6 +102,8 @@ const DirektoriMain: FC<DirektoriMainProps> = ({ list, locale }) => {
     {
       header: "",
       accessorKey: "bhg",
+      accessorFn: (item: StaffDirectory) =>
+        typeof item.id_bhg !== "string" && item.id_bhg.bhg,
       cell: (info: any) => {
         const { id_bhg, emel, gred, staff_id, jawatan, nama, telefon } = (
           info as Cell<StaffDirectory, unknown>
@@ -206,7 +208,7 @@ const DirektoriMain: FC<DirektoriMainProps> = ({ list, locale }) => {
       />
 
       <Section>
-        <div className="hidden w-full border-x border-x-washed-100 px-6 py-12 sm:flex">
+        <div className="hidden w-full border-x-washed-100 py-12 sm:flex lg:border-x lg:px-6">
           <DataTable
             key={JSON.stringify(data)}
             columns={column}
@@ -234,7 +236,7 @@ const DirektoriMain: FC<DirektoriMainProps> = ({ list, locale }) => {
 
       {/* Mobile */}
       <Section>
-        <div className="flex w-full flex-col border-x border-x-washed-100 px-4.5 py-12 sm:hidden">
+        <div className="flex w-full flex-col border-x-washed-100 py-12 sm:hidden lg:border-x">
           <DataTable
             key={JSON.stringify(data)}
             columns={mobileColumn}

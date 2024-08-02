@@ -41,7 +41,7 @@ const AchievementComponent: FC<AchievementProps> = ({
   return (
     <main>
       <Section>
-        <div className="relative gap-6 border-washed-100 px-4.5 max-lg:pt-12 md:px-6 lg:grid lg:grid-cols-12 lg:border-x">
+        <div className="relative gap-6 border-washed-100 max-lg:pt-12 lg:grid lg:grid-cols-12 lg:border-x lg:px-6">
           <div className="left-0 top-16 col-span-5 flex max-w-full flex-col items-start gap-y-4.5 lg:sticky lg:h-fit lg:py-[84px] xl:col-span-4">
             <div className="flex gap-x-3">
               <Flag className="text-foreground-primary" />

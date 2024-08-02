@@ -37,7 +37,7 @@ const HomePageComponent: FC<Props> = ({
         <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden bg-gradient-radial from-brand-200 from-0% via-[#F1F5FF] via-[27.57%] to-white to-100%">
           <HeroPattern className="absolute -top-[23.33%] animate-flow motion-reduce:animate-none" />
         </div>
-        <div className="col-span-4 col-start-2 flex w-full flex-col items-center gap-y-9 px-4.5 py-[120px] text-center sm:py-[120px] md:px-6">
+        <div className="col-span-4 col-start-2 flex w-full flex-col items-center gap-y-9 px-4.5 py-[120px] text-center md:px-6">
           <div className="space-y-6">
             <Overline className="text-base font-bold">
               {siteInfo.site_name}
@@ -47,7 +47,7 @@ const HomePageComponent: FC<Props> = ({
             </h1>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-4 w-full">
             <HomeSearchBar locale={locale} />
 
             {/* Disable Pautan Popular for now */}

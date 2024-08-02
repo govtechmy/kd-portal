@@ -19,7 +19,7 @@ export default function Timeline({
 
   return (
     <Section>
-      <div className="grid-cols-12 gap-6 border-washed-100 px-4.5 lg:px-0 xl:grid xl:border-x">
+      <div className="grid-cols-12 gap-6 border-washed-100 xl:grid xl:border-x">
         <div className="col-span-10 col-start-2 flex flex-col gap-6 max-lg:pt-12 lg:flex-row">
           <div className="top-16 h-fit space-y-4.5 lg:sticky lg:w-1/3 lg:py-[84px]">
             <div className="flex gap-x-3">
