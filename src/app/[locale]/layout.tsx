@@ -170,7 +170,7 @@ export default async function Layout({
                 open_source: footerData["open-source"]?.length
                   ? footerData["open-source"].map((item) => ({
                       name: item.link.label,
-                      href: item.link.reference || "",
+                      href: item.link.url || "",
                     }))
                   : [],
               }}

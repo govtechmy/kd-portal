@@ -147,7 +147,7 @@ export default function Footer({
                 <Link
                   key={link}
                   className="underline-font text-sm text-black-700 hover:text-foreground hover:underline"
-                  href={link}
+                  href={`/${link}`}
                 >
                   {t(`Footer.${link}`)}
                 </Link>
