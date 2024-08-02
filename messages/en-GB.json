@@ -55,7 +55,9 @@
   "Search": {
     "type": "Type",
     "search": "to search",
-    "default_placeholder": "Start typing to search"
+    "default_placeholder": "Start typing to search",
+    "not_found": "No results found.",
+    "start_search": "Start typing to search"
   },
   "Home": {
     "title": "Driving Digitalisation of the Nation",
@@ -109,6 +111,10 @@
       "desc5": "Access, check, and print your payslips.",
       "desc6": "Manage human resources from appointment to termination.",
       "desc7": "Procure products and services electronically."
+    },
+    "Broadcast": {
+      "title": "Latest Media",
+      "view_all": "View All"
     }
   },
   "Footer": {
@@ -178,13 +184,48 @@
   },
   "Announcements": {
     "header": "Ministry of Digital Announcements",
-    "placeholder": "Find keywords: \u201cstatement\u201d, \"announcement\""
+    "placeholder": "Find keywords: \u201cstatement\u201d, \"announcement\"",
+    "print": "Print",
+    "read": "Read",
+    "estimated_read": "{ time } minute(s) read",
+    "type": {
+      "announcement": "Announcement",
+      "media_release": "Media Release",
+      "speech": "Speech Collection"
+    }
   },
   "Achievements": {
-    "header": "Our Achievements"
+    "header": "Our Achievements",
+    "placeholder": "Find keywords",
+    "past_achievements": "Past achievements",
+    "filter_by": "Filter achievements by date range",
+    "type": {
+      "type": "Type",
+      "all": "All",
+      "product_launch": "Product Launch",
+      "policy": "Policy",
+      "collaboration": "Collaboration",
+      "miscellaneous": "Miscellaneous",
+      "not_achievement": "Not Achievement"
+    }
   },
   "Policy": {
-    "header": "Policy Documents"
+    "header": "Policy Documents",
+    "search_placeholder": "Search for keyword (e.g. title, description)",
+    "table_header": {
+      "title": "Title",
+      "type": "Type",
+      "description": "Description",
+      "date": "Date",
+      "download": "Download",
+      "all": "All"
+    },
+    "type": {
+      "act": "Act",
+      "document": "Policy Document",
+      "guideline": "Guideline",
+      "circular": "Circular"
+    }
   },
   "Directory": {
     "header": "Staff Directory",
@@ -207,10 +248,17 @@
     "email": "E-mail",
     "email_address": "webmaster@digital.com.my"
   },
+  "Datepicker": {
+    "from": "From",
+    "to": "To"
+  },
   "Pagination": {
     "previous": "Previous",
-    "page_of": "{{ current }} of {{ total }}",
+    "page_of": "{ current } of { total }",
     "next": "Next"
+  },
+  "Table": {
+    "no_data": "No results matched your query."
   },
   "404": {
     "not_found": "Not Found",

@@ -1,17 +1,15 @@
 import Footer from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import Masthead from "@/components/layout/masthead";
-import { locales } from "@/lib/i18n-config";
 import "@/lib/styles/globals.css";
 import { cn } from "@/lib/utils";
 import { Inter, Poppins } from "next/font/google";
-import {
-  getMessages,
-  getTranslations,
-  unstable_setRequestLocale,
-} from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { ReactNode } from "react";
+import { getPayloadHMR } from "@payloadcms/next/utilities";
+import config from "@payload-config";
+import SiteScript from "./site-script";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
@@ -67,11 +65,13 @@ export async function generateMetadata({
   };
 }
 
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
+// export function generateStaticParams() {
+//   return locales.map((locale) => ({ locale }));
+// }
 
-export const dynamic = "force-static";
+// export const dynamic = "force-static";
+
+const payload = await getPayloadHMR({ config });
 
 /* Our app sits here to not cause any conflicts with payload's root layout  */
 export default async function Layout({
@@ -80,14 +80,42 @@ export default async function Layout({
 }: {
   children: ReactNode;
   params: {
-    locale: string;
+    locale: "ms-MY" | "en-GB";
   };
 }) {
-  unstable_setRequestLocale(locale);
   const messages = await getMessages();
+
+  const headerData = await payload.findGlobal({
+    slug: "header",
+    locale: locale,
+    depth: 3,
+  });
+
+  const footerData = await payload.findGlobal({
+    slug: "footer",
+    locale: locale,
+    depth: 3,
+  });
+
+  const siteInfo = await payload.findGlobal({
+    slug: "site-info",
+    locale: locale,
+    depth: 3,
+  });
 
   return (
     <html lang={locale}>
+      {process.env.APP_ENV === "production" && (
+        <head>
+          <script
+            defer
+            src="https://unpkg.com/@tinybirdco/flock.js"
+            data-token={`${process.env.NEXT_PUBLIC_TINYBIRD_TOKEN}`}
+          ></script>
+        </head>
+      )}
+      <SiteScript />
+
       <body
         className={cn(
           inter.className,
@@ -98,9 +126,58 @@ export default async function Layout({
         <NextIntlClientProvider messages={messages}>
           <div className="flex min-h-screen flex-col">
             <Masthead />
-            <Header locale={locale} />
+            <Header
+              locale={locale}
+              nav_items={[
+                ...headerData.items.map((item) => ({
+                  name: item.link.label,
+                  href: item.link.reference || "",
+                })),
+                ...(headerData.dropdown.dept_agency?.length
+                  ? [
+                      {
+                        name: headerData.dropdown.name,
+                        href: headerData.dropdown.dept_agency.map((dept) => ({
+                          name: dept.link.label,
+                          href: dept.link.url ? dept.link.url : "",
+                        })),
+                      },
+                    ]
+                  : []),
+              ]}
+            />
             <div className="flex-1">{children}</div>
-            <Footer />
+            <Footer
+              siteInfo={siteInfo}
+              links={{
+                about_us: footerData.about_us?.length
+                  ? footerData.about_us.map((item) => ({
+                      name: item.link.label,
+                      href: item.link.reference || "",
+                    }))
+                  : [],
+                quick_links: footerData["quick-links"]?.length
+                  ? footerData["quick-links"].map((item) => ({
+                      name:
+                        (item["quick-links"] &&
+                          typeof item["quick-links"] !== "string" &&
+                          item["quick-links"].name) ||
+                        "",
+                      href:
+                        ((item["quick-links"] &&
+                          typeof item["quick-links"] !== "string" &&
+                          item["quick-links"].href[0].link?.url) as string) ||
+                        "",
+                    }))
+                  : [],
+                open_source: footerData["open-source"]?.length
+                  ? footerData["open-source"].map((item) => ({
+                      name: item.link.label,
+                      href: item.link.url || "",
+                    }))
+                  : [],
+              }}
+            />
           </div>
         </NextIntlClientProvider>
       </body>

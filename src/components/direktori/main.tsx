@@ -1,29 +1,30 @@
 "use client";
 
-import { FC, useState } from "react";
+import Hero from "@/components/layout/hero";
+import Section from "@/components/layout/section";
 import DataTable from "@/components/ui/data-table";
 import Search from "@/components/ui/search";
-import StaffDirectory from "@/lib/resources/directory_kd.json";
-import HeroPattern from "@/components/layout/hero-pattern";
-import { useTranslations } from "next-intl";
-import { Cell } from "@tanstack/react-table";
 import Phone from "@/icons/phone";
 import Envelope from "@/icons/envelope";
+import { Cell } from "@tanstack/react-table";
+import { useTranslations } from "next-intl";
+import { FC, useMemo } from "react";
+import { DirektoriFilter } from "./filter";
+import { StaffDirectory } from "@/payload-types";
+import { locales } from "@/lib/i18n-config";
+import { useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "@/lib/i18n";
 
-interface StaffDirectory {
-  id_bhg: number;
-  bhg: string;
-  id: number;
-  nama: string;
-  gred: string | null;
-  jawatan: string | null;
-  telefon: string | null;
-  emel: string | null;
+interface DirektoriMainProps {
+  list: StaffDirectory[];
+  locale: (typeof locales)[number];
 }
-
-const DirektoriMain: FC = () => {
-  const [data, setData] = useState(StaffDirectory);
+const DirektoriMain: FC<DirektoriMainProps> = ({ list, locale }) => {
   const t = useTranslations();
+  const searchParams = useSearchParams();
+  const { replace } = useRouter();
+  const pathname = usePathname();
+  const searchQuery = searchParams.get("search");
 
   const column = [
     {
@@ -56,6 +57,8 @@ const DirektoriMain: FC = () => {
     {
       header: t("Directory.table_header.bhg"),
       accessorKey: "bhg",
+      accessorFn: (item: StaffDirectory) =>
+        typeof item.id_bhg !== "string" && item.id_bhg.bhg,
       meta: {
         type: "text",
         editable: false,
@@ -100,24 +103,26 @@ const DirektoriMain: FC = () => {
       header: "",
       accessorKey: "bhg",
       cell: (info: any) => {
-        const { bhg, emel, gred, id, jawatan, nama, telefon } = (
+        const { id_bhg, emel, gred, staff_id, jawatan, nama, telefon } = (
           info as Cell<StaffDirectory, unknown>
         ).row.original;
 
-        if (id === -1)
+        if (staff_id === -1)
           return (
             <p className="text-center font-semibold">
-              {bhg} - {nama}
+              {typeof id_bhg !== "string" && id_bhg.bhg} - {nama}
             </p>
           );
 
         return (
           <div className="space-y-2 font-medium text-dim-500">
-            <p className="text-balance text-xs font-semibold">{bhg}</p>
+            <p className="text-balance text-xs font-semibold">
+              {typeof id_bhg !== "string" && id_bhg.bhg}
+            </p>
             <div className="space-y-1">
               <div className="flex flex-wrap items-center gap-x-1.5">
-                <span className="text-base font-semibold text-black-900">
-                  {id === 0 ? (
+                <span className="text-base font-semibold text-foreground">
+                  {staff_id === 0 ? (
                     <span className="text-red-600">KOSONG</span>
                   ) : (
                     nama
@@ -163,73 +168,93 @@ const DirektoriMain: FC = () => {
     },
   ];
 
-  function searchArray(array: typeof data, searchQuery: string) {
-    const query = searchQuery.toLowerCase();
+  const data = useMemo(() => {
+    const query = searchQuery ? searchQuery.toLowerCase() : "";
 
-    return setData(
-      array.filter((item) => {
-        return (
-          item.nama.toLowerCase().includes(query) ||
-          (item.emel && item.emel.toLowerCase().includes(query)) ||
-          // (item.gred && item.gred.toLowerCase().includes(query)) ||
-          (item.jawatan && item.jawatan.toLowerCase().includes(query))
-        );
-      }),
-    );
-  }
+    return list.filter((item) => {
+      const matchesQuery =
+        (item.nama && item.nama.toLowerCase().includes(query)) ||
+        (item.emel && item.emel.toLowerCase().includes(query)) ||
+        // (item.gred && item.gred.toLowerCase().includes(query)) ||
+        (item.jawatan && item.jawatan.toLowerCase().includes(query));
+
+      return matchesQuery;
+    });
+  }, [list, searchQuery]);
+
+  const searchArray = (searchQuery: string) => {
+    const params = new URLSearchParams(searchParams);
+    if (searchQuery) {
+      params.set("search", searchQuery.toLowerCase());
+    } else {
+      params.delete("search");
+    }
+    replace(`${pathname}?${params.toString()}`, { scroll: false });
+  };
 
   return (
-    <main className="">
-      <section className="relative border-b border-outline-200">
-        <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden">
-          <HeroPattern className="absolute -top-[83.33%]" />
-        </div>
-        <div className="container flex flex-col items-center gap-6 py-16">
-          <h1 className="text-center font-poppins text-hmd font-semibold">
-            {t("Directory.header")}
-          </h1>
-
+    <main>
+      <Hero
+        title={t("Directory.header")}
+        search={
           <Search
-            onChange={(query) => searchArray(StaffDirectory, query)}
+            onChange={searchArray}
             placeholder={t("Directory.search_placeholder")}
+            defaultValue={searchQuery || ""}
+          />
+        }
+      />
+
+      <Section>
+        <div className="hidden w-full border-x border-x-washed-100 px-6 py-12 sm:flex">
+          <DataTable
+            key={JSON.stringify(data)}
+            columns={column}
+            data={data}
+            resizeable={false}
+            paginate={{
+              pageIndex: 0,
+              pageSize: 15,
+            }}
+            filter={(table, headers) => (
+              <DirektoriFilter
+                table={table}
+                headers={headers}
+                column="bhg"
+                subtitle={t("Directory.table_header.bhg")}
+              />
+            )}
+            isMerged={(row) => {
+              if (row.original.staff_id === -1) return row.getVisibleCells()[0];
+              return false;
+            }}
           />
         </div>
-      </section>
-
-      <section className="container hidden min-h-screen w-full border-x border-x-washed-100 px-6 py-12 sm:flex">
-        <DataTable
-          key={JSON.stringify(data)}
-          columns={column}
-          data={data}
-          resizeable={false}
-          paginate={{
-            pageIndex: 0,
-            pageSize: 15,
-          }}
-          dropdownFilter="bhg"
-          dropdownText={t("Directory.table_header.bhg")}
-          isMerged={(row) => {
-            if (row.original.id === -1) return row.getVisibleCells()[0];
-            return false;
-          }}
-        />
-      </section>
+      </Section>
 
       {/* Mobile */}
-      <section className="container flex min-h-screen w-full flex-col border-x border-x-washed-100 px-4.5 py-12 sm:hidden">
-        <DataTable
-          key={JSON.stringify(data)}
-          columns={mobileColumn}
-          data={data}
-          resizeable={false}
-          paginate={{
-            pageIndex: 0,
-            pageSize: 15,
-          }}
-          dropdownFilter="bhg"
-          dropdownText={t("Directory.table_header.bhg")}
-        />
-      </section>
+      <Section>
+        <div className="flex w-full flex-col border-x border-x-washed-100 px-4.5 py-12 sm:hidden">
+          <DataTable
+            key={JSON.stringify(data)}
+            columns={mobileColumn}
+            data={data}
+            resizeable={false}
+            paginate={{
+              pageIndex: 0,
+              pageSize: 15,
+            }}
+            filter={(table, headers) => (
+              <DirektoriFilter
+                table={table}
+                headers={headers}
+                column="bhg"
+                subtitle={t("Directory.table_header.bhg")}
+              />
+            )}
+          />
+        </div>
+      </Section>
     </main>
   );
 };

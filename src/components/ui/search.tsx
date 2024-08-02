@@ -12,6 +12,7 @@ interface SearchProps {
   placeholder?: string;
   onChange?: (query: string) => void;
   disabled?: boolean;
+  defaultValue?: string;
 }
 
 const Search: FunctionComponent<SearchProps> = ({
@@ -19,6 +20,7 @@ const Search: FunctionComponent<SearchProps> = ({
   className,
   onChange,
   disabled,
+  defaultValue,
 }) => {
   const t = useTranslations();
   const [value, setValue] = useState("");
@@ -33,6 +35,11 @@ const Search: FunctionComponent<SearchProps> = ({
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "/") {
+        event.preventDefault();
+        searchRef.current?.focus();
+      }
+      // Check if 'CMD + K' or 'Ctrl + K' key combination is pressed
+      if ((event.metaKey || event.ctrlKey) && event.key === "k") {
         event.preventDefault();
         searchRef.current?.focus();
       }
@@ -56,12 +63,12 @@ const Search: FunctionComponent<SearchProps> = ({
     >
       <input
         ref={searchRef}
-        value={value}
         spellCheck={false}
         disabled={disabled}
         placeholder={placeholder || t("Search.default_placeholder")}
         className="flex h-[42px] w-full rounded-md bg-background py-2.5 text-sm outline-none placeholder:text-dim-500 disabled:cursor-not-allowed disabled:opacity-20"
         onChange={(event) => onSearch(event.target.value)}
+        {...(defaultValue ? { defaultValue: defaultValue } : { value: value })}
       />
       {disabled ? (
         <></>
@@ -72,7 +79,7 @@ const Search: FunctionComponent<SearchProps> = ({
           className="group rounded-full"
           onClick={() => onSearch("")}
         >
-          <CrossX className="size-4.5 text-dim-500 group-hover:text-black-900" />
+          <CrossX className="size-4.5 text-dim-500 group-hover:text-foreground" />
         </Button>
       ) : (
         <span

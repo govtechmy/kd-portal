@@ -1,0 +1,19 @@
+[cmdk-list] {
+  min-height: 300px;
+  height: var(--cmdk-list-height);
+  max-height: 400px;
+  transition: height 100ms ease;
+  scroll-padding-block-start: 8px;
+  scroll-padding-block-end: 8px;
+}
+
+[cmdk-list-sizer] {
+  width: 100%;
+}
+
+[cmdk-group-items] {
+  width: 100%;
+}
+[cmdk-group-heading] {
+  padding: 0 12px
+}

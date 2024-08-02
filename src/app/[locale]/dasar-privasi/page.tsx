@@ -1,7 +1,10 @@
-import HeroPattern from "@/components/layout/hero-pattern";
-import { useTranslations } from "next-intl";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import React from "react";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getPayloadHMR } from "@payloadcms/next/utilities";
+import config from "@payload-config";
+import PrivacyPolicyComponent from "./page-component";
+
+// export const dynamic = "force-static";
 
 export async function generateMetadata({
   params: { locale },
@@ -17,54 +20,21 @@ export async function generateMetadata({
   };
 }
 
-export default function Page({
+const payload = await getPayloadHMR({ config });
+
+export default async function Page({
   params: { locale },
 }: {
   params: {
-    locale: string;
+    locale: "ms-MY" | "en-GB";
   };
 }) {
-  unstable_setRequestLocale(locale);
-  const t = useTranslations("Privacy");
+  // unstable_setRequestLocale(locale);
+  const data = await payload.findGlobal({
+    slug: "footer",
+    locale: locale,
+    depth: 3,
+  });
 
-  return (
-    <main className="divide-y divide-washed-100">
-      <section className="relative">
-        <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden">
-          <HeroPattern className="absolute -top-[83.33%]" />
-        </div>
-        <h1 className="py-16 text-center font-poppins text-hmd font-semibold">
-          {t("header")}
-        </h1>
-      </section>
-
-      <section className="container border-x border-washed-100 py-12 lg:py-[84px] xl:grid xl:grid-cols-12">
-        <div className="col-span-10 col-start-2 space-y-6 whitespace-pre-line text-pretty text-sm text-black-700">
-          <p className="text-base font-semibold">{t("your_privacy")}</p>
-          <p>{t("your_privacy_desc")}</p>
-          <p className="text-base font-semibold">{t("collected_info")}</p>
-          <p>{t("collected_info_desc")}</p>
-          <p className="text-base font-semibold">{t("policy_change")}</p>
-          <p>{t("policy_change_desc")}</p>
-          <p className="pt-6 text-lg font-bold">{t("personal_data")}</p>
-          <p className="text-base font-semibold">{t("personal_data_act")}</p>
-          <p>
-            {t.rich("personal_data_act_desc", {
-              a: (chunks) => (
-                <a
-                  className="text-foreground [text-underline-position:from-font] hover:underline"
-                  target="_blank"
-                  rel="noopenner noreferrer"
-                  href="http://www.pdp.gov.my"
-                >
-                  {chunks}
-                </a>
-              ),
-            })}
-          </p>
-          <p>{t("last_updated")}</p>
-        </div>
-      </section>
-    </main>
-  );
+  return <PrivacyPolicyComponent data={data} locale={locale} />;
 }

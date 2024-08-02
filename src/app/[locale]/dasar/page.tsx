@@ -1,8 +1,10 @@
-import HeroPattern from "@/components/layout/hero-pattern";
-import { useTranslations } from "next-intl";
-import { getTranslations } from "next-intl/server";
-import { notFound } from "next/navigation";
 import React from "react";
+import { getPayloadHMR } from "@payloadcms/next/utilities";
+import config from "@payload-config";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import DasarKementerian from "./page-component";
+
+// export const dynamic = "force-static";
 
 export async function generateMetadata({
   params: { locale },
@@ -18,22 +20,25 @@ export async function generateMetadata({
   };
 }
 
-export default function Page() {
-  const t = useTranslations();
-  notFound();
+const payload = await getPayloadHMR({ config });
 
-  return (
-    <main className="divide-y divide-washed-100">
-      <section className="relative">
-        <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden">
-          <HeroPattern className="absolute -top-[83.33%]" />
-        </div>
-        <h1 className="py-16 text-center font-poppins text-hmd font-semibold">
-          {t("Policy.header")}
-        </h1>
-      </section>
+export default async function Page({
+  params: { locale },
+}: {
+  params: {
+    locale: "ms-MY" | "en-GB";
+  };
+}) {
+  // unstable_setRequestLocale(locale);
+  const data = await payload.find({
+    collection: "policy",
+    locale: locale,
+    pagination: false,
+    depth: 3,
+    where: {
+      _status: { not_equals: "draft" },
+    },
+  });
 
-      <section className="flex min-h-screen w-full"></section>
-    </main>
-  );
+  return <DasarKementerian locale={locale} list={data.docs} />;
 }

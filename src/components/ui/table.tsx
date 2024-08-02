@@ -58,7 +58,7 @@ const TableRow = forwardRef<
   <tr
     ref={ref}
     className={cn(
-      "border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted",
+      "border-b",
       className
     )}
     {...props}
@@ -73,7 +73,7 @@ const TableHead = forwardRef<
   <th
     ref={ref}
     className={cn(
-      "h-[30px] pb-2 text-left align-middle text-xs text-dim-500 font-medium border-b-2 border-outline-200 [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+      "h-[30px] pb-2 px-3 text-left align-middle text-xs text-dim-500 font-medium border-b-2 border-outline-200 [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
       className
     )}
     {...props}
@@ -88,7 +88,7 @@ const TableCell = forwardRef<
   <td
     ref={ref}
     className={cn(
-      "py-4 sm:p-3 pl-0 align-middle border-b border-outline-200 [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] h-[44px] text-sm text-black-700 font-medium",
+      "py-4 sm:py-3 px-3 align-middle border-b border-outline-200 [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] h-[44px] text-sm text-black-700 font-medium",
       className
     )}
     {...props}
@@ -102,7 +102,7 @@ const TableCaption = forwardRef<
 >(({ className, ...props }, ref) => (
   <caption
     ref={ref}
-    className={cn("mt-4 text-sm text-muted-foreground", className)}
+    className={cn("mt-4 text-sm text-dim-500", className)}
     {...props}
   />
 ));

@@ -1,9 +1,10 @@
-import { useTranslations } from "next-intl";
 import React from "react";
+import { getPayloadHMR } from "@payloadcms/next/utilities";
+import config from "@payload-config";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import DirektoriMain from "@/components/direktori/main";
 
-export const dynamic = "force-static";
+// export const dynamic = "force-static";
 
 export async function generateMetadata({
   params: { locale },
@@ -19,15 +20,22 @@ export async function generateMetadata({
   };
 }
 
-export default function Page({
+const payload = await getPayloadHMR({ config });
+
+export default async function Page({
   params: { locale },
 }: {
   params: {
-    locale: string;
+    locale: "ms-MY" | "en-GB";
   };
 }) {
-  unstable_setRequestLocale(locale);
-  const t = useTranslations();
+  // unstable_setRequestLocale(locale);
+  const data = await payload.find({
+    collection: "staff-directory",
+    locale: locale,
+    pagination: false,
+    depth: 3,
+  });
 
-  return <DirektoriMain />;
+  return <DirektoriMain locale={locale} list={data.docs} />;
 }
