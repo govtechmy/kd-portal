@@ -208,7 +208,7 @@ const DirektoriMain: FC<DirektoriMainProps> = ({ list, locale }) => {
       />
 
       <Section>
-        <div className="hidden w-full lg:border-x border-x-washed-100 py-12 sm:flex">
+        <div className="hidden w-full border-x-washed-100 py-12 sm:flex lg:border-x lg:px-6">
           <DataTable
             key={JSON.stringify(data)}
             columns={column}
@@ -236,7 +236,7 @@ const DirektoriMain: FC<DirektoriMainProps> = ({ list, locale }) => {
 
       {/* Mobile */}
       <Section>
-        <div className="flex w-full flex-col lg:border-x border-x-washed-100 py-12 sm:hidden">
+        <div className="flex w-full flex-col border-x-washed-100 py-12 sm:hidden lg:border-x">
           <DataTable
             key={JSON.stringify(data)}
             columns={mobileColumn}
