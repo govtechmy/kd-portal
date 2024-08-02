@@ -37,7 +37,7 @@ export default function PencapaianTimeline({ data, locale, totalDocs }: Props) {
             </div>
             <Timeline
               items={items.map((item) => ({
-                date: DateTime.fromISO(item.date).toFormat("dd/M/yyyy", {
+                date: DateTime.fromISO(item.date).toFormat("dd MMMM yyyy", {
                   locale: locale,
                 }),
                 title: item.title,

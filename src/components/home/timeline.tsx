@@ -37,7 +37,7 @@ export default function Timeline({
             <TimelineLayout
               className="py-8 lg:py-[84px]"
               items={achievements.map((item) => ({
-                date: DateTime.fromISO(item.date).toFormat("dd/M/yyyy", {
+                date: DateTime.fromISO(item.date).toFormat("dd MMMM yyyy", {
                   locale: locale,
                 }),
                 title: item.title,
