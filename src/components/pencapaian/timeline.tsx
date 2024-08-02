@@ -27,9 +27,9 @@ export default function PencapaianTimeline({ data, locale, totalDocs }: Props) {
   const pathname = usePathname();
 
   return (
-    <div className="relative col-span-7 flex h-full flex-col items-start sm:items-center lg:col-start-6">
+    <div className="max-lg:py-8 relative col-span-7 flex h-full flex-col items-start sm:items-center lg:col-start-6">
       <div className="absolute -z-10 h-full w-px bg-outline-200 max-sm:left-[3.5px]" />
-      <div className="py-8 lg:pb-[120px] lg:pt-[84px]">
+      <div className="lg:pb-[120px] lg:pt-[84px]">
         {data.map(({ year, items }, i) => (
           <div key={year} className="flex flex-col items-start sm:items-center">
             <div className="my-3 w-fit rounded-full bg-brand-50 px-2 py-0.5 text-xs font-medium tracking-widest text-foreground-primary max-sm:my-[26px] max-sm:ml-8">

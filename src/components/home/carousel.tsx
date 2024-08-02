@@ -46,7 +46,7 @@ export default function ActivityCarousel({
 
   return (
     <Section>
-      <div className="grid-cols-12 gap-6 border-washed-100 px-4.5 py-12 lg:px-0 lg:py-[84px] xl:grid xl:border-x">
+      <div className="grid-cols-12 gap-6 border-washed-100 py-12 lg:py-[84px] xl:grid xl:border-x">
         {Boolean(items.length) && (
           <Carousel
             setApi={setApi}

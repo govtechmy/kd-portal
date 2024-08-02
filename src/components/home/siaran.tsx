@@ -27,7 +27,7 @@ export default function HomeSiaran({
 
   return (
     <Section>
-      <div className="grid-cols-12 gap-6 border-washed-100 px-4.5 py-12 lg:px-0 lg:py-[84px] xl:grid xl:border-x">
+      <div className="grid-cols-12 gap-6 border-washed-100 py-12 lg:py-[84px] xl:grid xl:border-x">
         <div className="col-span-10 col-start-2 space-y-12">
           <h2 className="text-balance font-poppins text-hsm font-semibold">
             {t("Home.Broadcast.title")}

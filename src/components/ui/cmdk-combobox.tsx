@@ -158,7 +158,7 @@ const CommandMenu: FC<CommandMenuProps> = ({
       <CommandList
         ref={listRef}
         className={cn(
-          "absolute left-0 top-11 z-[99999] flex max-h-[400px] w-full flex-col overflow-scroll rounded-[22px] border border-outline-200 bg-white px-1.5 pb-2 pt-3 shadow-lg",
+          "absolute left-0 top-11 z-[99999] flex max-h-[400px] w-full flex-col overflow-auto rounded-[22px] border border-outline-200 bg-white px-1.5 pb-2 pt-3 shadow-lg",
           isInputFocused ? "flex" : "hidden",
         )}
       >
