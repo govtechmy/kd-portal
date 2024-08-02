@@ -175,6 +175,7 @@ const SiaranPage: FC<SiaranPageProps> = ({ data, locale }) => {
         <div className="flex w-full justify-center">
           <article className="article max-w-prose">
             <RichText
+              className={"richTextdiv"}
               content={data.broadcast_text}
               tagMap={
                 {

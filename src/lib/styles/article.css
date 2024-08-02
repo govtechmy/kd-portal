@@ -34,7 +34,7 @@
   ol {
     @apply list-outside list-decimal text-black-700 text-base text-[15px] leading-[27px] space-y-3 py-6;
   }
-  div {
+  .richTextdiv {
     @apply list-outside list-decimal text-black-700 text-base text-[15px] leading-[27px] space-y-3 py-6;
   }
 

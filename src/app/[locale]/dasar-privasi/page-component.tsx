@@ -24,7 +24,7 @@ const PrivacyPolicyComponent: FC<PrivacyPolicyProps> = ({ data, locale }) => {
           <div className="gap-6 border-x border-washed-100 py-12 lg:py-[84px] xl:grid xl:grid-cols-12">
             <div className="article col-span-10 col-start-2 space-y-6 whitespace-pre-line text-pretty text-sm text-black-700">
               <RichText
-                className="flex flex-col gap-6"
+                className="richTextdiv flex flex-col gap-6"
                 content={data["privacy-policy_section"].statement}
               />
             </div>
