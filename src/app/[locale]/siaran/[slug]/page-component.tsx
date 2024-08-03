@@ -25,6 +25,12 @@ import { cn, getReadTimeEstimation } from "@/lib/utils";
 import { DateTime } from "luxon";
 import FilePDF from "@/icons/file-pdf";
 
+type ShareLink = {
+  icon: typeof Link | typeof Envelope | typeof Icon.Facebook | typeof Icon.X;
+  name: string;
+  href: string;
+};
+
 interface SiaranPageProps {
   data: Broadcast;
   locale: (typeof locales)[number];
@@ -62,23 +68,23 @@ const SiaranPage: FC<SiaranPageProps> = ({ data, locale }) => {
     }
   };
 
-  const share_links = [
-    {
-      icon: Link,
-      name: "Instagram",
-      href: "https://www.instagram.com/kementeriandigitalmalaysia/",
-    },
-    {
-      icon: Envelope,
-      name: "Tiktok",
-      href: "https://www.tiktok.com/@kementeriandigital",
-    },
-    {
-      icon: Icon.Facebook,
-      name: "Facebook",
-      href: "https://www.facebook.com/KementerianDigitalMalaysia/",
-    },
-    { icon: Icon.X, name: "X", href: "https://x.com/KemDigitalMsia" },
+  const share_links: ShareLink[] = [
+    // {
+    //   icon: Link,
+    //   name: "Instagram",
+    //   href: "https://www.instagram.com/kementeriandigitalmalaysia/",
+    // },
+    // {
+    //   icon: Envelope,
+    //   name: "Tiktok",
+    //   href: "https://www.tiktok.com/@kementeriandigital",
+    // },
+    // {
+    //   icon: Icon.Facebook,
+    //   name: "Facebook",
+    //   href: "https://www.facebook.com/KementerianDigitalMalaysia/",
+    // },
+    // { icon: Icon.X, name: "X", href: "https://x.com/KemDigitalMsia" },
   ];
   return (
     <main className="container grid auto-rows-auto grid-cols-1 py-12 md:grid-cols-12 lg:grid-cols-6 xl:grid-cols-4 print:py-0">
