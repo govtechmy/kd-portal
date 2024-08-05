@@ -1,9 +1,13 @@
+import { revalidateGlobal } from "@/lib/hooks/revalidatePath";
 import { GlobalConfig } from "payload";
 
 export const Homepage: GlobalConfig = {
   slug: "homepage",
   access: {
     read: () => true,
+  },
+  hooks: {
+    afterChange: [revalidateGlobal("HOME")],
   },
   fields: [
     {

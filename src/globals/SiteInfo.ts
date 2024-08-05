@@ -1,6 +1,7 @@
 import { GlobalConfig } from "payload";
 import link from "@/lib/fields/link";
 import { socialMediaOptions } from "@/lib/constants/links";
+import { revalidateGlobal } from "@/lib/hooks/revalidatePath";
 
 export const SiteInfo: GlobalConfig = {
   slug: "site-info",
@@ -97,5 +98,6 @@ export const SiteInfo: GlobalConfig = {
         return data;
       },
     ],
+    afterChange: [revalidateGlobal("CONTACT_US")],
   },
 };

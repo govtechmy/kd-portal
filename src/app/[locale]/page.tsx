@@ -1,32 +1,8 @@
 import React from "react";
-import { getTranslations } from "next-intl/server";
 import HomePageComponent from "./page-component";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
-import config from "@payload-config";
+import { FSP, inject, metagen, MetagenProps } from "@/lib/decorator";
 
-export async function generateMetadata({
-  params: { locale },
-}: {
-  params: {
-    locale: string;
-  };
-}) {
-  const t = await getTranslations({ locale, namespace: "Agency" });
-
-  return {
-    title: t("name"),
-  };
-}
-
-const payload = await getPayloadHMR({ config });
-
-export default async function Page({
-  params: { locale },
-}: {
-  params: {
-    locale: "ms-MY" | "en-GB";
-  };
-}) {
+const HomePage: FSP = async ({ payload, locale }) => {
   const siteInfo = await payload.findGlobal({
     slug: "site-info",
     locale: locale,
@@ -69,4 +45,12 @@ export default async function Page({
       locale={locale}
     />
   );
-}
+};
+
+export const generateMetadata = async (params: MetagenProps) => {
+  return metagen(params, "Agency", { title: "name" });
+};
+
+export default inject(HomePage);
+
+export const dynamic = "error";

@@ -1,4 +1,5 @@
 import link from "@/lib/fields/link";
+import { revalidateCollection } from "@/lib/hooks/revalidatePath";
 import { CollectionConfig, Option } from "payload";
 
 const QuickLinkOptions: Option[] = [
@@ -19,6 +20,9 @@ export const QuickLink: CollectionConfig = {
   },
   admin: {
     useAsTitle: "name",
+  },
+  hooks: {
+    afterChange: [revalidateCollection("HOME")],
   },
   fields: [
     {

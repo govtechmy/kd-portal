@@ -1,6 +1,6 @@
 import configPromise from "@payload-config";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
 import groupBy from "lodash/groupBy";
+import { getPayload } from "payload";
 
 /**
  * POST endpoint to bulk-update staff-directory collections
@@ -9,7 +9,7 @@ import groupBy from "lodash/groupBy";
  * @returns
  */
 export const POST = async (req: Request) => {
-  const payload = await getPayloadHMR({
+  const payload = await getPayload({
     config: configPromise,
   });
 

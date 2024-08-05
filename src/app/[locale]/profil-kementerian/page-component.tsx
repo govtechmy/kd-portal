@@ -23,7 +23,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
   data,
   locale,
 }) => {
-  unstable_setRequestLocale(locale);
+  // unstable_setRequestLocale(locale);
   const t = useTranslations();
 
   return (

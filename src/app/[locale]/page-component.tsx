@@ -5,11 +5,7 @@ import HomeSiaran from "@/components/home/siaran";
 import Timeline from "@/components/home/timeline";
 import HeroPattern from "@/components/layout/hero-pattern";
 import Overline from "@/components/typography/overline";
-import { buttonVariants } from "@/components/ui/button";
-import Search from "@/components/ui/search";
-import Flag from "@/icons/flag";
 import { locales } from "@/lib/i18n-config";
-import { cn } from "@/lib/utils";
 import { Achievement, Broadcast, Homepage, SiteInfo } from "@/payload-types";
 import { useTranslations } from "next-intl";
 import React, { FC } from "react";
@@ -47,7 +43,7 @@ const HomePageComponent: FC<Props> = ({
             </h1>
           </div>
 
-          <div className="space-y-4 w-full">
+          <div className="w-full space-y-4">
             <HomeSearchBar locale={locale} />
 
             {/* Disable Pautan Popular for now */}

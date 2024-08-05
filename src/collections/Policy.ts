@@ -1,4 +1,4 @@
-import { revalidatePolicy } from "@/lib/hooks/revalidatePath";
+import { revalidateCollection } from "@/lib/hooks/revalidatePath";
 import { CollectionConfig, Option } from "payload";
 
 export const PolicyType: Option[] = [
@@ -36,7 +36,7 @@ export const KDPolicy: CollectionConfig = {
     listSearchableFields: ["doc_name", "doc_type", "doc_description"],
   },
   hooks: {
-    afterChange: [revalidatePolicy],
+    afterChange: [revalidateCollection("POLICY")],
   },
   fields: [
     {

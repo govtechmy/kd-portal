@@ -7,7 +7,7 @@ import { buildConfig } from "payload";
 import { fileURLToPath } from "url";
 import sharp from "sharp";
 import { en } from "payload/i18n/en";
-import StaffDirectory from "@/lib/resources/directory_kd.json";
+import StaffDirectory from "@/lib/resources/directory_kd.json" assert { type: "json" };
 import groupBy from "lodash/groupBy";
 import PayloadCollections, { Users, SearchOverride } from "./collections";
 import GlobalCollections from "./globals";
