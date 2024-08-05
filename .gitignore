@@ -44,3 +44,5 @@ next-env.d.ts
 /media
 /file
 .pnpm-store
+
+.vscode
