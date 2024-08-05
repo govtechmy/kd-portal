@@ -160,7 +160,7 @@ export default function Footer({
               ": " +
               format.dateTime(new Date(process.env.LAST_UPDATED), {
                 year: "numeric",
-                month: "short",
+                month: "long",
                 day: "numeric",
                 hour12: true,
                 hour: "2-digit",
