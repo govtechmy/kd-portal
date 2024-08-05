@@ -14,7 +14,6 @@ export default function Timeline({
   achievements: Achievement[];
   locale: (typeof locales)[number];
 }) {
-  const format = useFormatter();
   const t = useTranslations("Home.Achievement");
 
   return (

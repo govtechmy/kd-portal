@@ -78,7 +78,7 @@ const HomePageComponent: FC<Props> = ({
       <main className="divide-y divide-washed-100">
         <Carousel homepage={homepage} />
         <Timeline achievements={achievements} locale={locale} />
-        <HomeSiaran broadcast={broadcast} locale={locale} />
+        <HomeSiaran broadcast={broadcast} />
         <Quicklinks homepage={homepage} />
       </main>
     </>

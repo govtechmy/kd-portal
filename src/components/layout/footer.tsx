@@ -1,7 +1,6 @@
 import { Icon } from "@/icons/social-media";
 import { _social_media } from "@/lib/constants/links";
 import { Link } from "@/lib/i18n";
-import { routes } from "@/lib/routes";
 import { SiteInfo } from "@/payload-types";
 import { useFormatter, useTranslations } from "next-intl";
 import Image from "next/image";

@@ -4,7 +4,11 @@ import Masthead from "@/components/layout/masthead";
 import "@/lib/styles/globals.css";
 import { cn } from "@/lib/utils";
 import { Inter, Poppins } from "next/font/google";
-import { getMessages, getTranslations } from "next-intl/server";
+import {
+  getMessages,
+  getTranslations,
+  unstable_setRequestLocale,
+} from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import config from "@payload-config";
 import SiteScript from "./site-script";

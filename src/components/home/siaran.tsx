@@ -7,7 +7,6 @@ import ArrowUp from "@/icons/arrow-up";
 import ChevronRight from "@/icons/chevron-right";
 import Clock from "@/icons/clock";
 import { Link, useRouter } from "@/lib/i18n";
-import { locales } from "@/lib/i18n-config";
 import { routes } from "@/lib/routes";
 import { cn, getReadTimeEstimation } from "@/lib/utils";
 import { Broadcast } from "@/payload-types";
@@ -15,13 +14,7 @@ import { DateTime } from "luxon";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-export default function HomeSiaran({
-  broadcast,
-  locale,
-}: {
-  broadcast: Broadcast[];
-  locale: (typeof locales)[number];
-}) {
+export default function HomeSiaran({ broadcast }: { broadcast: Broadcast[] }) {
   const t = useTranslations();
   const { push } = useRouter();
 
@@ -67,7 +60,7 @@ export default function HomeSiaran({
                       {t(`Announcements.type.${doc.type}`)}
                     </p>
                     {doc.broadcast_text_html && (
-                      <div className="invisible flex items-center gap-2 group-hover:visible">
+                      <div className="flex items-center gap-2">
                         <div className="h-3 w-px bg-outline-300" />
                         <div className="flex items-center gap-1 text-dim-500">
                           <Clock className="size-4" />
@@ -107,7 +100,7 @@ export default function HomeSiaran({
                       <time className="text-dim-500">
                         {DateTime.fromISO(doc.date).toFormat("dd MMM yyyy")}
                       </time>
-                      <div className="invisible flex items-center gap-1 text-foreground-primary group-hover:visible">
+                      <div className="flex items-center gap-1 text-foreground-primary">
                         <span className="font-semibold">
                           {t(`Announcements.read`)}
                         </span>

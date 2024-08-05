@@ -95,7 +95,7 @@ const SiaranList: FC<SiaranListProps> = ({ data, locale }) => {
                         {t(`Announcements.type.${doc.type}`)}
                       </p>
                       {doc.broadcast_text_html && (
-                        <div className="invisible flex items-center gap-2 group-hover:visible">
+                        <div className="flex items-center gap-2">
                           <div className="h-3 w-px bg-outline-300" />
                           <div className="flex items-center gap-1 text-dim-500">
                             <Clock className="size-4" />
@@ -135,7 +135,7 @@ const SiaranList: FC<SiaranListProps> = ({ data, locale }) => {
                         <time className="text-dim-500">
                           {DateTime.fromISO(doc.date).toFormat("dd MMM yyyy")}
                         </time>
-                        <div className="invisible flex items-center gap-1 text-foreground-primary group-hover:visible">
+                        <div className="flex items-center gap-1 text-foreground-primary">
                           <span className="font-semibold">
                             {t(`Announcements.read`)}
                           </span>

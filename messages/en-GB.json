@@ -187,7 +187,7 @@
     "placeholder": "Find keywords: \u201cstatement\u201d, \"announcement\"",
     "print": "Print",
     "read": "Read",
-    "estimated_read": "{ time } minute(s) read",
+    "estimated_read": "{time, plural, =0 {0 minute} =1 {minute} other {# minutes}} read",
     "type": {
       "announcement": "Announcement",
       "media_release": "Media Release",
