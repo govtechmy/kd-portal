@@ -9,8 +9,8 @@ const Pencapaian: FSP = async ({ searchParams, payload, locale }) => {
   const { page, search, start, end, type } = searchParams || {
     page: 1,
     search: "",
-    start: 0,
-    end: 7,
+    start: undefined,
+    end: undefined,
     type: "all",
   };
   const limit = page ? Number(page) * 7 : 7;
@@ -90,4 +90,3 @@ export const generateMetadata = async (params: MetagenProps) => {
 };
 
 export default inject(Pencapaian);
-export const dynamic = "error";
