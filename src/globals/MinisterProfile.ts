@@ -1,10 +1,14 @@
 import IconListOptions from "@/icons";
+import { revalidateGlobal } from "@/lib/hooks/revalidatePath";
 import { GlobalConfig } from "payload";
 
 export const MinisterProfile: GlobalConfig = {
   slug: "profil-kementerian",
   access: {
     read: () => true,
+  },
+  hooks: {
+    afterChange: [revalidateGlobal("MINISTRY_PROFILE")],
   },
   fields: [
     {

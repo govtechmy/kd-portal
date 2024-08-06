@@ -1,35 +1,8 @@
-import React from "react";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
-import config from "@payload-config";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import React, { Suspense } from "react";
 import DasarKementerian from "./page-component";
+import { FSP, inject, metagen, MetagenProps } from "@/lib/decorator";
 
-// export const dynamic = "force-static";
-
-export async function generateMetadata({
-  params: { locale },
-}: {
-  params: {
-    locale: string;
-  };
-}) {
-  const t = await getTranslations({ locale, namespace: "Header" });
-
-  return {
-    title: t("policy"),
-  };
-}
-
-const payload = await getPayloadHMR({ config });
-
-export default async function Page({
-  params: { locale },
-}: {
-  params: {
-    locale: "ms-MY" | "en-GB";
-  };
-}) {
-  // unstable_setRequestLocale(locale);
+const Dasar: FSP = async ({ params, locale, payload }) => {
   const data = await payload.find({
     collection: "policy",
     locale: locale,
@@ -40,5 +13,16 @@ export default async function Page({
     },
   });
 
-  return <DasarKementerian locale={locale} list={data.docs} />;
-}
+  return (
+    <Suspense>
+      <DasarKementerian locale={locale} list={data.docs} />
+    </Suspense>
+  );
+};
+
+export const generateMetadata = async (params: MetagenProps) => {
+  return metagen(params, "Header", { title: "policy" });
+};
+
+export default inject(Dasar);
+export const dynamic = "error";

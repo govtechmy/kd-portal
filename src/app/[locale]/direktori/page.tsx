@@ -1,35 +1,8 @@
-import React from "react";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
-import config from "@payload-config";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import React, { Suspense } from "react";
 import DirektoriMain from "@/components/direktori/main";
+import { FSP, inject, metagen, MetagenProps } from "@/lib/decorator";
 
-// export const dynamic = "force-static";
-
-export async function generateMetadata({
-  params: { locale },
-}: {
-  params: {
-    locale: string;
-  };
-}) {
-  const t = await getTranslations({ locale, namespace: "Header" });
-
-  return {
-    title: t("directory"),
-  };
-}
-
-const payload = await getPayloadHMR({ config });
-
-export default async function Page({
-  params: { locale },
-}: {
-  params: {
-    locale: "ms-MY" | "en-GB";
-  };
-}) {
-  // unstable_setRequestLocale(locale);
+const Direktori: FSP = async ({ locale, payload }) => {
   const data = await payload.find({
     collection: "staff-directory",
     locale: locale,
@@ -37,5 +10,16 @@ export default async function Page({
     depth: 3,
   });
 
-  return <DirektoriMain locale={locale} list={data.docs} />;
-}
+  return (
+    <Suspense>
+      <DirektoriMain locale={locale} list={data.docs} />
+    </Suspense>
+  );
+};
+
+export const generateMetadata = async (params: MetagenProps) => {
+  return metagen(params, "Header", { title: "directory" });
+};
+
+export default inject(Direktori);
+export const dynamic = "error";

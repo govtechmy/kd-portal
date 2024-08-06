@@ -1,43 +1,22 @@
 import React from "react";
-import { getTranslations } from "next-intl/server";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
-import config from "@payload-config";
 import SiaranList from "./page-component";
 import orderBy from "lodash/orderBy";
+import { FSP, inject, metagen, MetagenProps } from "@/lib/decorator";
 
-export async function generateMetadata({
-  params: { locale },
-}: {
-  params: {
-    locale: string;
-  };
-}) {
-  const t = await getTranslations({ locale, namespace: "Header" });
+export const generateMetadata = async (params: MetagenProps) => {
+  return metagen(params, "Header", { title: "announcements" });
+};
 
-  return {
-    title: t("announcements"),
+const Siaran: FSP = async ({ searchParams, payload, locale }) => {
+  const { page, search, start, end } = searchParams || {
+    page: 1,
+    search: "",
+    start: undefined,
+    end: undefined,
   };
-}
-
-const payload = await getPayloadHMR({ config });
-
-export default async function Page({
-  params: { locale },
-  searchParams: { page, search, start, end },
-}: {
-  params: {
-    locale: "ms-MY" | "en-GB";
-  };
-  searchParams: {
-    page: string;
-    search: string;
-    start: string;
-    end: string;
-  };
-}) {
   const data = await payload.find({
     collection: "broadcast",
-    locale: locale,
+    locale,
     depth: 3,
     pagination: true,
     page: Number(page) ?? 1,
@@ -78,4 +57,6 @@ export default async function Page({
   const sorted = orderBy(data.docs, ["isPin", "date"], ["desc", "desc"]);
 
   return <SiaranList data={{ ...data, docs: sorted }} locale={locale} />;
-}
+};
+
+export default inject(Siaran);

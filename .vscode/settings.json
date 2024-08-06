@@ -1,9 +1,0 @@
-{
-  "i18n-ally.keystyle": "nested",
-  "i18n-ally.localesPaths": ["src/messages"],
-  "prettier.configPath": ".prettierrc.json",
-  "tailwindCSS.experimental.classRegex": [
-    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
-  ]
-}
