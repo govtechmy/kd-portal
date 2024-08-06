@@ -101,7 +101,7 @@ export default function HomeSiaran({ broadcast }: { broadcast: Broadcast[] }) {
                         {DateTime.fromISO(doc.date).toFormat("dd MMM yyyy")}
                       </time>
                       <div className="flex items-center gap-1 text-foreground-primary">
-                        <span className="font-semibold">
+                        <span className="font-semibold opacity-0 transition-opacity group-hover:opacity-100">
                           {t(`Announcements.read`)}
                         </span>
                         <ArrowOutgoing className="size-4 stroke-[1.5]" />
