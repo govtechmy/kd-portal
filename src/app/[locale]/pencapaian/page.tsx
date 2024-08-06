@@ -1,51 +1,26 @@
-import React from "react";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
-import config from "@payload-config";
-import { getTranslations } from "next-intl/server";
+import React, { Suspense } from "react";
 import AchievementComponent from "./page-component";
 import groupBy from "lodash/groupBy";
 import { DateTime } from "luxon";
 import orderBy from "lodash/orderBy";
+import { FSP, inject, metagen, MetagenProps } from "@/lib/decorator";
 
-export async function generateMetadata({
-  params: { locale },
-}: {
-  params: {
-    locale: string;
+const Pencapaian: FSP = async ({ searchParams, payload, locale }) => {
+  const { page, search, start, end, type } = searchParams || {
+    page: 1,
+    search: "",
+    start: undefined,
+    end: undefined,
+    type: "all",
   };
-}) {
-  const t = await getTranslations({ locale, namespace: "Header" });
-
-  return {
-    title: t("achievements"),
-  };
-}
-
-const payload = await getPayloadHMR({ config });
-
-export default async function Page({
-  params: { locale },
-  searchParams: { page, search, start, end, type },
-}: {
-  params: {
-    locale: "ms-MY" | "en-GB";
-  };
-  searchParams: {
-    page: string;
-    search: string;
-    start: string;
-    end: string;
-    type: string;
-  };
-}) {
   const limit = page ? Number(page) * 7 : 7;
 
   const data = await payload.find({
     collection: "achievement",
-    locale: locale,
+    locale,
     depth: 3,
     pagination: false,
-    limit: limit,
+    limit,
     where: {
       and: [
         {
@@ -100,10 +75,18 @@ export default async function Page({
   const sorted = orderBy(groupedArray, ["year"], ["desc"]);
 
   return (
-    <AchievementComponent
-      data={sorted}
-      locale={locale}
-      totalDocs={data.totalDocs}
-    />
+    <Suspense>
+      <AchievementComponent
+        data={sorted}
+        locale={locale}
+        totalDocs={data.totalDocs}
+      />
+    </Suspense>
   );
-}
+};
+
+export const generateMetadata = async (params: MetagenProps) => {
+  return metagen(params, "Header", { title: "achievements" });
+};
+
+export default inject(Pencapaian);

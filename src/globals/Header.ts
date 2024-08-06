@@ -1,9 +1,13 @@
 import { GlobalConfig } from "payload";
 import link from "@/lib/fields/link";
+import { revalidateGlobal } from "@/lib/hooks/revalidatePath";
 
 export const Header: GlobalConfig = {
   access: {
     read: () => true,
+  },
+  hooks: {
+    afterChange: [revalidateGlobal("HOME")],
   },
   fields: [
     {

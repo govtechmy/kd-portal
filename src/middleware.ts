@@ -1,11 +1,10 @@
 import { BAuthMiddleware } from "./middlewares/bauth";
 import { NextChain } from "./middlewares/chain";
-import { RouterMiddleware } from "./middlewares/router";
 import { I18nMiddleware } from "./middlewares/i18n";
 
 /**
  * Note:
- * 1. Orderings of the middleware matters!
+ * 1. Sequence of middleware matters!
  * 2. Final middleware should return NextResponse
  */
 export default NextChain([BAuthMiddleware, I18nMiddleware]);
