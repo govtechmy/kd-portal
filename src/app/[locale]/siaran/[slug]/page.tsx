@@ -1,36 +1,9 @@
 import React from "react";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
-import config from "@payload-config";
 import SiaranPage from "./page-component";
+import { FSP, inject, metagen, MetagenProps } from "@/lib/decorator";
 
-// export const dynamic = "force-static";
-
-export async function generateMetadata({
-  params: { locale },
-}: {
-  params: {
-    locale: string;
-  };
-}) {
-  const t = await getTranslations({ locale, namespace: "Header" });
-
-  return {
-    title: t("announcements"),
-  };
-}
-
-const payload = await getPayloadHMR({ config });
-
-export default async function Page({
-  params: { locale, slug },
-}: {
-  params: {
-    slug: string;
-    locale: "ms-MY" | "en-GB";
-  };
-}) {
-  // unstable_setRequestLocale(locale);
+const SiaranArticle: FSP = async ({ params, payload, locale }) => {
+  const { slug } = params!;
   const data = await payload.find({
     collection: "broadcast",
     locale: locale,
@@ -42,4 +15,10 @@ export default async function Page({
   });
 
   return <SiaranPage data={data.docs[0]} locale={locale} />;
-}
+};
+
+export const generateMetadata = async (params: MetagenProps) => {
+  return metagen(params, "Header", { title: "announcements" });
+};
+
+export default inject(SiaranArticle);

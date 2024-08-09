@@ -87,7 +87,7 @@ const SiaranPage: FC<SiaranPageProps> = ({ data, locale }) => {
     // { icon: Icon.X, name: "X", href: "https://x.com/KemDigitalMsia" },
   ];
   return (
-    <main className="container grid auto-rows-auto grid-cols-1 py-12 md:grid-cols-12 lg:grid-cols-6 xl:grid-cols-4 print:py-0">
+    <main className="container grid auto-rows-auto grid-cols-1 py-12 md:grid-cols-12 lg:grid-cols-6 xl:grid-cols-4 print:mx-auto print:block print:w-full print:pb-12 print:pt-0">
       <section className="space-y-6 md:col-span-10 md:col-start-2 lg:col-span-4 lg:col-start-2 xl:col-span-2 xl:col-start-2">
         <Breadcrumb className="print:hidden">
           <BreadcrumbList>
@@ -179,7 +179,7 @@ const SiaranPage: FC<SiaranPageProps> = ({ data, locale }) => {
 
       <section className="space-y-6 md:col-span-10 md:col-start-2 lg:col-span-4 lg:col-start-2 xl:col-span-2 xl:col-start-2">
         <div className="flex w-full justify-center">
-          <article className="article max-w-prose">
+          <article className="article max-w-prose print:max-w-none">
             <RichText
               className={"richTextdiv"}
               content={data.broadcast_text}
