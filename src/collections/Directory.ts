@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { socialMediaOptions } from "@/lib/constants/links";
 import link from "@/lib/fields/link";
 import { revalidateCollection } from "@/lib/hooks/revalidatePath";

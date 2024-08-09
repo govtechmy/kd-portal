@@ -34,9 +34,6 @@ export const Achievement: CollectionConfig = {
     listSearchableFields: ["title", "description", "type"],
   },
   defaultSort: "-date",
-  // hooks: {
-  //   afterChange: [revalidate("ACHIEVEMENTS")],
-  // },
   fields: [
     {
       name: "title",
