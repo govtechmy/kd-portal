@@ -1,5 +1,7 @@
+// @ts-nocheck
 import { socialMediaOptions } from "@/lib/constants/links";
 import link from "@/lib/fields/link";
+import { revalidateCollection } from "@/lib/hooks/revalidatePath";
 import { CollectionConfig } from "payload";
 
 export const KDDepartment: CollectionConfig = {
@@ -41,6 +43,9 @@ export const KDDirectory: CollectionConfig = {
   },
   defaultSort: "id_bhg",
   timestamps: true,
+  hooks: {
+    afterChange: [revalidateCollection("DIRECTORY")],
+  },
   fields: [
     {
       name: "id_bhg",

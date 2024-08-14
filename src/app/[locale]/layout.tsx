@@ -4,12 +4,17 @@ import Masthead from "@/components/layout/masthead";
 import "@/lib/styles/globals.css";
 import { cn } from "@/lib/utils";
 import { Inter, Poppins } from "next/font/google";
-import { getMessages, getTranslations } from "next-intl/server";
+import {
+  getMessages,
+  getTranslations,
+  unstable_setRequestLocale,
+} from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
-import { ReactNode } from "react";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
 import config from "@payload-config";
 import SiteScript from "./site-script";
+import { locales } from "@/lib/i18n-config";
+import { getPayload } from "payload";
+import { FSM, FSP } from "@/lib/decorator";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
@@ -19,13 +24,8 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
-export async function generateMetadata({
-  params: { locale },
-}: {
-  params: {
-    locale: string;
-  };
-}) {
+export async function generateMetadata(params: FSM) {
+  const { locale } = params;
   const t = await getTranslations({ locale, namespace: "Agency" });
 
   let ogImages = [];
@@ -65,25 +65,16 @@ export async function generateMetadata({
   };
 }
 
-// export function generateStaticParams() {
-//   return locales.map((locale) => ({ locale }));
-// }
-
-// export const dynamic = "force-static";
-
-const payload = await getPayloadHMR({ config });
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
 
 /* Our app sits here to not cause any conflicts with payload's root layout  */
-export default async function Layout({
-  children,
-  params: { locale },
-}: {
-  children: ReactNode;
-  params: {
-    locale: "ms-MY" | "en-GB";
-  };
-}) {
-  const messages = await getMessages();
+const Layout: FSP = async ({ children, params }) => {
+  const { locale } = params || { locale: "ms-MY" };
+  unstable_setRequestLocale(locale);
+  const messages = await getMessages({ locale });
+  const payload = await getPayload({ config });
 
   const headerData = await payload.findGlobal({
     slug: "header",
@@ -183,4 +174,6 @@ export default async function Layout({
       </body>
     </html>
   );
-}
+};
+
+export default Layout;

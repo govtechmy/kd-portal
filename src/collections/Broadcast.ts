@@ -1,3 +1,4 @@
+import { revalidateCollection } from "@/lib/hooks/revalidatePath";
 import {
   HTMLConverterFeature,
   lexicalEditor,
@@ -31,6 +32,9 @@ export const Broadcast: CollectionConfig = {
   },
   versions: {
     drafts: true,
+  },
+  hooks: {
+    afterChange: [revalidateCollection("ANNOUNCEMENTS")],
   },
   fields: [
     {

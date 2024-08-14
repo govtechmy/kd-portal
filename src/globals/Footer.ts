@@ -1,10 +1,21 @@
 import { GlobalConfig } from "payload";
 import link from "@/lib/fields/link";
+import {
+  revalidateCollection,
+  revalidateGlobal,
+} from "@/lib/hooks/revalidatePath";
 
 export const Footer: GlobalConfig = {
   slug: "footer",
   access: {
     read: () => true,
+  },
+  hooks: {
+    afterChange: [
+      revalidateGlobal("HOME"),
+      revalidateGlobal("POLICY"),
+      revalidateGlobal("DISCLAIMER"),
+    ],
   },
   fields: [
     {
