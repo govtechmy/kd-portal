@@ -3,11 +3,15 @@
 import Script from "next/script";
 
 const SiteScript = () => {
+  if (process.env.APP_ENV === "development") {
+    return null;
+  }
+
   return (
     <>
-      {process.env.APP_ENV === "production" && (
+      {
         <Script
-          strategy="lazyOnload"
+          strategy="afterInteractive"
           id="clarity-script"
           type="text/javascript"
         >
@@ -19,7 +23,7 @@ const SiteScript = () => {
           })(window, document, "clarity", "script", "${process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID}");
         `}
         </Script>
-      )}
+      }
     </>
   );
 };
