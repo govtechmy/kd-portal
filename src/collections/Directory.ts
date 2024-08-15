@@ -110,12 +110,6 @@ export const KDDirectory: CollectionConfig = {
       label: "Phone Number",
       type: "text",
       validate: async (value, { data, ...rest }) => {
-        if (data.staff_id === 0 && value !== "-") {
-          return "Use '-' when ID is 0";
-        }
-        if (data.staff_id === -1 && value) {
-          return "Leave blank when ID is -1";
-        }
         return true;
       },
     },

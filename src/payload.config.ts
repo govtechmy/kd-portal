@@ -75,19 +75,16 @@ export default buildConfig({
       });
     }
 
-    const [existingStaff] = await Promise.all([
-      payload.count({ collection: "staff-directory" }),
+    await Promise.all([
+      payload.delete({
+        collection: "kd-department",
+        where: { _id: { exists: true } },
+      }),
+      payload.delete({
+        collection: "staff-directory",
+        where: { _id: { exists: true } },
+      }),
     ]);
-
-    // Delete documents if they exist
-    if (existingStaff.totalDocs > 0) {
-      await Promise.all([
-        payload.delete({
-          collection: "staff-directory",
-          where: { _id: { exists: true } },
-        }),
-      ]);
-    }
 
     const collection = groupBy(StaffDirectory, (item) => item.id_bhg);
 

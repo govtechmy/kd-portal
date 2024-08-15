@@ -3,9 +3,9 @@
     "id_bhg": 1,
     "bhg": "Pejabat YB Menteri",
     "id": 1,
-    "nama": "YB GOBIND SINGH DEO ",
-    "gred": "-",
-    "jawatan": "MENTERI",
+    "nama": "YB GOBIND DEO",
+    "gred": "ANGGOTA PENTADBIRAN",
+    "jawatan": "MENTERI DIGITAL",
     "telefon": "-",
     "emel": "menteri"
   },
@@ -13,9 +13,9 @@
     "id_bhg": 1,
     "bhg": "Pejabat YB Menteri",
     "id": 2,
-    "nama": "MAGESWARY A/P RAMACHANDRAN",
-    "gred": "-",
-    "jawatan": "PEMBANTU KHAS KEPADA MENTERI",
+    "nama": "MAGESWARY RAMACHANDRAN",
+    "gred": "TIDAK BERKENAAN",
+    "jawatan": "PEMBANTU KHAS KEPADA MENTERI DIGITAL",
     "telefon": "03-8880 5043",
     "emel": "mages"
   },
@@ -23,79 +23,79 @@
     "id_bhg": 1,
     "bhg": "Pejabat YB Menteri",
     "id": 3,
-    "nama": "LIM YOU RANG",
-    "gred": "M54",
-    "jawatan": "SETIAUSAHA SULIT KANAN (SUSK)",
+    "nama": "SARJAN AHMAD SAZALI BIN MOHAMAD",
+    "gred": "YA6",
+    "jawatan": "PENGAWAL PENGIRING MENTERI DIGITAL",
     "telefon": "-",
-    "emel": "yourang"
+    "emel": "triple14"
   },
   {
     "id_bhg": 1,
     "bhg": "Pejabat YB Menteri",
     "id": 4,
-    "nama": "SITI NOR AZURA BINTI MOHD RUKON",
-    "gred": "N32",
-    "jawatan": "SETIAUSAHA PEJABAT KEPADA SUSK (TBK1)",
-    "telefon": "03-8880 5052",
-    "emel": "sitinorazura"
-  },
-  {
-    "id_bhg": 1,
-    "bhg": "Pejabat YB Menteri",
-    "id": 5,
-    "nama": "SURESH SINGH A/L RASHPAL SINGH",
-    "gred": "-",
-    "jawatan": "SETIAUSAHA POLITIK (SUPOL)",
-    "telefon": "-",
-    "emel": "r.suresh"
-  },
-  {
-    "id_bhg": 1,
-    "bhg": "Pejabat YB Menteri",
-    "id": 6,
-    "nama": "NOR SUHANA BINTI A. MUTALIB",
-    "gred": "N22",
-    "jawatan": "SETIAUSAHA PEJABAT KEPADA SUPOL (TBK1/TBK2)",
-    "telefon": "-",
-    "emel": "suhanamutalib"
-  },
-  {
-    "id_bhg": 1,
-    "bhg": "Pejabat YB Menteri",
-    "id": 7,
-    "nama": "MANDEEP SINGH A/L KARPALL SINGH",
-    "gred": "-",
-    "jawatan": "PEGAWAI KHAS",
-    "telefon": "-",
-    "emel": "mandeep"
-  },
-  {
-    "id_bhg": 1,
-    "bhg": "Pejabat YB Menteri",
-    "id": 8,
-    "nama": "A. RAFIZ BIN ISMAIL",
-    "gred": "54 TERBUKA",
-    "jawatan": "PEGAWAI TUGAS-TUGAS KHAS (PTTK) ",
-    "telefon": "-",
-    "emel": "a.rafiz"
-  },
-  {
-    "id_bhg": 1,
-    "bhg": "Pejabat YB Menteri",
-    "id": 9,
     "nama": "NORSHEHA BINTI OMAR ONN ONG",
-    "gred": "52 TERBUKA",
-    "jawatan": "PEGAWAI TUGAS-TUGAS KHAS (PTTK)",
+    "gred": "M52",
+    "jawatan": "SETIAUSAHA SULIT KANAN KEPADA MENTERI DIGITAL",
     "telefon": "-",
     "emel": "sheha"
   },
   {
     "id_bhg": 1,
     "bhg": "Pejabat YB Menteri",
+    "id": 0,
+    "nama": "-",
+    "gred": "N19",
+    "jawatan": "PEMBANTU SETIAUSAHA PEJABAT ",
+    "telefon": "03-8880 5052",
+    "emel": "-"
+  },
+  {
+    "id_bhg": 1,
+    "bhg": "Pejabat YB Menteri",
+    "id": 6,
+    "nama": "SURESH SINGH A/L RASHPAL SINGH",
+    "gred": "TIDAK BERKENAAN",
+    "jawatan": "SETIAUSAHA POLITIK KEPADA MENTERI DIGITAL",
+    "telefon": "-",
+    "emel": "r.suresh"
+  },
+  {
+    "id_bhg": 1,
+    "bhg": "Pejabat YB Menteri",
+    "id": 7,
+    "nama": "NOR SUHANA BINTI A. MUTALIB",
+    "gred": "N22",
+    "jawatan": "PEMBANTU SETIAUSAHA PEJABAT",
+    "telefon": "03-8880 5029",
+    "emel": "suhanamutalib"
+  },
+  {
+    "id_bhg": 1,
+    "bhg": "Pejabat YB Menteri",
+    "id": 8,
+    "nama": "MANDEEP SINGH A/L KARPALL SINGH",
+    "gred": "TIDAK BERKENAAN",
+    "jawatan": "PEGAWAI KHAS KEPADA MENTERI DIGITAL",
+    "telefon": "-",
+    "emel": "mandeep"
+  },
+  {
+    "id_bhg": 1,
+    "bhg": "Pejabat YB Menteri",
+    "id": 9,
+    "nama": "A. RAFIZ BIN ISMAIL",
+    "gred": "54",
+    "jawatan": "PEGAWAI TUGAS-TUGAS KHAS I ",
+    "telefon": "-",
+    "emel": "a.rafiz"
+  },
+  {
+    "id_bhg": 1,
+    "bhg": "Pejabat YB Menteri",
     "id": 10,
     "nama": "NURUL IZZATI BINTI ZAINAL ABIDIN",
-    "gred": "52 TERBUKA",
-    "jawatan": "PEGAWAI TUGAS-TUGAS KHAS (PTTK) ",
+    "gred": "52",
+    "jawatan": "PEGAWAI TUGAS-TUGAS KHAS ",
     "telefon": "-",
     "emel": "izzati"
   },
@@ -103,81 +103,141 @@
     "id_bhg": 1,
     "bhg": "Pejabat YB Menteri",
     "id": 11,
-    "nama": "MEDALINE CHANG SHE-YUN",
-    "gred": "S54",
-    "jawatan": "SETIAUSAHA AKHBAR (SUA)",
-    "telefon": "-",
-    "emel": "medaline.chang"
-  },
-  {
-    "id_bhg": 1,
-    "bhg": "Pejabat YB Menteri",
-    "id": 12,
-    "nama": "ARMAS BINTI TUMIRAN",
-    "gred": "M44",
-    "jawatan": "SETIAUSAHA SULIT (SUS)",
-    "telefon": "03-8880 5014",
-    "emel": "armas"
-  },
-  {
-    "id_bhg": 1,
-    "bhg": "Pejabat YB Menteri",
-    "id": 13,
-    "nama": "DIANA BINTI LANIH",
-    "gred": "N22",
-    "jawatan": "PEMBANTU TADBIR (P/O) (TBK2)",
-    "telefon": "-",
-    "emel": "dianalanih"
-  },
-  {
-    "id_bhg": 1,
-    "bhg": "Pejabat YB Menteri",
-    "id": 14,
-    "nama": "NOOR AIN BINTI BUKHARI",
-    "gred": "N19",
-    "jawatan": "PEGAWAI KHIDMAT PELANGGAN (TBK1/TBK2)",
-    "telefon": "-",
-    "emel": "noorain"
-  },
-  {
-    "id_bhg": 1,
-    "bhg": "Pejabat YB Menteri",
-    "id": 15,
-    "nama": "NUR SHUZAWATI BINTI MOHD SHUPLI",
-    "gred": "N19",
-    "jawatan": "PEGAWAI KHIDMAT PELANGGAN (TBK1/TBK2)",
-    "telefon": "-",
-    "emel": "shuzawati"
-  },
-  {
-    "id_bhg": 1,
-    "bhg": "Pejabat YB Menteri",
-    "id": 16,
-    "nama": "SJN AHMAD SAZALI BIN MOHAMAD",
-    "gred": "YA6",
-    "jawatan": "SARJAN POLIS ",
+    "nama": "KOSONG",
+    "gred": "48/52",
+    "jawatan": "PEGAWAI TUGAS-TUGAS KHAS",
     "telefon": "-",
     "emel": "-"
   },
   {
     "id_bhg": 1,
     "bhg": "Pejabat YB Menteri",
-    "id": 17,
-    "nama": "AMIM BIN ABU BAKAR",
-    "gred": "H11",
-    "jawatan": "PEMANDU KENDERAAN ",
+    "id": 12,
+    "nama": "CHANG SHE-YUN",
+    "gred": "54 (TERBUKA)",
+    "jawatan": "SETIAUSAHA AKHBAR KEPADA MENTERI DIGITAL",
     "telefon": "-",
-    "emel": "amim"
+    "emel": "medaline.chang"
   },
   {
     "id_bhg": 1,
     "bhg": "Pejabat YB Menteri",
-    "id": 18,
+    "id": 0,
+    "nama": "-",
+    "gred": "M44",
+    "jawatan": "SETIAUSAHA SULIT ",
+    "telefon": "03-88880 5014",
+    "emel": "-"
+  },
+  {
+    "id_bhg": 1,
+    "bhg": "Pejabat YB Menteri",
+    "id": 14,
+    "nama": "DIANA BINTI LANIH",
+    "gred": "N22",
+    "jawatan": "PEMBANTU TADBIR (P/O) ",
+    "telefon": "03-8880 5136",
+    "emel": "dianalanih"
+  },
+  {
+    "id_bhg": 1,
+    "bhg": "Pejabat YB Menteri",
+    "id": 15,
+    "nama": "NOOR AIN BINTI BUKHARI",
+    "gred": "N22",
+    "jawatan": "PEGAWAI KHIDMAT PELANGGAN",
+    "telefon": "03-8880 5145",
+    "emel": "noorain"
+  },
+  {
+    "id_bhg": 1,
+    "bhg": "Pejabat YB Menteri",
+    "id": 16,
+    "nama": "NUR SHUZAWATI BINTI MOHD SHUPLI",
+    "gred": "N19",
+    "jawatan": "PEGAWAI KHIDMAT PELANGGAN",
+    "telefon": "03-8880 5145",
+    "emel": "shuzawati"
+  },
+  {
+    "id_bhg": 1,
+    "bhg": "Pejabat YB Menteri",
+    "id": 17,
     "nama": "MOHD NOREZWAN BIN AZMAN",
     "gred": "N11",
     "jawatan": "PEMBANTU OPERASI",
-    "telefon": "-",
+    "telefon": "03-8880 5136",
     "emel": "norezwan"
+  },
+  {
+    "id_bhg": 1,
+    "bhg": "Pejabat YB Menteri",
+    "id": 0,
+    "nama": "-",
+    "gred": "H11",
+    "jawatan": "PEMANDU KENDERAAN ",
+    "telefon": "-",
+    "emel": "-"
+  },
+  {
+    "id_bhg": 1,
+    "bhg": "Pejabat YB Menteri",
+    "id": 19,
+    "nama": "RAHMATHULLA BIN EMAB KAMALUDDIN",
+    "gred": "TIDAK BERKENAAN",
+    "jawatan": "PEMANDU KENDERAAN KEPADA YB MENTERI DIGITAL",
+    "telefon": "-",
+    "emel": "rahmathulla"
+  },
+  {
+    "id_bhg": 1,
+    "bhg": "Pejabat YB Menteri",
+    "id": 20,
+    "nama": "MOHD ANIFF BIN MOHAMED SHARIF",
+    "gred": "TIDAK BERKENAAN",
+    "jawatan": "PEMANDU KENDERAAN KEPADA SETIAUSAHA POLITIK MENTERI",
+    "telefon": "-",
+    "emel": "-"
+  },
+  {
+    "id_bhg": 1,
+    "bhg": "Pejabat YB Menteri",
+    "id": 21,
+    "nama": "ABDUL RAZAK BIN ABD RAHMAN",
+    "gred": "N41",
+    "jawatan": "MYSTEP",
+    "telefon": "03-8880 5136",
+    "emel": "razak"
+  },
+  {
+    "id_bhg": 1,
+    "bhg": "Pejabat YB Menteri",
+    "id": 22,
+    "nama": "NOR AIN NATASHA BINTI NADZRI",
+    "gred": "N41",
+    "jawatan": "MYSTEP",
+    "telefon": "03-8880 5136",
+    "emel": "natasha.n"
+  },
+  {
+    "id_bhg": 1,
+    "bhg": "Pejabat YB Menteri",
+    "id": 23,
+    "nama": "NUR ZULAIKHA BINTI MANSUR",
+    "gred": "N29",
+    "jawatan": "MYSTEP",
+    "telefon": "03-8880 5136",
+    "emel": "zulaikha"
+  },
+  {
+    "id_bhg": 1,
+    "bhg": "Pejabat YB Menteri",
+    "id": 24,
+    "nama": "KUMUTHA A/P ARUMUKAM @ ARUMUGAM",
+    "gred": "N29",
+    "jawatan": "MYSTEP",
+    "telefon": "03-8880 5136",
+    "emel": "kumuthaarumugam"
   },
   {
     "id_bhg": 2,
@@ -365,7 +425,7 @@
     "id": 1,
     "nama": "MA. SIVANESAN A/L MARIMUTHU @ MUTHIAH",
     "gred": "JUSA B",
-    "jawatan": "TIMBALAN KETUA SETIAUSAHA                                (PEMBANGUNAN DIGITAL)",
+    "jawatan": "TIMBALAN KETUA SETIAUSAHA (PEMBANGUNAN DIGITAL)",
     "telefon": "03-8880 5944",
     "emel": "siva"
   },
@@ -1006,7 +1066,7 @@
     "nama": "Seksyen Penyelidikan & Ekosistem Digital",
     "gred": null,
     "jawatan": null,
-    "telefon": null,
+    "telefon": "-",
     "emel": null
   },
   {
@@ -1056,7 +1116,7 @@
     "nama": "Seksyen Penerbitan & Pembangunan Bakat",
     "gred": null,
     "jawatan": null,
-    "telefon": null,
+    "telefon": "-",
     "emel": null
   },
   {
@@ -1096,7 +1156,7 @@
     "nama": "Unit Pentadbiran & Sokongan",
     "gred": null,
     "jawatan": null,
-    "telefon": null,
+    "telefon": "-",
     "emel": null
   },
   {
@@ -1886,7 +1946,7 @@
     "nama": "Seksyen Kewangan",
     "gred": null,
     "jawatan": null,
-    "telefon": null,
+    "telefon": "-",
     "emel": null
   },
   {
@@ -2086,7 +2146,7 @@
     "nama": "Seksyen Pembangunan",
     "gred": null,
     "jawatan": null,
-    "telefon": null,
+    "telefon": "-",
     "emel": null
   },
   {
@@ -2166,7 +2226,7 @@
     "nama": "Seksyen Perolehan",
     "gred": null,
     "jawatan": null,
-    "telefon": null,
+    "telefon": "-",
     "emel": null
   },
   {
@@ -2266,7 +2326,7 @@
     "nama": "Seksyen Penyelarasan Program, Inovasi Dan Kualiti",
     "gred": null,
     "jawatan": null,
-    "telefon": null,
+    "telefon": "-",
     "emel": null
   },
   {
@@ -2526,7 +2586,7 @@
     "nama": "Seksyen Aset, Fasiliti & Keselamatan",
     "gred": null,
     "jawatan": null,
-    "telefon": null,
+    "telefon": "-",
     "emel": null
   },
   {
@@ -2646,7 +2706,7 @@
     "nama": "Seksyen Rekod & Registri",
     "gred": null,
     "jawatan": null,
-    "telefon": null,
+    "telefon": "-",
     "emel": null
   },
   {
@@ -2716,7 +2776,7 @@
     "nama": "Seksyen Latihan, Kerjaya & Prestasi",
     "gred": null,
     "jawatan": null,
-    "telefon": null,
+    "telefon": "-",
     "emel": null
   },
   {
@@ -2796,7 +2856,7 @@
     "nama": "Seksyen Perkhidmatan & Perjawatan",
     "gred": null,
     "jawatan": null,
-    "telefon": null,
+    "telefon": "-",
     "emel": null
   },
   {
@@ -2916,7 +2976,7 @@
     "nama": "Unit Pengurusan Psikologi",
     "gred": null,
     "jawatan": null,
-    "telefon": null,
+    "telefon": "-",
     "emel": null
   },
   {
