@@ -47,7 +47,7 @@
       "gred": "N19",
       "jawatan": "PEMBANTU SETIAUSAHA PEJABAT ",
       "telefon": "03-8880 5052",
-      "emel": null
+      "emel": "-"
   },
   {
       "id_bhg": 1,
@@ -107,7 +107,7 @@
       "gred": "48/52",
       "jawatan": "PEGAWAI TUGAS-TUGAS KHAS",
       "telefon": "-",
-      "emel": null
+      "emel": "-"
   },
   {
       "id_bhg": 1,
@@ -127,7 +127,7 @@
       "gred": "M44",
       "jawatan": "SETIAUSAHA SULIT ",
       "telefon": "03-88880 5014",
-      "emel": null
+      "emel": "-"
   },
   {
       "id_bhg": 1,
@@ -177,10 +177,10 @@
       "gred": "H11",
       "jawatan": "PEMANDU KENDERAAN ",
       "telefon": "-",
-      "emel": null
+      "emel": "-"
   },
   {
-      "id_bhg": null,
+      "id_bhg": 1,
       "bhg": "Pejabat YB Menteri",
       "id": 19,
       "nama": "RAHMATHULLA BIN EMAB KAMALUDDIN",
@@ -190,17 +190,17 @@
       "emel": "rahmathulla"
   },
   {
-      "id_bhg": null,
+      "id_bhg": 1,
       "bhg": "Pejabat YB Menteri",
       "id": 20,
       "nama": "MOHD ANIFF BIN MOHAMED SHARIF",
       "gred": "TIDAK BERKENAAN",
       "jawatan": "PEMANDU KENDERAAN KEPADA SETIAUSAHA POLITIK MENTERI",
       "telefon": "-",
-      "emel": null
+      "emel": "-"
   },
   {
-      "id_bhg": null,
+      "id_bhg": 1,
       "bhg": "Pejabat YB Menteri",
       "id": 21,
       "nama": "ABDUL RAZAK BIN ABD RAHMAN",
@@ -210,7 +210,7 @@
       "emel": "razak"
   },
   {
-      "id_bhg": null,
+      "id_bhg": 1,
       "bhg": "Pejabat YB Menteri",
       "id": 22,
       "nama": "NOR AIN NATASHA BINTI NADZRI",
@@ -220,7 +220,7 @@
       "emel": "natasha.n"
   },
   {
-      "id_bhg": null,
+      "id_bhg": 1,
       "bhg": "Pejabat YB Menteri",
       "id": 23,
       "nama": "NUR ZULAIKHA BINTI MANSUR",
@@ -230,7 +230,7 @@
       "emel": "zulaikha"
   },
   {
-      "id_bhg": null,
+      "id_bhg": 1,
       "bhg": "Pejabat YB Menteri",
       "id": 24,
       "nama": "KUMUTHA A/P ARUMUKAM @ ARUMUGAM",
