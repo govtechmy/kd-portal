@@ -1,3 +1,4 @@
+import fs from "node:fs/promises";
 // storage-adapter-import-placeholder
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
@@ -75,51 +76,53 @@ export default buildConfig({
       });
     }
 
-    await Promise.all([
-      payload.delete({
-        collection: "kd-department",
-        where: { _id: { exists: true } },
-      }),
-      payload.delete({
-        collection: "staff-directory",
-        where: { _id: { exists: true } },
-      }),
-    ]);
+    // To pre-populate staff-directory and kd-departments
+    const existingDept = await payload.find({
+      collection: "kd-department",
+      limit: 1,
+    });
 
-    const collection = groupBy(StaffDirectory, (item) => item.id_bhg);
+    const existingStaff = await payload.find({
+      collection: "staff-directory",
+      limit: 1,
+    });
 
-    const _kdDept = await Promise.all(
-      Object.entries(collection).map(async ([key, value]) => {
-        const dept = await payload.create({
-          collection: "kd-department",
-          data: {
-            id_bhg: Number(key),
-            bhg: value[0].bhg,
-          },
-        });
-        return dept;
-      }),
-    );
+    if (existingDept.docs.length === 0 && existingStaff.docs.length === 0) {
+      const collection = groupBy(StaffDirectory, (item) => item.id_bhg);
 
-    const createStaffDirectory = async () => {
-      for (const staff of StaffDirectory) {
-        const { bhg, id, id_bhg, ...rest } = staff;
-        const selectDept = _kdDept.find((dept) => dept.id_bhg === id_bhg);
-
-        if (selectDept) {
-          await payload.create({
-            collection: "staff-directory",
+      const _kdDept = await Promise.all(
+        Object.entries(collection).map(async ([key, value]) => {
+          const dept = await payload.create({
+            collection: "kd-department",
             data: {
-              staff_id: id,
-              id_bhg: selectDept.id,
-              ...rest,
+              id_bhg: Number(key),
+              bhg: value[0].bhg,
             },
           });
-        }
-      }
-    };
+          return dept;
+        }),
+      );
 
-    await createStaffDirectory();
+      const createStaffDirectory = async () => {
+        for (const staff of StaffDirectory) {
+          const { bhg, id, id_bhg, ...rest } = staff;
+          const selectDept = _kdDept.find((dept) => dept.id_bhg === id_bhg);
+
+          if (selectDept) {
+            await payload.create({
+              collection: "staff-directory",
+              data: {
+                staff_id: id,
+                id_bhg: selectDept.id,
+                ...rest,
+              },
+            });
+          }
+        }
+      };
+
+      await createStaffDirectory();
+    }
   },
   sharp,
   plugins: [
