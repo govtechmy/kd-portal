@@ -1,3 +1,4 @@
+import { revalidateCollection } from "@/lib/hooks/revalidatePath";
 import { CollectionConfig, Option } from "payload";
 
 export const AchievementType: Option[] = [
@@ -34,6 +35,9 @@ export const Achievement: CollectionConfig = {
     listSearchableFields: ["title", "description", "type"],
   },
   defaultSort: "-date",
+  hooks: {
+    afterChange: [revalidateCollection("HOME")],
+  },
   fields: [
     {
       name: "title",

@@ -38,10 +38,10 @@ export const KDDirectory: CollectionConfig = {
     plural: "Directories",
   },
   admin: {
-    defaultColumns: ["id_bhg", "staff_id", "nama", "gred", "jawatan"],
+    defaultColumns: ["nama", "staff_id", "jawatan", "emel"],
     listSearchableFields: ["nama", "jawatan", "emel"],
   },
-  defaultSort: "id_bhg",
+  defaultSort: "id",
   timestamps: true,
   hooks: {
     afterChange: [revalidateCollection("DIRECTORY")],
