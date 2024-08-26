@@ -54,7 +54,9 @@ export default function HomeSiaran({ broadcast }: { broadcast: Broadcast[] }) {
                         "font-semibold",
                         doc.type === "media_release"
                           ? "text-foreground-success"
-                          : "text-foreground-danger",
+                          : doc.type === "announcement"
+                            ? "text-foreground-danger"
+                            : "text-foreground-warning",
                       )}
                     >
                       {t(`Announcements.type.${doc.type}`)}
