@@ -40,7 +40,10 @@ const revalidate = (
   { locale, route, params }: RevalidateProps,
   payload: BasePayload,
 ) => {
-  const target = path.join("/", locale, routes[route], params ? params : "");
+  const target =
+    route === "HOME"
+      ? path.join("/", locale, params ? params : "")
+      : path.join("/", locale, routes[route], params ? params : "");
 
   payload.logger.info(`Revalidating post at path: ${target}`);
 
