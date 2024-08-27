@@ -13,7 +13,7 @@ export const Footer: GlobalConfig = {
   hooks: {
     afterChange: [
       revalidateGlobal("HOME"),
-      revalidateGlobal("POLICY"),
+      revalidateGlobal("PRIVACY"),
       revalidateGlobal("DISCLAIMER"),
     ],
   },

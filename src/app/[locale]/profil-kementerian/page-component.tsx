@@ -50,7 +50,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
                 <p className="font-poppins text-[46px] leading-none text-brand-600">
                   “
                 </p>
-                <div className="article mx-auto flex max-w-prose flex-col">
+                <div className="mx-auto flex max-w-prose flex-col">
                   <RichText
                     content={data["latar-belakang"]}
                     className="flex flex-col gap-6"
@@ -177,7 +177,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
                       : ""}
                   </div>
 
-                  <article className="article">
+                  <article className="">
                     <RichText
                       content={statement}
                       tagMap={{

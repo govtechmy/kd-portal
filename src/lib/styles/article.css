@@ -34,9 +34,6 @@
   ol {
     @apply list-outside list-decimal text-black-700 text-base text-[15px] leading-[27px] space-y-3 py-6;
   }
-  .richTextdiv {
-    @apply list-outside list-decimal text-black-700 text-base text-[15px] leading-[27px] space-y-3 py-6;
-  }
 
   a {
     @apply text-foreground-primary [text-underline-position:from-font] hover:underline;
@@ -45,4 +42,8 @@
   blockquote {
     @apply text-balance text-xl text-black-700
   }
+}
+
+.richTextdiv {
+  @apply list-outside list-decimal text-black-700 text-base text-[15px] leading-[27px] space-y-3 py-6;
 }
