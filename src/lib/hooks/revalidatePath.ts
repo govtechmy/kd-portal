@@ -14,7 +14,7 @@ export const revalidateCollection = (
 ): CollectionAfterChangeHook<any> => {
   return async ({ doc, req }) => {
     const { payload, locale = "ms-MY" } = req;
-    if (route === "ACHIEVEMENTS") {
+    if (route === "ANNOUNCEMENTS") {
       revalidate({ locale, route, params: doc.slug }, payload);
     }
     revalidate({ locale, route }, payload);
@@ -28,7 +28,7 @@ export const revalidateGlobal = (
 ): GlobalAfterChangeHook => {
   return async ({ doc, req }) => {
     const { payload, locale = "ms-MY" } = req;
-    if (route === "ACHIEVEMENTS") {
+    if (route === "ANNOUNCEMENTS") {
       revalidate({ locale, route, params: doc.slug }, payload);
     }
     revalidate({ locale, route }, payload);
