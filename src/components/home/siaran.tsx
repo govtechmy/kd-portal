@@ -78,7 +78,7 @@ export default function HomeSiaran({ broadcast }: { broadcast: Broadcast[] }) {
                   <div className="flex flex-auto flex-col gap-y-5">
                     <div className="flex grow gap-x-4.5">
                       <div className="flex flex-1 flex-col gap-y-2">
-                        <p className="font-semibold -tracking-[0.01em] text-foreground group-hover:text-foreground-primary">
+                        <p className="line-clamp-2 font-semibold -tracking-[0.01em] text-foreground group-hover:text-foreground-primary">
                           {doc.title}
                         </p>
                         <p className="line-clamp-3 text-sm text-black-700">
@@ -106,7 +106,7 @@ export default function HomeSiaran({ broadcast }: { broadcast: Broadcast[] }) {
                         <span className="font-semibold opacity-0 transition-opacity group-hover:opacity-100">
                           {t(`Announcements.read`)}
                         </span>
-                        <ArrowOutgoing className="size-4 stroke-[1.5]" />
+                        <ArrowOutgoing className="size-4 stroke-[1.5] opacity-0 transition-opacity group-hover:opacity-100" />
                       </div>
                     </div>
                   </div>

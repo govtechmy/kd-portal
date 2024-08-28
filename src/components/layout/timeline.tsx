@@ -51,7 +51,7 @@ export default function Timeline({
             <p className="line-clamp-1 text-xs font-medium uppercase tracking-widest text-dim-500">
               {date}
             </p>
-            <p className="font-medium text-foreground">{title}</p>
+            <p className="line-clamp-2 font-medium text-foreground">{title}</p>
             <p className="line-clamp-4 text-sm text-black-700">{desc}</p>
 
             {/* Shaft */}
