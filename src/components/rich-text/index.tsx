@@ -1,5 +1,6 @@
 import React from "react";
 import { serializeLexical, TagMap } from "@/components/rich-text/serialize";
+import { cn } from "@/lib/utils";
 
 export default function RichText({
   className,
@@ -15,7 +16,7 @@ export default function RichText({
   }
 
   return (
-    <div className={className}>
+    <div className={cn("article", className)}>
       {content &&
         !Array.isArray(content) &&
         typeof content === "object" &&

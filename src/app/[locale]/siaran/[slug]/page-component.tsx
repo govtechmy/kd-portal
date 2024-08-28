@@ -179,7 +179,7 @@ const SiaranPage: FC<SiaranPageProps> = ({ data, locale }) => {
 
       <section className="space-y-6 md:col-span-10 md:col-start-2 lg:col-span-4 lg:col-start-2 xl:col-span-2 xl:col-start-2">
         <div className="flex w-full justify-center">
-          <article className="article max-w-prose print:max-w-none">
+          <article className="max-w-prose print:max-w-none">
             <RichText
               className={"richTextdiv"}
               content={data.broadcast_text}

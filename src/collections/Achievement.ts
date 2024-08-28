@@ -43,6 +43,7 @@ export const Achievement: CollectionConfig = {
       name: "title",
       label: "Achievement Title",
       type: "text",
+      maxLength: 80,
       required: true,
       localized: true,
       admin: {
@@ -74,7 +75,7 @@ export const Achievement: CollectionConfig = {
       type: "textarea",
       required: true,
       localized: true,
-      maxLength: 240,
+      maxLength: 280,
       admin: {
         placeholder: "Brief description about this achievement",
         rows: 3,

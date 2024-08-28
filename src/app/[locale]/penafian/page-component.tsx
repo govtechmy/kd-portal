@@ -22,7 +22,7 @@ const PenafianComponent: FC<PenafianProps> = ({ data, locale }) => {
       {data.disclaimer_section && (
         <Section>
           <div className="gap-6 border-x border-washed-100 py-12 lg:py-[84px] xl:grid xl:grid-cols-12">
-            <div className="article col-span-10 col-start-2 space-y-6 whitespace-pre-line text-pretty text-center text-sm text-black-700">
+            <div className="col-span-10 col-start-2 space-y-6 whitespace-pre-line text-pretty text-center text-sm text-black-700">
               <RichText
                 className={"richTextdiv"}
                 content={data.disclaimer_section.statement}

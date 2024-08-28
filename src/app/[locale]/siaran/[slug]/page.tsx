@@ -9,7 +9,7 @@ const SiaranArticle: FSP = async ({ params, payload, locale }) => {
     locale: locale,
     depth: 3,
     where: {
-      slug: { equals: slug },
+      slug: { equals: decodeURIComponent(slug) },
     },
     limit: 1,
   });

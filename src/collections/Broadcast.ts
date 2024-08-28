@@ -40,6 +40,7 @@ export const Broadcast: CollectionConfig = {
     {
       name: "title",
       label: "Broadcast Title",
+      maxLength: 200,
       type: "text",
       required: true,
       localized: true,
@@ -86,7 +87,7 @@ export const Broadcast: CollectionConfig = {
       type: "textarea",
       required: true,
       localized: true,
-      maxLength: 140,
+      maxLength: 150,
       admin: {
         placeholder: "Brief description about this broadcast",
         rows: 2,
