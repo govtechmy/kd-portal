@@ -1,6 +1,9 @@
 import configPromise from "@payload-config";
 import groupBy from "lodash/groupBy";
 import { getPayload } from "payload";
+import { revalidateCollection } from "@/lib/hooks/revalidatePath";
+import path from "path";
+import { revalidatePath } from "next/cache";
 
 /**
  * POST endpoint to bulk-update staff-directory collections
@@ -28,6 +31,19 @@ export const POST = async (req: Request) => {
   }
 
   try {
+    const staffList = await req.json();
+    if (!staffList.length) {
+      return Response.json(
+        {
+          status: 422,
+          message: "Missing data. Please provide the data",
+        },
+        {
+          status: 422,
+        },
+      );
+    }
+
     // Count existing documents
     const [existingDept, existingStaff] = await Promise.all([
       payload.count({ collection: "kd-department" }),
@@ -37,59 +53,73 @@ export const POST = async (req: Request) => {
     // Delete documents if they exist
     if (existingDept.totalDocs > 0 || existingStaff.totalDocs > 0) {
       await Promise.all([
-        payload.delete({
-          collection: "kd-department",
-          where: { _id: { exists: true } },
+        payload.db.collections["kd-department"].deleteMany(),
+        // payload.delete({
+        //   collection: "kd-department",
+        //   where: { _id: { exists: true } },
+        // }),
+        payload.db.collections["staff-directory"].deleteMany(),
+        payload.db.collections["search"].deleteMany({
+          "doc.relationTo": "staff-directory",
         }),
-        payload.delete({
-          collection: "staff-directory",
-          where: { _id: { exists: true } },
-        }),
+        // payload.delete({
+        //   collection: "staff-directory",
+        //   where: { _id: { exists: true } },
+        // }),
       ]);
     }
 
-    const staffList = await req.json();
-
     const collection = groupBy(staffList, (item) => item.id_bhg);
 
-    const _kdDept = await Promise.all(
-      Object.entries(collection).map(([key, value]) => {
-        return payload.create({
-          collection: "kd-department",
-          data: {
-            id_bhg: Number(key),
-            bhg: value[0].bhg,
-          },
-        });
-      }),
-    );
+    const departmentList = Object.entries(collection).map(([key, value]) => {
+      return {
+        id_bhg: Number(key),
+        bhg: value[0].bhg,
+      };
+    });
 
-    const createStaffDirectory = async () => {
-      for (const staff of staffList) {
-        const { bhg, id, id_bhg, ...rest } = staff;
-        const selectDept = _kdDept.find((dept) => dept.id_bhg === id_bhg);
+    const deptResp =
+      await payload.db.collections["kd-department"].insertMany(departmentList);
 
-        if (selectDept) {
-          await payload.create({
-            collection: "staff-directory",
-            data: {
-              staff_id: id,
-              id_bhg: selectDept.id,
-              ...rest,
-            },
-          });
-        }
+    const listToInsert = staffList.map((staff: any) => {
+      const { bhg, id, id_bhg, ...rest } = staff;
+      const selectDept = deptResp.find((dept) => dept.id_bhg === id_bhg);
+
+      if (selectDept) {
+        return {
+          staff_id: id,
+          id_bhg: selectDept.id,
+          ...rest,
+        };
       }
-    };
+    });
 
-    await createStaffDirectory();
+    const inserted =
+      await payload.db.collections["staff-directory"].insertMany(listToInsert);
+
+    const searchList = inserted.map((i) => ({
+      title: i.nama,
+      priority: 30,
+      doc: {
+        relationTo: "staff-directory",
+        value: i._id.toString(),
+      },
+    }));
+
+    await payload.db.collections["search"].insertMany(searchList);
+
+    // Lastly, revalidate the static page
+    const target = path.join("/", "ms-MY", "/direktori");
+    const targetEn = path.join("/", "en-GB", "/direktori");
+    revalidatePath(target);
+    revalidatePath(targetEn);
 
     return Response.json({
       status: 200,
       message: "Successfully recreates the staff directory",
     });
   } catch (error) {
-    Response.json(
+    return Response.json(
       {
         status: 500,
         message: "Something went wrong with the action",
