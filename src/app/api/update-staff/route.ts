@@ -2,6 +2,8 @@ import configPromise from "@payload-config";
 import groupBy from "lodash/groupBy";
 import { getPayload } from "payload";
 import { revalidateCollection } from "@/lib/hooks/revalidatePath";
+import path from "path";
+import { revalidatePath } from "next/cache";
 
 /**
  * POST endpoint to bulk-update staff-directory collections
@@ -107,7 +109,10 @@ export const POST = async (req: Request) => {
     await payload.db.collections["search"].insertMany(searchList);
 
     // Lastly, revalidate the static page
-    revalidateCollection("DIRECTORY");
+    const target = path.join("/", "ms-MY", "/direktori");
+    const targetEn = path.join("/", "en-GB", "/direktori");
+    revalidatePath(target);
+    revalidatePath(targetEn);
 
     return Response.json({
       status: 200,
