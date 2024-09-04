@@ -58,6 +58,7 @@ export function Header({
           "container flex h-16 items-center justify-between gap-3 border-outline-200 bg-background py-3 max-xl:pr-3 max-lg:border-b lg:gap-4",
           showMenu ? "" : "xl:bg-transparent",
         )}
+        data-nosnippet
       >
         <div className="flex min-w-[56%] items-center justify-between gap-3 lg:gap-4">
           <Link href="/" className="flex h-full w-full items-center gap-2.5">
