@@ -37,7 +37,10 @@ export const Broadcast: CollectionConfig = {
     drafts: true,
   },
   hooks: {
-    afterChange: [revalidateCollection("HOME")],
+    afterChange: [
+      revalidateCollection("HOME"),
+      revalidateCollection("ANNOUNCEMENTS"),
+    ],
     afterDelete: [revalidateDeleteCollection("HOME")],
   },
   fields: [
