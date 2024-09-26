@@ -16,9 +16,9 @@ export const revalidateCollection = (
     const { payload, locale = "ms-MY" } = req;
     if (route === "ANNOUNCEMENTS") {
       revalidate({ locale, route, params: doc.slug }, payload);
+      return doc;
     }
     revalidate({ locale, route }, payload);
-
     return doc;
   };
 };
@@ -30,6 +30,7 @@ export const revalidateGlobal = (
     const { payload, locale = "ms-MY" } = req;
     if (route === "ANNOUNCEMENTS") {
       revalidate({ locale, route, params: doc.slug }, payload);
+      return doc;
     }
     revalidate({ locale, route }, payload);
     return doc;
