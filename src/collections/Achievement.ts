@@ -1,4 +1,7 @@
-import { revalidateCollection } from "@/lib/hooks/revalidatePath";
+import {
+  revalidateDeleteCollection,
+  revalidateCollection,
+} from "@/lib/hooks/revalidatePath";
 import { CollectionConfig, Option } from "payload";
 
 export const AchievementType: Option[] = [
@@ -37,6 +40,7 @@ export const Achievement: CollectionConfig = {
   defaultSort: "-date",
   hooks: {
     afterChange: [revalidateCollection("HOME")],
+    afterDelete: [revalidateDeleteCollection("HOME")],
   },
   fields: [
     {

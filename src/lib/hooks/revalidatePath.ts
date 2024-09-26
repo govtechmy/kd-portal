@@ -2,6 +2,7 @@ import path from "path";
 import type {
   BasePayload,
   CollectionAfterChangeHook,
+  CollectionAfterDeleteHook,
   GlobalAfterChangeHook,
 } from "payload";
 
@@ -12,6 +13,19 @@ import { routes } from "@/lib/routes";
 export const revalidateCollection = (
   route: keyof typeof routes,
 ): CollectionAfterChangeHook<any> => {
+  return async ({ doc, req }) => {
+    const { payload, locale = "ms-MY" } = req;
+    if (route === "ANNOUNCEMENTS") {
+      revalidate({ locale, route, params: doc.slug }, payload);
+      return doc;
+    }
+    revalidate({ locale, route }, payload);
+    return doc;
+  };
+};
+export const revalidateDeleteCollection = (
+  route: keyof typeof routes,
+): CollectionAfterDeleteHook<any> => {
   return async ({ doc, req }) => {
     const { payload, locale = "ms-MY" } = req;
     if (route === "ANNOUNCEMENTS") {

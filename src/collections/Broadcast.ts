@@ -1,4 +1,7 @@
-import { revalidateCollection } from "@/lib/hooks/revalidatePath";
+import {
+  revalidateCollection,
+  revalidateDeleteCollection,
+} from "@/lib/hooks/revalidatePath";
 import {
   HTMLConverterFeature,
   lexicalEditor,
@@ -34,7 +37,11 @@ export const Broadcast: CollectionConfig = {
     drafts: true,
   },
   hooks: {
-    afterChange: [revalidateCollection("HOME")],
+    afterChange: [
+      revalidateCollection("HOME"),
+      revalidateCollection("ANNOUNCEMENTS"),
+    ],
+    afterDelete: [revalidateDeleteCollection("HOME")],
   },
   fields: [
     {
