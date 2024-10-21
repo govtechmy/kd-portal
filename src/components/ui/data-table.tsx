@@ -38,6 +38,7 @@ import { FunnelIcon } from "@heroicons/react/24/solid";
 import ReadMore from "./read-more";
 import { useTranslations } from "next-intl";
 import Paginate from "@/components/ui/pagination";
+import ColumnExpand from "@/icons/column-expand";
 
 interface DataTableProps<TData, TValue> {
   className?: string;
@@ -74,8 +75,6 @@ const DataTable = <TData, TValue>({
   const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
 
-  const { replace } = useRouter();
-  const params = useParams();
   const [pagination, setPagination] = useState({
     pageIndex: !!paginate ? paginate.pageIndex : 0,
     pageSize: !!paginate ? paginate.pageSize : 10,
@@ -194,6 +193,8 @@ const DataTable = <TData, TValue>({
                     colSpan={header.colSpan}
                     className={cn(
                       "group relative",
+                      header.column.columnDef.meta?.enableReadMore &&
+                        "border-b-2 hover:border-b-brand-300",
                       header.column.columnDef.meta?.type! === "number" &&
                         "text-right",
                       header.column.columnDef.meta?.headerClass,
@@ -211,16 +212,13 @@ const DataTable = <TData, TValue>({
                           )}
                         </div>
                         <div className="flex items-center gap-1">
+                          {header.column.columnDef.meta?.enableReadMore && (
+                            <ColumnExpand className="hidden h-4.5 w-6 cursor-pointer rounded-lg border border-brand-200 group-hover:block" />
+                          )}
                           {{
                             desc: <BarsArrowDownIcon className="h-3 w-3" />,
                             asc: <BarsArrowUpIcon className="h-3 w-3" />,
                           }[header.column.getIsSorted() as string] ?? null}
-                          {/* {header.column.getIsFiltered() ? (
-                            <FunnelIcon className="h-3 w-3" />
-                          ) : null} */}
-                          {/* {filterable && header.column.getCanFilter() ? (
-                            <TableFilterSort table={table} header={header} />
-                          ) : null} */}
                         </div>
                       </div>
                     )}

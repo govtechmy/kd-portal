@@ -85,7 +85,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
               {t("Info.Org.title")}
             </h2>
             <div className="hidden w-full justify-center md:flex">
-              <div className="relative h-[722px] w-[750px]">
+              <div className="relative h-[960px] w-[750px]">
                 {locale === "en-GB" && (
                   <Image
                     src={"/org/org-chart-en.webp"}
@@ -105,7 +105,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
               </div>
             </div>
             <div className="flex w-full justify-center md:hidden">
-              <div className="relative h-[510px] w-[394px]">
+              <div className="relative h-[532px] w-[394px]">
                 {locale === "en-GB" && (
                   <Image
                     src={"/org/org-chart-mobile-en.webp"}
