@@ -184,7 +184,6 @@ const DirektoriMain: FC<DirektoriMainProps> = ({ list, locale }) => {
       return matchesQuery;
     });
   }, [list, searchQuery]);
-  console.log(data);
 
   const searchArray = (searchQuery: string) => {
     const params = new URLSearchParams(searchParams);
