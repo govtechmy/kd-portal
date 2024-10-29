@@ -8,6 +8,7 @@ import Overline from "@/components/typography/overline";
 import { locales } from "@/lib/i18n-config";
 import { Achievement, Broadcast, Homepage, SiteInfo } from "@/payload-types";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import React, { FC } from "react";
 
 interface Props {
@@ -30,8 +31,22 @@ const HomePageComponent: FC<Props> = ({
   return (
     <>
       <section className="relative w-full gap-6 border-b sm:grid sm:grid-cols-6">
-        <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden bg-gradient-radial from-brand-200 from-0% via-[#F1F5FF] via-[27.57%] to-white to-100%">
+        {/* <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden bg-gradient-radial from-brand-200 from-0% via-[#F1F5FF] via-[27.57%] to-white to-100%">
           <HeroPattern className="absolute -top-[23.33%] animate-flow motion-reduce:animate-none" />
+        </div> */}
+        <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden bg-gradient-radial from-[#E8DBFE] from-0% via-[#F4EEFF] via-[27.57%] to-white to-100%">
+          <Image
+            src={"/theme/deepavali-hero-desktop.png"}
+            alt="deepavali-hero-desktop"
+            fill={true}
+            className="hidden object-cover lg:block 2xl:object-contain"
+          />
+          <Image
+            src={"/theme/deepavali-hero-mobile.png"}
+            alt="deepavali-hero-mobile"
+            fill={true}
+            className="block object-fill sm:object-contain lg:hidden"
+          />
         </div>
         <div className="col-span-4 col-start-2 flex w-full flex-col items-center gap-y-9 px-4.5 py-[120px] text-center md:px-6">
           <div className="space-y-6">
