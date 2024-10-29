@@ -35,17 +35,17 @@ const HomePageComponent: FC<Props> = ({
           <HeroPattern className="absolute -top-[23.33%] animate-flow motion-reduce:animate-none" />
         </div> */}
         <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden bg-gradient-radial from-[#E8DBFE] from-0% via-[#F4EEFF] via-[27.57%] to-white to-100%">
-          <Image
-            src={"/theme/deepavali-hero-desktop.png"}
-            alt="deepavali-hero-desktop"
-            fill={true}
-            className="hidden object-cover lg:block 2xl:object-contain"
+          <div
+            className="hidden h-full w-full bg-cover bg-center bg-no-repeat lg:block 2xl:bg-contain"
+            style={{
+              backgroundImage: "url('/theme/deepavali-hero-desktop.svg')",
+            }}
           />
-          <Image
-            src={"/theme/deepavali-hero-mobile.png"}
-            alt="deepavali-hero-mobile"
-            fill={true}
-            className="block object-fill sm:object-contain lg:hidden"
+          <div
+            className="bg-fill block h-full w-full bg-center bg-no-repeat sm:bg-contain lg:hidden"
+            style={{
+              backgroundImage: "url('/theme/deepavali-hero-mobile.svg')",
+            }}
           />
         </div>
         <div className="col-span-4 col-start-2 flex w-full flex-col items-center gap-y-9 px-4.5 py-[120px] text-center md:px-6">
