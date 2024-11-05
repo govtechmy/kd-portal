@@ -31,22 +31,8 @@ const HomePageComponent: FC<Props> = ({
   return (
     <>
       <section className="relative w-full gap-6 border-b sm:grid sm:grid-cols-6">
-        {/* <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden bg-gradient-radial from-brand-200 from-0% via-[#F1F5FF] via-[27.57%] to-white to-100%">
+        <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden bg-gradient-radial from-brand-200 from-0% via-[#F1F5FF] via-[27.57%] to-white to-100%">
           <HeroPattern className="absolute -top-[23.33%] animate-flow motion-reduce:animate-none" />
-        </div> */}
-        <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden bg-gradient-radial from-[#E8DBFE] from-0% via-[#F4EEFF] via-[27.57%] to-white to-100%">
-          <div
-            className="hidden h-full w-full bg-cover bg-center bg-no-repeat lg:block 2xl:bg-contain"
-            style={{
-              backgroundImage: "url('/theme/deepavali-hero-desktop.svg')",
-            }}
-          />
-          <div
-            className="bg-fill block h-full w-full bg-center bg-no-repeat sm:bg-contain lg:hidden"
-            style={{
-              backgroundImage: "url('/theme/deepavali-hero-mobile.svg')",
-            }}
-          />
         </div>
         <div className="col-span-4 col-start-2 flex w-full flex-col items-center gap-y-9 px-4.5 py-[120px] text-center md:px-6">
           <div className="space-y-6">
