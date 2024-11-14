@@ -1,6 +1,6 @@
 # kd-portal
 
-Welcome to the repository for the website of the Digital Ministry of Malaysia (Kementrian Digital Malaysia).
+Welcome to the repository for the website of the Digital Ministry of Malaysia (Kementerian Digital Malaysia).
 
 ## Tech Stack
 
