@@ -94,6 +94,15 @@ export default function DasarTable({ data }: DasarTableProps) {
         const { doc_name, doc_type, doc_description, doc_date, file_upload } =
           info.row.original;
 
+        const downloadFile = () => {
+          const link = document.createElement("a");
+          link.href = info.getValue() || "";
+          link.download = info.row.original.doc_name;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        };
+
         return (
           <div className="flex items-start gap-x-3 pr-3">
             <div className="flex-none rounded-md border border-outline-200 bg-washed-100 p-2">
@@ -119,6 +128,7 @@ export default function DasarTable({ data }: DasarTableProps) {
               variant="secondary"
               size="icon"
               className="flex-none rounded-lg"
+              onClick={downloadFile}
             >
               <Download className="text-dim-500" />
             </Button>
