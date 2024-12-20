@@ -24,6 +24,7 @@ const Search: FunctionComponent<SearchProps> = ({
 }) => {
   const t = useTranslations();
   const [value, setValue] = useState("");
+  const [isInputFocused, setIsInputFocused] = useState(false);
   const searchRef = useRef<HTMLInputElement>(null);
   const onSearch = (query: string | number) => {
     if (typeof query === "string") {
@@ -34,7 +35,7 @@ const Search: FunctionComponent<SearchProps> = ({
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "/") {
+      if (!isInputFocused && event.key === "/") {
         event.preventDefault();
         searchRef.current?.focus();
       }
@@ -43,14 +44,16 @@ const Search: FunctionComponent<SearchProps> = ({
         event.preventDefault();
         searchRef.current?.focus();
       }
+      if (event.key === "Escape") {
+        event.preventDefault();
+        searchRef.current?.blur();
+      }
     };
-
     document.addEventListener("keydown", handleKeyDown);
-
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [isInputFocused]);
 
   return (
     <div
@@ -67,7 +70,9 @@ const Search: FunctionComponent<SearchProps> = ({
         disabled={disabled}
         placeholder={placeholder || t("Search.default_placeholder")}
         className="flex h-[42px] w-full rounded-md bg-background py-2.5 text-sm outline-none placeholder:text-dim-500 disabled:cursor-not-allowed disabled:opacity-20"
+        onBlur={() => setIsInputFocused(false)}
         onChange={(event) => onSearch(event.target.value)}
+        onFocus={() => setIsInputFocused(true)}
         {...(defaultValue ? { defaultValue: defaultValue } : { value: value })}
       />
       {disabled ? (

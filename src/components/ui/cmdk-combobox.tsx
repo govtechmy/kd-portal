@@ -60,7 +60,7 @@ const CommandMenu: FC<CommandMenuProps> = ({
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "/") {
+      if (!isInputFocused && event.key === "/") {
         event.preventDefault();
         searchRef.current?.focus();
       }
@@ -81,7 +81,7 @@ const CommandMenu: FC<CommandMenuProps> = ({
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [isInputFocused]);
 
   const handleClickOutside = () => {
     setIsInputFocused(false);
