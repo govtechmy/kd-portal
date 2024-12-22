@@ -19,6 +19,16 @@ export default function DasarTable({ data }: DasarTableProps) {
   const t2 = useTranslations("Policy");
   const { accessor } = createColumnHelper<Policy>();
 
+  const downloadFile = (url: string, name: string) => {
+    if (!url) return console.error("No file to download");
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = name;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const desktopColumns = [
     accessor("doc_name", {
       header: t("title"),
@@ -61,20 +71,17 @@ export default function DasarTable({ data }: DasarTableProps) {
       header: "",
       id: "actions",
       cell: (info) => {
-        const downloadFile = () => {
-          const link = document.createElement("a");
-          link.href = info.getValue() || "";
-          link.download = info.row.original.doc_name;
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        };
         return (
           <Button
             variant="secondary"
             size="icon"
             className="flex-none rounded-lg"
-            onClick={downloadFile}
+            onClick={() =>
+              downloadFile(
+                info.getValue() as string,
+                info.row.original.doc_name,
+              )
+            }
           >
             <Download className="text-dim-500" />
             {t("download")}
@@ -119,6 +126,12 @@ export default function DasarTable({ data }: DasarTableProps) {
               variant="secondary"
               size="icon"
               className="flex-none rounded-lg"
+              onClick={() =>
+                downloadFile(
+                  info.getValue() as string,
+                  info.row.original.doc_name,
+                )
+              }
             >
               <Download className="text-dim-500" />
             </Button>
