@@ -9,7 +9,6 @@ import { routes } from "@/lib/routes";
 import { cn } from "@/lib/utils";
 import { ProfilKementerian } from "@/payload-types";
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
@@ -47,9 +46,9 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
 
             <div className="gap-[42px] lg:grid lg:grid-cols-4">
               <div className="col-span-2 col-start-2">
-                <p className="font-poppins text-[46px] leading-none text-brand-600">
+                {/* <p className="font-poppins text-[46px] leading-none text-brand-600">
                   “
-                </p>
+                </p> */}
                 <div className="mx-auto flex max-w-prose flex-col">
                   <RichText
                     content={data["latar-belakang"]}
@@ -61,7 +60,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
                     }}
                   />
 
-                  <Link
+                  {/* <Link
                     href={routes.DIRECTORY}
                     className={cn(
                       buttonVariants({ variant: "secondary", size: "md" }),
@@ -70,7 +69,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
                   >
                     <UserGroup />
                     {t("Info.staff_directory")}
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </div>
