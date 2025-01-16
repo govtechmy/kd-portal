@@ -51,12 +51,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
                 <div className="mx-auto flex max-w-prose flex-col">
                   <RichText
                     data={data["latar-belakang"]!}
-                    className="flex flex-col gap-6"
-                    // tagMap={{
-                    //   blockquote: { className: "gap-3 flex flex-col" },
-                    //   p: { className: "whitespace-pre-line" },
-                    //   em: { className: "text-dim-500 text-base" },
-                    // }}
+                    className="flex flex-col gap-6 [&_blockquote]:flex [&_blockquote]:flex-col [&_blockquote]:gap-3 [&_em]:text-base [&_em]:text-dim-500 [&_p]:whitespace-pre-line"
                   />
 
                   {/* <Link
@@ -178,11 +173,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
                   <article className="">
                     <RichText
                       data={statement}
-                      // tagMap={{
-                      //   strong: {
-                      //     className: "text-brand-700 font-semibold",
-                      //   },
-                      // }}
+                      className="[&_strong]:font-semibold [&_strong]:text-brand-700"
                     />
                   </article>
                 </div>

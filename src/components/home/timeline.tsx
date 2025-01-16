@@ -15,7 +15,6 @@ export default function Timeline({
   locale: (typeof locales)[number];
 }) {
   const t = useTranslations("Home.Achievement");
-  console.log(locale);
 
   return (
     <Section>

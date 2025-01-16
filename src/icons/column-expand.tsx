@@ -15,26 +15,26 @@ export default function ColumnExpand({ ...props }) {
       <path
         d="M6 6L2 10L6 14"
         strokeWidth="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M14 14L18 10L14 6"
         strokeWidth="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M2 10L8 10"
         strokeWidth="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M12 10H18"
         strokeWidth="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
