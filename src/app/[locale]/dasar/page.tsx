@@ -25,4 +25,4 @@ export const generateMetadata = async (params: MetagenProps) => {
 };
 
 export default inject(Dasar);
-export const dynamic = "error";
+// export const dynamic = "error";

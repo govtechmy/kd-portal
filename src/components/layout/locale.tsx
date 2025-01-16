@@ -11,7 +11,7 @@ import {
 import ChevronDown from "@/icons/chevron-down";
 import Globe from "@/icons/globe";
 import { usePathname, useRouter } from "@/lib/i18n";
-import { locales } from "@/lib/i18n-config";
+import { locales } from "@/lib/i18n";
 import { SelectIcon } from "@radix-ui/react-select";
 import { useSearchParams } from "next/navigation";
 import { useTransition } from "react";

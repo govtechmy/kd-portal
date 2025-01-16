@@ -5,7 +5,7 @@ import HomeSiaran from "@/components/home/siaran";
 import Timeline from "@/components/home/timeline";
 import HeroPattern from "@/components/layout/hero-pattern";
 import Overline from "@/components/typography/overline";
-import { locales } from "@/lib/i18n-config";
+import { locales } from "@/lib/i18n";
 import { Achievement, Broadcast, Homepage, SiteInfo } from "@/payload-types";
 import { useTranslations } from "next-intl";
 import Image from "next/image";

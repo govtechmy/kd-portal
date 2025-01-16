@@ -14,25 +14,25 @@ export default function ColumnExpand({ ...props }) {
     >
       <path
         d="M6 6L2 10L6 14"
-        stroke-width="1.5"
+        strokeWidth="1.5"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
         d="M14 14L18 10L14 6"
-        stroke-width="1.5"
+        strokeWidth="1.5"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
         d="M2 10L8 10"
-        stroke-width="1.5"
+        strokeWidth="1.5"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
         d="M12 10H18"
-        stroke-width="1.5"
+        strokeWidth="1.5"
         stroke-linecap="round"
         stroke-linejoin="round"
       />

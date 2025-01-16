@@ -1,5 +1,5 @@
 "use client";
-import { locales } from "@/lib/i18n-config";
+import { locales } from "@/lib/i18n";
 import { Broadcast } from "@/payload-types";
 import { FC } from "react";
 import {
@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/breadcrumb";
 import { routes } from "@/lib/routes";
 import { useFormatter, useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
 import Clock from "@/icons/clock";
 import { Icon } from "@/icons/social-media";
 import Envelope from "@/icons/envelope";
@@ -20,10 +19,10 @@ import Link from "@/icons/link";
 import { Button } from "@/components/ui/button";
 import Printer from "@/icons/printer";
 import Image from "next/image";
-import RichText from "@/components/rich-text";
 import { cn, getReadTimeEstimation } from "@/lib/utils";
 import { DateTime } from "luxon";
 import FilePDF from "@/icons/file-pdf";
+import { RichText } from "@payloadcms/richtext-lexical/react";
 
 type ShareLink = {
   icon: typeof Link | typeof Envelope | typeof Icon.Facebook | typeof Icon.X;
@@ -182,12 +181,12 @@ const SiaranPage: FC<SiaranPageProps> = ({ data, locale }) => {
           <article className="max-w-prose print:max-w-none">
             <RichText
               className={"richTextdiv"}
-              content={data.broadcast_text}
-              tagMap={
-                {
-                  // ol: { className: "space-y-3" },
-                }
-              }
+              data={data.broadcast_text}
+              // tagMap={
+              //   {
+              //     // ol: { className: "space-y-3" },
+              //   }
+              // }
             />
           </article>
         </div>

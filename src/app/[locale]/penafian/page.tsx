@@ -17,4 +17,4 @@ export const generateMetadata = async (params: MetagenProps) => {
 };
 
 export default inject(Penafian);
-export const dynamic = "error";
+// export const dynamic = "error";

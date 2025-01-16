@@ -53,4 +53,4 @@ export const generateMetadata = async (params: MetagenProps) => {
 
 export default inject(HomePage);
 
-export const dynamic = "error";
+// export const dynamic = "error";

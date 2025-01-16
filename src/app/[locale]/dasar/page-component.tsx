@@ -1,5 +1,5 @@
 "use client";
-import { locales } from "@/lib/i18n-config";
+import { locales } from "@/lib/i18n";
 import { Policy } from "@/payload-types";
 import { FC, useMemo } from "react";
 import { useTranslations } from "next-intl";

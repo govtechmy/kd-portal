@@ -17,4 +17,4 @@ const HubungiKami: FSP = async ({ payload, locale }) => {
 };
 
 export default inject(HubungiKami);
-export const dynamic = "error";
+// export const dynamic = "error";
