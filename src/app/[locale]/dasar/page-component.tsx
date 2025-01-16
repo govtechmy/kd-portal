@@ -68,6 +68,7 @@ const DasarKementerian: FC<DasarKementerianProps> = ({ list, locale }) => {
               onChange={searchArray}
               placeholder={t("Policy.search_placeholder")}
               defaultValue={searchQuery || ""}
+              useDefaultValue={true}
             />
             <DaterangePicker />
           </div>

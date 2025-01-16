@@ -1,7 +1,6 @@
 import configPromise from "@payload-config";
 import groupBy from "lodash/groupBy";
 import { getPayload } from "payload";
-import { revalidateCollection } from "@/lib/hooks/revalidatePath";
 import path from "path";
 import { revalidatePath } from "next/cache";
 

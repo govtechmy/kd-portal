@@ -50,6 +50,7 @@ const SiaranList: FC<SiaranListProps> = ({ data, locale }) => {
               onChange={searchArray}
               placeholder={t("Announcements.placeholder")}
               defaultValue={searchParams.get("search") || ""}
+              useDefaultValue={true}
             />
             <DaterangePicker />
           </div>

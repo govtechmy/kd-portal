@@ -56,6 +56,7 @@ const AchievementComponent: FC<AchievementProps> = ({
                 placeholder={t("Achievements.placeholder")}
                 onChange={searchArray}
                 defaultValue={searchParams.get("search") || ""}
+                useDefaultValue={true}
               />
               <Filter />
             </div>

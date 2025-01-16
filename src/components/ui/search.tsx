@@ -13,6 +13,7 @@ interface SearchProps {
   onChange?: (query: string) => void;
   disabled?: boolean;
   defaultValue?: string;
+  useDefaultValue?: boolean;
 }
 
 const Search: FunctionComponent<SearchProps> = ({
@@ -21,9 +22,10 @@ const Search: FunctionComponent<SearchProps> = ({
   onChange,
   disabled,
   defaultValue,
+  useDefaultValue,
 }) => {
   const t = useTranslations();
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(defaultValue);
   const searchRef = useRef<HTMLInputElement>(null);
   const onSearch = (query: string | number) => {
     if (typeof query === "string") {
@@ -68,7 +70,9 @@ const Search: FunctionComponent<SearchProps> = ({
         placeholder={placeholder || t("Search.default_placeholder")}
         className="flex h-[42px] w-full rounded-md bg-background py-2.5 text-sm outline-none placeholder:text-dim-500 disabled:cursor-not-allowed disabled:opacity-20"
         onChange={(event) => onSearch(event.target.value)}
-        {...(defaultValue ? { defaultValue: defaultValue } : { value: value })}
+        {...(useDefaultValue
+          ? { defaultValue: defaultValue }
+          : { value: value })}
       />
       {disabled ? (
         <></>

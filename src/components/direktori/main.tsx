@@ -204,6 +204,7 @@ const DirektoriMain: FC<DirektoriMainProps> = ({ list, locale }) => {
             onChange={searchArray}
             placeholder={t("Directory.search_placeholder")}
             defaultValue={searchQuery || ""}
+            useDefaultValue={true}
           />
         }
       />

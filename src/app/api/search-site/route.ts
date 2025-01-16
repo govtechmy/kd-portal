@@ -1,5 +1,5 @@
 import configPromise from "@payload-config";
-import { getPayloadHMR } from "@payloadcms/next/utilities";
+import { getPayload } from "payload";
 
 export const GET = async (req: Request) => {
   const url = new URL(req.url);
@@ -7,7 +7,7 @@ export const GET = async (req: Request) => {
   const searchParams = new URLSearchParams(url.searchParams);
   const search = searchParams.get("search");
   const locale = searchParams.get("locale");
-  const payload = await getPayloadHMR({
+  const payload = await getPayload({
     config: configPromise,
   });
 
