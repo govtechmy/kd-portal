@@ -1,6 +1,6 @@
 "use client";
 
-import { locales } from "@/lib/i18n-config";
+import { locales } from "@/lib/i18n";
 import { Achievement } from "@/payload-types";
 import Section from "@/components/layout/section";
 import Search from "@/components/ui/search";
@@ -56,6 +56,7 @@ const AchievementComponent: FC<AchievementProps> = ({
                 placeholder={t("Achievements.placeholder")}
                 onChange={searchArray}
                 defaultValue={searchParams.get("search") || ""}
+                useDefaultValue={true}
               />
               <Filter />
             </div>

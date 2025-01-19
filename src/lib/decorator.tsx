@@ -3,8 +3,8 @@ import type { BasePayload } from "payload";
 import { getPayload } from "payload";
 import { FunctionComponent, ReactNode } from "react";
 import { Metadata } from "next";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
-import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Params } from "next/dist/server/request/params";
 
 export interface ContextArgs {
   params: Record<string, any>;
@@ -22,6 +22,13 @@ export type ServerProp = {
   searchParams?: Record<string, any>;
   children?: ReactNode;
 };
+export type UnresolvedServerProp = {
+  payload: BasePayload;
+  params?: Promise<Params>;
+  locale: "en-GB" | "ms-MY";
+  searchParams?: Promise<Record<string, any>>;
+  children?: ReactNode;
+};
 
 export type ServerOption = {
   debug?: boolean;
@@ -29,19 +36,21 @@ export type ServerOption = {
 
 export const inject = (Component: FSP) => {
   return async ({
-    params = {},
-    searchParams = {},
-  }: Pick<ServerProp, "params" | "searchParams">) => {
+    params,
+    searchParams,
+  }: Pick<UnresolvedServerProp, "params" | "searchParams">) => {
     const payload = await getPayload({ config });
+    const _params = await params;
+    const _searchParams = await searchParams;
 
     let props: ServerProp = {
-      params,
-      searchParams,
+      params: _params,
+      searchParams: _searchParams,
       payload,
-      locale: params.locale || "ms-MY",
+      locale: (_params?.locale as "en-GB" | "ms-MY") || "ms-MY",
     };
 
-    unstable_setRequestLocale(props.locale);
+    setRequestLocale(props.locale);
 
     return <Component {...props} />;
   };
@@ -52,8 +61,8 @@ type MetagenMapper = {
 };
 
 export type MetagenProps = {
-  params: Record<string, string>;
-  searchParams: { [key: string]: string | string[] | undefined };
+  params: Promise<Record<string, string>>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
 export const metagen = async (
@@ -61,7 +70,11 @@ export const metagen = async (
   namespace: string,
   map: MetagenMapper,
 ): Promise<Metadata> => {
-  const t = await getTranslations({ locale: props.params.locale, namespace });
+  const params = await props.params;
+  const t = await getTranslations({
+    locale: params.locale || "en-GB",
+    namespace,
+  });
   return {
     title: map.title ? t(map.title) : "Kementerian Digital",
     description: map.description

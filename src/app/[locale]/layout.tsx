@@ -4,17 +4,14 @@ import Masthead from "@/components/layout/masthead";
 import "@/lib/styles/globals.css";
 import { cn } from "@/lib/utils";
 import { Inter, Poppins } from "next/font/google";
-import {
-  getMessages,
-  getTranslations,
-  unstable_setRequestLocale,
-} from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import config from "@payload-config";
 import SiteScript from "./site-script";
-import { locales } from "@/lib/i18n-config";
+import { locales, routing } from "@/lib/i18n";
 import { getPayload } from "payload";
 import { FSM, FSP } from "@/lib/decorator";
+import { notFound } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
@@ -71,8 +68,13 @@ export function generateStaticParams() {
 
 /* Our app sits here to not cause any conflicts with payload's root layout  */
 const Layout: FSP = async ({ children, params }) => {
-  const { locale } = params || { locale: "ms-MY" };
-  unstable_setRequestLocale(locale);
+  const { locale: _locale } = (await params) || { locale: "ms-MY" };
+  const locale = _locale as "en-GB" | "ms-MY";
+
+  // Ensure that the incoming `locale` is valid
+  if (!routing.locales.includes(locale)) {
+    notFound();
+  }
   const messages = await getMessages({ locale });
   const payload = await getPayload({ config });
 

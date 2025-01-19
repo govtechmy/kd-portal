@@ -1,10 +1,9 @@
 import Hero from "@/components/layout/hero";
 import Section from "@/components/layout/section";
-import RichText from "@/components/rich-text";
-import { locales } from "@/lib/i18n-config";
+import { locales } from "@/lib/i18n";
 import { Footer } from "@/payload-types";
+import { RichText } from "@payloadcms/richtext-lexical/react";
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
 import { FC } from "react";
 
 interface PrivacyPolicyProps {
@@ -13,19 +12,18 @@ interface PrivacyPolicyProps {
 }
 
 const PrivacyPolicyComponent: FC<PrivacyPolicyProps> = ({ data, locale }) => {
-  unstable_setRequestLocale(locale);
   const t = useTranslations("Privacy");
   return (
     <main>
       <Hero title={t("header")} />
 
-      {data["privacy-policy_section"] && (
+      {data["privacy-policy_section"]?.statement && (
         <Section>
           <div className="gap-6 border-x border-washed-100 py-12 lg:py-[84px] xl:grid xl:grid-cols-12">
             <div className="col-span-10 col-start-2 space-y-6 whitespace-pre-line text-pretty text-sm text-black-700">
               <RichText
                 className="richTextdiv flex flex-col gap-6"
-                content={data["privacy-policy_section"].statement}
+                data={data["privacy-policy_section"].statement}
               />
             </div>
           </div>

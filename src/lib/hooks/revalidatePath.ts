@@ -5,17 +5,16 @@ import type {
   CollectionAfterDeleteHook,
   GlobalAfterChangeHook,
 } from "payload";
-
 import { revalidatePath } from "next/cache";
 import { routes } from "@/lib/routes";
 
-// TODO: Generic type
 export const revalidateCollection = (
   route: keyof typeof routes,
 ): CollectionAfterChangeHook<any> => {
   return async ({ doc, req }) => {
     const { payload, locale = "ms-MY" } = req;
     if (route === "ANNOUNCEMENTS") {
+      revalidate({ locale, route, params: doc.slug }, payload);
       revalidate({ locale, route, params: doc.slug }, payload);
       return doc;
     }
@@ -63,10 +62,16 @@ const revalidate = (
 ) => {
   const target =
     route === "HOME"
-      ? path.join("/", locale, params ? params : "")
-      : path.join("/", locale, routes[route], params ? params : "");
+      ? path.join("/", "ms-MY", params ? params : "")
+      : path.join("/", "ms-MY", routes[route], params ? params : "");
+  const targetEn =
+    route === "HOME"
+      ? path.join("/", "en-GB", params ? params : "")
+      : path.join("/", "en-GB", routes[route], params ? params : "");
 
-  payload.logger.info(`Revalidating post at path: ${target}`);
+  payload.logger.info(`Revalidating post at path: ${target}, ${targetEn}`);
 
+  // Revalidate both locale
   revalidatePath(target);
+  revalidatePath(targetEn);
 };

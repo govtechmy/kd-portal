@@ -1,5 +1,5 @@
 "use client";
-import { locales } from "@/lib/i18n-config";
+import { locales } from "@/lib/i18n";
 import { Policy } from "@/payload-types";
 import { FC, useMemo } from "react";
 import { useTranslations } from "next-intl";
@@ -68,6 +68,7 @@ const DasarKementerian: FC<DasarKementerianProps> = ({ list, locale }) => {
               onChange={searchArray}
               placeholder={t("Policy.search_placeholder")}
               defaultValue={searchQuery || ""}
+              useDefaultValue={true}
             />
             <DaterangePicker />
           </div>

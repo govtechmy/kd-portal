@@ -16,4 +16,4 @@ export const generateMetadata = async (params: MetagenProps) => {
 };
 
 export default inject(ProfilKementerian);
-export const dynamic = "error";
+// export const dynamic = "error";

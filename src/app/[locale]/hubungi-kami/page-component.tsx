@@ -4,10 +4,9 @@ import Envelope from "@/icons/envelope";
 import Phone from "@/icons/phone";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
-import { unstable_setRequestLocale } from "next-intl/server";
 import React, { FC } from "react";
 import { SiteInfo } from "@/payload-types";
-import { locales } from "@/lib/i18n-config";
+import { locales } from "@/lib/i18n";
 import { _social_media } from "@/lib/constants/links";
 import Hero from "@/components/layout/hero";
 import Section from "@/components/layout/section";
@@ -19,7 +18,6 @@ interface ContactUsProps {
 }
 
 const ContactUs: FC<ContactUsProps> = ({ data, locale }) => {
-  unstable_setRequestLocale(locale);
   const t = useTranslations();
 
   return (

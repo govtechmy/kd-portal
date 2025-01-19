@@ -21,8 +21,25 @@ export interface Config {
     policy: Policy;
     'quick-link': QuickLink;
     search: Search;
+    'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
+  };
+  collectionsJoins: {};
+  collectionsSelect: {
+    users: UsersSelect<false> | UsersSelect<true>;
+    media: MediaSelect<false> | MediaSelect<true>;
+    file: FileSelect<false> | FileSelect<true>;
+    broadcast: BroadcastSelect<false> | BroadcastSelect<true>;
+    achievement: AchievementSelect<false> | AchievementSelect<true>;
+    'kd-department': KdDepartmentSelect<false> | KdDepartmentSelect<true>;
+    'staff-directory': StaffDirectorySelect<false> | StaffDirectorySelect<true>;
+    policy: PolicySelect<false> | PolicySelect<true>;
+    'quick-link': QuickLinkSelect<false> | QuickLinkSelect<true>;
+    search: SearchSelect<false> | SearchSelect<true>;
+    'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
+    'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
+    'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
   };
   db: {
     defaultIDType: string;
@@ -34,14 +51,26 @@ export interface Config {
     homepage: Homepage;
     'profil-kementerian': ProfilKementerian;
   };
+  globalsSelect: {
+    'site-info': SiteInfoSelect<false> | SiteInfoSelect<true>;
+    header: HeaderSelect<false> | HeaderSelect<true>;
+    footer: FooterSelect<false> | FooterSelect<true>;
+    homepage: HomepageSelect<false> | HomepageSelect<true>;
+    'profil-kementerian': ProfilKementerianSelect<false> | ProfilKementerianSelect<true>;
+  };
   locale: 'ms-MY' | 'en-GB';
   user: User & {
     collection: 'users';
+  };
+  jobs: {
+    tasks: unknown;
+    workflows: unknown;
   };
 }
 export interface UserAuthOperations {
   forgotPassword: {
     email: string;
+    password: string;
   };
   login: {
     email: string;
@@ -53,6 +82,7 @@ export interface UserAuthOperations {
   };
   unlock: {
     email: string;
+    password: string;
   };
 }
 /**
@@ -118,6 +148,9 @@ export interface File {
 export interface Broadcast {
   id: string;
   title: string;
+  /**
+   * Use as the URL link for broadcast page
+   */
   slug: string;
   type: 'announcement' | 'media_release' | 'speech';
   date: string;
@@ -139,9 +172,9 @@ export interface Broadcast {
   };
   broadcast_text_html?: string | null;
   isPin?: boolean | null;
-  broadcast_image?: string | Media | null;
-  broadcast_file_eng?: string | File | null;
-  broadcast_file_bm?: string | File | null;
+  broadcast_image?: (string | null) | Media;
+  broadcast_file_eng?: (string | null) | File;
+  broadcast_file_bm?: (string | null) | File;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -172,7 +205,7 @@ export interface Achievement {
     [k: string]: unknown;
   } | null;
   isFlagged?: boolean | null;
-  achievement_file?: string | Media | null;
+  achievement_file?: (string | null) | Media;
   updatedAt: string;
   createdAt: string;
 }
@@ -194,13 +227,16 @@ export interface KdDepartment {
 export interface StaffDirectory {
   id: string;
   id_bhg: string | KdDepartment;
+  /**
+   * Use 0 for vacant position and -1 for department section
+   */
   staff_id: number;
   nama?: string | null;
   gred?: string | null;
   jawatan?: string | null;
   telefon?: string | null;
   emel?: string | null;
-  image?: string | Media | null;
+  image?: (string | null) | Media;
   social_media?:
     | {
         social: 'Facebook' | 'X' | 'Instagram' | 'Tiktok';
@@ -274,11 +310,13 @@ export interface QuickLink {
     };
     id?: string | null;
   }[];
-  image?: string | Media | null;
+  image?: (string | null) | Media;
   updatedAt: string;
   createdAt: string;
 }
 /**
+ * This is a collection of automatically created search results. These results are used by the global site search and will be updated automatically as documents in the CMS are created or updated.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "search".
  */
@@ -303,6 +341,61 @@ export interface Search {
         relationTo: 'policy';
         value: string | Policy;
       };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-locked-documents".
+ */
+export interface PayloadLockedDocument {
+  id: string;
+  document?:
+    | ({
+        relationTo: 'users';
+        value: string | User;
+      } | null)
+    | ({
+        relationTo: 'media';
+        value: string | Media;
+      } | null)
+    | ({
+        relationTo: 'file';
+        value: string | File;
+      } | null)
+    | ({
+        relationTo: 'broadcast';
+        value: string | Broadcast;
+      } | null)
+    | ({
+        relationTo: 'achievement';
+        value: string | Achievement;
+      } | null)
+    | ({
+        relationTo: 'kd-department';
+        value: string | KdDepartment;
+      } | null)
+    | ({
+        relationTo: 'staff-directory';
+        value: string | StaffDirectory;
+      } | null)
+    | ({
+        relationTo: 'policy';
+        value: string | Policy;
+      } | null)
+    | ({
+        relationTo: 'quick-link';
+        value: string | QuickLink;
+      } | null)
+    | ({
+        relationTo: 'search';
+        value: string | Search;
+      } | null);
+  globalSlug?: string | null;
+  user: {
+    relationTo: 'users';
+    value: string | User;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -342,12 +435,225 @@ export interface PayloadMigration {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "users_select".
+ */
+export interface UsersSelect<T extends boolean = true> {
+  role?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  email?: T;
+  resetPasswordToken?: T;
+  resetPasswordExpiration?: T;
+  salt?: T;
+  hash?: T;
+  loginAttempts?: T;
+  lockUntil?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "media_select".
+ */
+export interface MediaSelect<T extends boolean = true> {
+  alt?: T;
+  caption?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  url?: T;
+  thumbnailURL?: T;
+  filename?: T;
+  mimeType?: T;
+  filesize?: T;
+  width?: T;
+  height?: T;
+  focalX?: T;
+  focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "file_select".
+ */
+export interface FileSelect<T extends boolean = true> {
+  updatedAt?: T;
+  createdAt?: T;
+  url?: T;
+  thumbnailURL?: T;
+  filename?: T;
+  mimeType?: T;
+  filesize?: T;
+  width?: T;
+  height?: T;
+  focalX?: T;
+  focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "broadcast_select".
+ */
+export interface BroadcastSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  type?: T;
+  date?: T;
+  description?: T;
+  broadcast_text?: T;
+  broadcast_text_html?: T;
+  isPin?: T;
+  broadcast_image?: T;
+  broadcast_file_eng?: T;
+  broadcast_file_bm?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "achievement_select".
+ */
+export interface AchievementSelect<T extends boolean = true> {
+  title?: T;
+  type?: T;
+  date?: T;
+  description?: T;
+  content_text?: T;
+  isFlagged?: T;
+  achievement_file?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "kd-department_select".
+ */
+export interface KdDepartmentSelect<T extends boolean = true> {
+  id_bhg?: T;
+  bhg?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "staff-directory_select".
+ */
+export interface StaffDirectorySelect<T extends boolean = true> {
+  id_bhg?: T;
+  staff_id?: T;
+  nama?: T;
+  gred?: T;
+  jawatan?: T;
+  telefon?: T;
+  emel?: T;
+  image?: T;
+  social_media?:
+    | T
+    | {
+        social?: T;
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+            };
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "policy_select".
+ */
+export interface PolicySelect<T extends boolean = true> {
+  doc_name?: T;
+  doc_type?: T;
+  doc_description?: T;
+  doc_date?: T;
+  file_upload?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "quick-link_select".
+ */
+export interface QuickLinkSelect<T extends boolean = true> {
+  name?: T;
+  type?: T;
+  description?: T;
+  href?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+            };
+        id?: T;
+      };
+  image?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "search_select".
+ */
+export interface SearchSelect<T extends boolean = true> {
+  title?: T;
+  priority?: T;
+  doc?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-locked-documents_select".
+ */
+export interface PayloadLockedDocumentsSelect<T extends boolean = true> {
+  document?: T;
+  globalSlug?: T;
+  user?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-preferences_select".
+ */
+export interface PayloadPreferencesSelect<T extends boolean = true> {
+  user?: T;
+  key?: T;
+  value?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-migrations_select".
+ */
+export interface PayloadMigrationsSelect<T extends boolean = true> {
+  name?: T;
+  batch?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "site-info".
  */
 export interface SiteInfo {
   id: string;
   site_name: string;
   address: string;
+  /**
+   * Add the address to use for using with Google Maps or Waze, ie, Menara Usahawan
+   */
   map_address: string;
   encoded_address?: string | null;
   no_tel: string;
@@ -696,6 +1002,187 @@ export interface ProfilKementerian {
   } | null;
   updatedAt?: string | null;
   createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-info_select".
+ */
+export interface SiteInfoSelect<T extends boolean = true> {
+  site_name?: T;
+  address?: T;
+  map_address?: T;
+  encoded_address?: T;
+  no_tel?: T;
+  email?: T;
+  social_media?:
+    | T
+    | {
+        social?: T;
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+            };
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "header_select".
+ */
+export interface HeaderSelect<T extends boolean = true> {
+  items?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+            };
+        id?: T;
+      };
+  dropdown?:
+    | T
+    | {
+        name?: T;
+        dept_agency?:
+          | T
+          | {
+              link?:
+                | T
+                | {
+                    type?: T;
+                    newTab?: T;
+                    reference?: T;
+                    url?: T;
+                    label?: T;
+                  };
+              id?: T;
+            };
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "footer_select".
+ */
+export interface FooterSelect<T extends boolean = true> {
+  about_us?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+            };
+        id?: T;
+      };
+  'quick-links'?:
+    | T
+    | {
+        'quick-links'?: T;
+        id?: T;
+      };
+  'open-source'?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+            };
+        id?: T;
+      };
+  disclaimer_section?:
+    | T
+    | {
+        statement?: T;
+      };
+  'privacy-policy_section'?:
+    | T
+    | {
+        statement?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "homepage_select".
+ */
+export interface HomepageSelect<T extends boolean = true> {
+  featured_achievements?:
+    | T
+    | {
+        achievements?: T;
+        id?: T;
+      };
+  quick_links?:
+    | T
+    | {
+        links?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "profil-kementerian_select".
+ */
+export interface ProfilKementerianSelect<T extends boolean = true> {
+  vision?:
+    | T
+    | {
+        statement?: T;
+        icon?: T;
+      };
+  mission?:
+    | T
+    | {
+        statement?: T;
+        icon?: T;
+      };
+  functions_and_role?:
+    | T
+    | {
+        statement?: T;
+        icon?: T;
+        id?: T;
+      };
+  leaders?:
+    | T
+    | {
+        staff?: T;
+        id?: T;
+      };
+  'latar-belakang'?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

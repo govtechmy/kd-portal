@@ -5,7 +5,7 @@ import HomeSiaran from "@/components/home/siaran";
 import Timeline from "@/components/home/timeline";
 import HeroPattern from "@/components/layout/hero-pattern";
 import Overline from "@/components/typography/overline";
-import { locales } from "@/lib/i18n-config";
+import { locales } from "@/lib/i18n";
 import { Achievement, Broadcast, Homepage, SiteInfo } from "@/payload-types";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -31,22 +31,8 @@ const HomePageComponent: FC<Props> = ({
   return (
     <>
       <section className="relative w-full gap-6 border-b sm:grid sm:grid-cols-6">
-        {/* <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden bg-gradient-radial from-brand-200 from-0% via-[#F1F5FF] via-[27.57%] to-white to-100%">
+        <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden bg-gradient-radial from-brand-200 from-0% via-[#F1F5FF] via-[27.57%] to-white to-100%">
           <HeroPattern className="absolute -top-[23.33%] animate-flow motion-reduce:animate-none" />
-        </div> */}
-        <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden bg-gradient-radial from-[#E4F3CE] from-0% via-[#F8FBEB] via-[27.57%] to-white to-100%">
-          <div
-            className="hidden h-full w-full bg-cover bg-center bg-no-repeat lg:block 2xl:bg-contain"
-            style={{
-              backgroundImage: "url('/theme/ponggal-hero-desktop-min.svg')",
-            }}
-          />
-          <div
-            className="bg-fill block h-full w-full bg-center bg-no-repeat sm:bg-contain lg:hidden"
-            style={{
-              backgroundImage: "url('/theme/ponggal-hero-mobile-min.svg')",
-            }}
-          />
         </div>
         <div className="col-span-4 col-start-2 flex w-full flex-col items-center gap-y-9 px-4.5 py-[120px] text-center md:px-6">
           <div className="space-y-6">

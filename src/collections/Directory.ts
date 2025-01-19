@@ -14,6 +14,7 @@ export const KDDepartment: CollectionConfig = {
     useAsTitle: "bhg",
     listSearchableFields: ["bhg"],
   },
+  defaultSort: "id_bhg",
   fields: [
     {
       name: "id_bhg",
