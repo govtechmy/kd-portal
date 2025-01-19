@@ -3,7 +3,7 @@ import Timeline from "@/components/layout/timeline";
 import { Button } from "@/components/ui/button";
 import ArrowDown from "@/icons/arrow-down";
 import { usePathname, useRouter } from "@/lib/i18n";
-import { locales } from "@/lib/i18n-config";
+import { locales } from "@/lib/i18n";
 import { Achievement } from "@/payload-types";
 import { DateTime } from "luxon";
 import { useFormatter, useTranslations } from "next-intl";
@@ -27,7 +27,7 @@ export default function PencapaianTimeline({ data, locale, totalDocs }: Props) {
   const pathname = usePathname();
 
   return (
-    <div className="max-lg:py-8 relative col-span-7 flex h-full flex-col items-start sm:items-center lg:col-start-6">
+    <div className="relative col-span-7 flex h-full flex-col items-start max-lg:py-8 sm:items-center lg:col-start-6">
       <div className="absolute -z-10 h-full w-px bg-outline-200 max-sm:left-[3.5px]" />
       <div className="lg:pb-[120px] lg:pt-[84px]">
         {data.map(({ year, items }, i) => (

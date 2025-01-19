@@ -11,7 +11,7 @@ import { useTranslations } from "next-intl";
 import { FC, useMemo } from "react";
 import { DirektoriFilter } from "./filter";
 import { StaffDirectory } from "@/payload-types";
-import { locales } from "@/lib/i18n-config";
+import { locales } from "@/lib/i18n";
 import { useSearchParams } from "next/navigation";
 import { usePathname, useRouter } from "@/lib/i18n";
 
@@ -204,6 +204,7 @@ const DirektoriMain: FC<DirektoriMainProps> = ({ list, locale }) => {
             onChange={searchArray}
             placeholder={t("Directory.search_placeholder")}
             defaultValue={searchQuery || ""}
+            useDefaultValue={true}
           />
         }
       />

@@ -1,13 +1,13 @@
 import Section from "@/components/layout/section";
-import RichText from "@/components/rich-text";
 import Overline from "@/components/typography/overline";
 import { buttonVariants } from "@/components/ui/button";
 import { IconList } from "@/icons";
 import UserGroup from "@/icons/user-group";
-import { locales } from "@/lib/i18n-config";
+import { locales } from "@/lib/i18n";
 import { routes } from "@/lib/routes";
 import { cn } from "@/lib/utils";
 import { ProfilKementerian } from "@/payload-types";
+import { RichText } from "@payloadcms/richtext-lexical/react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
@@ -22,7 +22,6 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
   data,
   locale,
 }) => {
-  // unstable_setRequestLocale(locale);
   const t = useTranslations();
 
   return (
@@ -51,13 +50,8 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
                 </p> */}
                 <div className="mx-auto flex max-w-prose flex-col">
                   <RichText
-                    content={data["latar-belakang"]}
-                    className="flex flex-col gap-6"
-                    tagMap={{
-                      blockquote: { className: "gap-3 flex flex-col" },
-                      p: { className: "whitespace-pre-line" },
-                      em: { className: "text-dim-500 text-base" },
-                    }}
+                    data={data["latar-belakang"]!}
+                    className="flex flex-col gap-6 [&_blockquote]:flex [&_blockquote]:flex-col [&_blockquote]:gap-3 [&_em]:text-base [&_em]:text-dim-500 [&_p]:whitespace-pre-line"
                   />
 
                   {/* <Link
@@ -178,12 +172,8 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
 
                   <article className="">
                     <RichText
-                      content={statement}
-                      tagMap={{
-                        strong: {
-                          className: "text-brand-700 font-semibold",
-                        },
-                      }}
+                      data={statement}
+                      className="[&_strong]:font-semibold [&_strong]:text-brand-700"
                     />
                   </article>
                 </div>

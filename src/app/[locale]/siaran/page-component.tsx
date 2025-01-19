@@ -4,7 +4,7 @@ import Section from "@/components/layout/section";
 import Paginate from "@/components/siaran/paginate";
 import DaterangePicker from "@/components/ui/daterange-picker";
 import Search from "@/components/ui/search";
-import { locales } from "@/lib/i18n-config";
+import { locales } from "@/lib/i18n";
 import { Broadcast } from "@/payload-types";
 import { useTranslations } from "next-intl";
 import { PaginatedDocs } from "payload";
@@ -50,6 +50,7 @@ const SiaranList: FC<SiaranListProps> = ({ data, locale }) => {
               onChange={searchArray}
               placeholder={t("Announcements.placeholder")}
               defaultValue={searchParams.get("search") || ""}
+              useDefaultValue={true}
             />
             <DaterangePicker />
           </div>

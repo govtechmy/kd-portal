@@ -126,12 +126,14 @@ export default function DasarTable({ data }: DasarTableProps) {
               variant="secondary"
               size="icon"
               className="flex-none rounded-lg"
-              onClick={() =>
-                downloadFile(
-                  info.getValue() as string,
-                  info.row.original.doc_name,
-                )
-              }
+              onClick={() => {
+                if (typeof info.row.original.file_upload !== "string") {
+                  downloadFile(
+                    info.row.original.file_upload.url as string,
+                    info.row.original.doc_name,
+                  );
+                }
+              }}
             >
               <Download className="text-dim-500" />
             </Button>
