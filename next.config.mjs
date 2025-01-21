@@ -9,6 +9,12 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  experimental: {
+    serverActions: {
+      allowedOrigins: ["www.digital.gov.my"],
+    },
+  },
+  // output: "standalone",
   // typescript: {
   //   // !! WARN !!
   //   // Dangerously allow production builds to successfully complete even if
