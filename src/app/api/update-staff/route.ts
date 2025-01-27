@@ -97,7 +97,10 @@ export const POST = async (req: Request) => {
       await payload.db.collections["staff-directory"].insertMany(listToInsert);
 
     const searchList = inserted.map((i) => ({
-      title: i.nama,
+      title: {
+        "ms-MY": i.nama,
+        "en-GB": i.nama,
+      },
       priority: 30,
       doc: {
         relationTo: "staff-directory",

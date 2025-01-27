@@ -77,7 +77,7 @@ export default buildConfig({
     searchPlugin({
       collections: includedSearchCollection,
       searchOverrides: SearchOverride,
-      localize: false,
+      localize: true,
       defaultPriorities: {
         achievement: 10,
         broadcast: 20,
