@@ -90,6 +90,7 @@ export default buildConfig({
       collections: {
         ["media"]: true,
         ["file"]: true,
+        ["hero-banner"]: true,
       },
       bucket: process.env.S3_BUCKET,
       config: {

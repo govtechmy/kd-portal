@@ -2,19 +2,18 @@ import Section from "@/components/layout/section";
 import TimelineLayout from "@/components/layout/timeline";
 import Overline from "@/components/typography/overline";
 import Flag from "@/icons/flag";
-import { locales } from "@/lib/i18n";
 import { Achievement } from "@/payload-types";
 import { DateTime } from "luxon";
 import { useTranslations } from "next-intl";
+import { getLocale } from "next-intl/server";
 
-export default function Timeline({
+export default async function Timeline({
   achievements,
-  locale,
 }: {
   achievements: Achievement[];
-  locale: (typeof locales)[number];
 }) {
   const t = useTranslations("Home.Achievement");
+  const locale = await getLocale();
 
   return (
     <Section>
