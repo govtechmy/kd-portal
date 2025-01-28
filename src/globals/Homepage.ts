@@ -11,6 +11,13 @@ export const Homepage: GlobalConfig = {
   },
   fields: [
     {
+      name: "hero_banner",
+      label: "Celebration Hero Banner",
+      type: "relationship",
+      relationTo: "celebration",
+      hasMany: false,
+    },
+    {
       name: "featured_achievements",
       label: "Featured Achievements",
       type: "array",
@@ -39,9 +46,9 @@ export const Homepage: GlobalConfig = {
           type: "relationship",
           relationTo: "quick-link",
           required: true,
-          // filterOptions: () => {
-          //   return { type: { equals: "quick_links" } };
-          // },
+          filterOptions: () => {
+            return { type: { equals: "quick_links" } };
+          },
         },
       ],
     },

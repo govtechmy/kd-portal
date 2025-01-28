@@ -14,12 +14,14 @@ export interface Config {
     users: User;
     media: Media;
     file: File;
+    'hero-banner': HeroBanner;
     broadcast: Broadcast;
     achievement: Achievement;
     'kd-department': KdDepartment;
     'staff-directory': StaffDirectory;
     policy: Policy;
     'quick-link': QuickLink;
+    celebration: Celebration;
     search: Search;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -30,12 +32,14 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     file: FileSelect<false> | FileSelect<true>;
+    'hero-banner': HeroBannerSelect<false> | HeroBannerSelect<true>;
     broadcast: BroadcastSelect<false> | BroadcastSelect<true>;
     achievement: AchievementSelect<false> | AchievementSelect<true>;
     'kd-department': KdDepartmentSelect<false> | KdDepartmentSelect<true>;
     'staff-directory': StaffDirectorySelect<false> | StaffDirectorySelect<true>;
     policy: PolicySelect<false> | PolicySelect<true>;
     'quick-link': QuickLinkSelect<false> | QuickLinkSelect<true>;
+    celebration: CelebrationSelect<false> | CelebrationSelect<true>;
     search: SearchSelect<false> | SearchSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -128,6 +132,26 @@ export interface Media {
  * via the `definition` "file".
  */
 export interface File {
+  id: string;
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename: string;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
+}
+/**
+ * This is the file upload collection meant for Celebration collection.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "hero-banner".
+ */
+export interface HeroBanner {
   id: string;
   updatedAt: string;
   createdAt: string;
@@ -315,6 +339,44 @@ export interface QuickLink {
   createdAt: string;
 }
 /**
+ * Hero Banner for celebration. This collection meant for celebration in Malaysia designed for use in hero banner in home page.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "celebration".
+ */
+export interface Celebration {
+  id: string;
+  title: string;
+  /**
+   * Add the top gradient color. Use #FFFFFF
+   */
+  'top-gradient': string;
+  /**
+   * Add the middle gradient color. Use #FFFFFF
+   */
+  'middle-gradient': string;
+  /**
+   * Add the bottom gradient color. Use #FFFFFF
+   */
+  'bottom-gradient': string;
+  /**
+   * This is the desktop design. Fill in the fields accordingly for desktop design
+   */
+  desktop: {
+    file_desktop: string | HeroBanner;
+    type: 'desktop' | 'mobile';
+  };
+  /**
+   * This is the mobile design. Fill in the fields accordingly for mobile design
+   */
+  mobile: {
+    file_mobile: string | HeroBanner;
+    type: 'desktop' | 'mobile';
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This is a collection of automatically created search results. These results are used by the global site search and will be updated automatically as documents in the CMS are created or updated.
  *
  * This interface was referenced by `Config`'s JSON-Schema
@@ -364,6 +426,10 @@ export interface PayloadLockedDocument {
         value: string | File;
       } | null)
     | ({
+        relationTo: 'hero-banner';
+        value: string | HeroBanner;
+      } | null)
+    | ({
         relationTo: 'broadcast';
         value: string | Broadcast;
       } | null)
@@ -386,6 +452,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'quick-link';
         value: string | QuickLink;
+      } | null)
+    | ({
+        relationTo: 'celebration';
+        value: string | Celebration;
       } | null)
     | ({
         relationTo: 'search';
@@ -473,6 +543,23 @@ export interface MediaSelect<T extends boolean = true> {
  * via the `definition` "file_select".
  */
 export interface FileSelect<T extends boolean = true> {
+  updatedAt?: T;
+  createdAt?: T;
+  url?: T;
+  thumbnailURL?: T;
+  filename?: T;
+  mimeType?: T;
+  filesize?: T;
+  width?: T;
+  height?: T;
+  focalX?: T;
+  focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "hero-banner_select".
+ */
+export interface HeroBannerSelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -597,6 +684,30 @@ export interface QuickLinkSelect<T extends boolean = true> {
         id?: T;
       };
   image?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "celebration_select".
+ */
+export interface CelebrationSelect<T extends boolean = true> {
+  title?: T;
+  'top-gradient'?: T;
+  'middle-gradient'?: T;
+  'bottom-gradient'?: T;
+  desktop?:
+    | T
+    | {
+        file_desktop?: T;
+        type?: T;
+      };
+  mobile?:
+    | T
+    | {
+        file_mobile?: T;
+        type?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }
@@ -845,6 +956,7 @@ export interface Footer {
  */
 export interface Homepage {
   id: string;
+  hero_banner?: (string | null) | Celebration;
   featured_achievements: {
     achievements: string | Achievement;
     id?: string | null;
@@ -1133,6 +1245,7 @@ export interface FooterSelect<T extends boolean = true> {
  * via the `definition` "homepage_select".
  */
 export interface HomepageSelect<T extends boolean = true> {
+  hero_banner?: T;
   featured_achievements?:
     | T
     | {

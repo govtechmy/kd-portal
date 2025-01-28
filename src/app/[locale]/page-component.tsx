@@ -6,9 +6,9 @@ import Timeline from "@/components/home/timeline";
 import HeroPattern from "@/components/layout/hero-pattern";
 import Overline from "@/components/typography/overline";
 import { locales } from "@/lib/i18n";
+import { cn } from "@/lib/utils";
 import { Achievement, Broadcast, Homepage, SiteInfo } from "@/payload-types";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import React, { FC } from "react";
 
 interface Props {
@@ -31,23 +31,42 @@ const HomePageComponent: FC<Props> = ({
   return (
     <>
       <section className="relative w-full gap-6 border-b sm:grid sm:grid-cols-6">
-        {/* <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden bg-gradient-radial from-brand-200 from-0% via-[#F1F5FF] via-[27.57%] to-white to-100%">
-          <HeroPattern className="absolute -top-[23.33%] animate-flow motion-reduce:animate-none" />
-        </div> */}
-        <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden bg-gradient-radial from-[#FFF8EC] from-0% via-[#FFFCF5] via-[27.57%] to-white to-100%">
+        {homepage.hero_banner && typeof homepage.hero_banner !== "string" ? (
           <div
-            className="hidden h-full w-full bg-cover bg-center bg-no-repeat lg:block 2xl:bg-contain"
-            style={{
-              backgroundImage: "url('/theme/israj-miraj-hero-desktop.svg')",
-            }}
-          />
-          <div
-            className="bg-fill block h-full w-full bg-center bg-no-repeat sm:bg-contain lg:hidden"
-            style={{
-              backgroundImage: "url('/theme/israj-miraj-hero-mobile.svg')",
-            }}
-          />
-        </div>
+            style={
+              {
+                "--top-gradient-color": homepage.hero_banner["top-gradient"],
+                "--middle-gradient-color":
+                  homepage.hero_banner["middle-gradient"],
+                "--bottom-gradient-color":
+                  homepage.hero_banner["bottom-gradient"],
+              } as React.CSSProperties
+            }
+            className={cn(
+              "absolute -z-10 flex h-full w-full justify-center overflow-hidden bg-gradient-radial from-0% via-[27.57%] to-100%",
+              homepage.hero_banner &&
+                `from-[var(--middle-gradient-color)] via-[var(--top-gradient-color)] to-[var(--bottom-gradient-color)]`,
+            )}
+          >
+            <div
+              className="hidden h-full w-full bg-cover bg-center bg-no-repeat lg:block 2xl:bg-contain"
+              style={{
+                backgroundImage: `url('${typeof homepage.hero_banner.desktop.file_desktop !== "string" && homepage.hero_banner.desktop.file_desktop.url}')`,
+              }}
+            />
+            <div
+              className="bg-fill block h-full w-full bg-center bg-no-repeat sm:bg-contain lg:hidden"
+              style={{
+                backgroundImage: `url('${typeof homepage.hero_banner.mobile.file_mobile !== "string" && homepage.hero_banner.mobile.file_mobile.url}')`,
+              }}
+            />
+          </div>
+        ) : (
+          <div className="absolute -z-10 flex h-full w-full justify-center overflow-hidden bg-gradient-radial from-brand-200 from-0% via-[#F1F5FF] via-[27.57%] to-white to-100%">
+            <HeroPattern className="absolute -top-[23.33%] animate-flow motion-reduce:animate-none" />
+          </div>
+        )}
+
         <div className="col-span-4 col-start-2 flex w-full flex-col items-center gap-y-9 px-4.5 py-[120px] text-center md:px-6">
           <div className="space-y-6">
             <Overline className="text-base font-bold">
@@ -92,7 +111,7 @@ const HomePageComponent: FC<Props> = ({
 
       <main className="divide-y divide-washed-100">
         <Carousel homepage={homepage} />
-        <Timeline achievements={achievements} locale={locale} />
+        <Timeline achievements={achievements} />
         <HomeSiaran broadcast={broadcast} />
         <Quicklinks homepage={homepage} />
       </main>

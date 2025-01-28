@@ -11,6 +11,8 @@ export const routing = defineRouting({
 
   // Used when no locale matches
   defaultLocale: "ms-MY",
+
+  localePrefix: "as-needed",
 });
 
 export const { Link, redirect, usePathname, useRouter } = createNavigation({
