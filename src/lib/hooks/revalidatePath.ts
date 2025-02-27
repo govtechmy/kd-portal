@@ -5,8 +5,8 @@ import type {
   CollectionAfterDeleteHook,
   GlobalAfterChangeHook,
 } from "payload";
-import { revalidatePath } from "next/cache";
 import { routes } from "@/lib/routes";
+import { purgeCache } from "@/lib/cache";
 
 export const revalidateCollection = (
   route: keyof typeof routes,
@@ -56,7 +56,7 @@ type RevalidateProps = {
   params?: string;
 };
 
-const revalidate = (
+const revalidate = async (
   { locale, route, params }: RevalidateProps,
   payload: BasePayload,
 ) => {
@@ -71,7 +71,6 @@ const revalidate = (
 
   payload.logger.info(`Revalidating post at path: ${target}, ${targetEn}`);
 
-  // Revalidate both locale
-  revalidatePath(target);
-  revalidatePath(targetEn);
+  // Purge cache for both locales
+  await purgeCache([target, targetEn]);
 };

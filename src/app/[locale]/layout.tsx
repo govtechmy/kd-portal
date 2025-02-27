@@ -21,6 +21,8 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata(params: FSM) {
   const { locale } = params;
   const t = await getTranslations({ locale, namespace: "Agency" });
