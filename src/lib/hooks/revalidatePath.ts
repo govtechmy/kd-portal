@@ -14,11 +14,10 @@ export const revalidateCollection = (
   return async ({ doc, req }) => {
     const { payload, locale = "ms-MY" } = req;
     if (route === "ANNOUNCEMENTS") {
-      revalidate({ locale, route, params: doc.slug }, payload);
-      revalidate({ locale, route, params: doc.slug }, payload);
+      await revalidate({ locale, route, params: doc.slug }, payload);
       return doc;
     }
-    revalidate({ locale, route }, payload);
+    await revalidate({ locale, route }, payload);
     return doc;
   };
 };
@@ -28,10 +27,10 @@ export const revalidateDeleteCollection = (
   return async ({ doc, req }) => {
     const { payload, locale = "ms-MY" } = req;
     if (route === "ANNOUNCEMENTS") {
-      revalidate({ locale, route, params: doc.slug }, payload);
+      await revalidate({ locale, route, params: doc.slug }, payload);
       return doc;
     }
-    revalidate({ locale, route }, payload);
+    await revalidate({ locale, route }, payload);
     return doc;
   };
 };
@@ -42,10 +41,10 @@ export const revalidateGlobal = (
   return async ({ doc, req }) => {
     const { payload, locale = "ms-MY" } = req;
     if (route === "ANNOUNCEMENTS") {
-      revalidate({ locale, route, params: doc.slug }, payload);
+      await revalidate({ locale, route, params: doc.slug }, payload);
       return doc;
     }
-    revalidate({ locale, route }, payload);
+    await revalidate({ locale, route }, payload);
     return doc;
   };
 };
