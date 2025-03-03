@@ -2,7 +2,7 @@ import configPromise from "@payload-config";
 import groupBy from "lodash/groupBy";
 import { getPayload } from "payload";
 import path from "path";
-import { revalidatePath } from "next/cache";
+import { purgeCache } from "@/lib/cache";
 
 /**
  * POST endpoint to bulk-update staff-directory collections
@@ -113,8 +113,7 @@ export const POST = async (req: Request) => {
     // Lastly, revalidate the static page
     const target = path.join("/", "ms-MY", "/direktori");
     const targetEn = path.join("/", "en-GB", "/direktori");
-    revalidatePath(target);
-    revalidatePath(targetEn);
+    await purgeCache([target, targetEn]);
 
     return Response.json({
       status: 200,
