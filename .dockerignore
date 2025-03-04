@@ -1,0 +1,4 @@
+.env
+.next/
+.kube/
+node_modules/

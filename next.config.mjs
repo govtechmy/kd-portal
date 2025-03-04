@@ -14,7 +14,7 @@ const nextConfig = {
       allowedOrigins: ["www.digital.gov.my"],
     },
   },
-  // output: "standalone",
+  output: process.env.NEXT_OUTPUT,
   // typescript: {
   //   // !! WARN !!
   //   // Dangerously allow production builds to successfully complete even if
