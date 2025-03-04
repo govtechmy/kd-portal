@@ -1,0 +1,59 @@
+name: Deploy
+env:
+  IMAGE: kd-portal/dev2/site
+on:
+  push:
+    branches:
+      - feat/deploy-to-k8s
+  workflow_dispatch:
+permissions:
+  id-token: write # This is required for requesting the JWT
+  contents: read # This is required for actions/checkout
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::767397910274:role/github-oidc-provider-aws
+          aws-region: ap-southeast-1
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: |
+            ${{ steps.login-ecr.outputs.registry }}/${{ env.IMAGE }}
+          tags: |
+            type=sha
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: Dockerfile
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+      - name: Log out of Amazon ECR
+        run: docker logout ${{ steps.login-ecr.outputs.registry }}
+      - name: Deploy with Spinnaker
+        run: |
+          curl --request POST \
+              --url https://spin-gate.govtechmy.dev/webhooks/webhook/github \
+              --header 'Content-Type: application/json' \
+              --data '{
+                "secret": "${{ secrets.SPINNAKER_SECRET }}",
+                "artifacts": [
+                  {
+                    "type": "docker/image",
+                    "reference": "${{ steps.meta.outputs.tags }}",
+                    "name": "${{ steps.login-ecr.outputs.registry }}/${{ env.IMAGE }}",
+                    "version": "${{ steps.meta.outputs.version }}"
+                  }
+                ]
+              }'
