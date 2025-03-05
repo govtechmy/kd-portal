@@ -22,6 +22,7 @@
 # misc
 .DS_Store
 *.pem
+!/.kube/base/global-bundle.pem
 
 # debug
 npm-debug.log*
