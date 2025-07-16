@@ -12,6 +12,7 @@ import { locales, routing } from "@/lib/i18n";
 import { getPayload } from "payload";
 import { FSM, FSP } from "@/lib/decorator";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
@@ -105,6 +106,20 @@ const Layout: FSP = async ({ children, params }) => {
             src="https://unpkg.com/@tinybirdco/flock.js"
             data-token={`${process.env.NEXT_PUBLIC_TINYBIRD_TOKEN}`}
           ></script>
+          <Script id="splask-matomo" strategy="beforeInteractive">
+            {`
+            var _paq = window._paq = window._paq || [];
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function() {
+              var u = "//splask-analytics.jdn.gov.my/";
+              _paq.push(['setTrackerUrl', u + 'matomo.php']);
+              _paq.push(['setSiteId', '1385']);
+              var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+              g.async = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
+            })();
+          `}
+          </Script>
         </head>
       )}
       <SiteScript />
