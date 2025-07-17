@@ -236,6 +236,8 @@
       "gred": "Grade",
       "jawatan": "Position",
       "telefon": "Phone No.",
+      "alamat": "address",
+      "ecard": "E Card",
       "emel": "Email (@digital.gov.my)",
       "semua": "All Divisions"
     }

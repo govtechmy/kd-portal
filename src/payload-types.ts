@@ -14,6 +14,7 @@ export interface Config {
     users: User;
     media: Media;
     file: File;
+    ecards: Ecard;
     'hero-banner': HeroBanner;
     broadcast: Broadcast;
     achievement: Achievement;
@@ -22,7 +23,6 @@ export interface Config {
     policy: Policy;
     'quick-link': QuickLink;
     celebration: Celebration;
-    search: Search;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -32,6 +32,7 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     file: FileSelect<false> | FileSelect<true>;
+    ecards: EcardsSelect<false> | EcardsSelect<true>;
     'hero-banner': HeroBannerSelect<false> | HeroBannerSelect<true>;
     broadcast: BroadcastSelect<false> | BroadcastSelect<true>;
     achievement: AchievementSelect<false> | AchievementSelect<true>;
@@ -40,7 +41,6 @@ export interface Config {
     policy: PolicySelect<false> | PolicySelect<true>;
     'quick-link': QuickLinkSelect<false> | QuickLinkSelect<true>;
     celebration: CelebrationSelect<false> | CelebrationSelect<true>;
-    search: SearchSelect<false> | SearchSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -138,6 +138,25 @@ export interface File {
   url?: string | null;
   thumbnailURL?: string | null;
   filename: string;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ecards".
+ */
+export interface Ecard {
+  id: string;
+  description?: string | null;
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename?: string | null;
   mimeType?: string | null;
   filesize?: number | null;
   width?: number | null;
@@ -259,7 +278,13 @@ export interface StaffDirectory {
   gred?: string | null;
   jawatan?: string | null;
   telefon?: string | null;
+  alamat?: string | null;
+  laman?: string | null;
   emel?: string | null;
+  /**
+   * Upload a .vcf file for contact sharing
+   */
+  eCard?: (string | null) | Ecard;
   image?: (string | null) | Media;
   social_media?:
     | {
@@ -377,36 +402,6 @@ export interface Celebration {
   createdAt: string;
 }
 /**
- * This is a collection of automatically created search results. These results are used by the global site search and will be updated automatically as documents in the CMS are created or updated.
- *
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "search".
- */
-export interface Search {
-  id: string;
-  title?: string | null;
-  priority?: number | null;
-  doc:
-    | {
-        relationTo: 'achievement';
-        value: string | Achievement;
-      }
-    | {
-        relationTo: 'broadcast';
-        value: string | Broadcast;
-      }
-    | {
-        relationTo: 'staff-directory';
-        value: string | StaffDirectory;
-      }
-    | {
-        relationTo: 'policy';
-        value: string | Policy;
-      };
-  updatedAt: string;
-  createdAt: string;
-}
-/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
@@ -424,6 +419,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'file';
         value: string | File;
+      } | null)
+    | ({
+        relationTo: 'ecards';
+        value: string | Ecard;
       } | null)
     | ({
         relationTo: 'hero-banner';
@@ -456,10 +455,6 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'celebration';
         value: string | Celebration;
-      } | null)
-    | ({
-        relationTo: 'search';
-        value: string | Search;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -557,6 +552,24 @@ export interface FileSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ecards_select".
+ */
+export interface EcardsSelect<T extends boolean = true> {
+  description?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  url?: T;
+  thumbnailURL?: T;
+  filename?: T;
+  mimeType?: T;
+  filesize?: T;
+  width?: T;
+  height?: T;
+  focalX?: T;
+  focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "hero-banner_select".
  */
 export interface HeroBannerSelect<T extends boolean = true> {
@@ -628,7 +641,10 @@ export interface StaffDirectorySelect<T extends boolean = true> {
   gred?: T;
   jawatan?: T;
   telefon?: T;
+  alamat?: T;
+  laman?: T;
   emel?: T;
+  eCard?: T;
   image?: T;
   social_media?:
     | T
@@ -708,17 +724,6 @@ export interface CelebrationSelect<T extends boolean = true> {
         file_mobile?: T;
         type?: T;
       };
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "search_select".
- */
-export interface SearchSelect<T extends boolean = true> {
-  title?: T;
-  priority?: T;
-  doc?: T;
   updatedAt?: T;
   createdAt?: T;
 }

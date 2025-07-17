@@ -39,7 +39,7 @@ export const KDDirectory: CollectionConfig = {
     plural: "Directories",
   },
   admin: {
-    defaultColumns: ["nama", "staff_id", "jawatan", "emel"],
+    defaultColumns: ["nama", "staff_id", "jawatan", "emel", "ecard"],
     listSearchableFields: ["nama", "jawatan", "emel"],
   },
   defaultSort: "id",
@@ -115,6 +115,40 @@ export const KDDirectory: CollectionConfig = {
       },
     },
     {
+      name: "alamat",
+      label: "Address",
+      type: "text",
+      validate: async (value, { data, ...rest }) => {
+        if (!value) {
+          return "Insert a value";
+        }
+        if (data.staff_id === 0 && value !== "-") {
+          return "Use '-' when ID is 0";
+        }
+        if (data.staff_id === -1 && (!value || value === "-")) {
+          return "Insert section name";
+        }
+        return true;
+      },
+    },
+    {
+      name: "laman",
+      label: "website",
+      type: "text",
+      validate: async (value, { data, ...rest }) => {
+        if (!value) {
+          return "Insert a value";
+        }
+        if (data.staff_id === 0 && value !== "-") {
+          return "Use '-' when ID is 0";
+        }
+        if (data.staff_id === -1 && (!value || value === "-")) {
+          return "Insert section name";
+        }
+        return true;
+      },
+    },
+    {
       name: "emel",
       label: "Email",
       type: "text",
@@ -122,6 +156,21 @@ export const KDDirectory: CollectionConfig = {
         if (data.staff_id === 0 && value !== "-") {
           return "Use '-' when ID is 0";
         }
+        if (data.staff_id === -1 && value) {
+          return "Leave blank when ID is -1";
+        }
+        return true;
+      },
+    },
+    {
+      name: "eCard",
+      label: "E-Card",
+      type: "upload",
+      relationTo: "ecards",
+      admin: {
+        description: "Upload a .vcf file for contact sharing",
+      },
+      validate: async (value, { data }) => {
         if (data.staff_id === -1 && value) {
           return "Leave blank when ID is -1";
         }
