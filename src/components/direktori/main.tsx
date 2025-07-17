@@ -14,6 +14,7 @@ import { StaffDirectory } from "@/payload-types";
 import { locales } from "@/lib/i18n";
 import { useSearchParams } from "next/navigation";
 import { usePathname, useRouter } from "@/lib/i18n";
+import StaffCardModal from "../ui/view-e-card";
 
 interface DirektoriMainProps {
   list: StaffDirectory[];
@@ -96,6 +97,20 @@ const DirektoriMain: FC<DirektoriMainProps> = ({ list, locale }) => {
         headerClass: "whitespace-nowrap",
       },
     },
+    {
+      header: t("Directory.table_header.ecard"),
+      id: "ecard",
+      cell: (info: any) => {
+        const staff = info.row.original;
+        return staff.staff_id > 0 ? <StaffCardModal staff={staff} /> : null;
+      },
+      size: 100,
+      meta: {
+        type: "text",
+        editable: false,
+        headerClass: "whitespace-nowrap",
+      },
+    },
   ];
 
   const mobileColumn = [
@@ -106,9 +121,17 @@ const DirektoriMain: FC<DirektoriMainProps> = ({ list, locale }) => {
       // accessorFn: (item: StaffDirectory) =>
       //   typeof item.id_bhg !== "string" && item.id_bhg.bhg,
       cell: (info: any) => {
-        const { id_bhg, emel, gred, staff_id, jawatan, nama, telefon } = (
-          info as Cell<StaffDirectory, unknown>
-        ).row.original;
+        const {
+          id_bhg,
+          emel,
+          gred,
+          staff_id,
+          jawatan,
+          nama,
+          telefon,
+          alamat,
+          eCard,
+        } = (info as Cell<StaffDirectory, unknown>).row.original;
 
         if (staff_id === -1)
           return (
@@ -164,6 +187,12 @@ const DirektoriMain: FC<DirektoriMainProps> = ({ list, locale }) => {
               </div>
             ) : (
               <></>
+            )}
+
+            {eCard && (
+              <div className="pt-2">
+                <StaffCardModal staff={info.row.original} />
+              </div>
             )}
           </div>
         );
