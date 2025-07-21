@@ -26,7 +26,7 @@ pnpm i
 cp .env.example .env
 ```
 
-## Commands to Know
+## Commands to Knows
 
 ```bash
 # Start development servers
