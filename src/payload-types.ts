@@ -280,7 +280,6 @@ export interface StaffDirectory {
   gred?: string | null;
   jawatan?: string | null;
   telefon?: string | null;
-  alamat?: string | null;
   laman?: string | null;
   emel?: string | null;
   /**
@@ -677,7 +676,6 @@ export interface StaffDirectorySelect<T extends boolean = true> {
   gred?: T;
   jawatan?: T;
   telefon?: T;
-  alamat?: T;
   laman?: T;
   emel?: T;
   eCard?: T;

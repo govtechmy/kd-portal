@@ -191,23 +191,6 @@ END:VCARD`;
       },
     },
     {
-      name: "alamat",
-      label: "Address",
-      type: "text",
-      validate: async (value, { data, ...rest }) => {
-        if (!value) {
-          return "Insert a value";
-        }
-        if (data.staff_id === 0 && value !== "-") {
-          return "Use '-' when ID is 0";
-        }
-        if (data.staff_id === -1 && (!value || value === "-")) {
-          return "Insert section name";
-        }
-        return true;
-      },
-    },
-    {
       name: "laman",
       label: "website",
       type: "text",
