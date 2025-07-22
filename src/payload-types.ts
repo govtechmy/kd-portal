@@ -23,6 +23,7 @@ export interface Config {
     policy: Policy;
     'quick-link': QuickLink;
     celebration: Celebration;
+    search: Search;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -41,6 +42,7 @@ export interface Config {
     policy: PolicySelect<false> | PolicySelect<true>;
     'quick-link': QuickLinkSelect<false> | QuickLinkSelect<true>;
     celebration: CelebrationSelect<false> | CelebrationSelect<true>;
+    search: SearchSelect<false> | SearchSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -282,7 +284,7 @@ export interface StaffDirectory {
   laman?: string | null;
   emel?: string | null;
   /**
-   * Upload a .vcf file for contact sharing
+   * Auto-generated .vcf card for download
    */
   eCard?: (string | null) | Ecard;
   image?: (string | null) | Media;
@@ -402,6 +404,36 @@ export interface Celebration {
   createdAt: string;
 }
 /**
+ * This is a collection of automatically created search results. These results are used by the global site search and will be updated automatically as documents in the CMS are created or updated.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "search".
+ */
+export interface Search {
+  id: string;
+  title?: string | null;
+  priority?: number | null;
+  doc:
+    | {
+        relationTo: 'achievement';
+        value: string | Achievement;
+      }
+    | {
+        relationTo: 'broadcast';
+        value: string | Broadcast;
+      }
+    | {
+        relationTo: 'staff-directory';
+        value: string | StaffDirectory;
+      }
+    | {
+        relationTo: 'policy';
+        value: string | Policy;
+      };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
@@ -455,6 +487,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'celebration';
         value: string | Celebration;
+      } | null)
+    | ({
+        relationTo: 'search';
+        value: string | Search;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -724,6 +760,17 @@ export interface CelebrationSelect<T extends boolean = true> {
         file_mobile?: T;
         type?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "search_select".
+ */
+export interface SearchSelect<T extends boolean = true> {
+  title?: T;
+  priority?: T;
+  doc?: T;
   updatedAt?: T;
   createdAt?: T;
 }

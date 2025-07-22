@@ -3,6 +3,8 @@ import { socialMediaOptions } from "@/lib/constants/links";
 import link from "@/lib/fields/link";
 import { revalidateCollection } from "@/lib/hooks/revalidatePath";
 import { CollectionConfig } from "payload";
+import fs from "fs";
+import path from "path";
 
 export const KDDepartment: CollectionConfig = {
   slug: "kd-department",
@@ -45,7 +47,81 @@ export const KDDirectory: CollectionConfig = {
   defaultSort: "id",
   timestamps: true,
   hooks: {
-    afterChange: [revalidateCollection("DIRECTORY")],
+    beforeChange: [
+      async ({ data, req, operation }) => {
+        if (!["create", "update"].includes(operation)) return data;
+        if (data.staff_id <= 0) return data;
+
+        const safeName = (data.nama || "staff")
+          .replace(/\s+/g, "_")
+          .replace(/[^a-zA-Z0-9_-]/g, "");
+        const timestamp = Date.now();
+        const filename = `${safeName}_${timestamp}.vcf`;
+
+        const [firstName = "", lastName = ""] = (data.nama || "")
+          .split(" ")
+          .reduce(
+            (acc, word, idx, arr) => {
+              if (idx === arr.length - 1) acc[1] = word;
+              else acc[0] += word + " ";
+              return acc;
+            },
+            ["", ""],
+          );
+
+        const vcfContent = `BEGIN:VCARD
+VERSION:3.0
+N:${lastName.trim()};${firstName.trim()};;;
+FN:${data.nama || ""}
+ORG:Kementerian Digital
+TITLE:${data.jawatan || ""}
+TEL;TYPE=CELL:${data.telefon || ""}
+EMAIL:${data.emel || ""}
+ADR;TYPE=WORK:;;${data.alamat || ""};;;;
+URL:${data.laman || ""}
+END:VCARD`;
+
+        const outputDir = path.join(process.cwd(), "e-cards");
+        if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir);
+
+        const vcfPath = path.join(outputDir, filename);
+        fs.writeFileSync(vcfPath, vcfContent);
+
+        const uploaded = await req.payload.create({
+          collection: "ecards",
+          filePath: vcfPath,
+          data: {
+            description: `vCard for ${data.nama}`,
+          },
+        });
+
+        return {
+          ...data,
+          eCard: uploaded.id, // Inject into current mutation
+        };
+      },
+    ],
+
+    afterChange: [
+      revalidateCollection("DIRECTORY"),
+      async ({ req, operation, previousDoc, doc }) => {
+        if (!["create", "update"].includes(operation)) return;
+
+        const oldECardId =
+          typeof previousDoc?.eCard === "object"
+            ? previousDoc?.eCard?.id
+            : previousDoc?.eCard;
+        const newECardId =
+          typeof doc?.eCard === "object" ? doc?.eCard?.id : doc?.eCard;
+
+        if (oldECardId && oldECardId !== newECardId) {
+          await req.payload.delete({
+            collection: "ecards",
+            id: oldECardId,
+          });
+        }
+      },
+    ],
   },
   fields: [
     {
@@ -168,15 +244,14 @@ export const KDDirectory: CollectionConfig = {
       type: "upload",
       relationTo: "ecards",
       admin: {
-        description: "Upload a .vcf file for contact sharing",
+        description: "Auto-generated .vcf card for download",
       },
-      validate: async (value, { data }) => {
-        if (data.staff_id === -1 && value) {
-          return "Leave blank when ID is -1";
-        }
-        return true;
+      access: {
+        create: () => false,
+        update: () => false,
       },
     },
+
     {
       name: "image",
       type: "upload",

@@ -1,4 +1,3 @@
-// collections/e-cards.ts
 import { CollectionConfig } from "payload";
 
 const ECards: CollectionConfig = {
@@ -22,4 +21,4 @@ const ECards: CollectionConfig = {
   ],
 };
 
-export default ECards; // ✅ This is the key fix
+export default ECards;

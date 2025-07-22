@@ -16,25 +16,26 @@ import Image from "next/image";
 interface StaffCardModalProps {
   staff: StaffDirectory;
 }
-const alamat = "Aras 13, Blok Menara, Menara Usahawan, No. 18, Persiaran Perdana, Presint 2, Pusat Pentadbiran Kerajaan Persekutuan, 62000 Putrajaya, Malaysia"
+const alamat =
+  "Aras 13, Blok Menara, Menara Usahawan, No. 18, Persiaran Perdana, Presint 2, Pusat Pentadbiran Kerajaan Persekutuan, 62000 Putrajaya, Malaysia";
 const StaffCardModal: React.FC<StaffCardModalProps> = ({ staff }) => {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <button className="flex text-black-700 items-center justify-center w-[6.9375rem] h-8 gap-1.5 rounded border border-gray-300 py-[6px] px-[10px] shadow-[0px_1px_3px_0px_#00000012] text-sm font-medium hover:bg-gray-50 whitespace-nowrap">
+        <button className="flex h-8 w-[6.9375rem] items-center justify-center gap-1.5 whitespace-nowrap rounded border border-gray-300 px-[10px] py-[6px] text-sm font-medium text-black-700 shadow-[0px_1px_3px_0px_#00000012] hover:bg-gray-50">
           <ArrowUpRightIcon className="h-5 w-5" />
           View Card
         </button>
       </Dialog.Trigger>
 
       <Dialog.Portal>
-        <Dialog.Overlay className="bg-[#00000080] fixed inset-0 z-60 backdrop-blur-sm" />
+        <Dialog.Overlay className="z-60 fixed inset-0 bg-[#00000080] backdrop-blur-sm" />
 
         <Dialog.Content className="fixed left-1/2 top-1/2 z-50 w-[90%] max-w-md -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white p-6 shadow-xl">
           {/* Close Button (absolute, top right) */}
           <div className="absolute right-4 top-4">
             <Dialog.Close asChild>
-              <button className="w-8 h-8 max-w-[180px] rounded border border-[#F4F4F5] p-[6px] shadow-[0px_1px_3px_0px_#00000012] text-gray-400 bg-white hover:bg-gray-100 flex items-center justify-center">
+              <button className="flex h-8 w-8 max-w-[180px] items-center justify-center rounded border border-[#F4F4F5] bg-white p-[6px] text-gray-400 shadow-[0px_1px_3px_0px_#00000012] hover:bg-gray-100">
                 <XMarkIcon className="h-5 w-5 text-black-700" />
               </button>
             </Dialog.Close>
@@ -55,7 +56,7 @@ const StaffCardModal: React.FC<StaffCardModalProps> = ({ staff }) => {
               <span className="font-semibold">Kementerian Digital</span>
             </div>
 
-            <h2 className="text-xl font-bold uppercase text-black">
+            <h2 className="text-black text-xl font-bold uppercase">
               {staff.nama}
             </h2>
             <p className="mt-2 text-sm font-medium text-gray-600">
@@ -80,7 +81,9 @@ const StaffCardModal: React.FC<StaffCardModalProps> = ({ staff }) => {
                   <EnvelopeIcon className="h-5 w-5 shrink-0 text-blue-600" />
                 </div>
 
-                <span className="text-left">{staff.emel ? `${staff.emel}@digital.gov.my` : ''}</span>
+                <span className="text-left">
+                  {staff.emel ? `${staff.emel}@digital.gov.my` : ""}
+                </span>
               </div>
               <div className="flex items-center gap-4">
                 <div className="rounded-full bg-blue-50 p-2">
@@ -95,9 +98,7 @@ const StaffCardModal: React.FC<StaffCardModalProps> = ({ staff }) => {
                 </div>
 
                 <a
-                  href={
-                    "https://digital.gov.my"
-                  }
+                  href={"https://digital.gov.my"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-left text-blue-600"
@@ -107,10 +108,10 @@ const StaffCardModal: React.FC<StaffCardModalProps> = ({ staff }) => {
               </div>
             </div>
 
-            {/* {typeof staff.eCard === "object" && staff.eCard?.url && ( */}
+            {typeof staff.eCard === "object" && staff.eCard?.url && (
               <div className="mt-8 flex justify-center text-sm">
                 <a
-                  // href={staff.eCard.url}
+                  href={staff.eCard.url}
                   download
                   className="inline-flex h-10 w-[9.8125rem] items-center justify-center gap-1.5 rounded-full border border-white/20 bg-gradient-to-b from-[#5288FF] to-[#2563EB] py-2 pl-3 pr-4 font-semibold text-white"
                 >
@@ -118,6 +119,8 @@ const StaffCardModal: React.FC<StaffCardModalProps> = ({ staff }) => {
                   <span>Save Contact</span>
                 </a>
               </div>
+            )}
+
             {/* )} */}
           </div>
         </Dialog.Content>
