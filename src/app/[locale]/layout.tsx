@@ -105,6 +105,7 @@ const Layout: FSP = async ({ children, params }) => {
             defer
             src="https://unpkg.com/@tinybirdco/flock.js"
             data-token={`${process.env.NEXT_PUBLIC_TINYBIRD_TOKEN}`}
+            data-host={`${process.env.NEXT_PUBLIC_TINYBIRD_HOST}`}
           ></script>
           <Script id="splask-matomo" strategy="beforeInteractive">
             {`
