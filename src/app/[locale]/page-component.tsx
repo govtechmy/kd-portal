@@ -19,7 +19,18 @@ interface Props {
   locale: (typeof locales)[number];
 }
 
-const HomePageComponent: FC<Props> = ({
+async function getVisitorsData() {
+  var baseUrl = process.env.NEXT_PUBLIC_TINYBIRD_HOST;
+  var token = process.env.TINYBIRD_TOKEN_API;
+  const res = await fetch(
+    `${baseUrl}/v0/pipes/analytics_events_pipe_4995.json?token=${token}`,
+  );
+  const json = await res.json();
+  // Adjust this according to your Tinybird response structure
+  return json.data; // or json if the array is at the root
+}
+
+const HomePageComponent = async ({
   siteInfo,
   homepage,
   achievements,
