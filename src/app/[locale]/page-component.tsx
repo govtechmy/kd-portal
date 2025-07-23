@@ -27,8 +27,10 @@ interface Props {
 }
 
 async function getVisitorsData() {
+  var baseUrl = process.env.NEXT_PUBLIC_TINYBIRD_HOST;
+  var token = process.env.TINYBIRD_TOKEN_API;
   const res = await fetch(
-    "https://api.us-east.tinybird.co/v0/pipes/analytics_events_pipe_4995.json?token=p.eyJ1IjogIjhkM2RjYzM3LTkxNjYtNGM1Ni05ZDY5LTFmNmEwMTE0OWQyYSIsICJpZCI6ICI0YzlmNWEzNy1kN2JlLTRmMjUtOWU0Yi03M2YwYzQ2MTg5YTgiLCAiaG9zdCI6ICJ1c19lYXN0In0.HNl_Mxh6QtfJIab6AA1Q9W4TNlICJQ39UW-zd3eb8J4",
+    `${baseUrl}/v0/pipes/analytics_events_pipe_4995.json?token=${token}`,
   );
   const json = await res.json();
   // Adjust this according to your Tinybird response structure
