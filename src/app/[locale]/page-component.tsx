@@ -11,6 +11,7 @@ import { Achievement, Broadcast, Homepage, SiteInfo } from "@/payload-types";
 import { useTranslations } from "next-intl";
 import React, { FC } from "react";
 
+import TimeSeriesCharts from "@/components/home/timeseriescharts";
 interface Props {
   siteInfo: SiteInfo;
   homepage: Homepage;
@@ -38,7 +39,7 @@ const HomePageComponent = async ({
   locale,
 }) => {
   const t = useTranslations();
-
+  const visitorsData = await getVisitorsData();
   return (
     <>
       <section className="relative w-full gap-6 border-b sm:grid sm:grid-cols-6">
@@ -125,6 +126,7 @@ const HomePageComponent = async ({
         <Timeline achievements={achievements} />
         <HomeSiaran broadcast={broadcast} />
         <Quicklinks homepage={homepage} />
+        <TimeSeriesCharts data={visitorsData} />
       </main>
     </>
   );
