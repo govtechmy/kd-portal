@@ -10,6 +10,13 @@ import { cn } from "@/lib/utils";
 import { Achievement, Broadcast, Homepage, SiteInfo } from "@/payload-types";
 import { useTranslations } from "next-intl";
 import React, { FC } from "react";
+import dynamic from "next/dynamic";
+
+// Dynamically import VisitorsChart to avoid SSR issues with recharts
+const TimeSeriesCharts = dynamic(
+  () => import("@/components/home/timeseriescharts"),
+  { ssr: true },
+); // Ensure this is the correct path
 
 interface Props {
   siteInfo: SiteInfo;
@@ -19,14 +26,24 @@ interface Props {
   locale: (typeof locales)[number];
 }
 
-const HomePageComponent: FC<Props> = ({
+async function getVisitorsData() {
+  const res = await fetch(
+    "https://api.us-east.tinybird.co/v0/pipes/analytics_events_pipe_4995.json?token=p.eyJ1IjogIjhkM2RjYzM3LTkxNjYtNGM1Ni05ZDY5LTFmNmEwMTE0OWQyYSIsICJpZCI6ICI0YzlmNWEzNy1kN2JlLTRmMjUtOWU0Yi03M2YwYzQ2MTg5YTgiLCAiaG9zdCI6ICJ1c19lYXN0In0.HNl_Mxh6QtfJIab6AA1Q9W4TNlICJQ39UW-zd3eb8J4",
+  );
+  const json = await res.json();
+  // Adjust this according to your Tinybird response structure
+  return json.data; // or json if the array is at the root
+}
+
+const HomePageComponent = async ({
   siteInfo,
   homepage,
   achievements,
   broadcast,
   locale,
-}) => {
+}: Props) => {
   const t = useTranslations();
+  const visitorsData = await getVisitorsData();
 
   return (
     <>
@@ -109,11 +126,15 @@ const HomePageComponent: FC<Props> = ({
         </div>
       </section>
 
+      {/* Timeseries Chart Section */}
+      <section className="mx-auto w-full max-w-2xl px-4 py-8"></section>
+
       <main className="divide-y divide-washed-100">
         <Carousel homepage={homepage} />
         <Timeline achievements={achievements} />
         <HomeSiaran broadcast={broadcast} />
         <Quicklinks homepage={homepage} />
+        <TimeSeriesCharts data={visitorsData} />
       </main>
     </>
   );
