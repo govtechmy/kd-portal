@@ -14,57 +14,65 @@ export interface Config {
     users: User;
     media: Media;
     file: File;
-    'hero-banner': HeroBanner;
+    "hero-banner": HeroBanner;
     broadcast: Broadcast;
     achievement: Achievement;
-    'kd-department': KdDepartment;
-    'staff-directory': StaffDirectory;
+    "kd-department": KdDepartment;
+    "staff-directory": StaffDirectory;
     policy: Policy;
-    'quick-link': QuickLink;
+    "quick-link": QuickLink;
     celebration: Celebration;
     search: Search;
-    'payload-locked-documents': PayloadLockedDocument;
-    'payload-preferences': PayloadPreference;
-    'payload-migrations': PayloadMigration;
+    "payload-locked-documents": PayloadLockedDocument;
+    "payload-preferences": PayloadPreference;
+    "payload-migrations": PayloadMigration;
   };
   collectionsJoins: {};
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     file: FileSelect<false> | FileSelect<true>;
-    'hero-banner': HeroBannerSelect<false> | HeroBannerSelect<true>;
+    "hero-banner": HeroBannerSelect<false> | HeroBannerSelect<true>;
     broadcast: BroadcastSelect<false> | BroadcastSelect<true>;
     achievement: AchievementSelect<false> | AchievementSelect<true>;
-    'kd-department': KdDepartmentSelect<false> | KdDepartmentSelect<true>;
-    'staff-directory': StaffDirectorySelect<false> | StaffDirectorySelect<true>;
+    "kd-department": KdDepartmentSelect<false> | KdDepartmentSelect<true>;
+    "staff-directory": StaffDirectorySelect<false> | StaffDirectorySelect<true>;
     policy: PolicySelect<false> | PolicySelect<true>;
-    'quick-link': QuickLinkSelect<false> | QuickLinkSelect<true>;
+    "quick-link": QuickLinkSelect<false> | QuickLinkSelect<true>;
     celebration: CelebrationSelect<false> | CelebrationSelect<true>;
     search: SearchSelect<false> | SearchSelect<true>;
-    'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
-    'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
-    'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
+    "payload-locked-documents":
+      | PayloadLockedDocumentsSelect<false>
+      | PayloadLockedDocumentsSelect<true>;
+    "payload-preferences":
+      | PayloadPreferencesSelect<false>
+      | PayloadPreferencesSelect<true>;
+    "payload-migrations":
+      | PayloadMigrationsSelect<false>
+      | PayloadMigrationsSelect<true>;
   };
   db: {
     defaultIDType: string;
   };
   globals: {
-    'site-info': SiteInfo;
+    "site-info": SiteInfo;
     header: Header;
     footer: Footer;
     homepage: Homepage;
-    'profil-kementerian': ProfilKementerian;
+    "profil-kementerian": ProfilKementerian;
   };
   globalsSelect: {
-    'site-info': SiteInfoSelect<false> | SiteInfoSelect<true>;
+    "site-info": SiteInfoSelect<false> | SiteInfoSelect<true>;
     header: HeaderSelect<false> | HeaderSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
     homepage: HomepageSelect<false> | HomepageSelect<true>;
-    'profil-kementerian': ProfilKementerianSelect<false> | ProfilKementerianSelect<true>;
+    "profil-kementerian":
+      | ProfilKementerianSelect<false>
+      | ProfilKementerianSelect<true>;
   };
-  locale: 'ms-MY' | 'en-GB';
+  locale: "ms-MY" | "en-GB";
   user: User & {
-    collection: 'users';
+    collection: "users";
   };
   jobs: {
     tasks: unknown;
@@ -95,7 +103,7 @@ export interface UserAuthOperations {
  */
 export interface User {
   id: string;
-  role?: ('admin' | 'user') | null;
+  role?: ("admin" | "user") | null;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -176,7 +184,7 @@ export interface Broadcast {
    * Use as the URL link for broadcast page
    */
   slug: string;
-  type: 'announcement' | 'media_release' | 'speech';
+  type: "announcement" | "media_release" | "speech";
   date: string;
   description: string;
   broadcast_text: {
@@ -187,8 +195,8 @@ export interface Broadcast {
         version: number;
         [k: string]: unknown;
       }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      direction: ("ltr" | "rtl") | null;
+      format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
       indent: number;
       version: number;
     };
@@ -201,7 +209,7 @@ export interface Broadcast {
   broadcast_file_bm?: (string | null) | File;
   updatedAt: string;
   createdAt: string;
-  _status?: ('draft' | 'published') | null;
+  _status?: ("draft" | "published") | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -210,7 +218,12 @@ export interface Broadcast {
 export interface Achievement {
   id: string;
   title: string;
-  type: 'product_launch' | 'policy' | 'collaboration' | 'miscellaneous' | 'not_achievement';
+  type:
+    | "product_launch"
+    | "policy"
+    | "collaboration"
+    | "miscellaneous"
+    | "not_achievement";
   date: string;
   description: string;
   content_text?: {
@@ -221,8 +234,8 @@ export interface Achievement {
         version: number;
         [k: string]: unknown;
       }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      direction: ("ltr" | "rtl") | null;
+      format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
       indent: number;
       version: number;
     };
@@ -263,21 +276,21 @@ export interface StaffDirectory {
   image?: (string | null) | Media;
   social_media?:
     | {
-        social: 'Facebook' | 'X' | 'Instagram' | 'Tiktok';
+        social: "Facebook" | "X" | "Instagram" | "Tiktok";
         link: {
-          type?: ('reference' | 'custom') | null;
+          type?: ("reference" | "custom") | null;
           newTab?: boolean | null;
           reference?:
             | (
-                | '/'
-                | '/pencapaian'
-                | '/siaran'
-                | '/hubungi-kami'
-                | '/profil-kementerian'
-                | '/direktori'
-                | '/penafian'
-                | '/dasar'
-                | '/dasar-privasi'
+                | "/"
+                | "/pencapaian"
+                | "/siaran"
+                | "/hubungi-kami"
+                | "/profil-kementerian"
+                | "/direktori"
+                | "/penafian"
+                | "/dasar"
+                | "/dasar-privasi"
               )
             | null;
           url?: string | null;
@@ -296,13 +309,13 @@ export interface StaffDirectory {
 export interface Policy {
   id: string;
   doc_name: string;
-  doc_type: 'act' | 'document' | 'guideline' | 'circular';
+  doc_type: "act" | "document" | "guideline" | "circular";
   doc_description: string;
   doc_date: string;
   file_upload: string | File;
   updatedAt: string;
   createdAt: string;
-  _status?: ('draft' | 'published') | null;
+  _status?: ("draft" | "published") | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -311,23 +324,23 @@ export interface Policy {
 export interface QuickLink {
   id: string;
   name: string;
-  type?: ('social' | 'quick_links') | null;
+  type?: ("social" | "quick_links") | null;
   description?: string | null;
   href: {
     link?: {
-      type?: ('reference' | 'custom') | null;
+      type?: ("reference" | "custom") | null;
       newTab?: boolean | null;
       reference?:
         | (
-            | '/'
-            | '/pencapaian'
-            | '/siaran'
-            | '/hubungi-kami'
-            | '/profil-kementerian'
-            | '/direktori'
-            | '/penafian'
-            | '/dasar'
-            | '/dasar-privasi'
+            | "/"
+            | "/pencapaian"
+            | "/siaran"
+            | "/hubungi-kami"
+            | "/profil-kementerian"
+            | "/direktori"
+            | "/penafian"
+            | "/dasar"
+            | "/dasar-privasi"
           )
         | null;
       url?: string | null;
@@ -350,28 +363,28 @@ export interface Celebration {
   /**
    * Add the top gradient color. Use #FFFFFF
    */
-  'top-gradient': string;
+  "top-gradient": string;
   /**
    * Add the middle gradient color. Use #FFFFFF
    */
-  'middle-gradient': string;
+  "middle-gradient": string;
   /**
    * Add the bottom gradient color. Use #FFFFFF
    */
-  'bottom-gradient': string;
+  "bottom-gradient": string;
   /**
    * This is the desktop design. Fill in the fields accordingly for desktop design
    */
   desktop: {
     file_desktop: string | HeroBanner;
-    type: 'desktop' | 'mobile';
+    type: "desktop" | "mobile";
   };
   /**
    * This is the mobile design. Fill in the fields accordingly for mobile design
    */
   mobile: {
     file_mobile: string | HeroBanner;
-    type: 'desktop' | 'mobile';
+    type: "desktop" | "mobile";
   };
   updatedAt: string;
   createdAt: string;
@@ -388,19 +401,19 @@ export interface Search {
   priority?: number | null;
   doc:
     | {
-        relationTo: 'achievement';
+        relationTo: "achievement";
         value: string | Achievement;
       }
     | {
-        relationTo: 'broadcast';
+        relationTo: "broadcast";
         value: string | Broadcast;
       }
     | {
-        relationTo: 'staff-directory';
+        relationTo: "staff-directory";
         value: string | StaffDirectory;
       }
     | {
-        relationTo: 'policy';
+        relationTo: "policy";
         value: string | Policy;
       };
   updatedAt: string;
@@ -414,56 +427,56 @@ export interface PayloadLockedDocument {
   id: string;
   document?:
     | ({
-        relationTo: 'users';
+        relationTo: "users";
         value: string | User;
       } | null)
     | ({
-        relationTo: 'media';
+        relationTo: "media";
         value: string | Media;
       } | null)
     | ({
-        relationTo: 'file';
+        relationTo: "file";
         value: string | File;
       } | null)
     | ({
-        relationTo: 'hero-banner';
+        relationTo: "hero-banner";
         value: string | HeroBanner;
       } | null)
     | ({
-        relationTo: 'broadcast';
+        relationTo: "broadcast";
         value: string | Broadcast;
       } | null)
     | ({
-        relationTo: 'achievement';
+        relationTo: "achievement";
         value: string | Achievement;
       } | null)
     | ({
-        relationTo: 'kd-department';
+        relationTo: "kd-department";
         value: string | KdDepartment;
       } | null)
     | ({
-        relationTo: 'staff-directory';
+        relationTo: "staff-directory";
         value: string | StaffDirectory;
       } | null)
     | ({
-        relationTo: 'policy';
+        relationTo: "policy";
         value: string | Policy;
       } | null)
     | ({
-        relationTo: 'quick-link';
+        relationTo: "quick-link";
         value: string | QuickLink;
       } | null)
     | ({
-        relationTo: 'celebration';
+        relationTo: "celebration";
         value: string | Celebration;
       } | null)
     | ({
-        relationTo: 'search';
+        relationTo: "search";
         value: string | Search;
       } | null);
   globalSlug?: string | null;
   user: {
-    relationTo: 'users';
+    relationTo: "users";
     value: string | User;
   };
   updatedAt: string;
@@ -476,7 +489,7 @@ export interface PayloadLockedDocument {
 export interface PayloadPreference {
   id: string;
   user: {
-    relationTo: 'users';
+    relationTo: "users";
     value: string | User;
   };
   key?: string | null;
@@ -693,9 +706,9 @@ export interface QuickLinkSelect<T extends boolean = true> {
  */
 export interface CelebrationSelect<T extends boolean = true> {
   title?: T;
-  'top-gradient'?: T;
-  'middle-gradient'?: T;
-  'bottom-gradient'?: T;
+  "top-gradient"?: T;
+  "middle-gradient"?: T;
+  "bottom-gradient"?: T;
   desktop?:
     | T
     | {
@@ -770,21 +783,21 @@ export interface SiteInfo {
   no_tel: string;
   email: string;
   social_media: {
-    social: 'Facebook' | 'X' | 'Instagram' | 'Tiktok';
+    social: "Facebook" | "X" | "Instagram" | "Tiktok";
     link: {
-      type?: ('reference' | 'custom') | null;
+      type?: ("reference" | "custom") | null;
       newTab?: boolean | null;
       reference?:
         | (
-            | '/'
-            | '/pencapaian'
-            | '/siaran'
-            | '/hubungi-kami'
-            | '/profil-kementerian'
-            | '/direktori'
-            | '/penafian'
-            | '/dasar'
-            | '/dasar-privasi'
+            | "/"
+            | "/pencapaian"
+            | "/siaran"
+            | "/hubungi-kami"
+            | "/profil-kementerian"
+            | "/direktori"
+            | "/penafian"
+            | "/dasar"
+            | "/dasar-privasi"
           )
         | null;
       url?: string | null;
@@ -803,19 +816,19 @@ export interface Header {
   id: string;
   items: {
     link: {
-      type?: ('reference' | 'custom') | null;
+      type?: ("reference" | "custom") | null;
       newTab?: boolean | null;
       reference?:
         | (
-            | '/'
-            | '/pencapaian'
-            | '/siaran'
-            | '/hubungi-kami'
-            | '/profil-kementerian'
-            | '/direktori'
-            | '/penafian'
-            | '/dasar'
-            | '/dasar-privasi'
+            | "/"
+            | "/pencapaian"
+            | "/siaran"
+            | "/hubungi-kami"
+            | "/profil-kementerian"
+            | "/direktori"
+            | "/penafian"
+            | "/dasar"
+            | "/dasar-privasi"
           )
         | null;
       url?: string | null;
@@ -828,19 +841,19 @@ export interface Header {
     dept_agency?:
       | {
           link: {
-            type?: ('reference' | 'custom') | null;
+            type?: ("reference" | "custom") | null;
             newTab?: boolean | null;
             reference?:
               | (
-                  | '/'
-                  | '/pencapaian'
-                  | '/siaran'
-                  | '/hubungi-kami'
-                  | '/profil-kementerian'
-                  | '/direktori'
-                  | '/penafian'
-                  | '/dasar'
-                  | '/dasar-privasi'
+                  | "/"
+                  | "/pencapaian"
+                  | "/siaran"
+                  | "/hubungi-kami"
+                  | "/profil-kementerian"
+                  | "/direktori"
+                  | "/penafian"
+                  | "/dasar"
+                  | "/dasar-privasi"
                 )
               | null;
             url?: string | null;
@@ -862,19 +875,19 @@ export interface Footer {
   about_us?:
     | {
         link: {
-          type?: ('reference' | 'custom') | null;
+          type?: ("reference" | "custom") | null;
           newTab?: boolean | null;
           reference?:
             | (
-                | '/'
-                | '/pencapaian'
-                | '/siaran'
-                | '/hubungi-kami'
-                | '/profil-kementerian'
-                | '/direktori'
-                | '/penafian'
-                | '/dasar'
-                | '/dasar-privasi'
+                | "/"
+                | "/pencapaian"
+                | "/siaran"
+                | "/hubungi-kami"
+                | "/profil-kementerian"
+                | "/direktori"
+                | "/penafian"
+                | "/dasar"
+                | "/dasar-privasi"
               )
             | null;
           url?: string | null;
@@ -883,28 +896,28 @@ export interface Footer {
         id?: string | null;
       }[]
     | null;
-  'quick-links'?:
+  "quick-links"?:
     | {
-        'quick-links'?: (string | null) | QuickLink;
+        "quick-links"?: (string | null) | QuickLink;
         id?: string | null;
       }[]
     | null;
-  'open-source'?:
+  "open-source"?:
     | {
         link: {
-          type?: ('reference' | 'custom') | null;
+          type?: ("reference" | "custom") | null;
           newTab?: boolean | null;
           reference?:
             | (
-                | '/'
-                | '/pencapaian'
-                | '/siaran'
-                | '/hubungi-kami'
-                | '/profil-kementerian'
-                | '/direktori'
-                | '/penafian'
-                | '/dasar'
-                | '/dasar-privasi'
+                | "/"
+                | "/pencapaian"
+                | "/siaran"
+                | "/hubungi-kami"
+                | "/profil-kementerian"
+                | "/direktori"
+                | "/penafian"
+                | "/dasar"
+                | "/dasar-privasi"
               )
             | null;
           url?: string | null;
@@ -922,15 +935,15 @@ export interface Footer {
           version: number;
           [k: string]: unknown;
         }[];
-        direction: ('ltr' | 'rtl') | null;
-        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        direction: ("ltr" | "rtl") | null;
+        format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
         indent: number;
         version: number;
       };
       [k: string]: unknown;
     } | null;
   };
-  'privacy-policy_section'?: {
+  "privacy-policy_section"?: {
     statement?: {
       root: {
         type: string;
@@ -939,8 +952,8 @@ export interface Footer {
           version: number;
           [k: string]: unknown;
         }[];
-        direction: ('ltr' | 'rtl') | null;
-        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        direction: ("ltr" | "rtl") | null;
+        format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
         indent: number;
         version: number;
       };
@@ -977,70 +990,70 @@ export interface ProfilKementerian {
   vision: {
     statement: string;
     icon:
-      | 'arrow-back'
-      | 'arrow-forward'
-      | 'arrow-outgoing'
-      | 'bolt'
-      | 'check-circle'
-      | 'checkmark-14-point-star'
-      | 'checkmark-shield'
-      | 'chevron-down'
-      | 'chevron-left'
-      | 'chevron-right'
-      | 'chevron-up'
-      | 'cross-x'
-      | 'direction'
-      | 'ellipsis'
-      | 'envelope'
-      | 'eye-show'
-      | 'file-document-paper'
-      | 'flag'
-      | 'globe'
-      | 'gov'
-      | 'hamburger-menu'
-      | 'lock'
-      | 'map'
-      | 'money'
-      | 'phone'
-      | 'search'
-      | 'solid-lock'
-      | 'star'
-      | 'trophy'
-      | 'user-group';
+      | "arrow-back"
+      | "arrow-forward"
+      | "arrow-outgoing"
+      | "bolt"
+      | "check-circle"
+      | "checkmark-14-point-star"
+      | "checkmark-shield"
+      | "chevron-down"
+      | "chevron-left"
+      | "chevron-right"
+      | "chevron-up"
+      | "cross-x"
+      | "direction"
+      | "ellipsis"
+      | "envelope"
+      | "eye-show"
+      | "file-document-paper"
+      | "flag"
+      | "globe"
+      | "gov"
+      | "hamburger-menu"
+      | "lock"
+      | "map"
+      | "money"
+      | "phone"
+      | "search"
+      | "solid-lock"
+      | "star"
+      | "trophy"
+      | "user-group";
   };
   mission: {
     statement: string;
     icon:
-      | 'arrow-back'
-      | 'arrow-forward'
-      | 'arrow-outgoing'
-      | 'bolt'
-      | 'check-circle'
-      | 'checkmark-14-point-star'
-      | 'checkmark-shield'
-      | 'chevron-down'
-      | 'chevron-left'
-      | 'chevron-right'
-      | 'chevron-up'
-      | 'cross-x'
-      | 'direction'
-      | 'ellipsis'
-      | 'envelope'
-      | 'eye-show'
-      | 'file-document-paper'
-      | 'flag'
-      | 'globe'
-      | 'gov'
-      | 'hamburger-menu'
-      | 'lock'
-      | 'map'
-      | 'money'
-      | 'phone'
-      | 'search'
-      | 'solid-lock'
-      | 'star'
-      | 'trophy'
-      | 'user-group';
+      | "arrow-back"
+      | "arrow-forward"
+      | "arrow-outgoing"
+      | "bolt"
+      | "check-circle"
+      | "checkmark-14-point-star"
+      | "checkmark-shield"
+      | "chevron-down"
+      | "chevron-left"
+      | "chevron-right"
+      | "chevron-up"
+      | "cross-x"
+      | "direction"
+      | "ellipsis"
+      | "envelope"
+      | "eye-show"
+      | "file-document-paper"
+      | "flag"
+      | "globe"
+      | "gov"
+      | "hamburger-menu"
+      | "lock"
+      | "map"
+      | "money"
+      | "phone"
+      | "search"
+      | "solid-lock"
+      | "star"
+      | "trophy"
+      | "user-group";
   };
   functions_and_role: {
     statement: {
@@ -1051,44 +1064,44 @@ export interface ProfilKementerian {
           version: number;
           [k: string]: unknown;
         }[];
-        direction: ('ltr' | 'rtl') | null;
-        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        direction: ("ltr" | "rtl") | null;
+        format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
         indent: number;
         version: number;
       };
       [k: string]: unknown;
     };
     icon:
-      | 'arrow-back'
-      | 'arrow-forward'
-      | 'arrow-outgoing'
-      | 'bolt'
-      | 'check-circle'
-      | 'checkmark-14-point-star'
-      | 'checkmark-shield'
-      | 'chevron-down'
-      | 'chevron-left'
-      | 'chevron-right'
-      | 'chevron-up'
-      | 'cross-x'
-      | 'direction'
-      | 'ellipsis'
-      | 'envelope'
-      | 'eye-show'
-      | 'file-document-paper'
-      | 'flag'
-      | 'globe'
-      | 'gov'
-      | 'hamburger-menu'
-      | 'lock'
-      | 'map'
-      | 'money'
-      | 'phone'
-      | 'search'
-      | 'solid-lock'
-      | 'star'
-      | 'trophy'
-      | 'user-group';
+      | "arrow-back"
+      | "arrow-forward"
+      | "arrow-outgoing"
+      | "bolt"
+      | "check-circle"
+      | "checkmark-14-point-star"
+      | "checkmark-shield"
+      | "chevron-down"
+      | "chevron-left"
+      | "chevron-right"
+      | "chevron-up"
+      | "cross-x"
+      | "direction"
+      | "ellipsis"
+      | "envelope"
+      | "eye-show"
+      | "file-document-paper"
+      | "flag"
+      | "globe"
+      | "gov"
+      | "hamburger-menu"
+      | "lock"
+      | "map"
+      | "money"
+      | "phone"
+      | "search"
+      | "solid-lock"
+      | "star"
+      | "trophy"
+      | "user-group";
     id?: string | null;
   }[];
   leaders?:
@@ -1097,7 +1110,7 @@ export interface ProfilKementerian {
         id?: string | null;
       }[]
     | null;
-  'latar-belakang'?: {
+  "latar-belakang"?: {
     root: {
       type: string;
       children: {
@@ -1105,8 +1118,8 @@ export interface ProfilKementerian {
         version: number;
         [k: string]: unknown;
       }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      direction: ("ltr" | "rtl") | null;
+      format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
       indent: number;
       version: number;
     };
@@ -1206,13 +1219,13 @@ export interface FooterSelect<T extends boolean = true> {
             };
         id?: T;
       };
-  'quick-links'?:
+  "quick-links"?:
     | T
     | {
-        'quick-links'?: T;
+        "quick-links"?: T;
         id?: T;
       };
-  'open-source'?:
+  "open-source"?:
     | T
     | {
         link?:
@@ -1231,7 +1244,7 @@ export interface FooterSelect<T extends boolean = true> {
     | {
         statement?: T;
       };
-  'privacy-policy_section'?:
+  "privacy-policy_section"?:
     | T
     | {
         statement?: T;
@@ -1292,7 +1305,7 @@ export interface ProfilKementerianSelect<T extends boolean = true> {
         staff?: T;
         id?: T;
       };
-  'latar-belakang'?: T;
+  "latar-belakang"?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
@@ -1305,7 +1318,6 @@ export interface Auth {
   [k: string]: unknown;
 }
 
-
-declare module 'payload' {
+declare module "payload" {
   export interface GeneratedTypes extends Config {}
 }
