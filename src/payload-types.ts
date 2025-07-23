@@ -14,7 +14,6 @@ export interface Config {
     users: User;
     media: Media;
     file: File;
-    ecards: Ecard;
     'hero-banner': HeroBanner;
     broadcast: Broadcast;
     achievement: Achievement;
@@ -33,7 +32,6 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     file: FileSelect<false> | FileSelect<true>;
-    ecards: EcardsSelect<false> | EcardsSelect<true>;
     'hero-banner': HeroBannerSelect<false> | HeroBannerSelect<true>;
     broadcast: BroadcastSelect<false> | BroadcastSelect<true>;
     achievement: AchievementSelect<false> | AchievementSelect<true>;
@@ -140,25 +138,6 @@ export interface File {
   url?: string | null;
   thumbnailURL?: string | null;
   filename: string;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  focalX?: number | null;
-  focalY?: number | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "ecards".
- */
-export interface Ecard {
-  id: string;
-  description?: string | null;
-  updatedAt: string;
-  createdAt: string;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
   mimeType?: string | null;
   filesize?: number | null;
   width?: number | null;
@@ -282,10 +261,6 @@ export interface StaffDirectory {
   telefon?: string | null;
   laman?: string | null;
   emel?: string | null;
-  /**
-   * Auto-generated .vcf card for download
-   */
-  eCard?: (string | null) | Ecard;
   image?: (string | null) | Media;
   social_media?:
     | {
@@ -452,10 +427,6 @@ export interface PayloadLockedDocument {
         value: string | File;
       } | null)
     | ({
-        relationTo: 'ecards';
-        value: string | Ecard;
-      } | null)
-    | ({
         relationTo: 'hero-banner';
         value: string | HeroBanner;
       } | null)
@@ -587,24 +558,6 @@ export interface FileSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "ecards_select".
- */
-export interface EcardsSelect<T extends boolean = true> {
-  description?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  url?: T;
-  thumbnailURL?: T;
-  filename?: T;
-  mimeType?: T;
-  filesize?: T;
-  width?: T;
-  height?: T;
-  focalX?: T;
-  focalY?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "hero-banner_select".
  */
 export interface HeroBannerSelect<T extends boolean = true> {
@@ -678,7 +631,6 @@ export interface StaffDirectorySelect<T extends boolean = true> {
   telefon?: T;
   laman?: T;
   emel?: T;
-  eCard?: T;
   image?: T;
   social_media?:
     | T

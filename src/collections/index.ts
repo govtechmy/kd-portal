@@ -5,7 +5,6 @@ import { Broadcast } from "./Broadcast";
 import { KDDepartment, KDDirectory } from "./Directory";
 import { QuickLink } from "./QuickLink";
 import { File } from "./File";
-import ECards from "./Ecard";
 import { KDPolicy } from "./Policy";
 import { Achievement } from "./Achievement";
 import { SearchOverride } from "./Search-Overrides";
@@ -16,7 +15,6 @@ const PayloadCollections: CollectionConfig[] = [
   Users,
   Media,
   File,
-  ECards, // added this for e-cards, insyallah
   HeroBanner,
   Broadcast,
   Achievement,
@@ -31,7 +29,6 @@ export {
   Users,
   Media,
   File,
-  ECards, //added this too
   HeroBanner,
   Broadcast,
   Achievement,
