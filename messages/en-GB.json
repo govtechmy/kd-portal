@@ -239,7 +239,9 @@
       "alamat": "address",
       "ecard": "E Card",
       "emel": "Email (@digital.gov.my)",
-      "semua": "All Divisions"
+      "semua": "All Divisions",
+      "viewcard": "View Card",
+      "savecontact": "Save Contact"
     }
   },
   "Contact": {

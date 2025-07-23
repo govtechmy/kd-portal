@@ -240,7 +240,9 @@
       "laman": "website",
       "ecard": "E Kad",
       "emel": "Emel (@digital.gov.my)",
-      "semua": "Semua Bahagian"
+      "semua": "Semua Bahagian",
+      "viewcard": "Papar E-Kad",
+      "savecontact": "Simpan Maklumat"
     }
   },
   "Contact": {

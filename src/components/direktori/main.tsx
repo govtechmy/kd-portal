@@ -125,10 +125,8 @@ const DirektoriMain: FC<DirektoriMainProps> = ({ list, locale, siteInfo }) => {
       header: "",
       id: "bhg",
       accessorKey: "id_bhg.bhg",
-      // accessorFn: (item: StaffDirectory) =>
-      //   typeof item.id_bhg !== "string" && item.id_bhg.bhg,
       cell: (info: any) => {
-        const { id_bhg, emel, gred, staff_id, jawatan, nama, telefon, eCard } =
+        const { id_bhg, emel, staff_id, jawatan, nama, telefon } =
           (info as Cell<StaffDirectory, unknown>).row.original;
 
         if (staff_id === -1)

@@ -1,5 +1,4 @@
 "use client";
-
 import * as Dialog from "@radix-ui/react-dialog";
 import { StaffDirectory } from "@/payload-types";
 import { SiteInfo } from "@/payload-types";
@@ -17,6 +16,7 @@ import Image from "next/image";
 import { generateVCF } from "@/lib/vcf_generator/generateVCF";
 import { downloadVCF } from "@/lib/vcf_generator/downloadVCF";
 import { useTranslations } from "next-intl";
+import React from "react";
 
 interface StaffCardModalProps {
   staff: StaffDirectory;
@@ -25,20 +25,21 @@ interface StaffCardModalProps {
 
 const StaffCardModal: React.FC<StaffCardModalProps> = ({ staff, siteInfo }) => {
   const t = useTranslations("Agency");
+  const tdir = useTranslations("Directory.table_header");
 
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <button className="flex h-8 w-[6.9375rem] items-center justify-center gap-1.5 whitespace-nowrap rounded-lg border border-gray-300 px-[10px] py-1 text-sm font-medium text-black-700 shadow-[0px_1px_3px_0px_#00000012] hover:bg-gray-50">
+        <button className="flex h-8 min-w-[6.9375rem] items-center justify-center gap-1.5 whitespace-nowrap rounded-lg border border-gray-300 px-[10px] py-1 text-sm font-medium text-black-700 shadow-[0px_1px_3px_0px_#00000012] hover:bg-gray-50">
           <ArrowUpRightIcon className="h-5 w-5" />
-          View Card
+          {tdir("viewcard")}
         </button>
       </Dialog.Trigger>
 
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 z-[60] bg-[#00000080] backdrop-blur-sm" />
 
-        <Dialog.Content className="fixed left-1/2 top-1/2 z-[70] max-h-[80vh] w-[90%] max-w-md -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-lg border border-gray-200 bg-white p-6 shadow-xl md:max-h-[75vh]">
+        <Dialog.Content className="fixed left-1/2 top-1/2 z-[70] w-[95vw] max-w-md -translate-x-1/2 -translate-y-1/2 rounded-lg border border-gray-200 bg-white p-4 sm:p-6 shadow-xl">
           {/* Close Button (absolute, top right) */}
           <div className="absolute right-4 top-4">
             <Dialog.Close asChild>
@@ -47,7 +48,7 @@ const StaffCardModal: React.FC<StaffCardModalProps> = ({ staff, siteInfo }) => {
               </button>
             </Dialog.Close>
           </div>
-          <Dialog.DialogTitle className="hidden">E-CARD</Dialog.DialogTitle>
+          <Dialog.DialogTitle className="hidden">{tdir("ecard")}</Dialog.DialogTitle>
 
           {/* Main Content */}
           <div className="text-center">
@@ -79,7 +80,15 @@ const StaffCardModal: React.FC<StaffCardModalProps> = ({ staff, siteInfo }) => {
                   <PhoneIcon className="h-5 w-5 shrink-0 text-blue-600" />
                 </div>
 
-                <span className="text-left">{staff.telefon}</span>
+                <span className="text-left">
+                  {staff.telefon && staff.telefon !== "-" ? (
+                    <a href={`tel:${staff.telefon}`} className="text-blue-600 hover:underline" rel="noopener noreferrer">
+                      {staff.telefon}
+                    </a>
+                  ) : (
+                    <span className="text-gray-400 cursor-not-allowed select-none">N/A</span>
+                  )}
+                </span>
               </div>
               <div className="flex items-center gap-4">
                 <div className="rounded-full bg-blue-50 p-2">
@@ -87,7 +96,13 @@ const StaffCardModal: React.FC<StaffCardModalProps> = ({ staff, siteInfo }) => {
                 </div>
 
                 <span className="text-left">
-                  {staff.emel ? `${staff.emel}@digital.gov.my` : "N/A"}
+                  {staff.emel ? (
+                    <a href={`mailto:${staff.emel}@digital.gov.my`} className="text-blue-600 hover:underline">
+                      {`${staff.emel}@digital.gov.my`}
+                    </a>
+                  ) : (
+                    <span className="text-gray-400 cursor-not-allowed select-none">N/A</span>
+                  )}
                 </span>
               </div>
               <div className="flex gap-4">
@@ -98,12 +113,13 @@ const StaffCardModal: React.FC<StaffCardModalProps> = ({ staff, siteInfo }) => {
                 </div>
 
                 <span className="whitespace-pre-line text-left">
-                  {staff.alamat ||
-                    `Aras 13, 14 & 15, Blok Menara,
-                    Menara Usahawan
-                    No. 18, Persiaran Perdana, Presint 2
-                    Pusat Pentadbiran Kerajaan Persekutuan
-                    62000 Putrajaya, Malaysia`}
+                {siteInfo && siteInfo.address ? siteInfo.address.split("\n").map((line, index) => (
+                    <React.Fragment key={index}>
+                      {line}
+                      <br />
+                    </React.Fragment>
+                  ))
+                : ""}
                 </span>
               </div>
               <div className="flex items-center gap-4">
@@ -125,22 +141,14 @@ const StaffCardModal: React.FC<StaffCardModalProps> = ({ staff, siteInfo }) => {
             <div className="mt-8 flex justify-center text-sm">
               <button
                 onClick={() => {
-                  const alamat =
-                    staff.alamat?.replace(/\n/g, "\\n") ||
-                    `Aras 13, 14 & 15, Blok Menara\\nMenara Usahawan\\nNo. 18, Persiaran Perdana, Presint 2\\nPusat Pentadbiran Kerajaan Persekutuan\\n62000 Putrajaya, Malaysia`;
-
-                  const vcfString = generateVCF(staff, alamat);
-                  const filename = (staff.nama || "contact").replace(
-                    /\s+/g,
-                    "_",
-                  );
-
+                  const vcfString = generateVCF(staff, siteInfo && siteInfo.address ? siteInfo.address : '');
+                  const filename = (staff.nama || "contact").replace(/\s+/g, "_");
                   downloadVCF(vcfString, filename);
                 }}
-                className="inline-flex h-10 w-[9.8125rem] items-center justify-center gap-1.5 rounded-full border border-white/20 bg-gradient-to-b from-[#5288FF] to-[#2563EB] py-2 pl-3 pr-4 font-semibold text-white"
+                className="inline-flex h-10 w-full max-w-xs items-center justify-center gap-1.5 rounded-full border border-white/20 bg-gradient-to-b from-[#5288FF] to-[#2563EB] py-2 pl-3 pr-4 font-semibold text-white text-center whitespace-nowrap"
               >
                 <UserIcon className="h-5 w-5 shrink-0" />
-                <span>Save Contact</span>
+                <span>{tdir("savecontact")}</span>
               </button>
             </div>
 
@@ -175,8 +183,6 @@ const StaffCardModal: React.FC<StaffCardModalProps> = ({ staff, siteInfo }) => {
                 </div>
               </div>
             </div>
-
-            {/* )} */}
           </div>
         </Dialog.Content>
       </Dialog.Portal>

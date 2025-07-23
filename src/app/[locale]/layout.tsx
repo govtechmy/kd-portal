@@ -101,11 +101,14 @@ const Layout: FSP = async ({ children, params }) => {
     <html lang={locale}>
       {process.env.APP_ENV === "production" && (
         <head>
+          {/* Tinybird Analytics */}
           <script
             defer
             src="https://unpkg.com/@tinybirdco/flock.js"
             data-token={`${process.env.NEXT_PUBLIC_TINYBIRD_TOKEN}`}
           ></script>
+
+          {/* SPLaSK Analytics */}
           <Script id="splask-matomo" strategy="beforeInteractive">
             {`
             var _paq = window._paq = window._paq || [];
