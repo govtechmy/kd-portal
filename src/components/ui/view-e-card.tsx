@@ -39,7 +39,7 @@ const StaffCardModal: React.FC<StaffCardModalProps> = ({ staff, siteInfo }) => {
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 z-[60] bg-[#00000080] backdrop-blur-sm" />
 
-        <Dialog.Content className="fixed left-1/2 top-1/2 z-[70] w-[95vw] max-w-md -translate-x-1/2 -translate-y-1/2 rounded-lg border border-gray-200 bg-white p-4 sm:p-6 shadow-xl">
+        <Dialog.Content className="fixed left-1/2 top-1/2 z-[70] w-[95vw] max-w-md -translate-x-1/2 -translate-y-1/2 rounded-lg border border-gray-200 bg-white p-4 shadow-xl sm:p-6">
           {/* Close Button (absolute, top right) */}
           <div className="absolute right-4 top-4">
             <Dialog.Close asChild>
@@ -48,7 +48,9 @@ const StaffCardModal: React.FC<StaffCardModalProps> = ({ staff, siteInfo }) => {
               </button>
             </Dialog.Close>
           </div>
-          <Dialog.DialogTitle className="hidden">{tdir("ecard")}</Dialog.DialogTitle>
+          <Dialog.DialogTitle className="hidden">
+            {tdir("ecard")}
+          </Dialog.DialogTitle>
 
           {/* Main Content */}
           <div className="text-center">
@@ -82,11 +84,17 @@ const StaffCardModal: React.FC<StaffCardModalProps> = ({ staff, siteInfo }) => {
 
                 <span className="text-left">
                   {staff.telefon && staff.telefon !== "-" ? (
-                    <a href={`tel:${staff.telefon}`} className="text-blue-600 hover:underline" rel="noopener noreferrer">
+                    <a
+                      href={`tel:${staff.telefon}`}
+                      className="text-blue-600 hover:underline"
+                      rel="noopener noreferrer"
+                    >
                       {staff.telefon}
                     </a>
                   ) : (
-                    <span className="text-gray-400 cursor-not-allowed select-none">N/A</span>
+                    <span className="cursor-not-allowed select-none text-gray-400">
+                      N/A
+                    </span>
                   )}
                 </span>
               </div>
@@ -97,11 +105,16 @@ const StaffCardModal: React.FC<StaffCardModalProps> = ({ staff, siteInfo }) => {
 
                 <span className="text-left">
                   {staff.emel ? (
-                    <a href={`mailto:${staff.emel}@digital.gov.my`} className="text-blue-600 hover:underline">
+                    <a
+                      href={`mailto:${staff.emel}@digital.gov.my`}
+                      className="text-blue-600 hover:underline"
+                    >
                       {`${staff.emel}@digital.gov.my`}
                     </a>
                   ) : (
-                    <span className="text-gray-400 cursor-not-allowed select-none">N/A</span>
+                    <span className="cursor-not-allowed select-none text-gray-400">
+                      N/A
+                    </span>
                   )}
                 </span>
               </div>
@@ -113,13 +126,14 @@ const StaffCardModal: React.FC<StaffCardModalProps> = ({ staff, siteInfo }) => {
                 </div>
 
                 <span className="whitespace-pre-line text-left">
-                {siteInfo && siteInfo.address ? siteInfo.address.split("\n").map((line, index) => (
-                    <React.Fragment key={index}>
-                      {line}
-                      <br />
-                    </React.Fragment>
-                  ))
-                : ""}
+                  {siteInfo && siteInfo.address
+                    ? siteInfo.address.split("\n").map((line, index) => (
+                        <React.Fragment key={index}>
+                          {line}
+                          <br />
+                        </React.Fragment>
+                      ))
+                    : ""}
                 </span>
               </div>
               <div className="flex items-center gap-4">
@@ -141,11 +155,17 @@ const StaffCardModal: React.FC<StaffCardModalProps> = ({ staff, siteInfo }) => {
             <div className="mt-8 flex justify-center text-sm">
               <button
                 onClick={() => {
-                  const vcfString = generateVCF(staff, siteInfo && siteInfo.address ? siteInfo.address : '');
-                  const filename = (staff.nama || "contact").replace(/\s+/g, "_");
+                  const vcfString = generateVCF(
+                    staff,
+                    siteInfo && siteInfo.address ? siteInfo.address : "",
+                  );
+                  const filename = (staff.nama || "contact").replace(
+                    /\s+/g,
+                    "_",
+                  );
                   downloadVCF(vcfString, filename);
                 }}
-                className="inline-flex h-10 w-full max-w-xs items-center justify-center gap-1.5 rounded-full border border-white/20 bg-gradient-to-b from-[#5288FF] to-[#2563EB] py-2 pl-3 pr-4 font-semibold text-white text-center whitespace-nowrap"
+                className="inline-flex h-10 w-full max-w-xs items-center justify-center gap-1.5 whitespace-nowrap rounded-full border border-white/20 bg-gradient-to-b from-[#5288FF] to-[#2563EB] py-2 pl-3 pr-4 text-center font-semibold text-white"
               >
                 <UserIcon className="h-5 w-5 shrink-0" />
                 <span>{tdir("savecontact")}</span>
