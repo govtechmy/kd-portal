@@ -37,7 +37,7 @@ const HomePageComponent = async ({
   achievements,
   broadcast,
   locale,
-}) => {
+}: Props) => {
   const t = useTranslations();
   const visitorsData = await getVisitorsData();
   return (
