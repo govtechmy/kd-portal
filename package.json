@@ -41,7 +41,7 @@
     "graphql": "^16.10.0",
     "lodash": "^4.17.21",
     "luxon": "^3.5.0",
-    "next": "15.1.0",
+    "next": "15.2.4",
     "next-intl": "^3.26.3",
     "payload": "latest",
     "react": "^19.0.0",
