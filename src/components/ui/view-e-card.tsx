@@ -126,13 +126,20 @@ const StaffCardModal: React.FC<StaffCardModalProps> = ({ staff, siteInfo }) => {
                 </div>
 
                 <span className="whitespace-pre-line text-left">
+                  <span className="font-bold">
+                    {typeof staff.id_bhg !== "string" && staff.id_bhg.bhg}
+                  </span>
+                  <br />
                   {siteInfo && siteInfo.address
-                    ? siteInfo.address.split("\n").map((line, index) => (
-                        <React.Fragment key={index}>
-                          {line}
-                          <br />
-                        </React.Fragment>
-                      ))
+                    ? siteInfo.address
+                        .split("\n")
+                        ?.slice(1)
+                        .map((line, index) => (
+                          <React.Fragment key={index}>
+                            {line}
+                            <br />
+                          </React.Fragment>
+                        ))
                     : ""}
                 </span>
               </div>
