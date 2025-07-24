@@ -10,9 +10,14 @@ const Direktori: FSP = async ({ locale, payload }) => {
     depth: 3,
   });
 
+  const siteInfo = await payload.findGlobal({
+    slug: "site-info",
+    locale: locale,
+  });
+
   return (
     <Suspense>
-      <DirektoriMain locale={locale} list={data.docs} />
+      <DirektoriMain locale={locale} list={data.docs} siteInfo={siteInfo} />
     </Suspense>
   );
 };

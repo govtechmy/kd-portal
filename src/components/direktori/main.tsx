@@ -14,99 +14,119 @@ import { StaffDirectory } from "@/payload-types";
 import { locales } from "@/lib/i18n";
 import { useSearchParams } from "next/navigation";
 import { usePathname, useRouter } from "@/lib/i18n";
+import StaffCardModal from "../ui/view-e-card";
+import { SiteInfo } from "@/payload-types";
 
 interface DirektoriMainProps {
   list: StaffDirectory[];
   locale: (typeof locales)[number];
+  siteInfo: SiteInfo;
 }
-const DirektoriMain: FC<DirektoriMainProps> = ({ list, locale }) => {
+const DirektoriMain: FC<DirektoriMainProps> = ({ list, locale, siteInfo }) => {
   const t = useTranslations();
   const searchParams = useSearchParams();
   const { replace } = useRouter();
   const pathname = usePathname();
   const searchQuery = searchParams.get("search");
 
-  const column = [
-    {
-      header: t("Directory.table_header.nama"),
-      accessorKey: "nama",
-      meta: {
-        type: "text",
-        editable: false,
-        cellClass: "whitespace-nowrap",
+  const column = useMemo(
+    () => [
+      {
+        header: t("Directory.table_header.nama"),
+        accessorKey: "nama",
+        meta: {
+          type: "text",
+          editable: false,
+          cellClass: "whitespace-nowrap",
+        },
+        cell: (info: any) =>
+          info.row.original.id === -1 ? (
+            `${info.row.original.bhg} - ${info.getValue()}`
+          ) : info.row.original.id === 0 ? (
+            <span className="text-red-600">KOSONG</span>
+          ) : (
+            info.getValue()
+          ),
       },
-      cell: (info: any) =>
-        info.row.original.id === -1 ? (
-          `${info.row.original.bhg} - ${info.getValue()}`
-        ) : info.row.original.id === 0 ? (
-          <span className="text-red-600">KOSONG</span>
-        ) : (
-          info.getValue()
-        ),
-    },
-    // {
-    //   header: t("Directory.table_header.gred"),
-    //   accessorKey: "gred",
-    //   meta: {
-    //     type: "text",
-    //     editable: false,
-    //     enableReadMore: true,
-    //     maxChar: 10,
-    //   },
-    // },
-    {
-      header: t("Directory.table_header.bhg"),
-      accessorKey: "bhg",
-      accessorFn: (item: StaffDirectory) =>
-        typeof item.id_bhg !== "string" && item.id_bhg.bhg,
-      meta: {
-        type: "text",
-        editable: false,
-        cellClass: "whitespace-nowrap",
-        enableReadMore: true,
-        maxChar: 18,
+      // {
+      //   header: t("Directory.table_header.gred"),
+      //   accessorKey: "gred",
+      //   meta: {
+      //     type: "text",
+      //     editable: false,
+      //     enableReadMore: true,
+      //     maxChar: 10,
+      //   },
+      // },
+      {
+        header: t("Directory.table_header.bhg"),
+        accessorKey: "bhg",
+        accessorFn: (item: StaffDirectory) =>
+          typeof item.id_bhg !== "string" && item.id_bhg.bhg,
+        meta: {
+          type: "text",
+          editable: false,
+          cellClass: "whitespace-nowrap",
+          enableReadMore: true,
+          maxChar: 18,
+        },
       },
-    },
-    {
-      header: t("Directory.table_header.jawatan"),
-      accessorKey: "jawatan",
-      meta: {
-        type: "text",
-        editable: false,
-        // enableReadMore: true,
-        maxChar: 60,
+      {
+        header: t("Directory.table_header.jawatan"),
+        accessorKey: "jawatan",
+        meta: {
+          type: "text",
+          editable: false,
+          // enableReadMore: true,
+          maxChar: 60,
+        },
       },
-    },
-    {
-      header: t("Directory.table_header.telefon"),
-      accessorKey: "telefon",
-      meta: {
-        type: "text",
-        editable: false,
-        cellClass: "whitespace-nowrap",
+      {
+        header: t("Directory.table_header.telefon"),
+        accessorKey: "telefon",
+        meta: {
+          type: "text",
+          editable: false,
+          cellClass: "whitespace-nowrap",
+        },
       },
-    },
-    {
-      header: t("Directory.table_header.emel"),
-      accessorKey: "emel",
-      size: 100,
-      meta: {
-        type: "text",
-        editable: false,
-        headerClass: "whitespace-nowrap",
+      {
+        header: t("Directory.table_header.emel"),
+        accessorKey: "emel",
+        size: 100,
+        meta: {
+          type: "text",
+          editable: false,
+          headerClass: "whitespace-nowrap",
+        },
       },
-    },
-  ];
+      {
+        header: t("Directory.table_header.ecard"),
+        id: "ecard",
+        cell: (info: any) => {
+          const staff = info.row.original;
+          return staff.staff_id > 0 ? (
+            <StaffCardModal staff={staff} siteInfo={siteInfo} />
+          ) : null;
+        },
+        size: 100,
+        meta: {
+          type: "text",
+          editable: false,
+          headerClass: "whitespace-nowrap",
+        },
+      },
+    ],
+    [siteInfo, t],
+  );
 
   const mobileColumn = [
     {
       header: "",
       id: "bhg",
       accessorKey: "id_bhg.bhg",
-      // accessorFn: (item: StaffDirectory) =>
-      //   typeof item.id_bhg !== "string" && item.id_bhg.bhg,
       cell: (info: any) => {
-        const { id_bhg, emel, gred, staff_id, jawatan, nama, telefon } = (
+        const { id_bhg, emel, staff_id, jawatan, nama, telefon } = (
           info as Cell<StaffDirectory, unknown>
         ).row.original;
 
@@ -164,6 +184,12 @@ const DirektoriMain: FC<DirektoriMainProps> = ({ list, locale }) => {
               </div>
             ) : (
               <></>
+            )}
+
+            {staff_id > 0 && (
+              <div className="pt-2">
+                <StaffCardModal staff={info.row.original} siteInfo={siteInfo} />
+              </div>
             )}
           </div>
         );
