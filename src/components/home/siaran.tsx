@@ -21,13 +21,14 @@ export default function HomeSiaran({ broadcast }: { broadcast: Broadcast[] }) {
   return (
     <>
       {/* Hidden SPLaSK Publication tag for crawler detection */}
-      <div 
+      <a 
+        href="#"
         {...{ "splwpk-publication": "splwpk-publication" }}
         className="sr-only"
         aria-hidden="true"
       >
         News Publications Available
-      </div>
+      </a>
       
       <Section>
         <div className="grid-cols-12 gap-6 border-washed-100 py-12 lg:py-[84px] xl:grid xl:border-x">

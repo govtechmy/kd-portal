@@ -18,7 +18,7 @@ import { cn } from "@/lib/utils";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { Suspense, useState } from "react";
+import { Suspense, useState, useEffect } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -50,6 +50,12 @@ export function Header({
   const active = (href: string) => pathname.startsWith(href) && href !== "/";
 
   const [showMenu, setMenu] = useState<boolean>(false);
+  const [timestamp, setTimestamp] = useState<string>("");
+
+  // Set timestamp only on client side to avoid hydration mismatch
+  useEffect(() => {
+    setTimestamp(new Date().toISOString().slice(0, 19).replace('T', ' '));
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 border-outline-200 bg-background lg:border-b lg:bg-background/80 lg:backdrop-blur-[30px] print:hidden">
@@ -128,9 +134,9 @@ export function Header({
                     <Link
                       href={href}
                       data-state={active(href) ? "open" : "close"}
-                      {...(name.toLowerCase().includes('policy') || name.toLowerCase().includes('polisi') ? {
+                      {...(name.toLowerCase().includes('policy') || name.toLowerCase().includes('polisi') && timestamp ? {
                         "splwpk-gov-policies": "splwpk-gov-policies",
-                        "splwpk-gov-policies-timestamp": new Date().toISOString().slice(0, 19).replace('T', ' ')
+                        "splwpk-gov-policies-timestamp": timestamp
                       } : {})}
                       className={cn(
                         buttonVariants({ variant: "tertiary", size: "md" }),
@@ -190,9 +196,9 @@ export function Header({
                     <Link
                       href={href}
                       data-state={active(href) ? "open" : "close"}
-                      {...(name.toLowerCase().includes('policy') || name.toLowerCase().includes('polisi') ? {
+                      {...(name.toLowerCase().includes('policy') || name.toLowerCase().includes('polisi') && timestamp ? {
                         "splwpk-gov-policies": "splwpk-gov-policies",
-                        "splwpk-gov-policies-timestamp": new Date().toISOString().slice(0, 19).replace('T', ' ')
+                        "splwpk-gov-policies-timestamp": timestamp
                       } : {})}
                       className={cn(
                         buttonVariants({ variant: "tertiary" }),
