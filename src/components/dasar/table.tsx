@@ -82,6 +82,9 @@ export default function DasarTable({ data }: DasarTableProps) {
                 info.row.original.doc_name,
               )
             }
+            // SPLaSK Publication Tag for downloadable documents
+            splwpk-publication="splwpk-publication"
+            title={info.row.original.doc_name}
           >
             <Download className="text-dim-500" />
             {t("download")}
@@ -134,6 +137,9 @@ export default function DasarTable({ data }: DasarTableProps) {
                   );
                 }
               }}
+              // SPLaSK Publication Tag for downloadable documents
+              splwpk-publication="splwpk-publication"
+              title={info.row.original.doc_name}
             >
               <Download className="text-dim-500" />
             </Button>

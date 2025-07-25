@@ -164,9 +164,19 @@ export const SPLaSKW3C: React.FC<SPLaSKW3CProps> = ({ className = "" }) => {
 
   return (
     <>
+      {/* Hidden SPLaSK W3C tag for crawler detection */}
+      <div 
+        {...{ "splwpk-w3c": "splwpk-w3c" }}
+        className="sr-only"
+        aria-hidden="true"
+      >
+        W3C Accessibility Features Available
+      </div>
+      
       {/* Floating Accessibility Button */}
       <button
         onClick={toggleMenu}
+        {...{ "splwpk-w3c": "splwpk-w3c" }}
         className="fixed right-4 top-1/2 transform -translate-y-1/2 z-50 w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-all duration-300 hover:scale-110"
         aria-label="Accessibility Menu"
         title="Accessibility Menu (CTRL+U)"
@@ -200,7 +210,7 @@ export const SPLaSKW3C: React.FC<SPLaSKW3CProps> = ({ className = "" }) => {
           
           {/* Menu Content with slide and fade animation */}
           <div 
-            splwpk-w3c="splwpk-w3c"
+            {...{ "splwpk-w3c": "splwpk-w3c" }}
             className={`relative bg-white rounded-lg shadow-2xl p-6 w-96 max-h-[80vh] overflow-y-auto transition-all duration-500 ease-out ${
               isClosing 
                 ? 'animate-out slide-out-to-bottom-4 fade-out' 
