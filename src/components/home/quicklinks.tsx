@@ -64,7 +64,7 @@ export default function Quicklinks({
                     buttonVariants({ variant: "secondary", size: "default" }),
                     "group relative flex justify-start gap-4 whitespace-normal rounded-xl p-4 font-normal",
                   )}
-                                    title="MYMESYUARAT"
+                                    title="MyMesyuarat"
                 >
                   <div className="size-[60px] select-none rounded-lg border border-outline-200 bg-background-50 p-1 flex items-center justify-center">
                     <Image
@@ -77,10 +77,7 @@ export default function Quicklinks({
                   </div>
                   <div className="space-y-1">
                     <p className="line-clamp-1 font-semibold text-foreground">
-                      MYMESYUARAT
-                    </p>
-                    <p className="line-clamp-3 text-sm text-dim-500">
-                      {t("mobile_apps")}
+                    MyMesyuarat
                     </p>
                   </div>
                   <ArrowOutgoing className="absolute right-5 top-4 size-4 stroke-2 text-outline-400 transition-all group-hover:translate-x-1 group-hover:opacity-100 motion-reduce:transition-none sm:opacity-0" />
@@ -123,7 +120,7 @@ export default function Quicklinks({
                       buttonVariants({ variant: "secondary", size: "default" }),
                       "group relative flex justify-start gap-4 whitespace-normal rounded-xl p-4 font-normal",
                     )}
-                    title={isMyMesyuarat ? "MYMESYUARAT" : link?.name || ""}
+                    title={isMyMesyuarat ? "MyMesyuarat" : link?.name || ""}
                   >
                     <Image
                       src={media && media.url ? media.url : ""}
