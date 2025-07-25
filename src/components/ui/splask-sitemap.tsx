@@ -23,14 +23,25 @@ export const SPLaSKSitemap: React.FC<SPLaSKSitemapProps> = ({
   href = "/sitemap.xml"
 }) => {
   return (
-    <Link 
-      href={href}
-      splwpk-sitemap="splwpk-sitemap" 
-      className={className}
-      aria-label="Site map"
-    >
-      {showText && "Site Map"}
-    </Link>
+    <>
+      {/* Hidden SPLaSK Sitemap tag for crawler detection */}
+      <div 
+        {...{ "splwpk-sitemap": "splwpk-sitemap" }}
+        className="sr-only"
+        aria-hidden="true"
+      >
+        Site Map Available
+      </div>
+      
+      <Link 
+        href={href}
+        {...{ "splwpk-sitemap": "splwpk-sitemap" }}
+        className={className}
+        aria-label="Site map"
+      >
+        {showText && "Site Map"}
+      </Link>
+    </>
   );
 };
 

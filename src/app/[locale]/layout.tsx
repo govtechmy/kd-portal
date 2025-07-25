@@ -15,6 +15,7 @@ import { notFound } from "next/navigation";
 import Script from "next/script";
 import SPLaSKMultiLang from "@/components/ui/splask-multilang";
 import SPLaSKW3C from "@/components/ui/splask-w3c";
+import SPLaSKSitemap from "@/components/ui/splask-sitemap";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
@@ -66,6 +67,7 @@ export async function generateMetadata(params: FSM) {
     // SPLaSK Multi-Language Compliance
     other: {
       "splwpk-multilang": "splwpk-multilang",
+      "splwpk-sitemap": "splwpk-sitemap",
     },
   };
 }
@@ -145,6 +147,8 @@ const Layout: FSP = async ({ children, params }) => {
             <SPLaSKMultiLang />
             {/* SPLaSK W3C Accessibility Controls */}
             <SPLaSKW3C />
+            {/* SPLaSK Sitemap Tag for Accessibility Compliance */}
+            <SPLaSKSitemap />
             <Masthead />
             <Header
               locale={locale}
