@@ -8,7 +8,12 @@ export default function Overline({
   className?: string;
 }) {
   return (
-    <p className={cn("text-foreground-primary text-sm font-semibold uppercase tracking-[0.2em]", className)}>
+    <p
+      className={cn(
+        "text-sm font-semibold uppercase tracking-[0.2em] text-foreground-primary",
+        className,
+      )}
+    >
       {children}
     </p>
   );

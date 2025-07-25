@@ -32,7 +32,7 @@
   }
 
   ol {
-    @apply list-outside list-decimal text-black-700 text-base text-[15px] leading-[27px] space-y-3 py-6;
+    @apply list-outside list-decimal space-y-3 py-6 text-[15px] text-base leading-[27px] text-black-700;
   }
 
   a {
@@ -40,10 +40,10 @@
   }
 
   blockquote {
-    @apply text-balance text-xl text-black-700
+    @apply text-balance text-xl text-black-700;
   }
 }
 
 .richTextdiv {
-  @apply list-outside list-decimal text-black-700 text-base text-[15px] leading-[27px] space-y-3 py-6;
+  @apply list-outside list-decimal space-y-3 py-6 text-[15px] text-base leading-[27px] text-black-700;
 }

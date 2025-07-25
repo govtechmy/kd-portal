@@ -50,7 +50,8 @@
     "policy": "Dokumen Dasar",
     "directory": "Direktori",
     "contact_us": "Hubungi Kami",
-    "dept_agency": "Jabatan & Agensi"
+    "dept_agency": "Jabatan & Agensi",
+    "statistics": "Statistik"
   },
   "Search": {
     "type": "Tekan",
@@ -207,6 +208,22 @@
       "collaboration": "Usahasama",
       "miscellaneous": "Pelbagai",
       "not_achievement": "Bukan Pencapaian"
+    }
+  },
+  "Statistics": {
+    "header": "Statistik Digital",
+    "description": "Tinjauan komprehensif mengenai kemajuan digital Malaysia",
+    "important_note": "Nota Penting",
+    "note_text": "Data ini dikemas kini secara berkala dan berdasarkan sumber rasmi. Untuk maklumat terkini, sila rujuk laporan rasmi Kementerian Digital.",
+    "digital_stats_title": "Statistik Digital",
+    "digital_stats_description": "Metrik dan penunjuk utama yang menunjukkan kemajuan transformasi digital Malaysia merentasi pelbagai sektor.",
+    "page_stats_title": "Statistik Halaman",
+    "page_stats_description": "Analitik dan metrik kebolehcapaian untuk laman web ini, termasuk data pelawat dan skor pematuhan WCAG.",
+    "categories": {
+      "digital_adoption": "Penerimaan Digital",
+      "infrastructure": "Prasarana Digital",
+      "cybersecurity": "Keselamatan Siber",
+      "digital_economy": "Ekonomi Digital"
     }
   },
   "Policy": {

@@ -50,7 +50,8 @@
     "policy": "Policy",
     "directory": "Directory",
     "contact_us": "Contact Us",
-    "dept_agency": "Departments & Agencies"
+    "dept_agency": "Departments & Agencies",
+    "statistics": "Statistics"
   },
   "Search": {
     "type": "Type",
@@ -207,6 +208,22 @@
       "collaboration": "Collaboration",
       "miscellaneous": "Miscellaneous",
       "not_achievement": "Not Achievement"
+    }
+  },
+  "Statistics": {
+    "header": "Digital Statistics",
+    "description": "Comprehensive overview of Malaysia's digital progress",
+    "important_note": "Important Note",
+    "note_text": "This data is updated regularly and based on official sources. For the latest information, please refer to official Ministry of Digital reports.",
+    "digital_stats_title": "Digital Statistics",
+    "digital_stats_description": "Key metrics and indicators showing Malaysia's digital transformation progress across various sectors.",
+    "page_stats_title": "Page Statistics",
+    "page_stats_description": "Analytics and accessibility metrics for this website, including visitor data and WCAG compliance scores.",
+    "categories": {
+      "digital_adoption": "Digital Adoption",
+      "infrastructure": "Digital Infrastructure",
+      "cybersecurity": "Cybersecurity",
+      "digital_economy": "Digital Economy"
     }
   },
   "Policy": {

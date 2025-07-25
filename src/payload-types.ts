@@ -978,8 +978,10 @@ export interface ProfilKementerian {
     statement: string;
     icon:
       | 'arrow-back'
+      | 'arrow-down'
       | 'arrow-forward'
       | 'arrow-outgoing'
+      | 'arrow-up'
       | 'bolt'
       | 'check-circle'
       | 'checkmark-14-point-star'
@@ -1000,6 +1002,7 @@ export interface ProfilKementerian {
       | 'hamburger-menu'
       | 'lock'
       | 'map'
+      | 'minus'
       | 'money'
       | 'phone'
       | 'search'
@@ -1012,8 +1015,10 @@ export interface ProfilKementerian {
     statement: string;
     icon:
       | 'arrow-back'
+      | 'arrow-down'
       | 'arrow-forward'
       | 'arrow-outgoing'
+      | 'arrow-up'
       | 'bolt'
       | 'check-circle'
       | 'checkmark-14-point-star'
@@ -1034,6 +1039,7 @@ export interface ProfilKementerian {
       | 'hamburger-menu'
       | 'lock'
       | 'map'
+      | 'minus'
       | 'money'
       | 'phone'
       | 'search'
@@ -1060,8 +1066,10 @@ export interface ProfilKementerian {
     };
     icon:
       | 'arrow-back'
+      | 'arrow-down'
       | 'arrow-forward'
       | 'arrow-outgoing'
+      | 'arrow-up'
       | 'bolt'
       | 'check-circle'
       | 'checkmark-14-point-star'
@@ -1082,6 +1090,7 @@ export interface ProfilKementerian {
       | 'hamburger-menu'
       | 'lock'
       | 'map'
+      | 'minus'
       | 'money'
       | 'phone'
       | 'search'

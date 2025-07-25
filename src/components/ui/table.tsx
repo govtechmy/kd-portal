@@ -15,7 +15,7 @@ const Table = forwardRef<HTMLTableElement, HTMLAttributes<HTMLTableElement>>(
         {...props}
       />
     </div>
-  )
+  ),
 );
 Table.displayName = "Table";
 
@@ -45,7 +45,7 @@ const TableFooter = forwardRef<
 >(({ className, ...props }, ref) => (
   <tfoot
     ref={ref}
-    className={cn("font-medium border-t-2", className)}
+    className={cn("border-t-2 font-medium", className)}
     {...props}
   />
 ));
@@ -55,14 +55,7 @@ const TableRow = forwardRef<
   HTMLTableRowElement,
   HTMLAttributes<HTMLTableRowElement>
 >(({ className, ...props }, ref) => (
-  <tr
-    ref={ref}
-    className={cn(
-      "border-b",
-      className
-    )}
-    {...props}
-  />
+  <tr ref={ref} className={cn("border-b", className)} {...props} />
 ));
 TableRow.displayName = "TableRow";
 
@@ -73,8 +66,8 @@ const TableHead = forwardRef<
   <th
     ref={ref}
     className={cn(
-      "h-[30px] pb-2 px-3 text-left align-middle text-xs text-dim-500 font-medium border-b-2 border-outline-200 [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
-      className
+      "h-[30px] border-b-2 border-outline-200 px-3 pb-2 text-left align-middle text-xs font-medium text-dim-500 [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+      className,
     )}
     {...props}
   />
@@ -88,8 +81,8 @@ const TableCell = forwardRef<
   <td
     ref={ref}
     className={cn(
-      "py-4 sm:py-3 px-3 align-middle border-b border-outline-200 [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] h-[44px] text-sm text-black-700 font-medium",
-      className
+      "h-[44px] border-b border-outline-200 px-3 py-4 align-middle text-sm font-medium text-black-700 sm:py-3 [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+      className,
     )}
     {...props}
   />

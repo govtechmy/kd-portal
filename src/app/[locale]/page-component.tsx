@@ -11,6 +11,7 @@ import { Achievement, Broadcast, Homepage, SiteInfo } from "@/payload-types";
 import { useTranslations } from "next-intl";
 import React, { FC } from "react";
 
+import TimeSeriesCharts from "@/components/home/timeseriescharts";
 interface Props {
   siteInfo: SiteInfo;
   homepage: Homepage;
@@ -19,15 +20,26 @@ interface Props {
   locale: (typeof locales)[number];
 }
 
-const HomePageComponent: FC<Props> = ({
+async function getVisitorsData() {
+  var baseUrl = process.env.NEXT_PUBLIC_TINYBIRD_HOST;
+  var token = process.env.TINYBIRD_TOKEN_API;
+  const res = await fetch(
+    `${baseUrl}/v0/pipes/analytics_events_pipe_4995.json?token=${token}`,
+  );
+  const json = await res.json();
+  // Adjust this according to your Tinybird response structure
+  return json.data; // or json if the array is at the root
+}
+
+const HomePageComponent = async ({
   siteInfo,
   homepage,
   achievements,
   broadcast,
   locale,
-}) => {
+}: Props) => {
   const t = useTranslations();
-
+  const visitorsData = await getVisitorsData();
   return (
     <>
       <section className="relative w-full gap-6 border-b sm:grid sm:grid-cols-6">
@@ -114,6 +126,7 @@ const HomePageComponent: FC<Props> = ({
         <Timeline achievements={achievements} />
         <HomeSiaran broadcast={broadcast} />
         <Quicklinks homepage={homepage} />
+        <TimeSeriesCharts data={visitorsData} />
       </main>
     </>
   );
