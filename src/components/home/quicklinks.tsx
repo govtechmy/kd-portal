@@ -54,7 +54,7 @@ export default function Quicklinks({
                     buttonVariants({ variant: "secondary", size: "default" }),
                     "group relative flex justify-start gap-4 whitespace-normal rounded-xl p-4 font-normal",
                   )}
-                                    title={splaskT("mymesuarat_mobile_app")}
+                                    title="MYMESYUARAT"
                 >
                   <div className="size-[60px] select-none rounded-lg border border-outline-200 bg-background-50 p-1 flex items-center justify-center">
                     <Image
@@ -67,7 +67,7 @@ export default function Quicklinks({
                   </div>
                   <div className="space-y-1">
                     <p className="line-clamp-1 font-semibold text-foreground">
-                      {splaskT("mymesuarat_mobile_app")}
+                      MYMESYUARAT
                     </p>
                     <p className="line-clamp-3 text-sm text-dim-500">
                       {t("mobile_apps")}
