@@ -13,6 +13,7 @@ import { getPayload } from "payload";
 import { FSM, FSP } from "@/lib/decorator";
 import { notFound } from "next/navigation";
 import Script from "next/script";
+import SPLaSKMultiLang from "@/components/ui/splask-multilang";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
@@ -55,10 +56,15 @@ export async function generateMetadata(params: FSM) {
       canonical: `${process.env.APP_URL}`,
       languages: {
         "en-GB": `${process.env.APP_URL}/en-GB`,
+        "ms-MY": `${process.env.APP_URL}/ms-MY`,
       },
     },
     verification: {
       google: "T9cIaXr6zYwwHAizh9qhGq1BRrdtfLXLGdoTLsgehi0",
+    },
+    // SPLaSK Multi-Language Compliance
+    other: {
+      "splwpk-multilang": "splwpk-multilang",
     },
   };
 }
@@ -134,6 +140,8 @@ const Layout: FSP = async ({ children, params }) => {
       >
         <NextIntlClientProvider messages={messages}>
           <div className="flex min-h-screen flex-col">
+            {/* SPLaSK Multi-Language Tag for Accessibility Compliance */}
+            <SPLaSKMultiLang />
             <Masthead />
             <Header
               locale={locale}
