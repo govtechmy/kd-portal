@@ -45,6 +45,16 @@ export default function Quicklinks({
       >
         {splaskT("online_services_available")}
       </a>
+
+      {/* Hidden SPLaSK Procurement tag for crawler detection */}
+      <a
+        href="#"
+        {...{ "splwpk-procurement": "splwpk-procurement" }}
+        className="sr-only"
+        aria-hidden="true"
+      >
+        {splaskT("procurement_available")}
+      </a>
       
       <Section>
         <div className="grid-cols-12 gap-6 border-washed-100 py-12 lg:py-[84px] xl:grid xl:border-x">
@@ -107,6 +117,9 @@ export default function Quicklinks({
                                        link?.name?.toLowerCase().includes('spotme') ||
                                        link?.name?.toLowerCase().includes('mygovuc');
 
+                // Check if this is ePerolehan for SPLaSK procurement compliance
+                const isProcurement = link?.name?.toLowerCase().includes('eperolehan');
+
                 return (
                   <a
                     key={item.id}
@@ -115,6 +128,7 @@ export default function Quicklinks({
                     rel="noopenner noreferrer"
                     {...(isMyMesyuarat && { "splwpk-mobile-apps": "splwpk-mobile-apps" })}
                     {...(isOnlineService && { "splwpk-online-services": "splwpk-online-services" })}
+                    {...(isProcurement && { "splwpk-procurement": "splwpk-procurement" })}
                     className={cn(
                       buttonVariants({ variant: "secondary", size: "default" }),
                       "group relative flex justify-start gap-4 whitespace-normal rounded-xl p-4 font-normal",
