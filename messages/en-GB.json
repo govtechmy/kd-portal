@@ -110,7 +110,9 @@
       "desc4": "Monitor and manage your online meetings.",
       "desc5": "Access, check, and print your payslips.",
       "desc6": "Manage human resources from appointment to termination.",
-      "desc7": "Procure products and services electronically."
+      "desc7": "Procure products and services electronically.",
+      "mobile_apps": "Mobile Applications",
+      "gamma_portal": "GAMMA Portal"
     },
     "Broadcast": {
       "title": "Latest Media",
@@ -130,6 +132,31 @@
     "safety": "Safety Policy",
     "personal_data": "Personal Data Protection",
     "last_update": "Last Updated"
+  },
+  "Accessibility": {
+    "menu_title": "Accessibility Menu (CTRL+U)",
+    "font_size": "Font Size",
+    "font_type": "Font Type",
+    "background_color": "Background Color",
+    "reset_default": "Reset to Default",
+    "small": "Small (80%)",
+    "normal": "Normal (100%)",
+    "large": "Large (120%)",
+    "extra_large": "Extra Large (140%)",
+    "default": "Default",
+    "arial": "Arial",
+    "times": "Times New Roman",
+    "verdana": "Verdana",
+    "white": "White",
+    "yellow": "Yellow",
+    "blue": "Blue",
+    "close_menu": "Close menu",
+    "accessibility_menu": "Accessibility Menu"
+  },
+  "SPLaSK": {
+    "site_map": "Site Map",
+    "site_map_available": "Site Map Available",
+    "mobile_apps_available": "Mobile Applications Available"
   },
   "Privacy": {
     "header": "Privacy Policy",

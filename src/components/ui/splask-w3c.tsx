@@ -19,7 +19,7 @@ interface SPLaSKW3CProps {
  * - Provides W3C accessibility controls in a floating widget style
  */
 export const SPLaSKW3C: React.FC<SPLaSKW3CProps> = ({ className = "" }) => {
-  const t = useTranslations();
+  const t = useTranslations("Accessibility");
   const [isOpen, setIsOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [fontSize, setFontSize] = useState(100); // percentage
@@ -178,8 +178,8 @@ export const SPLaSKW3C: React.FC<SPLaSKW3CProps> = ({ className = "" }) => {
         onClick={toggleMenu}
         {...{ "splwpk-w3c": "splwpk-w3c" }}
         className="fixed right-4 top-1/2 transform -translate-y-1/2 z-50 w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-all duration-300 hover:scale-110"
-        aria-label="Accessibility Menu"
-        title="Accessibility Menu (CTRL+U)"
+        aria-label={t("accessibility_menu")}
+        title={t("menu_title")}
       >
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="Icon/accessible"><path id="Vector" d="M8.5 11.8L8.5 10.9V8.79507L8.5 8.53234C8.5 7.93066 8.14046 7.3872 7.58671 7.15185L4 5.5L5.54331 6.11733C8.40425 7.2617 11.5958 7.2617 14.4567 6.11733L16 5.5L12.4 7.15185C11.8463 7.3872 11.4867 7.93066 11.4867 8.53235V8.79507L11.4867 10.9L11.502 11.8M8.5 11.8L7.6 17.5M8.5 11.8L9 11.5C9.62489 11.1334 10.3751 11.1334 11 11.5L11.502 11.8M11.502 11.8L12.4 17.5M11 3.5C11 4.05228 10.5523 4.5 10 4.5C9.44772 4.5 9 4.05228 9 3.5C9 2.94772 9.44772 2.5 10 2.5C10.5523 2.5 11 2.94772 11 3.5Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></g></svg>
       </button>
@@ -220,12 +220,12 @@ export const SPLaSKW3C: React.FC<SPLaSKW3CProps> = ({ className = "" }) => {
             {/* Header */}
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-xl font-bold text-gray-800">
-                Accessibility Menu (CTRL+U)
+                {t("menu_title")}
               </h2>
               <button
                 onClick={handleClose}
                 className="text-gray-500 hover:text-gray-700 text-2xl font-bold transition-colors"
-                aria-label="Close menu"
+                aria-label={t("close_menu")}
               >
                 ×
               </button>
@@ -234,14 +234,14 @@ export const SPLaSKW3C: React.FC<SPLaSKW3CProps> = ({ className = "" }) => {
             {/* Font Size Control */}
             <div className="mb-6">
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Font Size
+                {t("font_size")}
               </label>
               <div className="grid grid-cols-2 gap-2">
                 {[
-                  { value: 80, label: 'Small (80%)' },
-                  { value: 100, label: 'Normal (100%)' },
-                  { value: 120, label: 'Large (120%)' },
-                  { value: 140, label: 'Extra Large (140%)' }
+                  { value: 80, label: t("small") },
+                  { value: 100, label: t("normal") },
+                  { value: 120, label: t("large") },
+                  { value: 140, label: t("extra_large") }
                 ].map((option) => (
                   <button
                     key={option.value}
@@ -261,14 +261,14 @@ export const SPLaSKW3C: React.FC<SPLaSKW3CProps> = ({ className = "" }) => {
             {/* Font Type Control */}
             <div className="mb-6">
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Font Type
+                {t("font_type")}
               </label>
               <div className="grid grid-cols-2 gap-2">
                 {[
-                  { value: 'default', label: 'Default' },
-                  { value: 'arial', label: 'Arial' },
-                  { value: 'times', label: 'Times New Roman' },
-                  { value: 'verdana', label: 'Verdana' }
+                  { value: 'default', label: t("default") },
+                  { value: 'arial', label: t("arial") },
+                  { value: 'times', label: t("times") },
+                  { value: 'verdana', label: t("verdana") }
                 ].map((option) => (
                   <button
                     key={option.value}
@@ -288,14 +288,14 @@ export const SPLaSKW3C: React.FC<SPLaSKW3CProps> = ({ className = "" }) => {
             {/* Background Color Control */}
             <div className="mb-6">
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Background Color
+                {t("background_color")}
               </label>
               <div className="grid grid-cols-2 gap-2">
                 {[
-                  { value: 'default', label: 'Default', color: 'bg-gray-100' },
-                  { value: 'white', label: 'White', color: 'bg-white' },
-                  { value: 'yellow', label: 'Yellow', color: 'bg-yellow-200' },
-                  { value: 'blue', label: 'Blue', color: 'bg-blue-200' }
+                  { value: 'default', label: t("default"), color: 'bg-gray-100' },
+                  { value: 'white', label: t("white"), color: 'bg-white' },
+                  { value: 'yellow', label: t("yellow"), color: 'bg-yellow-200' },
+                  { value: 'blue', label: t("blue"), color: 'bg-blue-200' }
                 ].map((option) => (
                   <button
                     key={option.value}
@@ -319,7 +319,7 @@ export const SPLaSKW3C: React.FC<SPLaSKW3CProps> = ({ className = "" }) => {
                 onClick={resetSettings}
                 className="px-6 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg font-medium transition-colors"
               >
-                Reset to Default
+                {t("reset_default")}
               </button>
             </div>
           </div>

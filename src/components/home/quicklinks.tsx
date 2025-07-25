@@ -15,15 +15,28 @@ export default function Quicklinks({
 }) {
   const { quick_links: items } = homepage;
   const t = useTranslations("Home.Quicklinks");
+  const splaskT = useTranslations("SPLaSK");
 
-  return (
-    <Section>
-      <div className="grid-cols-12 gap-6 border-washed-100 py-12 lg:py-[84px] xl:grid xl:border-x">
-        <div className="col-span-10 col-start-2 space-y-12">
-          <h2 className="text-balance font-poppins text-hsm font-semibold">
-            {t("title")}
-          </h2>
-          <div className="grid grid-cols-1 gap-3 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+    return (
+    <>
+      {/* Hidden SPLaSK Mobile Apps tag for crawler detection */}
+      <a
+        href="https://gamma.malaysia.gov.my/"
+        {...{ "splwpk-mobile-apps": "splwpk-mobile-apps" }}
+        className="sr-only"
+        aria-hidden="true"
+      >
+        {splaskT("mobile_apps_available")}
+      </a>
+      
+      <Section>
+        <div className="grid-cols-12 gap-6 border-washed-100 py-12 lg:py-[84px] xl:grid xl:border-x">
+          <div className="col-span-10 col-start-2 space-y-12">
+            <h2 className="text-balance font-poppins text-hsm font-semibold">
+              {t("title")}
+            </h2>
+            <div className="grid grid-cols-1 gap-3 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {/* Existing Quick Links with SPLaSK Mobile Apps Tagging */}
             {items.map((item, i) => {
               const link =
                 typeof item.links !== "string" ? item.links : undefined;
@@ -31,12 +44,17 @@ export default function Quicklinks({
               const media =
                 link && typeof link.image !== "string" ? link.image : undefined;
 
+              // Check if this is MyMesyuarat for SPLaSK mobile apps compliance
+              const isMyMesyuarat = link?.name?.toLowerCase().includes('mymes') || 
+                                   link?.name?.toLowerCase().includes('mesyuarat');
+
               return (
                 <a
                   key={item.id}
                   href={link?.href[0].link?.url || ""}
                   target="_blank"
                   rel="noopenner noreferrer"
+                  {...(isMyMesyuarat && { "splwpk-mobile-apps": "splwpk-mobile-apps" })}
                   className={cn(
                     buttonVariants({ variant: "secondary", size: "default" }),
                     "group relative flex justify-start gap-4 whitespace-normal rounded-xl p-4 font-normal",
@@ -65,5 +83,6 @@ export default function Quicklinks({
         </div>
       </div>
     </Section>
+    </>
   );
 }

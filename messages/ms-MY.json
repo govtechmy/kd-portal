@@ -110,7 +110,9 @@
       "desc4": "Uruskan dan pantau mesyuarat dalam talian anda.",
       "desc5": "Akses, semak, dan cetak slip penyata gaji anda.",
       "desc6": "Uruskan sumber manusia dari pelantikan hingga penamatan.",
-      "desc7": "Perolehkan produk dan perkhidmatan secara elektronik."
+      "desc7": "Perolehkan produk dan perkhidmatan secara elektronik.",
+      "mobile_apps": "Aplikasi Mudah Alih",
+      "gamma_portal": "Portal GAMMA"
     },
     "Broadcast": {
       "title": "Siaran Terkini",
@@ -130,6 +132,31 @@
     "safety": "Dasar Keselamatan",
     "personal_data": "Perlindungan Data Peribadi",
     "last_update": "Kemaskini Terakhir"
+  },
+  "Accessibility": {
+    "menu_title": "Menu Aksesibiliti (CTRL+U)",
+    "font_size": "Saiz Fon",
+    "font_type": "Jenis Fon",
+    "background_color": "Warna Latar Belakang",
+    "reset_default": "Set Semula ke Lalai",
+    "small": "Kecil (80%)",
+    "normal": "Biasa (100%)",
+    "large": "Besar (120%)",
+    "extra_large": "Sangat Besar (140%)",
+    "default": "Lalai",
+    "arial": "Arial",
+    "times": "Times New Roman",
+    "verdana": "Verdana",
+    "white": "Putih",
+    "yellow": "Kuning",
+    "blue": "Biru",
+    "close_menu": "Tutup menu",
+    "accessibility_menu": "Menu Aksesibiliti"
+  },
+  "SPLaSK": {
+    "site_map": "Peta Laman",
+    "site_map_available": "Peta Laman Tersedia",
+    "mobile_apps_available": "Aplikasi Mudah Alih Tersedia"
   },
   "Privacy": {
     "header": "Dasar Privasi",

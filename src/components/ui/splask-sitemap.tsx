@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 interface SPLaSKSitemapProps {
   className?: string;
@@ -22,6 +23,8 @@ export const SPLaSKSitemap: React.FC<SPLaSKSitemapProps> = ({
   showText = true,
   href = "/sitemap.xml"
 }) => {
+  const t = useTranslations("SPLaSK");
+  
   return (
     <>
       {/* Hidden SPLaSK Sitemap tag for crawler detection */}
@@ -30,16 +33,16 @@ export const SPLaSKSitemap: React.FC<SPLaSKSitemapProps> = ({
         className="sr-only"
         aria-hidden="true"
       >
-        Site Map Available
+        {t("site_map_available")}
       </div>
       
       <Link 
         href={href}
         {...{ "splwpk-sitemap": "splwpk-sitemap" }}
         className={className}
-        aria-label="Site map"
+        aria-label={t("site_map")}
       >
-        {showText && "Site Map"}
+        {showText && t("site_map")}
       </Link>
     </>
   );
