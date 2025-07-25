@@ -103,6 +103,8 @@ const ContactUs: FC<ContactUsProps> = ({ data, locale }) => {
                 <a
                   key={title}
                   href={`${title === "email" ? "mailto" : "tel"}:${desc}`}
+                  {...{ "splwpk-contact-details": "splwpk-contact-details" }}
+                  {...{ "splwpk-contact-details-timestamp": new Date().toISOString().slice(0, 19).replace('T', ' ') }}
                   className="group flex gap-4.5 border-washed-100 px-6 py-8 max-md:col-span-2 md:py-[34px]"
                 >
                   <div className="size-[42px] rounded-full bg-brand-50 p-[9px] text-foreground-primary">

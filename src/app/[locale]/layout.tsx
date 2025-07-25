@@ -16,6 +16,7 @@ import Script from "next/script";
 import SPLaSKMultiLang from "@/components/ui/splask-multilang";
 import SPLaSKW3C from "@/components/ui/splask-w3c";
 import SPLaSKSitemap from "@/components/ui/splask-sitemap";
+import SPLaSKUpdatedContent from "@/components/ui/splask-updated-content";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
@@ -149,6 +150,8 @@ const Layout: FSP = async ({ children, params }) => {
             <SPLaSKW3C />
             {/* SPLaSK Sitemap Tag for Accessibility Compliance */}
             <SPLaSKSitemap />
+            {/* SPLaSK Updated Content Tags for Content Freshness Compliance */}
+            <SPLaSKUpdatedContent />
             <Masthead />
             <Header
               locale={locale}

@@ -48,6 +48,10 @@ export default function HomeSiaran({ broadcast }: { broadcast: Broadcast[] }) {
                   key={doc.id}
                   href={routes.ANNOUNCEMENTS + `/${doc.slug}`}
                   {...{ "splwpk-publication": "splwpk-publication" }}
+                  {...{ "splwpk-broadcast": "splwpk-broadcast" }}
+                  {...{ "splwpk-broadcast-timestamp": doc.date + " 00:00:00" }}
+                  {...{ "splwpk-news": "splwpk-news" }}
+                  {...{ "splwpk-news-timestamp": doc.date + " 00:00:00" }}
                   className="group relative flex flex-col gap-4 rounded-xl border border-outline-200 p-6 hover:border-brand-200"
                   title={doc.title}
                 >
