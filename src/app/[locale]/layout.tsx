@@ -14,6 +14,7 @@ import { FSM, FSP } from "@/lib/decorator";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 import SPLaSKMultiLang from "@/components/ui/splask-multilang";
+import SPLaSKW3C from "@/components/ui/splask-w3c";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
@@ -142,6 +143,8 @@ const Layout: FSP = async ({ children, params }) => {
           <div className="flex min-h-screen flex-col">
             {/* SPLaSK Multi-Language Tag for Accessibility Compliance */}
             <SPLaSKMultiLang />
+            {/* SPLaSK W3C Accessibility Controls */}
+            <SPLaSKW3C />
             <Masthead />
             <Header
               locale={locale}
