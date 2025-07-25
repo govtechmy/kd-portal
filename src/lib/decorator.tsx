@@ -79,7 +79,7 @@ export const metagen = async (
     title: map.title ? t(map.title) : "Kementerian Digital",
     description: map.description
       ? t(map.description)
-      : "Portal Rasmi Kementerian Digital Malaysia dimana Kementerian Digital telah ditubuhkan bagi menerajui usaha transformasi digital negara dengan pelaksanaan yang lebih berfokus, holistik dan berkesan.",
+      : "Portal Rasmi Kementerian Digital Malaysia yang menerajui transformasi digital negara secara berfokus, holistik dan berkesan.",
   };
   return {};
 };
