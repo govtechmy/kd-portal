@@ -26,16 +26,6 @@ export default function Quicklinks({
 
   return (
     <>
-      {/* Hidden SPLaSK Mobile Apps tag for crawler detection */}
-      <a
-        href="https://gamma.malaysia.gov.my/appdetails/553"
-        {...{ "splwpk-mobile-apps": "splwpk-mobile-apps" }}
-        className="sr-only"
-        aria-hidden="true"
-      >
-        {splaskT("mobile_apps_available")}
-      </a>
-
       {/* Hidden SPLaSK Online Services tag for crawler detection */}
       <a
         href="#"
