@@ -157,7 +157,8 @@
     "site_map": "Site Map",
     "site_map_available": "Site Map Available",
     "mobile_apps_available": "Mobile Applications Available",
-    "mymesuarat_mobile_app": "MyMesyuarat Mobile App"
+    "mymesuarat_mobile_app": "MyMesyuarat Mobile App",
+    "online_services_available": "Online Services Available"
   },
   "Privacy": {
     "header": "Privacy Policy",

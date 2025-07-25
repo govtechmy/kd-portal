@@ -35,6 +35,16 @@ export default function Quicklinks({
       >
         {splaskT("mobile_apps_available")}
       </a>
+
+      {/* Hidden SPLaSK Online Services tag for crawler detection */}
+      <a
+        href="#"
+        {...{ "splwpk-online-services": "splwpk-online-services" }}
+        className="sr-only"
+        aria-hidden="true"
+      >
+        {splaskT("online_services_available")}
+      </a>
       
       <Section>
         <div className="grid-cols-12 gap-6 border-washed-100 py-12 lg:py-[84px] xl:grid xl:border-x">
@@ -77,7 +87,7 @@ export default function Quicklinks({
                 </a>
               )}
 
-              {/* Existing Quick Links with SPLaSK Mobile Apps Tagging */}
+              {/* Existing Quick Links with SPLaSK Mobile Apps and Online Services Tagging */}
               {items.map((item, i) => {
                 const link =
                   typeof item.links !== "string" ? item.links : undefined;
@@ -89,6 +99,14 @@ export default function Quicklinks({
                 const isMyMesyuarat = link?.name?.toLowerCase().includes('mymes') || 
                                      link?.name?.toLowerCase().includes('mesyuarat');
 
+                // Check if this is an online service for SPLaSK online services compliance
+                const isOnlineService = link?.name?.toLowerCase().includes('hrmis') || 
+                                       link?.name?.toLowerCase().includes('eperolehan') ||
+                                       link?.name?.toLowerCase().includes('epenyata') ||
+                                       link?.name?.toLowerCase().includes('ddms') ||
+                                       link?.name?.toLowerCase().includes('spotme') ||
+                                       link?.name?.toLowerCase().includes('mygovuc');
+
                 return (
                   <a
                     key={item.id}
@@ -96,6 +114,7 @@ export default function Quicklinks({
                     target="_blank"
                     rel="noopenner noreferrer"
                     {...(isMyMesyuarat && { "splwpk-mobile-apps": "splwpk-mobile-apps" })}
+                    {...(isOnlineService && { "splwpk-online-services": "splwpk-online-services" })}
                     className={cn(
                       buttonVariants({ variant: "secondary", size: "default" }),
                       "group relative flex justify-start gap-4 whitespace-normal rounded-xl p-4 font-normal",
