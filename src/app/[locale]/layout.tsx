@@ -142,6 +142,11 @@ const Layout: FSP = async ({ children, params }) => {
                   name: item.link.label,
                   href: item.link.reference || "",
                 })),
+                // Add Statistics menu item (not from PayloadCMS)
+                {
+                  name: locale === "ms-MY" ? "Statistik" : "Statistics",
+                  href: `/statistik`,
+                },
                 ...(headerData.dropdown.dept_agency?.length
                   ? [
                       {
