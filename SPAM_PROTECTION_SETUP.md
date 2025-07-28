@@ -12,7 +12,7 @@ This guide explains how to set up comprehensive spam protection for the feedback
 5. Add your domain
 
 ### Environment Variables:
-Add these to your `.env.local` file:
+Add these to your `.env.local` or `env.development` file:
 ```bash
 NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY=your_site_key_here
 CLOUDFLARE_TURNSTILE_SECRET_KEY=your_secret_key_here
