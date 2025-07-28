@@ -42,14 +42,17 @@ export default function FeedbackDialog() {
             >
               <button
                 onClick={closeModal}
-                className="hover:text-black absolute right-4 top-4 rounded-lg border border-gray-200 p-2"
+                className="hover:text-black absolute right-4 top-4 rounded-lg border border-gray-200 px-2 py-1"
               >
                 ✕
               </button>
 
               {!submitted ? (
                 <>
-                  <h2 className="mb-4 text-xl font-semibold">{t("title")}</h2>
+                  <div className="flex justify-start gap-2">
+                    <Envelope className="mt-1 h-6 w-6" />
+                    <h2 className="mb-4 text-xl font-semibold">{t("title")}</h2>
+                  </div>
 
                   <div className="mb-4 flex border-b">
                     {(["aduan", "pertanyaan", "cadangan"] as const).map(
@@ -58,13 +61,26 @@ export default function FeedbackDialog() {
                           key={type}
                           onClick={() => setTab(type)}
                           className={cn(
-                            "text-black px-4 py-2 text-sm font-medium",
+                            "group relative px-4 py-2 text-sm font-medium",
                             tab === type
-                              ? "border-b-2 border-blue-600 text-black-900"
-                              : "hover:text-black-900",
+                              ? "text-black-900"
+                              : "text-black hover:text-black-900",
                           )}
                         >
-                          {t(`${type}.tab`)}
+                          <span
+                            className={cn(
+                              "relative",
+                              tab === type
+                                ? "text-black-900"
+                                : "text-black group-hover:text-black-900",
+                            )}
+                          >
+                            {t(`${type}.tab`)}
+
+                            {tab === type && (
+                              <span className="absolute bottom-[-8px] left-0 right-0 h-0.5 bg-blue-600"></span>
+                            )}
+                          </span>
                         </button>
                       ),
                     )}

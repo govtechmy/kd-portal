@@ -290,6 +290,7 @@
       "email": "Email",
       "agency": "Complaint towards Department/Agency",
       "message": "Complaint/Response Statement",
+      "placeholder": "Write your complaint/feedback",
       "submit": "Submit"
     },
     "pertanyaan": {
@@ -301,6 +302,7 @@
       "email": "Email",
       "agency": "Inquiry towards Department/Agency",
       "message": "Inquiry",
+      "placeholder": "Write your question",
       "submit": "Submit"
     },
     "cadangan": {
@@ -312,6 +314,7 @@
       "email": "Email",
       "agency": "Suggestion towards Department/Agency",
       "message": "Suggestion",
+      "placeholder": "Write your suggestion",
       "submit": "Submit"
     },
     "success": {

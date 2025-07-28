@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import Envelope from "@/icons/envelope";
 import { countries } from "@/lib/constants/countries-code";
 import { useState } from "react";
+import CountryCodeDropdown from "./CountryCodeDrop";
 
 interface Props {
   type: "aduan" | "pertanyaan" | "cadangan";
@@ -14,7 +15,7 @@ interface Props {
 
 export default function FeedbackForm({ type, onSuccess }: Props) {
   const t = useTranslations(`Feedback.${type}`);
-  const [selectedCode, setSelectedCode] = useState("+60");
+  const [selectedCode, setSelectedCode] = useState("+60"); // State for the selected dial code
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -53,7 +54,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
         <input
           type="text"
           placeholder={t("name")}
-          className="h-10 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-2"
+          className="h-10 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-2 shadow-sm shadow-gray-300"
           required
         />
       </div>
@@ -66,7 +67,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
           placeholder="000000-00-0000"
           pattern="^\d{6}-\d{2}-\d{4}$"
           title="Format: 000000-00-0000"
-          className="h-10 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-2"
+          className="h-10 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-2 shadow-sm shadow-gray-300"
           required
         />
       </div>
@@ -75,8 +76,8 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
       <div>
         <label className="mb-1 block text-sm font-medium">{t("address")}</label>
         <textarea
-          placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequ"
-          className="h-24 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-2"
+          placeholder={t("address")}
+          className="py- h-24 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 shadow-sm shadow-gray-300"
           required
         />
       </div>
@@ -86,21 +87,16 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
         <div>
           <label className="mb-1 block text-sm font-normal">{t("phone")}</label>
           <div className="relative flex w-full">
-            <select
-              value={selectedCode}
-              onChange={(e) => setSelectedCode(e.target.value)}
-              className="h-10 w-20 truncate rounded-l-lg border border-gray-200 bg-white px-2 text-sm"
-            >
-              {countries.map((country) => (
-                <option key={country.code} value={country.dial_code}>
-                  {country.name} ({country.dial_code})
-                </option>
-              ))}
-            </select>
+            <CountryCodeDropdown
+              countries={countries}
+              selectedCode={selectedCode}
+              onCodeChange={setSelectedCode}
+              className="z-20"
+            />
             <input
               type="tel"
               placeholder="13 3214 450"
-              className="h-10 w-full rounded-r-lg border border-gray-200 px-3 py-2"
+              className="h-10 w-full rounded-r-lg border border-gray-200 px-3 py-2 shadow-sm shadow-gray-300"
               required
             />
           </div>
@@ -115,7 +111,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
             <input
               type="email"
               placeholder="hello@tech.gov.my"
-              className="h-10 w-full rounded-lg border border-gray-200 py-2 pl-10 pr-3"
+              className="h-10 w-full rounded-lg border border-gray-200 py-2 pl-10 pr-3 shadow-sm shadow-gray-300"
               required
             />
           </div>
@@ -128,7 +124,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
         <input
           type="text"
           placeholder="Kementerian Digital"
-          className="h-10 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-2"
+          className="h-10 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-2 shadow-sm shadow-gray-300"
           required
         />
       </div>
@@ -137,8 +133,8 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
       <div>
         <label className="mb-1 block text-sm font-normal">{t("message")}</label>
         <textarea
-          placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequ"
-          className="h-24 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-2"
+          placeholder={t("placeholder")}
+          className="h-24 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-2 shadow-sm shadow-gray-300"
           required
         />
       </div>
@@ -147,7 +143,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
       <div className="pt-4 text-right">
         <button
           type="submit"
-          className={cn(buttonVariants({ variant: "primary" }), "rounded-full")}
+          className={cn(buttonVariants({ variant: "primary" }), "rounded-lg")}
         >
           {t("submit")}
         </button>

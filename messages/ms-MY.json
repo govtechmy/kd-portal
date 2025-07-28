@@ -290,6 +290,7 @@
       "email": "Emel",
       "agency": "Aduan ke atas Bahagian/Jabatan/Agensi",
       "message": "Kenyataan Aduan/Maklum Balas",
+      "placeholder": "Tuliskan aduan/maklum balas anda",
       "submit": "Hantar"
     },
     "pertanyaan": {
@@ -301,6 +302,7 @@
       "email": "Emel",
       "agency": "Pertanyaan ke atas Bahagian/Jabatan/Agensi",
       "message": "Pertanyaan",
+      "placeholder": "Tuliskan pertanyaan anda",
       "submit": "Hantar"
     },
     "cadangan": {
@@ -312,6 +314,7 @@
       "email": "Emel",
       "agency": "Cadangan ke atas Bahagian/Jabatan/Agensi",
       "message": "Cadangan",
+      "placeholder": "Tuliskan cadangan anda",
       "submit": "Hantar"
     },
     "success": {
