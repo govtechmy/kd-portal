@@ -222,7 +222,7 @@ const AggregatedCharts: FC<AggregatedChartsProps> = ({
         <div className="border-washed-100 py-8 sm:py-12 lg:py-[84px] xl:grid xl:grid-cols-12 xl:gap-6 xl:border-x">
           <div className="space-y-10 px-4 sm:space-y-12 sm:px-6 lg:px-0 xl:col-span-10 xl:col-start-2">
             <h2 className="text-balance font-poppins text-hsm font-semibold">
-              Page Statistics
+            {t("Statistics.aggregated.title")}
             </h2>
             <div className="py-8 text-center">
               <p className="text-gray-500">{t("Statistics.chart.no_data")}</p>
