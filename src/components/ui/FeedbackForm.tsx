@@ -75,7 +75,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
           type="text"
           name="name"
           placeholder={t("name")}
-          className="h-10 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-2 shadow-sm shadow-gray-300"
+          className="h-10 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-2 shadow-input-shadow"
           required
         />
       </div>
@@ -89,7 +89,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
           placeholder="000000-00-0000"
           pattern="^\d{6}-\d{2}-\d{4}$"
           title="Format: 000000-00-0000"
-          className="h-10 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-2 shadow-sm shadow-gray-300"
+          className="h-10 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-2 shadow-input-shadow"
           required
         />
       </div>
@@ -100,7 +100,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
         <textarea
           name="address"
           placeholder={t("address")}
-          className="py- h-24 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 shadow-sm shadow-gray-300"
+          className="py-2 h-24 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 shadow-input-shadow"
           required
         />
       </div>
@@ -120,7 +120,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
               type="tel"
               name="phone"
               placeholder="13 3214 450"
-              className="h-10 w-full rounded-r-lg border border-gray-200 px-3 py-2 shadow-sm shadow-gray-300"
+              className="h-10 w-full rounded-r-lg border border-gray-200 px-3 py-2 shadow-input-shadow"
               required
             />
           </div>
@@ -136,7 +136,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
               type="email"
               name="email"
               placeholder="hello@tech.gov.my"
-              className="h-10 w-full rounded-lg border border-gray-200 py-2 pl-10 pr-3 shadow-sm shadow-gray-300"
+              className="h-10 w-full rounded-lg border border-gray-200 py-2 pl-10 pr-3 shadow-input-shadow"
               required
             />
           </div>
@@ -150,7 +150,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
           type="text"
           name="agency"
           placeholder="Kementerian Digital"
-          className="h-10 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-2 shadow-sm shadow-gray-300"
+          className="h-10 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-2 shadow-input-shadow"
           required
         />
       </div>
@@ -161,7 +161,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
         <textarea
           name="message"
           placeholder={t("placeholder")}
-          className="h-24 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-2 shadow-sm shadow-gray-300"
+          className="h-24 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-2 shadow-input-shadow"
           required
         />
       </div>
