@@ -7,6 +7,7 @@ import Envelope from "@/icons/envelope";
 import { countries } from "@/lib/constants/countries-code";
 import { useState } from "react";
 import CountryCodeDropdown from "./CountryCodeDrop";
+import { submitFeedback } from "@/app/actions/feedback";
 
 interface Props {
   type: "aduan" | "pertanyaan" | "cadangan";
@@ -16,12 +17,7 @@ interface Props {
 export default function FeedbackForm({ type, onSuccess }: Props) {
   const t = useTranslations(`Feedback.${type}`);
   const [selectedCode, setSelectedCode] = useState("+60");
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
+  const handleSubmit = async (formData: FormData) => {
     const data = {
       type,
       name: formData.get("name") as string,
@@ -47,27 +43,17 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
       return;
     }
 
-    try {
-      const response = await fetch("/api/feedback", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+    const result = await submitFeedback(data);
 
-      if (response.ok) {
-        onSuccess();
-      } else {
-        alert("Submission failed. Please try again.");
-      }
-    } catch (error) {
+    if (result.success) {
+      onSuccess();
+    } else {
       alert("Submission failed. Please try again.");
     }
   };
 
   return (
-    <form className="space-y-4" onSubmit={handleSubmit}>
+    <form className="space-y-4" action={handleSubmit}>
       {/* Row 1: Name */}
       <div>
         <label className="mb-1 block text-sm font-medium">{t("name")}</label>
