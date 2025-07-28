@@ -177,7 +177,7 @@ export const SPLaSKW3C: React.FC<SPLaSKW3CProps> = ({ className = "" }) => {
       <button
         onClick={toggleMenu}
         {...{ "splwpk-w3c": "splwpk-w3c" }}
-        className="fixed right-4 top-1/2 transform -translate-y-1/2 z-50 w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-all duration-300 hover:scale-110"
+        className="fixed right-3 sm:right-4 bottom-4 sm:top-1/2 sm:transform sm:-translate-y-1/2 z-50 w-14 h-14 sm:w-12 sm:h-12 bg-blue-600 hover:bg-blue-700 rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-all duration-300 hover:scale-110 min-h-[44px] min-w-[44px]"
         aria-label={t("accessibility_menu")}
         title={t("menu_title")}
       >
@@ -186,7 +186,7 @@ export const SPLaSKW3C: React.FC<SPLaSKW3CProps> = ({ className = "" }) => {
 
       {/* Accessibility Menu Overlay */}
       {isOpen && (
-        <div className={`fixed inset-0 z-50 flex items-center justify-center transition-all duration-500 ${
+        <div className={`fixed inset-0 z-50 flex items-start sm:items-center justify-center pt-8 sm:pt-0 transition-all duration-500 ${
           isClosing ? 'animate-out fade-out' : 'animate-in fade-in'
         }`}>
           {/* Backdrop with blur and darkening - enhanced transitions */}
@@ -211,116 +211,118 @@ export const SPLaSKW3C: React.FC<SPLaSKW3CProps> = ({ className = "" }) => {
           {/* Menu Content with slide and fade animation */}
           <div 
             {...{ "splwpk-w3c": "splwpk-w3c" }}
-            className={`relative bg-white rounded-lg shadow-2xl p-6 w-96 max-h-[80vh] overflow-y-auto transition-all duration-500 ease-out ${
+            className={`relative bg-white rounded-lg shadow-2xl mx-4 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl max-h-[75vh] sm:max-h-[85vh] overflow-y-auto transition-all duration-500 ease-out mt-24 sm:mt-0 ${
               isClosing 
                 ? 'animate-out slide-out-to-bottom-4 fade-out' 
                 : 'animate-in slide-in-from-bottom-4 fade-in'
             }`}
           >
             {/* Header */}
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-bold text-gray-800">
+            <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200">
+              <h2 className="text-lg sm:text-xl font-bold text-gray-800">
                 {t("menu_title")}
               </h2>
               <button
                 onClick={handleClose}
-                className="text-gray-500 hover:text-gray-700 text-2xl font-bold transition-colors"
+                className="text-gray-500 hover:text-gray-700 text-2xl font-bold transition-colors w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100"
                 aria-label={t("close_menu")}
               >
                 ×
               </button>
             </div>
 
-            {/* Font Size Control */}
-            <div className="mb-6">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                {t("font_size")}
-              </label>
-              <div className="grid grid-cols-2 gap-2">
-                {[
-                  { value: 80, label: t("small") },
-                  { value: 100, label: t("normal") },
-                  { value: 120, label: t("large") },
-                  { value: 140, label: t("extra_large") }
-                ].map((option) => (
-                  <button
-                    key={option.value}
-                    onClick={() => setFontSize(option.value)}
-                    className={`p-3 rounded-lg border text-sm font-medium transition-colors ${
-                      fontSize === option.value
-                        ? 'bg-blue-100 border-blue-300 text-blue-700'
-                        : 'bg-white border-gray-300 text-gray-700 hover:bg-gray-50'
-                    }`}
-                  >
-                    {option.label}
-                  </button>
-                ))}
+            <div className="p-4 sm:p-6 space-y-6">
+              {/* Font Size Control */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-3">
+                  {t("font_size")}
+                </label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {[
+                    { value: 80, label: t("small") },
+                    { value: 100, label: t("normal") },
+                    { value: 120, label: t("large") },
+                    { value: 140, label: t("extra_large") }
+                  ].map((option) => (
+                    <button
+                      key={option.value}
+                      onClick={() => setFontSize(option.value)}
+                      className={`p-4 sm:p-3 rounded-lg border text-sm font-medium transition-colors min-h-[44px] flex items-center justify-center ${
+                        fontSize === option.value
+                          ? 'bg-blue-100 border-blue-300 text-blue-700'
+                          : 'bg-white border-gray-300 text-gray-700 hover:bg-gray-50'
+                      }`}
+                    >
+                      {option.label}
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
 
-            {/* Font Type Control */}
-            <div className="mb-6">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                {t("font_type")}
-              </label>
-              <div className="grid grid-cols-2 gap-2">
-                {[
-                  { value: 'default', label: t("default") },
-                  { value: 'arial', label: t("arial") },
-                  { value: 'times', label: t("times") },
-                  { value: 'verdana', label: t("verdana") }
-                ].map((option) => (
-                  <button
-                    key={option.value}
-                    onClick={() => setFontFamily(option.value)}
-                    className={`p-3 rounded-lg border text-sm font-medium transition-colors ${
-                      fontFamily === option.value
-                        ? 'bg-blue-100 border-blue-300 text-blue-700'
-                        : 'bg-white border-gray-300 text-gray-700 hover:bg-gray-50'
-                    }`}
-                  >
-                    {option.label}
-                  </button>
-                ))}
+              {/* Font Type Control */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-3">
+                  {t("font_type")}
+                </label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {[
+                    { value: 'default', label: t("default") },
+                    { value: 'arial', label: t("arial") },
+                    { value: 'times', label: t("times") },
+                    { value: 'verdana', label: t("verdana") }
+                  ].map((option) => (
+                    <button
+                      key={option.value}
+                      onClick={() => setFontFamily(option.value)}
+                      className={`p-4 sm:p-3 rounded-lg border text-sm font-medium transition-colors min-h-[44px] flex items-center justify-center ${
+                        fontFamily === option.value
+                          ? 'bg-blue-100 border-blue-300 text-blue-700'
+                          : 'bg-white border-gray-300 text-gray-700 hover:bg-gray-50'
+                      }`}
+                    >
+                      {option.label}
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
 
-            {/* Background Color Control */}
-            <div className="mb-6">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                {t("background_color")}
-              </label>
-              <div className="grid grid-cols-2 gap-2">
-                {[
-                  { value: 'default', label: t("default"), color: 'bg-gray-100' },
-                  { value: 'white', label: t("white"), color: 'bg-white' },
-                  { value: 'yellow', label: t("yellow"), color: 'bg-yellow-200' },
-                  { value: 'blue', label: t("blue"), color: 'bg-blue-200' }
-                ].map((option) => (
-                  <button
-                    key={option.value}
-                    onClick={() => setBackgroundColor(option.value)}
-                    className={`p-3 rounded-lg border text-sm font-medium transition-colors flex items-center gap-2 ${
-                      backgroundColor === option.value
-                        ? 'border-blue-300 text-blue-700'
-                        : 'border-gray-300 text-gray-700 hover:bg-gray-50'
-                    }`}
-                  >
-                    <div className={`w-4 h-4 rounded-full ${option.color} border border-gray-300`}></div>
-                    {option.label}
-                  </button>
-                ))}
+              {/* Background Color Control */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-3">
+                  {t("background_color")}
+                </label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {[
+                    { value: 'default', label: t("default"), color: 'bg-gray-100' },
+                    { value: 'white', label: t("white"), color: 'bg-white' },
+                    { value: 'yellow', label: t("yellow"), color: 'bg-yellow-200' },
+                    { value: 'blue', label: t("blue"), color: 'bg-blue-200' }
+                  ].map((option) => (
+                    <button
+                      key={option.value}
+                      onClick={() => setBackgroundColor(option.value)}
+                      className={`p-4 sm:p-3 rounded-lg border text-sm font-medium transition-colors min-h-[44px] flex items-center justify-center gap-3 ${
+                        backgroundColor === option.value
+                          ? 'border-blue-300 text-blue-700'
+                          : 'border-gray-300 text-gray-700 hover:bg-gray-50'
+                      }`}
+                    >
+                      <div className={`w-5 h-5 rounded-full ${option.color} border border-gray-300 flex-shrink-0`}></div>
+                      <span>{option.label}</span>
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
 
-            {/* Reset Button */}
-            <div className="flex justify-center">
-              <button
-                onClick={resetSettings}
-                className="px-6 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg font-medium transition-colors"
-              >
-                {t("reset_default")}
-              </button>
+              {/* Reset Button */}
+              <div className="flex justify-center pt-2">
+                <button
+                  onClick={resetSettings}
+                  className="px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg font-medium transition-colors min-h-[44px] w-full sm:w-auto"
+                >
+                  {t("reset_default")}
+                </button>
+              </div>
             </div>
           </div>
         </div>
