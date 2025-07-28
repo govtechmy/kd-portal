@@ -15,7 +15,15 @@ const PenafianComponent: FC<PenafianProps> = ({ data, locale }) => {
   const t = useTranslations("Disclaimer");
   return (
     <main className="divide-y divide-washed-100">
-      <Hero title={t("header")} />
+      <Hero title={t("header")} splaskPrivacyPolicy={true} />
+      {/* Hidden SPLaSK Privacy Policy tag for crawler detection */}
+      <div 
+        {...{ "splwpk-privacy-policy": "splwpk-privacy-policy" }}
+        className="sr-only"
+        aria-hidden="true"
+      >
+        Disclaimer (Penafian)
+      </div>
 
       {data.disclaimer_section?.statement && (
         <Section>
