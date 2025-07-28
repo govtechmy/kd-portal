@@ -83,89 +83,66 @@ const Statistik: FSP = async ({ locale }) => {
   let newsData: TinybirdNewsData[] = [];
   let aggregatedData: TinybirdAggregatedData[] = [];
 
+  // Helper function to safely fetch Tinybird data
+  const fetchTinybirdData = async (pipeName: string, baseUrl: string, token: string) => {
+    try {
+      const response = await fetch(`${baseUrl}/v0/pipes/${pipeName}.json`, {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+        next: { revalidate: 300 },
+      });
+      
+      if (!response.ok) {
+        return [];
+      }
+      
+      const result = await response.json();
+      return result.data || [];
+    } catch {
+      return [];
+    }
+  };
+
   try {
     const baseUrl = process.env.NEXT_PUBLIC_TINYBIRD_HOST;
-    const token = process.env.TINYBIRD_TOKEN_API; // Server-side only - SECURE
+    const token = process.env.TINYBIRD_TOKEN_API;
 
     if (baseUrl && token) {
-      // Fetch aggregated data for stacked area chart
-      const aggregatedResponse = await fetch(
-        `${baseUrl}/v0/pipes/KD_PORTAL_AGGREGATED.json?token=${token}`,
-        {
-          next: { revalidate: 300 }, // Cache for 5 minutes
-        },
-      );
-      const aggregatedResult = await aggregatedResponse.json();
-      aggregatedData = aggregatedResult.data || [];
+      // Fetch all data in parallel for better performance
+      const [
+        aggregatedResult,
+        visitorResult,
+        countryResult,
+        referrerResult,
+        deviceResult,
+        browserResult,
+        pageResult,
+        newsResult
+      ] = await Promise.allSettled([
+        fetchTinybirdData("KD_PORTAL_AGGREGATED", baseUrl, token),
+        fetchTinybirdData("KD_PORTAL_VISITORS", baseUrl, token),
+        fetchTinybirdData("KD_PORTAL_VISITORS_COUNTRY", baseUrl, token),
+        fetchTinybirdData("KD_PORTAL_REFERRERS", baseUrl, token),
+        fetchTinybirdData("KD_PORTAL_TYPE_OF_DEVICE", baseUrl, token),
+        fetchTinybirdData("KD_PORTAL_TYPE_BROWSER", baseUrl, token),
+        fetchTinybirdData("KD_PORTAL_VISITED_PAGE", baseUrl, token),
+        fetchTinybirdData("KD_PORTAL_MOST_VISIT_NEWS", baseUrl, token)
+      ]);
 
-      // Fetch visitor trend data
-      const visitorResponse = await fetch(
-        `${baseUrl}/v0/pipes/KD_PORTAL_VISITORS.json?token=${token}`,
-        {
-          next: { revalidate: 300 }, // Cache for 5 minutes
-        },
-      );
-      const visitorResult = await visitorResponse.json();
-      visitorData = visitorResult.data || [];
-
-      // Fetch country data
-      const countryUrl = `${baseUrl}/v0/pipes/KD_PORTAL_VISITORS_COUNTRY.json?token=${token}`;
-
-      const countryResponse = await fetch(countryUrl, {
-        next: { revalidate: 300 }, // Cache for 5 minutes
-      });
-      const countryResult = await countryResponse.json();
-      countryData = countryResult.data || [];
-
-      // Fetch referrer data
-      const referrerUrl = `${baseUrl}/v0/pipes/KD_PORTAL_REFERRERS.json?token=${token}`;
-
-      const referrerResponse = await fetch(referrerUrl, {
-        next: { revalidate: 300 }, // Cache for 5 minutes
-      });
-      const referrerResult = await referrerResponse.json();
-      referrerData = referrerResult.data || [];
-
-      // Fetch device data
-      const deviceUrl = `${baseUrl}/v0/pipes/KD_PORTAL_TYPE_OF_DEVICE.json?token=${token}`;
-
-      const deviceResponse = await fetch(deviceUrl, {
-        next: { revalidate: 300 }, // Cache for 5 minutes
-      });
-      const deviceResult = await deviceResponse.json();
-      deviceData = deviceResult.data || [];
-
-      // Fetch browser data
-      const browserUrl = `${baseUrl}/v0/pipes/KD_PORTAL_TYPE_BROWSER.json?token=${token}`;
-
-      const browserResponse = await fetch(browserUrl, {
-        next: { revalidate: 300 }, // Cache for 5 minutes
-      });
-      const browserResult = await browserResponse.json();
-      browserData = browserResult.data || [];
-
-      // Fetch page data
-      const pageUrl = `${baseUrl}/v0/pipes/KD_PORTAL_VISITED_PAGE.json?token=${token}`;
-
-      const pageResponse = await fetch(pageUrl, {
-        next: { revalidate: 300 }, // Cache for 5 minutes
-      });
-      const pageResult = await pageResponse.json();
-      pageData = pageResult.data || [];
-
-      // Fetch news data
-      const newsUrl = `${baseUrl}/v0/pipes/KD_PORTAL_MOST_VISIT_NEWS.json?token=${token}`;
-
-      const newsResponse = await fetch(newsUrl, {
-        next: { revalidate: 300 }, // Cache for 5 minutes
-      });
-      const newsResult = await newsResponse.json();
-      newsData = newsResult.data || [];
-    } else {
-      console.log("Missing Tinybird configuration");
+      // Extract data from results, handling both fulfilled and rejected promises
+      aggregatedData = aggregatedResult.status === 'fulfilled' ? aggregatedResult.value : [];
+      visitorData = visitorResult.status === 'fulfilled' ? visitorResult.value : [];
+      countryData = countryResult.status === 'fulfilled' ? countryResult.value : [];
+      referrerData = referrerResult.status === 'fulfilled' ? referrerResult.value : [];
+      deviceData = deviceResult.status === 'fulfilled' ? deviceResult.value : [];
+      browserData = browserResult.status === 'fulfilled' ? browserResult.value : [];
+      pageData = pageResult.status === 'fulfilled' ? pageResult.value : [];
+      newsData = newsResult.status === 'fulfilled' ? newsResult.value : [];
     }
-  } catch (error) {
-    console.error("Error fetching analytics data:", error);
+  } catch {
+    // Silent fallback - all data arrays remain empty
   }
 
   return (

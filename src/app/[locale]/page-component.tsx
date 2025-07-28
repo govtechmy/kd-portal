@@ -52,19 +52,28 @@ async function getAggregatedData() {
   const token = process.env.TINYBIRD_TOKEN_API;
 
   if (!baseUrl || !token) {
-    console.log("Missing Tinybird configuration");
     return [];
   }
 
   try {
     const res = await fetch(
-      `${baseUrl}/v0/pipes/KD_PORTAL_AGGREGATED.json?token=${token}`,
-      { next: { revalidate: 300 } }, // Cache for 5 minutes
+      `${baseUrl}/v0/pipes/KD_PORTAL_AGGREGATED.json`,
+      { 
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+        next: { revalidate: 300 }
+      },
     );
+    
+    if (!res.ok) {
+      return [];
+    }
+    
     const json = await res.json();
     return json.data || [];
-  } catch (error) {
-    console.error("Error fetching aggregated data:", error);
+  } catch {
     return [];
   }
 }
