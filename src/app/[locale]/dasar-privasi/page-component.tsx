@@ -22,9 +22,34 @@ const PrivacyPolicyComponent: FC<PrivacyPolicyProps> = ({ data, locale }) => {
         className="sr-only"
         aria-hidden="true"
       >
-        Privacy Policy & Disclaimer
+        Dasar Privasi Penafian
+      </div>
+      
+      {/* Additional SPLaSK Privacy Policy tag with keyword */}
+      <div 
+        {...{ "splwpk-privacy-policy": "splwpk-privacy-policy" }}
+        className="sr-only"
+        aria-hidden="true"
+      >
+        Penafian
       </div>
 
+      {/* SPLaSK Privacy Policy keyword for crawler detection */}
+      <div className="sr-only" aria-hidden="true">
+        <span {...{ "splwpk-privacy-policy": "splwpk-privacy-policy" }}>Penafian</span>
+      </div>
+      
+      {/* Visible SPLaSK Privacy Policy content for crawler */}
+      <Section>
+        <div className="gap-6 border-x border-washed-100 py-4 xl:grid xl:grid-cols-12">
+          <div className="col-span-10 col-start-2">
+            <p className="text-sm text-black-700" {...{ "splwpk-privacy-policy": "splwpk-privacy-policy" }}>
+              Dasar Privasi & Penafian: Maklumat yang terkandung dalam laman web ini adalah untuk tujuan maklumat sahaja.
+            </p>
+          </div>
+        </div>
+      </Section>
+      
       {data["privacy-policy_section"]?.statement && (
         <Section>
           <div className="gap-6 border-x border-washed-100 py-12 lg:py-[84px] xl:grid xl:grid-cols-12">
