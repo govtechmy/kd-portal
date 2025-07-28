@@ -360,7 +360,8 @@
     "news": {
       "title": "Most Visited News",
       "hits": "Hits",
-      "legend_title": "News Articles"
+      "legend_title": "News Articles",
+      "no_data": "No news data available"
     },
     "download_csv": "Download CSV",
     "download_json": "Download JSON"

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import HomePageComponent from "./page-component";
 import { FSP, inject, metagen, MetagenProps } from "@/lib/decorator";
 
@@ -37,13 +37,15 @@ const HomePage: FSP = async ({ payload, locale }) => {
   });
 
   return (
-    <HomePageComponent
-      siteInfo={siteInfo}
-      homepage={homepage}
-      achievements={achievement ? achievement.docs : []}
-      broadcast={broadcast ? broadcast.docs : []}
-      locale={locale}
-    />
+    <Suspense>
+      <HomePageComponent
+        siteInfo={siteInfo}
+        homepage={homepage}
+        achievements={achievement ? achievement.docs : []}
+        broadcast={broadcast ? broadcast.docs : []}
+        locale={locale}
+      />
+    </Suspense>
   );
 };
 

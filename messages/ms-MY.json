@@ -350,7 +350,8 @@
     "news": {
       "title": "Berita Paling Dikunjungi",
       "hits": "Capaian",
-      "legend_title": "Artikel Berita"
+      "legend_title": "Artikel Berita",
+      "no_data": "Tiada data berita tersedia"
     },
     "download_csv": "Muat Turun CSV",
     "download_json": "Muat Turun JSON"
