@@ -7,7 +7,7 @@ Welcome to the repository for the website of the Digital Ministry of Malaysia (K
 - [Next.js](https://nextjs.org/)
 - [Payload CMS](https://github.com/payloadcms/payload)
 
-## Design System
+## Design Systems
 
 `kd-portal` is built with MyDS - the Malaysian Government Design System that aims to modernise, revamp and uplift the design language and usability of all Malaysian government sites.
 
@@ -27,7 +27,7 @@ pnpm i
 cp .env.example .env
 ```
 
-## Commands to Know
+## Commands to Knows
 
 ```bash
 # Start development servers

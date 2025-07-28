@@ -72,20 +72,32 @@ export default function DasarTable({ data }: DasarTableProps) {
       id: "actions",
       cell: (info) => {
         return (
-          <Button
-            variant="secondary"
-            size="icon"
-            className="flex-none rounded-lg"
-            onClick={() =>
-              downloadFile(
-                info.getValue() as string,
-                info.row.original.doc_name,
-              )
-            }
-          >
-            <Download className="text-dim-500" />
-            {t("download")}
-          </Button>
+          <>
+            <Button
+              variant="secondary"
+              size="icon"
+              className="flex-none rounded-lg"
+              onClick={() =>
+                downloadFile(
+                  info.getValue() as string,
+                  info.row.original.doc_name,
+                )
+              }
+              title={info.row.original.doc_name}
+            >
+              <Download className="text-dim-500" />
+              {t("download")}
+            </Button>
+            {/* Hidden SPLaSK Publication tag for crawler detection */}
+            <a
+              href={info.getValue() as string}
+              {...{ "splwpk-publication": "splwpk-publication" }}
+              className="sr-only"
+              aria-hidden="true"
+            >
+              {info.row.original.doc_name}
+            </a>
+          </>
         );
       },
       meta: {
@@ -134,9 +146,19 @@ export default function DasarTable({ data }: DasarTableProps) {
                   );
                 }
               }}
+              title={info.row.original.doc_name}
             >
               <Download className="text-dim-500" />
             </Button>
+            {/* Hidden SPLaSK Publication tag for crawler detection */}
+            <a
+              href={typeof info.row.original.file_upload !== "string" ? info.row.original.file_upload.url as string : "#"}
+              {...{ "splwpk-publication": "splwpk-publication" }}
+              className="sr-only"
+              aria-hidden="true"
+            >
+              {info.row.original.doc_name}
+            </a>
           </div>
         );
       },

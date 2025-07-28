@@ -8,6 +8,7 @@ const Dasar: FSP = async ({ params, locale, payload }) => {
     locale: locale,
     pagination: false,
     depth: 3,
+    sort: "-doc_date", // Sort by doc_date in descending order (latest first)
     where: {
       _status: { not_equals: "draft" },
     },

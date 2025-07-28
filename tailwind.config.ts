@@ -41,6 +41,7 @@ const config: Config = {
       boxShadow: {
         button: "0 1px 3px 0 rgba(0, 0, 0, 0.07)",
         card: "0px 2px 6px 0 rgba(0, 0, 0, 0.05), 0px 6px 24px 0 rgba(0, 0, 0, 0.05)",
+        "input-shadow": "0px 1px 3px 0px #00000012",
       },
       colors: {
         brand: {

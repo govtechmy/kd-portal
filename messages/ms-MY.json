@@ -110,7 +110,9 @@
       "desc4": "Uruskan dan pantau mesyuarat dalam talian anda.",
       "desc5": "Akses, semak, dan cetak slip penyata gaji anda.",
       "desc6": "Uruskan sumber manusia dari pelantikan hingga penamatan.",
-      "desc7": "Perolehkan produk dan perkhidmatan secara elektronik."
+      "desc7": "Perolehkan produk dan perkhidmatan secara elektronik.",
+      "mobile_apps": "Aplikasi Mudah Alih",
+      "gamma_portal": "Portal GAMMA"
     },
     "Broadcast": {
       "title": "Siaran Terkini",
@@ -130,6 +132,34 @@
     "safety": "Dasar Keselamatan",
     "personal_data": "Perlindungan Data Peribadi",
     "last_update": "Kemaskini Terakhir"
+  },
+  "Accessibility": {
+    "menu_title": "Menu Aksesibiliti (CTRL+U)",
+    "font_size": "Saiz Fon",
+    "font_type": "Jenis Fon",
+    "background_color": "Warna Latar Belakang",
+    "reset_default": "Set Semula ke Lalai",
+    "small": "Kecil (80%)",
+    "normal": "Biasa (100%)",
+    "large": "Besar (120%)",
+    "extra_large": "Sangat Besar (140%)",
+    "default": "Lalai",
+    "arial": "Arial",
+    "times": "Times New Roman",
+    "verdana": "Verdana",
+    "white": "Putih",
+    "yellow": "Kuning",
+    "blue": "Biru",
+    "close_menu": "Tutup menu",
+    "accessibility_menu": "Menu Aksesibiliti"
+  },
+  "SPLaSK": {
+    "site_map": "Peta Laman",
+    "site_map_available": "Peta Laman Tersedia",
+    "mobile_apps_available": "Aplikasi Mudah Alih Tersedia",
+    "mymesuarat_mobile_app": "Aplikasi MyMesyuarat",
+    "online_services_available": "Perkhidmatan Dalam Talian Tersedia",
+    "procurement_available": "Perkhidmatan Perolehan Tersedia"
   },
   "Privacy": {
     "header": "Dasar Privasi",
@@ -252,6 +282,63 @@
     "telephone_number": "+603-8000 8000",
     "email": "E-mel",
     "email_address": "webmaster@digital.com.my"
+  },
+  "Feedback": {
+    "button": "Aduan & Maklum Balas",
+    "title": "Aduan & Maklum Balas",
+    "aduan": {
+      "tab": "Aduan",
+      "name": "Nama",
+      "id": "No Kad Pengenalan",
+      "address": "Alamat Anda",
+      "phone": "No. Telefon",
+      "email": "Emel",
+      "agency": "Aduan ke atas Bahagian/Jabatan/Agensi",
+      "message": "Kenyataan Aduan/Maklum Balas",
+      "placeholder": "Tuliskan aduan/maklum balas anda",
+      "submit": "Hantar"
+    },
+    "pertanyaan": {
+      "tab": "Pertanyaan",
+      "name": "Nama",
+      "id": "No Kad Pengenalan",
+      "address": "Alamat Anda",
+      "phone": "No. Telefon",
+      "email": "Emel",
+      "agency": "Pertanyaan ke atas Bahagian/Jabatan/Agensi",
+      "message": "Pertanyaan",
+      "placeholder": "Tuliskan pertanyaan anda",
+      "submit": "Hantar"
+    },
+    "cadangan": {
+      "tab": "Cadangan",
+      "name": "Nama",
+      "id": "No Kad Pengenalan",
+      "address": "Alamat Anda",
+      "phone": "No. Telefon",
+      "email": "Emel",
+      "agency": "Cadangan ke atas Bahagian/Jabatan/Agensi",
+      "message": "Cadangan",
+      "placeholder": "Tuliskan cadangan anda",
+      "submit": "Hantar"
+    },
+    "success": {
+      "title": "Berjaya Dihantar!",
+      "desc": "Aduan & maklum balas anda berjaya dihantar. Pegawai kami akan menghubungi anda untuk sebarang maklum balas.",
+      "continue": "Teruskan"
+    },
+    "validation": {
+      "ic_format_error": "Kad pengenalan mesti dalam format 000000-00-0000",
+      "email_format_error": "Sila masukkan emel yang sah",
+      "submission_failed": "Penyerahan gagal. Sila cuba lagi."
+    },
+    "placeholders": {
+      "ic_format": "000000-00-0000",
+      "ic_title": "Format: 000000-00-0000",
+      "phone": "12 9999 999",
+      "email": "emel-anda@contoh.com.my",
+      "agency": "Kementerian Digital"
+    }
   },
   "Datepicker": {
     "from": "Dari",

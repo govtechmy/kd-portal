@@ -19,8 +19,19 @@ export default function HomeSiaran({ broadcast }: { broadcast: Broadcast[] }) {
   const { push } = useRouter();
 
   return (
-    <Section>
-      <div className="grid-cols-12 gap-6 border-washed-100 py-12 lg:py-[84px] xl:grid xl:border-x">
+    <>
+      {/* Hidden SPLaSK Publication tag for crawler detection */}
+      <a 
+        href="#"
+        {...{ "splwpk-publication": "splwpk-publication" }}
+        className="sr-only"
+        aria-hidden="true"
+      >
+        News Publications Available
+      </a>
+      
+      <Section>
+        <div className="grid-cols-12 gap-6 border-washed-100 py-12 lg:py-[84px] xl:grid xl:border-x">
         <div className="col-span-10 col-start-2 space-y-12">
           <h2 className="text-balance font-poppins text-hsm font-semibold">
             {t("Home.Broadcast.title")}
@@ -37,7 +48,13 @@ export default function HomeSiaran({ broadcast }: { broadcast: Broadcast[] }) {
                 <Link
                   key={doc.id}
                   href={routes.ANNOUNCEMENTS + `/${doc.slug}`}
+                  {...{ "splwpk-publication": "splwpk-publication" }}
+                  {...{ "splwpk-broadcast": "splwpk-broadcast" }}
+                  {...{ "splwpk-broadcast-timestamp": doc.date + " 00:00:00" }}
+                  {...{ "splwpk-news": "splwpk-news" }}
+                  {...{ "splwpk-news-timestamp": doc.date + " 00:00:00" }}
                   className="group relative flex flex-col gap-4 rounded-xl border border-outline-200 p-6 hover:border-brand-200"
+                  title={doc.title}
                 >
                   <div
                     className={cn(
@@ -127,5 +144,6 @@ export default function HomeSiaran({ broadcast }: { broadcast: Broadcast[] }) {
         </div>
       </div>
     </Section>
+    </>
   );
 }

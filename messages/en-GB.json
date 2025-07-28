@@ -110,7 +110,9 @@
       "desc4": "Monitor and manage your online meetings.",
       "desc5": "Access, check, and print your payslips.",
       "desc6": "Manage human resources from appointment to termination.",
-      "desc7": "Procure products and services electronically."
+      "desc7": "Procure products and services electronically.",
+      "mobile_apps": "Mobile Applications",
+      "gamma_portal": "GAMMA Portal"
     },
     "Broadcast": {
       "title": "Latest Media",
@@ -130,6 +132,44 @@
     "safety": "Safety Policy",
     "personal_data": "Personal Data Protection",
     "last_update": "Last Updated"
+  },
+  "Accessibility": {
+    "menu_title": "Accessibility Menu (CTRL+U)",
+    "font_size": "Font Size",
+    "font_type": "Font Type",
+    "background_color": "Background Color",
+    "reset_default": "Reset to Default",
+    "small": "Small (80%)",
+    "normal": "Normal (100%)",
+    "large": "Large (120%)",
+    "extra_large": "Extra Large (140%)",
+    "default": "Default",
+    "arial": "Arial",
+    "times": "Times New Roman",
+    "verdana": "Verdana",
+    "white": "White",
+    "yellow": "Yellow",
+    "blue": "Blue",
+    "close_menu": "Close menu",
+    "accessibility_menu": "Accessibility Menu"
+  },
+  "SPLaSK": {
+    "site_map": "Site Map",
+    "site_map_available": "Site Map Available",
+    "mobile_apps_available": "Mobile Applications Available",
+    "mymesuarat_mobile_app": "MyMesyuarat Mobile App",
+    "online_services_available": "Online Services Available",
+    "procurement_available": "Procurement Services Available",
+    "ciodo": {
+      "publicising_agency": "Publicising an Agency CIO/CDO or Equivalent",
+      "cio_info": "CIO/CDO Information: YBrs. Encik Fabian Bigar - Secretary General",
+      "deputy_cio": "Deputy CIO: YBrs. Encik Shakib Bin Ahmad Shakir - Deputy Secretary General",
+      "deputy_cdo": "Deputy CDO: YBrs. Encik Ma. Sivanesan - Deputy Secretary General",
+      "chief_info_officer": "Chief Information Officer: {name} - {position}",
+      "leadership_info": "CIO/CDO Leadership Information",
+      "agency_leadership": "Agency Leadership Details",
+      "ministry_leadership": "Ministry Leadership"
+    }
   },
   "Privacy": {
     "header": "Privacy Policy",
@@ -251,6 +291,63 @@
     "telephone_number": "+603-8000 8000",
     "email": "E-mail",
     "email_address": "webmaster@digital.com.my"
+  },
+  "Feedback": {
+    "button": "Feedback & Response",
+    "title": "Feedback & Response",
+    "aduan": {
+      "tab": "Complaint",
+      "name": "Name",
+      "id": "Identification Number",
+      "address": "Your Address",
+      "phone": "Phone Number",
+      "email": "Email",
+      "agency": "Complaint towards Department/Agency",
+      "message": "Complaint/Response Statement",
+      "placeholder": "Write your complaint/feedback",
+      "submit": "Submit"
+    },
+    "pertanyaan": {
+      "tab": "Inquiry",
+      "name": "Name",
+      "id": "Identification Number",
+      "address": "Your Address",
+      "phone": "Phone Number",
+      "email": "Email",
+      "agency": "Inquiry towards Department/Agency",
+      "message": "Inquiry",
+      "placeholder": "Write your question",
+      "submit": "Submit"
+    },
+    "cadangan": {
+      "tab": "Suggestion",
+      "name": "Name",
+      "id": "Identification Number",
+      "address": "Your Address",
+      "phone": "Phone Number",
+      "email": "Email",
+      "agency": "Suggestion towards Department/Agency",
+      "message": "Suggestion",
+      "placeholder": "Write your suggestion",
+      "submit": "Submit"
+    },
+    "success": {
+      "title": "Successfully Sent!",
+      "desc": "Your feedback has been successfully submitted. Our officers will contact you for any further communication.",
+      "continue": "Continue"
+    },
+    "validation": {
+      "ic_format_error": "Identification number must be in format 000000-00-0000",
+      "email_format_error": "Please enter a valid email address",
+      "submission_failed": "Submission failed. Please try again."
+    },
+    "placeholders": {
+      "ic_format": "000000-00-0000",
+      "ic_title": "Format: 000000-00-0000",
+      "phone": "12 9999 999",
+      "email": "your-email@example.com.my",
+      "agency": "Ministry of Digital"
+    }
   },
   "Datepicker": {
     "from": "From",

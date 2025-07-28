@@ -144,6 +144,7 @@ export default function Footer({
             <div className="flex flex-wrap gap-x-3 gap-y-2 text-black-700">
               {["penafian", "dasar-privasi"].map((link) => (
                 <Link
+                  splwpk-privacy-policy="splwpk-privacy-policy"
                   key={link}
                   className="underline-font text-sm text-black-700 hover:text-foreground hover:underline"
                   href={`/${link}`}
