@@ -162,7 +162,7 @@
     "procurement_available": "Procurement Services Available"
   },
   "Privacy": {
-    "header": "Privacy Policy & Disclaimer",
+    "header": "Privacy Policy",
     "your_privacy": "Your Privacy",
     "your_privacy_desc": "This page explains the privacy policy that encompasses the use and protection of information submitted by visitors. If you make a transaction or send an email containing personal information, this information may be shared with other public agencies to assist in providing more effective and efficient services, for example in resolving complaints that require feedback from other agencies.",
     "collected_info": "Information Collected",
@@ -175,7 +175,7 @@
     "last_updated": "Last updated on 19th February 2024"
   },
   "Disclaimer": {
-    "header": "Disclaimer (Penafian)",
+    "header": "Disclaimer",
     "desc": "The Ministry of Digital is not responsible for any loss or damage incurred from using the information on this portal."
   },
   "Info": {
