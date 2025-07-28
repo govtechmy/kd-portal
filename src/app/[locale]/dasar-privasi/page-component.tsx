@@ -15,7 +15,15 @@ const PrivacyPolicyComponent: FC<PrivacyPolicyProps> = ({ data, locale }) => {
   const t = useTranslations("Privacy");
   return (
     <main>
-      <Hero title={t("header")} />
+      <Hero title={t("header")} splaskPrivacyPolicy={true} />
+      {/* Hidden SPLaSK Privacy Policy tag for crawler detection */}
+      <div 
+        {...{ "splwpk-privacy-policy": "splwpk-privacy-policy" }}
+        className="sr-only"
+        aria-hidden="true"
+      >
+        Privacy Policy & Disclaimer
+      </div>
 
       {data["privacy-policy_section"]?.statement && (
         <Section>
