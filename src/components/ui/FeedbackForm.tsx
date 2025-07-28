@@ -5,12 +5,21 @@ import { buttonVariants } from "./button";
 import { cn } from "@/lib/utils";
 import Envelope from "@/icons/envelope";
 import { countries } from "@/lib/constants/countries-code";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CountryCodeDropdown from "./CountryCodeDrop";
 
 interface Props {
   type: "aduan" | "pertanyaan" | "cadangan";
   onSuccess: () => void;
+}
+
+declare global {
+  interface Window {
+    turnstile: {
+      render: (container: string | HTMLElement, options: any) => string;
+      reset: (widgetId: string) => void;
+    };
+  }
 }
 
 export default function FeedbackForm({ type, onSuccess }: Props) {
@@ -19,6 +28,8 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
   const placeholdersT = useTranslations("Feedback.placeholders");
   const [selectedCode, setSelectedCode] = useState("+60");
   const [icNumber, setIcNumber] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
+  const [turnstileWidgetId, setTurnstileWidgetId] = useState<string>("");
 
   const formatIcNumber = (value: string) => {
     // Remove all non-digits
@@ -38,6 +49,51 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
     const formatted = formatIcNumber(e.target.value);
     setIcNumber(formatted);
   };
+
+  // Load Cloudflare Turnstile script
+  useEffect(() => {
+    if (!window.turnstile) {
+      const script = document.createElement('script');
+      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+
+      script.onload = () => {
+        if (window.turnstile) {
+          const widgetId = window.turnstile.render('#turnstile-widget', {
+            sitekey: process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY || '1x00000000000000000000AA',
+            callback: (token: string) => {
+              setTurnstileToken(token);
+            },
+            'expired-callback': () => {
+              setTurnstileToken("");
+            },
+            'error-callback': () => {
+              setTurnstileToken("");
+            },
+          });
+          setTurnstileWidgetId(widgetId);
+        }
+      };
+    } else {
+      // Script already loaded
+      const widgetId = window.turnstile.render('#turnstile-widget', {
+        sitekey: process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY || '1x00000000000000000000AA',
+        callback: (token: string) => {
+          setTurnstileToken(token);
+        },
+        'expired-callback': () => {
+          setTurnstileToken("");
+        },
+        'error-callback': () => {
+          setTurnstileToken("");
+        },
+      });
+      setTurnstileWidgetId(widgetId);
+    }
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -54,6 +110,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
       email: formData.get("email") as string,
       agency: formData.get("agency") as string,
       message: formData.get("message") as string,
+      turnstileToken,
     };
 
     const idRegex = /^\d{6}-\d{2}-\d{4}$/;
@@ -69,6 +126,12 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
       return;
     }
 
+    // Check if Turnstile token is present (if configured)
+    if (process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY && !turnstileToken) {
+      alert("Please complete the verification");
+      return;
+    }
+
     try {
       const response = await fetch("/api/feedback", {
         method: "POST",
@@ -80,11 +143,27 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
 
       if (response.ok) {
         onSuccess();
+        // Reset Turnstile
+        if (turnstileWidgetId && window.turnstile) {
+          window.turnstile.reset(turnstileWidgetId);
+        }
+        setTurnstileToken("");
       } else {
-        alert(validationT("submission_failed"));
+        const errorData = await response.json();
+        alert(errorData.message || validationT("submission_failed"));
+        // Reset Turnstile on error
+        if (turnstileWidgetId && window.turnstile) {
+          window.turnstile.reset(turnstileWidgetId);
+        }
+        setTurnstileToken("");
       }
     } catch (error) {
       alert(validationT("submission_failed"));
+      // Reset Turnstile on error
+      if (turnstileWidgetId && window.turnstile) {
+        window.turnstile.reset(turnstileWidgetId);
+      }
+      setTurnstileToken("");
     }
   };
 
@@ -167,7 +246,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
         />
       </div>
 
-      {/* Row 5: Agency */}
+      {/* Row 4: Agency */}
       <div>
         <label className="mb-0.5 block text-sm font-normal">{t("agency")}</label>
         <input
@@ -179,7 +258,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
         />
       </div>
 
-      {/* Row 6: Statement / Message */}
+      {/* Row 5: Statement / Message */}
       <div>
         <label className="mb-0.5 block text-sm font-normal">{t("message")}</label>
         <textarea
@@ -188,6 +267,11 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
           className="h-20 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-1.5 shadow-input-shadow text-sm"
           required
         />
+      </div>
+
+      {/* Row 6: Cloudflare Turnstile */}
+      <div className="flex justify-center">
+        <div id="turnstile-widget"></div>
       </div>
 
       {/* Submit Button */}
