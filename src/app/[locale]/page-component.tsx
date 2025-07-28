@@ -42,6 +42,16 @@ const HomePageComponent = async ({
   const visitorsData = await getVisitorsData();
   return (
     <>
+      {/* Hidden SPLaSK Contact Details tag for crawler detection */}
+      <div 
+        {...{ "splwpk-contact-details": "splwpk-contact-details" }}
+        {...{ "splwpk-contact-details-timestamp": new Date().toISOString().slice(0, 19).replace('T', ' ') }}
+        className="sr-only"
+        aria-hidden="true"
+      >
+        Contact Details Available
+      </div>
+      
       <section className="relative w-full gap-6 border-b sm:grid sm:grid-cols-6">
         {homepage.hero_banner && typeof homepage.hero_banner !== "string" ? (
           <div

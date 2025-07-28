@@ -13,6 +13,10 @@ import { getPayload } from "payload";
 import { FSM, FSP } from "@/lib/decorator";
 import { notFound } from "next/navigation";
 import Script from "next/script";
+import SPLaSKMultiLang from "@/components/ui/splask-multilang";
+import SPLaSKW3C from "@/components/ui/splask-w3c";
+import SPLaSKSitemap from "@/components/ui/splask-sitemap";
+import SPLaSKUpdatedContent from "@/components/ui/splask-updated-content";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
@@ -55,10 +59,16 @@ export async function generateMetadata(params: FSM) {
       canonical: `${process.env.APP_URL}`,
       languages: {
         "en-GB": `${process.env.APP_URL}/en-GB`,
+        "ms-MY": `${process.env.APP_URL}/ms-MY`,
       },
     },
     verification: {
       google: "T9cIaXr6zYwwHAizh9qhGq1BRrdtfLXLGdoTLsgehi0",
+    },
+    // SPLaSK Multi-Language Compliance
+    other: {
+      "splwpk-multilang": "splwpk-multilang",
+      "splwpk-sitemap": "splwpk-sitemap",
     },
   };
 }
@@ -101,12 +111,15 @@ const Layout: FSP = async ({ children, params }) => {
     <html lang={locale}>
       {process.env.APP_ENV === "production" && (
         <head>
+          {/* Tinybird Analytics */}
           <script
             defer
             src="https://unpkg.com/@tinybirdco/flock.js"
             data-token={`${process.env.NEXT_PUBLIC_TINYBIRD_TOKEN}`}
             data-host={`${process.env.NEXT_PUBLIC_TINYBIRD_HOST}`}
           ></script>
+
+          {/* SPLaSK Analytics */}
           <Script id="splask-matomo" strategy="beforeInteractive">
             {`
             var _paq = window._paq = window._paq || [];
@@ -134,6 +147,14 @@ const Layout: FSP = async ({ children, params }) => {
       >
         <NextIntlClientProvider messages={messages}>
           <div className="flex min-h-screen flex-col">
+            {/* SPLaSK Multi-Language Tag for Accessibility Compliance */}
+            <SPLaSKMultiLang />
+            {/* SPLaSK W3C Accessibility Controls */}
+            <SPLaSKW3C />
+            {/* SPLaSK Sitemap Tag for Accessibility Compliance */}
+            <SPLaSKSitemap />
+            {/* SPLaSK Updated Content Tags for Content Freshness Compliance */}
+            <SPLaSKUpdatedContent />
             <Masthead />
             <Header
               locale={locale}

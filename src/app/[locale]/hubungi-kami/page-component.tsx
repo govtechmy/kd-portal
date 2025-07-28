@@ -1,16 +1,19 @@
+"use client";
+
 import { buttonVariants } from "@/components/ui/button";
 import Direction from "@/icons/direction";
 import Envelope from "@/icons/envelope";
 import Phone from "@/icons/phone";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
-import React, { FC } from "react";
+import React, { FC, useState, useEffect } from "react";
 import { SiteInfo } from "@/payload-types";
 import { locales } from "@/lib/i18n";
 import { _social_media } from "@/lib/constants/links";
 import Hero from "@/components/layout/hero";
 import Section from "@/components/layout/section";
 import Overline from "@/components/typography/overline";
+import FeedbackDialog from "@/components/ui/FeedbackDialog";
 
 interface ContactUsProps {
   data: SiteInfo;
@@ -19,6 +22,11 @@ interface ContactUsProps {
 
 const ContactUs: FC<ContactUsProps> = ({ data, locale }) => {
   const t = useTranslations();
+  const [timestamp, setTimestamp] = useState<string>("");
+
+  useEffect(() => {
+    setTimestamp(new Date().toISOString().slice(0, 19).replace("T", " "));
+  }, []);
 
   return (
     <>
@@ -53,7 +61,6 @@ const ContactUs: FC<ContactUsProps> = ({ data, locale }) => {
                       },
                       {
                         name: "Waze",
-                        // href: `https://www.waze.com/live-map/directions/${data.encoded_address}`,
                         href: `https://www.waze.com/en/live-map/directions/menara-usahawan-persiaran-perdana-18-putrajaya?place=w.66650141.666435876.410674`,
                       },
                     ].map(({ name, href }) => (
@@ -72,6 +79,7 @@ const ContactUs: FC<ContactUsProps> = ({ data, locale }) => {
                       </a>
                     ))}
                   </div>
+                  <FeedbackDialog />
                 </div>
                 <iframe
                   className="rounded-[32px] border border-outline-200 shadow-[0_30px_100px_-10px_#4C53614D] max-sm:aspect-square sm:w-2/3"
@@ -103,6 +111,10 @@ const ContactUs: FC<ContactUsProps> = ({ data, locale }) => {
                 <a
                   key={title}
                   href={`${title === "email" ? "mailto" : "tel"}:${desc}`}
+                  {...{ "splwpk-contact-details": "splwpk-contact-details" }}
+                  {...(timestamp && {
+                    "splwpk-contact-details-timestamp": timestamp,
+                  })}
                   className="group flex gap-4.5 border-washed-100 px-6 py-8 max-md:col-span-2 md:py-[34px]"
                 >
                   <div className="size-[42px] rounded-full bg-brand-50 p-[9px] text-foreground-primary">

@@ -1,7 +1,6 @@
 // @ts-nocheck
 import { socialMediaOptions } from "@/lib/constants/links";
 import link from "@/lib/fields/link";
-import { revalidateCollection } from "@/lib/hooks/revalidatePath";
 import { CollectionConfig } from "payload";
 
 export const KDDepartment: CollectionConfig = {
@@ -44,9 +43,6 @@ export const KDDirectory: CollectionConfig = {
   },
   defaultSort: "id",
   timestamps: true,
-  hooks: {
-    afterChange: [revalidateCollection("DIRECTORY")],
-  },
   fields: [
     {
       name: "id_bhg",
@@ -71,16 +67,11 @@ export const KDDirectory: CollectionConfig = {
       name: "nama",
       label: "Name",
       type: "text",
-      validate: async (value, { data, ...rest }) => {
-        if (!value) {
-          return "Insert a value";
-        }
-        if (data.staff_id === 0 && value !== "-") {
-          return "Use '-' when ID is 0";
-        }
-        if (data.staff_id === -1 && (!value || value === "-")) {
+      validate: async (value, { data }) => {
+        if (!value) return "Insert a value";
+        if (data.staff_id === 0 && value !== "-") return "Use '-' when ID is 0";
+        if (data.staff_id === -1 && (!value || value === "-"))
           return "Insert section name";
-        }
         return true;
       },
     },
@@ -88,10 +79,8 @@ export const KDDirectory: CollectionConfig = {
       name: "gred",
       label: "Grade",
       type: "text",
-      validate: async (value, { data, ...rest }) => {
-        if (data.staff_id === -1 && value) {
-          return "Leave blank when ID is -1";
-        }
+      validate: async (value, { data }) => {
+        if (data.staff_id === -1 && value) return "Leave blank when ID is -1";
         return true;
       },
     },
@@ -99,10 +88,8 @@ export const KDDirectory: CollectionConfig = {
       name: "jawatan",
       label: "Position",
       type: "text",
-      validate: async (value, { data, ...rest }) => {
-        if (data.staff_id === -1 && value) {
-          return "Leave blank when ID is -1";
-        }
+      validate: async (value, { data }) => {
+        if (data.staff_id === -1 && value) return "Leave blank when ID is -1";
         return true;
       },
     },
@@ -110,7 +97,16 @@ export const KDDirectory: CollectionConfig = {
       name: "telefon",
       label: "Phone Number",
       type: "text",
-      validate: async (value, { data, ...rest }) => {
+    },
+    {
+      name: "laman",
+      label: "Website",
+      type: "text",
+      validate: async (value, { data }) => {
+        if (!value) return "Insert a value";
+        if (data.staff_id === 0 && value !== "-") return "Use '-' when ID is 0";
+        if (data.staff_id === -1 && (!value || value === "-"))
+          return "Insert section name";
         return true;
       },
     },
@@ -118,13 +114,9 @@ export const KDDirectory: CollectionConfig = {
       name: "emel",
       label: "Email",
       type: "text",
-      validate: async (value, { data, ...rest }) => {
-        if (data.staff_id === 0 && value !== "-") {
-          return "Use '-' when ID is 0";
-        }
-        if (data.staff_id === -1 && value) {
-          return "Leave blank when ID is -1";
-        }
+      validate: async (value, { data }) => {
+        if (data.staff_id === 0 && value !== "-") return "Use '-' when ID is 0";
+        if (data.staff_id === -1 && value) return "Leave blank when ID is -1";
         return true;
       },
     },
@@ -143,9 +135,7 @@ export const KDDirectory: CollectionConfig = {
           name: "social",
           type: "select",
           required: true,
-          admin: {
-            width: "50%",
-          },
+          admin: { width: "50%" },
           options: socialMediaOptions,
         },
         link({ forceCustomUrl: true, labelPlaceholder: "KemDigitalMsia" }),
