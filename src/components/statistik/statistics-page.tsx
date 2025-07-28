@@ -130,7 +130,18 @@ interface StatisticsPageProps {
   aggregatedData: TinybirdAggregatedData[];
 }
 
-const StatisticsPage: FC<StatisticsPageProps> = async ({ data, locale, visitorData, countryData, referrerData, deviceData, browserData, pageData, newsData, aggregatedData }) => {
+const StatisticsPage: FC<StatisticsPageProps> = async ({
+  data,
+  locale,
+  visitorData,
+  countryData,
+  referrerData,
+  deviceData,
+  browserData,
+  pageData,
+  newsData,
+  aggregatedData,
+}) => {
   const t = await getTranslations();
 
   const getChangeIcon = (change: string) => {
@@ -158,9 +169,18 @@ const StatisticsPage: FC<StatisticsPageProps> = async ({ data, locale, visitorDa
     return <Minus className="h-4 w-4 text-gray-600" />;
   };
 
-  const StatCard = ({ title, metrics, showStatus = false }: { 
-    title: string; 
-    metrics: Array<{ label: string; value: string; change: string; status?: string }>;
+  const StatCard = ({
+    title,
+    metrics,
+    showStatus = false,
+  }: {
+    title: string;
+    metrics: Array<{
+      label: string;
+      value: string;
+      change: string;
+      status?: string;
+    }>;
     showStatus?: boolean;
   }) => (
     <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
@@ -170,10 +190,19 @@ const StatisticsPage: FC<StatisticsPageProps> = async ({ data, locale, visitorDa
           <div key={index} className="flex items-center justify-between">
             <span className="text-sm text-gray-600">{metric.label}</span>
             <div className="flex items-center gap-2">
-              <span className="font-semibold text-gray-900">{metric.value}</span>
+              <span className="font-semibold text-gray-900">
+                {metric.value}
+              </span>
               <div className="flex items-center gap-1">
-                {showStatus ? getStatusIcon(metric.status || "") : getChangeIcon(metric.change)}
-                <span className={cn("text-xs font-medium", getChangeColor(metric.change))}>
+                {showStatus
+                  ? getStatusIcon(metric.status || "")
+                  : getChangeIcon(metric.change)}
+                <span
+                  className={cn(
+                    "text-xs font-medium",
+                    getChangeColor(metric.change),
+                  )}
+                >
                   {metric.change}
                 </span>
               </div>
@@ -186,8 +215,8 @@ const StatisticsPage: FC<StatisticsPageProps> = async ({ data, locale, visitorDa
 
   return (
     <main>
-      <Hero 
-        title={t("Statistics.header")} 
+      <Hero
+        title={t("Statistics.header")}
         subtitle={t("Statistics.description")}
       />
       {/* COMING SOON */}
@@ -216,19 +245,16 @@ const StatisticsPage: FC<StatisticsPageProps> = async ({ data, locale, visitorDa
       {/* Page Statistics Section - now renders the client component */}
       <Section>
         <div className="py-12">
-          <DownloadButtons 
-            aggregatedData={aggregatedData}
+          <DownloadButtons aggregatedData={aggregatedData} locale={locale} />
+          <StatisticsCharts
+            visitorData={visitorData}
+            countryData={countryData}
+            referrerData={referrerData}
+            deviceData={deviceData}
+            browserData={browserData}
+            pageData={pageData}
+            newsData={newsData}
             locale={locale}
-          />
-          <StatisticsCharts 
-            visitorData={visitorData} 
-            countryData={countryData} 
-            referrerData={referrerData} 
-            deviceData={deviceData} 
-            browserData={browserData} 
-            pageData={pageData} 
-            newsData={newsData} 
-            locale={locale} 
             aggregatedData={aggregatedData}
           />
         </div>
@@ -237,4 +263,4 @@ const StatisticsPage: FC<StatisticsPageProps> = async ({ data, locale, visitorDa
   );
 };
 
-export default StatisticsPage; 
+export default StatisticsPage;

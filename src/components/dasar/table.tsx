@@ -152,7 +152,11 @@ export default function DasarTable({ data }: DasarTableProps) {
             </Button>
             {/* Hidden SPLaSK Publication tag for crawler detection */}
             <a
-              href={typeof info.row.original.file_upload !== "string" ? info.row.original.file_upload.url as string : "#"}
+              href={
+                typeof info.row.original.file_upload !== "string"
+                  ? (info.row.original.file_upload.url as string)
+                  : "#"
+              }
               {...{ "splwpk-publication": "splwpk-publication" }}
               className="sr-only"
               aria-hidden="true"

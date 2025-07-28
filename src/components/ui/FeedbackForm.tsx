@@ -37,7 +37,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
   const formatIcNumber = (value: string) => {
     // Remove all non-digits
     const digits = value.replace(/\D/g, "");
-    
+
     // Format as 000000-00-0000
     if (digits.length <= 6) {
       return digits;
@@ -55,12 +55,20 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
 
   // Load Cloudflare Turnstile script with best practices
   useEffect(() => {
-    const turnstileSiteKey = process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY;
-    const isDevelopment = process.env.NODE_ENV === 'development';
-    
+    const turnstileSiteKey =
+      process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY;
+    const isDevelopment = process.env.NODE_ENV === "development";
+
     // Skip Turnstile in development or if not properly configured
-    if (isDevelopment || !turnstileSiteKey || turnstileSiteKey === '1x00000000000000000000AA') {
-      console.log('Turnstile skipped:', isDevelopment ? 'development mode' : 'not configured');
+    if (
+      isDevelopment ||
+      !turnstileSiteKey ||
+      turnstileSiteKey === "1x00000000000000000000AA"
+    ) {
+      console.log(
+        "Turnstile skipped:",
+        isDevelopment ? "development mode" : "not configured",
+      );
       return;
     }
 
@@ -77,30 +85,30 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
         return;
       }
 
-              try {
-          const widgetId = window.turnstile.render('#turnstile-widget', {
-            sitekey: turnstileSiteKey,
-            callback: (token: string) => {
-              console.log('Turnstile success, token received');
-              setTurnstileToken(token);
-              setTurnstileVerified(true);
-            },
-            'expired-callback': () => {
-              console.log('Turnstile token expired');
-              setTurnstileToken("");
-              setTurnstileVerified(false);
-            },
-            'error-callback': () => {
-              console.log('Turnstile error occurred');
-              setTurnstileToken("");
-              setTurnstileVerified(false);
-            },
-          });
-        
+      try {
+        const widgetId = window.turnstile.render("#turnstile-widget", {
+          sitekey: turnstileSiteKey,
+          callback: (token: string) => {
+            console.log("Turnstile success, token received");
+            setTurnstileToken(token);
+            setTurnstileVerified(true);
+          },
+          "expired-callback": () => {
+            console.log("Turnstile token expired");
+            setTurnstileToken("");
+            setTurnstileVerified(false);
+          },
+          "error-callback": () => {
+            console.log("Turnstile error occurred");
+            setTurnstileToken("");
+            setTurnstileVerified(false);
+          },
+        });
+
         setTurnstileWidgetId(widgetId);
-        console.log('Turnstile widget rendered successfully');
+        console.log("Turnstile widget rendered successfully");
       } catch (error) {
-        console.error('Error rendering Turnstile widget:', error);
+        console.error("Error rendering Turnstile widget:", error);
       }
     };
 
@@ -108,8 +116,9 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
       if (window.turnstile) {
         loadTurnstile();
       } else if (!scriptLoaded) {
-        scriptElement = document.createElement('script');
-        scriptElement.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+        scriptElement = document.createElement("script");
+        scriptElement.src =
+          "https://challenges.cloudflare.com/turnstile/v0/api.js";
         scriptElement.async = true;
         scriptElement.defer = true;
         scriptElement.onload = () => {
@@ -117,7 +126,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
           loadTurnstile();
         };
         scriptElement.onerror = () => {
-          console.error('Failed to load Turnstile script');
+          console.error("Failed to load Turnstile script");
         };
         document.head.appendChild(scriptElement);
       }
@@ -132,7 +141,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
         try {
           window.turnstile.remove(turnstileWidgetId);
         } catch (error) {
-          console.error('Error removing Turnstile widget:', error);
+          console.error("Error removing Turnstile widget:", error);
         }
       }
       if (scriptElement && scriptElement.parentNode) {
@@ -157,7 +166,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
       email: formData.get("email") as string,
       agency: formData.get("agency") as string,
       message: formData.get("message") as string,
-      'cf-turnstile-response': turnstileToken,
+      "cf-turnstile-response": turnstileToken,
     };
 
     const idRegex = /^\d{6}-\d{2}-\d{4}$/;
@@ -174,10 +183,16 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
     }
 
     // Check if Turnstile token is present (required in production)
-    const turnstileSiteKey = process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY;
-    const isDevelopment = process.env.NODE_ENV === 'development';
-    
-    if (!isDevelopment && turnstileSiteKey && turnstileSiteKey !== '1x00000000000000000000AA' && !turnstileToken) {
+    const turnstileSiteKey =
+      process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY;
+    const isDevelopment = process.env.NODE_ENV === "development";
+
+    if (
+      !isDevelopment &&
+      turnstileSiteKey &&
+      turnstileSiteKey !== "1x00000000000000000000AA" &&
+      !turnstileToken
+    ) {
       alert("Please complete the verification before submitting");
       return;
     }
@@ -201,21 +216,28 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
         setTurnstileVerified(false);
       } else {
         const errorData = await response.json();
-        const errorMessage = errorData.message || validationT("submission_failed");
+        const errorMessage =
+          errorData.message || validationT("submission_failed");
         alert(errorMessage);
-        
+
         // Reset Turnstile on error
         if (turnstileWidgetId && window.turnstile) {
           window.turnstile.reset(turnstileWidgetId);
         }
         setTurnstileToken("");
         setTurnstileVerified(false);
-        
+
         // If it's a verification error, focus on the Turnstile widget
-        if (errorMessage.includes("verification") || errorMessage.includes("token")) {
-          const turnstileElement = document.getElementById('turnstile-widget');
+        if (
+          errorMessage.includes("verification") ||
+          errorMessage.includes("token")
+        ) {
+          const turnstileElement = document.getElementById("turnstile-widget");
           if (turnstileElement) {
-            turnstileElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            turnstileElement.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+            });
           }
         }
       }
@@ -238,7 +260,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
           type="text"
           name="name"
           placeholder={t("name")}
-          className="h-8 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-1.5 shadow-input-shadow text-sm"
+          className="h-8 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-1.5 text-sm shadow-input-shadow"
           required
         />
       </div>
@@ -255,14 +277,16 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
             placeholder={placeholdersT("ic_format")}
             pattern="^\d{6}-\d{2}-\d{4}$"
             title={placeholdersT("ic_title")}
-            className="h-8 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-1.5 shadow-input-shadow text-sm"
+            className="h-8 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-1.5 text-sm shadow-input-shadow"
             required
             maxLength={14}
           />
         </div>
 
         <div>
-          <label className="mb-0.5 block text-sm font-normal">{t("phone")}</label>
+          <label className="mb-0.5 block text-sm font-normal">
+            {t("phone")}
+          </label>
           <div className="relative flex w-full">
             <CountryCodeDropdown
               countries={countries}
@@ -274,14 +298,16 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
               type="tel"
               name="phone"
               placeholder={placeholdersT("phone")}
-              className="h-8 w-full rounded-r-lg border border-gray-200 px-3 py-1.5 shadow-input-shadow text-sm"
+              className="h-8 w-full rounded-r-lg border border-gray-200 px-3 py-1.5 text-sm shadow-input-shadow"
               required
             />
           </div>
         </div>
 
         <div>
-          <label className="mb-0.5 block text-sm font-normal">{t("email")}</label>
+          <label className="mb-0.5 block text-sm font-normal">
+            {t("email")}
+          </label>
           <div className="relative">
             <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">
               <Envelope className="h-4 w-4" />
@@ -290,7 +316,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
               type="email"
               name="email"
               placeholder={placeholdersT("email")}
-              className="h-8 w-full rounded-lg border border-gray-200 py-1.5 pl-10 pr-3 shadow-input-shadow text-sm"
+              className="h-8 w-full rounded-lg border border-gray-200 py-1.5 pl-10 pr-3 text-sm shadow-input-shadow"
               required
             />
           </div>
@@ -299,66 +325,81 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
 
       {/* Row 3: Address */}
       <div>
-        <label className="mb-0.5 block text-sm font-medium">{t("address")}</label>
+        <label className="mb-0.5 block text-sm font-medium">
+          {t("address")}
+        </label>
         <textarea
           name="address"
           placeholder={t("address")}
-          className="py-1.5 h-20 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 shadow-input-shadow text-sm"
+          className="h-20 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-1.5 text-sm shadow-input-shadow"
           required
         />
       </div>
 
       {/* Row 4: Agency */}
       <div>
-        <label className="mb-0.5 block text-sm font-normal">{t("agency")}</label>
+        <label className="mb-0.5 block text-sm font-normal">
+          {t("agency")}
+        </label>
         <input
           type="text"
           name="agency"
           placeholder={placeholdersT("agency")}
-          className="h-8 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-1.5 shadow-input-shadow text-sm"
+          className="h-8 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-1.5 text-sm shadow-input-shadow"
           required
         />
       </div>
 
       {/* Row 5: Statement / Message */}
       <div>
-        <label className="mb-0.5 block text-sm font-normal">{t("message")}</label>
+        <label className="mb-0.5 block text-sm font-normal">
+          {t("message")}
+        </label>
         <textarea
           name="message"
           placeholder={t("placeholder")}
-          className="h-20 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-1.5 shadow-input-shadow text-sm"
+          className="h-20 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-1.5 text-sm shadow-input-shadow"
           required
         />
       </div>
 
       {/* Row 6: Cloudflare Turnstile */}
-      {process.env.NODE_ENV === 'production' && 
-       process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY && 
-       process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY !== '1x00000000000000000000AA' && (
-        <div className="space-y-3">
-          <div className="flex items-center gap-2">
-            <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-100">
-              <svg className="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
-              </svg>
+      {process.env.NODE_ENV === "production" &&
+        process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY &&
+        process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY !==
+          "1x00000000000000000000AA" && (
+          <div className="space-y-3">
+            <div className="flex items-center gap-2">
+              <div className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100">
+                <svg
+                  className="h-4 w-4 text-blue-600"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <label className="text-sm font-medium text-gray-700">
+                Security Verification
+              </label>
             </div>
-            <label className="text-sm font-medium text-gray-700">
-              Security Verification
-            </label>
+
+            <div className="flex justify-center">
+              <div id="turnstile-widget"></div>
+            </div>
+
+            {/* Hidden input for Turnstile response */}
+            <input
+              type="hidden"
+              name="cf-turnstile-response"
+              value={turnstileToken}
+            />
           </div>
-          
-          <div className="flex justify-center">
-            <div id="turnstile-widget"></div>
-          </div>
-          
-          {/* Hidden input for Turnstile response */}
-          <input 
-            type="hidden" 
-            name="cf-turnstile-response" 
-            value={turnstileToken} 
-          />
-        </div>
-      )}
+        )}
 
       {/* Submit Button */}
       <div className="pt-4 text-right">

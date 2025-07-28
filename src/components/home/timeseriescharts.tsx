@@ -45,43 +45,51 @@ export default function TimeSeriesChart({ data }: Props) {
 
   return (
     <Section>
-      <div className="py-8 sm:py-12 lg:py-[84px] border-washed-100 xl:grid xl:grid-cols-12 xl:gap-6 xl:border-x">
-        <div className="xl:col-span-10 xl:col-start-2 space-y-10 sm:space-y-12 px-4 sm:px-6 lg:px-0">
+      <div className="border-washed-100 py-8 sm:py-12 lg:py-[84px] xl:grid xl:grid-cols-12 xl:gap-6 xl:border-x">
+        <div className="space-y-10 px-4 sm:space-y-12 sm:px-6 lg:px-0 xl:col-span-10 xl:col-start-2">
           <h2 className="text-balance font-poppins text-hsm font-semibold">
             Page Statistics
           </h2>
 
           <div className="w-full">
-            <h2 className="mb-4 text-base sm:text-lg font-semibold">No. of Visitors</h2>
+            <h2 className="mb-4 text-base font-semibold sm:text-lg">
+              No. of Visitors
+            </h2>
 
-            <div className="mb-4 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 px-1.5 sm:px-2">
-            <div className="mb-4 flex w-full justify-between px-2 gap-4">
-  {/* Daily Visitors - aligned left */}
-  <div className="flex flex-col text-left">
-    <span className="text-xs sm:text-sm text-black/70">Daily</span>
-    <span className="text-xl sm:text-2xl font-bold text-black">
-      +{dailyVisitors}
-    </span>
-  </div>
+            <div className="mb-4 flex flex-col items-start justify-between gap-4 px-1.5 sm:flex-row sm:items-end sm:px-2">
+              <div className="mb-4 flex w-full justify-between gap-4 px-2">
+                {/* Daily Visitors - aligned left */}
+                <div className="flex flex-col text-left">
+                  <span className="text-black/70 text-xs sm:text-sm">
+                    Daily
+                  </span>
+                  <span className="text-black text-xl font-bold sm:text-2xl">
+                    +{dailyVisitors}
+                  </span>
+                </div>
 
-  {/* Cumulative Visitors - aligned right */}
-  <div className="flex flex-col text-right">
-    <span className="text-xs sm:text-sm text-black/70">Cumulative</span>
-    <span className="text-xl sm:text-2xl font-bold text-black">
-      {cumulativeVisitors}
-    </span>
-  </div>
-</div>
-
-
-
-
+                {/* Cumulative Visitors - aligned right */}
+                <div className="flex flex-col text-right">
+                  <span className="text-black/70 text-xs sm:text-sm">
+                    Cumulative
+                  </span>
+                  <span className="text-black text-xl font-bold sm:text-2xl">
+                    {cumulativeVisitors}
+                  </span>
+                </div>
+              </div>
             </div>
 
             <ResponsiveContainer width="100%" height={300}>
               <AreaChart data={formattedData}>
                 <defs>
-                  <linearGradient id="colorVisitors" x1="0" y1="0" x2="0" y2="1">
+                  <linearGradient
+                    id="colorVisitors"
+                    x1="0"
+                    y1="0"
+                    x2="0"
+                    y2="1"
+                  >
                     <stop offset="5%" stopColor="#3B82F6" stopOpacity={0.4} />
                     <stop offset="95%" stopColor="#3B82F6" stopOpacity={0.05} />
                   </linearGradient>

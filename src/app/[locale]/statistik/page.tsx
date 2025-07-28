@@ -71,8 +71,8 @@ interface TinybirdAggregatedData {
 
 const Statistik: FSP = async ({ locale }) => {
   // Fetch statistics data from external source
-  const data = await getStatisticsData('api');
-  
+  const data = await getStatisticsData("api");
+
   // Fetch visitor data from Tinybird server-side
   let visitorData: TinybirdVisitorData[] = [];
   let countryData: TinybirdCountryData[] = [];
@@ -82,86 +82,92 @@ const Statistik: FSP = async ({ locale }) => {
   let pageData: TinybirdPageData[] = [];
   let newsData: TinybirdNewsData[] = [];
   let aggregatedData: TinybirdAggregatedData[] = [];
-  
+
   try {
     const baseUrl = process.env.NEXT_PUBLIC_TINYBIRD_HOST;
     const token = process.env.TINYBIRD_TOKEN_API; // Server-side only - SECURE
-      
+
     if (baseUrl && token) {
       // Fetch aggregated data for stacked area chart
-      const aggregatedResponse = await fetch(`${baseUrl}/v0/pipes/KD_PORTAL_AGGREGATED.json?token=${token}`, {
-        next: { revalidate: 300 } // Cache for 5 minutes
-      });
+      const aggregatedResponse = await fetch(
+        `${baseUrl}/v0/pipes/KD_PORTAL_AGGREGATED.json?token=${token}`,
+        {
+          next: { revalidate: 300 }, // Cache for 5 minutes
+        },
+      );
       const aggregatedResult = await aggregatedResponse.json();
       aggregatedData = aggregatedResult.data || [];
-  
+
       // Fetch visitor trend data
-      const visitorResponse = await fetch(`${baseUrl}/v0/pipes/KD_PORTAL_VISITORS.json?token=${token}`, {
-        next: { revalidate: 300 } // Cache for 5 minutes
-      });
+      const visitorResponse = await fetch(
+        `${baseUrl}/v0/pipes/KD_PORTAL_VISITORS.json?token=${token}`,
+        {
+          next: { revalidate: 300 }, // Cache for 5 minutes
+        },
+      );
       const visitorResult = await visitorResponse.json();
       visitorData = visitorResult.data || [];
-  
+
       // Fetch country data
       const countryUrl = `${baseUrl}/v0/pipes/KD_PORTAL_VISITORS_COUNTRY.json?token=${token}`;
-      
+
       const countryResponse = await fetch(countryUrl, {
-        next: { revalidate: 300 } // Cache for 5 minutes
+        next: { revalidate: 300 }, // Cache for 5 minutes
       });
       const countryResult = await countryResponse.json();
       countryData = countryResult.data || [];
 
       // Fetch referrer data
       const referrerUrl = `${baseUrl}/v0/pipes/KD_PORTAL_REFERRERS.json?token=${token}`;
-      
+
       const referrerResponse = await fetch(referrerUrl, {
-        next: { revalidate: 300 } // Cache for 5 minutes
+        next: { revalidate: 300 }, // Cache for 5 minutes
       });
       const referrerResult = await referrerResponse.json();
       referrerData = referrerResult.data || [];
 
       // Fetch device data
       const deviceUrl = `${baseUrl}/v0/pipes/KD_PORTAL_TYPE_OF_DEVICE.json?token=${token}`;
-      
+
       const deviceResponse = await fetch(deviceUrl, {
-        next: { revalidate: 300 } // Cache for 5 minutes
+        next: { revalidate: 300 }, // Cache for 5 minutes
       });
       const deviceResult = await deviceResponse.json();
       deviceData = deviceResult.data || [];
 
       // Fetch browser data
       const browserUrl = `${baseUrl}/v0/pipes/KD_PORTAL_TYPE_BROWSER.json?token=${token}`;
-      
+
       const browserResponse = await fetch(browserUrl, {
-        next: { revalidate: 300 } // Cache for 5 minutes
+        next: { revalidate: 300 }, // Cache for 5 minutes
       });
       const browserResult = await browserResponse.json();
       browserData = browserResult.data || [];
 
       // Fetch page data
       const pageUrl = `${baseUrl}/v0/pipes/KD_PORTAL_VISITED_PAGE.json?token=${token}`;
-      
+
       const pageResponse = await fetch(pageUrl, {
-        next: { revalidate: 300 } // Cache for 5 minutes
+        next: { revalidate: 300 }, // Cache for 5 minutes
       });
       const pageResult = await pageResponse.json();
       pageData = pageResult.data || [];
 
       // Fetch news data
-      const newsUrl = `${baseUrl}/v0/pipes/KD_PORTAL_MOST_VISIT_NEWS.json?token=${token}`;  
-      
+      const newsUrl = `${baseUrl}/v0/pipes/KD_PORTAL_MOST_VISIT_NEWS.json?token=${token}`;
+
       const newsResponse = await fetch(newsUrl, {
-        next: { revalidate: 300 } // Cache for 5 minutes
+        next: { revalidate: 300 }, // Cache for 5 minutes
       });
       const newsResult = await newsResponse.json();
-        newsData = newsResult.data || [];
+      newsData = newsResult.data || [];
     } else {
-      console.log('Missing Tinybird configuration');
+      console.log("Missing Tinybird configuration");
     }
   } catch (error) {
-    console.error('Error fetching analytics data:', error);
+    console.error("Error fetching analytics data:", error);
   }
-  
+
   return (
     <Suspense>
       <StatisticsPage
@@ -184,4 +190,4 @@ export const generateMetadata = async (params: MetagenProps) => {
   return metagen(params, "Header", { title: "statistics" });
 };
 
-export default inject(Statistik); 
+export default inject(Statistik);

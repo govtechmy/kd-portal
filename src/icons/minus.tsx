@@ -18,4 +18,4 @@ const Minus: React.FC<HTMLAttributes<SVGElement>> = (props) => (
   </svg>
 );
 
-export default Minus; 
+export default Minus;

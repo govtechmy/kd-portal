@@ -9,7 +9,11 @@ export default function JSONIcon(props: React.SVGProps<SVGSVGElement>) {
       {...props}
     >
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-      <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+      <g
+        id="SVGRepo_tracerCarrier"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></g>
       <g id="SVGRepo_iconCarrier">
         <title>file_type_light_json</title>
         <path

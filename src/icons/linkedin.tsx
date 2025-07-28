@@ -23,4 +23,4 @@ const LinkedInIcon: FC<LinkedInIconProps> = ({ className = "", size = 16 }) => {
   );
 };
 
-export default LinkedInIcon; 
+export default LinkedInIcon;

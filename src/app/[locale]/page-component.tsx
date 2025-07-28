@@ -50,21 +50,21 @@ interface Props {
 async function getAggregatedData() {
   const baseUrl = process.env.NEXT_PUBLIC_TINYBIRD_HOST;
   const token = process.env.TINYBIRD_TOKEN_API;
-  
+
   if (!baseUrl || !token) {
-    console.log('Missing Tinybird configuration');
+    console.log("Missing Tinybird configuration");
     return [];
   }
 
   try {
     const res = await fetch(
       `${baseUrl}/v0/pipes/KD_PORTAL_AGGREGATED.json?token=${token}`,
-      { next: { revalidate: 300 } } // Cache for 5 minutes
+      { next: { revalidate: 300 } }, // Cache for 5 minutes
     );
     const json = await res.json();
     return json.data || [];
   } catch (error) {
-    console.error('Error fetching aggregated data:', error);
+    console.error("Error fetching aggregated data:", error);
     return [];
   }
 }
@@ -78,19 +78,24 @@ const HomePageComponent = async ({
 }: Props) => {
   const t = useTranslations();
   const aggregatedData: TinybirdAggregatedData[] = await getAggregatedData();
-  
+
   return (
     <>
       {/* Hidden SPLaSK Contact Details tag for crawler detection */}
-      <div 
+      <div
         {...{ "splwpk-contact-details": "splwpk-contact-details" }}
-        {...{ "splwpk-contact-details-timestamp": new Date().toISOString().slice(0, 19).replace('T', ' ') }}
+        {...{
+          "splwpk-contact-details-timestamp": new Date()
+            .toISOString()
+            .slice(0, 19)
+            .replace("T", " "),
+        }}
         className="sr-only"
         aria-hidden="true"
       >
         Contact Details Available
       </div>
-      
+
       <section className="relative w-full gap-6 border-b sm:grid sm:grid-cols-6">
         {homepage.hero_banner && typeof homepage.hero_banner !== "string" ? (
           <div

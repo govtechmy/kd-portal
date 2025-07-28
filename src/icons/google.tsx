@@ -35,4 +35,4 @@ const GoogleIcon: FC<GoogleIconProps> = ({ className = "", size = 16 }) => {
   );
 };
 
-export default GoogleIcon; 
+export default GoogleIcon;

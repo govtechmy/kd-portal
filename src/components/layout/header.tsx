@@ -54,7 +54,7 @@ export function Header({
 
   // Set timestamp only on client side to avoid hydration mismatch
   useEffect(() => {
-    setTimestamp(new Date().toISOString().slice(0, 19).replace('T', ' '));
+    setTimestamp(new Date().toISOString().slice(0, 19).replace("T", " "));
   }, []);
 
   return (
@@ -134,10 +134,13 @@ export function Header({
                     <Link
                       href={href}
                       data-state={active(href) ? "open" : "close"}
-                      {...(name.toLowerCase().includes('policy') || name.toLowerCase().includes('polisi') && timestamp ? {
-                        "splwpk-gov-policies": "splwpk-gov-policies",
-                        "splwpk-gov-policies-timestamp": timestamp
-                      } : {})}
+                      {...(name.toLowerCase().includes("policy") ||
+                      (name.toLowerCase().includes("polisi") && timestamp)
+                        ? {
+                            "splwpk-gov-policies": "splwpk-gov-policies",
+                            "splwpk-gov-policies-timestamp": timestamp,
+                          }
+                        : {})}
                       className={cn(
                         buttonVariants({ variant: "tertiary", size: "md" }),
                         "w-full justify-start text-base data-[state=open]:bg-washed-100",
@@ -196,10 +199,13 @@ export function Header({
                     <Link
                       href={href}
                       data-state={active(href) ? "open" : "close"}
-                      {...(name.toLowerCase().includes('policy') || name.toLowerCase().includes('polisi') && timestamp ? {
-                        "splwpk-gov-policies": "splwpk-gov-policies",
-                        "splwpk-gov-policies-timestamp": timestamp
-                      } : {})}
+                      {...(name.toLowerCase().includes("policy") ||
+                      (name.toLowerCase().includes("polisi") && timestamp)
+                        ? {
+                            "splwpk-gov-policies": "splwpk-gov-policies",
+                            "splwpk-gov-policies-timestamp": timestamp,
+                          }
+                        : {})}
                       className={cn(
                         buttonVariants({ variant: "tertiary" }),
                         "w-max bg-transparent transition-colors data-[state=open]:bg-washed-100",

@@ -36,7 +36,10 @@ interface DownloadButtonsProps {
   locale: string;
 }
 
-const DownloadButtons: FC<DownloadButtonsProps> = ({ aggregatedData, locale }) => {
+const DownloadButtons: FC<DownloadButtonsProps> = ({
+  aggregatedData,
+  locale,
+}) => {
   const t = useTranslations();
 
   const handleDownloadCSV = () => {
@@ -44,74 +47,88 @@ const DownloadButtons: FC<DownloadButtonsProps> = ({ aggregatedData, locale }) =
 
     // Create CSV content
     const headers = [
-      'Date',
-      'Direct Visits',
-      'Google Visits', 
-      'Bing Visits',
-      'Facebook Visits',
-      'LinkedIn Visits',
-      'Internal Visits',
-      'Other Referrals',
-      'Mobile Visits',
-      'Tablet Visits',
-      'Desktop Visits',
-      'Chrome Visits',
-      'Safari Visits',
-      'Firefox Visits',
-      'Edge Visits',
-      'Other Browser Visits',
-      'Malaysia Visits',
-      'Singapore Visits',
-      'US Visits',
-      'India Visits',
-      'China Visits',
-      'Other Country Visits',
-      'Total Visits'
+      "Date",
+      "Direct Visits",
+      "Google Visits",
+      "Bing Visits",
+      "Facebook Visits",
+      "LinkedIn Visits",
+      "Internal Visits",
+      "Other Referrals",
+      "Mobile Visits",
+      "Tablet Visits",
+      "Desktop Visits",
+      "Chrome Visits",
+      "Safari Visits",
+      "Firefox Visits",
+      "Edge Visits",
+      "Other Browser Visits",
+      "Malaysia Visits",
+      "Singapore Visits",
+      "US Visits",
+      "India Visits",
+      "China Visits",
+      "Other Country Visits",
+      "Total Visits",
     ];
 
     const csvContent = [
-      headers.join(','),
-      ...aggregatedData.map(row => [
-        row.day,
-        row.direct_visits,
-        row.google_visits,
-        row.bing_visits,
-        row.facebook_visits,
-        row.linkedin_visits,
-        row.internal_visits,
-        row.other_referrals,
-        row.mobile_visits,
-        row.tablet_visits,
-        row.desktop_visits,
-        row.chrome_visits,
-        row.safari_visits,
-        row.firefox_visits,
-        row.edge_visits,
-        row.other_browser_visits,
-        row.malaysia_visits,
-        row.singapore_visits,
-        row.us_visits,
-        row.india_visits,
-        row.china_visits,
-        row.other_country_visits,
-        row.total_visits
-      ].join(','))
-    ].join('\n');
+      headers.join(","),
+      ...aggregatedData.map((row) =>
+        [
+          row.day,
+          row.direct_visits,
+          row.google_visits,
+          row.bing_visits,
+          row.facebook_visits,
+          row.linkedin_visits,
+          row.internal_visits,
+          row.other_referrals,
+          row.mobile_visits,
+          row.tablet_visits,
+          row.desktop_visits,
+          row.chrome_visits,
+          row.safari_visits,
+          row.firefox_visits,
+          row.edge_visits,
+          row.other_browser_visits,
+          row.malaysia_visits,
+          row.singapore_visits,
+          row.us_visits,
+          row.india_visits,
+          row.china_visits,
+          row.other_country_visits,
+          row.total_visits,
+        ].join(","),
+      ),
+    ].join("\n");
 
-    downloadFile(csvContent, `digital-statistics-${new Date().toISOString().split('T')[0]}.csv`, 'text/csv');
+    downloadFile(
+      csvContent,
+      `digital-statistics-${new Date().toISOString().split("T")[0]}.csv`,
+      "text/csv",
+    );
   };
 
   const handleDownloadJSON = () => {
     if (aggregatedData.length === 0) return;
 
     const jsonContent = JSON.stringify(aggregatedData, null, 2);
-    downloadFile(jsonContent, `digital-statistics-${new Date().toISOString().split('T')[0]}.json`, 'application/json');
+    downloadFile(
+      jsonContent,
+      `digital-statistics-${new Date().toISOString().split("T")[0]}.json`,
+      "application/json",
+    );
   };
 
-  const downloadFile = (content: string, filename: string, mimeType: string) => {
+  const downloadFile = (
+    content: string,
+    filename: string,
+    mimeType: string,
+  ) => {
     const blob = new Blob([content], { type: mimeType });
     const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = url;
     link.download = filename;
     document.body.appendChild(link);
@@ -121,11 +138,11 @@ const DownloadButtons: FC<DownloadButtonsProps> = ({ aggregatedData, locale }) =
   };
 
   return (
-    <div className="flex justify-end gap-3 mb-6">
+    <div className="mb-6 flex justify-end gap-3">
       <button
         onClick={handleDownloadCSV}
         disabled={aggregatedData.length === 0}
-        className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm bg-white border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        className="inline-flex items-center gap-1.5 rounded-md border border-gray-300 bg-white px-3 py-1.5 text-sm text-gray-700 transition-colors hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50"
       >
         <CSV className="h-3.5 w-3.5" />
         {t("Statistics.download_csv")}
@@ -133,7 +150,7 @@ const DownloadButtons: FC<DownloadButtonsProps> = ({ aggregatedData, locale }) =
       <button
         onClick={handleDownloadJSON}
         disabled={aggregatedData.length === 0}
-        className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm bg-white border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        className="inline-flex items-center gap-1.5 rounded-md border border-gray-300 bg-white px-3 py-1.5 text-sm text-gray-700 transition-colors hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50"
       >
         <JSONIcon className="h-3.5 w-3.5" />
         {t("Statistics.download_json")}
@@ -142,4 +159,4 @@ const DownloadButtons: FC<DownloadButtonsProps> = ({ aggregatedData, locale }) =
   );
 };
 
-export default DownloadButtons; 
+export default DownloadButtons;

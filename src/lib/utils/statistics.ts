@@ -40,43 +40,113 @@ export async function fetchStatisticsFromAPI(): Promise<StatisticsData> {
       digitalAdoption: {
         title: "Digital Adoption",
         metrics: [
-          { label: "E-Government Services", value: "85%", change: "+5%", status: "pass" },
-          { label: "Digital Payments", value: "92%", change: "+8%", status: "pass" },
-          { label: "Online Banking", value: "78%", change: "+12%", status: "pass" },
-          { label: "E-Commerce Usage", value: "67%", change: "+15%", status: "pass" },
-        ]
+          {
+            label: "E-Government Services",
+            value: "85%",
+            change: "+5%",
+            status: "pass",
+          },
+          {
+            label: "Digital Payments",
+            value: "92%",
+            change: "+8%",
+            status: "pass",
+          },
+          {
+            label: "Online Banking",
+            value: "78%",
+            change: "+12%",
+            status: "pass",
+          },
+          {
+            label: "E-Commerce Usage",
+            value: "67%",
+            change: "+15%",
+            status: "pass",
+          },
+        ],
       },
       infrastructure: {
         title: "Digital Infrastructure",
         metrics: [
-          { label: "5G Coverage", value: "75%", change: "+20%", status: "pass" },
-          { label: "Fiber Optic Coverage", value: "68%", change: "+10%", status: "pass" },
+          {
+            label: "5G Coverage",
+            value: "75%",
+            change: "+20%",
+            status: "pass",
+          },
+          {
+            label: "Fiber Optic Coverage",
+            value: "68%",
+            change: "+10%",
+            status: "pass",
+          },
           { label: "Digital Hubs", value: "45", change: "+5", status: "pass" },
           { label: "Smart Cities", value: "12", change: "+3", status: "pass" },
-        ]
-      },  
+        ],
+      },
       cybersecurity: {
         title: "Cybersecurity",
         metrics: [
-          { label: "Security Incidents", value: "1,234", change: "-15%", status: "pass" },
-          { label: "Response Time", value: "2.3hrs", change: "-30%", status: "pass" },
-          { label: "Security Training", value: "15,000", change: "+25%", status: "pass" },  
-          { label: "Compliance Rate", value: "98%", change: "+2%", status: "pass" },
-        ]
+          {
+            label: "Security Incidents",
+            value: "1,234",
+            change: "-15%",
+            status: "pass",
+          },
+          {
+            label: "Response Time",
+            value: "2.3hrs",
+            change: "-30%",
+            status: "pass",
+          },
+          {
+            label: "Security Training",
+            value: "15,000",
+            change: "+25%",
+            status: "pass",
+          },
+          {
+            label: "Compliance Rate",
+            value: "98%",
+            change: "+2%",
+            status: "pass",
+          },
+        ],
       },
       digitalEconomy: {
         title: "Digital Economy",
         metrics: [
-          { label: "Digital GDP", value: "RM 45.2B", change: "+18%", status: "pass" },
-          { label: "Tech Startups", value: "2,847", change: "+22%", status: "pass" },
-          { label: "Digital Jobs", value: "125,000", change: "+35%", status: "pass" },
-          { label: "Foreign Investment", value: "RM 8.9B", change: "+28%", status: "pass" },
-        ]
+          {
+            label: "Digital GDP",
+            value: "RM 45.2B",
+            change: "+18%",
+            status: "pass",
+          },
+          {
+            label: "Tech Startups",
+            value: "2,847",
+            change: "+22%",
+            status: "pass",
+          },
+          {
+            label: "Digital Jobs",
+            value: "125,000",
+            change: "+35%",
+            status: "pass",
+          },
+          {
+            label: "Foreign Investment",
+            value: "RM 8.9B",
+            change: "+28%",
+            status: "pass",
+          },
+        ],
       },
     };
     // return await response.json();
   } catch (error) {
-    console.error('Error fetching statistics from API:', error);
+    console.error("Error fetching statistics from API:", error);
     // Return fallback data
     return getFallbackStatistics();
   }
@@ -90,21 +160,21 @@ export async function fetchStatisticsFromDatabase(): Promise<StatisticsData> {
     // const pool = new Pool({
     //   connectionString: process.env.DATABASE_URL,
     // });
-    
+
     // const result = await pool.query(`
-    //   SELECT category, label, value, change_percentage 
-    //   FROM statistics 
-    //   WHERE active = true 
+    //   SELECT category, label, value, change_percentage
+    //   FROM statistics
+    //   WHERE active = true
     //   ORDER BY category, display_order
     // `);
-    
+
     // Process the database results into the expected format
     // return processDatabaseResults(result.rows);
-    
+
     // For now, return fallback data
     return getFallbackStatistics();
   } catch (error) {
-    console.error('Error fetching statistics from database:', error);
+    console.error("Error fetching statistics from database:", error);
     return getFallbackStatistics();
   }
 }
@@ -116,11 +186,11 @@ export async function fetchStatisticsFromFile(): Promise<StatisticsData> {
     // const fs = require('fs').promises;
     // const data = await fs.readFile('./data/statistics.json', 'utf8');
     // return JSON.parse(data);
-    
+
     // For now, return fallback data
     return getFallbackStatistics();
   } catch (error) {
-    console.error('Error fetching statistics from file:', error);
+    console.error("Error fetching statistics from file:", error);
     return getFallbackStatistics();
   }
 }
@@ -131,12 +201,12 @@ export async function fetchStatisticsFromThirdParty(): Promise<StatisticsData> {
     // Example using Google Analytics API
     // const { google } = require('googleapis');
     // const analytics = google.analytics('v3');
-    
+
     // const auth = new google.auth.GoogleAuth({
     //   keyFile: process.env.GOOGLE_APPLICATION_CREDENTIALS,
     //   scopes: ['https://www.googleapis.com/auth/analytics.readonly'],
     // });
-    
+
     // const response = await analytics.data.ga.get({
     //   auth,
     //   ids: 'ga:' + process.env.GA_VIEW_ID,
@@ -145,14 +215,14 @@ export async function fetchStatisticsFromThirdParty(): Promise<StatisticsData> {
     //   metrics: 'ga:sessions,ga:users,ga:pageviews',
     //   dimensions: 'ga:date',
     // });
-    
+
     // Process the analytics data into your format
     // return processAnalyticsData(response.data);
-    
+
     // For now, return fallback data
     return getFallbackStatistics();
   } catch (error) {
-    console.error('Error fetching statistics from third-party:', error);
+    console.error("Error fetching statistics from third-party:", error);
     return getFallbackStatistics();
   }
 }
@@ -163,54 +233,121 @@ function getFallbackStatistics(): StatisticsData {
     digitalAdoption: {
       title: "Digital Adoption",
       metrics: [
-        { label: "E-Government Services", value: "85%", change: "+5%", status: "pass" },
-        { label: "Digital Payments", value: "92%", change: "+8%", status: "pass" },
-        { label: "Online Banking", value: "78%", change: "+12%", status: "pass" },
-        { label: "E-Commerce Usage", value: "67%", change: "+15%", status: "pass" },
-      ]
+        {
+          label: "E-Government Services",
+          value: "85%",
+          change: "+5%",
+          status: "pass",
+        },
+        {
+          label: "Digital Payments",
+          value: "92%",
+          change: "+8%",
+          status: "pass",
+        },
+        {
+          label: "Online Banking",
+          value: "78%",
+          change: "+12%",
+          status: "pass",
+        },
+        {
+          label: "E-Commerce Usage",
+          value: "67%",
+          change: "+15%",
+          status: "pass",
+        },
+      ],
     },
     infrastructure: {
       title: "Digital Infrastructure",
       metrics: [
         { label: "5G Coverage", value: "75%", change: "+20%", status: "pass" },
-        { label: "Fiber Optic Coverage", value: "68%", change: "+10%", status: "pass" },
+        {
+          label: "Fiber Optic Coverage",
+          value: "68%",
+          change: "+10%",
+          status: "pass",
+        },
         { label: "Digital Hubs", value: "45", change: "+5", status: "pass" },
         { label: "Smart Cities", value: "12", change: "+3", status: "pass" },
-      ]
+      ],
     },
     cybersecurity: {
       title: "Cybersecurity",
       metrics: [
-        { label: "Security Incidents", value: "1,234", change: "-15%", status: "pass" },
-        { label: "Response Time", value: "2.3hrs", change: "-30%", status: "pass" },
-        { label: "Security Training", value: "15,000", change: "+25%", status: "pass" },
-        { label: "Compliance Rate", value: "98%", change: "+2%", status: "pass" },
-      ]
+        {
+          label: "Security Incidents",
+          value: "1,234",
+          change: "-15%",
+          status: "pass",
+        },
+        {
+          label: "Response Time",
+          value: "2.3hrs",
+          change: "-30%",
+          status: "pass",
+        },
+        {
+          label: "Security Training",
+          value: "15,000",
+          change: "+25%",
+          status: "pass",
+        },
+        {
+          label: "Compliance Rate",
+          value: "98%",
+          change: "+2%",
+          status: "pass",
+        },
+      ],
     },
     digitalEconomy: {
       title: "Digital Economy",
       metrics: [
-        { label: "Digital GDP", value: "RM 45.2B", change: "+18%", status: "pass" },
-        { label: "Tech Startups", value: "2,847", change: "+22%", status: "pass" },
-        { label: "Digital Jobs", value: "125,000", change: "+35%", status: "pass" },
-        { label: "Foreign Investment", value: "RM 8.9B", change: "+28%", status: "pass" },
-      ]
-    }
+        {
+          label: "Digital GDP",
+          value: "RM 45.2B",
+          change: "+18%",
+          status: "pass",
+        },
+        {
+          label: "Tech Startups",
+          value: "2,847",
+          change: "+22%",
+          status: "pass",
+        },
+        {
+          label: "Digital Jobs",
+          value: "125,000",
+          change: "+35%",
+          status: "pass",
+        },
+        {
+          label: "Foreign Investment",
+          value: "RM 8.9B",
+          change: "+28%",
+          status: "pass",
+        },
+      ],
+    },
   };
 }
 
 // Main function to get statistics data
-export async function getStatisticsData(source: 'api' | 'database' | 'file' | 'third-party' = 'api'): Promise<StatisticsData> {
+export async function getStatisticsData(
+  source: "api" | "database" | "file" | "third-party" = "api",
+): Promise<StatisticsData> {
   switch (source) {
-    case 'api':
+    case "api":
       return fetchStatisticsFromAPI();
-    case 'database':
+    case "database":
       return fetchStatisticsFromDatabase();
-    case 'file':
+    case "file":
       return fetchStatisticsFromFile();
-    case 'third-party':
+    case "third-party":
       return fetchStatisticsFromThirdParty();
     default:
       return getFallbackStatistics();
   }
-} 
+}

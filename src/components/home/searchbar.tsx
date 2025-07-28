@@ -62,7 +62,7 @@ const HomeSearchBar: FC<{ locale: string }> = ({ locale }) => {
   }, [query, fetchSearchList]);
 
   return (
-    <form 
+    <form
       splwpk-search-function="splwpk-search-function"
       splwpk-advanced-search-function="splwpk-advanced-search-function"
       onSubmit={(e) => {
@@ -70,7 +70,7 @@ const HomeSearchBar: FC<{ locale: string }> = ({ locale }) => {
         // Handle form submission if needed
         if (query.trim()) {
           // You can add custom search logic here
-          console.log('Search submitted:', query);
+          console.log("Search submitted:", query);
         }
       }}
     >

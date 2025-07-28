@@ -23,4 +23,4 @@ const RefreshIcon: FC<RefreshIconProps> = ({ className = "", size = 16 }) => {
   );
 };
 
-export default RefreshIcon; 
+export default RefreshIcon;
