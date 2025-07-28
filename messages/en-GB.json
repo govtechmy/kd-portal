@@ -307,7 +307,8 @@
       "linkedin": "LinkedIn",
       "internal": "Internal",
       "social": "Social Media",
-      "other": "Other Sources"
+      "other": "Other Sources",
+      "no_data": "No traffic source data available"
     },
     "aggregated": {
       "title": "Traffic Sources Over Time",
@@ -332,18 +333,21 @@
       "johor": "Johor",
       "penang": "Penang",
       "perak": "Perak",
-      "other": "Other States"
+      "other": "Other States",
+      "no_data": "No location data available"
     },
     "browsers": {
       "title": "Browser Usage",
-      "others": "Others"
+      "others": "Others",
+      "no_data": "No browser data available"
     },
     "devices": {
       "title": "Device Types",
       "desktop": "Desktop",
       "mobile": "Mobile",
       "tablet": "Tablet",
-      "other": "Other"
+      "other": "Other",
+      "no_data": "No device data available"
     },
     "pages": {
       "title": "Most Visited Pages",
@@ -355,7 +359,8 @@
       "policy": "Policy",
       "achievement": "Achievement",
       "disclaimer": "Disclaimer",
-      "privacy": "Privacy Policy"
+      "privacy": "Privacy Policy",
+      "no_data": "No page data available"
     },
     "news": {
       "title": "Most Visited News",

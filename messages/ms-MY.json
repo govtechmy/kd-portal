@@ -297,7 +297,8 @@
       "linkedin": "LinkedIn",
       "internal": "Dalaman",
       "social": "Media Sosial",
-      "other": "Sumber Lain"
+      "other": "Sumber Lain",
+      "no_data": "Tiada data sumber lalu lintas tersedia"
     },
     "aggregated": {
       "title": "Sumber Lalu Lintas Mengikut Masa",
@@ -322,18 +323,21 @@
       "johor": "Johor",
       "penang": "Pulau Pinang",
       "perak": "Perak",
-      "other": "Negeri Lain"
+      "other": "Negeri Lain",
+      "no_data": "Tiada data lokasi tersedia"
     },
     "browsers": {
       "title": "Penggunaan Pelayar",
-      "others": "Lain-lain"
+      "others": "Lain-lain",
+      "no_data": "Tiada data pelayar tersedia"
     },
     "devices": {
       "title": "Jenis Peranti",
       "desktop": "Desktop",
       "mobile": "Mudah Alih",
       "tablet": "Tablet",
-      "other": "Lain-lain"
+      "other": "Lain-lain",
+      "no_data": "Tiada data peranti tersedia"
     },
     "pages": {
       "title": "Halaman Paling Dikunjungi",
@@ -345,7 +349,8 @@
       "policy": "Dasar",
       "achievement": "Pencapaian",
       "disclaimer": "Penafian",
-      "privacy": "Dasar Privasi"
+      "privacy": "Dasar Privasi",
+      "no_data": "Tiada data halaman tersedia"
     },
     "news": {
       "title": "Berita Paling Dikunjungi",
