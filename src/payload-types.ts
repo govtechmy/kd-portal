@@ -22,6 +22,7 @@ export interface Config {
     policy: Policy;
     'quick-link': QuickLink;
     celebration: Celebration;
+    feedback: Feedback;
     search: Search;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -40,6 +41,7 @@ export interface Config {
     policy: PolicySelect<false> | PolicySelect<true>;
     'quick-link': QuickLinkSelect<false> | QuickLinkSelect<true>;
     celebration: CelebrationSelect<false> | CelebrationSelect<true>;
+    feedback: FeedbackSelect<false> | FeedbackSelect<true>;
     search: SearchSelect<false> | SearchSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -377,6 +379,24 @@ export interface Celebration {
   createdAt: string;
 }
 /**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "feedback".
+ */
+export interface Feedback {
+  id: string;
+  type: 'aduan' | 'pertanyaan' | 'cadangan';
+  name: string;
+  ic_number: string;
+  address: string;
+  phone_country_code: string;
+  phone: string;
+  email: string;
+  agency: string;
+  message: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This is a collection of automatically created search results. These results are used by the global site search and will be updated automatically as documents in the CMS are created or updated.
  *
  * This interface was referenced by `Config`'s JSON-Schema
@@ -456,6 +476,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'celebration';
         value: string | Celebration;
+      } | null)
+    | ({
+        relationTo: 'feedback';
+        value: string | Feedback;
       } | null)
     | ({
         relationTo: 'search';
@@ -708,6 +732,23 @@ export interface CelebrationSelect<T extends boolean = true> {
         file_mobile?: T;
         type?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "feedback_select".
+ */
+export interface FeedbackSelect<T extends boolean = true> {
+  type?: T;
+  name?: T;
+  ic_number?: T;
+  address?: T;
+  phone_country_code?: T;
+  phone?: T;
+  email?: T;
+  agency?: T;
+  message?: T;
   updatedAt?: T;
   createdAt?: T;
 }

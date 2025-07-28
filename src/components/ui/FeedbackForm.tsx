@@ -15,35 +15,55 @@ interface Props {
 
 export default function FeedbackForm({ type, onSuccess }: Props) {
   const t = useTranslations(`Feedback.${type}`);
-  const [selectedCode, setSelectedCode] = useState("+60"); // State for the selected dial code
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [selectedCode, setSelectedCode] = useState("+60");
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const form = e.currentTarget;
-    const id =
-      form.querySelector<HTMLInputElement>(
-        'input[placeholder="000000-00-0000"]',
-      )?.value || "";
-    const email =
-      form.querySelector<HTMLInputElement>('input[type="email"]')?.value || "";
+    const formData = new FormData(form);
+
+    const data = {
+      type,
+      name: formData.get("name") as string,
+      ic_number: formData.get("ic_number") as string,
+      address: formData.get("address") as string,
+      phone_country_code: selectedCode,
+      phone: formData.get("phone") as string,
+      email: formData.get("email") as string,
+      agency: formData.get("agency") as string,
+      message: formData.get("message") as string,
+    };
 
     const idRegex = /^\d{6}-\d{2}-\d{4}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (!idRegex.test(id)) {
+    if (!idRegex.test(data.ic_number)) {
       alert("Kad pengenalan mesti dalam format 123456-78-9999");
       return;
     }
 
-    if (!emailRegex.test(email)) {
+    if (!emailRegex.test(data.email)) {
       alert("Sila masukkan emel yang sah");
       return;
     }
 
-    // Simulate Successful Submission - Will update to API
-    setTimeout(() => {
-      onSuccess();
-    }, 500);
+    try {
+      const response = await fetch("/api/feedback", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        onSuccess();
+      } else {
+        alert("Submission failed. Please try again.");
+      }
+    } catch (error) {
+      alert("Submission failed. Please try again.");
+    }
   };
 
   return (
@@ -53,6 +73,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
         <label className="mb-1 block text-sm font-medium">{t("name")}</label>
         <input
           type="text"
+          name="name"
           placeholder={t("name")}
           className="h-10 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-2 shadow-sm shadow-gray-300"
           required
@@ -64,6 +85,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
         <label className="mb-1 block text-sm font-medium">{t("id")}</label>
         <input
           type="text"
+          name="ic_number"
           placeholder="000000-00-0000"
           pattern="^\d{6}-\d{2}-\d{4}$"
           title="Format: 000000-00-0000"
@@ -76,6 +98,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
       <div>
         <label className="mb-1 block text-sm font-medium">{t("address")}</label>
         <textarea
+          name="address"
           placeholder={t("address")}
           className="py- h-24 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 shadow-sm shadow-gray-300"
           required
@@ -95,6 +118,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
             />
             <input
               type="tel"
+              name="phone"
               placeholder="13 3214 450"
               className="h-10 w-full rounded-r-lg border border-gray-200 px-3 py-2 shadow-sm shadow-gray-300"
               required
@@ -110,6 +134,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
             </span>
             <input
               type="email"
+              name="email"
               placeholder="hello@tech.gov.my"
               className="h-10 w-full rounded-lg border border-gray-200 py-2 pl-10 pr-3 shadow-sm shadow-gray-300"
               required
@@ -123,6 +148,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
         <label className="mb-1 block text-sm font-normal">{t("agency")}</label>
         <input
           type="text"
+          name="agency"
           placeholder="Kementerian Digital"
           className="h-10 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-2 shadow-sm shadow-gray-300"
           required
@@ -133,6 +159,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
       <div>
         <label className="mb-1 block text-sm font-normal">{t("message")}</label>
         <textarea
+          name="message"
           placeholder={t("placeholder")}
           className="h-24 w-full rounded-lg border-[1px] border-solid border-gray-200 px-3 py-2 shadow-sm shadow-gray-300"
           required
