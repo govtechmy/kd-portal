@@ -80,9 +80,6 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
               try {
           const widgetId = window.turnstile.render('#turnstile-widget', {
             sitekey: turnstileSiteKey,
-            theme: 'light',
-            size: 'normal',
-            mode: 'managed',
             callback: (token: string) => {
               console.log('Turnstile success, token received');
               setTurnstileToken(token);
@@ -97,12 +94,6 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
               console.log('Turnstile error occurred');
               setTurnstileToken("");
               setTurnstileVerified(false);
-            },
-            'before-interactive-callback': () => {
-              console.log('Turnstile entering interactive mode');
-            },
-            'after-interactive-callback': () => {
-              console.log('Turnstile leaving interactive mode');
             },
           });
         
@@ -356,35 +347,9 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
             </label>
           </div>
           
-          <div className="relative">
-            <div className="flex justify-center p-4 bg-gray-50 rounded-lg border border-gray-200">
-              <div id="turnstile-widget"></div>
-            </div>
-            
-            {turnstileVerified && (
-              <div className="absolute inset-0 flex items-center justify-center bg-white/90 backdrop-blur-sm rounded-lg border-2 border-green-200">
-                <div className="flex items-center gap-3 px-4 py-2 bg-green-50 rounded-full border border-green-200">
-                  <div className="flex items-center justify-center w-5 h-5 rounded-full bg-green-500">
-                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span className="text-sm font-medium text-green-700">
-                    Verification completed
-                  </span>
-                </div>
-              </div>
-            )}
+          <div className="flex justify-center">
+            <div id="turnstile-widget"></div>
           </div>
-          
-          {!turnstileVerified && (
-            <div className="flex items-center gap-2 text-xs text-gray-500">
-              <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
-              </svg>
-              Please complete the security verification to submit your feedback
-            </div>
-          )}
           
           {/* Hidden input for Turnstile response */}
           <input 
