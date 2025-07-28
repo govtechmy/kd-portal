@@ -33,9 +33,6 @@ export const Footer: GlobalConfig = {
           name: "quick-links",
           type: "relationship",
           relationTo: "quick-link",
-          // filterOptions: () => {
-          //   return { type: { equals: "quick_links" } };
-          // },
         },
       ],
       type: "array",

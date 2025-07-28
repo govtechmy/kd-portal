@@ -74,7 +74,7 @@ export default function Collapse({
         className={cn(
           "transition-opacity duration-300 ease-in-out motion-reduce:transition-none",
           isOpen ? "opacity-100" : "opacity-0",
-          className
+          className,
         )}
       >
         {children}
