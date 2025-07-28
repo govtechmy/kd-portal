@@ -1,4 +1,4 @@
-# Spam Protection Setup Guide
+git a# Spam Protection Setup Guide
 
 This guide explains how to set up comprehensive spam protection for the feedback form.
 

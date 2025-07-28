@@ -28,25 +28,40 @@ function validatePhone(phone: string): boolean {
 
 // Cloudflare Turnstile verification
 async function verifyTurnstile(token: string, ip: string): Promise<boolean> {
+  const isDevelopment = process.env.NODE_ENV === 'development';
+  
+  // Skip verification in development
+  if (isDevelopment) {
+    console.log('Turnstile verification skipped in development mode');
+    return true;
+  }
+
   if (!process.env.CLOUDFLARE_TURNSTILE_SECRET_KEY) {
     console.warn('Cloudflare Turnstile secret key not configured');
     return true; // Skip verification if not configured
   }
 
   try {
+    const formData = new URLSearchParams();
+    formData.append('secret', process.env.CLOUDFLARE_TURNSTILE_SECRET_KEY);
+    formData.append('response', token);
+    if (ip && ip !== 'unknown') {
+      formData.append('remoteip', ip);
+    }
+
     const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: JSON.stringify({
-        secret: process.env.CLOUDFLARE_TURNSTILE_SECRET_KEY,
-        response: token,
-        remoteip: ip,
-      }),
+      body: formData,
     });
 
     const result = await response.json();
+    
+    // Log the result for debugging
+    console.log('Turnstile verification result:', result);
+    
     return result.success === true;
   } catch (error) {
     console.error('Turnstile verification error:', error);
@@ -108,7 +123,7 @@ export async function POST(req: Request) {
   }
 
   const body = await req.json();
-  const { turnstileToken, ...feedbackData } = body;
+  const { 'cf-turnstile-response': turnstileToken, ...feedbackData } = body;
 
   // Validate required fields
   const requiredFields = ['name', 'ic_number', 'address', 'phone', 'email', 'agency', 'message'];
@@ -166,8 +181,19 @@ export async function POST(req: Request) {
     );
   }
 
-  // Verify Cloudflare Turnstile (if configured)
-  if (turnstileToken) {
+  // Verify Cloudflare Turnstile (required in production)
+  const isDevelopment = process.env.NODE_ENV === 'development';
+  const turnstileSiteKey = process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY;
+  
+  if (!isDevelopment && turnstileSiteKey && turnstileSiteKey !== '1x00000000000000000000AA') {
+    // Production with Turnstile configured - verification is required
+    if (!turnstileToken) {
+      return NextResponse.json(
+        { message: "Verification token is required" },
+        { status: 400 }
+      );
+    }
+    
     const isValidTurnstile = await verifyTurnstile(turnstileToken, ip);
     if (!isValidTurnstile) {
       return NextResponse.json(
