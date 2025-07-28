@@ -32,6 +32,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
   const [icNumber, setIcNumber] = useState("");
   const [turnstileToken, setTurnstileToken] = useState<string>("");
   const [turnstileWidgetId, setTurnstileWidgetId] = useState<string>("");
+  const [turnstileVerified, setTurnstileVerified] = useState<boolean>(false);
 
   const formatIcNumber = (value: string) => {
     // Remove all non-digits
@@ -76,24 +77,34 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
         return;
       }
 
-      try {
-        const widgetId = window.turnstile.render('#turnstile-widget', {
-          sitekey: turnstileSiteKey,
-          theme: 'light',
-          size: 'normal',
-          callback: (token: string) => {
-            console.log('Turnstile success, token received');
-            setTurnstileToken(token);
-          },
-          'expired-callback': () => {
-            console.log('Turnstile token expired');
-            setTurnstileToken("");
-          },
-          'error-callback': () => {
-            console.log('Turnstile error occurred');
-            setTurnstileToken("");
-          },
-        });
+              try {
+          const widgetId = window.turnstile.render('#turnstile-widget', {
+            sitekey: turnstileSiteKey,
+            theme: 'light',
+            size: 'normal',
+            mode: 'managed',
+            callback: (token: string) => {
+              console.log('Turnstile success, token received');
+              setTurnstileToken(token);
+              setTurnstileVerified(true);
+            },
+            'expired-callback': () => {
+              console.log('Turnstile token expired');
+              setTurnstileToken("");
+              setTurnstileVerified(false);
+            },
+            'error-callback': () => {
+              console.log('Turnstile error occurred');
+              setTurnstileToken("");
+              setTurnstileVerified(false);
+            },
+            'before-interactive-callback': () => {
+              console.log('Turnstile entering interactive mode');
+            },
+            'after-interactive-callback': () => {
+              console.log('Turnstile leaving interactive mode');
+            },
+          });
         
         setTurnstileWidgetId(widgetId);
         console.log('Turnstile widget rendered successfully');
@@ -196,6 +207,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
           window.turnstile.reset(turnstileWidgetId);
         }
         setTurnstileToken("");
+        setTurnstileVerified(false);
       } else {
         const errorData = await response.json();
         const errorMessage = errorData.message || validationT("submission_failed");
@@ -206,6 +218,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
           window.turnstile.reset(turnstileWidgetId);
         }
         setTurnstileToken("");
+        setTurnstileVerified(false);
         
         // If it's a verification error, focus on the Turnstile widget
         if (errorMessage.includes("verification") || errorMessage.includes("token")) {
@@ -331,8 +344,21 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
       {process.env.NODE_ENV === 'production' && 
        process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY && 
        process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY !== '1x00000000000000000000AA' && (
-        <div className="flex justify-center">
-          <div id="turnstile-widget"></div>
+        <div className="space-y-2">
+          <label className="mb-0.5 block text-sm font-normal text-gray-600">
+            Security Verification
+          </label>
+          <div className="flex justify-center">
+            <div id="turnstile-widget"></div>
+          </div>
+          {turnstileVerified && (
+            <div className="flex items-center justify-center gap-2 text-sm text-green-600">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+              Verification completed
+            </div>
+          )}
           {/* Hidden input for Turnstile response */}
           <input 
             type="hidden" 
