@@ -278,6 +278,51 @@
     "email": "E-mel",
     "email_address": "webmaster@digital.com.my"
   },
+  "Feedback": {
+    "button": "Aduan & Maklum Balas",
+    "title": "Aduan & Maklum Balas",
+    "aduan": {
+      "tab": "Aduan",
+      "name": "Nama",
+      "id": "No Kad Pengenalan",
+      "address": "Alamat",
+      "phone": "No. Telefon",
+      "email": "Emel",
+      "agency": "Aduan ke atas Bahagian/Jabatan/Agensi",
+      "message": "Kenyataan Aduan/Maklum Balas",
+      "placeholder": "Tuliskan aduan/maklum balas anda",
+      "submit": "Hantar"
+    },
+    "pertanyaan": {
+      "tab": "Pertanyaan",
+      "name": "Nama",
+      "id": "No Kad Pengenalan",
+      "address": "Alamat",
+      "phone": "No. Telefon",
+      "email": "Emel",
+      "agency": "Pertanyaan ke atas Bahagian/Jabatan/Agensi",
+      "message": "Pertanyaan",
+      "placeholder": "Tuliskan pertanyaan anda",
+      "submit": "Hantar"
+    },
+    "cadangan": {
+      "tab": "Cadangan",
+      "name": "Nama",
+      "id": "No Kad Pengenalan",
+      "address": "Alamat",
+      "phone": "No. Telefon",
+      "email": "Emel",
+      "agency": "Cadangan ke atas Bahagian/Jabatan/Agensi",
+      "message": "Cadangan",
+      "placeholder": "Tuliskan cadangan anda",
+      "submit": "Hantar"
+    },
+    "success": {
+      "title": "Berjaya Dihantar!",
+      "desc": "Aduan & maklum balas anda berjaya dihantar. Pegawai kami akan menghubungi anda untuk sebarang maklum balas.",
+      "continue": "Teruskan"
+    }
+  },
   "Datepicker": {
     "from": "Dari",
     "to": "Hingga"

@@ -278,6 +278,51 @@
     "email": "E-mail",
     "email_address": "webmaster@digital.com.my"
   },
+  "Feedback": {
+    "button": "Feedback & Response",
+    "title": "Feedback & Response",
+    "aduan": {
+      "tab": "Complaint",
+      "name": "Name",
+      "id": "Identification Number",
+      "address": "Address",
+      "phone": "Phone Number",
+      "email": "Email",
+      "agency": "Complaint towards Department/Agency",
+      "message": "Complaint/Response Statement",
+      "placeholder": "Write your complaint/feedback",
+      "submit": "Submit"
+    },
+    "pertanyaan": {
+      "tab": "Inquiry",
+      "name": "Name",
+      "id": "Identification Number",
+      "address": "Address",
+      "phone": "Phone Number",
+      "email": "Email",
+      "agency": "Inquiry towards Department/Agency",
+      "message": "Inquiry",
+      "placeholder": "Write your question",
+      "submit": "Submit"
+    },
+    "cadangan": {
+      "tab": "Suggestion",
+      "name": "Name",
+      "id": "Identification Number",
+      "address": "Address",
+      "phone": "Phone Number",
+      "email": "Email",
+      "agency": "Suggestion towards Department/Agency",
+      "message": "Suggestion",
+      "placeholder": "Write your suggestion",
+      "submit": "Submit"
+    },
+    "success": {
+      "title": "Successfully Sent!",
+      "desc": "Your feedback has been successfully submitted. Our officers will contact you for any further communication.",
+      "continue": "Continue"
+    }
+  },
   "Datepicker": {
     "from": "From",
     "to": "To"

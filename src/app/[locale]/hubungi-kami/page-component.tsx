@@ -11,6 +11,7 @@ import { _social_media } from "@/lib/constants/links";
 import Hero from "@/components/layout/hero";
 import Section from "@/components/layout/section";
 import Overline from "@/components/typography/overline";
+import FeedbackDialog from "@/components/ui/FeedbackDialog";
 
 interface ContactUsProps {
   data: SiteInfo;
@@ -72,6 +73,7 @@ const ContactUs: FC<ContactUsProps> = ({ data, locale }) => {
                       </a>
                     ))}
                   </div>
+                  <FeedbackDialog />
                 </div>
                 <iframe
                   className="rounded-[32px] border border-outline-200 shadow-[0_30px_100px_-10px_#4C53614D] max-sm:aspect-square sm:w-2/3"
@@ -104,7 +106,12 @@ const ContactUs: FC<ContactUsProps> = ({ data, locale }) => {
                   key={title}
                   href={`${title === "email" ? "mailto" : "tel"}:${desc}`}
                   {...{ "splwpk-contact-details": "splwpk-contact-details" }}
-                  {...{ "splwpk-contact-details-timestamp": new Date().toISOString().slice(0, 19).replace('T', ' ') }}
+                  {...{
+                    "splwpk-contact-details-timestamp": new Date()
+                      .toISOString()
+                      .slice(0, 19)
+                      .replace("T", " "),
+                  }}
                   className="group flex gap-4.5 border-washed-100 px-6 py-8 max-md:col-span-2 md:py-[34px]"
                 >
                   <div className="size-[42px] rounded-full bg-brand-50 p-[9px] text-foreground-primary">
