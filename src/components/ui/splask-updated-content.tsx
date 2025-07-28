@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React from "react";
 
 interface SPLaSKUpdatedContentProps {
   className?: string;
@@ -7,25 +7,27 @@ interface SPLaSKUpdatedContentProps {
 
 /**
  * SPLaSK Updated Content Component
- * 
+ *
  * This component handles all SPLaSK "Updated Content" requirements:
  * - Broadcast (30 days)
- * - About Us (30 days) 
+ * - About Us (30 days)
  * - News/Government Policies (30 days)
  * - FAQ
  * - Client Charter (60 days)
  * - Contact Details (30 days)
  * - Time-stamp tagging for all conditions
- * 
+ *
  * Usage:
  * - Add to layout for global compliance
  * - Provides timestamp tracking for all content types
  */
-export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({ className = "" }) => {
+export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
+  className = "",
+}) => {
   // Get current timestamp in required format
   const getCurrentTimestamp = () => {
     const now = new Date();
-    return now.toISOString().slice(0, 19).replace('T', ' ');
+    return now.toISOString().slice(0, 19).replace("T", " ");
   };
 
   // Check if content is within required timeframe
@@ -40,18 +42,18 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({ clas
   // Example timestamps (you should replace these with actual content timestamps)
   const timestamps = {
     broadcast: "2024-01-15 10:30:00",
-    aboutUs: "2024-01-20 14:45:00", 
+    aboutUs: "2024-01-20 14:45:00",
     news: "2024-01-18 09:15:00",
     govPolicies: "2024-01-17 16:20:00",
     faq: "2024-01-10 11:00:00",
     clientCharter: "2024-01-05 13:30:00",
-    contactDetails: "2024-01-22 08:45:00"
+    contactDetails: "2024-01-22 08:45:00",
   };
 
   return (
     <>
       {/* Hidden SPLaSK Updated Content tags for crawler detection */}
-      <div 
+      <div
         {...{ "splwpk-broadcast": "splwpk-broadcast" }}
         {...{ "splwpk-broadcast-timestamp": timestamps.broadcast }}
         className="sr-only"
@@ -60,7 +62,7 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({ clas
         Broadcast Content Updated
       </div>
 
-      <div 
+      <div
         {...{ "splwpk-about-us": "splwpk-about-us" }}
         {...{ "splwpk-about-us-timestamp": timestamps.aboutUs }}
         className="sr-only"
@@ -69,7 +71,7 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({ clas
         About Us Content Updated
       </div>
 
-      <div 
+      <div
         {...{ "splwpk-news": "splwpk-news" }}
         {...{ "splwpk-news-timestamp": timestamps.news }}
         className="sr-only"
@@ -78,7 +80,7 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({ clas
         News Content Updated
       </div>
 
-      <div 
+      <div
         {...{ "splwpk-gov-policies": "splwpk-gov-policies" }}
         {...{ "splwpk-gov-policies-timestamp": timestamps.govPolicies }}
         className="sr-only"
@@ -87,7 +89,7 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({ clas
         Government Policies Updated
       </div>
 
-      <div 
+      <div
         {...{ "splwpk-faq": "splwpk-faq" }}
         {...{ "splwpk-faq-timestamp": timestamps.faq }}
         className="sr-only"
@@ -96,7 +98,7 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({ clas
         FAQ Content Available
       </div>
 
-      <div 
+      <div
         {...{ "splwpk-client-charter": "splwpk-client-charter" }}
         {...{ "splwpk-client-charter-timestamp": timestamps.clientCharter }}
         className="sr-only"
@@ -105,7 +107,7 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({ clas
         Client Charter Available
       </div>
 
-      <div 
+      <div
         {...{ "splwpk-contact-details": "splwpk-contact-details" }}
         {...{ "splwpk-contact-details-timestamp": timestamps.contactDetails }}
         className="sr-only"
@@ -113,10 +115,8 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({ clas
       >
         Contact Details Updated
       </div>
-
-
     </>
   );
 };
 
-export default SPLaSKUpdatedContent; 
+export default SPLaSKUpdatedContent;

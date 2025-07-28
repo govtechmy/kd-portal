@@ -398,7 +398,7 @@ export interface Celebration {
  */
 export interface Feedback {
   id: string;
-  type: 'aduan' | 'pertanyaan' | 'cadangan';
+  type: "aduan" | "pertanyaan" | "cadangan";
   name: string;
   ic_number: string;
   address: string;
@@ -492,11 +492,11 @@ export interface PayloadLockedDocument {
         value: string | Celebration;
       } | null)
     | ({
-        relationTo: 'feedback';
+        relationTo: "feedback";
         value: string | Feedback;
       } | null)
     | ({
-        relationTo: 'search';
+        relationTo: "search";
         value: string | Search;
       } | null);
   globalSlug?: string | null;
@@ -1034,8 +1034,10 @@ export interface ProfilKementerian {
     statement: string;
     icon:
       | "arrow-back"
+      | "arrow-down"
       | "arrow-forward"
       | "arrow-outgoing"
+      | "arrow-up"
       | "bolt"
       | "check-circle"
       | "checkmark-14-point-star"
@@ -1056,6 +1058,7 @@ export interface ProfilKementerian {
       | "hamburger-menu"
       | "lock"
       | "map"
+      | "minus"
       | "money"
       | "phone"
       | "search"
@@ -1068,8 +1071,10 @@ export interface ProfilKementerian {
     statement: string;
     icon:
       | "arrow-back"
+      | "arrow-down"
       | "arrow-forward"
       | "arrow-outgoing"
+      | "arrow-up"
       | "bolt"
       | "check-circle"
       | "checkmark-14-point-star"
@@ -1090,6 +1095,7 @@ export interface ProfilKementerian {
       | "hamburger-menu"
       | "lock"
       | "map"
+      | "minus"
       | "money"
       | "phone"
       | "search"
@@ -1116,8 +1122,10 @@ export interface ProfilKementerian {
     };
     icon:
       | "arrow-back"
+      | "arrow-down"
       | "arrow-forward"
       | "arrow-outgoing"
+      | "arrow-up"
       | "bolt"
       | "check-circle"
       | "checkmark-14-point-star"
@@ -1138,6 +1146,7 @@ export interface ProfilKementerian {
       | "hamburger-menu"
       | "lock"
       | "map"
+      | "minus"
       | "money"
       | "phone"
       | "search"

@@ -1,6 +1,6 @@
 import React, { HTMLAttributes } from "react";
 
-const ArrowDown: React.FC<HTMLAttributes<SVGElement>> = (props) => (
+const Minus: React.FC<HTMLAttributes<SVGElement>> = (props) => (
   <svg
     width="16"
     height="16"
@@ -10,10 +10,12 @@ const ArrowDown: React.FC<HTMLAttributes<SVGElement>> = (props) => (
     {...props}
   >
     <path
-      d="M8 14L2 8L3.4 6.6L7 10.2V2H9V10.2L12.6 6.6L14 8L8 14Z"
-      fill="currentColor"
+      d="M2 8H14"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
     />
   </svg>
 );
 
-export default ArrowDown;
+export default Minus;

@@ -50,7 +50,8 @@
     "policy": "Policy",
     "directory": "Directory",
     "contact_us": "Contact Us",
-    "dept_agency": "Departments & Agencies"
+    "dept_agency": "Departments & Agencies",
+    "statistics": "Statistics"
   },
   "Search": {
     "type": "Type",
@@ -248,6 +249,121 @@
       "miscellaneous": "Miscellaneous",
       "not_achievement": "Not Achievement"
     }
+  },
+  "Statistics": {
+    "header": "Ministry of Digital Statistics",
+    "description": "Comprehensive overview of Malaysia's digital progress",
+    "important_note": "Important Note",
+    "note_text": "This data is updated regularly and based on official sources. For the latest information, please refer to official Ministry of Digital reports.",
+    "digital_stats_title": "Digital Statistics",
+    "digital_stats_description": "Key metrics and indicators showing Malaysia's digital transformation progress across various sectors.",
+    "page_stats_title": "Page Statistics",
+    "page_stats_description": "Analytics and accessibility metrics for this website, including visitor data and WCAG compliance scores.",
+    "categories": {
+      "digital_adoption": "Digital Adoption",
+      "infrastructure": "Digital Infrastructure",
+      "cybersecurity": "Cybersecurity",
+      "digital_economy": "Digital Economy"
+    },
+    "visitor_chart": {
+      "title": "Number of Website Visitors",
+      "subtitle": "Number of visitors to the Ministry of Digital website",
+      "real_data": "Real data from Tinybird API",
+      "no_data": "No data available",
+      "no_data_range": "No visitor data available for selected range"
+    },
+    "time_range": {
+      "label": "Time Range",
+      "7d": "7 Days",
+      "30d": "30 Days",
+      "90d": "90 Days",
+      "1y": "1 Year"
+    },
+    "metrics": {
+      "current_visitors": "Current Visitors",
+      "unique_visitors": "Unique Visitors",
+      "cumulative": "Cumulative",
+      "vs_previous_week": "vs Previous Week"
+    },
+    "chart": {
+      "date": "Date",
+      "daily_visitors": "Daily Visitors",
+      "cumulative_visitors": "Cumulative Visitors",
+      "traffic": "Traffic",
+      "visitors": "Visitors",
+      "users": "Users",
+      "data_source": "Data source",
+      "tinybird_api": "Tinybird API",
+      "no_data": "No data",
+      "showing_points": "Showing {count} data points",
+      "total": "Total"
+    },
+    "traffic_sources": {
+      "title": "Traffic Sources",
+      "direct": "Direct Traffic",
+      "google": "Google Search",
+      "bing": "Bing Search",
+      "facebook": "Facebook",
+      "linkedin": "LinkedIn",
+      "internal": "Internal",
+      "social": "Social Media",
+      "other": "Other Sources"
+    },
+    "aggregated": {
+      "title": "Traffic Sources Over Time",
+      "data_type": "Data Type",
+      "referrers": "Traffic Sources",
+      "locations": "Locations",
+      "browsers": "Browsers",
+      "devices": "Devices",
+      "referrers_title": "Traffic Sources Over Time",
+      "locations_title": "Visitor Locations Over Time",
+      "browsers_title": "Browser Usage Over Time",
+      "devices_title": "Device Types Over Time",
+      "total_visits": "Total Visits",
+      "peak_day": "Peak Day",
+      "avg_daily": "Avg Daily",
+      "days_tracked": "Days Tracked"
+    },
+    "locations": {
+      "title": "Visitor Locations (Top 10)",
+      "kuala_lumpur": "Kuala Lumpur",
+      "selangor": "Selangor",
+      "johor": "Johor",
+      "penang": "Penang",
+      "perak": "Perak",
+      "other": "Other States"
+    },
+    "browsers": {
+      "title": "Browser Usage",
+      "others": "Others"
+    },
+    "devices": {
+      "title": "Device Types",
+      "desktop": "Desktop",
+      "mobile": "Mobile",
+      "tablet": "Tablet",
+      "other": "Other"
+    },
+    "pages": {
+      "title": "Most Visited Pages",
+      "home": "Home",
+      "directory": "Directory",
+      "profile": "Ministry Profile",
+      "contact": "Contact Us",
+      "news": "News",
+      "policy": "Policy",
+      "achievement": "Achievement",
+      "disclaimer": "Disclaimer",
+      "privacy": "Privacy Policy"
+    },
+    "news": {
+      "title": "Most Visited News",
+      "hits": "Hits",
+      "legend_title": "News Articles"
+    },
+    "download_csv": "Download CSV",
+    "download_json": "Download JSON"
   },
   "Policy": {
     "header": "Policy Documents",

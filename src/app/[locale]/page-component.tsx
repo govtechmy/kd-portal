@@ -11,6 +11,34 @@ import { Achievement, Broadcast, Homepage, SiteInfo } from "@/payload-types";
 import { useTranslations } from "next-intl";
 import React, { FC } from "react";
 
+import AggregatedCharts from "@/components/home/aggregated-charts";
+
+interface TinybirdAggregatedData {
+  day: string;
+  direct_visits: number;
+  google_visits: number;
+  bing_visits: number;
+  facebook_visits: number;
+  linkedin_visits: number;
+  internal_visits: number;
+  other_referrals: number;
+  mobile_visits: number;
+  tablet_visits: number;
+  desktop_visits: number;
+  chrome_visits: number;
+  safari_visits: number;
+  firefox_visits: number;
+  edge_visits: number;
+  other_browser_visits: number;
+  malaysia_visits: number;
+  singapore_visits: number;
+  us_visits: number;
+  india_visits: number;
+  china_visits: number;
+  other_country_visits: number;
+  total_visits: number;
+}
+
 interface Props {
   siteInfo: SiteInfo;
   homepage: Homepage;
@@ -19,27 +47,55 @@ interface Props {
   locale: (typeof locales)[number];
 }
 
-const HomePageComponent: FC<Props> = ({
+async function getAggregatedData() {
+  const baseUrl = process.env.NEXT_PUBLIC_TINYBIRD_HOST;
+  const token = process.env.TINYBIRD_TOKEN_API;
+
+  if (!baseUrl || !token) {
+    console.log("Missing Tinybird configuration");
+    return [];
+  }
+
+  try {
+    const res = await fetch(
+      `${baseUrl}/v0/pipes/KD_PORTAL_AGGREGATED.json?token=${token}`,
+      { next: { revalidate: 300 } }, // Cache for 5 minutes
+    );
+    const json = await res.json();
+    return json.data || [];
+  } catch (error) {
+    console.error("Error fetching aggregated data:", error);
+    return [];
+  }
+}
+
+const HomePageComponent = async ({
   siteInfo,
   homepage,
   achievements,
   broadcast,
   locale,
-}) => {
+}: Props) => {
   const t = useTranslations();
+  const aggregatedData: TinybirdAggregatedData[] = await getAggregatedData();
 
   return (
     <>
       {/* Hidden SPLaSK Contact Details tag for crawler detection */}
-      <div 
+      <div
         {...{ "splwpk-contact-details": "splwpk-contact-details" }}
-        {...{ "splwpk-contact-details-timestamp": new Date().toISOString().slice(0, 19).replace('T', ' ') }}
+        {...{
+          "splwpk-contact-details-timestamp": new Date()
+            .toISOString()
+            .slice(0, 19)
+            .replace("T", " "),
+        }}
         className="sr-only"
         aria-hidden="true"
       >
         Contact Details Available
       </div>
-      
+
       <section className="relative w-full gap-6 border-b sm:grid sm:grid-cols-6">
         {homepage.hero_banner && typeof homepage.hero_banner !== "string" ? (
           <div
@@ -124,6 +180,7 @@ const HomePageComponent: FC<Props> = ({
         <Timeline achievements={achievements} />
         <HomeSiaran broadcast={broadcast} />
         <Quicklinks homepage={homepage} />
+        <AggregatedCharts aggregatedData={aggregatedData} locale={locale} />
       </main>
     </>
   );

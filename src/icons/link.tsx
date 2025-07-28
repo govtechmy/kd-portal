@@ -1,19 +1,26 @@
-export default function Link({ ...props }) {
+import { FC } from "react";
+
+interface LinkIconProps {
+  className?: string;
+  size?: number;
+}
+
+const LinkIcon: FC<LinkIconProps> = ({ className = "", size = 16 }) => {
   return (
     <svg
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      {...props}
+      className={className}
     >
       <path
-        d="M6.11338 8.8866L4.26677 10.7332C2.98921 12.0108 3.07267 14.1656 4.4532 15.5461C5.83372 16.9266 7.98853 17.0101 9.26609 15.7325L11.1127 13.8859M7.22643 12.7729L12.7729 7.22642M13.8859 11.1127L15.7325 9.26608C17.0101 7.98852 16.9266 5.83371 15.5461 4.45319C14.1656 3.07266 12.0108 2.98919 10.7332 4.26676L8.88661 6.11337"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
+        d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"
+        fill="currentColor"
       />
     </svg>
   );
-}
+};
+
+export default LinkIcon;

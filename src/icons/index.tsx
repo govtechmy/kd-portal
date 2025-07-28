@@ -2,8 +2,10 @@ import React, { HTMLAttributes } from "react";
 import { Option } from "payload";
 import { JSX } from "react";
 import ArrowBack from "./arrow-back";
+import ArrowDown from "./arrow-down";
 import ArrowForward from "./arrow-forward";
 import ArrowOutgoing from "./arrow-outgoing";
+import ArrowUp from "./arrow-up";
 import Bolt from "./bolt";
 import CheckCircle from "./check-circle";
 import Checkmark14PointStar from "./checkmark-14-point-star";
@@ -24,6 +26,7 @@ import Gov from "./gov";
 import HamburgerMenu from "./hamburger-menu";
 import Lock from "./lock";
 import Map from "./map";
+import Minus from "./minus";
 import Money from "./money";
 import Phone from "./phone";
 import Search from "./search";
@@ -32,13 +35,27 @@ import Star from "./star";
 import Trophy from "./trophy";
 import UserGroup from "./user-group";
 
+export { default as GoogleIcon } from "./google";
+export { default as GlobeIcon } from "./globe";
+export { default as LinkIcon } from "./link";
+export { default as RefreshIcon } from "./refresh";
+export { default as BingIcon } from "./bing";
+export { default as FacebookIcon } from "./facebook";
+export { default as LinkedInIcon } from "./linkedin";
+export { default as ChromeIcon } from "./chrome";
+export { default as SafariIcon } from "./safari";
+export { default as FirefoxIcon } from "./firefox";
+export { default as EdgeIcon } from "./edge";
+
 export const IconList: Record<
   string,
   (props: HTMLAttributes<SVGElement>) => JSX.Element
 > = {
   "arrow-back": (props) => <ArrowBack {...props} />,
+  "arrow-down": (props) => <ArrowDown {...props} />,
   "arrow-forward": (props) => <ArrowForward {...props} />,
   "arrow-outgoing": (props) => <ArrowOutgoing {...props} />,
+  "arrow-up": (props) => <ArrowUp {...props} />,
   bolt: (props) => <Bolt {...props} />,
   "check-circle": (props) => <CheckCircle {...props} />,
   "checkmark-14-point-star": (props) => <Checkmark14PointStar {...props} />,
@@ -59,6 +76,7 @@ export const IconList: Record<
   "hamburger-menu": (props) => <HamburgerMenu {...props} />,
   lock: (props) => <Lock {...props} />,
   map: (props) => <Map {...props} />,
+  minus: (props) => <Minus {...props} />,
   money: (props) => <Money {...props} />,
   phone: (props) => <Phone {...props} />,
   search: (props) => <Search {...props} />,

@@ -33,16 +33,16 @@ export default function FeedbackDialog() {
       {open && (
         <div className="bg-black/50 fixed inset-0 z-50 overflow-y-auto backdrop-blur-sm">
           <div className="flex min-h-full items-center justify-center p-2 sm:p-4">
-                          <div
-                className={cn(
-                  "relative w-full rounded-lg bg-white p-4 sm:p-6 shadow-lg transition-all duration-300",
-                  "max-h-[90vh] overflow-y-auto sm:max-h-none sm:overflow-visible",
-                  submitted ? "max-w-sm" : "max-w-4xl",
-                )}
-              >
+            <div
+              className={cn(
+                "relative w-full rounded-lg bg-white p-4 shadow-lg transition-all duration-300 sm:p-6",
+                "max-h-[90vh] overflow-y-auto sm:max-h-none sm:overflow-visible",
+                submitted ? "max-w-sm" : "max-w-4xl",
+              )}
+            >
               <button
                 onClick={closeModal}
-                className="hover:text-black absolute right-2 sm:right-4 top-2 sm:top-4 rounded-lg border border-gray-200 px-2 py-1 z-10"
+                className="hover:text-black absolute right-2 top-2 z-10 rounded-lg border border-gray-200 px-2 py-1 sm:right-4 sm:top-4"
               >
                 ✕
               </button>

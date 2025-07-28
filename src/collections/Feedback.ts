@@ -63,4 +63,4 @@ export const Feedback: CollectionConfig = {
       required: true,
     },
   ],
-}; 
+};
