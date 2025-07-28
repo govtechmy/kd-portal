@@ -49,7 +49,7 @@ export default function CountryCodeDropdown({
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex h-10 w-20 cursor-pointer items-center justify-between truncate rounded-l-lg border border-gray-200 bg-white px-2 text-sm shadow-sm shadow-gray-300"
+        className="flex h-8 w-20 cursor-pointer items-center justify-between truncate rounded-l-lg border border-gray-200 bg-white px-2 text-sm shadow-sm shadow-gray-300"
         aria-haspopup="listbox"
         aria-expanded={isOpen}
       >

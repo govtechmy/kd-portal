@@ -285,7 +285,7 @@
       "tab": "Aduan",
       "name": "Nama",
       "id": "No Kad Pengenalan",
-      "address": "Alamat",
+      "address": "Alamat Anda",
       "phone": "No. Telefon",
       "email": "Emel",
       "agency": "Aduan ke atas Bahagian/Jabatan/Agensi",
@@ -297,7 +297,7 @@
       "tab": "Pertanyaan",
       "name": "Nama",
       "id": "No Kad Pengenalan",
-      "address": "Alamat",
+      "address": "Alamat Anda",
       "phone": "No. Telefon",
       "email": "Emel",
       "agency": "Pertanyaan ke atas Bahagian/Jabatan/Agensi",
@@ -309,7 +309,7 @@
       "tab": "Cadangan",
       "name": "Nama",
       "id": "No Kad Pengenalan",
-      "address": "Alamat",
+      "address": "Alamat Anda",
       "phone": "No. Telefon",
       "email": "Emel",
       "agency": "Cadangan ke atas Bahagian/Jabatan/Agensi",
@@ -321,6 +321,18 @@
       "title": "Berjaya Dihantar!",
       "desc": "Aduan & maklum balas anda berjaya dihantar. Pegawai kami akan menghubungi anda untuk sebarang maklum balas.",
       "continue": "Teruskan"
+    },
+    "validation": {
+      "ic_format_error": "Kad pengenalan mesti dalam format 000000-00-0000",
+      "email_format_error": "Sila masukkan emel yang sah",
+      "submission_failed": "Penyerahan gagal. Sila cuba lagi."
+    },
+    "placeholders": {
+      "ic_format": "000000-00-0000",
+      "ic_title": "Format: 000000-00-0000",
+      "phone": "12 9999 999",
+      "email": "emel-anda@contoh.com.my",
+      "agency": "Kementerian Digital"
     }
   },
   "Datepicker": {

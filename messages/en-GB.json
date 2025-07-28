@@ -159,7 +159,17 @@
     "mobile_apps_available": "Mobile Applications Available",
     "mymesuarat_mobile_app": "MyMesyuarat Mobile App",
     "online_services_available": "Online Services Available",
-    "procurement_available": "Procurement Services Available"
+    "procurement_available": "Procurement Services Available",
+    "ciodo": {
+      "publicising_agency": "Publicising an Agency CIO/CDO or Equivalent",
+      "cio_info": "CIO/CDO Information: YBrs. Encik Fabian Bigar - Secretary General",
+      "deputy_cio": "Deputy CIO: YBrs. Encik Shakib Bin Ahmad Shakir - Deputy Secretary General",
+      "deputy_cdo": "Deputy CDO: YBrs. Encik Ma. Sivanesan - Deputy Secretary General",
+      "chief_info_officer": "Chief Information Officer: {name} - {position}",
+      "leadership_info": "CIO/CDO Leadership Information",
+      "agency_leadership": "Agency Leadership Details",
+      "ministry_leadership": "Ministry Leadership"
+    }
   },
   "Privacy": {
     "header": "Privacy Policy",
@@ -285,7 +295,7 @@
       "tab": "Complaint",
       "name": "Name",
       "id": "Identification Number",
-      "address": "Address",
+      "address": "Your Address",
       "phone": "Phone Number",
       "email": "Email",
       "agency": "Complaint towards Department/Agency",
@@ -297,7 +307,7 @@
       "tab": "Inquiry",
       "name": "Name",
       "id": "Identification Number",
-      "address": "Address",
+      "address": "Your Address",
       "phone": "Phone Number",
       "email": "Email",
       "agency": "Inquiry towards Department/Agency",
@@ -309,7 +319,7 @@
       "tab": "Suggestion",
       "name": "Name",
       "id": "Identification Number",
-      "address": "Address",
+      "address": "Your Address",
       "phone": "Phone Number",
       "email": "Email",
       "agency": "Suggestion towards Department/Agency",
@@ -321,6 +331,18 @@
       "title": "Successfully Sent!",
       "desc": "Your feedback has been successfully submitted. Our officers will contact you for any further communication.",
       "continue": "Continue"
+    },
+    "validation": {
+      "ic_format_error": "Identification number must be in format 000000-00-0000",
+      "email_format_error": "Please enter a valid email address",
+      "submission_failed": "Submission failed. Please try again."
+    },
+    "placeholders": {
+      "ic_format": "000000-00-0000",
+      "ic_title": "Format: 000000-00-0000",
+      "phone": "12 9999 999",
+      "email": "your-email@example.com.my",
+      "agency": "Ministry of Digital"
     }
   },
   "Datepicker": {
