@@ -5,6 +5,7 @@ export interface StatisticMetric {
   label: string;
   value: string;
   change: string;
+  status: "pass" | "fail" | "neutral";
 }
 
 export interface StatisticCategory {
@@ -39,37 +40,37 @@ export async function fetchStatisticsFromAPI(): Promise<StatisticsData> {
       digitalAdoption: {
         title: "Digital Adoption",
         metrics: [
-          { label: "E-Government Services", value: "85%", change: "+5%" },
-          { label: "Digital Payments", value: "92%", change: "+8%" },
-          { label: "Online Banking", value: "78%", change: "+12%" },
-          { label: "E-Commerce Usage", value: "67%", change: "+15%" },
+          { label: "E-Government Services", value: "85%", change: "+5%", status: "pass" },
+          { label: "Digital Payments", value: "92%", change: "+8%", status: "pass" },
+          { label: "Online Banking", value: "78%", change: "+12%", status: "pass" },
+          { label: "E-Commerce Usage", value: "67%", change: "+15%", status: "pass" },
         ]
       },
       infrastructure: {
         title: "Digital Infrastructure",
         metrics: [
-          { label: "5G Coverage", value: "75%", change: "+20%" },
-          { label: "Fiber Optic Coverage", value: "68%", change: "+10%" },
-          { label: "Digital Hubs", value: "45", change: "+5" },
-          { label: "Smart Cities", value: "12", change: "+3" },
+          { label: "5G Coverage", value: "75%", change: "+20%", status: "pass" },
+          { label: "Fiber Optic Coverage", value: "68%", change: "+10%", status: "pass" },
+          { label: "Digital Hubs", value: "45", change: "+5", status: "pass" },
+          { label: "Smart Cities", value: "12", change: "+3", status: "pass" },
         ]
       },  
       cybersecurity: {
         title: "Cybersecurity",
         metrics: [
-          { label: "Security Incidents", value: "1,234", change: "-15%" },
-          { label: "Response Time", value: "2.3hrs", change: "-30%" },
-          { label: "Security Training", value: "15,000", change: "+25%" },  
-          { label: "Compliance Rate", value: "98%", change: "+2%" },
+          { label: "Security Incidents", value: "1,234", change: "-15%", status: "pass" },
+          { label: "Response Time", value: "2.3hrs", change: "-30%", status: "pass" },
+          { label: "Security Training", value: "15,000", change: "+25%", status: "pass" },  
+          { label: "Compliance Rate", value: "98%", change: "+2%", status: "pass" },
         ]
       },
       digitalEconomy: {
         title: "Digital Economy",
         metrics: [
-          { label: "Digital GDP", value: "RM 45.2B", change: "+18%" },
-          { label: "Tech Startups", value: "2,847", change: "+22%" },
-          { label: "Digital Jobs", value: "125,000", change: "+35%" },
-          { label: "Foreign Investment", value: "RM 8.9B", change: "+28%" },
+          { label: "Digital GDP", value: "RM 45.2B", change: "+18%", status: "pass" },
+          { label: "Tech Startups", value: "2,847", change: "+22%", status: "pass" },
+          { label: "Digital Jobs", value: "125,000", change: "+35%", status: "pass" },
+          { label: "Foreign Investment", value: "RM 8.9B", change: "+28%", status: "pass" },
         ]
       },
     };
@@ -162,37 +163,37 @@ function getFallbackStatistics(): StatisticsData {
     digitalAdoption: {
       title: "Digital Adoption",
       metrics: [
-        { label: "E-Government Services", value: "85%", change: "+5%" },
-        { label: "Digital Payments", value: "92%", change: "+8%" },
-        { label: "Online Banking", value: "78%", change: "+12%" },
-        { label: "E-Commerce Usage", value: "67%", change: "+15%" },
+        { label: "E-Government Services", value: "85%", change: "+5%", status: "pass" },
+        { label: "Digital Payments", value: "92%", change: "+8%", status: "pass" },
+        { label: "Online Banking", value: "78%", change: "+12%", status: "pass" },
+        { label: "E-Commerce Usage", value: "67%", change: "+15%", status: "pass" },
       ]
     },
     infrastructure: {
       title: "Digital Infrastructure",
       metrics: [
-        { label: "5G Coverage", value: "75%", change: "+20%" },
-        { label: "Fiber Optic Coverage", value: "68%", change: "+10%" },
-        { label: "Digital Hubs", value: "45", change: "+5" },
-        { label: "Smart Cities", value: "12", change: "+3" },
+        { label: "5G Coverage", value: "75%", change: "+20%", status: "pass" },
+        { label: "Fiber Optic Coverage", value: "68%", change: "+10%", status: "pass" },
+        { label: "Digital Hubs", value: "45", change: "+5", status: "pass" },
+        { label: "Smart Cities", value: "12", change: "+3", status: "pass" },
       ]
     },
     cybersecurity: {
       title: "Cybersecurity",
       metrics: [
-        { label: "Security Incidents", value: "1,234", change: "-15%" },
-        { label: "Response Time", value: "2.3hrs", change: "-30%" },
-        { label: "Security Training", value: "15,000", change: "+25%" },
-        { label: "Compliance Rate", value: "98%", change: "+2%" },
+        { label: "Security Incidents", value: "1,234", change: "-15%", status: "pass" },
+        { label: "Response Time", value: "2.3hrs", change: "-30%", status: "pass" },
+        { label: "Security Training", value: "15,000", change: "+25%", status: "pass" },
+        { label: "Compliance Rate", value: "98%", change: "+2%", status: "pass" },
       ]
     },
     digitalEconomy: {
       title: "Digital Economy",
       metrics: [
-        { label: "Digital GDP", value: "RM 45.2B", change: "+18%" },
-        { label: "Tech Startups", value: "2,847", change: "+22%" },
-        { label: "Digital Jobs", value: "125,000", change: "+35%" },
-        { label: "Foreign Investment", value: "RM 8.9B", change: "+28%" },
+        { label: "Digital GDP", value: "RM 45.2B", change: "+18%", status: "pass" },
+        { label: "Tech Startups", value: "2,847", change: "+22%", status: "pass" },
+        { label: "Digital Jobs", value: "125,000", change: "+35%", status: "pass" },
+        { label: "Foreign Investment", value: "RM 8.9B", change: "+28%", status: "pass" },
       ]
     }
   };

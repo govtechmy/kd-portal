@@ -241,7 +241,7 @@
     }
   },
   "Statistics": {
-    "header": "Statistik Digital",
+    "header": "Statistik Kementerian Digital",
     "description": "Tinjauan komprehensif mengenai kemajuan digital Malaysia",
     "important_note": "Nota Penting",
     "note_text": "Data ini dikemas kini secara berkala dan berdasarkan sumber rasmi. Untuk maklumat terkini, sila rujuk laporan rasmi Kementerian Digital.",
@@ -254,7 +254,106 @@
       "infrastructure": "Prasarana Digital",
       "cybersecurity": "Keselamatan Siber",
       "digital_economy": "Ekonomi Digital"
-    }
+    },
+    "visitor_chart": {
+      "title": "Jumlah Pelawat Laman Web",
+      "subtitle": "Jumlah pelawat ke laman web Kementerian Digital",
+      "real_data": "Data sebenar dari Tinybird API",
+      "no_data": "Tiada data tersedia",
+      "no_data_range": "Tiada data pelawat tersedia untuk julat yang dipilih"
+    },
+    "time_range": {
+      "label": "Julat Masa",
+      "7d": "7 Hari",
+      "30d": "30 Hari",
+      "90d": "90 Hari",
+      "1y": "1 Tahun"
+    },
+    "metrics": {
+      "current_visitors": "Pelawat Semasa",
+      "unique_visitors": "Pelawat Unik",
+      "cumulative": "Kumulatif",
+      "vs_previous_week": "vs Minggu Lepas"
+    },
+    "chart": {
+      "date": "Tarikh",
+      "daily_visitors": "Pelawat Harian",
+      "cumulative_visitors": "Pelawat Kumulatif",
+      "traffic": "Lalu Lintas",
+      "visitors": "Pelawat",
+      "users": "Pengguna",
+      "data_source": "Sumber data",
+      "tinybird_api": "Tinybird API",
+      "no_data": "Tiada data",
+      "showing_points": "Menunjukkan {count} titik data",
+      "total": "Jumlah"
+    },
+    "traffic_sources": {
+      "title": "Sumber Lalu Lintas",
+      "direct": "Lalu Lintas Langsung",
+      "google": "Carian Google",
+      "bing": "Carian Bing",
+      "facebook": "Facebook",
+      "linkedin": "LinkedIn",
+      "internal": "Dalaman",
+      "social": "Media Sosial",
+      "other": "Sumber Lain"
+    },
+    "aggregated": {
+      "title": "Sumber Lalu Lintas Mengikut Masa",
+      "data_type": "Jenis Data",
+      "referrers": "Sumber Lalu Lintas",
+      "locations": "Lokasi",
+      "browsers": "Pelayar",
+      "devices": "Peranti",
+      "referrers_title": "Sumber Lalu Lintas Mengikut Masa",
+      "locations_title": "Lokasi Pelawat Mengikut Masa",
+      "browsers_title": "Penggunaan Pelayar Mengikut Masa",
+      "devices_title": "Jenis Peranti Mengikut Masa",
+      "total_visits": "Jumlah Pelawat",
+      "peak_day": "Hari Tertinggi",
+      "avg_daily": "Purata Harian",
+      "days_tracked": "Hari Dijejak"
+    },
+    "locations": {
+      "title": "Lokasi Pelawat (10 Teratas)",
+      "kuala_lumpur": "Kuala Lumpur",
+      "selangor": "Selangor",
+      "johor": "Johor",
+      "penang": "Pulau Pinang",
+      "perak": "Perak",
+      "other": "Negeri Lain"
+    },
+    "browsers": {
+      "title": "Penggunaan Pelayar",
+      "others": "Lain-lain"
+    },
+    "devices": {
+      "title": "Jenis Peranti",
+      "desktop": "Desktop",
+      "mobile": "Mudah Alih",
+      "tablet": "Tablet",
+      "other": "Lain-lain"
+    },
+    "pages": {
+      "title": "Halaman Paling Dikunjungi",
+      "home": "Utama",
+      "directory": "Direktori",
+      "profile": "Profil Kementerian",
+      "contact": "Hubungi Kami",
+      "news": "Siaran",
+      "policy": "Dasar",
+      "achievement": "Pencapaian",
+      "disclaimer": "Penafian",
+      "privacy": "Dasar Privasi"
+    },
+    "news": {
+      "title": "Berita Paling Dikunjungi",
+      "hits": "Capaian",
+      "legend_title": "Artikel Berita"
+    },
+    "download_csv": "Muat Turun CSV",
+    "download_json": "Muat Turun JSON"
   },
   "Policy": {
     "header": "Dokumen Dasar",

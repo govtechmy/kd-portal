@@ -35,6 +35,18 @@ import Star from "./star";
 import Trophy from "./trophy";
 import UserGroup from "./user-group";
 
+export { default as GoogleIcon } from "./google";
+export { default as GlobeIcon } from "./globe";
+export { default as LinkIcon } from "./link";
+export { default as RefreshIcon } from "./refresh";
+export { default as BingIcon } from "./bing";
+export { default as FacebookIcon } from "./facebook";
+export { default as LinkedInIcon } from "./linkedin";
+export { default as ChromeIcon } from "./chrome";
+export { default as SafariIcon } from "./safari";
+export { default as FirefoxIcon } from "./firefox";
+export { default as EdgeIcon } from "./edge";
+
 export const IconList: Record<
   string,
   (props: HTMLAttributes<SVGElement>) => JSX.Element

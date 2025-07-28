@@ -11,7 +11,34 @@ import { Achievement, Broadcast, Homepage, SiteInfo } from "@/payload-types";
 import { useTranslations } from "next-intl";
 import React, { FC } from "react";
 
-import TimeSeriesCharts from "@/components/home/timeseriescharts";
+import AggregatedCharts from "@/components/home/aggregated-charts";
+
+interface TinybirdAggregatedData {
+  day: string;
+  direct_visits: number;
+  google_visits: number;
+  bing_visits: number;
+  facebook_visits: number;
+  linkedin_visits: number;
+  internal_visits: number;
+  other_referrals: number;
+  mobile_visits: number;
+  tablet_visits: number;
+  desktop_visits: number;
+  chrome_visits: number;
+  safari_visits: number;
+  firefox_visits: number;
+  edge_visits: number;
+  other_browser_visits: number;
+  malaysia_visits: number;
+  singapore_visits: number;
+  us_visits: number;
+  india_visits: number;
+  china_visits: number;
+  other_country_visits: number;
+  total_visits: number;
+}
+
 interface Props {
   siteInfo: SiteInfo;
   homepage: Homepage;
@@ -20,15 +47,26 @@ interface Props {
   locale: (typeof locales)[number];
 }
 
-async function getVisitorsData() {
-  var baseUrl = process.env.NEXT_PUBLIC_TINYBIRD_HOST;
-  var token = process.env.TINYBIRD_TOKEN_API;
-  const res = await fetch(
-    `${baseUrl}/v0/pipes/analytics_events_pipe_4995.json?token=${token}`,
-  );
-  const json = await res.json();
-  // Adjust this according to your Tinybird response structure
-  return json.data; // or json if the array is at the root
+async function getAggregatedData() {
+  const baseUrl = process.env.NEXT_PUBLIC_TINYBIRD_HOST;
+  const token = process.env.TINYBIRD_TOKEN_API;
+  
+  if (!baseUrl || !token) {
+    console.log('Missing Tinybird configuration');
+    return [];
+  }
+
+  try {
+    const res = await fetch(
+      `${baseUrl}/v0/pipes/KD_PORTAL_AGGREGATED.json?token=${token}`,
+      { next: { revalidate: 300 } } // Cache for 5 minutes
+    );
+    const json = await res.json();
+    return json.data || [];
+  } catch (error) {
+    console.error('Error fetching aggregated data:', error);
+    return [];
+  }
 }
 
 const HomePageComponent = async ({
@@ -39,7 +77,8 @@ const HomePageComponent = async ({
   locale,
 }: Props) => {
   const t = useTranslations();
-  const visitorsData = await getVisitorsData();
+  const aggregatedData: TinybirdAggregatedData[] = await getAggregatedData();
+  
   return (
     <>
       {/* Hidden SPLaSK Contact Details tag for crawler detection */}
@@ -136,7 +175,7 @@ const HomePageComponent = async ({
         <Timeline achievements={achievements} />
         <HomeSiaran broadcast={broadcast} />
         <Quicklinks homepage={homepage} />
-        <TimeSeriesCharts data={visitorsData} />
+        <AggregatedCharts aggregatedData={aggregatedData} locale={locale} />
       </main>
     </>
   );
