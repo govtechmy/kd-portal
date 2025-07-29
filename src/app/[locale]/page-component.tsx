@@ -8,7 +8,7 @@ import Overline from "@/components/typography/overline";
 import { locales } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { Achievement, Broadcast, Homepage, SiteInfo } from "@/payload-types";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import React, { FC } from "react";
 
 import AggregatedCharts from "@/components/home/aggregated-charts";
@@ -85,20 +85,18 @@ const HomePageComponent = async ({
   broadcast,
   locale,
 }: Props) => {
-  const t = useTranslations();
+  const t = await getTranslations();
   const aggregatedData: TinybirdAggregatedData[] = await getAggregatedData();
+  
+  // Generate timestamp on server side to avoid hydration mismatch
+  const timestamp = new Date().toISOString().slice(0, 19).replace("T", " ");
 
   return (
     <>
       {/* Hidden SPLaSK Contact Details tag for crawler detection */}
       <div
         {...{ "splwpk-contact-details": "splwpk-contact-details" }}
-        {...{
-          "splwpk-contact-details-timestamp": new Date()
-            .toISOString()
-            .slice(0, 19)
-            .replace("T", " "),
-        }}
+        {...{ "splwpk-contact-details-timestamp": timestamp }}
         className="sr-only"
         aria-hidden="true"
       >
