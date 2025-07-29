@@ -15,6 +15,8 @@
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start"
   },
   "dependencies": {
+    "@govtechmy/myds-react": "^0.0.23",
+    "@govtechmy/myds-style": "^0.0.10",
     "@heroicons/react": "^2.2.0",
     "@payloadcms/db-mongodb": "latest",
     "@payloadcms/live-preview-react": "latest",

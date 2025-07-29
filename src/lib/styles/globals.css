@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* MYDS Stylesheet */
+@import "@govtechmy/myds-style/full.css";
+
 @import "@/lib/styles/article.css";
 @import "@/lib/styles/cmdk.css";
 
