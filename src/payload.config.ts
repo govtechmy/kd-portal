@@ -13,6 +13,7 @@ import {
   SearchBeforeSync,
 } from "./collections/Search-Overrides";
 import { s3Storage } from "@payloadcms/storage-s3";
+import { nodemailerAdapter } from "@payloadcms/email-nodemailer";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
