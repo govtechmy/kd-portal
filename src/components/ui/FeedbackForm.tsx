@@ -79,6 +79,8 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
 
     let scriptLoaded = false;
     let scriptElement: HTMLScriptElement | null = null;
+    let retryCount = 0;
+    const maxRetries = 3;
 
     const loadTurnstile = () => {
       if (!window.turnstile || turnstileWidgetId) {
@@ -86,6 +88,12 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
       }
 
       try {
+        // Clear any existing widget first
+        const existingWidget = document.querySelector("#turnstile-widget");
+        if (existingWidget) {
+          existingWidget.innerHTML = "";
+        }
+
         const widgetId = window.turnstile.render("#turnstile-widget", {
           sitekey: turnstileSiteKey,
           callback: (token: string) => {
@@ -97,18 +105,30 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
             console.log("Turnstile token expired");
             setTurnstileToken("");
             setTurnstileVerified(false);
+            // Reset the widget when token expires
+            if (window.turnstile && turnstileWidgetId) {
+              window.turnstile.reset(turnstileWidgetId);
+            }
           },
           "error-callback": () => {
             console.log("Turnstile error occurred");
             setTurnstileToken("");
             setTurnstileVerified(false);
           },
+          // Add theme and size options for better UX
+          theme: "light",
+          size: "normal",
         });
 
         setTurnstileWidgetId(widgetId);
         console.log("Turnstile widget rendered successfully");
       } catch (error) {
         console.error("Error rendering Turnstile widget:", error);
+        // Retry if widget rendering fails
+        if (retryCount < maxRetries) {
+          retryCount++;
+          setTimeout(loadTurnstile, 1000 * retryCount);
+        }
       }
     };
 
@@ -116,6 +136,15 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
       if (window.turnstile) {
         loadTurnstile();
       } else if (!scriptLoaded) {
+        // Check if script is already loaded
+        const existingScript = document.querySelector('script[src*="turnstile"]');
+        if (existingScript) {
+          scriptLoaded = true;
+          // Wait a bit for the script to initialize
+          setTimeout(loadTurnstile, 100);
+          return;
+        }
+
         scriptElement = document.createElement("script");
         scriptElement.src =
           "https://challenges.cloudflare.com/turnstile/v0/api.js";
@@ -123,7 +152,8 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
         scriptElement.defer = true;
         scriptElement.onload = () => {
           scriptLoaded = true;
-          loadTurnstile();
+          // Add a small delay to ensure Turnstile is fully loaded
+          setTimeout(loadTurnstile, 100);
         };
         scriptElement.onerror = () => {
           console.error("Failed to load Turnstile script");
@@ -132,8 +162,8 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
       }
     };
 
-    // Initialize with a small delay to ensure DOM is ready
-    const timer = setTimeout(initializeTurnstile, 100);
+    // Initialize with a longer delay to ensure DOM is ready and component is fully mounted
+    const timer = setTimeout(initializeTurnstile, 300);
 
     return () => {
       clearTimeout(timer);

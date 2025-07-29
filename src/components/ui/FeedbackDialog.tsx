@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FeedbackForm from "./FeedbackForm";
 import Envelope from "@/icons/envelope";
 import CheckCircle from "@/icons/check-circle";
@@ -13,11 +13,31 @@ export default function FeedbackDialog() {
   const [open, setOpen] = useState(false);
   const [tab, setTab] = useState<"aduan" | "pertanyaan" | "cadangan">("aduan");
   const [submitted, setSubmitted] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  // Ensure component is mounted on client side
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const closeModal = () => {
     setSubmitted(false);
     setOpen(false);
   };
+
+  // Don't render anything until mounted to prevent hydration issues
+  if (!mounted) {
+    return (
+      <button
+        type="button"
+        className={cn(buttonVariants({ variant: "primary" }), "rounded-full")}
+        disabled
+      >
+        <Envelope />
+        {t("button")}
+      </button>
+    );
+  }
 
   return (
     <div>
