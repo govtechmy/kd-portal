@@ -1,12 +1,10 @@
-"use client";
-
 import { buttonVariants } from "@/components/ui/button";
 import Direction from "@/icons/direction";
 import Envelope from "@/icons/envelope";
 import Phone from "@/icons/phone";
 import { cn } from "@/lib/utils";
-import { useTranslations } from "next-intl";
-import React, { FC, useState, useEffect } from "react";
+import { getTranslations } from "next-intl/server";
+import React, { FC } from "react";
 import { SiteInfo } from "@/payload-types";
 import { locales } from "@/lib/i18n";
 import { _social_media } from "@/lib/constants/links";
@@ -20,13 +18,11 @@ interface ContactUsProps {
   locale: (typeof locales)[number];
 }
 
-const ContactUs: FC<ContactUsProps> = ({ data, locale }) => {
-  const t = useTranslations();
-  const [timestamp, setTimestamp] = useState<string>("");
-
-  useEffect(() => {
-    setTimestamp(new Date().toISOString().slice(0, 19).replace("T", " "));
-  }, []);
+const ContactUs: FC<ContactUsProps> = async ({ data, locale }) => {
+  const t = await getTranslations();
+  
+  // Generate timestamp on server side to avoid hydration mismatch
+  const timestamp = new Date().toISOString().slice(0, 19).replace("T", " ");
 
   return (
     <>
@@ -112,9 +108,7 @@ const ContactUs: FC<ContactUsProps> = ({ data, locale }) => {
                   key={title}
                   href={`${title === "email" ? "mailto" : "tel"}:${desc}`}
                   {...{ "splwpk-contact-details": "splwpk-contact-details" }}
-                  {...(timestamp && {
-                    "splwpk-contact-details-timestamp": timestamp,
-                  })}
+                  {...{ "splwpk-contact-details-timestamp": timestamp }}
                   className="group flex gap-4.5 border-washed-100 px-6 py-8 max-md:col-span-2 md:py-[34px]"
                 >
                   <div className="size-[42px] rounded-full bg-brand-50 p-[9px] text-foreground-primary">
