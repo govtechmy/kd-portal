@@ -1,9 +1,5 @@
 import { CollectionConfig } from "payload";
-import {
-  SESClient,
-  SendEmailCommand,
-  SendBounceCommandOutput,
-} from "@aws-sdk/client-ses";
+import { SendEmailCommand } from "@aws-sdk/client-ses";
 import { sesClient } from "../lib/ses";
 import { feedbackAdminEmail } from "@/globals/feedbackAdminEmails";
 import {
