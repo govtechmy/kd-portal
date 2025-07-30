@@ -1,2 +1,2 @@
 // lib/config/emails.ts
-export const feedbackAdminEmail = "ammar@mydigital.gov.my";
+export const feedbackAdminEmail = "halusinasibyammar@gmail.com";

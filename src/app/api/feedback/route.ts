@@ -234,6 +234,22 @@ export async function POST(req: Request) {
       },
     });
 
+    const googleScriptUrl = process.env.GOOGLE_SHEET_FEEDBACKFORM;
+
+    if (!googleScriptUrl) {
+      throw new Error(
+        "Missing GOOGLE_SHEET_FEEDBACKFORM environment variable.",
+      );
+    }
+
+    await fetch(googleScriptUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(feedback),
+    });
+
     return NextResponse.json({
       message: "Feedback submitted successfully",
       feedback,
