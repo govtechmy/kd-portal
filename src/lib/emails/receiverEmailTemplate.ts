@@ -1,4 +1,4 @@
-import { Feedback } from "@/payload-types"; // Assuming payload-types.ts is generated
+import { Feedback } from "@/payload-types";
 
 /**
  * Generates the HTML content for the email sent to the receiver (admin).

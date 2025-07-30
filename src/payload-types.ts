@@ -394,8 +394,6 @@ export interface Feedback {
   email: string;
   agency: string;
   message: string;
-  senderEmailSent?: boolean | null;
-  receiverEmailSent?: boolean | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -753,8 +751,6 @@ export interface FeedbackSelect<T extends boolean = true> {
   email?: T;
   agency?: T;
   message?: T;
-  senderEmailSent?: T;
-  receiverEmailSent?: T;
   updatedAt?: T;
   createdAt?: T;
 }
