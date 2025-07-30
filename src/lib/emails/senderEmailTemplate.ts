@@ -68,6 +68,6 @@ If you have any further questions, please do not hesitate to contact us.
 
 ---
 This is an automated email, please do not reply.
-© ${new Date().getFullYear()} Your Organization Name
+© ${new Date().getFullYear()} KD-PORTAL
 `;
 }

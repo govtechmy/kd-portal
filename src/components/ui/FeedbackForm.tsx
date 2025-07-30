@@ -182,7 +182,6 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
       return;
     }
 
-    // Check if Turnstile token is present (required in production)
     const turnstileSiteKey =
       process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY;
     const isDevelopment = process.env.NODE_ENV === "development";
@@ -197,6 +196,10 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
       return;
     }
 
+    // ✅ Immediately show the success popup
+    onSuccess();
+
+    // ✅ Continue background submission
     try {
       const response = await fetch("/api/feedback", {
         method: "POST",
@@ -206,48 +209,20 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
         body: JSON.stringify(data),
       });
 
-      if (response.ok) {
-        onSuccess();
-        // Reset Turnstile
-        if (turnstileWidgetId && window.turnstile) {
-          window.turnstile.reset(turnstileWidgetId);
-        }
-        setTurnstileToken("");
-        setTurnstileVerified(false);
-      } else {
+      if (!response.ok) {
         const errorData = await response.json();
-        const errorMessage =
-          errorData.message || validationT("submission_failed");
-        alert(errorMessage);
-
-        // Reset Turnstile on error
-        if (turnstileWidgetId && window.turnstile) {
-          window.turnstile.reset(turnstileWidgetId);
-        }
-        setTurnstileToken("");
-        setTurnstileVerified(false);
-
-        // If it's a verification error, focus on the Turnstile widget
-        if (
-          errorMessage.includes("verification") ||
-          errorMessage.includes("token")
-        ) {
-          const turnstileElement = document.getElementById("turnstile-widget");
-          if (turnstileElement) {
-            turnstileElement.scrollIntoView({
-              behavior: "smooth",
-              block: "center",
-            });
-          }
-        }
+        console.error("Submission failed in background:", errorData.message);
+        // Optionally show a toast, log to server, or retry
       }
     } catch (error) {
-      alert(validationT("submission_failed"));
-      // Reset Turnstile on error
+      console.error("Network error in background submission:", error);
+      // Optionally show a toast or log this
+    } finally {
       if (turnstileWidgetId && window.turnstile) {
         window.turnstile.reset(turnstileWidgetId);
       }
       setTurnstileToken("");
+      setTurnstileVerified(false);
     }
   };
 
