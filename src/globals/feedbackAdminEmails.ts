@@ -1,2 +1,1 @@
-// lib/config/emails.ts
-export const feedbackAdminEmail = "halusinasibyammar@gmail.com";
+export const feedbackAdminEmail = process.env.FEEDBACK_ADMIN_EMAIL;
