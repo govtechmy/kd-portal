@@ -43,7 +43,10 @@ export default function FeedbackDialog() {
     <div>
       <button
         type="button"
-        className={cn(buttonVariants({ variant: "primary" }), "rounded-full")}
+        className={cn(
+          buttonVariants({ variant: "primary" }),
+          "h-10 rounded-full",
+        )}
         onClick={() => setOpen(true)}
       >
         <Envelope />
@@ -51,54 +54,50 @@ export default function FeedbackDialog() {
       </button>
 
       {open && (
-        <div className="bg-black/50 fixed inset-0 z-50 overflow-y-auto backdrop-blur-sm">
+        <div className="fixed inset-0 z-[60] overflow-y-auto bg-[rgba(0,0,0,0.5)] backdrop-blur-sm">
           <div className="flex min-h-full items-center justify-center p-2 sm:p-4">
             <div
               className={cn(
-                "relative w-full rounded-lg bg-white p-4 shadow-lg transition-all duration-300 sm:p-6",
+                "relative w-full rounded-lg bg-white shadow-lg transition-all duration-300",
                 "max-h-[90vh] overflow-y-auto sm:max-h-none sm:overflow-visible",
                 submitted ? "max-w-sm" : "max-w-4xl",
               )}
             >
               <button
                 onClick={closeModal}
-                className="hover:text-black absolute right-2 top-2 z-10 rounded-lg border border-gray-200 px-2 py-1 sm:right-4 sm:top-4"
+                className="hover:text-black absolute right-2 top-2 z-10 rounded-lg border border-gray-200 px-2 py-0.5 sm:right-4 sm:top-4"
               >
                 ✕
               </button>
 
               {!submitted ? (
                 <>
-                  <div className="flex justify-start gap-2">
+                  <div className="flex justify-start gap-2 px-6 pb-[18] pt-6">
                     <Envelope className="mt-1 h-6 w-6" />
                     <h2 className="mb-4 text-xl font-semibold">{t("title")}</h2>
                   </div>
 
-                  <div className="mb-4 flex border-b">
+                  <div className="flex border-b-[1px] font-medium">
                     {(["aduan", "pertanyaan", "cadangan"] as const).map(
                       (type) => (
                         <button
                           key={type}
                           onClick={() => setTab(type)}
                           className={cn(
-                            "group relative px-4 py-2 text-sm font-medium",
-                            tab === type
-                              ? "text-black-900"
-                              : "text-black hover:text-black-900",
+                            "group relative px-6 py-2 text-sm font-medium",
+                            tab === type ? "text-black-900" : "text-black",
                           )}
                         >
                           <span
                             className={cn(
                               "relative",
-                              tab === type
-                                ? "text-black-900"
-                                : "text-black group-hover:text-black-900",
+                              tab === type ? "text-black-900" : "text-black",
                             )}
                           >
                             {t(`${type}.tab`)}
 
                             {tab === type && (
-                              <span className="absolute bottom-[-8px] left-0 right-0 h-0.5 bg-blue-600"></span>
+                              <span className="absolute bottom-[-10px] left-0 right-0 h-[1px] bg-blue-600"></span>
                             )}
                           </span>
                         </button>
@@ -106,7 +105,7 @@ export default function FeedbackDialog() {
                     )}
                   </div>
 
-                  <div className="max-h-[50vh] overflow-y-auto pb-4 sm:max-h-none sm:overflow-visible sm:pb-0">
+                  <div className="max-h-[50vh] overflow-y-auto p-6 sm:max-h-none sm:overflow-visible sm:pb-0">
                     <FeedbackForm
                       type={tab}
                       onSuccess={() => setSubmitted(true)}
