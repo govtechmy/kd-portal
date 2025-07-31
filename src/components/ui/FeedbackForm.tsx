@@ -252,9 +252,9 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
   };
 
   return (
-    <form className="space-y-3" onSubmit={handleSubmit}>
+    <form className="flex flex-col gap-[6px] space-y-3" onSubmit={handleSubmit}>
       {/* Row 1: Name */}
-      <div>
+      <div className="flex flex-col gap-[6px]">
         <label className="mb-0.5 block text-sm font-medium">{t("name")}</label>
         <input
           type="text"
@@ -267,7 +267,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
 
       {/* Row 2: ID + Phone + Email */}
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-        <div>
+        <div className="space-y-1">
           <label className="mb-0.5 block text-sm font-medium">{t("id")}</label>
           <input
             type="text"
@@ -283,7 +283,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
           />
         </div>
 
-        <div>
+        <div className="space-y-1">
           <label className="mb-0.5 block text-sm font-normal">
             {t("phone")}
           </label>
@@ -304,7 +304,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
           </div>
         </div>
 
-        <div>
+        <div className="space-y-1">
           <label className="mb-0.5 block text-sm font-normal">
             {t("email")}
           </label>
@@ -324,7 +324,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
       </div>
 
       {/* Row 3: Address */}
-      <div>
+      <div className="space-y-1">
         <label className="mb-0.5 block text-sm font-medium">
           {t("address")}
         </label>
@@ -337,8 +337,8 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
       </div>
 
       {/* Row 4: Agency */}
-      <div>
-        <label className="mb-0.5 block text-sm font-normal">
+      <div className="space-y-1">
+        <label className="mb-0.5 block text-sm font-medium">
           {t("agency")}
         </label>
         <input
@@ -351,8 +351,8 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
       </div>
 
       {/* Row 5: Statement / Message */}
-      <div>
-        <label className="mb-0.5 block text-sm font-normal">
+      <div className="space-y-1">
+        <label className="mb-0.5 block text-sm font-medium">
           {t("message")}
         </label>
         <textarea
@@ -402,7 +402,7 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
         )}
 
       {/* Submit Button */}
-      <div className="pt-4 text-right">
+      <div className="p-6 text-right">
         <button
           type="submit"
           className={cn(buttonVariants({ variant: "primary" }), "rounded-lg")}
