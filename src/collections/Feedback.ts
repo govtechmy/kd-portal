@@ -1,7 +1,7 @@
 import { CollectionConfig } from "payload";
 import { SendEmailCommand } from "@aws-sdk/client-ses";
 import { sesClient } from "../lib/ses";
-import { feedbackAdminEmail } from "@/globals/feedbackAdminEmails";
+import { FeedbackSettings } from "@/globals";
 import {
   generateSenderEmailHtml,
   generateSenderEmailText,
@@ -87,6 +87,12 @@ export const Feedback: CollectionConfig = {
             );
             return doc;
           }
+
+          const feedbackSettings = await req.payload.findGlobal({
+            slug: "feedback-settings",
+          });
+
+          const feedbackAdminEmail = feedbackSettings?.adminEmail;
 
           // Send Email to Sender (no check)
           if (senderEmail) {
