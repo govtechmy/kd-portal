@@ -111,6 +111,16 @@ export const KDDirectory: CollectionConfig = {
       },
     },
     {
+      name: "customAddress",
+      label: "Custom Address",
+      type: "textarea",
+      admin: {
+        description:
+          "Optional: Overrides the default SiteInfo address for this department.",
+        rows: 5,
+      },
+    },
+    {
       name: "emel",
       label: "Email",
       type: "text",
