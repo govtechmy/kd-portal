@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import DirektoriMain from "@/components/direktori/main";
 import { FSP, inject, metagen, MetagenProps } from "@/lib/decorator";
+import localDirectory from "@/lib/resources/directory_kd.json";
 
 const Direktori: FSP = async ({ locale, payload }) => {
   const data = await payload.find({

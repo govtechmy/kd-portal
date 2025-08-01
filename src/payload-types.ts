@@ -262,6 +262,10 @@ export interface StaffDirectory {
   jawatan?: string | null;
   telefon?: string | null;
   laman?: string | null;
+  /**
+   * Optional: Overrides the default SiteInfo address for this department.
+   */
+  customAddress?: string | null;
   emel?: string | null;
   image?: (string | null) | Media;
   social_media?:
@@ -654,6 +658,7 @@ export interface StaffDirectorySelect<T extends boolean = true> {
   jawatan?: T;
   telefon?: T;
   laman?: T;
+  customAddress?: T;
   emel?: T;
   image?: T;
   social_media?:

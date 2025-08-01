@@ -17,6 +17,9 @@ import { usePathname, useRouter } from "@/lib/i18n";
 import StaffCardModal from "../ui/view-e-card";
 import { SiteInfo } from "@/payload-types";
 
+//will remove
+import localDirectory from "@/lib/resources/directory_kd.json";
+
 interface DirektoriMainProps {
   list: StaffDirectory[];
   locale: (typeof locales)[number];
@@ -28,6 +31,13 @@ const DirektoriMain: FC<DirektoriMainProps> = ({ list, locale, siteInfo }) => {
   const { replace } = useRouter();
   const pathname = usePathname();
   const searchQuery = searchParams.get("search");
+
+  //remove
+  const formattedList = localDirectory.map((item) => ({
+    ...item,
+    staff_id: item.id ?? 0,
+    id_bhg: { bhg: item.bhg }, // wrap as object
+  }));
 
   const column = useMemo(
     () => [

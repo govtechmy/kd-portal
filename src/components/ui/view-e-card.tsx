@@ -130,17 +130,26 @@ const StaffCardModal: React.FC<StaffCardModalProps> = ({ staff, siteInfo }) => {
                     {typeof staff.id_bhg !== "string" && staff.id_bhg.bhg}
                   </span>
                   <br />
-                  {siteInfo && siteInfo.address
-                    ? siteInfo.address
-                        .split("\n")
-                        ?.slice(1)
-                        .map((line, index) => (
-                          <React.Fragment key={index}>
-                            {line}
-                            <br />
-                          </React.Fragment>
-                        ))
-                    : ""}
+                  {(() => {
+                    const customAddress =
+                      typeof staff.customAddress === "string"
+                        ? staff.customAddress.trim()
+                        : "";
+
+                    const addressToUse = customAddress || siteInfo.address;
+
+                    const lines =
+                      customAddress.length > 0
+                        ? addressToUse.split("\n") // Show full custom address
+                        : addressToUse.split("\n").slice(1); // Slice default SiteInfo
+
+                    return lines.map((line, index) => (
+                      <React.Fragment key={index}>
+                        {line}
+                        <br />
+                      </React.Fragment>
+                    ));
+                  })()}
                 </span>
               </div>
               <div className="flex items-center gap-4">
@@ -162,14 +171,26 @@ const StaffCardModal: React.FC<StaffCardModalProps> = ({ staff, siteInfo }) => {
             <div className="mt-8 flex justify-center text-sm">
               <button
                 onClick={() => {
+                  const customAddress =
+                    typeof staff.customAddress === "string"
+                      ? staff.customAddress.trim()
+                      : "";
+
+                  const isDefaultAlamat = customAddress.length === 0;
+                  const address = isDefaultAlamat
+                    ? siteInfo.address
+                    : customAddress;
+
                   const vcfString = generateVCF(
                     staff,
-                    siteInfo && siteInfo.address ? siteInfo.address : "",
+                    address,
+                    isDefaultAlamat,
                   );
                   const filename = (staff.nama || "contact").replace(
                     /\s+/g,
                     "_",
                   );
+
                   downloadVCF(vcfString, filename);
                 }}
                 className="inline-flex h-10 w-full max-w-xs items-center justify-center gap-1.5 whitespace-nowrap rounded-full border border-white/20 bg-gradient-to-b from-[#5288FF] to-[#2563EB] py-2 pl-3 pr-4 text-center font-semibold text-white"
