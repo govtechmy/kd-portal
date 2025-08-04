@@ -10,14 +10,19 @@ const Direktori: FSP = async ({ locale, payload }) => {
     depth: 3,
   });
 
-  const siteInfo = await payload.findGlobal({
-    slug: "site-info",
-    locale: locale,
-  });
+  const [siteInfo, addresses] = await Promise.all([
+    payload.findGlobal({ slug: "site-info", locale }),
+    payload.findGlobal({ slug: "addresses", locale }),
+  ]);
 
   return (
     <Suspense>
-      <DirektoriMain locale={locale} list={data.docs} siteInfo={siteInfo} />
+      <DirektoriMain
+        locale={locale}
+        list={data.docs}
+        siteInfo={siteInfo}
+        addresses={addresses}
+      />
     </Suspense>
   );
 };

@@ -5,6 +5,7 @@ import { Footer } from "./Footer";
 import { MinisterProfile } from "./MinisterProfile";
 import { Homepage } from "./Homepage";
 import { FeedbackSettings } from "./FeedbackSettings";
+import { Addresses } from "./Addresses";
 
 const GlobalCollections: GlobalConfig[] = [
   FeedbackSettings,
@@ -13,14 +14,17 @@ const GlobalCollections: GlobalConfig[] = [
   Footer,
   Homepage,
   MinisterProfile,
+  Addresses,
 ];
 
-export {
-  FeedbackSettings,
-  SiteInfo,
-  Header,
-  Footer,
-  MinisterProfile,
-  Homepage,
+export { 
+  SiteInfo, 
+  Header, 
+  Footer, 
+  MinisterProfile, 
+  Homepage, 
+  Addresses,
+  FeedbackSettings
 };
+
 export default GlobalCollections;

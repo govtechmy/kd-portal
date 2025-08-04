@@ -4,15 +4,15 @@ import Overline from "@/components/typography/overline";
 import Flag from "@/icons/flag";
 import { Achievement } from "@/payload-types";
 import { DateTime } from "luxon";
-import { useTranslations } from "next-intl";
 import { getLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
 export default async function Timeline({
   achievements,
 }: {
   achievements: Achievement[];
 }) {
-  const t = useTranslations("Home.Achievement");
+  const t = await getTranslations("Home.Achievement");
   const locale = await getLocale();
 
   return (

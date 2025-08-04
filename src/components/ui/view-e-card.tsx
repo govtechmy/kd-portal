@@ -1,7 +1,7 @@
 "use client";
 import * as Dialog from "@radix-ui/react-dialog";
 import { StaffDirectory } from "@/payload-types";
-import { SiteInfo } from "@/payload-types";
+import { SiteInfo, Address } from "@/payload-types";
 import { _social_media } from "@/lib/constants/links";
 import {
   PhoneIcon,
@@ -17,15 +17,30 @@ import { generateVCF } from "@/lib/vcf_generator/generateVCF";
 import { downloadVCF } from "@/lib/vcf_generator/downloadVCF";
 import { useTranslations } from "next-intl";
 import React from "react";
+import { Payload } from "payload";
 
 interface StaffCardModalProps {
   staff: StaffDirectory;
   siteInfo: SiteInfo;
+  addresses: Address;
 }
 
-const StaffCardModal: React.FC<StaffCardModalProps> = ({ staff, siteInfo }) => {
+const StaffCardModal: React.FC<StaffCardModalProps> = ({
+  staff,
+  siteInfo,
+  addresses,
+}) => {
   const t = useTranslations("Agency");
   const tdir = useTranslations("Directory.table_header");
+  const bhgName = typeof staff.id_bhg !== "string" ? staff.id_bhg.bhg : "";
+
+  const matchedRegion = bhgName.toLowerCase().includes("sabah")
+    ? "sabah"
+    : bhgName.toLowerCase().includes("sarawak")
+      ? "sarawak"
+      : "putrajaya";
+
+  const regionAddress = addresses[matchedRegion as keyof Address];
 
   return (
     <Dialog.Root>
@@ -130,16 +145,13 @@ const StaffCardModal: React.FC<StaffCardModalProps> = ({ staff, siteInfo }) => {
                     {typeof staff.id_bhg !== "string" && staff.id_bhg.bhg}
                   </span>
                   <br />
-                  {siteInfo && siteInfo.address
-                    ? siteInfo.address
-                        .split("\n")
-                        ?.slice(1)
-                        .map((line, index) => (
-                          <React.Fragment key={index}>
-                            {line}
-                            <br />
-                          </React.Fragment>
-                        ))
+                  {regionAddress
+                    ? regionAddress.split("\n").map((line, index) => (
+                        <React.Fragment key={index}>
+                          {line}
+                          <br />
+                        </React.Fragment>
+                      ))
                     : ""}
                 </span>
               </div>
