@@ -4,7 +4,8 @@ export const Addresses: GlobalConfig = {
   slug: "addresses",
   label: "Addresses",
   admin: {
-    description: "This is for the e-card address.",
+    description:
+      "This is for the e-card address. Please use a single line for the address; the frontend will handle the rendering.",
   },
   access: {
     read: () => true,
