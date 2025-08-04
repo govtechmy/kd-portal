@@ -56,6 +56,7 @@ export interface Config {
     footer: Footer;
     homepage: Homepage;
     'profil-kementerian': ProfilKementerian;
+    addresses: Address;
   };
   globalsSelect: {
     'site-info': SiteInfoSelect<false> | SiteInfoSelect<true>;
@@ -63,6 +64,7 @@ export interface Config {
     footer: FooterSelect<false> | FooterSelect<true>;
     homepage: HomepageSelect<false> | HomepageSelect<true>;
     'profil-kementerian': ProfilKementerianSelect<false> | ProfilKementerianSelect<true>;
+    addresses: AddressesSelect<false> | AddressesSelect<true>;
   };
   locale: 'ms-MY' | 'en-GB';
   user: User & {
@@ -1168,6 +1170,20 @@ export interface ProfilKementerian {
   createdAt?: string | null;
 }
 /**
+ * This is for the e-card address. Please use a single line for the address; the frontend will handle the rendering.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "addresses".
+ */
+export interface Address {
+  id: string;
+  putrajaya: string;
+  sabah: string;
+  sarawak: string;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "site-info_select".
  */
@@ -1345,6 +1361,18 @@ export interface ProfilKementerianSelect<T extends boolean = true> {
         id?: T;
       };
   'latar-belakang'?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "addresses_select".
+ */
+export interface AddressesSelect<T extends boolean = true> {
+  putrajaya?: T;
+  sabah?: T;
+  sarawak?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

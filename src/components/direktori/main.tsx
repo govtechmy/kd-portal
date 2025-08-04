@@ -15,14 +15,20 @@ import { locales } from "@/lib/i18n";
 import { useSearchParams } from "next/navigation";
 import { usePathname, useRouter } from "@/lib/i18n";
 import StaffCardModal from "../ui/view-e-card";
-import { SiteInfo } from "@/payload-types";
+import { SiteInfo, Address } from "@/payload-types";
 
 interface DirektoriMainProps {
   list: StaffDirectory[];
   locale: (typeof locales)[number];
   siteInfo: SiteInfo;
+  addresses: Address;
 }
-const DirektoriMain: FC<DirektoriMainProps> = ({ list, locale, siteInfo }) => {
+const DirektoriMain: FC<DirektoriMainProps> = ({
+  list,
+  locale,
+  siteInfo,
+  addresses,
+}) => {
   const t = useTranslations();
   const searchParams = useSearchParams();
   const { replace } = useRouter();
@@ -106,7 +112,11 @@ const DirektoriMain: FC<DirektoriMainProps> = ({ list, locale, siteInfo }) => {
         cell: (info: any) => {
           const staff = info.row.original;
           return staff.staff_id > 0 ? (
-            <StaffCardModal staff={staff} siteInfo={siteInfo} />
+            <StaffCardModal
+              staff={staff}
+              siteInfo={siteInfo}
+              addresses={addresses}
+            />
           ) : null;
         },
         size: 100,
@@ -188,7 +198,11 @@ const DirektoriMain: FC<DirektoriMainProps> = ({ list, locale, siteInfo }) => {
 
             {staff_id > 0 && (
               <div className="pt-2">
-                <StaffCardModal staff={info.row.original} siteInfo={siteInfo} />
+                <StaffCardModal
+                  staff={info.row.original}
+                  siteInfo={siteInfo}
+                  addresses={addresses}
+                />
               </div>
             )}
           </div>
