@@ -15,9 +15,20 @@ const Direktori: FSP = async ({ locale, payload }) => {
     locale: locale,
   });
 
+  const addresses = await payload.find({
+    collection: "kd-addresses",
+    locale,
+    pagination: false,
+  });
+
   return (
     <Suspense>
-      <DirektoriMain locale={locale} list={data.docs} siteInfo={siteInfo} />
+      <DirektoriMain
+        locale={locale}
+        list={data.docs}
+        siteInfo={siteInfo}
+        addresses={addresses.docs}
+      />
     </Suspense>
   );
 };

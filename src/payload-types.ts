@@ -23,6 +23,7 @@ export interface Config {
     'quick-link': QuickLink;
     celebration: Celebration;
     feedback: Feedback;
+    'kd-addresses': KdAddress;
     search: Search;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -42,6 +43,7 @@ export interface Config {
     'quick-link': QuickLinkSelect<false> | QuickLinkSelect<true>;
     celebration: CelebrationSelect<false> | CelebrationSelect<true>;
     feedback: FeedbackSelect<false> | FeedbackSelect<true>;
+    'kd-addresses': KdAddressesSelect<false> | KdAddressesSelect<true>;
     search: SearchSelect<false> | SearchSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -398,6 +400,17 @@ export interface Feedback {
   createdAt: string;
 }
 /**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "kd-addresses".
+ */
+export interface KdAddress {
+  id: string;
+  region: 'putrajaya' | 'sabah' | 'sarawak';
+  address: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This is a collection of automatically created search results. These results are used by the global site search and will be updated automatically as documents in the CMS are created or updated.
  *
  * This interface was referenced by `Config`'s JSON-Schema
@@ -481,6 +494,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'feedback';
         value: string | Feedback;
+      } | null)
+    | ({
+        relationTo: 'kd-addresses';
+        value: string | KdAddress;
       } | null)
     | ({
         relationTo: 'search';
@@ -751,6 +768,16 @@ export interface FeedbackSelect<T extends boolean = true> {
   email?: T;
   agency?: T;
   message?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "kd-addresses_select".
+ */
+export interface KdAddressesSelect<T extends boolean = true> {
+  region?: T;
+  address?: T;
   updatedAt?: T;
   createdAt?: T;
 }

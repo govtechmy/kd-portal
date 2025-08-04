@@ -11,6 +11,7 @@ import { SearchOverride } from "./Search-Overrides";
 import { HeroBanner } from "./HeroBanner";
 import { Celebration } from "./Celebration";
 import { Feedback } from "./Feedback";
+import { KDAddresses } from "./Address";
 
 const PayloadCollections: CollectionConfig[] = [
   Users,
@@ -25,6 +26,7 @@ const PayloadCollections: CollectionConfig[] = [
   QuickLink,
   Celebration,
   Feedback,
+  KDAddresses,
 ];
 
 export {
@@ -41,5 +43,6 @@ export {
   SearchOverride,
   Celebration,
   Feedback,
+  KDAddresses,
 };
 export default PayloadCollections;
