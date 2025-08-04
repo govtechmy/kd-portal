@@ -1,8 +1,7 @@
 "use client";
 import * as Dialog from "@radix-ui/react-dialog";
 import { StaffDirectory } from "@/payload-types";
-import { SiteInfo } from "@/payload-types";
-import { KdAddress } from "@/payload-types";
+import { SiteInfo, Address } from "@/payload-types";
 import { _social_media } from "@/lib/constants/links";
 import {
   PhoneIcon,
@@ -20,15 +19,10 @@ import { useTranslations } from "next-intl";
 import React from "react";
 import { Payload } from "payload";
 
-interface Address {
-  region: "putrajaya" | "sabah" | "sarawak";
-  address: string;
-}
-
 interface StaffCardModalProps {
   staff: StaffDirectory;
   siteInfo: SiteInfo;
-  addresses: Address[];
+  addresses: Address;
 }
 
 const StaffCardModal: React.FC<StaffCardModalProps> = ({
@@ -46,9 +40,7 @@ const StaffCardModal: React.FC<StaffCardModalProps> = ({
       ? "sarawak"
       : "putrajaya";
 
-  const regionAddress = addresses.find(
-    (addr) => addr.region === matchedRegion,
-  )?.address;
+  const regionAddress = addresses[matchedRegion as keyof Address];
 
   return (
     <Dialog.Root>

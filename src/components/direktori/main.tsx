@@ -15,14 +15,13 @@ import { locales } from "@/lib/i18n";
 import { useSearchParams } from "next/navigation";
 import { usePathname, useRouter } from "@/lib/i18n";
 import StaffCardModal from "../ui/view-e-card";
-import { SiteInfo } from "@/payload-types";
-import { KdAddress } from "@/payload-types";
+import { SiteInfo, Address } from "@/payload-types";
 
 interface DirektoriMainProps {
   list: StaffDirectory[];
   locale: (typeof locales)[number];
   siteInfo: SiteInfo;
-  addresses: KdAddress[];
+  addresses: Address;
 }
 const DirektoriMain: FC<DirektoriMainProps> = ({
   list,
