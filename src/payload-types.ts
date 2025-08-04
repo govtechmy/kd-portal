@@ -51,6 +51,7 @@ export interface Config {
     defaultIDType: string;
   };
   globals: {
+    'feedback-settings': FeedbackSetting;
     'site-info': SiteInfo;
     header: Header;
     footer: Footer;
@@ -59,6 +60,7 @@ export interface Config {
     addresses: Address;
   };
   globalsSelect: {
+    'feedback-settings': FeedbackSettingsSelect<false> | FeedbackSettingsSelect<true>;
     'site-info': SiteInfoSelect<false> | SiteInfoSelect<true>;
     header: HeaderSelect<false> | HeaderSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
@@ -801,6 +803,16 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "feedback-settings".
+ */
+export interface FeedbackSetting {
+  id: string;
+  adminEmail: string;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "site-info".
  */
 export interface SiteInfo {
@@ -1182,6 +1194,16 @@ export interface Address {
   sarawak: string;
   updatedAt?: string | null;
   createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "feedback-settings_select".
+ */
+export interface FeedbackSettingsSelect<T extends boolean = true> {
+  adminEmail?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
