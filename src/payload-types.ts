@@ -23,7 +23,6 @@ export interface Config {
     'quick-link': QuickLink;
     celebration: Celebration;
     feedback: Feedback;
-    'kd-addresses': KdAddress;
     search: Search;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -43,7 +42,6 @@ export interface Config {
     'quick-link': QuickLinkSelect<false> | QuickLinkSelect<true>;
     celebration: CelebrationSelect<false> | CelebrationSelect<true>;
     feedback: FeedbackSelect<false> | FeedbackSelect<true>;
-    'kd-addresses': KdAddressesSelect<false> | KdAddressesSelect<true>;
     search: SearchSelect<false> | SearchSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -58,6 +56,7 @@ export interface Config {
     footer: Footer;
     homepage: Homepage;
     'profil-kementerian': ProfilKementerian;
+    addresses: Address;
   };
   globalsSelect: {
     'site-info': SiteInfoSelect<false> | SiteInfoSelect<true>;
@@ -65,6 +64,7 @@ export interface Config {
     footer: FooterSelect<false> | FooterSelect<true>;
     homepage: HomepageSelect<false> | HomepageSelect<true>;
     'profil-kementerian': ProfilKementerianSelect<false> | ProfilKementerianSelect<true>;
+    addresses: AddressesSelect<false> | AddressesSelect<true>;
   };
   locale: 'ms-MY' | 'en-GB';
   user: User & {
@@ -400,17 +400,6 @@ export interface Feedback {
   createdAt: string;
 }
 /**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "kd-addresses".
- */
-export interface KdAddress {
-  id: string;
-  region: 'putrajaya' | 'sabah' | 'sarawak';
-  address: string;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
  * This is a collection of automatically created search results. These results are used by the global site search and will be updated automatically as documents in the CMS are created or updated.
  *
  * This interface was referenced by `Config`'s JSON-Schema
@@ -494,10 +483,6 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'feedback';
         value: string | Feedback;
-      } | null)
-    | ({
-        relationTo: 'kd-addresses';
-        value: string | KdAddress;
       } | null)
     | ({
         relationTo: 'search';
@@ -768,16 +753,6 @@ export interface FeedbackSelect<T extends boolean = true> {
   email?: T;
   agency?: T;
   message?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "kd-addresses_select".
- */
-export interface KdAddressesSelect<T extends boolean = true> {
-  region?: T;
-  address?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -1195,6 +1170,20 @@ export interface ProfilKementerian {
   createdAt?: string | null;
 }
 /**
+ * This is for the e-card address.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "addresses".
+ */
+export interface Address {
+  id: string;
+  putrajaya: string;
+  sabah: string;
+  sarawak: string;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "site-info_select".
  */
@@ -1372,6 +1361,18 @@ export interface ProfilKementerianSelect<T extends boolean = true> {
         id?: T;
       };
   'latar-belakang'?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "addresses_select".
+ */
+export interface AddressesSelect<T extends boolean = true> {
+  putrajaya?: T;
+  sabah?: T;
+  sarawak?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
