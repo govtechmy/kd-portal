@@ -1170,7 +1170,7 @@ export interface ProfilKementerian {
   createdAt?: string | null;
 }
 /**
- * This is for the e-card address.
+ * This is for the e-card address. Please use a single line for the address; the frontend will handle the rendering.
  *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "addresses".
