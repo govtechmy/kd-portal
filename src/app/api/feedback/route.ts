@@ -242,13 +242,62 @@ export async function POST(req: Request) {
       );
     }
 
-    await fetch(googleScriptUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(feedback),
-    });
+    // Send to Google Sheet (with robust error handling and timeout)
+    try {
+      const controller = new AbortController();
+      const timeoutMs = parseInt(
+        process.env.FEEDBACK_GOOGLE_SHEET_TIMEOUT_MS ?? "10000",
+        10,
+      );
+      const timeout = setTimeout(() => controller.abort(), timeoutMs);
+
+      const response = await fetch(googleScriptUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(feedback),
+        signal: controller.signal,
+      });
+
+      clearTimeout(timeout);
+
+      if (!response.ok) {
+        let responseText = "";
+        try {
+          responseText = await response.text();
+        } catch (_readErr) {
+          responseText = "<unable to read response body>";
+        }
+
+        console.error("Google Sheet fetch non-OK response", {
+          status: response.status,
+          statusText: response.statusText,
+          url: googleScriptUrl,
+          responseText: responseText.slice(0, 1000),
+          env: process.env.VERCEL ? "vercel" : process.env.NODE_ENV,
+          vercelRegion: process.env.VERCEL_REGION,
+          vercelUrl: process.env.VERCEL_URL,
+        });
+
+        throw new Error(`Google Sheet responded with status ${response.status}`);
+      }
+    } catch (err) {
+      const errorObject = err as Error & { name?: string };
+      console.error("Google Sheet fetch failed", {
+        url: googleScriptUrl,
+        errorName: errorObject?.name,
+        errorMessage: errorObject?.message,
+        isAbortError: errorObject?.name === "AbortError",
+        env: process.env.VERCEL ? "vercel" : process.env.NODE_ENV,
+        vercelRegion: process.env.VERCEL_REGION,
+        vercelUrl: process.env.VERCEL_URL,
+        ip,
+      });
+
+      // Re-throw to be caught by outer handler and return 500 to client
+      throw err;
+    }
 
     return NextResponse.json({
       message: "Feedback submitted successfully",
