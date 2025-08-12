@@ -34,6 +34,14 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
   const [turnstileWidgetId, setTurnstileWidgetId] = useState<string>("");
   const [turnstileVerified, setTurnstileVerified] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [fieldErrors, setFieldErrors] = useState<{
+    ic_number?: string;
+    email?: string;
+    phone_number?: string;
+  }>({});
+  const errors: { ic_number?: string; email?: string; phone_number?: string } =
+    {};
+
   const [isLoading, setIsLoading] = useState(false);
 
   const formatIcNumber = (value: string) => {
@@ -186,8 +194,9 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setErrorMessage(null); // clear previous errors
-    setIsLoading(true); // Load before shows popup success
+
+    setErrorMessage(null);
+    setFieldErrors({});
 
     const form = e.currentTarget;
     const formData = new FormData(form);
@@ -208,16 +217,21 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
     const idRegex = /^\d{6}-\d{2}-\d{4}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    // Client-side validation
+    // --- Client-side validation ---
+    const errors: { email?: string; ic_number?: string } = {};
     if (!idRegex.test(data.ic_number)) {
-      setErrorMessage(validationT("ic_format_error"));
-      return;
+      errors.ic_number = validationT("ic_format_error");
     }
     if (!emailRegex.test(data.email)) {
-      setErrorMessage(validationT("email_format_error"));
-      return;
+      errors.email = validationT("email_format_error");
     }
 
+    if (Object.keys(errors).length > 0) {
+      setFieldErrors(errors);
+      return; // stop here, don't show spinner
+    }
+
+    // --- Captcha check ---
     const turnstileSiteKey =
       process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY;
     const isDevelopment = process.env.NODE_ENV === "development";
@@ -229,8 +243,11 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
       !turnstileToken
     ) {
       setErrorMessage("Please complete the verification before submitting.");
-      return;
+      return; // stop here, no spinner
     }
+
+    // ✅ Passed all instant checks — show spinner now
+    setIsLoading(true);
 
     try {
       const response = await fetch("/api/feedback", {
@@ -251,9 +268,8 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
         return;
       }
 
-      // Show success only after actual success
       onSuccess();
-    } catch (err) {
+    } catch {
       setErrorMessage(
         "Network error. Please check your connection and try again.",
       );
@@ -299,6 +315,9 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
             required
             maxLength={14}
           />
+          {fieldErrors.email && (
+            <p className="mt-1 text-sm text-red-600">{fieldErrors.ic_number}</p>
+          )}
         </div>
 
         <div className="space-y-1">
@@ -320,6 +339,11 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
               required
             />
           </div>
+          {fieldErrors.email && (
+            <p className="mt-1 text-sm text-red-600">
+              {fieldErrors.phone_number}
+            </p>
+          )}
         </div>
 
         <div className="space-y-1">
@@ -338,6 +362,9 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
               required
             />
           </div>
+          {fieldErrors.email && (
+            <p className="mt-1 text-sm text-red-600">{fieldErrors.email}</p>
+          )}
         </div>
       </div>
 

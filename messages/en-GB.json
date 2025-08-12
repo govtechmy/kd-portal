@@ -461,6 +461,7 @@
     "validation": {
       "ic_format_error": "Identification number must be in format 000000-00-0000",
       "email_format_error": "Please enter a valid email address",
+      "phone_format_error": "Please enter a valid phone number",
       "submission_failed": "Submission failed. Please try again."
     },
     "placeholders": {
