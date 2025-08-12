@@ -33,6 +33,8 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
   const [turnstileToken, setTurnstileToken] = useState<string>("");
   const [turnstileWidgetId, setTurnstileWidgetId] = useState<string>("");
   const [turnstileVerified, setTurnstileVerified] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const formatIcNumber = (value: string) => {
     // Remove all non-digits
@@ -137,7 +139,9 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
         loadTurnstile();
       } else if (!scriptLoaded) {
         // Check if script is already loaded
-        const existingScript = document.querySelector('script[src*="turnstile"]');
+        const existingScript = document.querySelector(
+          'script[src*="turnstile"]',
+        );
         if (existingScript) {
           scriptLoaded = true;
           // Wait a bit for the script to initialize
@@ -182,6 +186,8 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setErrorMessage(null); // clear previous errors
+    setIsLoading(true); // Load before shows popup success
 
     const form = e.currentTarget;
     const formData = new FormData(form);
@@ -202,13 +208,13 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
     const idRegex = /^\d{6}-\d{2}-\d{4}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+    // Client-side validation
     if (!idRegex.test(data.ic_number)) {
-      alert(validationT("ic_format_error"));
+      setErrorMessage(validationT("ic_format_error"));
       return;
     }
-
     if (!emailRegex.test(data.email)) {
-      alert(validationT("email_format_error"));
+      setErrorMessage(validationT("email_format_error"));
       return;
     }
 
@@ -222,32 +228,39 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
       turnstileSiteKey !== "1x00000000000000000000AA" &&
       !turnstileToken
     ) {
-      alert("Please complete the verification before submitting");
+      setErrorMessage("Please complete the verification before submitting.");
       return;
     }
 
-    // ✅ Immediately show the success popup
-    onSuccess();
-
-    // ✅ Continue background submission
     try {
       const response = await fetch("/api/feedback", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
 
       if (!response.ok) {
-        const errorData = await response.json();
-        console.error("Submission failed in background:", errorData.message);
-        // Optionally show a toast, log to server, or retry
+        let serverMessage = "Something went wrong while submitting the form.";
+        try {
+          const errorData = await response.json();
+          if (errorData?.message) serverMessage = errorData.message;
+        } catch {
+          // ignore JSON parsing errors
+        }
+        setErrorMessage(serverMessage);
+        return;
       }
-    } catch (error) {
-      console.error("Network error in background submission:", error);
-      // Optionally show a toast or log this
+
+      // Show success only after actual success
+      onSuccess();
+    } catch (err) {
+      setErrorMessage(
+        "Network error. Please check your connection and try again.",
+      );
     } finally {
+      setIsLoading(false);
+
+      // Always reset captcha after submission
       if (turnstileWidgetId && window.turnstile) {
         window.turnstile.reset(turnstileWidgetId);
       }
@@ -406,13 +419,48 @@ export default function FeedbackForm({ type, onSuccess }: Props) {
           </div>
         )}
 
+      {/* Error Message */}
+      {errorMessage && (
+        <div className="mb-4 rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+          {errorMessage}
+        </div>
+      )}
+
       {/* Submit Button */}
       <div className="p-6 text-right">
         <button
           type="submit"
-          className={cn(buttonVariants({ variant: "primary" }), "rounded-lg")}
+          disabled={isLoading}
+          className={`flex w-full items-center justify-center rounded-md px-4 py-2 text-white ${
+            isLoading
+              ? "cursor-not-allowed bg-gray-400"
+              : "bg-blue-600 hover:bg-blue-700"
+          }`}
         >
-          {t("submit")}
+          {isLoading ? (
+            <svg
+              className="h-5 w-5 animate-spin text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+              />
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+              />
+            </svg>
+          ) : (
+            "Submit"
+          )}
         </button>
       </div>
     </form>
