@@ -10,8 +10,8 @@ type FooterLinks = "about_us" | "quick_links" | "open_source";
 
 export const quick_links = [
   { name: "SpotMe", href: "https://www.spotme.gov.my/" },
-  { name: "MyGovUC", href: "https://www.malaysia.gov.my" },
-  { name: "MyGov", href: "https://www.mygovuc.gov.my/" },
+  { name: "MyGov", href: "https://www.malaysia.gov.my" },
+  { name: "MyGovUC", href: "https://www.mygovuc.gov.my/" },
   { name: "DDMS", href: "https://portalddms.malaysia.gov.my/" },
   { name: "MyMesyuarat", href: "https://www.mymesyuarat.gov.my/" },
   { name: "ePenyata Gaji", href: "https://epenyatagaji-laporan.anm.gov.my/" },
