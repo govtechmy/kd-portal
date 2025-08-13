@@ -107,6 +107,8 @@ const CommandMenu: FC<CommandMenuProps> = ({
       tabIndex={0}
       label="Command Menu"
       shouldFilter={false}
+      splwpk-search-function="splwpk-search-function"
+      splwpk-advanced-search-function="splwpk-advanced-search-funtion"
       className={cn(
         "relative mx-auto flex h-11 w-full items-center gap-2.5 rounded-full border border-outline-200 bg-background pl-4.5 pr-1.5 shadow-button outline-none hover:border-outline-300",
         "has-[:focus]:border-brand-300 has-[:focus]:ring has-[:focus]:ring-brand-600/20 has-[:focus]:ring-offset-0 md:w-[600px]",
