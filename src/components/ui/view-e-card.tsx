@@ -173,6 +173,7 @@ const StaffCardModal: React.FC<StaffCardModalProps> = ({
 
             <div className="mt-8 flex justify-center text-sm">
               <button
+                splwpk-publication="splwpk-publication"
                 onClick={() => {
                   const vcfString = generateVCF(
                     staff,

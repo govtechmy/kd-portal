@@ -62,24 +62,29 @@ const HomeSearchBar: FC<{ locale: string }> = ({ locale }) => {
   }, [query, fetchSearchList]);
 
   return (
-    <form
-      splwpk-search-function="splwpk-search-function"
-      splwpk-advanced-search-function="splwpk-advanced-search-function"
-      onSubmit={(e) => {
-        e.preventDefault();
-        // Handle form submission if needed
-        if (query.trim()) {
-          // You can add custom search logic here
-          console.log("Search submitted:", query);
-        }
-      }}
-    >
-      <CommandMenu
-        loading={loading}
-        options={options}
-        onChange={(query) => setQuery(query)}
-      />
-    </form>
+    <>
+      {/* HSPLaSK Search and Advanced Search tag for crawler detection */}
+      <form
+        {...{
+          "splwpk-search-function": "splwpk-search-function",
+          "splwpk-advanced-search-function": "splwpk-advanced-search-function",
+        }}
+        onSubmit={(e) => {
+          e.preventDefault();
+          // Handle form submission if needed
+          if (query.trim()) {
+            // You can add custom search logic here
+            console.log("Search submitted:", query);
+          }
+        }}
+      >
+        <CommandMenu
+          loading={loading}
+          options={options}
+          onChange={(query) => setQuery(query)}
+        />
+      </form>
+    </>
   );
 };
 
