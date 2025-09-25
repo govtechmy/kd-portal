@@ -21,7 +21,7 @@
     "@payloadcms/db-mongodb": "latest",
     "@payloadcms/live-preview-react": "latest",
     "@payloadcms/next": "latest",
-    "@payloadcms/plugin-cloud": "latest",
+    "@payloadcms/plugin-cloud": "3.0.4",
     "@payloadcms/plugin-cloud-storage": "latest",
     "@payloadcms/plugin-search": "latest",
     "@payloadcms/richtext-lexical": "latest",
