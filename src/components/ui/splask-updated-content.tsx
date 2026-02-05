@@ -56,6 +56,7 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
       <div
         {...{ "splwpk-broadcast": "splwpk-broadcast" }}
         {...{ "splwpk-broadcast-timestamp": timestamps.broadcast }}
+        {...{ "timestamp": timestamps.broadcast }}
         className="sr-only"
         aria-hidden="true"
       >
@@ -65,6 +66,7 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
       <div
         {...{ "splwpk-about-us": "splwpk-about-us" }}
         {...{ "splwpk-about-us-timestamp": timestamps.aboutUs }}
+        {...{ "timestamp": timestamps.aboutUs }}
         className="sr-only"
         aria-hidden="true"
       >
@@ -74,6 +76,7 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
       <div
         {...{ "splwpk-news": "splwpk-news" }}
         {...{ "splwpk-news-timestamp": timestamps.news }}
+        {...{ "timestamp": timestamps.news }}
         className="sr-only"
         aria-hidden="true"
       >
@@ -83,6 +86,7 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
       <div
         {...{ "splwpk-gov-policies": "splwpk-gov-policies" }}
         {...{ "splwpk-gov-policies-timestamp": timestamps.govPolicies }}
+        {...{ "timestamp": timestamps.govPolicies }}
         className="sr-only"
         aria-hidden="true"
       >
@@ -92,6 +96,7 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
       <div
         {...{ "splwpk-faq": "splwpk-faq" }}
         {...{ "splwpk-faq-timestamp": timestamps.faq }}
+        {...{ "timestamp": timestamps.faq }}
         className="sr-only"
         aria-hidden="true"
       >
@@ -101,6 +106,7 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
       <div
         {...{ "splwpk-client-charter": "splwpk-client-charter" }}
         {...{ "splwpk-client-charter-timestamp": timestamps.clientCharter }}
+        {...{ "timestamp": timestamps.clientCharter }}
         className="sr-only"
         aria-hidden="true"
       >
@@ -110,6 +116,7 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
       <div
         {...{ "splwpk-contact-details": "splwpk-contact-details" }}
         {...{ "splwpk-contact-details-timestamp": timestamps.contactDetails }}
+        {...{ "timestamp": timestamps.contactDetails }}
         className="sr-only"
         aria-hidden="true"
       >
