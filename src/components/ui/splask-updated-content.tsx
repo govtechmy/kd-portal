@@ -143,7 +143,7 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
       </div>
 
       <a
-        href="#"
+        href="/profil-kementerian"
         {...{ "splwpk-publicising": "splwpk-publicising" }}
         {...{ timestamp: timestamps.broadcast }}
         className="sr-only"

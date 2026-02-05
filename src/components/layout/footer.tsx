@@ -143,7 +143,16 @@ export default function Footer({
             </p>
             <span className="hidden h-3 w-px bg-outline-300 lg:block"></span>
             <div className="flex flex-wrap gap-x-3 gap-y-2 text-black-700">
-              {["penafian", "dasar-privasi"].map((link) => (
+              {["penafian"].map((link) => (
+                <Link
+                  key={link}
+                  className="underline-font text-sm text-black-700 hover:text-foreground hover:underline"
+                  href={`/${link}`}
+                >
+                  {t(`Footer.${link}`)}
+                </Link>
+              ))}
+              {["dasar-privasi"].map((link) => (
                 <Link
                   splwpk-privacy-policy="splwpk-privacy-policy"
                   key={link}
