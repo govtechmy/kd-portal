@@ -75,7 +75,7 @@ const ContactUs: FC<ContactUsProps> = async ({ data, locale }) => {
                       </a>
                     ))}
                   </div>
-                  <form splwpk-feedback-form = "splwpk-feedback-form">
+                  <form {...{ "splwpk-feedback-form": "splwpk-feedback-form" }}>
                     </form>
                   <FeedbackDialog />
                   
