@@ -5,8 +5,7 @@ interface SPLaSKUpdatedContentProps {
   className?: string;
 }
 
-interface HiddenCrawlerDivProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+interface HiddenCrawlerDivProps extends React.HTMLAttributes<HTMLDivElement> {
   href?: string;
 }
 
@@ -65,7 +64,7 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
       <div
         {...{ "splwpk-broadcast": "splwpk-broadcast" }}
         {...{ "splwpk-broadcast-timestamp": timestamps.broadcast }}
-        {...{ "timestamp": timestamps.broadcast }}
+        {...{ timestamp: timestamps.broadcast }}
         className="sr-only"
         aria-hidden="true"
       >
@@ -75,7 +74,7 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
       <div
         {...{ "splwpk-about-us": "splwpk-about-us" }}
         {...{ "splwpk-about-us-timestamp": timestamps.aboutUs }}
-        {...{ "timestamp": timestamps.aboutUs }}
+        {...{ timestamp: timestamps.aboutUs }}
         className="sr-only"
         aria-hidden="true"
       >
@@ -85,7 +84,7 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
       <div
         {...{ "splwpk-news": "splwpk-news" }}
         {...{ "splwpk-news-timestamp": timestamps.news }}
-        {...{ "timestamp": timestamps.news }}
+        {...{ timestamp: timestamps.news }}
         className="sr-only"
         aria-hidden="true"
       >
@@ -95,7 +94,7 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
       <div
         {...{ "splwpk-gov-policies": "splwpk-gov-policies" }}
         {...{ "splwpk-gov-policies-timestamp": timestamps.govPolicies }}
-        {...{ "timestamp": timestamps.govPolicies }}
+        {...{ timestamp: timestamps.govPolicies }}
         className="sr-only"
         aria-hidden="true"
       >
@@ -105,7 +104,7 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
       <div
         {...{ "splwpk-faq": "splwpk-faq" }}
         {...{ "splwpk-faq-timestamp": timestamps.faq }}
-        {...{ "timestamp": timestamps.faq }}
+        {...{ timestamp: timestamps.faq }}
         className="sr-only"
         aria-hidden="true"
       >
@@ -115,7 +114,7 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
       <div
         {...{ "splwpk-client-charter": "splwpk-client-charter" }}
         {...{ "splwpk-client-charter-timestamp": timestamps.clientCharter }}
-        {...{ "timestamp": timestamps.clientCharter }}
+        {...{ timestamp: timestamps.clientCharter }}
         className="sr-only"
         aria-hidden="true"
       >
@@ -125,7 +124,7 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
       <div
         {...{ "splwpk-contact-details": "splwpk-contact-details" }}
         {...{ "splwpk-contact-details-timestamp": timestamps.contactDetails }}
-        {...{ "timestamp": timestamps.contactDetails }}
+        {...{ timestamp: timestamps.contactDetails }}
         className="sr-only"
         aria-hidden="true"
       >
@@ -133,33 +132,35 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
       </div>
 
       <div
-        {...{ "splwpk-online-e-participation": "splwpk-online-e-participation" }}
-        {...{ "timestamp": timestamps.contactDetails }}
+        {...{
+          "splwpk-online-e-participation": "splwpk-online-e-participation",
+        }}
+        {...{ timestamp: timestamps.contactDetails }}
         className="sr-only"
         aria-hidden="true"
       >
-         Online e-Participation 
+        Online e-Participation
       </div>
 
-      <HiddenCrawlerDiv
+      <a
+        href="#"
         {...{ "splwpk-publicising": "splwpk-publicising" }}
-        {...{ "timestamp": timestamps.broadcast }}
+        {...{ timestamp: timestamps.broadcast }}
         className="sr-only"
         aria-hidden="true"
-        href="https://digital.gov.my"
       >
         Publicising Agency
-      </HiddenCrawlerDiv>
-
-      <HiddenCrawlerDiv
-        {...{ "splwpk-elecronic-archive": "splwpk-elecronic-archive" }}
-        {...{ "timestamp": timestamps.contactDetails }}
+      </a>
+      
+      <a
+        href="#"
+        {...{ "splwpk-electronic-archive": "splwpk-electronic-archive" }}
+        {...{ timestamp: timestamps.contactDetails }}
         className="sr-only"
         aria-hidden="true"
-        href="https://digital.gov.my"
       >
         Electronic Archive
-      </HiddenCrawlerDiv>
+      </a>
     </>
   );
 };
