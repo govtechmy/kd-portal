@@ -41,13 +41,13 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
 
   // Example timestamps (you should replace these with actual content timestamps)
   const timestamps = {
-    broadcast: "2024-01-15 10:30:00",
-    aboutUs: "2024-01-20 14:45:00",
-    news: "2024-01-18 09:15:00",
-    govPolicies: "2024-01-17 16:20:00",
-    faq: "2024-01-10 11:00:00",
-    clientCharter: "2024-01-05 13:30:00",
-    contactDetails: "2024-01-22 08:45:00",
+    broadcast: "2026-01-15 10:30:00",
+    aboutUs: "2026-01-20 14:45:00",
+    news: "2026-01-18 09:15:00",
+    govPolicies: "2026-01-17 16:20:00",
+    faq: "2026-01-10 11:00:00",
+    clientCharter: "2026-01-05 13:30:00",
+    contactDetails: "2026-01-22 08:45:00",
   };
 
   return (
@@ -122,6 +122,34 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
       >
         Contact Details Updated
       </div>
+
+      <div
+        {...{ "splwpk-online-e-participation": "splwpk-online-e-participation" }}
+        {...{ "timestamp": timestamps.contactDetails }}
+        className="sr-only"
+        aria-hidden="true"
+      >
+         Online e-Participation 
+      </div>
+
+      <div
+        {...{ "splwpk-publicising": "splwpk-publicising" }}
+        {...{ "timestamp": timestamps.broadcast }}
+        className="sr-only"
+        aria-hidden="true"
+      >
+        Publicing Agency 
+      </div>
+
+      <a 
+      {...{ "splwpk-elecronic-archive": "splwpk-elecronic-archive" }}
+        {...{ "timestamp": timestamps.contactDetails }}
+        className="sr-only"
+        aria-hidden="true"    
+        href="https://digital.gov.my"
+        >
+          Electronic Archive
+      </a>
     </>
   );
 };
