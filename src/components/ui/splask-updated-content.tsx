@@ -5,6 +5,15 @@ interface SPLaSKUpdatedContentProps {
   className?: string;
 }
 
+interface HiddenCrawlerDivProps
+  extends React.HTMLAttributes<HTMLDivElement> {
+  href?: string;
+}
+
+const HiddenCrawlerDiv: React.FC<HiddenCrawlerDivProps> = (props) => (
+  <div {...props} />
+);
+
 /**
  * SPLaSK Updated Content Component
  *
@@ -132,24 +141,25 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
          Online e-Participation 
       </div>
 
-      <div
+      <HiddenCrawlerDiv
         {...{ "splwpk-publicising": "splwpk-publicising" }}
         {...{ "timestamp": timestamps.broadcast }}
         className="sr-only"
         aria-hidden="true"
+        href="https://digital.gov.my"
       >
-        Publicing Agency 
-      </div>
+        Publicising Agency
+      </HiddenCrawlerDiv>
 
-      <a 
-      {...{ "splwpk-elecronic-archive": "splwpk-elecronic-archive" }}
+      <HiddenCrawlerDiv
+        {...{ "splwpk-elecronic-archive": "splwpk-elecronic-archive" }}
         {...{ "timestamp": timestamps.contactDetails }}
         className="sr-only"
-        aria-hidden="true"    
+        aria-hidden="true"
         href="https://digital.gov.my"
-        >
-          Electronic Archive
-      </a>
+      >
+        Electronic Archive
+      </HiddenCrawlerDiv>
     </>
   );
 };
