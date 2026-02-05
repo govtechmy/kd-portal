@@ -15,7 +15,7 @@ const PenafianComponent: FC<PenafianProps> = ({ data, locale }) => {
   const t = useTranslations("Disclaimer");
   return (
     <main className="divide-y divide-washed-100">
-      <Hero title={t("header")} splaskPrivacyPolicy={true} />
+      <Hero title={t("header")} splaskPrivacyPolicy={false} />
 
       <Section>
         <div className="gap-6 border-x border-washed-100 py-12 lg:py-[84px] xl:grid xl:grid-cols-12">
