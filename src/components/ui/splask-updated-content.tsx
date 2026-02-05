@@ -146,13 +146,13 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
         {...{ "timestamp": timestamps.broadcast }}
         className="sr-only"
         aria-hidden="true"
-        href="https://digital.gov.my"
+        href="https://your-publicising-url.gov.my"
       >
         Publicising Agency
       </HiddenCrawlerDiv>
 
       <HiddenCrawlerDiv
-        {...{ "splwpk-elecronic-archive": "splwpk-elecronic-archive" }}
+        {...{ "splwpk-electronic-archive": "splwpk-electronic-archive" }}
         {...{ "timestamp": timestamps.contactDetails }}
         className="sr-only"
         aria-hidden="true"
