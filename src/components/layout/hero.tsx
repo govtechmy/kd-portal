@@ -20,9 +20,9 @@ export default function Hero({
       <div className="container flex flex-col gap-6 py-16">
         <h1
           className="text-center font-poppins text-[2rem]/10 font-semibold sm:text-hmd"
-          // {...(splaskPrivacyPolicy && {
-          //   "splwpk-privacy-policy": "splwpk-privacy-policy",
-          // })}
+          {...(splaskPrivacyPolicy && {
+            "splwpk-privacy-policy": "splwpk-privacy-policy",
+          })}
         >
           {title}
         </h1>
