@@ -46,7 +46,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
           "splwpk-publicising": "splwpk-publicising",
           timestamp: new Date().toISOString().slice(0, 19).replace("T", " "),
         }}
-        href={`https://www.digital.gov.my/pencapaian`}
+        href="/profil-kementerian"
         className="sr-only"
         aria-hidden="true"
       >
@@ -58,7 +58,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
           "splwpk-publicising": "splwpk-publicising",
           timestamp: new Date().toISOString().slice(0, 19).replace("T", " "),
         }}
-        href={`https://www.digital.gov.my/pencapaian`}
+        href="/profil-kementerian"
         className="sr-only"
         aria-hidden="true"
       >
@@ -71,7 +71,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
           "splwpk-publicising": "splwpk-publicising",
           timestamp: new Date().toISOString().slice(0, 19).replace("T", " "),
         }}
-        href={`https://www.digital.gov.my/pencapaian`}
+        href="/profil-kementerian"
         className="sr-only"
         aria-hidden="true"
       >
@@ -140,7 +140,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
                     .slice(0, 19)
                     .replace("T", " "),
                 }}
-                href={`https://www.digital.gov.my/pencapaian`}
+                href="/profil-kementerian"
                 className="sr-only"
                 aria-hidden="true"
               >
@@ -156,7 +156,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
                     .slice(0, 19)
                     .replace("T", " "),
                 }}
-                href={`https://www.digital.gov.my/pencapaian`}
+                href="/profil-kementerian"
                 className="sr-only"
                 aria-hidden="true"
               >
@@ -278,7 +278,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
                 .slice(0, 19)
                 .replace("T", " "),
             }}
-            href={`https://www.digital.gov.my/pencapaian`}
+            href="/profil-kementerian"
           >
             CIO/CDO Leadership Information
           </a>
@@ -290,7 +290,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
                 .slice(0, 19)
                 .replace("T", " "),
             }}
-            href={`https://www.digital.gov.my/pencapaian`}
+            href="/profil-kementerian"
           >
             Agency Leadership Details
           </a>
@@ -302,7 +302,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
                 .slice(0, 19)
                 .replace("T", " "),
             }}
-            href={`https://www.digital.gov.my/pencapaian`}
+            href="/profil-kementerian"
           >
             Ministry Leadership
           </a>
