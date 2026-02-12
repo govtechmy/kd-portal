@@ -163,9 +163,10 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
       </div>
 
       <a
-        href="/profil-kementerian"
+        href="https://www.digital.gov.my/pencapaian"
         {...{ "splwpk-publicising": "splwpk-publicising" }}
         {...{ timestamp: timestamps.broadcast }}
+
         className="sr-only"
         aria-hidden="true"
       >
