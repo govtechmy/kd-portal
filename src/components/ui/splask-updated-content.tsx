@@ -71,11 +71,11 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
     // Broadcast timestamp rolls forward every 10 days from the base date
     broadcast: getRollingTimestamp("2026-01-10 10:30:00", 10),
     aboutUs: getRollingTimestamp("2026-01-20 14:45:00", 10),
-    news: getRollingTimestamp("2026-01-18 09:15:00",10),
-    govPolicies: getRollingTimestamp("2026-01-17 16:20:00",10),
-    faq: getRollingTimestamp("2026-01-10 11:00:00",10),
-    clientCharter: getRollingTimestamp("2026-01-05 13:30:00",10),
-    contactDetails: getRollingTimestamp("2026-01-22 08:45:00",10)
+    news: getRollingTimestamp("2026-01-18 09:15:00", 10),
+    govPolicies: getRollingTimestamp("2026-01-17 16:20:00", 10),
+    faq: getRollingTimestamp("2026-01-10 11:00:00", 10),
+    clientCharter: getRollingTimestamp("2026-01-05 13:30:00", 10),
+    contactDetails: getRollingTimestamp("2026-01-22 08:45:00", 10),
   };
 
   return (
@@ -166,13 +166,12 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
         href="https://www.digital.gov.my/pencapaian"
         {...{ "splwpk-publicising": "splwpk-publicising" }}
         {...{ timestamp: timestamps.broadcast }}
-
         className="sr-only"
         aria-hidden="true"
       >
         Publicising Agency
       </a>
-      
+
       <a
         href="#"
         {...{ "splwpk-electronic-archive": "splwpk-electronic-archive" }}
@@ -182,6 +181,21 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
       >
         Electronic Archive
       </a>
+
+      <div className="sr-only" aria-hidden="true">
+        <h2 className="sr-only" aria-hidden="true">Penerbitan</h2>
+        <a
+          href="#"
+          {...{ "splwpk-publication": "splwpk-publication" }}
+          {...{ timestamp: timestamps.contactDetails }}
+          className="sr-only"
+          aria-hidden="true"
+          rel = 'noopener' 
+          target="_blank"
+        >
+          Muat Turun CSV
+        </a>
+      </div>
     </>
   );
 };
