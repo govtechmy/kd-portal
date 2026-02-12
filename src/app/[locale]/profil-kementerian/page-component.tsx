@@ -29,7 +29,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
       {/* Hidden SPLaSK Publicising tag for crawler detection */}
       <div
         {...{
-          "splwpk-publicising": "splwpk-publicising",
+          // "splwpk-publicising": "splwpk-publicising",
           timestamp: new Date().toISOString().slice(0, 19).replace("T", " "),
         }}
         className="sr-only"
@@ -43,7 +43,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
       {/* Fake SPLaSK Publicising links for compliance */}
       <a
         {...{
-          "splwpk-publicising": "splwpk-publicising",
+          // "splwpk-publicising": "splwpk-publicising",
           timestamp: new Date().toISOString().slice(0, 19).replace("T", " "),
         }}
         href="/profil-kementerian"
@@ -55,7 +55,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
 
       <a
         {...{
-          "splwpk-publicising": "splwpk-publicising",
+          // "splwpk-publicising": "splwpk-publicising",
           timestamp: new Date().toISOString().slice(0, 19).replace("T", " "),
         }}
         href="/profil-kementerian"
@@ -68,7 +68,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
 
       <a
         {...{
-          "splwpk-publicising": "splwpk-publicising",
+          // "splwpk-publicising": "splwpk-publicising",
           timestamp: new Date().toISOString().slice(0, 19).replace("T", " "),
         }}
         href="/profil-kementerian"
@@ -134,7 +134,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
               {/* SPLaSK CIO/CDO Compliance */}
               <a
                 {...{
-                  "splwpk-publicising": "splwpk-publicising",
+                  // "splwpk-publicising": "splwpk-publicising",
                   timestamp: new Date()
                     .toISOString()
                     .slice(0, 19)
@@ -150,7 +150,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
 
               <a
                 {...{
-                  "splwpk-publicising": "splwpk-publicising",
+                  // "splwpk-publicising": "splwpk-publicising",
                   timestamp: new Date()
                     .toISOString()
                     .slice(0, 19)
@@ -272,7 +272,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
         <div className="sr-only" aria-hidden="true">
           <a
             {...{
-              "splwpk-publicising": "splwpk-publicising",
+              // "splwpk-publicising": "splwpk-publicising",
               timestamp: new Date()
                 .toISOString()
                 .slice(0, 19)
@@ -284,7 +284,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
           </a>
           <a
             {...{
-              "splwpk-publicising": "splwpk-publicising",
+              // "splwpk-publicising": "splwpk-publicising",
               timestamp: new Date()
                 .toISOString()
                 .slice(0, 19)
@@ -296,7 +296,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
           </a>
           <a
             {...{
-              "splwpk-publicising": "splwpk-publicising",
+              // "splwpk-publicising": "splwpk-publicising",
               timestamp: new Date()
                 .toISOString()
                 .slice(0, 19)
