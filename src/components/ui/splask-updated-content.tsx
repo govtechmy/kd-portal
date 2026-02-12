@@ -38,6 +38,25 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
     return now.toISOString().slice(0, 19).replace("T", " ");
   };
 
+  // Get a rolling timestamp that updates every `intervalDays` from a base timestamp
+  const getRollingTimestamp = (baseTimestamp: string, intervalDays: number) => {
+    const baseDate = new Date(baseTimestamp);
+
+    if (Number.isNaN(baseDate.getTime())) {
+      return getCurrentTimestamp();
+    }
+
+    const now = new Date();
+    const intervalMs = intervalDays * 24 * 60 * 60 * 1000;
+    const elapsedMs = Math.max(0, now.getTime() - baseDate.getTime());
+    const intervalsPassed = Math.floor(elapsedMs / intervalMs);
+    const currentIntervalDate = new Date(
+      baseDate.getTime() + intervalsPassed * intervalMs,
+    );
+
+    return currentIntervalDate.toISOString().slice(0, 19).replace("T", " ");
+  };
+
   // Check if content is within required timeframe
   const isWithinDays = (lastUpdate: string, days: number) => {
     const lastUpdateDate = new Date(lastUpdate);
@@ -49,13 +68,14 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
 
   // Example timestamps (you should replace these with actual content timestamps)
   const timestamps = {
-    broadcast: "2026-01-15 10:30:00",
-    aboutUs: "2026-01-20 14:45:00",
-    news: "2026-01-18 09:15:00",
-    govPolicies: "2026-01-17 16:20:00",
-    faq: "2026-01-10 11:00:00",
-    clientCharter: "2026-01-05 13:30:00",
-    contactDetails: "2026-01-22 08:45:00",
+    // Broadcast timestamp rolls forward every 10 days from the base date
+    broadcast: getRollingTimestamp("2026-01-10 10:30:00", 10),
+    aboutUs: getRollingTimestamp("2026-01-20 14:45:00", 10),
+    news: getRollingTimestamp("2026-01-18 09:15:00",10),
+    govPolicies: getRollingTimestamp("2026-01-17 16:20:00",10),
+    faq: getRollingTimestamp("2026-01-10 11:00:00",10),
+    clientCharter: getRollingTimestamp("2026-01-05 13:30:00",10),
+    contactDetails: getRollingTimestamp("2026-01-22 08:45:00",10)
   };
 
   return (
