@@ -23,7 +23,7 @@ export default function HomeSiaran({ broadcast }: { broadcast: Broadcast[] }) {
       {/* Hidden SPLaSK Publication tag for crawler detection */}
       <a
         href="#"
-        {...{ "splwpk-publication": "splwpk-publication" }}
+        // {...{ "splwpk-publication": "splwpk-publication" }}
         className="sr-only"
         aria-hidden="true"
       >
@@ -48,7 +48,7 @@ export default function HomeSiaran({ broadcast }: { broadcast: Broadcast[] }) {
                   <Link
                     key={doc.id}
                     href={routes.ANNOUNCEMENTS + `/${doc.slug}`}
-                    {...{ "splwpk-publication": "splwpk-publication" }}
+                    // {...{ "splwpk-publication": "splwpk-publication" }}
                     {...{ "splwpk-broadcast": "splwpk-broadcast" }}
                     {...{
                       "splwpk-broadcast-timestamp": doc.date + " 00:00:00",

@@ -91,7 +91,7 @@ export default function DasarTable({ data }: DasarTableProps) {
             {/* Hidden SPLaSK Publication tag for crawler detection */}
             <a
               href={info.getValue() as string}
-              {...{ "splwpk-publication": "splwpk-publication" }}
+              // {...{ "splwpk-publication": "splwpk-publication" }}
               className="sr-only"
               aria-hidden="true"
             >
@@ -157,7 +157,7 @@ export default function DasarTable({ data }: DasarTableProps) {
                   ? (info.row.original.file_upload.url as string)
                   : "#"
               }
-              {...{ "splwpk-publication": "splwpk-publication" }}
+              // {...{ "splwpk-publication": "splwpk-publication" }}
               className="sr-only"
               aria-hidden="true"
             >
