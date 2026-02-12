@@ -185,7 +185,7 @@ export const SPLaSKUpdatedContent: React.FC<SPLaSKUpdatedContentProps> = ({
       <div className="sr-only" aria-hidden="true">
         <h2 className="sr-only" aria-hidden="true">Penerbitan</h2>
         <a
-          href="#"
+          href="https://www.digital.gov.my/pencapaian"
           {...{ "splwpk-publication": "splwpk-publication" }}
           {...{ timestamp: timestamps.contactDetails }}
           className="sr-only"
