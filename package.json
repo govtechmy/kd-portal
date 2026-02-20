@@ -15,8 +15,8 @@
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start"
   },
   "dependencies": {
-    "@aws-sdk/client-ses": "^3.855.0",
-    "@aws-sdk/credential-provider-node": "^3.855.0",
+    "@aws-sdk/client-ses": "^3.894.0",
+    "@aws-sdk/credential-provider-node": "^3.894.0",
     "@heroicons/react": "^2.2.0",
     "@payloadcms/db-mongodb": "latest",
     "@payloadcms/live-preview-react": "latest",
