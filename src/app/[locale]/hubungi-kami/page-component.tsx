@@ -20,7 +20,7 @@ interface ContactUsProps {
 
 const ContactUs: FC<ContactUsProps> = async ({ data, locale }) => {
   const t = await getTranslations();
-  
+
   // Generate timestamp on server side to avoid hydration mismatch
   const timestamp = new Date().toISOString().slice(0, 19).replace("T", " ");
 
@@ -75,10 +75,10 @@ const ContactUs: FC<ContactUsProps> = async ({ data, locale }) => {
                       </a>
                     ))}
                   </div>
-                  <form {...{ "splwpk-feedback-form": "splwpk-feedback-form" }}>
-                    </form>
-                  <FeedbackDialog />
-                  
+                  <form
+                    {...{ "splwpk-feedback-form": "splwpk-feedback-form" }}
+                  ></form>
+                  {/* <FeedbackDialog /> */}
                 </div>
                 <iframe
                   className="rounded-[32px] border border-outline-200 shadow-[0_30px_100px_-10px_#4C53614D] max-sm:aspect-square sm:w-2/3"
