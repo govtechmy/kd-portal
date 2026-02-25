@@ -170,9 +170,7 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
                       alt="Carta Organisasi KD English"
                       className="absolute"
                       fill={true}
-               
                     />
-                    
                   )}
                   {locale === "ms-MY" && (
                     <Image
@@ -180,7 +178,6 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
                       alt="Carta Organisasi KD Melayu"
                       className="absolute"
                       fill={true}
-    
                     />
                   )}
                 </div>
@@ -193,8 +190,8 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
                       alt="Carta Organisasi KD Mobile English"
                       className="absolute"
                       // fill={true}
-                                          width={350}
-                        height={900}
+                      width={350}
+                      height={900}
                     />
                   )}
                   {locale === "ms-MY" && (
@@ -203,8 +200,8 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
                       alt="Carta Organisasi KD Mobile Melayu"
                       className="absolute"
                       // fill={true}
-                                          width={350}
-                        height={900}
+                      width={350}
+                      height={900}
                     />
                   )}
                 </div>
