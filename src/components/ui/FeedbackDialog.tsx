@@ -8,7 +8,7 @@ import CheckCircle from "@/icons/check-circle";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "./button";
 
-export default function FeedbackDialog() {
+export default function FeedbackDialog({className}: {className?: string}) {
   const t = useTranslations("Feedback");
   const [open, setOpen] = useState(false);
   const [tab, setTab] = useState<"aduan" | "pertanyaan" | "cadangan">("aduan");
@@ -30,7 +30,7 @@ export default function FeedbackDialog() {
     return (
       <button
         type="button"
-        className={cn(buttonVariants({ variant: "primary" }), "rounded-full")}
+        className={cn(buttonVariants({ variant: "primary" }), "rounded-full",className)}
         disabled
       >
         <Envelope />
@@ -40,7 +40,7 @@ export default function FeedbackDialog() {
   }
 
   return (
-    <div>
+    <div className={className}>
       <button
         type="button"
         className={cn(
