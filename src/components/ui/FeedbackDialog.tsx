@@ -30,7 +30,7 @@ export default function FeedbackDialog({className}: {className?: string}) {
     return (
       <button
         type="button"
-        className={cn(buttonVariants({ variant: "primary" }), "rounded-full",className)}
+        className={cn(buttonVariants({ variant: "primary" }), "rounded-full", className)}
         disabled
       >
         <Envelope />
