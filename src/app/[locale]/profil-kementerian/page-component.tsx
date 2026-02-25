@@ -183,13 +183,15 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
                 </div>
               </div>
               <div className="flex w-full justify-center md:hidden">
-                <div className="relative h-[532px] w-[394px]">
+                <div className="relative h-[532px] w-[350px]">
                   {locale === "en-GB" && (
                     <Image
                       src={"/org/org-chart-mobile-en.webp"}
                       alt="Carta Organisasi KD Mobile English"
                       className="absolute"
-                      fill={true}
+                      // fill={true}
+                      width={350}
+                      height={900}
                     />
                   )}
                   {locale === "ms-MY" && (
@@ -197,7 +199,9 @@ const ProfilKementerianComponent: FC<ProfilKementerianProps> = ({
                       src={"/org/org-chart-mobile-bm.webp"}
                       alt="Carta Organisasi KD Mobile Melayu"
                       className="absolute"
-                      fill={true}
+                      // fill={true}
+                      width={350}
+                      height={900}
                     />
                   )}
                 </div>
