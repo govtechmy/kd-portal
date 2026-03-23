@@ -83,7 +83,7 @@ const SiaranPage: FC<SiaranPageProps> = ({ data, locale }) => {
     //   name: "Facebook",
     //   href: "https://www.facebook.com/KementerianDigitalMalaysia/",
     // },
-    // { icon: Icon.X, name: "X", href: "https://x.com/KemDigitalMsia" },
+    // { icon: Icon.X, name: "X", href: "https://x.com/kemdigital_gov" },
   ];
   return (
     <main className="container grid auto-rows-auto grid-cols-1 py-12 md:grid-cols-12 lg:grid-cols-6 xl:grid-cols-4 print:mx-auto print:block print:w-full print:pb-12 print:pt-0">
@@ -144,7 +144,7 @@ const SiaranPage: FC<SiaranPageProps> = ({ data, locale }) => {
                     key={name}
                     href={href}
                     target="_blank"
-                    rel="noopenner noreferrer"
+                    rel="noopener noreferrer"
                     className="p-2"
                   >
                     <Icon className="size-4" />

@@ -60,7 +60,7 @@ export default function Quicklinks({
                 <a
                   href="https://gamma.malaysia.gov.my/appdetails/553"
                   target="_blank"
-                  rel="noopenner noreferrer"
+                  rel="noopener noreferrer"
                   {...{ "splwpk-mobile-apps": "splwpk-mobile-apps" }}
                   className={cn(
                     buttonVariants({ variant: "secondary", size: "default" }),
@@ -120,7 +120,7 @@ export default function Quicklinks({
                     key={item.id}
                     href={link?.href[0].link?.url || ""}
                     target="_blank"
-                    rel="noopenner noreferrer"
+                    rel="noopener noreferrer"
                     {...(isMyMesyuarat && {
                       "splwpk-mobile-apps": "splwpk-mobile-apps",
                     })}
