@@ -64,7 +64,7 @@ const ContactUs: FC<ContactUsProps> = async ({ data, locale }) => {
                         key={name}
                         href={href}
                         target="_blank"
-                        rel="noopenner noreferrer"
+                        rel="noopener noreferrer"
                         className={cn(
                           buttonVariants({ variant: "secondary-colour" }),
                           "rounded-full",
@@ -137,7 +137,7 @@ const ContactUs: FC<ContactUsProps> = async ({ data, locale }) => {
                           key={id}
                           href={link.url}
                           target="_blank"
-                          rel="noopenner noreferrer"
+                          rel="noopener noreferrer"
                           className="underline-font text-sm text-black-700 hover:text-foreground hover:underline max-md:col-span-2"
                         >
                           <div className="col-span-1 flex flex-none flex-col items-center gap-2 py-6 md:gap-3 xl:w-[100px]">

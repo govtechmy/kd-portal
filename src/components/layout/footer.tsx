@@ -25,7 +25,7 @@ export const social_media = [
     name: "Facebook",
     href: "https://www.facebook.com/KementerianDigitalMalaysia/",
   },
-  { icon: <Icon.X />, name: "X", href: "https://x.com/KemDigitalMsia" },
+  { icon: <Icon.X />, name: "X", href: "https://x.com/kemdigital_gov" },
   {
     icon: <Icon.Instagram />,
     name: "Instagram",
@@ -92,7 +92,7 @@ export default function Footer({
                             key={id}
                             href={link.url}
                             target="_blank"
-                            rel="noopenner noreferrer"
+                            rel="noopener noreferrer"
                           >
                             {_social_media[social].icon}
                           </a>
@@ -123,7 +123,7 @@ export default function Footer({
                         key={name}
                         className={className.link}
                         target="_blank"
-                        rel="noopenner noreferrer"
+                        rel="noopener noreferrer"
                         href={href}
                       >
                         {name}
