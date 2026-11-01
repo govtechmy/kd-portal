@@ -5,7 +5,6 @@ import type {
   CollectionAfterDeleteHook,
   GlobalAfterChangeHook,
 } from "payload";
-import { revalidatePath } from "next/cache";
 import { routes } from "@/lib/routes";
 
 export const revalidateCollection = (
@@ -14,11 +13,11 @@ export const revalidateCollection = (
   return async ({ doc, req }) => {
     const { payload, locale = "ms-MY" } = req;
     if (route === "ANNOUNCEMENTS") {
-      revalidate({ locale, route, params: doc.slug }, payload);
-      revalidate({ locale, route, params: doc.slug }, payload);
+      await revalidate({ locale, route, params: doc.slug }, payload);
+      await revalidate({ locale, route, params: doc.slug }, payload);
       return doc;
     }
-    revalidate({ locale, route }, payload);
+    await revalidate({ locale, route }, payload);
     return doc;
   };
 };
@@ -28,10 +27,10 @@ export const revalidateDeleteCollection = (
   return async ({ doc, req }) => {
     const { payload, locale = "ms-MY" } = req;
     if (route === "ANNOUNCEMENTS") {
-      revalidate({ locale, route, params: doc.slug }, payload);
+      await revalidate({ locale, route, params: doc.slug }, payload);
       return doc;
     }
-    revalidate({ locale, route }, payload);
+    await revalidate({ locale, route }, payload);
     return doc;
   };
 };
@@ -42,10 +41,10 @@ export const revalidateGlobal = (
   return async ({ doc, req }) => {
     const { payload, locale = "ms-MY" } = req;
     if (route === "ANNOUNCEMENTS") {
-      revalidate({ locale, route, params: doc.slug }, payload);
+      await revalidate({ locale, route, params: doc.slug }, payload);
       return doc;
     }
-    revalidate({ locale, route }, payload);
+    await revalidate({ locale, route }, payload);
     return doc;
   };
 };
@@ -56,7 +55,7 @@ type RevalidateProps = {
   params?: string;
 };
 
-const revalidate = (
+const revalidate = async (
   { locale, route, params }: RevalidateProps,
   payload: BasePayload,
 ) => {
@@ -70,6 +69,10 @@ const revalidate = (
       : path.join("/", "en-GB", routes[route], params ? params : "");
 
   payload.logger.info(`Revalidating post at path: ${target}, ${targetEn}`);
+
+  // Imported here rather than at module scope: next/cache is server-only and
+  // this module is pulled into the client graph through Achievement.ts.
+  const { revalidatePath } = await import("next/cache");
 
   // Revalidate both locale
   revalidatePath(target);
